@@ -1,0 +1,1162 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.header, .header__PC{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary--color);
+  width: 100%;
+  height: 84px;
+}
+.header__mobile{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  color: var(--white--color);
+  font-size: 2.8rem;
+  display: none;
+  text-align: center;
+  vertical-align: center;
+}
+.header__mobile-logo{
+  display: none;
+
+}
+.header__mobile-overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+  animation: fadeIn 0.3s linear;
+
+}
+.header__mobile-navbar-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;;
+  width: 320px;
+  max-width: 100%;
+  z-index: 3;
+  background-color: var(--white--color);
+  list-style: none;
+  transform: translateX(100%);
+  opacity: 0 linear 0.2s;
+  transition: transform linear 0.2s; 
+  
+}
+.header__mobile-navbar-closed{
+  position: absolute;
+  right: 10%;
+  top: 2%;
+  font-size: 2.4rem;
+}
+.header__mobile-navbar-item {
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  border-bottom: 1px solid #ccc
+}
+.header__mobile-navbar-link {
+  text-decoration: none;
+  color: var(--black--color);
+}
+.header__input{
+  display: none;
+}
+.header__input:checked ~ .header__mobile-overlay{
+  display: block;
+}
+.header__input:checked ~ .header__mobile-navbar-list{
+  transform: translateX(0);
+  opacity: 1 linear 0.2s;
+}
+
+.header__logo{
+  margin-left: 15px;
+}
+.header__navbar-list{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  margin-right: 50px;
+
+}
+.header__navbar-item{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  position: relative ;
+  color: var(--white--color);
+  font-size: 1.2rem;
+ 
+}
+.header__navbar-item:hover .header__navbar-link {
+  box-shadow: inset 0 -5px 0 0 var(--white--color) ;
+}
+.header__navbar-link-branch{
+  display: block;
+  text-decoration: none;
+  color: var(--white--color);
+  font-size: 1.4rem;
+  line-height: 84px;
+}
+.header__navbar-link-branch:hover{
+  text-decoration: none;
+  color: var(--white--color);
+  font-size: 1.4rem;
+  line-height: 84px;
+}
+
+.header__navbar-item:hover .header__navbar-item-list{
+  z-index: 1;
+  display: block;
+  padding: 0;
+}
+.header__navbar-link
+{
+  display: block;
+  text-decoration: none;
+  color: var(--white--color);
+  font-size: 1.4rem;
+  line-height: 94px;
+  transition: all 0.2s ease;
+}
+.header__navbar-link:hover{
+  text-decoration: none;
+  color: var(--white--color);
+  font-size: 1.4rem;
+  line-height: 94px;
+  transition: all 0.2s ease;
+}
+.header__navbar-item-list{
+  display: none;
+  position: absolute;
+  list-style: none;
+  top: 90px;
+  right: 10px;
+  width: 120px;
+  background-color: var(--primary--color);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  
+}
+
+.header__navbar-item-list::before{
+  position: absolute;
+  content: "";
+  display: block;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--white--color);
+  transition: all 0.3s ease;
+}
+.header__navbar-sub-link{
+  padding: 0 12px;
+
+}
+.header__navbar-sub-link:hover {
+  background-color: #5f379e;
+}
+.header__navbar-sub-link a{
+  display: block;
+  color: var(--white--color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 4rem;
+  
+}
+.header__navbar-sub-link a:hover{
+  color: var(--white--color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 4rem;
+}
+.content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,1);
+
+}
+.content__background{
+  padding-top: 50%;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/glf8jtstb8jsemfppqzp.jpg) top center / cover no-repeat;
+  opacity: 0.3;
+  padding-bottom: 2px;
+
+}
+.content__title{
+  display: flex;
+  justify-content: center;
+}
+
+.content__title span{
+  opacity: 1;
+  position: absolute;
+  margin: auto;
+  top: 30%;
+  font-size: 10rem;
+  line-height: 10rem;
+  color: var(--white--color);
+  text-transform: uppercase;
+}
+.content__title-logo{
+  position: absolute;
+  top: 20%;
+  
+}
+.content__branch-vn{
+  width: 100%;
+  height: 330px;
+}
+.content__branch-item{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,1);
+  bottom:-2p;
+  overflow: hidden;     
+}
+.content__branch-img{
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  object-fit: cover;
+}
+.content__branch-item .content__branch-img{
+  transition: transform 0.5s ease;
+}
+.content__branch-img:hover{
+  transform: scale(1.2);
+}
+.content__branch-item a{
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 42%;
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--white--color);
+
+}
+
+.content__branch-item a:hover{
+  background-color: rgba(95, 55, 158,0.5);
+}
+.content__booking{
+  display: flex;
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  font-size: 1.4rem;
+  z-index: 2;
+} 
+.content__booking-container{
+  width: 100%;
+  height: 50%;
+}
+.content__booking-title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+#myID::placeholder{
+  color: var(--white--color);
+}
+.flatpickr{
+  border: 1px solid #c3c3c3;
+    height: 36px;
+    line-height: 36px;
+    width: 100%!important;  
+    padding: 8px;
+    border-radius: 3px;
+    background: #fff;
+}
+.content__booking-date-in input,
+.content__booking-date-out input,
+.content__booking-branch-select, 
+.content__booking-hotel-name-select 
+{
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  border-radius: 1px;
+  border: 2px solid var(--white--color);
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  font-size: 1.4rem;  
+
+}
+.content__booking-date-in input:focus,
+.content__booking-date-out input:focus,
+.content__booking-branch-select:focus, 
+.content__booking-hotel-name-select:focus 
+{
+  outline: #482979;
+}
+.content__news{
+  width: 100%;
+  height: 500px;
+  margin-top: 80px;
+}
+.content__news-title{
+  font-size: 4rem;
+  margin-top: 9px;
+  text-align: center;
+
+}
+.content__news-list{
+  list-style: none;
+  text-align: justify;
+}
+.content__news-item{
+  font-size: 1.4rem;
+  color: var(--black--color);
+  margin-top: 20px;
+  
+}
+.content__news-branch{
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+  height: 22px;
+  line-height: 22px;
+  color: var(--white--color);
+  font-weight: 600;
+  background-color: #9CD53A ;
+  cursor: default;
+  
+}
+.content__news-branch--bg{
+  background-color: #F75A5A;
+}
+.content__news-branch--bg2{
+  background-color: #6498E7;
+}
+.content__news-link a{
+  text-decoration: none;
+  color: var(--black--color);
+  margin-left: 15px;
+  font-weight: 600;
+}
+.content__news-link a:hover{
+  color: var(--primary--color);
+}
+.content__qr{
+  width: 270px;
+  height: 335px;
+  margin: auto;
+}
+.content__qr-img{
+  width: 100%;
+  height: 100%;
+}
+.btn--detail{
+  width: 100%;
+  border-radius: 2px;
+  background-color: #01B901;
+  color: white;
+  margin-left: 1px !important;
+}
+.btn--detail:hover {
+  background-color: #09e009 !important; 
+}
+.content__welcome{
+  background: #ffffff url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698111742/AzumayaWeb/v8fmo6wketwrtgrhnsfw.jpg) center center no-repeat;
+  background-attachment: fixed;
+  font-size: 18px;
+  line-height: 1.4em;
+  padding: 100px 0;
+  position: relative;
+  width: 100%;
+}
+.content__welcome::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+.content__welcome-text{
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  position: relative;
+}
+.content__welcome-text::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #ffffff;
+  pointer-events: none;
+
+}
+.content__welcome-text small{
+  font-size: 34px;
+  color: #ffffff;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+.content__welcome p {
+  text-align: justify;
+  color: #ffffff;
+  position: relative;
+}
+.content__welcome p::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #ffffff;
+  pointer-events: none;
+}
+.content__feature{
+  position: relative;
+  height: 100%;
+  margin-top: 5%;
+  padding: 80px 0 40px 0;
+}
+.content__feature-title{
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  font-weight: 600;   
+}
+
+.content__feature-item {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.content__feature-container{
+  position: relative;
+  width: 100%;
+  height: 180px !important;
+  margin-top: 50px;
+  overflow: hidden;
+  display: flex;
+  
+}
+.content__feature-img {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+}
+.content__feature-item .content__feature-img{
+  transition: transform .5s ease;
+}
+.content__feature-img:hover {
+  transform: scale(1.2);
+}
+.content__feature-name a{
+  display: block;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--black--color);
+}
+.content__feature-text,
+.content__feature-name {
+  width: 100%;
+  margin-top: 30px;
+}
+
+
+.content__feature-text p {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin-top: 20px;
+
+}
+.footer{
+  background-color: var(--dark--background--color);
+  margin-top: 90px;
+}
+.footer__container{
+  padding-top: 60px;
+  height: 100%;
+  color: var(--white--color);
+  line-height: 2.5rem;    
+  border-bottom: 1px solid #2A2F3C;
+}
+
+.footer__branch-name h2 {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+.footer__branch-location p,
+.footer__branch-phone span{
+  font-size: 1.2rem;
+  color: #ACACAC;
+}
+.footer__branch-email {
+  font-size: 1.1rem;
+  color: #ACACAC;
+
+}
+.footer__container2{
+  padding-top: 60px;
+  height: 100%;
+  color: var(--white--color);
+  line-height: 2.5rem;
+}
+.footer__container3 {
+  position: relative;
+  height: 150px;
+  background-color: #2A2F3C;
+}
+.footer__logo{
+  margin-top: 3%;
+  height: 40%;
+  max-width: 100%;
+
+}
+.footer__copyright{
+  color: var(--white--color);
+  font-size: 1.8rem;
+}
+/* Reservation */
+.reservation__content{
+  padding: 90px 0;
+  position: relative;
+  width: auto;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/rd2qg5wkfxdoarlvcuwl.jpg) center center / cover no-repeat fixed;
+  height: 280px;
+}
+.reservation__title{
+  position: absolute;
+  top: 40%;
+  color: var(--white--color);
+  font-size: 6rem;
+  font-weight: 600;
+}
+.re__breadcrumb{
+  margin: 30px 0;
+  color: var(--black--color);
+  background-color: #f6f6f6;
+}
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 30%;
+  margin-left: 10px;
+  list-style: none;
+  font-size: 1.4rem;
+  padding-top: 10px;
+  
+}
+.breadcrumb__item a,
+.breadcrumb__item a:hover{
+  text-align: center;
+  text-decoration: none;
+  padding: 0 10px;
+  color: var(--black--color);
+  line-height: 1.6rem;
+
+}
+.reservation {
+  margin: 60px 60px;
+  height: 2280px;
+  border: 1px solid rgba(0,0,0,0.3);
+
+}
+.reservation__container{
+  padding: 30px;
+  margin: 0 0 40px 0;
+}
+.hotel__location-select {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 20px;
+
+}
+.hotel__location-select-city{
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+
+}
+.rbcLabel{
+  font-size: 2.5rem;
+  text-align: center;
+}
+.brand__choice-name{
+  font-size: 1.6rem;
+  text-align: justify;
+}
+.booking__information {
+  height: 630px;
+  background-color: #f6f6f6;
+}
+.booking__information-container{
+  padding: 30px;
+  margin-bottom: 10px;
+  background: #f6f6f6;
+  border-radius: 10px
+}
+.reservation .guest__information{
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 630px;
+}
+.booking__information-container .booking__information-special{
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 800px;
+  margin-top: 20px;    
+  background-color: #f6f6f6;
+}
+
+.input__name{
+  position: relative;
+}
+.form__input {
+  position: relative;
+}
+.guest__name-title{
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+}
+.btn__send{
+  position: absolute;
+  left: 30%;
+  background-color: var(--primary--color);
+  color: var(--white--color);
+}
+/* Hotel Policies */
+.policies__header {
+  width: 100%;
+  padding: 100px 0;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/jlrespa749hwpa3n7zxw.jpg) center center / cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  text-align: center;
+
+}
+.policies__header h1{
+    color: #fff;
+    font-size: 52px;
+    font-weight: bold
+}
+.content__policies{
+  margin: 60px 60px;
+  height: 789px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+.table__policies td{
+  border:1px solid rgba(0,0,0,0.3);
+  padding: 20px;
+  font-size: 1.4rem;
+}
+.table__policies{
+  width: 100%;
+}
+.feature__title{
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  color: var(--white--color);
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+.feature__characteristic{
+  width: 100%;
+}
+.feature__content-title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  
+
+}
+.feature__content-title h2{
+  width: 100%;
+  font-size: 3rem;
+  line-height: 9rem;
+}
+.feature__content-background{
+  width: 100%;
+  padding: 150px 0;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/xdnpuoiovao4jlwxfa0b.jpg) center center / cover no-repeat;
+}
+
+.highlight__text{
+  width: 100%;
+  color: var(--white--color);
+  font-size: 2rem;
+  padding: 0 50px;
+  text-align: justify;
+}
+
+.feature__type-list {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+.feature__type-item {
+  border-top: solid 1px #c5c5c5;
+  border-left: solid 1px #c5c5c5;
+  border-right: solid 1px #c5c5c5;
+  border-bottom: solid 4px #482979;
+  padding: 30px;
+  overflow: hidden;
+  margin-bottom: 40px
+}
+.feature__type-img {
+  position: relative;
+  height: 200px;
+  width: 400px;
+  background-size: cover;
+}
+.feature__number{
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 50px;
+  width: 100px;
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature__type-item h2 {
+  width: 100%;
+  height: auto;
+  font-weight: 600;
+}
+.feature__type-item p {
+  width: 100%;
+  height: auto;
+  font-size: 1.4rem;
+}
+.service__header {
+  padding: 90px 0;
+  position: relative;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/wnyhgvfrdrrbyjkbb501.jpg) center center / cover no-repeat;
+  height: 280px;
+  background-attachment: fixed;
+}
+.service__container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+}
+.service__location {
+  color: #c5c5c5;
+  border: solid 1px #c5c5c5;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+.service__list {
+  list-style: none;
+  display: flex;
+  color: var(--black--color);
+  margin-top: 50px;
+  height: 50px;
+  font-size: 1.4rem;
+  width: 1140px;
+  padding: 0;
+  border-bottom: 5px solid #482979;
+  margin-bottom: 0;
+}
+.service {
+  width: 150px;
+  overflow: hidden;
+  margin-right: 20px;
+  line-height: 45px;
+  text-align: center;
+  border: solid 1px #c5c5c5;
+  border-bottom: 0;
+  color: #c5c5c5;
+  cursor: pointer;
+
+}
+.service__content{
+  padding: 30px;
+  height: 382px;
+  width: 1140px;
+  border: solid 1px #c5c5c5;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.service__active{
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  border-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service__content-title,
+.service__content-note {
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  height: 50px;
+  font-size: 1.4rem;
+  line-height: 50px;
+}
+.service__table th,
+.service__table td,
+.service__content-body {
+  border: solid 1px #c5c5c5;
+  height: 100px;
+  font-size: 1.2rem;
+  text-align: center;
+  table-layout: fixed;
+  
+}
+.service__table{
+  width: 100%;
+}
+.room__table {
+  width: 100%;
+  
+}
+.room__table th
+{
+  border: solid 1px #c5c5c5;
+  height: 30px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: var(--primary--color);
+  color: var(--white--color);   
+}
+.room__table td{
+  border: solid 1px #c5c5c5;
+  height: 50px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.room__table tr:hover{
+  background-color: #efefef;
+  cursor: pointer;
+}
+.room__container-table{
+  margin: 0 20px;
+}
+.service__content-note{
+  height: 90px;
+  line-height: 30px;
+}
+.service__container{
+  height: fit-content;
+}
+.service__container > .room__content{
+  height: 1200px;
+}
+.btn__detail a{
+  height: 50px;
+  width: 250px;
+  background-color: var(--primary--color);
+  float: right;
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 50px;
+  text-align: center;
+  color: var(--white--color);
+  font-weight: 600;
+}
+.room__container{
+  padding-top: 0;
+  height: 500px;
+  
+}
+.branch__container{
+  width: 100%;
+
+}
+.room__title{
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 5% 0;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.room__content{
+  height: 3750px;
+  border: solid 1px #c5c5c5;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+}
+.room__service{
+  margin-top: 20px;
+}
+.room__service p{
+  font-size: 1.4rem;
+}
+.room__service h2{
+  font-weight: 900;
+}
+.room__container h1{
+  margin-top: 20px;
+  font-weight: 900;
+}
+.room__container p{
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.room__container a{
+  text-decoration: none;
+  color: var(--primary--color);
+}
+.room__container a:hover{
+  text-decoration: none;
+  color: var(--primary--color);
+}
+.hotel__info{
+  font-size: 1.4rem;
+  position: relative;
+  left: -294px;
+}
+.gg-map iframe{
+  width: 100%;
+  height: 350px;
+}
+.carousel-control-next,
+.carousel-control-prev
+{
+  z-index: 0 !important;
+}
+.carousel-indicators{
+  z-index: 1!important;
+}
+a{
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0!important;
+}
+.container-fea {
+  width: 100%;
+  padding: 0 30px;
+}
+
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1340px !important;
+  }
+}
+@media screen  and (max-width: 46.1875em) {
+  .header{
+      height: 50px;
+  }
+  .header__mobile{
+      display: block;
+  }
+  .header__PC{
+      display: none;
+  }
+  .header__mobile-logo{
+    display: block;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    height: auto;
+
+  }
+  .feature__content-title{
+      font-size: 1.4rem;
+  }
+  .header__mobile-logo img{
+    width: 100px;
+    height: 40px;
+  }
+  .content__title span{
+    top: 12%;
+    font-size: 3rem;
+}
+.content__title-logo
+{
+    top: 8%;
+    width: 120px;
+    height: 50px;
+}
+.btn--mobile{
+    width: 260px ;
+    margin-bottom: 5% !important;
+
+}
+.content__news{
+    margin-top: 20px;
+}
+.content__qr{
+    padding: 20px;
+}
+.content__news-title{
+    font-size: 2.5rem;
+    justify-content: center;
+}
+.content__news-item{
+    display: flex;
+}
+.content__news-link a{ 
+    width: 100px;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.content__welcome{
+  margin-top: 40%;
+}
+.content__branch-item{
+    height: 153.84px;
+}
+.content__feature{
+    margin-top: 5%;
+}
+.content__feature-item{
+    margin: 0 40px;
+}
+.content__feature-title{
+    left: 35%;
+}
+.footer__logo{
+    width:100px;
+    height: 50px;
+}
+.footer__copyright{
+    font-size: 1.3rem;
+}
+.footer__container3{
+  height: 100px;
+}
+.reservation__content{
+    background-attachment: inherit;
+    background-size: cover;
+    width: auto;
+    height: 180px;
+}
+.btn__top:hover{
+  color: #ffffff;
+  background-color: #482979;
+}
+}@media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
+   
+  .header__mobile{
+      display: block;
+  }
+  .header__PC{
+      display: none;
+  }
+  .header__mobile-logo{
+    display: block;
+  }
+  .header__mobile{
+    position: absolute;
+    right: 5px;
+    top: 20px;
+    width: 28px;
+    height: 28px;
+  }
+  .feature__content-title{
+    font-size: 1.4rem;
+}
+.content__title span{
+  top: 12%;
+  font-size: 3rem;
+}
+.content__title-logo
+{
+  top: 8%;
+  width: 120px;
+  height: 50px;
+}
+.btn--mobile{
+    width: 260px ;
+    margin-bottom: 5% !important;
+}
+.content__feature{
+  margin-top: 5%;
+}
+.content__feature-item{
+  margin-left: 40px;
+}
+.reservation__content{
+  background-attachment: inherit;
+  background-size: cover;
+  width: auto;
+  height: 180px;
+}
+}
+
