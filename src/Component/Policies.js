@@ -1,14 +1,15 @@
+import {Link} from 'react-router-dom'
 export default function Policies(){
     return(
         <div> 
             <div class="policies__header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 offset-4">
-                            <div class="policies__title">Hotel Policies</div>
+                    <div className="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Hotel  Policies</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
             <div class="re__breadcrumb">
                 <div class="container">
@@ -16,15 +17,15 @@ export default function Policies(){
                         <div class="col-md-12"></div>
                         <ul class="breadcrumb__list">
                                    <li class = "breadcrumb__item">
-                                       <a href="/AzumayaClone/index.html">
+                                       <Link  to="/Component/Home">
                                            <i class="fa-solid fa-house"></i>
-                                       </a>
+                                       </Link>
                                    </li>
                                    <li class = "breadcrumb__item">
                                        /
                                    </li>
                                    <li class = "breadcrumb__item">
-                                       <a class ="breadcrumb__title" href="/AzumayaClone/html/policies.html">Hotel Policies</a>
+                                       <Link class ="breadcrumb__title" to = '/Component/Policies'>Hotel Policies</Link>
                                    </li>
                        </ul>
                     </div>

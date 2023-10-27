@@ -620,6 +620,8 @@ code {
 .reservation__container{
   padding: 30px;
   margin: 0 0 40px 0;
+  height: 100%;
+  width: 100%;
 }
 .hotel__location-select {
   display: flex;
@@ -696,8 +698,8 @@ code {
     font-weight: bold
 }
 .content__policies{
-  margin: 60px 60px;
-  height: 789px;
+  margin: 20px;
+  height: 100%;
   border: 1px solid rgba(0,0,0,0.3);
 }
 .table__policies td{
