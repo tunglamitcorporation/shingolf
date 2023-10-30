@@ -804,13 +804,12 @@ code {
 }
 .service__container {
   width: 100%;
-  height: 300px;
-  display: flex;
+  height: 100%;
 }
 .service__location {
   color: #c5c5c5;
   border: solid 1px #c5c5c5;
-  width: 250px;
+  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
@@ -825,7 +824,7 @@ code {
   margin-top: 50px;
   height: 50px;
   font-size: 1.4rem;
-  width: 1140px;
+  width: 100%;
   padding: 0;
   border-bottom: 5px solid #482979;
   margin-bottom: 0;
@@ -844,8 +843,8 @@ code {
 }
 .service__content{
   padding: 30px;
-  height: 382px;
-  width: 1140px;
+  height: 100%;
+  width: 100%;
   border: solid 1px #c5c5c5;
   text-align: center;
   overflow: hidden;
@@ -863,9 +862,17 @@ code {
 .service__content-note {
   background-color: var(--primary--color);
   color: var(--white--color);
-  height: 50px;
   font-size: 1.4rem;
-  line-height: 50px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.service__content-note {
+  height: 100%;
+  
 }
 .service__table th,
 .service__table td,
@@ -905,10 +912,6 @@ code {
 }
 .room__container-table{
   margin: 0 20px;
-}
-.service__content-note{
-  height: 90px;
-  line-height: 30px;
 }
 .service__container{
   height: fit-content;
