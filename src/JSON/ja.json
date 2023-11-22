@@ -1,0 +1,204 @@
+{
+    "header": {
+        "top-header":"★ こだわりの和朝食と露天風呂がある、ビジネスパーソン向けホテル ★",
+        "item1": "ホーム",
+        "item2": "テル概要",
+        "item3": "ご予約",
+        "item4": "東屋8大魅力",
+        "item5": "提供サービス",
+        "item6": "法人契約のご案内",
+        "item7": "ハノイ",
+        "item8": "ホーチミン",
+        "item9": "ハイフォン",
+        "item10": "ダナン",
+        "item11": "東屋プノンペン",
+        "item12": "支店"
+    },
+    "booking": {
+        "title": "ご予約はこちら",
+        "date_in": "チェックイン日",
+        "date_out": "チェックアウト日",
+        "reserve": "予約する",
+        "city": [
+            {
+                "id": 1,
+                "city_name": "ハノイ"
+            },
+            {
+                "id": 2,
+                "city_name": "ホーチミン"
+            },
+            {
+                "id": 3,
+                "city_name": "ダナン"
+            },
+            {
+                "id": 4,
+                "city_name": "ハイフォン"
+            }
+        ],
+        "branch": [
+            [
+                {
+                    "branch_id": 1,
+                    "city_id": 1,
+                    "branch_name": "東屋 ハイバーチュン店 1"
+                },
+                {
+                    "branch_id": 2,
+                    "city_id": 1,
+                    "branch_name": "東屋金馬 2"
+                },
+                {
+                    "branch_id": 3,
+                    "city_id": 1,
+                    "branch_name": "東屋金馬 3"
+                },
+                {
+                    "branch_id": 4,
+                    "city_id": 1,
+                    "branch_name": "東谷 リン・ラン"
+                },
+                {
+                    "branch_id": 5,
+                    "city_id": 2,
+                    "branch_name": "東屋 レタントン"
+                },
+                {
+                    "branch_id": 6,
+                    "city_id": 2,
+                    "branch_name": "東屋 タイヴァンルン 1"
+                },
+                {
+                    "branch_id": "7日",
+                    "city_id": 2,
+                    "branch_name": "東屋 タイヴァンルン 2"
+                },
+                {
+                    "branch_id": 8,
+                    "city_id": 2,
+                    "branch_name": "Azumaya Annex"
+                },
+                {
+                    "branch_id": 9,
+                    "city_id": 3,
+                    "branch_name": "東屋ダナン"
+                },
+                {
+                    "branch_id": 10,
+                    "city_id": 4,
+                    "branch_name": "東屋 ハイフォン"
+                }
+            ]
+        ]
+    },
+    "feature": {
+        "name": "東屋8大魅力",
+        "main_title": "東屋8大魅力",
+        "main_content": "東屋ホテルをいつもご愛顧頂きまして誠にありがとうございます。ベトナムという異国へご出張される方に、日本と変わらぬ快適な環境を提供致したいという一心で、2011年にタイバンルン通りにて東屋1号店をオープン致しました。現在はハノイに5店舗、ダナンに1店舗、ホーチミンに4店舗ございます。 ベトナムへご出張の際は、是非とも東屋ホテルにお越しくださいませ。 どの店舗も変わらぬ東屋８大サービスを提供して参ります",
+        "feature_item": [
+            {
+                "id": 1,
+                "title": "一泊$40~のリーズナブルな価格",
+                "content": "東屋価格はリーズナブルな価格で提供しております。$1当たりの価格追求にこだわり、決して豪華ではない内装ですが、その分価格に反映する努力を惜しみません。全部屋シャワートイレ付き、アメニティーも日系会社より取り寄せ、小さめヘッドの歯ブラシ、髭剃りやコンディショナー含め８種類ご用意。会社契約で更にお安くご宿泊頂けます。長期滞在者にもさらなる割引をご用意しております。お気軽に受付までお問い合わせください。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
+                "num": "その 1"
+            },
+            {
+                "id": 2,
+                "title": "日本人街の中心地という好立地",
+                "content": "どの店舗も日本食レストランや飲み屋が集まる日本人街の中心に位置しており、初めてのベトナム滞在でも安心して過ごせます。また受入側の駐在の方にとっても一人でも歩いて行ける距離のため、フルアテンドせずとも安心、安全にお客様に滞在していただけます。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/y59yjf0ygam0ohxazsfm.jpg",
+                "num": "その 2"
+            },
+            {
+                "id": 3,
+                "title": "サウナ付き露天風呂",
+                "content": "都会の真ん中に露天風呂というオアシスができました。ベトナムにはなかった露天風呂を提供するのは東屋が初めてです。早朝の目覚めに、仕事終わりのリラックスに暑いベトナムでの疲れを取るために是非ともご利用くださいませ。 営業時間は平日朝6am – 10am, 夕方5pm – 12am、休日朝7am~11pmまで通しで営業しております。ビジターの方も100,000VND~ ご利用いただけます。(営業時間・料金は各店舗で異なります)",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
+                "num": "その 3"
+            },
+            {
+                "id": 4,
+                "title": "和朝食",
+                "content": "1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。焼き魚・煮物・揚げ物・炒め物など、全9品からなるボリューム満点の東屋自慢の和朝食セットを中心に各種ご用意しております。店舗により豊富なセットメニュー、またビュッフェとセットの二部制があり午前6時～8時に和朝食ビュッフェを、午前８時〜10時はセットメニューをご用意しております。その他、丼ものやカレーライス、豚の生姜焼きなど長期滞在の方でも飽きることのないようメニュー構成に気をつけております。ビジターの方も150,000VND~ ご利用いただけます。(料金は各店舗で異なります)",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
+                "num": "その 4"
+            },
+            {
+                "id": 5,
+                "title": "日本語テレビ視聴可能",
+                "content": "TBS・フジ・日テレなど主要民放局にNHK総合、WOWOWなど日本での生活と変わらぬ日本語放送をオンタイムでご視聴頂けます。その日のスポーツニュースや見ていた連続ドラマも録画を気にすることなく日本と変わらぬ環境でリラックスしていただけます。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
+                "num": "その 5"
+            },
+            {
+                "id": 6,
+                "title": "日本語のおもてなし",
+                "content": "受付は日本語の話せるスタッフが常駐、マネージャーも日本語対応可能なので英語が苦手な方でも安心です。またベトナムにいながらにしてお客様がお越しになられた際は「いらっしゃいませ」、お帰りになられた際は「お帰りなさいませ」と日本語でお迎えさせていただきます。日本語だけでなく、日本以上の笑顔と元気で皆様のお越しをお待ちしております。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg",
+                "num": "その 6"
+            },
+            {
+                "id": 7,
+                "title": "リピート率90%以上のフットマッサージ併設(東屋タイバンルン１号店調べ)",
+                "content": "東屋が誇る自慢のフットマッサージを露天風呂とともにご堪能ください。疲れた体を露天風呂と本格フットマッサージが癒してくれます。フットマッサージとは言ってもリクライニングシートで頭から背中まで全身をくまなく施術します。ただ気持ちいいだけのマッサージではなく、終えた後に体が楽になる痛気持ちいい本格マッサージです。施術はすべて中国マスターにより指導を受けたスタッフが対応させていただきます。ホーチミンはタイバンルン１号店、ハノイはハイバーチュン1号店、キンマー2号店、リンラン店、ダナンはダナン店に併設されています。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
+                "num": "その 7"
+            },
+            {
+                "id": 8,
+                "title": "日本食レストラン併設",
+                "content": "在住者にも人気の日本食居酒屋が各店舗に併設されています。料理・お酒の種類も豊富なので毎日の夜ご飯の場所に困ることなくご滞在いただけます。もちろん露天風呂の後の一杯にもぜひご利用ください。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027480/AzumayaWeb/rrpqdg6q72mdlduygwfa.jpg",
+                "num": "その 8"
+            }
+        ]
+    },
+    "home": {
+        "name": "東屋ホテル",
+        "news_title": "ニュース",
+        "welcome_title": "ようこそ、東屋ホテルへ",
+        "welcome_sub-title": "海外出張者のための心安らぐ空間を",
+        "welcome_content":"現在、先進国からここベトナムにビジネス出張される方が年々ふえております。そんな中、言葉や食事など初めてのベトナムへの不安も大きいはずです。ここ東屋では“和”をコンセプトに日本から来た出張者の心安らぐ拠点となれるように日々努力しております。海外出張者のために、異国を感じさせない心安らぐ空間をここホーチミンでも提供したい！！”そういう思いから仕事の疲れを癒す“露天風呂”と“フットマッサージ”そして一日の活力となる“こだわりの和朝食”を提供しております。受付には日本語対応可能なスタッフが常駐、全室でNHKやその他民放、WOWOW等の日本語放送視聴可能、空港からの送迎サービス、ランドリ－サービスを始め、無料高速インターネットやレンタカー・ツアー手配代行など安心して異国での生活をお楽しみいただけるよう最善のおもてなしを心がけております。","line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
+        "line_btn": "詳細はここをクリック",
+        "new_item": [
+            {
+                "id": 1,
+                "new": "東屋ホテルキンマー2号店　女性露天風呂オープンのお知らせ",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "07月",
+                "day": "7日",
+                "year": "2023年",
+                "location": "Hanoi"
+            },
+            {
+                "id": 2,
+                "new": "★ ベトナム付加価値税(VAT)変更のお知らせ★ ",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "07月",
+                "day": "7日",
+                "year": "2023年",
+                "location": "All Branches"
+            },
+            {
+                "id": 3,
+                "new": "東屋リンランマッサージ再開のお知らせ",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "07月",
+                "day": "7日",
+                "year": "2023年",
+                "location": "Hanoi"
+            },
+            {
+                "id": 4,
+                "new": "2023 年テト(旧正月)期間のご案内",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "07月",
+                "day": "7日",
+                "year": "2023年",
+                "location": "All Branches"
+            }
+        ]
+    }
+}

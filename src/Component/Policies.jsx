@@ -2,38 +2,38 @@ import {Link} from 'react-router-dom'
 export default function Policies(){
     return(
         <div> 
-            <div class="policies__header">
-                    <div className="container">
-                        <div class="row">
-                            <div class="col-md-12">
+            <div className="policies__header">
+                    <div classNameName="container">
+                        <div className="row">
+                            <div className="col-md-12">
                                 <h1>Hotel  Policies</h1>
                             </div>
                         </div>
                     </div>
             </div>
-            <div class="re__breadcrumb">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12"></div>
-                        <ul class="breadcrumb__list">
-                                   <li class = "breadcrumb__item">
+            <div className="re__breadcrumb">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12"></div>
+                        <ul className="breadcrumb__list">
+                                   <li className = "breadcrumb__item">
                                        <Link  to="/Component/Home">
-                                           <i class="fa-solid fa-house"></i>
+                                           <i className="fa-solid fa-house"></i>
                                        </Link>
                                    </li>
-                                   <li class = "breadcrumb__item">
+                                   <li className = "breadcrumb__item">
                                        /
                                    </li>
-                                   <li class = "breadcrumb__item">
-                                       <Link class ="breadcrumb__title" to = '/Component/Policies'>Hotel Policies</Link>
+                                   <li className = "breadcrumb__item">
+                                       <Link className ="breadcrumb__title" to = '/Component/Policies'>Hotel Policies</Link>
                                    </li>
                        </ul>
                     </div>
                 </div>
             </div>
-        <div class="content__policies">
-        <div class="reservation__container">
-        <table class="table__policies">
+        <div className="content__policies">
+        <div className="reservation__container">
+        <table className="table__policies">
                 <tr>
                     <td style={{fontWeight: 600}}>Check-in</td>
                     <td>After 15:00</td>

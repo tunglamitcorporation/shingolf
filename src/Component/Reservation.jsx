@@ -1,13 +1,87 @@
 import {Link} from 'react-router-dom'
-import Booking from './Booking'
+import {useState} from "react"
 function Reservation() {
-    return(
+
+    const city = [
+        {
+            id:1,
+            name: 'Ha Noi'
+        },
+        {
+            id:2,
+            name: 'Ho Chi Minh'
+        },
+        {
+            id:3,
+            name: 'Da Nang'
+        },
+        {
+            id:4,
+            name: 'Hai Phong'
+        }
+    ]
+    const branch = [
+        {
+            branch_id: 1,
+            city_id: 1,
+            branch_name: 'Azumaya Hai Ba Trung 1'
+        },
+        {
+            branch_id: 2,
+            city_id: 1,
+            branch_name: 'Azumaya Kim Ma 2'
+        }, 
+        {
+            branch_id: 3,
+            city_id: 1,
+            branch_name: 'Azumaya Kim Ma 3'
+        }, 
+        {
+            branch_id: 4,
+            city_id: 1,
+            branch_name: 'Azumaya Linh Lang'
+        },
+        {
+            branch_id: 5,
+            city_id: 2,
+            branch_name: 'Azumaya Le Thanh Ton'
+        },
+        {
+            branch_id: 6,
+            city_id: 2,
+            branch_name: 'Azumaya Thai Van Lung 1'
+        }, 
+        {
+            branch_id: 7,
+            city_id: 2,
+            branch_name: 'Azumaya Thai Van Lung 2'
+        }, 
+        {
+            branch_id: 8,
+            city_id: 2,
+            branch_name: 'Azumaya Annex'
+        },
+        {
+            branch_id: 9,
+            city_id: 3,
+            branch_name: 'Azumaya Da Nang Hotel'
+        },
+        {
+            branch_id: 10,
+            city_id: 4,
+            branch_name: 'Azumaya Hai Phong Hotel'
+        }, 
+        
+    ]   
+        const [selectedCity, setSelectedCity] = useState('')
+        const filteredBranches = branch.filter(b => b.city_id == selectedCity)
+       return(
         <div>
             <div className="reservation__content">
             <div className="container">
                 <div className="row">
-                    <div className="col offset-4">
-                        <div className="reservation__title">Reservation</div>
+                    <div className="col-md-12">
+                        <h1>Reservation</h1>
                     </div>
                 </div>
             </div>
@@ -39,63 +113,34 @@ function Reservation() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="hotel__location-select">
-                            <div className="hotel__location-select-city">
-                            <input type="radio" name="rCity" className = "radioBoxCity" id="rbcHCM" value="HCM" checked />
-                                <label className = "rbcLabel" for="rbcHCM">
-                                    <b>Ho Chi Minh City</b> 
-                                </label>
-                                </div>
-                            <div className="hotel__location-select-city">
-                                    <input type="radio" name="rCity" className = "radioBoxCity" id="rbcHN" value="HN"  />
-                                    <label className = "rbcLabel" for="rbcHN">
-                                        <b>Ha Noi City</b> 
-                                    </label>
-                                </div>
-                            <div className="hotel__location-select-city">
-                                    <input type="radio" name="rCity" className = "radioBoxCity" id="rbcDN" value="DN"  />
-                                    <label className = "rbcLabel" for="rbcDN">
-                                        <b>Da Nang City</b> 
-                                    </label>
-                                </div>
-                            <div className="hotel__location-select-city">
-                                    <input type="radio" name="rCity" className = "radioBoxCity" id="rbcHP" value="HP"  />
-                                    <label className = "rbcLabel" for="rbcHP">
-                                        <b>Hai Phong City</b> 
-                                    </label>
-                                </div>
-                            </div>
+                    <div className="base__form">
+                        <div className="name__title">Choice of Branch: 
+                        <span className="required__note">*</span>
                         </div>
-                        
+                        <form className="form__content">
+                            <select 
+                            id={selectedCity}
+                            value={selectedCity}
+                            onChange={(e)=>setSelectedCity(e.target.value)}>
+                            <option value='' disabled selected hidden>Please select a city</option>
+                            {city.map(item => (
+                                <option key={item.id} value={item.id}>{item.name}</option>
+                            ))}
+                            </select>
+                        </form>
+                        <form className='form__content'>
+                            <select 
+                            disabled={!selectedCity}>
+                                {filteredBranches.map(item =>(
+                                    <option key={item.branch_id}>{item.branch_name}</option>
+                                ))}
+                            </select>
+                        </form>
+                    </div>
+                        </div>
                     </div>
                 </div>
-            <div className="branch__choice">
-                            <div className="base__form">
-                                <div className="name__title">Choice of Branch
-                                    <span className="required__note">*</span>
-                                </div>
-                                    <div className="brand__choice-name">
-                                        <ul>
-                                            <li className="brand__hcm-hotel-name">
-                                                <input type="radio" name="rbHotelName" id="rbHotelName__LTT" className ="hcm__hotel-name" value="Le Thanh Ton" />
-                                                <label for="rbHotelName__LTT">Le Thanh Ton Hotel</label>
-                                            </li>
-                                            <li className="brand__hcm-hotel-name">
-                                                <input type="radio" name="rbHotelName" id="rbHotelName__TVL1"  className ="hcm__hotel-name" value="Thai Van Lung 1" />
-                                                <label for="rbHotelName__LTT">Thai Van Lung 1</label>
-                                            </li>
-                                            <li className="brand__hcm-hotel-name">
-                                                <input type="radio" name="rbHotelName" id="rbHotelName__TVL2"  className ="hcm__hotel-name" value="Thai Van Lung 2" />
-                                                <label for="rbHotelName__LTT">Thai Van Lung 2</label>
-                                            </li>
-                                            <li className="brand__hcm-hotel-name">
-                                                <input type="radio" name="rbHotelName" id="rbHotelName__Annex"  className ="hcm__hotel-name" value="Azumaya Annex" />
-                                                <label for="rbHotelName__LTT">Azumaya Annex</label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-            </div>
+           
             <div className="booking__information">
                 <div className="booking__information-container">
                     <div className="base__form">
@@ -103,7 +148,7 @@ function Reservation() {
                             <span className = "required__note">*</span>
                         </div>
                         <div className="form__content">
-                            <input placeholder="Check-in date" type="text" id="myID" className = "check-in-date" />
+                            <input placeholder="Check-in date" type="text" className = "check-in-date" />
                         </div>
                     </div>
                     <div className="base__form">
@@ -111,7 +156,7 @@ function Reservation() {
                             <span className = "required__note">*</span>
                         </div>
                         <div className="form__content">
-                            <input placeholder="Check-out date" type="text" id="myID" className = "check-out-date" />
+                            <input placeholder="Check-out date" type="text" className = "check-out-date" />
                         </div>
                     </div>
                     <div className="base__form">
@@ -120,7 +165,7 @@ function Reservation() {
                         (Normal check-in : from 3pm)
                         </small>
                         </div>
-                        <div className="form__content">
+                        <form className="form__content">
                             <select className="check-in-time">
                                 <option value="15:00">15:00</option>
                                 <option value="16:00">16:00</option>
@@ -132,9 +177,8 @@ function Reservation() {
                                 <option value="22:00">22:00</option>
                                 <option value="23:00">23:00</option>
                                 <option value="24:00">24:00</option>
-
                             </select>
-                        </div>
+                        </form>
                     </div>
                     <div className="base__form">
                         <div className="name__title">Check-out time
@@ -223,10 +267,10 @@ function Reservation() {
                             <span className="required__note">*</span>
                         </div>
                         <div className="form__content">
-                                <input type="radio" name="gender" id="gMale" className="guest-gender" value="male" checked />
-                                <label for="gMale" >Mr.</label>
+                                <input type="radio" name="gender" id="gMale" className="guest-gender" value="male" defaultChecked />
+                                <label htmlFor="gMale" >Mr.</label>
                                 <input type="radio" name="gender" id ="gFemale" className="guest-gender" value="female" />
-                                <label for="gFemale" >Ms.</label> 
+                                <label htmlFor="gFemale" >Ms.</label> 
                         </div>
                     </div>
                     <div className="base__form">
@@ -266,28 +310,28 @@ function Reservation() {
                     <div className="base__form">
                         <div className="name__title">Room type</div>
                     <div className="form__content">
-                        <input type="radio" name="roomType" id="smk" className="roomType" value="Smoking" checked />
-                        <label for="smk">Smoking</label>
+                        <input type="radio" name="roomType" id="smk" className="roomType" value="Smoking" defaultChecked />
+                        <label htmlFor="smk">Smoking</label>
                         <input type="radio" name="roomType" id="no-smk" className="roomType" value="Non-Smoking" />
-                <label for="no-smk">Non-Smoking</label>
+                <label htmlFor="no-smk">Non-Smoking</label>
                     </div>
                     </div>
                     <div className="base__form">
                         <div className="name__title">Contract</div>
                     <div className="form__content">
-                            <input type="radio" name="contract" id = "hContract" className="Contract" value="No Contract" checked />
-                            <label for="hContract">No Contract</label>
+                            <input type="radio" name="contract" id = "hContract" className="Contract" value="No Contract" defaultChecked />
+                            <label htmlFor="hContract">No Contract</label>
                             <input type="radio" name="contract" id="hContract" className="Contract" value="Contract" />
-                            <label for="hContract">Have Contract</label>
+                            <label htmlFor="hContract">Have Contract</label>
                         </div>
                     </div>
                     <div className="base__form">
                         <div className="name__title">VAT Invoice</div>
                         <div className="form__content">
-                            <input type="radio" name="vatInvoice" id="no-need" className="VATInvoice" value="No Necessarily" checked />
-                            <label for="no-need">No Necessarily</label>
+                            <input type="radio" name="vatInvoice" id="no-need" className="VATInvoice" value="No Necessarily" defaultChecked />
+                            <label htmlFor="no-need">No Necessarily</label>
                             <input type="radio" name="vatInvoice" id="need" className="VATInvoice" value="Necessarily" />
-                            <label for="need">Necessarily</label><br />
+                            <label htmlFor="need">Necessarily</label><br />
                             <span className="required__note">VAT is Value Added tax. It is a tax on the sale of most goods and services. VAT revenues are collected through businesses who are registered for VAT</span>
 
                         </div>
@@ -313,13 +357,13 @@ function Reservation() {
                         </div>
                     <div className="form__content">
                         <input type="checkbox" className="special" id="spcRequire" value="Pick-up" />
-                        <label for="spcRequire">Pick-up</label><br />
+                        <label htmlFor="spcRequire">Pick-up</label><br />
                         <input type="checkbox" className="special" id="spcRequire" value="Drop-off" />
-                        <label for="spcRequire">Drop-off</label><br />
+                        <label htmlFor="spcRequire">Drop-off</label><br />
                         <input type="checkbox" className="special" id="spcRequire" value="Early check-in" />
-                        <label for="spcRequire">Early check-in</label><br />
+                        <label htmlFor="spcRequire">Early check-in</label><br />
                         <input type="checkbox" className="special" id="spcRequire" value="Late check-out" />
-                        <label for="spcRequire">Late check-out</label><br />
+                        <label htmlFor="spcRequire">Late check-out</label><br />
                     </div>
                     <div className="form__content">
                         <textarea className="text-note" cols="80" rows="10" placeholder="Please let us know if you have any request"></textarea>
@@ -328,10 +372,10 @@ function Reservation() {
                     <div className="base__form">
                         <div className="name__title">Name of person who makes reservation:</div>
                         <div className="form__content">
-                            <input type="radio" name="Booker" id="booker" checked value="Same as person who will stay" />
-                            <label for="booker">Same as person who will stay</label><br />
+                            <input type="radio" name="Booker" id="booker" defaultdefaultChecked value="Same as person who will stay" />
+                            <label htmlFor="booker">Same as person who will stay</label><br />
                             <input type="radio" name="Booker" id="booker" value="Different with who will stay" />
-                            <label for="booker"> Different with who will stay</label>
+                            <label htmlFor="booker"> Different with who will stay</label>
                         </div>
                     </div>
                     <div className="base__form">

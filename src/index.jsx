@@ -7,11 +7,17 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import {BrowserRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+import './i18n'
+import { I18nextProvider } from 'react-i18next';
 root.render(
   // <React.StrictMode>
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+
+      <BrowserRouter>
+        <I18nextProvider>
+           <App />
+        </I18nextProvider>
+      </BrowserRouter>
+   
 
   // </React.StrictMode>
   

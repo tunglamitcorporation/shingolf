@@ -121,6 +121,7 @@ code {
   text-decoration: none;
   color: var(--white--color);
   font-size: 1.4rem;
+  font-weight: bold;
   line-height: 84px;
 }
 .header__navbar-link-branch:hover{
@@ -141,6 +142,7 @@ code {
   text-decoration: none;
   color: var(--white--color);
   font-size: 1.4rem;
+  font-weight: bold;
   line-height: 94px;
   transition: all 0.2s ease;
 }
@@ -157,7 +159,7 @@ code {
   list-style: none;
   top: 90px;
   right: 10px;
-  width: 120px;
+  width: 125px;
   background-color: var(--primary--color);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -223,6 +225,7 @@ code {
   font-size: 10rem;
   line-height: 10rem;
   color: var(--white--color);
+  font-weight: bold;
   text-transform: uppercase;
 }
 .content__title-logo{
@@ -369,6 +372,14 @@ code {
   
 }
 .content__news-branch--bg{
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+  height: 22px;
+  line-height: 22px;
+  color: var(--white--color);
+  font-weight: 600;
+  cursor: default;
   background-color: #F75A5A;
 }
 .content__news-branch--bg2{
@@ -573,18 +584,17 @@ code {
 }
 /* Reservation */
 .reservation__content{
-  padding: 90px 0;
-  position: relative;
-  width: auto;
+  width: 100%;
+  padding: 100px 0;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/rd2qg5wkfxdoarlvcuwl.jpg) center center / cover no-repeat fixed;
-  height: 280px;
+  background-attachment: fixed;
+  position: relative;
+  text-align: center;
 }
-.reservation__title{
-  position: absolute;
-  top: 40%;
-  color: var(--white--color);
-  font-size: 6rem;
-  font-weight: 600;
+.reservation__content h1{
+    color: #fff;
+    font-size: 52px;
+    font-weight: bold
 }
 .re__breadcrumb{
   margin: 30px 0;
@@ -622,19 +632,6 @@ code {
   margin: 0 0 40px 0;
   height: 100%;
   width: 100%;
-}
-.hotel__location-select {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin-top: 20px;
-
-}
-.hotel__location-select-city{
-  margin-left: 20px;
-  margin-top: 20px;
-  float: left;
-
 }
 .rbcLabel{
   font-size: 2.5rem;
@@ -800,7 +797,13 @@ code {
   position: relative;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/wnyhgvfrdrrbyjkbb501.jpg) center center / cover no-repeat;
   height: 280px;
+  text-align: center;
   background-attachment: fixed;
+}
+.service__header h1{
+    color: #fff;
+    font-size: 52px;
+    font-weight: bold
 }
 .service__container {
   width: 100%;
@@ -811,10 +814,23 @@ code {
   border: solid 1px #c5c5c5;
   width: 100%;
   height: 50px;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.service__location:hover{
+  color: white;
+  border: solid 1px #331464;
+  background-color: #331464;
+  animation: fadeIn 0.3s linear;
 
 }
 .service__list {
@@ -828,6 +844,8 @@ code {
   padding: 0;
   border-bottom: 5px solid #482979;
   margin-bottom: 0;
+  animation: fadeIn 0.3s linear;
+
 }
 .service {
   width: 150px;
@@ -839,6 +857,19 @@ code {
   border-bottom: 0;
   color: #c5c5c5;
   cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+}
+.service:hover{
+  color: white;
+  border: solid 1px #331464;
+  background-color: #331464;
+  animation: fadeIn 0.3s linear;
 
 }
 .service__content{
@@ -849,6 +880,7 @@ code {
   text-align: center;
   overflow: hidden;
   margin-bottom: 40px;
+  animation: fadeIn 0.3s linear;
 }
 .service__active{
   background-color: var(--primary--color);
@@ -857,6 +889,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.3s linear;
 }
 .service__content-title,
 .service__content-note {
@@ -872,19 +905,44 @@ code {
 }
 .service__content-note {
   height: 100%;
+  padding: 10px;;
   
 }
 .service__table th,
 .service__table td,
 .service__content-body {
   border: solid 1px #c5c5c5;
-  height: 100px;
-  font-size: 1.2rem;
+  height: 100%;
+  padding: 1.4rem 0;
+  font-size: 1.4rem;
   text-align: center;
   table-layout: fixed;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
 }
-.service__table{
+.service__content-body--table th{
+  border: solid 1px #c5c5c5;
+  height: 100px;
+  font-size: 1.4rem;
+  text-align: center;
+  table-layout: fixed;
+  padding: 10px;
+}
+.service__content-body--table td{
+  border: solid 1px #c5c5c5;
+  height: 100px;
+  font-size: 1.4rem;
+  text-align: left;
+  table-layout: fixed;
+  padding: 10px;
+
+}
+.service__table,
+.service__content-body--table{
   width: 100%;
 }
 .room__table {
@@ -1014,7 +1072,31 @@ a:hover {
   width: 100%;
   padding: 0 30px;
 }
-
+.top-header{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: #2A2F3C;
+}
+.top-header p {
+  color: #acacac;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.btn-ja {
+  width: 30px;
+  height: 20px;
+  border: none;
+  background: url('https://cdn-icons-png.flaticon.com/512/555/555646.png') center center / contain no-repeat;
+}
+.btn-en {
+  width: 30px;
+  height: 20px;
+  border: none;
+  background: url('https://cdn-icons-png.flaticon.com/512/4060/4060233.png') center center / contain no-repeat;
+}
 @media (min-width: 1200px) {
   .container{
     max-width: 1340px !important;
@@ -1106,12 +1188,7 @@ a:hover {
 .footer__container3{
   height: 100px;
 }
-.reservation__content{
-    background-attachment: inherit;
-    background-size: cover;
-    width: auto;
-    height: 180px;
-}
+
 .btn__top:hover{
   color: #ffffff;
   background-color: #482979;
@@ -1157,11 +1234,6 @@ a:hover {
 .content__feature-item{
   margin-left: 40px;
 }
-.reservation__content{
-  background-attachment: inherit;
-  background-size: cover;
-  width: auto;
-  height: 180px;
-}
+
 }
 

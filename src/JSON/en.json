@@ -1,0 +1,205 @@
+{
+    "header": {
+        "top-header":"★ Business hotel with Japanese breakfast and Open-air hot tub ★",
+        "item1": "Home",
+        "item2": "Hotel Policies",
+        "item3": "Reservation",
+        "item4": "Feature",
+        "item5": "Service",
+        "item6": "Contract",
+        "item7": "Ha Noi",
+        "item8": "Ho Chi Minh",
+        "item9": "Hai Phong",
+        "item10": "Da Nang",
+        "item11": "Cambodia",
+        "item12": "Branch"
+    },
+    "booking": {
+        "title": "Booking",
+        "date_in": "Check in date",
+        "date_out": "Check out date",
+        "reserve": "Reserve",
+        "city": [
+            {
+                "id": 1,
+                "city_name": "Ha Noi"
+            },
+            {
+                "id": 2,
+                "city_name": "Ho Chi Minh"
+            },
+            {
+                "id": 3,
+                "city_name": "Da Nang"
+            },
+            {
+                "id": 4,
+                "city_name": "Hai Phong"
+            }
+        ],
+        "branch": [
+            [
+                {
+                    "branch_id": 1,
+                    "city_id": 1,
+                    "branch_name": "Azumaya Hai Ba Trung 1"
+                },
+                {
+                    "branch_id": 2,
+                    "city_id": 1,
+                    "branch_name": "Azumaya Kim Ma 2"
+                },
+                {
+                    "branch_id": 3,
+                    "city_id": 1,
+                    "branch_name": "Azumaya Kim Ma 3"
+                },
+                {
+                    "branch_id": 4,
+                    "city_id": 1,
+                    "branch_name": "Azumaya Linh Lang"
+                },
+                {
+                    "branch_id": 5,
+                    "city_id": 2,
+                    "branch_name": "Azumaya Le Thanh Ton"
+                },
+                {
+                    "branch_id": 6,
+                    "city_id": 2,
+                    "branch_name": "Azumaya Thai Van Lung 1"
+                },
+                {
+                    "branch_id": 7,
+                    "city_id": 2,
+                    "branch_name": "Azumaya Thai Van Lung 2"
+                },
+                {
+                    "branch_id": 8,
+                    "city_id": 2,
+                    "branch_name": "Azumaya Annex"
+                },
+                {
+                    "branch_id": 9,
+                    "city_id": 3,
+                    "branch_name": "Azumaya Da Nang Hotel"
+                },
+                {
+                    "branch_id": 10,
+                    "city_id": 4,
+                    "branch_name": "Azumaya Hai Phong Hotel"
+                }
+            ]
+        ]
+    },
+    "feature": {
+        "name": "Feature",
+        "main_title": "Azumaya Hotel's 8 Characteristics",
+        "main_content": "Thank you always for your kind attention to Azumaya Hotel. Azumaya Hotel is a Japanese-style business hotel opened in Ho Chi Minh for whom are stressed out with their business trip and looking for comfortable place to be relieved. The first branch opened in Thai Van Lung St. in 2011 and now we have 5 branches in Ha Noi, one in Da Nang, 4 branches in Ho Chi Minh. We serve 8 characteristics of service with high-standard quality in all branches.",
+        "feature_item": [
+            {
+                "id": 1,
+                "title": "Reasonable price from $40 per night",
+                "content": "All rooms have shower toilet and amenity which are ordered from Japanese supplyer, 8 kinds of amenities including small head toothbrush, shaving and conditioner are prepared. You can stay with cheaper price with signing our contract. We would like offer more discounts for long term resident. Please feel free to contact to our receptionist.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
+                "num": "No 1"
+            },
+            {
+                "id": 2,
+                "title": "Best location for Japanese businessmen",
+                "content": "Every branches are located in center of the area which has many Japanese restaurants and Japanese pubs. Therefore, even if it’s the first time visiting Vietnam, the customers can stay with safe and comfortable feeling. For the companies which send the business traveler from Japan, it is fully safe for their businessmen to walk around by themselves.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/y59yjf0ygam0ohxazsfm.jpg",
+                "num": "No 2"
+            },
+            {
+                "id": 3,
+                "title": "Japanese-style open-air hot bath with Sauna",
+                "content": "Azumaya Hotel is the pioneer of providing Japanese style open air hot bath, an “oasis” for Japanese, in Ho Chi Minh. Before commuting and after coming back from a long day work, please feel free to soak into the “oasis” and relax. The business hour is from 6am to 10am in the morning and 5pm to 12am in the evening for weekdays. For weekends, we are open all day long from 7am to 12am. (*Each branch have different business hour, so please check the branch information.) It is also available for the visitors with 100.000VND. (The time & price depends on each branches).",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
+                "num": "No 3"
+            },
+            {
+                "id": 4,
+                "title": "Japanese breakfast",
+                "content": "For Japanese business travelers, high performance of working in foreign countries only can be produced by Japanese breakfast. Grilled fish, stewed meat, fried seafood, sauteed vegetables, and some other remarkable Japanese dishes can be enjoyed only in Azumaya Hotel. Both authentic Japanese breakfast set and continental set can be enjoyed, but there are also bowl dish, curry rice, gingered sautéed pork set, and other wide-range of Japanese set menu you can choose from. Buffet is served for limited time from 6am to 8am, and set menu is served after buffet time from 8am to 10am. We also serve the breakfast for visitors from 150.000VND (The price depends on each branches).",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
+                "num": "No 4"
+            },
+            {
+                "id": 5,
+                "title": "Japanese TV shows available",
+                "content": "You can watch the main local Japanese TV shows such as NHK, TBS, Fuji TV, Nihon TV in live same as you do in Japan. Please lean back and relax watching your favorite TV shows.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
+                "num": "No 5"
+            },
+            {
+                "id": 6,
+                "title": "Japanese hospitality",
+                "content": "We serve you with our Japanese available staff and manager for whom are not confident with English speaking. Japanese way of saying “Have a nice day” and “Welcome back” is taught well to the staff for our customers to feel safe staying in Vietnam. Moreover, we are kindly waiting for your stay with our smile and high spirit of hospitality.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg",
+                "num": "No 6"
+            },
+            {
+                "id": 7,
+                "title": "Original style foot massage",
+                "content": "Our well-trained massage staffs will serve completely outstanding and memorable massage just for you to soothe your hard day of working. With over 90% are the repeat customers in Vietnam, we have absolute confident in our massage. Mainly we rub and push the point from head, shoulder, back, and finally to feet. To release the fatigue find yourself great pleasure at our massage. You can enjoy in Thai Van Lung 1 branch in Ho Chi Minh, Hai Ba Trung 1 branch, Kim Ma 2 branch and Linh Lang branch in Ha Noi, and Da Nang branch.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
+                "num": "No 7"
+            },
+            {
+                "id": 8,
+                "title": "Japanese Restaurant",
+                "content": "We have Japanese restaurant combined together in hotel that is popular to both residents and travelers. Please enjoy and satisfy your appetite with your favorite Azumaya restauran.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027480/AzumayaWeb/rrpqdg6q72mdlduygwfa.jpg",
+                "num": "No 8"
+            }
+        ]
+    },
+    "home": {
+        "name": "Azumaya Hotel",
+        "news_title": "What's new ?",
+        "welcome_title": "Welcome to Azumaya Hotel",
+        "welcome_sub-title": "Comfort served for business travelers",
+        "welcome_content": "Nowadays, more and more businessmen from advanced countries move into Vietnam. However, during the stay, there must be many anxieties to face; such as languages and food. For their distress, we had one mission came into our mind. “Why don’t we provide comfortable space to relieve their stress?” The answer was clear: we prepare Rotenburo (open air hot bath) and foot massage to soothe their tiredness, and authentic Japanese breakfast & continental breakfast for their daily vitality. Following ― Japanese-available receptionist, pick-up / drop-off service from / to airport, free laundry service for long-stay customers, free high-speed Wi-Fi service, Japanese TV program, arrangement service for rental car / tour, etc. Moreover, “Omotenashi” (Japanese hospitality) is always in our heart to serve you a pleasure in life of foreign land.",
+        "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
+        "line_btn": "Click here for detail",
+        "new_item": [
+            {
+                "id": 1,
+                "new": " Open women Rotenburo in Azumaya Kim Ma 2 Branch",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "Jul",
+                "day": "7th",
+                "year": 2023,
+                "location": "Hanoi"
+            },
+            {
+                "id": 2,
+                "new": "★ Notice of Vietnam Value Added Tax (VAT) change ★",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "Jul",
+                "day": "7th",
+                "year": 2023,
+                "location": "All Branches"
+            },
+            {
+                "id": 3,
+                "new": " 2023 Tet (Lunar New Year) Information",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "Jul",
+                "day": "7th",
+                "year": 2023,
+                "location": "Hanoi"
+            },
+            {
+                "id": 4,
+                "new": " Azumaya Thai Van Lung 1 Rotenburo Visitor price change",
+                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                "month": "Jul",
+                "day": "7th",
+                "year": 2023,
+                "location": "All Branches"
+            }
+        ]
+    }
+}
