@@ -6,10 +6,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,1);
+  opacity: 0.1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #290E53;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #290E53;
 }
 .header, .header__PC{
   display: flex;
@@ -89,9 +107,11 @@ code {
   transform: translateX(0);
   opacity: 1 linear 0.2s;
 }
-
-.header__logo{
+.header__logo img{
   margin-left: 15px;
+  padding-bottom: 15px ;
+  height: 100px;
+  width: 150px;
 }
 .header__navbar-list{
   height: 100%;
@@ -222,8 +242,8 @@ code {
   position: absolute;
   margin: auto;
   top: 30%;
-  font-size: 10rem;
-  line-height: 10rem;
+  font-size: 12rem;
+  line-height: 12rem;
   color: var(--white--color);
   font-weight: bold;
   text-transform: uppercase;
@@ -231,6 +251,8 @@ code {
 .content__title-logo{
   position: absolute;
   top: 20%;
+  height: 140px;
+  width: 250px;
   
 }
 .content__branch-vn{
@@ -1084,6 +1106,10 @@ a:hover {
   font-size: 1.4rem;
   text-align: center;
   margin-bottom: 0;
+}
+.btn-lang{
+  position: absolute;
+  right: 0;
 }
 .btn-ja {
   width: 30px;

@@ -14,7 +14,7 @@ function Header() {
                     <div className='col-md-11'>
                     <p style={{marginLeft:'110px'}}>{t('header.top-header')}</p>
                     </div>
-                    <div className='col-md-1'>
+                    <div className='btn-lang col-md-1'>
                     <button className ='btn-en' onClick={()=>changeLanguage('en')}></button>                
                     <button className ='btn-ja' onClick={()=>changeLanguage('ja')}></button>  
                     </div>
@@ -28,7 +28,7 @@ function Header() {
                     <div className = 'row'>
                         <div className='col-md-12'>
                             <Link to ='/'>
-                                <img src='https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png' alt="logo"  />
+                                <img src='https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png' alt="logo"  />
                             </Link>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import "flatpickr/dist/themes/airbnb.css";
 import Booking from "./Booking";
 import { useTranslation } from 'react-i18next'
 import classNames from "classnames";
-
+import { AnimatedOnScroll } from "react-animated-css-onscroll";
 export default function Home(){
     const {t} = useTranslation()
     const featureItem = t('feature.feature_item', {returnObjects:true})
@@ -19,7 +19,7 @@ export default function Home(){
          <div className="content__background">
          </div>
          <div className="content__title">
-             <img className= "content__title-logo" src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png" alt="" />
+             <img className= "content__title-logo" src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png" alt="" />
              <span>{t('home.name')}</span>
          </div>
          <div className="container-fluid">
@@ -52,6 +52,7 @@ export default function Home(){
     <div className="is-sticky">
     <Booking />
     </div>
+    <AnimatedOnScroll>
     <div className="content__news">
         <div className="container">
             <div className="row">
@@ -80,6 +81,8 @@ export default function Home(){
             
                  
     </div>
+    </AnimatedOnScroll>
+    <AnimatedOnScroll>
     <div className="content__welcome">
             <div className="container">
                 <div className="row">
@@ -93,6 +96,8 @@ export default function Home(){
             </div>
         </div>
     </div>
+    </AnimatedOnScroll>
+    <AnimatedOnScroll>
     <div className="content__feature">
             <div className="content__feature-title">{t('feature.name')}</div>
         <div className="container contain">
@@ -115,8 +120,9 @@ export default function Home(){
                     ))}
         </div>
         </div>
-        </div>
-        </div>  
+    </div>
+    </AnimatedOnScroll>
+    </div>  
 
    )
 
