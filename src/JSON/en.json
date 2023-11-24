@@ -201,5 +201,47 @@
                 "location": "All Branches"
             }
         ]
+    },
+    "policy":{
+        "title":"Hotel Policies",
+        "data":[
+            {
+                "name":"CHECK-IN",
+                "content":"After 15:00."
+            },
+            {
+                "name":"CHECK-OUT",
+                "content":"Until 12:00"
+            },
+            {
+                "name":"EARLY CHECK-IN",
+                "content":"Will be subject to the availability of hotel room status.- Check in early until 10:00 : 100% charged of one night room rate.- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
+            },
+            {
+                "name":"CHECK-OUT LATE",
+                "content":"Will be subject to the availability of hotel room status. - Check out late until 18:00 : 50% charged of the one night.- Check out late from 18:00 : 100% charged of the one night."
+            },
+            {
+                "name":"NO SHOW",
+                "content":"100% charged one night."
+            },
+            {
+                "name":"LATE CANCELLATION",
+                "content":"- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
+            },
+            {
+                "name":"EARLY CHECK-OUT",
+                "content":"- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
+            },
+            {
+                "name":"Exchange rate is based on",
+                "content":"The guest with Corporate Contract: the hotel rate on check in date is applied.The guest without Corporate Contract: the selling rate from Vietcombank at 6pm on check in date is applied."
+            },
+            {
+                "name":"Please be noted ",
+                "content":"1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.2.The valid Passport ( non Vietnamese ) or ID ( Vietnamese ) is required for guest registration as Vietnamese laws."
+            }
+
+        ]
     }
 }

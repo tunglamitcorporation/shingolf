@@ -643,13 +643,11 @@ code {
   line-height: 1.6rem;
 
 }
-.reservation {
+.reservation__container{
   margin: 60px 60px;
-  height: 2280px;
+  height: 100%;
   border: 1px solid rgba(0,0,0,0.3);
 
-}
-.reservation__container{
   padding: 30px;
   margin: 0 0 40px 0;
   height: 100%;
@@ -727,7 +725,7 @@ code {
   font-size: 1.4rem;
 }
 .table__policies{
-  width: 100%;
+  width: 50%;
 }
 .feature__title{
   position: absolute;

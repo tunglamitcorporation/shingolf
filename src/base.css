@@ -30,6 +30,7 @@ label{
     font-weight: normal;
     font-size: 1.4rem;
     margin-right: 20px;
+    margin-left: 10px;
 }
   
 /* .grid, .grid-1{
@@ -96,10 +97,6 @@ label{
     position: absolute;
 }
 .name__title{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 180px;
     padding: 11px;
     font-weight: bold;
     font-size: 1.4rem;
@@ -109,25 +106,16 @@ label{
     font-size: 1.2rem;
 }
 .base__form{
-    position: relative;
     padding-left: 200px;
     margin: 30px 0 30px 0;
 }
-.form__content{
+.form__content {
     margin-bottom: 20px;
-    position: relative;
-    top: 12px;
-}
-.form__content input[type="text"],
-.form__content select{
     height: 42px;
-    line-height: 42px;
     border: solid 1px #c5c5c5;
     box-shadow: 0 0 0;
     padding: 3px 26px 0 8px;
     font-size: 1.4rem;
-    position: relative;
-    width: 200px;
     margin-right: 10px;
 }
 .form__content select{
@@ -137,7 +125,6 @@ label{
     margin-right: 5px;
 }
 .form__input{
-    position: relative;
     display: inline-block;
 }
 ::placeholder{
