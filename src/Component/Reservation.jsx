@@ -73,8 +73,119 @@ function Reservation() {
   ];
   const [selectedCity, setSelectedCity] = useState("");
   const filteredBranches = branch.filter((b) => b.city_id == selectedCity);
+  const [show, setShow] = useState(false)
+  const [status, setStatus] = useState(0)
+  const [text, setText] = useState('More +')
+
+  const handleSelected =(status) => {
+    setStatus(status)
+  }
+  const handleClick = () => {
+    text === 'More +' ? setText('Remove') : setText('More +')
+    setShow(!show)
+    
+  }
+  function SecondGuest() {
+    return(
+      <div className="container">
+      <div className="row guest-information">
+        <div className="col-md-2 name__title">
+          Full Name
+        </div>
+        <input
+          placeholder="Family Name"
+          type="text"
+          name="fName"
+          className="col-md-2 form__content"
+        />
+        <input
+          placeholder="Given Name"
+          type="text"
+          name="gName"
+          className=" col-md-2 form__content"
+        />
+      </div>
+      <div className="row">
+        <div className="col-md-2 name__title">
+          Gender
+        </div>
+        <div className="col-md-2">
+          <input
+            type="radio"
+            name="gender"
+            id="gMale"
+            value="male"
+            defaultChecked
+          />
+          <label className="col-md-2" htmlFor="gMale">
+            Mr.
+          </label>
+        </div>
+        <div className="col-md-2">
+          <input type="radio" name="gender" id="gFemale" value="female" />
+          <label className="col-md-2" htmlFor="gFemale">
+            Ms.
+          </label>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-2 name__title">
+          Birth Date
+        </div>
+        <select className="col-md-2 form__content day">
+          <option
+            className="guest-birthday"
+            value=""
+            disabled
+            selected
+            hidden
+          >
+            Day
+          </option>
+        </select>
+        <select className="col-md-2 form__content month">
+          <option
+            className="guest-birthMonth"
+            value=""
+            disabled
+            selected
+            hidden
+          >
+            Month
+          </option>
+        </select>
+        <select className="col-md-2 form__content year">
+          <option
+            className="guest-birthYear"
+            value=""
+            disabled
+            selected
+            hidden
+          >
+            Year
+          </option>
+        </select>
+      </div>
+      </div>
+    )
+  }
+
+  function ShowBooker() {
+
+  return(
+    <div className="row">
+    <div className="col-md-2 name__title">Name</div>
+      <input
+        type="text"
+        className="booker-name form__content col-md-2"
+        id=""
+        placeholder="Name"
+      />
+      </div>
+  )
+  }
   return (
-    <div>
+      <div>
       <div className="reservation__content">
         <div className="container">
           <div className="row">
@@ -84,11 +195,10 @@ function Reservation() {
           </div>
         </div>
       </div>
-
-      <div className="re__breadcrumb">
-        <div className="container">
+      <div className="container">
           <div className="row">
-            <div className="col-md-12"></div>
+            <div className="col-md-12">
+            <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
                 <Link to="/">
@@ -100,17 +210,20 @@ function Reservation() {
                 <Link className="breadcrumb__title">Reservation</Link>
               </li>
             </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div className="container reservation__container">
+      <div className="container">
+        <div className=" reservation__container">
+      <div className="reserve-container">
         <div className="row">
           <div className="col-md-2 name__title">
             Choice of Branch:
             <span className="required__note">*</span>
           </div>
           <select
-            className="col-md-2 form__content"
+            className="col-md-2 form__content" 
             id={selectedCity}
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
@@ -140,9 +253,7 @@ function Reservation() {
             placeholder="Check-in date"
             type="text"
           />
-        </div>
-        <div className="row">
-          <div className="col-md-2 name__title">
+          <div className="col-md-2 offset-2 name__title check-out-date">
             Check-out date
             <span className="required__note">*</span>
           </div>
@@ -171,9 +282,7 @@ function Reservation() {
             <option value="23:00">23:00</option>
             <option value="24:00">24:00</option>
           </select>
-        </div>
-        <div className="row">
-          <div className="col-md-2 name__title">
+          <div className="col-md-2 offset-2 name__title check-out-time">
             Check-out time
             <small style={{ fontWeight: 600 }}>
               (Normal check-in : from 3pm)
@@ -193,6 +302,14 @@ function Reservation() {
             <option value="10:00">10:00</option>
             <option value="11:00">11:00</option>
             <option value="12:00">12:00</option>
+          </select>
+        </div>
+        <div className="row">
+          <div className="col-md-2 name__title">
+            Kind of rooms
+            <span className="required__note">*</span>
+          </div>
+          <select className="col-md-2 form__content">
           </select>
         </div>
         <div className="row">
@@ -222,9 +339,7 @@ function Reservation() {
             <option value="19">19</option>
             <option value="20">20</option>
           </select>
-        </div>
-        <div className="row">
-          <div className="col-md-2 name__title">
+          <div className="col-md-2 offset-2 name__title">
             Number of guests per room
             <span className="required__note">*</span>
           </div>
@@ -233,9 +348,11 @@ function Reservation() {
             <option value="2">2</option>
           </select>
         </div>
-        <div className="row guest__information">
+      </div>
+      <div className="guest-container">
+        <div className="row">
+          <div className="guest__information">
           <div className="col-md-12 guest__name-title">Guest Information</div>
-
           <div className="row">
             <div className="col-md-2 name__title">
               Name
@@ -266,7 +383,7 @@ function Reservation() {
               Gender
               <span className="required__note">*</span>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-2" >
               <input
                 type="radio"
                 name="gender"
@@ -324,6 +441,65 @@ function Reservation() {
               </option>
             </select>
           </div>
+        <div className="row">
+          <div className="col-md-12 offset-4">
+            <button className="base__btn btn__send" onClick={handleClick}>{text}</button>
+          </div>
+          {show && <SecondGuest />}
+        </div>
+        <div className="row">
+          <div className="col-md-2 name__title">Name of person who makes reservation:</div>
+          <div className="col-md-6">
+            <input
+              type="radio"
+              name="Booker"
+              id="booker"
+              defaultChecked
+              value="same"
+              checked = {status === 0}
+              onClick={(e) => handleSelected(0)}
+            />
+            <label htmlFor="booker">Same as person who will stay</label>
+            <br />
+            <input
+              type="radio"
+              name="Booker"
+              id="booker"
+              value="different"
+              checked = {status === 1}
+              onClick={(e) => handleSelected(1)}
+            />
+            <label htmlFor="booker"> Different with who will stay</label>
+          </div>
+        </div>
+        {status === 1 && <ShowBooker />}
+        <div className="row">
+          <div className="col-md-2 name__title">Email address
+            <span className="col-md-2 required__note">*</span>
+          </div>
+            <input
+              type="text"
+              className="booker-email form__content col-md-2"
+              id=""
+              placeholder="Email"
+            />
+            <span className="col-md-8 required__note">
+              Please leave your exact email address for our soon confirmation or
+              contact
+            </span>
+        </div>
+        <div className="row">
+          <div className="col-md-2 name__title">Phone number</div>
+            <input
+              type="text"
+              className="booker-phone form__content col-md-2"
+              id=""
+              placeholder="Phone number"
+            />
+            <span className="col-md-8 required__note">
+              Please input country code if it's not Vietnamese or Japanese
+              telephone's number
+            </span>
         </div>
         <div className="row">
           <div className="col-md-2 name__title">
@@ -409,7 +585,7 @@ function Reservation() {
             <label htmlFor="need">Necessarily</label>
             <br />
           </div>
-          <span className="offset-2 required__note">
+          <span className="required__note">
             VAT is Value Added tax. It is a tax on the sale of most goods and
             services. VAT revenues are collected through businesses who are
             registered for VAT
@@ -433,12 +609,15 @@ function Reservation() {
             <option value="Other">Other</option>
           </select>
         </div>
+        </div>
+      </div>
+      </div>
+      <div className="other-container">
         <div className="row">
           <div className="col-md-2 name__title">
-            Any special requirement
-            <small>(late"checkout pick"up, etc...)</small>
-          </div>
-            <div className="col-md-2">
+            Any special requirement (late"checkout pick"up, etc...)
+            </div>
+            <div className="col-md-6">
               <input
                 type="checkbox"
                 className="special"
@@ -467,93 +646,22 @@ function Reservation() {
                 value="Late check-out"
               />
               <label htmlFor="spcRequire">Late check-out</label><br />
-            </div>
-          </div>
-
-          <div className="form__content">
-            <textarea
+              <textarea
               className="text-note"
-              cols="80"
-              rows="10"
+              cols="40"
+              rows="6"
               placeholder="Please let us know if you have any request"
             ></textarea>
-          </div>
+            </div>
         </div>
-        <div className="base__form">
-          <div className="col-md-2name__title">
-            Name of person who makes reservation:
-          </div>
-          <div className="form__content">
-            <input
-              type="radio"
-              name="Booker"
-              id="booker"
-              defaultdefaultChecked
-              value="Same as person who will stay"
-            />
-            <label htmlFor="booker">Same as person who will stay</label>
-            <br />
-            <input
-              type="radio"
-              name="Booker"
-              id="booker"
-              value="Different with who will stay"
-            />
-            <label htmlFor="booker"> Different with who will stay</label>
-          </div>
-        </div>
-        <div className="base__form">
-          <div className="col-md-2name__title">Name</div>
-          <div className="form__content">
-            <input
-              type="text"
-              className="booker-name"
-              id=""
-              placeholder="Name"
-            />
-          </div>
-        </div>
-        <div className="base__form">
-          <div className="col-md-2name__title">
-            Email address
-            <span className="required__note">*</span>
-          </div>
-          <div className="form__content">
-            <input
-              type="text"
-              className="booker-email"
-              id=""
-              placeholder="Email"
-            />
-            <span className="required__note">
-              Please leave your exact email address for our soon confirmation or
-              contact
-            </span>
-          </div>
-        </div>
-        <div className="base__form">
-          <div className="col-md-2 name__title">Phone number</div>
-          <div className="form__content">
-            <input
-              type="text"
-              className="booker-phone"
-              id=""
-              placeholder="Phone number"
-            />
-            <span className="required__note">
-              Please input country code if it's not Vietnamese or Japanese
-              telephone's number
-            </span>
-          </div>
-        </div>
-        <div className="base__form">
-          <div className="form__content">
+        <div className="row">
+          <div className="col-md-12 offset-4">
             <button id="send" className="base__btn btn__send">
               Send
             </button>
-          </div>
+            </div>
         </div>
-        <div className="base__form">
+        <div className="row">
           <span className="required__note">
             *Please Attention
             <br />
@@ -561,6 +669,9 @@ function Reservation() {
             Completion Page after press "Send" button, please wait a moment.
           </span>
         </div>
+      </div>
+      </div>
+      </div>
       </div>
   );
 }

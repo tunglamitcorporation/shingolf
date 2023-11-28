@@ -1,7 +1,16 @@
 import { useState } from "react";
 import Booking from "./Booking";
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs'
+import {Link} from "react-router-dom"
+import { useTranslation } from "react-i18next";
 export default function Service() {
+    const {t} = useTranslation()
+    const serviceData = t('service',{returnObjects:true})
+    const serviceLocation = t('service.location',{returnObjects:true})
+    const serviceName = t('service.service_name',{returnObjects:true})
+    const rotenHCM = t('service.roten-hcm[0].content',{returnObjects:true})
+    console.log(rotenHCM);
+   
     return (
         
         <div>
@@ -9,7 +18,7 @@ export default function Service() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h1>Service</h1>
+                            <h1>{t('service.name')}</h1>
                         </div>
                     </div>
                 </div>
@@ -18,63 +27,67 @@ export default function Service() {
             <div className="is-sticky">
                 <Booking />
             </div>
-            <div className="re__breadcrumb">
-                <div className="container">
+            <div className="container">
                     <div className="row">
-                        <div className="col-md-12"></div>
+                        <div className="col-md-12">
+                        <div className="re__breadcrumb">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
-                                       <a href="/AzumayaClone/index.html">
+                                       <Link  to="/Component/Home">
                                            <i className="fa-solid fa-house"></i>
-                                       </a>
+                                       </Link>
                                    </li>
                                    <li className = "breadcrumb__item">
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/service.html">Service</a>
-                                   </li>
+                                       <Link className ="breadcrumb__title" to = '/Component/Service'>Service</Link>
+                                </li>
                        </ul>
+                       </div>
                     </div>
                 </div>
             </div>
-            <Tabs selectedTabclassName="service__active" className="container"> 
+            <Tabs selectedTabClassName="service__active" className="container"> 
                 <TabList className="row"style={{justifyContent:'space-around'}}>
-                    <Tab className="service__location col-md-2">Ho Chi Minh</Tab> 
-                    <Tab className="service__location col-md-2">Da Nang</Tab> 
-                    <Tab className="service__location col-md-2">Ha Noi</Tab> 
-                    <Tab className="service__location col-md-2">Hai Phong</Tab> 
+                    {serviceLocation.map(item => (
+                    <Tab className="service__location col-md-2">{item.name}</Tab> 
+                    ))}
                 </TabList> 
 
                 <TabPanel> 
-                    <Tabs selectedTabclassName="service__active" className="col-md-10 offset-md-1"> 
+                    <Tabs selectedTabClassName="service__active" className="col-md-10 offset-md-1"> 
                         <TabList className="service__list"> 
-                            <Tab className="service">Rotenburo</Tab> 
-                            <Tab className="service">Breakfast</Tab> 
-                            <Tab className="service">Massage</Tab> 
+                        {serviceName.map(item=>(
+                            <Tab className="service">{item.name}</Tab> 
+                        ))}
+                            
                         </TabList> 
                         <TabPanel> 
                         <div className="service__content">
-                                <div className="service__content-title col-md-12">Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)</div>
-                                <table className="service__content-body--table">
+                                <div className="service__content-title col-md-12">{t('service.roten-title')}</div>
+                                <table className="service__content-body--table col-md-12">
                                     <tr>
-                                        <th>Thai Van Lung 1</th>
-                                        <th>Thai Van Lung 2</th>
-                                        <th>Le Thanh Ton</th>
+                                        {rotenHCM.map(item => (
+                                            <th>{item.branch}</th>
+                                        ))}
                                     </tr>
                                     <tr>
-                                        <td>From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 <br />
+                                        {data.map(item => (
+                                            <td>{item.content.info}</td>
+                                        ))}
+                                        {/* <td>From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 <br />
                                             Weekend & Holiday: 7:00 to 24:00 <br />
                                             Price (from Feb 2023) <br />
-                                            Azumaya Thai Văn Lung 1: 250.000vnd/1pax</td> 
+                                            Azumaya Thai Van Lung 1: 250.000vnd/1pax</td> 
                                         <td> From Mon - Fri : 6:00 to 10:00 - 19:00 to 24:00 <br />
                                             Weekend & Holiday: 7:00 to 24:00 <br />
                                             Price (from Jan 2019) <br />
-                                            Azumaya Thái Văn Lung 2: 200.000/pax</td>
+                                            Azumaya Thai Van Lung 2: 200.000/pax</td>
                                         <td>From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 <br />
                                             Weekend & Holiday: 7:00 to 24:00 <br />
                                             Price (from Jan 2019) <br />    
-                                            Azumaya Lê Thánh Tôn : 150.000/pax</td>
+                                            Azumaya Le Thanh Ton : 150.000/pax</td> */}
                                     </tr>
                                 </table>
                                 <div className="service__content-note">※Female can use Rotenburo at Azumaya Thai Van Lung 2, From Mon - Fri : 17:00 - 18:45, price is 150.000/pax
@@ -152,7 +165,7 @@ export default function Service() {
                 </TabPanel> 
 
                 <TabPanel>
-                    <Tabs selectedTabclassName="service__active" className="col-md-10 offset-md-1">
+                    <Tabs selectedTabClassName="service__active" className="col-md-10 offset-md-1">
                     <TabList className="service__list "> 
                             <Tab className="service">Rotenburo</Tab> 
                             <Tab className="service">Breakfast</Tab> 
@@ -207,7 +220,7 @@ export default function Service() {
                 </TabPanel>
 
                 <TabPanel> 
-                    <Tabs selectedTabclassName="service__active" className="col-md-10 offset-md-1"> 
+                    <Tabs selectedTabClassName="service__active" className="col-md-10 offset-md-1"> 
                         <TabList className="service__list "> 
                             <Tab className="service">Rotenburo</Tab> 
                             <Tab className="service">Breakfast</Tab> 
@@ -282,7 +295,7 @@ export default function Service() {
                 </TabPanel> 
 
                 <TabPanel>
-                    <Tabs selectedTabclassName="service__active" className="col-md-10 offset-md-1">
+                    <Tabs selectedTabClassName="service__active" className="col-md-10 offset-md-1">
                         <TabList className="service__list ">
                             <Tab className="service">Rotenburo</Tab> 
                             <Tab className="service">Breakfast</Tab> 

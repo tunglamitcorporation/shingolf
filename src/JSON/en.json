@@ -38,7 +38,6 @@
             }
         ],
         "branch": [
-            [
                 {
                     "branch_id": 1,
                     "city_id": 1,
@@ -90,7 +89,6 @@
                     "branch_name": "Azumaya Hai Phong Hotel"
                 }
             ]
-        ]
     },
     "feature": {
         "name": "Feature",
@@ -157,7 +155,7 @@
     },
     "home": {
         "name": "Azumaya Hotel",
-        "news_title": "What's new ?",
+        "news_title": "WHAT'S NEWS ?",
         "welcome_title": "Welcome to Azumaya Hotel",
         "welcome_sub-title": "Comfort served for business travelers",
         "welcome_content": "Nowadays, more and more businessmen from advanced countries move into Vietnam. However, during the stay, there must be many anxieties to face; such as languages and food. For their distress, we had one mission came into our mind. “Why don’t we provide comfortable space to relieve their stress?” The answer was clear: we prepare Rotenburo (open air hot bath) and foot massage to soothe their tiredness, and authentic Japanese breakfast & continental breakfast for their daily vitality. Following ― Japanese-available receptionist, pick-up / drop-off service from / to airport, free laundry service for long-stay customers, free high-speed Wi-Fi service, Japanese TV program, arrangement service for rental car / tour, etc. Moreover, “Omotenashi” (Japanese hospitality) is always in our heart to serve you a pleasure in life of foreign land.",
@@ -243,5 +241,89 @@
             }
 
         ]
+    },
+    "service":{
+        "name": "Service",
+        "location":[
+            {
+                "name":"Ho Chi Minh"
+            },
+            {
+                "name":"Da Nang"
+            },
+
+            {
+                "name":"Ha Noi"
+            },
+
+            {
+                "name":"Hai Phong"
+            }
+        ],
+        "service_name":[
+            {
+                "name":"Rotenburo"
+            },
+            {
+                "name":"Breakfast"
+            },
+            {
+                "name":"Massage"
+            }
+        ],
+        "roten-title":"Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
+        "roten-hcm":[
+            {
+                "branch":"Thai Van Lung 1",
+                "content":[
+                    {
+                        "info":"From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00"
+                    },
+                    {
+                        "info":"Weekend & Holiday: 7:00 to 24:00"
+                    },
+                    {
+                        "info":"Price (from Feb 2023)"
+                    },
+                    {
+                        "info":"Azumaya Thai Văn Lung 1: 250.000vnd/1pax"
+                    }
+                ]
+            },
+            {
+                "branch":"Thai Van Lung 2",
+                "content":[
+                    {
+                        "info":"From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00"
+                    },
+                    {
+                        "info":"Weekend & Holiday: 7:00 to 24:00"
+                    },
+                    {
+                        "info":"Price (from Feb 2023)"
+                    },
+                    {
+                        "info":"Azumaya Thai Văn Lung 1: 250.000vnd/1pax"
+                    }
+                ]
+            },{
+                "branch":"Le Thanh Ton",
+                "content":[
+                    {
+                        "info":"From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00"
+                    },
+                    {
+                        "info":"Weekend & Holiday: 7:00 to 24:00"
+                    },
+                    {
+                        "info":"Price (from Feb 2023)"
+                    },
+                    {
+                        "info":"Azumaya Thai Văn Lung 1: 250.000vnd/1pax"
+                    }
+                ]
+            }
+        ]
+
     }
 }

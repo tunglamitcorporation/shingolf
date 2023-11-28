@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+@font-face {
+  font-family: open-sans;
+  src: url('https://cdn.jsdelivr.net/npm/open-sans-fonts@1.6.2/open-sans.min.css');
+}

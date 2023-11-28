@@ -21,17 +21,17 @@ export default function Booking (){
                 <div className="col-md-12 ">
                 <div className="content__booking-title">{t('booking.title')}</div>
                 </div>
-                <div className="col-12 col-md-2 offset-md-1">
+                <div className="col-md-2 offset-md-1">
                 <div className="content__booking-date-in">
                 <Flatpickr className="flatpickr" placeholder={t('booking.date_in')} onChange={([date]) => {setStartDate({ date }); }} />
                 </div>
                 </div>
-                <div className="col-12 col-md-2">
+                <div className="col-md-2">
                 <div className="content__booking-date-out">
                 <Flatpickr className="flatpickr" placeholder={t('booking.date_out')} onChange={([date]) => {setStartDate({ date }); }} />
                 </div>
                 </div>
-                <div className="col-12 col-md-2">
+                <div className="col-md-2">
                 <div className="content__booking-branch">
                     <select className="content__booking-branch-select"
                     id={selectedCity}
@@ -40,10 +40,13 @@ export default function Booking (){
                         {city.map(item => (
                             <option key={item.id} value={item.id}>{item.city_name}</option>
                         ))}
+                        <option value="" disabled selected hidden>
+                        Ho Chi Minh
+                        </option>
                     </select>
                 </div>
                 </div>
-                <div className="col-12 col-md-2">
+                <div className="col-md-2">
                 <div className="content__booking-hotel-select">
                     <select className="content__booking-hotel-name-select"
                     id='branchSelect'
@@ -51,10 +54,13 @@ export default function Booking (){
                         {filteredBranches.map(item =>(
                             <option key = {item.branch_id} value={item.branch_id}>{item.branch_name}</option>
                         ))}
+                        <option value="" disabled selected hidden>
+                        Azumaya Le Thanh Ton
+                        </option>
                     </select>
                 </div>
                 </div>
-                <div className="col-12 col-md-2">
+                <div className="col-md-2">
                 <button className="base__btn btn--mobile">{t('booking.reserve')}
                     <Link to = '/Component/Reservation'></Link>
                 </button> 

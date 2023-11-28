@@ -20,7 +20,7 @@
         "date_out": "チェックアウト日",
         "reserve": "予約する",
         "city": [
-            {
+           {
                 "id": 1,
                 "city_name": "ハノイ"
             },

@@ -15,10 +15,10 @@ export default function Policies(){
                         </div>
                     </div>
             </div>
-            <div className="re__breadcrumb">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12"></div>
+                        <div className="col-md-12">
+                        <div className="re__breadcrumb">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
                                        <Link  to="/Component/Home">
@@ -32,21 +32,27 @@ export default function Policies(){
                                        <Link className ="breadcrumb__title" to = '/Component/Policies'>Hotel Policies</Link>
                                 </li>
                        </ul>
+                       </div>
                     </div>
                 </div>
             </div>
-        <div className="content__policies">
-        <div className="reservation__container">
-        <table className="table__policies">
-            {data.map(item=>(
-                 <tr>
-                 <td style={{fontWeight: 600}}>{item.name}</td>
-                 <td >{item.content}</td>
-             </tr>
-            ))}
-            </table>
-        </div>
-    </div>
-</div>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-md-12'>
+                    <div className="content__policies">     
+                            <table className="table__policies">
+                             {data.map(item=>(
+                            <tr>
+                            <td style={{fontWeight: 600}}>{item.name}</td>
+                            <td >{item.content}</td>
+                            </tr>
+                            ))}
+                            </table>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+       
     )
 }                   

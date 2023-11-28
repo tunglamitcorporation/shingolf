@@ -84,7 +84,7 @@ function Header() {
             <li className="header__mobile-navbar-item">
                 <a  className = "header__mobile-navbar-link" href="">Feature</a></li>
             <li className="header__mobile-navbar-item">
-                <a  className = "header__mobile-navbar-link" href="">Service</a></li>
+                <Link to ="/Component/Service"  className = "header__mobile-navbar-link" >Service</Link></li>
             <li className="header__mobile-navbar-item">
                 <a  className = "header__mobile-navbar-link" href="">Contract</a></li>
             </ul>

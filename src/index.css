@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -12,22 +13,8 @@ code {
 }
 ::-webkit-scrollbar {
   width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgba(0,0,0,1);
-  opacity: 0.1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #290E53;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #290E53;
+  background: transparent;
+  display: none;
 }
 .header, .header__PC{
   display: flex;
@@ -40,7 +27,7 @@ code {
 .header__mobile{
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 83px;
   width: 28px;
   height: 28px;
   margin-left: 10px;
@@ -351,6 +338,7 @@ code {
   background-color: var(--primary--color);
   color: var(--white--color);
   font-size: 1.4rem;  
+  cursor: pointer;
 
 }
 .content__booking-date-in input:focus,
@@ -436,7 +424,7 @@ code {
   background-color: #09e009 !important; 
 }
 .content__welcome{
-  background: #ffffff url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698111742/AzumayaWeb/v8fmo6wketwrtgrhnsfw.jpg) center center no-repeat;
+  background: #ffffff url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698111742/AzumayaWeb/v8fmo6wketwrtgrhnsfw.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   font-size: 18px;
   line-height: 1.4em;
@@ -555,6 +543,7 @@ code {
   font-size: 1.4rem;
   line-height: 2rem;
   margin-top: 20px;
+  color: #555;
 
 }
 .footer{
@@ -631,14 +620,17 @@ code {
   margin-left: 10px;
   list-style: none;
   font-size: 1.4rem;
-  padding-top: 10px;
+  padding: 10px 10px;
   
+}
+
+.breadcrumb__item{
+  padding: 0 10px;
 }
 .breadcrumb__item a,
 .breadcrumb__item a:hover{
   text-align: center;
   text-decoration: none;
-  padding: 0 10px;
   color: var(--black--color);
   line-height: 1.6rem;
 
@@ -652,6 +644,22 @@ code {
   margin: 0 0 40px 0;
   height: 100%;
   width: 100%;
+}
+.guest-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+.other-container{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding: 10px;
+  background-color: #f6f6f6;
+}
+.reserve-container{
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .rbcLabel{
   font-size: 2.5rem;
@@ -693,12 +701,10 @@ code {
   text-align: center;
   margin-top: 20px;
 }
-.btn__send{
-  position: absolute;
-  left: 30%;
-  background-color: var(--primary--color);
-  color: var(--white--color);
+.row {
+  padding: 10px 0;
 }
+
 /* Hotel Policies */
 .policies__header {
   width: 100%;
@@ -715,9 +721,9 @@ code {
     font-weight: bold
 }
 .content__policies{
-  margin: 20px;
   height: 100%;
   border: 1px solid rgba(0,0,0,0.3);
+  padding: 30px;
 }
 .table__policies td{
   border:1px solid rgba(0,0,0,0.3);
@@ -725,7 +731,7 @@ code {
   font-size: 1.4rem;
 }
 .table__policies{
-  width: 50%;
+  width: 100%;
 }
 .feature__title{
   position: absolute;
@@ -964,6 +970,7 @@ code {
 .service__table,
 .service__content-body--table{
   width: 100%;
+
 }
 .room__table {
   width: 100%;
@@ -1097,6 +1104,7 @@ a:hover {
   align-items: center;
   height: 50px;
   width: 100%;
+  padding: 40px;
   background-color: #2A2F3C;
 }
 .top-header p {
@@ -1106,8 +1114,8 @@ a:hover {
   margin-bottom: 0;
 }
 .btn-lang{
-  position: absolute;
-  right: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 .btn-ja {
   width: 30px;
@@ -1139,7 +1147,7 @@ a:hover {
   .header__mobile-logo{
     display: block;
     position: absolute;
-    top: 5px;
+    top: 85px;
     width: 100%;
     height: auto;
 
@@ -1217,6 +1225,27 @@ a:hover {
   color: #ffffff;
   background-color: #482979;
 }
+.check-out-date {
+  margin-left:0 !important
+}
+.check-out-time{
+  margin-left: 0 !important
+}
+.service__content-title{
+  padding: 40px 0;
+}
+.btn-lang {
+  display: flex;
+  justify-content: center;
+}
+.top-header{
+  display: flex;
+  justify-content: center;
+}
+.top-header p{
+ margin-left: 0 !important;
+}
+
 }@media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
    
   .header__mobile{
@@ -1231,7 +1260,7 @@ a:hover {
   .header__mobile{
     position: absolute;
     right: 5px;
-    top: 20px;
+    top: 100px;
     width: 28px;
     height: 28px;
   }
@@ -1258,6 +1287,5 @@ a:hover {
 .content__feature-item{
   margin-left: 40px;
 }
-
 }
 
