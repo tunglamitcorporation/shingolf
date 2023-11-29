@@ -12,7 +12,6 @@ export default function Booking (){
     const [selectedCity, setSelectedCity] = useState();
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
-    console.log(filteredBranches)
     return(
         <div>              
         <div className="content__booking">
@@ -41,7 +40,7 @@ export default function Booking (){
                             <option key={item.id} value={item.id}>{item.city_name}</option>
                         ))}
                         <option value="" disabled selected hidden>
-                        Ho Chi Minh
+                        Please select a city
                         </option>
                     </select>
                 </div>
@@ -54,9 +53,6 @@ export default function Booking (){
                         {filteredBranches.map(item =>(
                             <option key = {item.branch_id} value={item.branch_id}>{item.branch_name}</option>
                         ))}
-                        <option value="" disabled selected hidden>
-                        Azumaya Le Thanh Ton
-                        </option>
                     </select>
                 </div>
                 </div>

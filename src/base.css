@@ -54,6 +54,9 @@ textarea{
 .center{
     text-align: center;
 }
+.pre-line{
+    white-space: pre-line;
+}
 .base__btn {
     position: relative;
     height: 40px;

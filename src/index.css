@@ -917,6 +917,9 @@ code {
   justify-content: center;
   animation: fadeIn 0.3s linear;
 }
+:focus-visible{
+  outline: none;
+}
 .service__content-title,
 .service__content-note {
   background-color: var(--primary--color);
@@ -972,6 +975,14 @@ code {
   width: 100%;
 
 }
+.room-item {
+  border-top: solid 1px #c5c5c5;
+  border-left: solid 1px #c5c5c5;
+  border-right: solid 1px #c5c5c5;
+  border-bottom: solid 4px #482979;
+  overflow: hidden;
+  margin-bottom: 40px
+}
 .room__table {
   width: 100%;
   
@@ -1002,7 +1013,7 @@ code {
   height: fit-content;
 }
 .service__container > .room__content{
-  height: 1200px;
+  height: 100%;
 }
 .btn__detail a{
   height: 50px;
@@ -1019,8 +1030,6 @@ code {
 }
 .room__container{
   padding-top: 0;
-  height: 500px;
-  
 }
 .branch__container{
   width: 100%;
@@ -1037,11 +1046,9 @@ code {
   justify-content: center;
 }
 .room__content{
-  height: 3750px;
-  border: solid 1px #c5c5c5;
   width: 100%;
-  overflow: hidden;
-  display: none;
+
+
 }
 .room__service{
   margin-top: 20px;
@@ -1104,7 +1111,7 @@ a:hover {
   align-items: center;
   height: 50px;
   width: 100%;
-  padding: 40px;
+  padding: 30px;
   background-color: #2A2F3C;
 }
 .top-header p {

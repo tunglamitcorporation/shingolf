@@ -1,4 +1,5 @@
 import Booking from "./Booking"
+import { Link } from "react-router-dom"
 export default function BrandDetail(){
     return(
         <div>
@@ -36,7 +37,6 @@ export default function BrandDetail(){
             </div>
             <div className="branch__container">
                 <div className="container">
-                    {/* <div className="col-md-10"> */}
                 <div className="feature__type-item">
                     <div className="card">
                     <div className="row">
@@ -53,7 +53,7 @@ export default function BrandDetail(){
                                 </div>
                                 </div>
                                 <div className="btn__detail">
-                                    <a href="/AzumayaClone/html/hanoibranchroom.html">Click here for detail</a>
+                                    <Link to = "/Component/RoomDetail">Click here for detail</Link>
                                 </div>
                         </div>
                     </div>

@@ -8,6 +8,7 @@ import Contract from "./Component/Contract";
 import Service from "./Component/Service";
 import Reservation from "./Component/Reservation";
 import BrandDetail from "./Component/BrandDetail";
+import RoomDetail from "./Component/RoomDetail";
 import './index.css'
 import './base.css'
 import {Route, Routes } from 'react-router-dom'
@@ -45,6 +46,7 @@ function App() {
       <Route path="/Component/Service" element={<Service />} />
       <Route path="/Component/Contract" element={<Contract />} />
       <Route path="/Component/BrandDetail" element={<BrandDetail />} />
+      <Route path="/Component/RoomDetail" element={<RoomDetail />} />
       </Routes> 
     <Footer />
     </div>
