@@ -279,9 +279,7 @@ code {
   text-decoration: none;
   font-size: 2rem;
   color: var(--white--color);
-
 }
-
 .content__branch-item a:hover{
   background-color: rgba(95, 55, 158,0.5);
 }
@@ -329,7 +327,6 @@ code {
 {
   position: relative;
   display: inline-block;
-  margin-left: 5px;
   margin-top: 20px;
   width: 100%;
   height: 40px;
@@ -979,16 +976,34 @@ code {
   border-top: solid 1px #c5c5c5;
   border-left: solid 1px #c5c5c5;
   border-right: solid 1px #c5c5c5;
-  border-bottom: solid 4px #482979;
   overflow: hidden;
   margin-bottom: 40px
 }
+.room__des-table{
+  width: 100%;
+  color: #555;
+}
+.room__des-table th{
+  width: 40%;
+  border: solid 1px #c5c5c5;
+  height: 30px;
+  font-size: 1.4rem;
+  text-align: center; 
+}
+.room__des-table td{
+  width: 60%;
+  border: solid 1px #c5c5c5;
+  height: 40px;
+  font-size: 1.4rem;
+  text-align: center;
+}
 .room__table {
   width: 100%;
-  
+  color: #555;
 }
 .room__table th
 {
+  width: 33.33%;
   border: solid 1px #c5c5c5;
   height: 30px;
   font-size: 1.4rem;
@@ -997,14 +1012,26 @@ code {
   color: var(--white--color);   
 }
 .room__table td{
+  width: 33.33%;
   border: solid 1px #c5c5c5;
-  height: 50px;
+  height: 40px;
   font-size: 1.4rem;
   text-align: center;
 }
 .room__table tr:hover{
   background-color: #efefef;
   cursor: pointer;
+}
+.room__table-service tr:hover{
+  background-color: white !important;
+  cursor: pointer;
+}
+.room__table-service th{
+  background-color: white !important;
+  color: #555;
+}
+.table-footer{
+  text-align: left;
 }
 .room__container-table{
   margin: 0 20px;
@@ -1028,12 +1055,55 @@ code {
   color: var(--white--color);
   font-weight: 600;
 }
+.btn__reserve{
+  height: 50px  !important;
+  width: 100%;
+  background-color: var(--primary--color);
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 50px;
+  text-align: center;
+  color: var(--white--color);
+  font-weight: 600;
+  border: none;
+}
+.room__tariff{
+  width: 100%;
+  color:#555;
+}
+.room__tariff th
+{
+  border: solid 1px #c5c5c5;
+  height: 30px;
+  padding: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #1F232B;
+  color: var(--white--color);   
+}
+.room__tariff td{
+  border: solid 1px #c5c5c5;
+  height: 40px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.room__tariff-name{
+  text-align: left !important;
+  padding-left: 10px;
+  font-weight: bolder;
+}
+.btn__reserve a{
+  display: block;
+}
+.btn__reserve:hover{
+  background-color: #614293 !important;
+}
 .room__container{
   padding-top: 0;
 }
 .branch__container{
   width: 100%;
-
 }
 .room__title{
   font-size: 4rem;
@@ -1047,11 +1117,10 @@ code {
 }
 .room__content{
   width: 100%;
-
-
 }
 .room__service{
   margin-top: 20px;
+  text-align: left;
 }
 .room__service p{
   font-size: 1.4rem;
@@ -1077,8 +1146,11 @@ code {
 }
 .hotel__info{
   font-size: 1.4rem;
-  position: relative;
-  left: -294px;
+  text-align: left;
+  padding-top: 10px;
+}
+.hotel__info h1{
+  padding-bottom: 20px;
 }
 .gg-map iframe{
   width: 100%;

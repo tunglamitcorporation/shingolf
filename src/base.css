@@ -57,6 +57,21 @@ textarea{
 .pre-line{
     white-space: pre-line;
 }
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.purple{
+    color: #482979;
+    margin-right: 20px;
+}
+.style-line{
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .base__btn {
     position: relative;
     height: 40px;
@@ -70,7 +85,7 @@ textarea{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0 0 5px;
+    margin-top: 20px;
 }
 .base__btn:hover{
     border: 2px solid var(--white--color);
@@ -160,6 +175,10 @@ textarea{
     width: 100%;
     z-index: 2;
 }
+.carousel-item img {
+    width: 100%;
+    height: auto;
+  }
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
     .is-sticky{
         position: relative;
