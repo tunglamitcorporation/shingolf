@@ -66,26 +66,26 @@ export default function Service() {
               ))}
             </TabList>
             <TabPanel>
-              <div className="service__content">
-                <div className="service__content-title col-md-12">
-                  {t("service.hcm-roten-title")}
-                </div>
-                <table className="service__content-body--table col-md-12">
-                  <tr>
-                    {branchHCM.map((item) => (
-                      <th>{item.branch}</th>
-                    ))}
-                  </tr>
-                  <tr>
-                    {branchHCM.map((item) => (
-                      <td className="pre-line">{item.rotenburo}</td>
-                    ))}
-                  </tr>
-                </table>
-                <div className="service__content-note pre-line">
-                  {t("service.hcm-roten-female")}
-                </div>
-              </div>
+                      <div className="service__content">
+                        <div className="service__content-title">
+                          {t("service.hcm-roten-title")}
+                        </div>
+                        <table className="service__content-body--table">
+                          <tr>
+                            {branchHCM.map((item) => (
+                              <th>{item.branch}</th>
+                            ))}
+                          </tr>
+                          <tr>
+                            {branchHCM.map((item) => (
+                              <td className="pre-line">{item.rotenburo}</td>
+                            ))}
+                          </tr>
+                        </table>
+                        <div className="service__content-note pre-line">
+                          {t("service.hcm-roten-female")}
+                        </div>
+                      </div>
             </TabPanel>
             <TabPanel>
               <div className="service__content">

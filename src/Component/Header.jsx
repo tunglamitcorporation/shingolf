@@ -39,11 +39,11 @@ function Header() {
                     <Link  className = "header__navbar-link" to ='/'>{t('header.item1')}</Link>
                 </li>
                 <li className="header__navbar-item">
-                    <Link  className = "header__navbar-link" to = './Component/Policies'>{t('header.item2')}</Link></li>
+                    <Link  className = "header__navbar-link" to = '/Component/Policies'>{t('header.item2')}</Link></li>
                 <li className="header__navbar-item">
                     <Link  className = "header__navbar-link" to = '/Component/Reservation'>{t('header.item3')}</Link></li>
                 <li className="header__navbar-item">
-                    <Link className="header__navbar-link" to ='./Component/Feature'>{t('header.item4')}</Link></li>
+                    <Link className="header__navbar-link" to ='/Component/Feature'>{t('header.item4')}</Link></li>
                 <li className="header__navbar-item">
                     <Link  className = "header__navbar-link" to = '/Component/Service'>{t('header.item5')}</Link></li>
                 <li className="header__navbar-item">
@@ -52,10 +52,10 @@ function Header() {
                     <Link  className = "header__navbar-link-branch .header__navbar-link--hover" to=''>{t('header.item12')}</Link>
                         <ul className="header__navbar-item-list">
                             <li className = "header__navbar-sub-link"><Link to = '/Component/BrandDetail'>{t('header.item7')}</Link></li>
-                            <li className = "header__navbar-sub-link"><a href="">{t('header.item8')}</a></li>
-                            <li className = "header__navbar-sub-link"><a href="">{t('header.item9')}</a></li>
-                            <li className = "header__navbar-sub-link"><a href="">{t('header.item10')}</a></li>
-                            <li className = "header__navbar-sub-link"><a href="">{t('header.item11')}</a></li>
+                            <li className = "header__navbar-sub-link"><Link to ="">{t('header.item8')}</Link></li>
+                            <li className = "header__navbar-sub-link"><Link to ="">{t('header.item9')}</Link></li>
+                            <li className = "header__navbar-sub-link"><Link to ="">{t('header.item10')}</Link></li>
+                            <li className = "header__navbar-sub-link"><Link to ="">{t('header.item11')}</Link></li>
                         </ul>
                  </li>
             </ul>  
@@ -75,18 +75,18 @@ function Header() {
                 <i className="fa-solid fa-xmark"></i>
             </label>
             <li className="header__mobile-navbar-item">
-                <a  className = "header__mobile-navbar-link" href="">Home</a>
+                <Link to ="/"  className = "header__mobile-navbar-link">{t('header.item1')}</Link>
             </li>
             <li className="header__mobile-navbar-item">
-                <a  className = "header__mobile-navbar-link" href="">Hotel Policies</a></li>
+                <Link to ='/Component/Policies'  className = "header__mobile-navbar-link">{t('header.item2')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <a  className = "header__mobile-navbar-link" href="">Reservation</a></li>
+                <Link to ='/Component/Reservation'  className = "header__mobile-navbar-link">{t('header.item3')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <a  className = "header__mobile-navbar-link" href="">Feature</a></li>
+                <Link to ='/Component/Feature'  className = "header__mobile-navbar-link">{t('header.item4')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <Link to ="/Component/Service"  className = "header__mobile-navbar-link" >Service</Link></li>
+                <Link to ='/Component/Service'  className = "header__mobile-navbar-link" >{t('header.item5')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <a  className = "header__mobile-navbar-link" href="">Contract</a></li>
+                <Link to ='/Component/Contract'  className = "header__mobile-navbar-link">{t('header.item6')}</Link></li>
             </ul>
         </div>
         </>

@@ -1,6 +1,10 @@
 import Booking from "./Booking"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next";
+import classNames from "classnames";
 export default function BrandDetail(){
+    const { t } = useTranslation();
+    const homeNewsData = t("home.new_item", { returnObjects: true });
     return(
         <div>
              <div className="policies__header">
@@ -127,39 +131,36 @@ export default function BrandDetail(){
                     </div>
                     {/* </div> */}
             </div>
-            <div className="content__news" style={{marginLeft:'15%',height:'250px'}}>
-                <h2 className ="content__news-title">What's new ?</h2>
-                 <ul className="content__news-list" style={{marginTop:'20px'}}>
-                    <li className="content__news-item">
-                        <span className="content__news-date">Jul 7<sup>th</sup> 2023</span>
-                        <span className="content__news-branch">Hanoi</span>
-                        <span className="content__news-link">
-                            <a href="https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/"> Open women Rotenburo in Azumaya Kim Ma 2 Branch</a>
-                        </span>
+            <div className="content__news">
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-8 offset-md-1">
+                <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
+                <ul className="content__news-list">
+                  {homeNewsData.map((item) => (
+                    <li className="content__news-item" key={item.id}>
+                      <span className="content__news-date">
+                        {item.month} {item.day} {item.year}{" "}
+                      </span>
+                      <span
+                        className={classNames({
+                          "content__news-branch": item.location == "Hanoi",
+                          "content__news-branch--bg":
+                            item.location == "All Branches",
+                        })}
+                      >
+                        {item.location}
+                      </span>
+                      <span className="content__news-link">
+                        <a href={item.link}>{item.new}</a>
+                      </span>
                     </li>
-                    <li className="content__news-item">
-                        <span className="content__news-date">Jul 7<sup>th</sup> 2023</span>
-                        <span className="content__news-branch">Hanoi</span>
-                        <span className="content__news-link">
-                            <a href="https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/">  ★ Notice of Vietnam Value Added Tax (VAT) change ★</a>
-                        </span>
-                    </li>
-                    <li className="content__news-item">
-                        <span className="content__news-date">Jul 7<sup>th</sup> 2023</span>
-                        <span className="content__news-branch">Hanoi</span>
-                        <span className="content__news-link">
-                            <a href="https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/"> 2023 Tet (Lunar New Year) Information</a>
-                        </span>
-                    </li>
-                    <li className="content__news-item">
-                        <span className="content__news-date">Jul 7<sup>th</sup> 2023</span>
-                        <span className="content__news-branch">Hanoi</span>
-                        <span className="content__news-link">
-                            <a href="https://azumayavietnam.com/azumaya-hanoi-massage-service-notice-of-suspension/">  Azumaya Hanoi Massage service / Notice of suspension</a>
-                        </span>
-                    </li>
-                 </ul> 
-            </div>
+                  ))}
+                </ul>
+              </div>
+              </div>
+              </div>
+              </div>
         </div>
         </div> 
     )

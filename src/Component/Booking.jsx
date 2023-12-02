@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Flatpickr from "react-flatpickr";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
 export default function Booking (){
     const {t} = useTranslation()
     const bookingData = t('booking', {returnObjects:true})
@@ -22,7 +21,7 @@ export default function Booking (){
                 </div>
                 <div className="col-md-2 offset-md-1">
                 <div className="content__booking-date-in">
-                <Flatpickr className="flatpickr" placeholder={t('booking.date_in')} onChange={([date]) => {setStartDate({ date }); }} />
+                <Flatpickr options={{minDate:'today'}} className="flatpickr" placeholder={t('booking.date_in')} onChange={([date]) => {setStartDate({ date }); }} />
                 </div>
                 </div>
                 <div className="col-md-2">

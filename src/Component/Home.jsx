@@ -4,6 +4,7 @@ import Booking from "./Booking";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
+import {Link} from "react-router-dom"
 export default function Home() {
   const { t } = useTranslation();
   const featureItem = t("feature.feature_item", { returnObjects: true });
@@ -15,23 +16,35 @@ export default function Home() {
   return (
     <div className="homepage">
       <div className="content">
-        <div className="content__background-dark">
-          <div className="content__background"></div>
-          <div className="content__title">
+          <div className="content__background">
+          </div>
+
+          {/* <div className="content__title">
             <img
-              className="content__title-logo"
+              // className="content__title-logo"
               src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png"
               alt=""
             />
-            <span>{t("home.name")}</span>
-          </div>
+            {/* <span>{t("home.name")}</span> */}
+          {/* </div> */}
           <div className="container-fluid">
-            <div className="row g-0">
+            <div className="row g-0 p-0">
+              <div className="col-6 col-md-3 offset-0">
+                <div className="content__branch-item">
+                  <Link className='link-route' to = '/Component/BrandDetail' >
+                  <img
+                    className="content__branch-img"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
+                    alt=""
+                  />
+                  </Link>
+                </div>
+              </div>
               <div className="col-6 col-md-3 offset-0">
                 <div className="content__branch-item">
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/ia1cmus6y6uavcgxbsw6.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
                     alt=""
                   />
                 </div>
@@ -40,7 +53,7 @@ export default function Home() {
                 <div className="content__branch-item">
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/oqrb129p93e5gz6l3xle.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
                     alt=""
                   />
                 </div>
@@ -49,16 +62,7 @@ export default function Home() {
                 <div className="content__branch-item">
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/vyrhhbx7rnguthojdzed.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                  <img
-                    className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/zgf5mj2fz1momv44izw3.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
                     alt=""
                   />
                 </div>
@@ -66,7 +70,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
       <div className="is-sticky">
         <Booking />
       </div>
@@ -132,10 +135,10 @@ export default function Home() {
       <AnimatedOnScroll>
         <div className="content__feature">
           <div className="content__feature-title">{t("feature.name")}</div>
-          <div className="container contain">
+          <div className="container-fluid">
             <div className="row" style={{ justifyContent: "center" }}>
               {featureItem.map((item) => (
-                <div className="col-12 col-md-6 col-lg-3">
+                <div className="col-md-6 col-lg-6 col-xl-6 col-xxl-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div

@@ -43,6 +43,9 @@ textarea{
     width: 100%;
     padding: 12px 12px;
 }
+.link-route{
+    display: contents;
+}
 .text-note {
     font-size: 1.4rem;
 }
