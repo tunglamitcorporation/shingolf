@@ -1,6 +1,3 @@
-* {
-  -webkit-appearance: none;
-}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -216,7 +213,7 @@ code {
 }
 .content__background{
   padding-top: 50%;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701503988/AzumayaWeb/main-banner-2_eesuja.jpg) top center / cover no-repeat;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701654567/AzumayaWeb/main-banner-2-transformed_jmkswh.jpg) top center / cover no-repeat;
   padding-bottom: 2px;
 
 }
@@ -356,7 +353,6 @@ code {
 }
 .content__news-list{
   list-style: none;
-  text-align: justify;
 }
 .content__news-item{
   font-size: 1.4rem;
@@ -393,11 +389,14 @@ code {
 .content__news-link a{
   text-decoration: none;
   color: var(--black--color);
-  margin-left: 15px;
+  margin: 0 15px;
   font-weight: 600;
 }
 .content__news-link a:hover{
   color: var(--primary--color);
+}
+.content__news-date{
+  margin-right: 15px;
 }
 .content__qr{
   width: 270px;
@@ -419,7 +418,7 @@ code {
   background-color: #09e009 !important; 
 }
 .content__welcome{
-  background: #ffffff url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698111742/AzumayaWeb/v8fmo6wketwrtgrhnsfw.jpg) center center / cover no-repeat;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701655335/AzumayaWeb/welcome-bg_z5dr6z.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   font-size: 18px;
   line-height: 1.4em;
@@ -497,7 +496,7 @@ code {
 .content__feature-container{
   position: relative;
   width: 100%;
-  height: 280px !important;
+  height: 240px;
   margin-top: 50px;
   overflow: hidden;
   display: flex;
@@ -896,7 +895,6 @@ code {
   width: 100%;
   border: solid 1px #c5c5c5;
   text-align: center;
-  overflow: hidden;
   margin-bottom: 40px;
   animation: fadeIn 0.3s linear;
 }
@@ -1201,6 +1199,114 @@ a:hover {
   border: none;
   background: url('https://cdn-icons-png.flaticon.com/512/4060/4060233.png') center center / contain no-repeat;
 }
+.contract__background{
+  padding-top: 35%;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701660726/AzumayaWeb/bg-contract_frmwem.jpg) center center / cover no-repeat;
+
+}
+.contract__title{
+  color: var(--black--color);
+  background-color: #f6f6f6;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 50px
+}
+.contract-text p,
+.contract-text li
+ {
+  font-size: 1.4rem;
+  padding: 5px;
+}
+.contract-title p {
+  font-size: 1.6rem;
+}
+.btn-contract{
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  background: #50317f;
+  border-radius: 6px;
+  min-width: 550px;
+  text-align: center;
+  position: relative;
+}
+.btn-contract::before{
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  bottom: -8px;
+  right: -8px;
+  background: #2a1052;
+  border-radius: 6px;
+  position: absolute;
+  z-index: -1;
+}
+.contract-benefit{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  padding-left: 26px;
+  border-left: solid 6px #50317f;
+  line-height: 4rem;
+  min-height: 4rem;
+  margin: 0 0 20px 0;
+}
+.text-modify{
+  background-color: #f6f6f6;
+  padding: 20px;
+}
+.text-modify h4,
+.text-modify p{
+  padding: 0 40px;
+}
+.Collapsible{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.cancel-contract{
+  list-style: disc;
+  margin-left: 20px;
+}
+.contract-form{
+    width: 80%;
+    background: #efefef;
+    position: relative;
+    padding: 30px 100px;
+    margin: 30px auto;
+}
+.contract-form:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  bottom: -10px;
+  right: -10px;
+  background: #d8c2f9;
+  position: absolute;
+  z-index: -1;
+}
+.contract-form input[type=text] {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 12px;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin-bottom: 10px;
+}
+.contract-form label {
+  display: block;
+  font-weight: 700;
+  color: #333;
+  text-align: left;
+  padding: 5px;
+  margin: 0 !important;
+}
 /* mobile */
 @media screen and (max-width: 46.1875em) {
   .header{
@@ -1218,6 +1324,7 @@ a:hover {
     position: absolute;
     width: 100%;
     height: auto;
+    margin-left: 20px;
 
   }
   .feature__content-title{
@@ -1256,7 +1363,7 @@ a:hover {
     display: flex;
 }
 .content__news-link a{ 
-    width: 100px;
+    width: 150px;
     overflow: hidden;
     display: block;
     display: -webkit-box;
@@ -1300,7 +1407,8 @@ a:hover {
   margin-left: 0 !important
 }
 .service__content-title{
-  padding: 40px 0;
+  padding: 40px !important;
+  width: 100%;
 }
 .btn-lang {
   display: flex;
@@ -1317,19 +1425,64 @@ a:hover {
   padding: 10px;
 }
 .service__content-body--table th,
-.service__content-body--table td {
-  padding: 0px !important;
+.service__content-body--table td
+ {
+  padding: 0;
+  font-size: 1rem;
 }
 .service__content-title,
 .service__content-note{
-  width: 104.5%;
+  font-size: 1.2rem;
 }
+}
+/* @media screen and (max-width: 600px) {
+  .service__content-body--table {
+    border: 0;
+  }
 
-}
+  .service__content-body--table caption {
+    font-size: 1.3em;
+  }
+  
+  .service__content-body--table th {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .service__content-body--table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .service__content-body--table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  .service__content-body--table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .service__content-body--table td:last-child {
+    border-bottom: 0;
+  }
+} */
 /* tablet */
-@media screen  and (min-width: 46.25em) and (max-width: 63.9375em){
+@media screen  and (max-width: 46.25em) and (max-width: 63.9375em){
   .top-header{
-    padding: 10px;
+    padding: 40px;
   }
   .header__mobile{
       display: block;

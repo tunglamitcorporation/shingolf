@@ -117,13 +117,13 @@ function Reservation() {
             value="male"
             defaultChecked
           />
-          <label className="col-md-2" htmlFor="gMale">
+          <label htmlFor="gMale">
             Mr.
           </label>
         </div>
         <div className="col-md-2">
           <input type="radio" name="gender" id="gFemale" value="female" />
-          <label className="col-md-2" htmlFor="gFemale">
+          <label htmlFor="gFemale">
             Ms.
           </label>
         </div>
@@ -383,7 +383,7 @@ function Reservation() {
               Gender
               <span className="required__note">*</span>
             </div>
-            <div className="col-md-2" >
+            <div className="col-md-2 form__group">
               <input
                 type="radio"
                 name="gender"
@@ -391,13 +391,13 @@ function Reservation() {
                 value="male"
                 defaultChecked
               />
-              <label className="col-md-2" htmlFor="gMale">
+              <label htmlFor="gMale">
                 Mr.
               </label>
             </div>
             <div className="col-md-2">
               <input type="radio" name="gender" id="gFemale" value="female" />
-              <label className="col-md-2" htmlFor="gFemale">
+              <label htmlFor="gFemale">
                 Ms.
               </label>
             </div>

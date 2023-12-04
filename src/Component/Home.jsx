@@ -18,7 +18,6 @@ export default function Home() {
       <div className="content">
           <div className="content__background">
           </div>
-
           {/* <div className="content__title">
             <img
               // className="content__title-logo"
@@ -138,7 +137,7 @@ export default function Home() {
           <div className="container-fluid">
             <div className="row" style={{ justifyContent: "center" }}>
               {featureItem.map((item) => (
-                <div className="col-md-6 col-lg-6 col-xl-6 col-xxl-3">
+                <div className="col-md-6 col-lg-6 col-xl-3 col-xxl-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div

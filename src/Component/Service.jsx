@@ -55,7 +55,7 @@ export default function Service() {
           ))}
         </TabList>
 
-        <TabPanel>
+        <TabPanel >
           <Tabs
             selectedTabClassName="service__active"
             className="col-md-10 offset-md-1"
