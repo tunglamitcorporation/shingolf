@@ -46,6 +46,8 @@ code {
   right: 0;
   bottom: 0;
   left: 0;
+  margin:0;
+  z-index: 2;
   background-color: rgba(0,0,0,0.3);
   display: none;
   animation: fadeIn 0.3s linear;
@@ -58,6 +60,7 @@ code {
   bottom: 0;;
   width: 320px;
   max-width: 100%;
+  margin: 0;
   z-index: 3;
   background-color: var(--white--color);
   list-style: none;
@@ -74,10 +77,13 @@ code {
 }
 .header__mobile-navbar-item {
   margin-top: 10px;
-  padding: 20px;
   font-size: 1.4rem;
   line-height: 2.4rem;
   border-bottom: 1px solid #ccc
+}
+.header__mobile-navbar-item a{
+  display: block;
+  padding: 20px;
 }
 .header__mobile-navbar-link {
   text-decoration: none;
@@ -1204,6 +1210,9 @@ a:hover {
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701660726/AzumayaWeb/bg-contract_frmwem.jpg) center center / cover no-repeat;
 
 }
+.content__contract-item a{
+  text-align: left !important;
+}
 .contract__title{
   color: var(--black--color);
   background-color: #f6f6f6;
@@ -1221,6 +1230,9 @@ a:hover {
 .contract-title p {
   font-size: 1.6rem;
 }
+.contract-text p {
+  font-weight: 100 !important;
+}
 .btn-contract{
   font-size: 30px;
   font-weight: 700;
@@ -1233,6 +1245,7 @@ a:hover {
   min-width: 550px;
   text-align: center;
   position: relative;
+  margin: 20px 0;
 }
 .btn-contract::before{
   content: '';
@@ -1259,6 +1272,7 @@ a:hover {
 .text-modify{
   background-color: #f6f6f6;
   padding: 20px;
+  margin-bottom: 20px;
 }
 .text-modify h4,
 .text-modify p{
@@ -1273,10 +1287,10 @@ a:hover {
   margin-left: 20px;
 }
 .contract-form{
-    width: 80%;
+    width: 100%;
     background: #efefef;
     position: relative;
-    padding: 30px 100px;
+    padding: 30px 20px;
     margin: 30px auto;
 }
 .contract-form:after {
@@ -1324,7 +1338,7 @@ a:hover {
     position: absolute;
     width: 100%;
     height: auto;
-    margin-left: 20px;
+    margin-left: 15px;
 
   }
   .feature__content-title{
@@ -1434,51 +1448,13 @@ a:hover {
 .service__content-note{
   font-size: 1.2rem;
 }
+.btn-contract{
+  height: 60px;
+  line-height: 40px;
+  min-width: 300px;
+  font-size: 2.4rem;
 }
-/* @media screen and (max-width: 600px) {
-  .service__content-body--table {
-    border: 0;
-  }
-
-  .service__content-body--table caption {
-    font-size: 1.3em;
-  }
-  
-  .service__content-body--table th {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  .service__content-body--table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  .service__content-body--table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-  }
-  
-  .service__content-body--table td::before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .service__content-body--table td:last-child {
-    border-bottom: 0;
-  }
-} */
+}
 /* tablet */
 @media screen  and (max-width: 46.25em) and (max-width: 63.9375em){
   .top-header{
@@ -1498,8 +1474,8 @@ a:hover {
     right: 5px;
     width: 28px;
     height: 28px;
-    font-size: 5rem;
-    margin-bottom: 45px;
+    font-size: 4rem;
+    margin-bottom: 35px;
   }
   .feature__content-title{
     font-size: 1.4rem;

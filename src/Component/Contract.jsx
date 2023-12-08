@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
 import Collapsible from "react-collapsible";
-import React, { useState, useRef } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
-import Axios from 'axios';
 export default function Contract() {
   const key = '6LefXSUpAAAAAO2hfwoAu_7cdRoXRhIp1o8wIkwW'
   return (
     <div>
       <div className="contract__background"></div>
-      <div className="contract__title">
+      <div className="container pl-5 pr-5">
+        <div className="row">
+        <div className="contract__title">
         <div className="col-md-12">
         東屋ホテルでは東南アジアへのご出張が多い企業様向けに特別価格でご宿泊いただける
         法人契約を承っております。是非、この機会にご検討くださいませ。
         </div>
       </div>
       <div className="container">
-        <div className="row" style={{ justifyContent: "center" }}>
+        <div className="row">
           <div className="col-md-4">
-            <div className="content__feature-item">
+            <div className="content__feature-item content__contract-item">
               <div className="content__feature-container">
                 <div
                   className="content__feature-img"
@@ -26,18 +26,18 @@ export default function Contract() {
                   }}
                 ></div>
               </div>
-              <div className="content__feature-name">
+              <div className="content__feature-name mt-1">
                 <a href="">和朝食</a>
               </div>
-              <div className="content__feature-text">
-                <p style={{ textAlign: "justify" }}>
+              <div className="content__feature-text mt-1">
+                <p className="mt-0">
                   1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。
                 </p>
               </div>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="content__feature-item">
+            <div className="content__feature-item content__contract-item">
               <div className="content__feature-container">
                 <div
                   className="content__feature-img"
@@ -46,18 +46,18 @@ export default function Contract() {
                   }}
                 ></div>
               </div>
-              <div className="content__feature-name">
+              <div className="content__feature-name mt-1">
                 <a href="">和朝食</a>
               </div>
-              <div className="content__feature-text">
-                <p style={{ textAlign: "justify" }}>
+              <div className="content__feature-text mt-1">
+                <p className="mt-0">
                   1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。
                 </p>
               </div>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="content__feature-item">
+            <div className="content__feature-item content__contract-item">
               <div className="content__feature-container">
                 <div
                   className="content__feature-img"
@@ -66,11 +66,11 @@ export default function Contract() {
                   }}
                 ></div>
               </div>
-              <div className="content__feature-name">
+              <div className="content__feature-name mt-1">
                 <a href="">和朝食</a>
               </div>
-              <div className="content__feature-text">
-                <p style={{ textAlign: "justify" }}>
+              <div className="content__feature-text mt-1">
+                <p className="mt-0">
                   1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function Contract() {
           <div className="col-md-12 center">
             <button className="btn-contract">お問い合わせはこちら</button>
           </div>
-          <div className="col-md-12 center mt-5 pt-5 content__feature-title">
+          <div className="content__feature-title" style={{marginTop:'50px'}}>
             法人契約のメリット
           </div>
           <div className="contract-benefit contract-title">
@@ -97,7 +97,9 @@ export default function Contract() {
               東南アジアにご出張の機会の多い企業様に最適です。
             </p>
           </div>
-          <div className="col-md-2 p-0">
+          <div className="container">
+            <div className="row">
+          <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
               <img
                 className="content__branch-img"
@@ -106,7 +108,7 @@ export default function Contract() {
               />
             </div>
           </div>
-          <div className="col-md-2 p-0">
+          <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
               <img
                 className="content__branch-img"
@@ -115,7 +117,7 @@ export default function Contract() {
               />
             </div>
           </div>
-          <div className="col-md-2 p-0">
+          <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
               <img
                 className="content__branch-img"
@@ -124,7 +126,7 @@ export default function Contract() {
               />
             </div>
           </div>
-          <div className="col-md-2 p-0">
+          <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
               <img
                 className="content__branch-img"
@@ -133,7 +135,7 @@ export default function Contract() {
               />
             </div>
           </div>
-          <div className="col-md-2 p-0">
+          <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
               <img
                 className="content__branch-img"
@@ -142,13 +144,15 @@ export default function Contract() {
               />
             </div>
           </div>
-          <div className="col-md-2 p-0">
+          <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
               <img
                 className="content__branch-img"
                 src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
                 alt=""
               />
+            </div>
+          </div>
             </div>
           </div>
           <div className="contract-benefit contract-title">
@@ -234,7 +238,7 @@ export default function Contract() {
           <div className="col-md-12 center">
             <button className="btn-contract">お問い合わせはこちら</button>
           </div>
-          <div className="contract-benefit contract-title">
+          <div className="contract-benefit contract-title" style={{marginTop:'50px'}}>
           契約の取り消し
           </div>
           <ul class="cancel-contract contract-text">
@@ -302,9 +306,11 @@ export default function Contract() {
                     sitekey={key}
                     />
                     </div>
-                    <button className="base__btn btn__send">Send</button>
+                    <button className="base__btn btn__send">送信</button>
                   </form>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

@@ -6,6 +6,9 @@ function Header() {
         i18n.changeLanguage(lng)
     }
     const headerData = t('header',{returnObjects:true})
+    const handleClick = () => {
+        document.getElementsByClassName('header__mobile-navbar-list').style.display ="none"
+    }
     return(
         <>
         <div className='top-header'>
@@ -75,18 +78,18 @@ function Header() {
                 <i className="fa-solid fa-xmark"></i>
             </label>
             <li className="header__mobile-navbar-item">
-                <Link to ="/"  className = "header__mobile-navbar-link">{t('header.item1')}</Link>
+                <Link htmlFor="header__mobile-input" onClick={handleClick} Link to ="/"  className = "header__mobile-navbar-link">{t('header.item1')}</Link>
             </li>
             <li className="header__mobile-navbar-item">
-                <Link to ='/Component/Policies'  className = "header__mobile-navbar-link">{t('header.item2')}</Link></li>
+                <Link to ='/Component/Policies' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item2')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <Link to ='/Component/Reservation'  className = "header__mobile-navbar-link">{t('header.item3')}</Link></li>
+                <Link to ='/Component/Reservation' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item3')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <Link to ='/Component/Feature'  className = "header__mobile-navbar-link">{t('header.item4')}</Link></li>
+                <Link to ='/Component/Feature' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item4')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <Link to ='/Component/Service'  className = "header__mobile-navbar-link" >{t('header.item5')}</Link></li>
+                <Link to ='/Component/Service'  onClick={handleClick} className = "header__mobile-navbar-link" >{t('header.item5')}</Link></li>
             <li className="header__mobile-navbar-item">
-                <Link to ='/Component/Contract'  className = "header__mobile-navbar-link">{t('header.item6')}</Link></li>
+                <Link to ='/Component/Contract' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item6')}</Link></li>
             </ul>
         </div>
         </>
