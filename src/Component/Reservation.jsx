@@ -1,6 +1,23 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import Flatpickr from "react-flatpickr";
+import "flatpickr/dist/themes/airbnb.css";
 function Reservation() {
+  const {t} = useTranslation()
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [startTime, setStartTime] = useState(null);
+  const [endTime, setEndTime] = useState(null);
+  const min = 1;
+  const max = 20;
+
+  const [value, setValue] = useState(1);
+
+  const handleChange = event => {
+    const value = Math.max(min, Math.min(max, Number(event.target.value)));
+    setValue(value);
+  };
   const city = [
     {
       id: 1,
@@ -85,6 +102,53 @@ function Reservation() {
     setShow(!show)
     
   }
+  // const intialValues = {username:"", email: "", password:""};
+  // const [formValues, setFormValues] = useState(intialValues);
+  // const [formErrors, setFormErrors] = useState({});
+  // const [isSubmit, setIsSubmit] = useState(false)
+
+  // const handleChanges = (e) =>{
+  //     console.log(e.target);
+  //     const{name , value} = e.target;
+  //     setFormValues({...formValues, [name]: value});
+  //     console.log(formValues);
+  // }
+
+  // useEffect(() => {
+  //     console.log(formErrors);
+  //     if(Object.keys(formErrors).length === 0 && isSubmit){
+  //         console.log(formErrors);
+  //     }
+  // }, [])
+
+  // const handleSubmit =(e) =>{
+  //     e.preventDefault();
+  //     setFormErrors(validate(formValues));
+  //     setIsSubmit(true);
+  // }
+  // const validate =(values)=>{
+  //     const errors = {};
+  //     const regex = '/^[^\\$@]+@[^\\$@]+\\.[^\\$@]{2,}$/i';
+      
+  //     if (!values.username){
+  //         errors.username = "Username is required!";
+  //     }
+
+  //     if(!values.email){
+  //         errors.email= "Email is required!";
+  //     }else if(!regex.test(values.email)){
+  //         errors.email = "This is not a valid email format!";
+  //     }
+
+  //     if(!values.password){
+  //         errors.password= "Password is required!";
+  //     } else if(values.password <4){
+  //         errors.password = "Password must be more than 4 characters";
+  //     } else if(values.password>16){
+  //         errors.password = "Password cannot be more than 16 characters";
+  //     }
+  //     return errors;
+  // }
   function SecondGuest() {
     return(
       <div className="container">
@@ -215,6 +279,8 @@ function Reservation() {
         </div>
       </div>
       <div className="container">
+      {/* <form onSubmit={handleSubmit}> */}
+      {/* {Object.keys(formErrors).length === 0 && isSubmit ? <p>successful</p>: <p>unsuccessful</p>}  */}
         <div className=" reservation__container">
       <div className="reserve-container">
         <div className="row">
@@ -223,10 +289,13 @@ function Reservation() {
             <span className="required__note">*</span>
           </div>
           <select
+            name="username"
+            value={selectedCity}
             className="col-md-2 form__content" 
             id={selectedCity}
-            value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
+            onChange={(e) => {
+              setSelectedCity(e.target.value)
+            }}
           >
             <option value="" disabled selected hidden>
               Please select a city
@@ -248,20 +317,22 @@ function Reservation() {
             Check-in date
             <span className="required__note">*</span>
           </div>
-          <input
-            className="col-md-2 form__content"
-            placeholder="Check-in date"
-            type="text"
-          />
+          <Flatpickr 
+          value={startDate}
+          options={{minDate:'today'}} 
+          className="col-md-2 form__content webkit-appearance" 
+          placeholder={t('booking.date_in')} 
+          onChange={(startDate)=>setStartDate(startDate)} />
           <div className="col-md-2 offset-2 name__title check-out-date">
             Check-out date
             <span className="required__note">*</span>
           </div>
-          <input
-            placeholder="Check-out date"
-            type="text"
-            className="col-md-2 form__content"
-          />
+          <Flatpickr 
+          value={endDate}
+          options={{minDate:new Date(startDate)}} 
+          className="col-md-2 form__content webkit-appearance" 
+          placeholder={t('booking.date_out')} 
+          onChange={(endDate) => setEndDate(endDate)} />
         </div>
         <div className="row">
           <div className="col-md-2 name__title">
@@ -270,39 +341,34 @@ function Reservation() {
               (Normal check-in : from 3pm)
             </small>
           </div>
-          <select className="col-md-2 form__content">
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-            <option value="17:00">17:00</option>
-            <option value="18:00">18:00</option>
-            <option value="19:00">19:00</option>
-            <option value="20:00">20:00</option>
-            <option value="21:00">21:00</option>
-            <option value="22:00">22:00</option>
-            <option value="23:00">23:00</option>
-            <option value="24:00">24:00</option>
-          </select>
+          <Flatpickr 
+          value={startTime}
+          options={{
+          enableTime:true,
+          noCalendar: true,
+          minTime:'15:00',
+          time_24hr:true
+          }}
+          placeholder="Check in time"
+          onChange={(startTime)=> setStartTime(startTime)}
+          className="col-md-2 form__content webkit-appearance" />
           <div className="col-md-2 offset-2 name__title check-out-time">
             Check-out time
             <small style={{ fontWeight: 600 }}>
               (Normal check-in : from 3pm)
             </small>
           </div>
-          <select className="col-md-2 form__content">
-            <option value="00:00">00:00</option>
-            <option value="01:00">01:00</option>
-            <option value="02:00">02:00</option>
-            <option value="03:00">03:00</option>
-            <option value="04:00">04:00</option>
-            <option value="05:00">05:00</option>
-            <option value="06:00">06:00</option>
-            <option value="07:00">07:00</option>
-            <option value="08:00">08:00</option>
-            <option value="09:00">09:00</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-          </select>
+          <Flatpickr 
+          value={endTime}
+          options={{
+            enableTime:true,
+            noCalendar: true,
+            minTime:'00:00',
+            maxTime:'12:00',
+            time_24hr:true
+          }}
+          placeholder="Check out time"
+          className="col-md-2 form__content webkit-appearance" />
         </div>
         <div className="row">
           <div className="col-md-2 name__title">
@@ -317,36 +383,22 @@ function Reservation() {
             Number of rooms
             <span className="required__note">*</span>
           </div>
-          <select className="col-md-2 form__content">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-          </select>
+          <input 
+          name="username"
+          type="number" 
+          // value={value}
+          // onChange={handleChange}
+          className="col-md-2 form__content" />
+           {/* <p>{ formErrors.username}</p> */}
           <div className="col-md-2 offset-2 name__title">
             Number of guests per room
             <span className="required__note">*</span>
           </div>
-          <select className="col-md-2 form__content">
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
+          <input 
+          type="number" 
+          min={1} 
+          max={4} 
+          className="col-md-2 form__content" />
         </div>
       </div>
       <div className="guest-container">
@@ -407,39 +459,24 @@ function Reservation() {
               Birth Date
               <span className="required__note">*</span>
             </div>
-            <select className="col-md-2 form__content day">
-              <option
-                className="guest-birthday"
-                value=""
-                disabled
-                selected
-                hidden
-              >
-                Day
-              </option>
-            </select>
-            <select className="col-md-2 form__content month">
-              <option
-                className="guest-birthMonth"
-                value=""
-                disabled
-                selected
-                hidden
-              >
-                Month
-              </option>
-            </select>
-            <select className="col-md-2 form__content year">
-              <option
-                className="guest-birthYear"
-                value=""
-                disabled
-                selected
-                hidden
-              >
-                Year
-              </option>
-            </select>
+            <input 
+            type="number"
+            min={1} 
+            max={31} 
+            placeholder="Day" 
+            className="col-md-2 form__content day" />
+            <input 
+            type="number" 
+            min={1} 
+            max={12} 
+            placeholder="Month"
+            className="col-md-2 form__content month" />
+            <input 
+            type="number" 
+            min={1925} 
+            max={2005} 
+            placeholder="Year"
+            className="col-md-2 form__content year" />
           </div>
         <div className="row">
           <div className="col-md-12 offset-4">
@@ -671,6 +708,7 @@ function Reservation() {
         </div>
       </div>
       </div>
+      {/* </form> */}
       </div>
       </div>
   );

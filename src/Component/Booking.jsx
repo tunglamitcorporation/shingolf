@@ -7,7 +7,10 @@ export default function Booking (){
     const bookingData = t('booking', {returnObjects:true})
     const city = t('booking.city', {returnObjects:true})
     const branch = t('booking.branch', {returnObjects:true})
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    console.log(startDate);
+    console.log(endDate);
     const [selectedCity, setSelectedCity] = useState();
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
@@ -21,12 +24,28 @@ export default function Booking (){
                 </div>
                 <div className="col-md-2 offset-md-1">
                 <div className="content__booking-date-in">
-                <Flatpickr options={{minDate:'today'}} className="flatpickr" placeholder={t('booking.date_in')} onChange={([date]) => {setStartDate({ date }); }} />
+                <Flatpickr 
+                value={startDate}
+                options={{
+                    minDate:'today',
+                    enableTime: true,
+                  }}
+                className="flatpickr" 
+                placeholder={t('booking.date_in')} 
+                onChange={(startDate) => setStartDate(startDate)}/>
                 </div>
                 </div>
                 <div className="col-md-2">
                 <div className="content__booking-date-out">
-                <Flatpickr className="flatpickr" placeholder={t('booking.date_out')} onChange={([date]) => {setStartDate({ date }); }} />
+                <Flatpickr 
+                value={endDate}
+                options={{
+                    minDate:new Date(startDate),
+                    enableTime : true,
+                  }}
+                className="flatpickr" 
+                placeholder={t('booking.date_out')} 
+                onChange = {(endDate) => setEndDate(endDate)} />
                 </div>
                 </div>
                 <div className="col-md-2">
