@@ -247,5 +247,89 @@
             }
 
         ]     
+    },
+    "service": {
+        "name": "提供サービス",
+        "location": [
+            {
+                "name": "ホーチミン"
+            },
+            {
+                "name": "ダナン"
+            },
+            {
+                "name": "ハノイ"
+            },
+            {
+                "name": "ハイフォン"
+            }
+        ],
+        "service_name": [
+            {
+                "name": "露天風呂"
+            },
+            {
+                "name": "朝食"
+            },
+            {
+                "name": "マッサージ"
+            }
+        ],
+        "hcm-roten-title": "露天風呂(男性のみ)は以下の営業時間となっております。ビジターの方もご利用可能です。",
+        "hcm-roten-female": "※女性専用は東屋タイバンルン２にて月～金：17時～18時45分・料金：150,000VND/名\n※露天風呂の貸切：月～金の午前11時〜午後5時まで（最終予約・入場は午後4時）の時間のみ。\n料金: 1〜4名：800,000 VND/１hour\n5～8名：1,000,000 VND/１hour\n女性のお客様もご利用可能です。事前に要予約となります。\n貸切をご希望の際はご利用時間と人数を事前に教え頂けますようお願いいたします。",
+        "hcm-breakfast-title": "東屋朝食は全日営業しております。\nビジターの方もご利用可能です。",
+        "hcm-massage-title": "フットマッサージは東屋タイバンルン1にてご利用いただけます。",
+        "hcm-branch": [
+            {
+                "branch": "タイバンルン 1",
+                "rotenburo": "月～金：6時～10時＆17時～24時 \n土日・祭日：7時〜24時 \n料金（2023年2月から）: 250,000VND/名",
+                "breakfast": "ビュッフェ：220,000VND/名  \nセットメニュー：150,000VND〜 \n月〜土：6時〜8時 ビュッフェ \n8時〜10時 セットメニュー \n日：セットメニューのみ",
+                "massage": "営業時間 10:00‐23:00（最終入場:22:45）\n\n・40分コース 250,000VND\n足を念入りにマッサージ\n・70分コース 300,000VND（宿泊者様 270,000VND）\n足・頭・肩・背中・腰・腕まで全身を万遍なくマッサージ\n\n・100分コース 400,000VND（宿泊者様 360,000VND）\n全身くまなく じっくりマッサージ\n\nビジターセット\n・セット露天風呂＋40分コース 450,000VND\n・セット露天風呂＋70分コース 500,000VND\n・セット露天風呂＋100分コース 600,000VND\n\n*＊ご宿泊者様はマッサージ料金10％割引\n＊施術スタッフへのチップはお客様のご厚意によりいただいております。\n＊お越しの際は事前予約をお勧めします。\n東屋タイバンルン1号店 (028) 3824 6835までお電話ください。"
+            },
+            {
+                "branch": "タイバンルン 2",
+                "rotenburo": "月～金：6時～10時＆19時～24時\n土日　：7時〜24時\n料金（2019年1月から）: 200,000VND/名",
+                "breakfast": "ビュッフェ：220,000VND/名  \nセットメニュー：150,000VND〜 \n月〜土：6時〜8時 ビュッフェ \n8時〜10時 セットメニュー \n日：セットメニューのみ"
+            },
+            {
+                "branch": "レタントン",
+                "rotenburo": "月～金：6時～10時＆17時～24時\n土日　：7時〜24時\n料金（2019年1月から）：150,000VND/名",
+                "breakfast": "ビュッフェ：220,000VND/名  \nセットメニュー：150,000VND〜 \n月〜土：6時〜8時 ビュッフェ \n8時〜10時 セットメニュー \n日：セットメニューのみ"
+            }
+        ],
+        "dn-roten-title": "露天風呂(男性のみ)は以下の営業時間となっております。ビジターの方もご利用可能です。",
+        "dn-roten-female": "※女性の宿泊者の方は受付で要予約でございます。\n午前 平日: 9時15分～10時15分 / 土日: 10時15分～11時15分\n午後 日〜金: 22時30分～23時30分\n\n※露天風呂の貸切も可能でございます。\n月～金の午前9時15分〜午後4時及び土日の午前10時15分〜午後4時まで（最終予約・入場は午後3時）の時間のみ。\n料金:\n1〜4名：800,000 VND/１時間\n5～8名：1,000,000 VND/１時間\n\n女性のお客様もご利用可能です。事前に要予約となります。\n貸切をご希望の際はご利用時間と人数を事前に教え頂けますようお願いいたします。",
+        "dn-breakfast-title": "東屋朝食は全日営業しております。",
+        "dn-massage-title": "フットマッサージは東屋ダナンにてご利用いただけます。",
+        "dn-branch": [
+            {
+                "branch": "ダナン",
+                "roten": "午前 平日:　6時～9時(最終入場8時半) / 土日:　7時～10時(最終入場9時半)\n午後 毎日: 17時～22時15分(最終入場22時)\n料金：150,000VND/名",
+                "breakfast": "ビュッフェ：200,000VND/名\nセットメニュー：150,000VND\n全日：6時〜10時",
+                "massage": "営業時間：\n月～金：14時～22時30分（最終入場: 22時15分）\n土日　：12時〜22時30分（最終入場: 22時15分）\n\nコース・料金は以下のようになっております。\n・40分コース: 200,000VND\n足を念入りにマッサージを行います。\n・70分コース: 250,000VND（宿泊者:225,000VND\n足だけでなく、頭・肩・背中・腰・腕まで全身を万遍なくマッサージ。\n\n・100分コース: 350,000VND（宿泊者: 315,000VND）\n\n全身くまなく、じっくりマッサージ。\n\nご宿泊の方には10％割引がございます。\n＊施術スタッフへのチップはお客様ご厚意によりいただいております。\nお越しの際は事前のご予約をお勧め致します。下記までお電話ください。\n東屋ダナン: (0236) 3743 888"
+            }
+        ],
+        "hn-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
+        "hn-roten-female": "※Female can use Rotenburo from Mon - Fri : 23:00 ~ 24:00 if there is any reservation booked at reception counter before 16:00.\n※Private - Rotenburo is available from Mon To Fri: 11am to 5pm (order before 16:00)\nPrice: 800.000vnd/hour for 1~4pax & 1.000.000vnd/hour for 5~8pax\nFemale customer also can use. Booking a day before is required.",
+        "hn-breakfast-title": "Azumaya Breakfast are open daily from 6am to 10am.\nVisitor are also welcoming. Price for visitor is as following",
+        "hn-massage-title": "Foot Massage service open daily at Azumaya Linh Lang, is also available for visitor.",
+        "hn-branch": [
+            {
+                "roten": "Mon - Fri: 6:00 - 9:00 & 17:00 - 23:00\nSat & Sun: 7:00 - 23:00\nPrice: 150.000/pax",
+                "breakfast": "Buffet: 220.000VND\nSet menu: 180.000VND\n\nServing time:\nFrom Mon to Sat: Buffet (from 6:00 to 8:00)\nSet menu (from 8:00 to 10:00)\nSunday: only set menu (from 6:00 to 10:00)",
+                "massage": "Opening hour\nMonday ~ Friday 13:00 - 22:00 (last entry 21: 30)\nSun & Sat 10:00 – 22:00(last entry 21: 30)\n\nThe course and fee are as follows.\n・40 minutes course 200,000 VND\n・70 minutes course 250,000 VND (Hotel guest: 225,000 VND)\n・100 minutes course 350,000 VND (Hotel guest: 315,000 VND)\n\nRotenburo Set for Visitor\n・Set Rotenburo + Massage 40' ：330,000 VND\n・Set Rotenburo + Massage 70' : 370,000 VND\n・Set Rotenburo + Massage 100' : 470,000 VND\n\n* 10% discount for Hotel guests\n* Tip is excluded, your satisfaction is our pleasure.\n* Advance reservation is highly recommended.\nPlease call for booking Azumaya Linh Lang (024) 38620620"
+            }
+        ],
+        "hp-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
+        "hp-roten-female": "※Female can use Rotenburo if there is any reservation booked at reception counter before:\nAM: Mon - Fri: 9:15am - 10:15am / Sat - Sun: 12:15pm - 13:15pm\nPM: Sun ~ Fri: 11:15pm - 12:15am\n\n※Private - Rotenburo is available at Weekday from 9:15am to 4:30pm and Weekend from 12:15pm to 4:30pm (last order 3:30pm)\nPrice: 800.000 VND/ hour for 1~4pax\n1.000.000 VND/ hour for 5~8pax\nFemale customer also can use. Booking a day before is required.",
+        "hp-breakfast-title": "Azumaya Breakfast are open daily from 6am to 10am.\nVisitor are also welcoming. Price for visitor is as following",
+        "hp-massage-title": "Foot Massage service is temporarily not available",
+        "hp-branch": [
+            {
+                "roten": "AM: Mon - Fri: 6am - 9am (last entry 8:30am) / Sat - Sun : 7am - 12pm (last entry 11:30am)\nPM: Mon - Sun : 5:30pm - 11pm (last entry 10:30pm)",
+                "breakfast": "Buffet: 200.000VND\nSet menu: 150.000VND/set\nServing time: 6:00~10:00",
+                "massage": "The massage business is also temporarily suspended"
+            }
+        ]
     }
 }
