@@ -12,7 +12,8 @@
         "item9": "Hai Phong",
         "item10": "Da Nang",
         "item11": "Cambodia",
-        "item12": "Branch"
+        "item12": "Branch",
+        "item12": "Massage Service"
     },
     "booking": {
         "title": "Booking",
@@ -352,5 +353,22 @@
             }
         ]
         
-    }
+    },
+    "massage":{
+        "title":"Massage",
+        "branch":[
+            {
+                "name": "Azumaya Thai Van Lung 1"
+            },
+            {
+                "name": "Azumaya Da Nang"
+            },
+            {
+                "name": "Azumaya Linh Lang"
+            }
+                
+        ]
+        
+            
+}
 }

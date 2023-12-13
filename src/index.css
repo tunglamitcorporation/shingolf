@@ -1321,6 +1321,24 @@ a:hover {
   padding: 5px;
   margin: 0 !important;
 }
+.massage-image{
+  height: 200px;
+  margin-top: 0;
+}
+.massage__header {
+  width: 100%;
+  padding: 100px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1702435598/AzumayaWeb/bkej2rsxkcv8gomuys0l.jpg) center center / cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  text-align: center;
+
+}
+.massage__header  h1{
+  color: #fff;
+  font-size: 52px;
+  font-weight: bold
+}
 /* mobile */
 @media screen and (max-width: 46.1875em) {
   .header{
@@ -1454,6 +1472,10 @@ a:hover {
   min-width: 300px;
   font-size: 2.4rem;
 }
+.massage-image{
+  margin: 20px 0 !important;
+}
+
 }
 /* tablet */
 @media screen  and (max-width: 46.25em) and (max-width: 63.9375em){
@@ -1499,5 +1521,8 @@ a:hover {
 }
 .content__feature-item{
   margin-left: 40px;
+}
+.massage-image{
+  margin: 20px 0 !important;
 }
 }

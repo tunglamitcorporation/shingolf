@@ -49,6 +49,8 @@ function Header() {
                     <Link className="header__navbar-link" to ='/Component/Feature'>{t('header.item4')}</Link></li>
                 <li className="header__navbar-item">
                     <Link  className = "header__navbar-link" to = '/Component/Service'>{t('header.item5')}</Link></li>
+                    <li className="header__navbar-item">
+                    <Link  className = "header__navbar-link" to = '/Component/Massage'>{t('header.item12')}</Link></li>
                 <li className="header__navbar-item">
                     <Link  className = "header__navbar-link" to ='/Component/Contract'>{t('header.item6')}</Link></li>
                 <li className="header__navbar-item">

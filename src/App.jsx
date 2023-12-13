@@ -9,6 +9,7 @@ import Service from "./Component/Service";
 import Reservation from "./Component/Reservation";
 import BrandDetail from "./Component/BrandDetail";
 import RoomDetail from "./Component/RoomDetail";
+import Massage from "./Component/Massage";
 import './index.css'
 import './base.css'
 import {Route, Routes } from 'react-router-dom'
@@ -47,6 +48,7 @@ function App() {
       <Route path="/Component/Contract" element={<Contract />} />
       <Route path="/Component/BrandDetail" element={<BrandDetail />} />
       <Route path="/Component/RoomDetail" element={<RoomDetail />} />
+      <Route path="/Component/Massage" element={<Massage />} />
       </Routes> 
     <Footer />
     </div>
