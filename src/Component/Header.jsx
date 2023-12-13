@@ -50,7 +50,7 @@ function Header() {
                 <li className="header__navbar-item">
                     <Link  className = "header__navbar-link" to = '/Component/Service'>{t('header.item5')}</Link></li>
                     <li className="header__navbar-item">
-                    <Link  className = "header__navbar-link" to = '/Component/Massage'>{t('header.item12')}</Link></li>
+                    <Link  className = "header__navbar-link" to = '/Component/Massage'>{t('header.item13')}</Link></li>
                 <li className="header__navbar-item">
                     <Link  className = "header__navbar-link" to ='/Component/Contract'>{t('header.item6')}</Link></li>
                 <li className="header__navbar-item">
@@ -90,6 +90,8 @@ function Header() {
                 <Link to ='/Component/Feature' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item4')}</Link></li>
             <li className="header__mobile-navbar-item">
                 <Link to ='/Component/Service'  onClick={handleClick} className = "header__mobile-navbar-link" >{t('header.item5')}</Link></li>
+            <li className="header__mobile-navbar-item">
+                <Link to ='/Component/Massage' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item13')}</Link></li>
             <li className="header__mobile-navbar-item">
                 <Link to ='/Component/Contract' onClick={handleClick} className = "header__mobile-navbar-link">{t('header.item6')}</Link></li>
             </ul>

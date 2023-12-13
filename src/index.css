@@ -1,11 +1,11 @@
-body {
+html,body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: overlay;
+  width: 100;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -308,9 +308,6 @@ code {
   text-align: center;
   text-transform: uppercase;
 
-}
-#myID::placeholder{
-  color: var(--white--color);
 }
 .flatpickr{
   border: 1px solid #c3c3c3;
@@ -1339,8 +1336,30 @@ a:hover {
   font-size: 52px;
   font-weight: bold
 }
+.webkit-appearance{
+  -webkit-appearance: none;
+}
 /* mobile */
 @media screen and (max-width: 46.1875em) {
+  html,body{
+    overflow-x: clip;
+  }
+  .content__booking-date-in ::placeholder,
+.content__booking-date-out ::placeholder{
+  color: #ffffff;
+  font-weight: 500;
+}
+::-webkit-date-and-time-value{
+  text-align: left;
+}
+  .content__welcome,
+  .policies__header,
+  .reservation__content,
+  .service__header,
+  .massage__header{
+    background-attachment: unset;
+  }
+
   .header{
       height: 50px;
   }
@@ -1427,7 +1446,10 @@ a:hover {
 .footer__container3{
   height: 100px;
 }
-
+.footer__container>.container>.row,
+.footer__container2>.container>.row{
+  text-align: center !important;
+}
 .btn__top:hover{
   color: #ffffff;
   background-color: #482979;
@@ -1472,13 +1494,30 @@ a:hover {
   min-width: 300px;
   font-size: 2.4rem;
 }
+.webkit-appearance{
+  -webkit-appearance: none;
+}
+.check-out-date {
+  margin-left:0 !important
+}
+.check-out-time{
+  margin-left: 0 !important
+}
 .massage-image{
   margin: 20px 0 !important;
 }
-
 }
 /* tablet */
 @media screen  and (max-width: 46.25em) and (max-width: 63.9375em){
+  .webkit-appearance{
+    -webkit-appearance: none;
+  }
+  .check-out-date {
+    margin-left:0 !important
+  }
+  .check-out-time{
+    margin-left: 0 !important
+  }
   .top-header{
     padding: 40px;
   }

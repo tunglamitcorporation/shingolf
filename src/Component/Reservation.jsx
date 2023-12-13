@@ -301,7 +301,6 @@ function Reservation() {
                   required
                   value={startDate}
                   options={{
-                    allowInput:true,
                     minDate:'today'}} 
                   className="col-md-2 form__content webkit-appearance" 
                   placeholder={t('booking.date_in')} 
@@ -378,7 +377,7 @@ function Reservation() {
                   value={value}
                   onChange={handleChange}
                   className="col-md-2 form__content" />
-                  <div className="col-md-2 offset-2 name__title">
+                  <div className="col-md-2 offset-0 offset-md-2 name__title">
                     Number of guests per room
                     <span className="required__note">*</span>
                   </div>

@@ -28,9 +28,8 @@ export default function Booking (){
                 value={startDate}
                 options={{
                     minDate:'today',
-                    enableTime: true,
                   }}
-                className="flatpickr" 
+                className="flatpickr check-in-time webkit-appearance" 
                 placeholder={t('booking.date_in')} 
                 onChange={(startDate) => setStartDate(startDate)}/>
                 </div>
@@ -41,9 +40,8 @@ export default function Booking (){
                 value={endDate}
                 options={{
                     minDate:new Date(startDate),
-                    enableTime : true,
                   }}
-                className="flatpickr" 
+                className="flatpickr check-out-time webkit-appearance" 
                 placeholder={t('booking.date_out')} 
                 onChange = {(endDate) => setEndDate(endDate)} />
                 </div>
