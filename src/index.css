@@ -558,7 +558,8 @@ code {
   margin-top: 90px;
 }
 .footer__container{
-  padding-top: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   height: 100%;
   color: var(--white--color);
   line-height: 2.5rem;    
@@ -580,14 +581,14 @@ code {
 
 }
 .footer__container2{
-  padding-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   height: 100%;
   color: var(--white--color);
   line-height: 2.5rem;
 }
 .footer__container3 {
   position: relative;
-  height: 150px;
   background-color: #2A2F3C;
 }
 .footer__logo{
@@ -769,9 +770,9 @@ code {
 .feature__content-background{
   width: 100%;
   padding: 150px 0;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/xdnpuoiovao4jlwxfa0b.jpg) center center / cover no-repeat;
-}
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/xdnpuoiovao4jlwxfa0b.jpg) center center / cover no-repeat;
 
+}
 .highlight__text{
   width: 100%;
   color: var(--white--color);
@@ -803,7 +804,7 @@ code {
 .feature__number{
   position: absolute;
   top:0;
-  left: 0;
+  /* left: 0; */
   height: 50px;
   width: 100px;
   background-color: var(--primary--color);

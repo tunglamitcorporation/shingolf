@@ -3,7 +3,7 @@ function Footer() {
         <div className="footer">
         <div className="footer__container">
             <div className="container">
-                <div className="row" style={{textAlign: 'center'}}>
+                <div className="row left">
                     <div className="col-12 col-md-6 col-lg-3">
                         <div className="footer__branch-name">
                             <h2>Azumaya Thai Van Lung 1</h2>
@@ -149,8 +149,8 @@ function Footer() {
         </div>
         <div className="footer__container2">
             <div className="container">
-                <div className="row" style={{textAlign:'center'}}>
-                    <div className="col-md-12">
+                <div className="row left">
+                    <div className="col-md-12 offset-md-5">
                         <div className="footer__branch-name">
                             <h2>AZUMAYA PHNOM PENH</h2>
                         </div>

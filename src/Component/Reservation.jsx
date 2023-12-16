@@ -5,38 +5,27 @@ import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 function Reservation() {
   const {t} = useTranslation()
+  const bookingData = t('booking', {returnObjects:true})
+  const [text, setText] = useState(t('reservation.more'))
+  const city = t('booking.city', {returnObjects:true})
+  const branch = t('booking.branch', {returnObjects:true})
+  const reservationData = t('reservation', {returnObjects:true})
+  const payMethod = t('reservation.method', {returnObjects:true})
+  const requireItem = t('reservation.requirement-item', {returnObjects:true})
+  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedBranch, setSelectedBranch] = useState("");
+  const [gender, setGender] = useState();
+  console.log(gender);
+  const flatBranches = [].concat(...branch)
+  const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
+  console.log(selectedCity)
+  console.log(selectedBranch)
+
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null)
-  console.log(startDate);
-  const [dateIn, setDateIn] = useState('')
-  const [dateOut, setDateOut] = useState('')
-  const [roomKind, setRoomKind] = useState('')
-  const [roomAmount, setRoomAmount] = useState('')
-  const [guestAmount, setGuestAmount] = useState('')
-  const [familyName, setFamilyName] = useState('')
-  const [givenName, setGivenName] = useState('')
-  const [birthday, setBirthday] = useState('')
-  const [birthdayMonth, setBirthdayMonth] = useState('')
-  const [birthYear, setBirthYear] = useState('')
-  const [email, setEmail] = useState('')
 
-  const validateForm = () => {
-    if(selectedCity.length == 0) {
-      alert('Location can not be empty')
-      return
-    }
-    if (familyName.length == 0) {
-      alert('Family name can not be empty')
-      return
-    }
-    if (givenName.length == 0) {
-      alert('Given name can not be empty')
-      return
-  }
-  alert("Form is valid");
-}
   const min = 1;
   const max = 20;
   const [value, setValue] = useState(1);
@@ -44,92 +33,32 @@ function Reservation() {
     const value = Math.max(min, Math.min(max, Number(event.target.value)));
     setValue(value);
   };
-  const city = [
-    {
-      id: 1,
-      name: "Ha Noi",
-    },
-    {
-      id: 2,
-      name: "Ho Chi Minh",
-    },
-    {
-      id: 3,
-      name: "Da Nang",
-    },
-    {
-      id: 4,
-      name: "Hai Phong",
-    },
-  ];
-  const branch = [
-    {
-      branch_id: 1,
-      city_id: 1,
-      branch_name: "Azumaya Hai Ba Trung 1",
-    },
-    {
-      branch_id: 2,
-      city_id: 1,
-      branch_name: "Azumaya Kim Ma 2",
-    },
-    {
-      branch_id: 3,
-      city_id: 1,
-      branch_name: "Azumaya Kim Ma 3",
-    },
-    {
-      branch_id: 4,
-      city_id: 1,
-      branch_name: "Azumaya Linh Lang",
-    },
-    {
-      branch_id: 5,
-      city_id: 2,
-      branch_name: "Azumaya Le Thanh Ton",
-    },
-    {
-      branch_id: 6,
-      city_id: 2,
-      branch_name: "Azumaya Thai Van Lung 1",
-    },
-    {
-      branch_id: 7,
-      city_id: 2,
-      branch_name: "Azumaya Thai Van Lung 2",
-    },
-    {
-      branch_id: 8,
-      city_id: 2,
-      branch_name: "Azumaya Annex",
-    },
-    {
-      branch_id: 9,
-      city_id: 3,
-      branch_name: "Azumaya Da Nang Hotel",
-    },
-    {
-      branch_id: 10,
-      city_id: 4,
-      branch_name: "Azumaya Hai Phong Hotel",
-    },
-  ];
-  const [selectedCity, setSelectedCity] = useState("");
-  const filteredBranches = branch.filter((b) => b.city_id == selectedCity);
+
   const [show, setShow] = useState(false)
   const [status, setStatus] = useState(0)
-  const [text, setText] = useState('More +')
+  const [statusC, setStatusC] = useState(0)
+  const [showButton, setShowButton] = useState(1)
+  console.log(showButton);
 
+  const handleClick = () => {
+    text === t('reservation.more') ? setText(t('reservation.remove')) : setText(t('reservation.more'))
+    setShow(!show)
+  }
   const handleSelected =(status) => {
     setStatus(status)
   }
-  const handleClick = () => {
-    text === 'More +' ? setText('Remove') : setText('More +')
-    setShow(!show)
-    
+  const handleSelectedCompany =(statusC) => {
+    setStatusC(statusC)
   }
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  function MoreButton() {
+    return(
+      <div className="row">
+                  <div className="col-md-12 offset-4">
+                    <button className="base__btn btn__send" onClick={handleClick}>{text}</button>
+                  </div>
+                  {show && <SecondGuest />}
+                </div>
+    )
   }
   function SecondGuest() {
     return(
@@ -161,7 +90,7 @@ function Reservation() {
             name="gender"
             id="gMale"
             value="male"
-            defaultChecked
+            
           />
           <label htmlFor="gMale">
             Mr.
@@ -215,11 +144,10 @@ function Reservation() {
       </div>
     )
   }
-
   function ShowBooker() {
   return(
     <div className="row">
-    <div className="col-md-2 name__title">Name</div>
+    <div className="col-md-2 name__title">{t('reservation.name')}</div>
       <input
         type="text"
         className="booker-name form__content col-md-2"
@@ -228,14 +156,29 @@ function Reservation() {
       />
       </div>
   )
+ }
+  function ShowCompanyName() {
+    return (
+      <div className="row">
+      <div className="col-md-2 name__title">{t('reservation.company')}</div>
+        <input
+          type="text"
+          className="booker-name form__content col-md-2"
+          id=""
+          placeholder="Company Name"
+        />
+        <span className="required__note">{t('reservation.company-note')}</span>
+        </div>
+    )
   }
+
   return (
       <div>
       <div className="reservation__content">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Reservation</h1>
+              <h1>{t('reservation.title')}</h1>
             </div>
           </div>
         </div>
@@ -252,53 +195,54 @@ function Reservation() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">Reservation</Link>
+                <Link className="breadcrumb__title">{t('reservation.title')}</Link>
               </li>
             </ul>
             </div>
           </div>
         </div>
       </div>
-      <form onSubmit={handleSubmit}>
               <div className="container">
                 <div className=" reservation__container">
               <div className="reserve-container">
                 <div className="row">
                   <div className="col-md-2 name__title">
-                    Choice of Branch:
+                  {t('reservation.choice')}
                     <span className="required__note">*</span>
                   </div>
                   <select
-                    required
                     value={selectedCity}
                     className="col-md-2 form__content" 
                     id={selectedCity}
+                    defaultValue={"Ho Chi Minh"}
                     onChange={(e) => {
                       setSelectedCity(e.target.value)
                     }}
                   >
-                    <option value="" disabled selected hidden>
-                      Please select a city
-                    </option>
                     {city.map((item) => (
-                      <option key={item.id} value={item.id}>
-                        {item.name}
+                      <option key={item.id} value={item.city_name}>
+                        {item.city_name}
                       </option>
                     ))}
                   </select>
-                  <select className="col-md-2 form__content" disabled={!selectedCity}>
+                  <select 
+                  value={selectedBranch}
+                  defaultValue={"Azumaya Le Thanh Ton"}
+                  className="col-md-2 form__content" 
+                  disabled={!selectedCity}  
+                  onChange={(e)=>setSelectedBranch(e.target.value)}>
+                    <option></option>
                     {filteredBranches.map((item) => (
-                      <option key={item.branch_id}>{item.branch_name}</option>
+                      <option key={item.branch_id} value={item.branch_name}>{item.branch_name}</option>
                     ))}
                   </select>
                 </div>
                 <div className="row">
                   <div className="col-md-2 name__title">
-                    Check-in date
+                  {t('reservation.check-in')}
                     <span className="required__note">*</span>
                   </div>
                   <Flatpickr 
-                  required
                   value={startDate}
                   options={{
                     minDate:'today'}} 
@@ -308,25 +252,23 @@ function Reservation() {
                     setStartDate(startDate);
                     }} />
                   <div className="col-md-2 offset-2 name__title check-out-date">
-                    Check-out date
+                  {t('reservation.check-out')}
                     <span className="required__note">*</span>
                   </div>
                   <Flatpickr 
-                  required
                   value={endDate}
                   options={{minDate:new Date(startDate)}} 
                   className="col-md-2 form__content webkit-appearance" 
                   placeholder={t('booking.date_out')} 
                   onChange={(endDate) =>{
                     setEndDate(endDate)
-                    
                   }} />
                 </div>
                 <div className="row">
                   <div className="col-md-2 name__title">
-                    Check-in time:
+                  {t('reservation.in-time')}
                     <small style={{ fontWeight: "600" }}>
-                      (Normal check-in : from 3pm)
+                    {t('reservation.in-note')}
                     </small>
                   </div>
                   <Flatpickr 
@@ -341,9 +283,9 @@ function Reservation() {
                   onChange={(startTime)=> setStartTime(startTime)}
                   className="col-md-2 form__content webkit-appearance" />
                   <div className="col-md-2 offset-2 name__title check-out-time">
-                    Check-out time
+                  {t('reservation.out-time')}
                     <small style={{ fontWeight: 600 }}>
-                      (Normal check-in : from 3pm)
+                    {t('reservation.out-note')}
                     </small>
                   </div>
                   <Flatpickr 
@@ -361,7 +303,7 @@ function Reservation() {
                 </div>
                 <div className="row">
                   <div className="col-md-2 name__title">
-                    Kind of rooms
+                  {t('reservation.room-kind')}
                     <span className="required__note">*</span>
                   </div>
                   <select className="col-md-2 form__content">
@@ -369,7 +311,7 @@ function Reservation() {
                 </div>
                 <div className="row">
                   <div className="col-md-2 name__title">
-                    Number of rooms
+                  {t('reservation.room-amount')}
                     <span className="required__note">*</span>
                   </div>
                   <input 
@@ -378,50 +320,51 @@ function Reservation() {
                   onChange={handleChange}
                   className="col-md-2 form__content" />
                   <div className="col-md-2 offset-0 offset-md-2 name__title">
-                    Number of guests per room
+                  {t('reservation.guest-amount')}
                     <span className="required__note">*</span>
                   </div>
                   <input 
                   type="number" 
                   min={1} 
                   max={4} 
-                  className="col-md-2 form__content" />
+                  value={showButton}
+                  className="col-md-2 form__content"
+                  onChange={(e)=>setShowButton(e.target.value)} />
                 </div>
               </div>
               <div className="guest-container">
                 <div className="row">
                   <div className="guest__information">
-                  <div className="col-md-12 guest__name-title">Guest Information</div>
+                  <div className="col-md-12 guest__name-title">{t('reservation.guest-info')}</div>
                   <div className="row">
                     <div className="col-md-2 name__title">
-                      Name
+                    {t('reservation.name')}
                       <span className="required__note">*</span>
-                      <small>(Please fill in the name of all the members stay)</small>
+                      <small>{t('reservation.name-note')}</small>
                     </div>
                     <input
-                      placeholder="Family Name"
+                      placeholder={t('reservation.family-name')}
                       type="text"
                       className="col-md-2 form__content"
                       onChange={(e) => {
                         setFamilyName(e.target.value)}}
                     />
                     <input
-                      placeholder="Given Name"
+                      placeholder={t('reservation.given-name')}
                       type="text"
                       name="gName"
                       className=" col-md-2 form__content"
                       onChange={(e) => setGivenName(e.target.value)}
                     />
                     <span
-                      className="col-md-2 required__note"
-                      style={{ fontSize: "1.4rem" }}
+                      className="col-md-4 required__note"
                     >
-                      Please write in Alphabet
+                      {t('reservation.name-required')}
                     </span>
                   </div>
                   <div className="row">
                     <div className="col-md-2 name__title">
-                      Gender
+                    {t('reservation.gender')}
                       <span className="required__note">*</span>
                     </div>
                     <div className="col-md-2 form__group">
@@ -430,65 +373,62 @@ function Reservation() {
                         name="gender"
                         id="gMale"
                         value="male"
-                        defaultChecked
+                        onClick={(e)=>setGender(e.target.value)}
                       />
                       <label htmlFor="gMale">
-                        Mr.
+                      {t('reservation.mr')}
                       </label>
                     </div>
                     <div className="col-md-2">
-                      <input type="radio" name="gender" id="gFemale" value="female" />
+                      <input 
+                      type="radio" 
+                      name="gender" 
+                      id="gFemale" 
+                      value="female" 
+                      onClick={(e)=>setGender(e.target.value)}
+                      />
                       <label htmlFor="gFemale">
-                        Ms.
+                      {t('reservation.ms')}
                       </label>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-md-2 name__title">
-                      Birth Date
+                    {t('reservation.birth-date')}
                       <span className="required__note">*</span>
                     </div>
                     <input 
-                    required
                     type="number"
                     min={1} 
                     max={31} 
-                    placeholder="Day" 
+                    placeholder={t('reservation.day')} 
                     className="col-md-2 form__content day" />
-                    <input 
-                    required
+                    <input
                     type="number" 
                     min={1} 
                     max={12} 
-                    placeholder="Month"
+                    placeholder={t('reservation.month')}
                     className="col-md-2 form__content month" />
                     <input 
-                    required
                     type="number" 
                     min={1925} 
                     max={2005} 
-                    placeholder="Year"
+                    placeholder={t('reservation.year')}
                     className="col-md-2 form__content year" />
                   </div>
+                  {showButton >= 2 && <MoreButton />}
                 <div className="row">
-                  <div className="col-md-12 offset-4">
-                    <button className="base__btn btn__send" onClick={handleClick}>{text}</button>
-                  </div>
-                  {show && <SecondGuest />}
-                </div>
-                <div className="row">
-                  <div className="col-md-2 name__title">Name of person who makes reservation:</div>
+                  <div className="col-md-2 name__title">{t('reservation.booker')}</div>
                   <div className="col-md-6">
                     <input
                       type="radio"
                       name="Booker"
                       id="booker"
-                      defaultChecked
                       value="same"
                       checked = {status === 0}
                       onClick={(e) => handleSelected(0)}
                     />
-                    <label htmlFor="booker">Same as person who will stay</label>
+                    <label htmlFor="booker">{t('reservation.same-person')}</label>
                     <br />
                     <input
                       type="radio"
@@ -498,37 +438,39 @@ function Reservation() {
                       checked = {status === 1}
                       onClick={(e) => handleSelected(1)}
                     />
-                    <label htmlFor="booker"> Different with who will stay</label>
+                    <label htmlFor="booker">{t('reservation.diff-person')}</label>
                   </div>
                 </div>
                 {status === 1 && <ShowBooker />}
                 <div className="row">
-                  <div className="col-md-2 name__title">Email address
+                  <div className="col-md-2 name__title">{t('reservation.email')}
                     <span className="col-md-2 required__note">*</span>
                   </div>
                     <input
-                      required  
+                      
                       type="text"
                       className="booker-email form__content col-md-2"
-                      id=""
-                      placeholder="Email"
+                      placeholder={t('reservation.email')}
                     />
                     <span className="col-md-8 required__note">
-                      Please leave your exact email address for our soon confirmation or
-                      contact
+                        {t('reservation.email-note')}
                     </span>
                 </div>
                 <div className="row">
-                  <div className="col-md-2 name__title">Phone number</div>
+                  <div className="col-md-2 name__title">{t('reservation.phone')}</div>
                     <input
                       type="text"
                       className="booker-phone form__content col-md-2"
                       id=""
-                      placeholder="Phone number"
+                      placeholder={t('reservation.phone')}
+                      onKeyPress={(event) => {
+                        if (!/[0-9]/.test(event.key)) {
+                          event.preventDefault();
+                        }
+                      }}
                     />
                     <span className="col-md-8 required__note">
-                      Please input country code if it's not Vietnamese or Japanese
-                      telephone's number
+                    {t('reservation.phone-note')}
                     </span>
                 </div>
                 {/* <div className="row">
@@ -546,39 +488,40 @@ function Reservation() {
                   </span>
                 </div> */}
                 <div className="row">
-                  <div className="col-md-2 name__title">Room type</div>
+                  <div className="col-md-2 name__title">{t('reservation.room-type')}</div>
                   <div className="col-md-2">
                     <input
                       type="radio"
                       name="roomType"
                       id="smk"
-                      value="Smoking"
-                      defaultChecked
+                      value={t('reservation.smk')}
+                      
                     />
-                    <label htmlFor="smk">Smoking</label>
+                    <label htmlFor="smk">{t('reservation.smk')}</label>
                   </div>
                   <div className="col-md-2">
                     <input
                       type="radio"
                       name="roomType"
                       id="no-smk"
-                      value="Non-Smoking"
+                      value={t('reservation.non-smk')}
                     />
-                    <label htmlFor="no-smk">Non-Smoking</label>
+                    <label htmlFor="no-smk">{t('reservation.non-smk')}</label>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-md-2 name__title">Contract</div>
+                  <div className="col-md-2 name__title">{t('reservation.contract')}</div>
                   <div className="col-md-2">
                     <input
                       type="radio"
                       name="contract"
                       id="hContract"
                       className="Contract"
-                      value="No Contract"
-                      defaultChecked
+                      value={t('reservation.n-cont')}
+                      checked = {statusC == 0}
+                      onClick={(e) => handleSelectedCompany(0)}
                     />
-                    <label htmlFor="hContract">No Contract</label>
+                    <label htmlFor="hContract">{t('reservation.n-cont')}</label>
                   </div>
                   <div className="col-md-2">
                     <input
@@ -586,23 +529,26 @@ function Reservation() {
                       name="contract"
                       id="hContract"
                       className="Contract"
-                      value="Contract"
+                      value={t('reservation.h-cont')}
+                      checked = {statusC == 1}
+                      onClick={(e) => handleSelectedCompany(1)}
                     />
-                    <label htmlFor="hContract">Have Contract</label>
+                    <label htmlFor="hContract">{t('reservation.h-cont')}</label>
                   </div>
                 </div>
+                {statusC == 1 && <ShowCompanyName />}
                 <div className="row">
-                  <div className="col-md-2 name__title">VAT Invoice</div>
+                  <div className="col-md-2 name__title">{t('reservation.vat-invoice')}</div>
                   <div className="col-md-2">
                     <input
                       type="radio"
                       name="vatInvoice"
                       id="no-need"
                       className="VATInvoice"
-                      value="No Necessarily"
-                      defaultChecked
+                      value={t('reservation.n-need')}
+                      
                     />
-                    <label htmlFor="no-need">No Necessarily</label>
+                    <label htmlFor="no-need">{t('reservation.n-need')}</label>
                   </div>
                   <div className="col-md-2">
                     <input
@@ -610,33 +556,23 @@ function Reservation() {
                       name="vatInvoice"
                       id="need"
                       className="VATInvoice"
-                      value="Necessarily"
+                      value={t('reservation.need')}
                     />
-                    <label htmlFor="need">Necessarily</label>
+                    <label htmlFor="need">{t('reservation.need')}</label>
                     <br />
                   </div>
                   <span className="required__note">
-                    VAT is Value Added tax. It is a tax on the sale of most goods and
-                    services. VAT revenues are collected through businesses who are
-                    registered for VAT
+                  {t('reservation.vat-note')}
                   </span>
                 </div>
                 <div className="row">
-                  <div className="col-md-2 name__title">Payment Method</div>
+                  <div className="col-md-2 name__title">{t('reservation.pay-method')}</div>
                   <select style={{ width: "300px" }} className="col-md-2 form__content">
-                    <option value="By cash at counter (VND/ USD/ JPY)">
-                      By cash at counter (VND/ USD/ JPY)
+                    {payMethod.map(item => (
+                      <option value={item.name}>
+                      {item.name}
                     </option>
-                    <option value="By credit card at counter (VND only)">
-                      By credit card at counter (VND only)
-                    </option>
-                    <option value="By company transfer before check in">
-                      By company tranfer before check in
-                    </option>
-                    <option value="By company transfer after check out">
-                      By company tranfer after check out
-                    </option>
-                    <option value="Other">Other</option>
+                    ))}
                   </select>
                 </div>
                 </div>
@@ -645,67 +581,47 @@ function Reservation() {
               <div className="other-container">
                 <div className="row">
                   <div className="col-md-2 name__title">
-                    Any special requirement (late"checkout pick"up, etc...)
+                  {t('reservation.requirement')}<br />
+                    <small>{t('reservation.requirement-note')}</small>
                     </div>
                     <div className="col-md-6">
-                      <input
+                    {requireItem.map(item => (
+                        <>
+                        <input
                         type="checkbox"
                         className="special"
                         id="spcRequire"
-                        value="Pick-up"
+                        value={item.name}
                       />
-                      <label htmlFor="spcRequire">Pick-up</label><br />
-                      <input
-                        type="checkbox"
-                        className="special"
-                        id="spcRequire"
-                        value="Drop-off"
-                      />
-                      <label htmlFor="spcRequire">Drop-off</label><br />
-                      <input
-                        type="checkbox"
-                        className="special"
-                        id="spcRequire"
-                        value="Early check-in"
-                      />
-                      <label htmlFor="spcRequire">Early check-in</label><br />
-                      <input
-                        type="checkbox"
-                        className="special"
-                        id="spcRequire"
-                        value="Late check-out"
-                      />
-                      <label htmlFor="spcRequire">Late check-out</label><br />
+                      <label htmlFor="spcRequire">{item.name}</label><br />
+                      </>
+                      ))}
                       <textarea
                       className="text-note"
                       cols="40"
                       rows="6"
-                      placeholder="Please let us know if you have any request"
+                      placeholder={t('reservation.request')}
                     ></textarea>
                     </div>
                 </div>
                 <div className="row">
                   <div className="col-md-12 offset-4">
-                    <button 
+                    <button
                     id="send"
                     className="base__btn btn__send"
                     onClick={()=>validateForm()}>
-                      Send
+                      {t('reservation.send')}
                     </button>
                     </div>
                 </div>
                 <div className="row">
-                  <span className="required__note">
-                    *Please Attention
-                    <br />
-                    It will take a little time to transition to the Reservation
-                    Completion Page after press "Send" button, please wait a moment.
+                  <span className="required__note pre-line">
+                  {t('reservation.attention-note')}
                   </span>
                 </div>
               </div>
               </div>
               </div> 
-      </form>
       </div>
   );
 }

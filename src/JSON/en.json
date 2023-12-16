@@ -42,51 +42,61 @@
             {
                 "branch_id": 1,
                 "city_id": 1,
+                "city_name":"Ha Noi",
                 "branch_name": "Azumaya Hai Ba Trung 1"
             },
             {
                 "branch_id": 2,
                 "city_id": 1,
+                "city_name":"Ha Noi",
                 "branch_name": "Azumaya Kim Ma 2"
             },
             {
                 "branch_id": 3,
                 "city_id": 1,
+                "city_name":"Ha Noi",
                 "branch_name": "Azumaya Kim Ma 3"
             },
             {
                 "branch_id": 4,
                 "city_id": 1,
+                "city_name":"Ha Noi",
                 "branch_name": "Azumaya Linh Lang"
             },
             {
                 "branch_id": 5,
                 "city_id": 2,
+                "city_name":"Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
             },
             {
                 "branch_id": 6,
                 "city_id": 2,
+                "city_name":"Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
             },
             {
                 "branch_id": 7,
                 "city_id": 2,
+                "city_name":"Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
             },
             {
                 "branch_id": 8,
                 "city_id": 2,
+                "city_name":"Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
             },
             {
                 "branch_id": 9,
                 "city_id": 3,
+                "city_name":"Da Nang",
                 "branch_name": "Azumaya Da Nang Hotel"
             },
             {
                 "branch_id": 10,
                 "city_id": 4,
+                "city_name":"Hai Phong",
                 "branch_name": "Azumaya Hai Phong Hotel"
             }
         ]
@@ -128,14 +138,14 @@
                 "id": 5,
                 "title": "Japanese TV shows available",
                 "content": "You can watch the main local Japanese TV shows such as NHK, TBS, Fuji TV, Nihon TV in live same as you do in Japan. Please lean back and relax watching your favorite TV shows.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1702523980/AzumayaWeb/Tv_picture-1024x768_niecmc.jpg",
                 "num": "No 5"
             },
             {
                 "id": 6,
                 "title": "Japanese hospitality",
                 "content": "We serve you with our Japanese available staff and manager for whom are not confident with English speaking. Japanese way of saying “Have a nice day” and “Welcome back” is taught well to the staff for our customers to feel safe staying in Vietnam. Moreover, we are kindly waiting for your stay with our smile and high spirit of hospitality.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1702523980/AzumayaWeb/Reception_picture-1024x798_dkwrqc.jpg",
                 "num": "No 6"
             },
             {
@@ -355,7 +365,7 @@
         
     },
     "massage":{
-        "title":"Massage",
+        "title":"Massage Service",
         "branch":[
             {
                 "name": "Azumaya Thai Van Lung 1"
@@ -370,5 +380,205 @@
         ]
         
             
-}
+    },
+    "reservation":{
+        "title":"Reservation",
+        "choice":"Choice of Branch: ",
+        "check-in":"Check-in date: ",
+        "check-out":"Check-out date: ",
+        "in-time":"Check-in time:",
+        "in-note":"(Normal check-in: 3:00 PM)",
+        "out-time":"Check-out time:",
+        "out-note":"(Normal check-out: before 12:00 PM)",
+        "out-timeNote":"Please mention if the check out time is prior to 6:00 AM",
+        "room-kind":"Kind of Room:",
+        "room-amount":"Number of Rooms:",
+        "guest-amount":"Number of Guest per Room:",
+        "guest-info":"Guest Information",
+        "name":"Name:",
+        "name-note":"(Please fill in the name of all the members stay)",
+        "family-name":"Family Name",
+        "given-name":"Given Name",
+        "name-required":"Please write in Alphabet",
+        "gender":"Gender:",
+        "mr":"Mr.",
+        "ms":"Ms.",
+        "birth-date":"Birth Date:",
+        "day":"Day",
+        "month":"Month",
+        "year":"Year",
+        "booker":"Name of person who makes reservation:",
+        "same-person":"Same as person who will stay",
+        "diff-person":"Different with who will stay",
+        "email":"E-mail Address:",
+        "email-note":"Please leave your exact email address for our soon confirmation or contact",
+        "phone":"Phone Number:",
+        "phone-note":" Please input country code if it's not Vietnamese or Japanese telephone's number",
+        "room-type":"Room Type:",
+        "smk":"Smoking",
+        "non-smk":"Non-smoking",
+        "contract":"Contract:",
+        "h-cont":"Have Contract",
+        "n-cont":"No Contract",
+        "company":"Company Name:",
+        "company-note":"※The contracting company's name",
+        "vat-invoice":"VAT Invoice:",
+        "need":"Necessarily",
+        "n-need":"No Necessarily",
+        "vat-note":"VAT is Value Added tax. It is a tax on the sale of most goods and services. VAT revenues are collected through businesses who are registered for VAT",
+        "pay-method":"Payment Method:",
+        "method":[
+            {
+                "name":"By cash at counter (VND/USD/JPY"
+            },
+            {
+                "name":"By credit at counter (VND only)"
+            },
+            {
+                "name":"By company transfer before check in"
+            },
+            {
+                "name":"Others"
+            }
+        ],
+        "requirement":"Any special requirement:",
+        "requirement-note":"(late check-out, pick-up, etc,...)",
+        "requirement-item":[
+            {
+                "name":"Pick up"
+            },
+            {
+                "name":"Drop off"
+            },
+            {
+                "name":"Early check-in"
+            },
+            {
+                "name":"Late check-out"
+            }
+        ],
+        "request":"Please let us know if you have any requests",
+        "send":"Send",
+        "more":"More +",
+        "remove":"Remove",
+        "attention-note":"*Please Attention\nIt will take a little time to transition to the Reservation Completion Page after press \"Send\" button, please wait a moment."
+    },
+    "contract":{
+        "title":"東屋ホテルでは東南アジアへのご出張が多い企業様向けに特別価格でご宿泊いただける 法人契約を承っております。是非、この機会にご検討くださいませ。",
+        "feature":[
+            {
+                "title":"和朝食",
+                "content":"1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg"
+            },
+            {
+                "title":"日本語のおもてなし",
+                "content":"日本語が話せるスタッフが常駐しておりますので、英語が苦手な方も安心してお過ごしいただけます。",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg"
+            },
+            {
+                "title":"サウナ付き露天風呂",
+                "content":"早朝の目覚め、仕事終わりのリラックスに是非ご利用くださいませ。 サウナ・水風呂も完備しております。(※一部店舗を除く)",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
+            }
+        ],
+        "additional":"その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております。",
+        "contact":"お問い合わせはこちら",
+        "benefit":"法人契約のメリット",
+        "benefit_1":"豊富な拠点数と全店舗一括適用",
+        "receipt":"領収書の発行に関する諸注意",
+        "about":"ご契約にあたって",
+        "FAQ":"ご契約に関するFAQ",
+        "cancel":"契約の取り消し",
+        "benefit-content":"ベトナム　カンボジア　ミャンマー3カ国に計10支店以上ある全店舗を一括で契約させていただくので各都市のホテルと個別に契約を結ぶ必要はありません。 東南アジアにご出張の機会の多い企業様に最適です。",
+        "contract-branch":[
+            {
+                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
+            },
+            {
+                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
+            },
+            {
+                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
+            },
+            {
+                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+            },
+            {
+                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+            },
+            {
+                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+            }
+        ],
+        "receipt-content":"日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",
+        "contractJP-title":"日本法人でのご契約",
+        "contractJP":[
+            {
+                "content":"1.ホテル受付でクレジットカード( VISA, MASTER, JCB)/ 現金でお支払いの場合は VATインボイスの発行可（但し、事前にベトナム法人の情報をお伝えください）。"
+            },
+            {
+                "content":"2.銀行振込の場合は領収書のみを発行。"
+            }
+        ],
+        "contractVN-title":"ベトナム法人でのご契約",
+        "contractVN-content":"どのようなお支払い方法でもVATインボイスの発行可",
+        "about-content":"お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください",
+        "FAQ-trigger":[
+            {
+                "content":"Q. 日本の会社での契約です。税コード欄の記載はどうすれば良いでしょうか？",
+                "answer":"A. 税コードをお持ちでいない場合は空欄のままで問題ございません。"
+
+            },
+            {
+                "content":"Q. 代表取締役ではなく担当役員の名前で契約できますか？",
+                "answer":"A. 貴社の代表者様のサインおよび押印にてご契約いただけます。"
+
+            },
+            {
+                "content":"Q. 法人契約を締結するとどのような特典が利用出来ますか？",
+                "answer":"A. 宿泊日数に応じて、宿泊料金の割引やランドリーサービスを無料でご利用いただくことが可能です。長期滞在のお客様にはマッサージ無料券もお渡ししています。\n\n-無料ランドリー特典を適用する場合の注意点\n100,000VND/ 日と設定しておりますが、1日の上限ではございません。\n宿泊日数に基づく合計金額をご宿泊期間中にご利用いただけます。\n例：5泊6日のご宿泊の場合 100,000VND×5泊 = 上限金額 500,000VND / 5泊\n万が一、上限金額を超えた場合はチェックアウトの際に超過分を別途請求させていただきます。\n金額の目安 ( エリアにより金額が異なります )\nYシャツ：20,000vnd ズボン：20,000vnd 下着：15,000vnd 靴下：15,000vnd"
+
+            }
+        ],
+        "cancel-content":[
+            {
+                "content":"虚偽の申告をした場合"
+            },
+            {
+                "content":"ご住所、お電話番号、メールアドレス等のご連絡先が不明となった場合。"
+            },
+            {
+                "content":"ホテルのお客様,　ホテル（施設、設備、備品等）及びホテルの従業員に危害及び損害を与えた場合"
+            },
+            {
+                "content":"宿泊約款及び規則を厳守されない場合"
+            },
+            {
+                "content":"暴行、傷害、脅迫、恐喝、威圧的不当及びこれらに関する犯罪が認められた場合"
+            },
+            {
+                "content":"暴力団、暴力団員、暴力団関係団体及びその関係者と判断された場合"
+            },
+            {
+                "content":"暴力団または暴力団員が事業活動を支配する法人その他団体の関係者と判断された場合"
+            },
+            {
+                "content":"反社会団体、反社会的団体及びその関係者と判断された場合"
+            },
+            {
+                "content":"その他ホテルが不適当と判断した場合"
+            }
+        ],
+        "form-title":"日本法人でのご契約をご希望のお客様は日本の情報を、\nベトナム法人でのご契約をご希望のお客様はベトナムの情報をご入力ください。",
+        "company-name":"貴社名(ローマ字)",
+        "address":"ご住所",
+        "company-URL":"企業ホームページURL",
+        "in-charge":"ご担当者氏名(ローマ字)",
+        "first-name":"First Name",
+        "last-name":"Last Name",
+        "email":"メールアドレス",
+        "phone":"お電話番号",
+        "send":"送信"
+    }
 }

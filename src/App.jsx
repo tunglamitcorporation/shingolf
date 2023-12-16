@@ -10,6 +10,7 @@ import Reservation from "./Component/Reservation";
 import BrandDetail from "./Component/BrandDetail";
 import RoomDetail from "./Component/RoomDetail";
 import Massage from "./Component/Massage";
+import ProductReviewForm from "./Component/ReviewForm";
 import './index.css'
 import './base.css'
 import {Route, Routes } from 'react-router-dom'

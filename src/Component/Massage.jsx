@@ -17,7 +17,7 @@ export default function Feature() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Massage Service</h1>
+              <h1>{t('massage.title')}</h1>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function Feature() {
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
                   <Link className="breadcrumb__title" to="/Component/Massage">
-                    Massage Service
+                  {t('massage.title')}
                   </Link>
                 </li>
               </ul>

@@ -122,9 +122,9 @@ textarea{
     font-size: 1.4rem;
 }
 .required__note{
-    text-align: justify;
+    text-align: left;
     color: red;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 .base__form{
     padding-left: 200px;
