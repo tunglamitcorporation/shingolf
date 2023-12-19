@@ -13,19 +13,24 @@ function Reservation() {
   const reservationData = t('reservation', {returnObjects:true})
   const payMethod = t('reservation.method', {returnObjects:true})
   const requireItem = t('reservation.requirement-item', {returnObjects:true})
-  const [selectedCity, setSelectedCity] = useState("");
-  const [selectedBranch, setSelectedBranch] = useState("");
+  const [selectedCity, setSelectedCity] = useState();
+  const [selectedBranch, setSelectedBranch] = useState();
+  const [paymentMethod, setPaymentMethod] = useState()
   const flatBranches = [].concat(...branch)
   const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
 
   //validate
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [startTime, setStartTime] = useState(null);
+  const [startDate, setStartDate] = useState(null)
+  const [endDate, setEndDate] = useState(null)
+  const [startTime, setStartTime] = useState(null)
   const [endTime, setEndTime] = useState(null)
   const [roomAmount, setRoomAmount] = useState()
+  const [guestAmount, seGuestAmount] = useState()
   const [familyName, setFamilyName] = useState()
   const [givenName, setGivenName] = useState()
+  const [selectedDay, setSelectedDay] = useState()
+  const [selectedMonth, setSelectedMonth] = useState()
+  const [selectedYear, setSelectedYear] = useState()
   const [gender, setGender] = useState()
   const [company, setCompany] = useState()
   const [secondFamilyName, setSecondFamilyName] = useState()
@@ -39,17 +44,15 @@ function Reservation() {
   const [roomType, setRoomType] = useState()
   const [contract, setContract] = useState()
   const [vat, setVat] = useState()
-  const [payment, setPayment] = useState()
   const [request, setRequest] = useState()
   const [specialRequest, setSpecialRequest] = useState()
-console.log(request, specialRequest, selectedCity);
 
   //function
   const min = 1;
   const max = 20;
   const [value, setValue] = useState(1);
-  const handleChange = event => {
-    const value = Math.max(min, Math.min(max, Number(event.target.value)));
+  const handleChange = (e) => {
+    const value = Math.max(min, Math.min(max, Number(e.target.value)));
     setValue(value);
   };
   const [show, setShow] = useState(false)
@@ -63,16 +66,47 @@ console.log(request, specialRequest, selectedCity);
   }
   const handleSelected =(status, e) => {
     setStatus(status)
-
   }
   const handleSelectedCompany =(statusC) => {
     setStatusC(statusC)
+  }
+  const validateForm=() => {
+
+        alert(
+          selectedCity + ' ' +
+          selectedBranch+ ' ' + 
+          startDate+ ' ' +
+          endDate+ ' ' +
+          startTime+ ' ' +
+          endTime+ ' ' +
+          roomAmount+ ' ' +
+          guestAmount+ ' ' +
+          familyName+ ' ' +
+          givenName+ ' ' +
+          gender+ ' ' +
+          selectedDay+ ' ' +
+          selectedMonth+ ' ' +
+          selectedYear+ ' ' +
+          secondFamilyName+ ' ' +
+          secondGivenName+ ' ' +
+          secondGender+ ' ' +
+          bookerName+ ' ' +
+          differentBooker+ ' ' +
+          email+ ' ' +
+          phone+ ' ' +
+          roomType+ ' ' +
+          contract+ ' ' + 
+          vat+ ' ' +
+          paymentMethod+ ' ' +
+          request+ ' ' +
+          specialRequest
+          )
+      
   }
 function DayPicker() {
   const minDay = -1
   const maxDay = 29
     const birthDay = new Date().getDay()
-    const [selectedDay, setSelectedDay] = useState()
     console.log(selectedDay);
     const onHandleChange = (e) => {
       setSelectedDay(e.target.value)
@@ -91,12 +125,11 @@ function DayPicker() {
           {options}
         </select>
     );
-  };
+  }
 function MonthPicker() {
     const minMonth = -10
     const maxMonth = 1
     const birthMonth = new Date().getMonth()
-    const [selectedMonth, setSelectedMonth] = useState()
     console.log(selectedMonth);
    
     const onHandleChange = (e) => {
@@ -122,7 +155,6 @@ function YearPicker() {
     const minYear = -98
     const maxYear = -18
     const birthYear = new Date().getFullYear()
-    const [selectedYear, setSelectedYear] = useState()
     console.log(selectedYear);
    
     const onHandleChange = (e) => {
@@ -216,7 +248,6 @@ function ShowBooker() {
       <input
         type="text"
         className="booker-name form__content col-md-2"
-        id=""
         placeholder={t('reservation.name')}
         onChange={(e) => setBookerName(e.target.value)}
       />
@@ -393,7 +424,9 @@ return (
                   max={4} 
                   value={showButton}
                   className="col-md-2 form__content"
-                  onChange={(e)=>setShowButton(e.target.value)} />
+                  onChange={(e)=>{
+                  seGuestAmount(e.target.value)
+                  setShowButton(e.target.value)}} />
                 </div>
               </div>
               <div className="guest-container">
@@ -617,15 +650,19 @@ return (
                 </div>
                 <div className="row">
                   <div className="col-md-2 name__title">{t('reservation.pay-method')}</div>
-                  <select 
-                  style={{ width: "300px" }} 
-                  className="col-md-2 form__content"
-                  value={payment}
-                  onChange={(e)=>setPayment(e.target.value)}>
-                    {payMethod.map((item )=> (
+                  <select
+                    style={{width:"350px"}}
+                    value={paymentMethod}
+                    className="col-md-2 form__content" 
+                    id={paymentMethod}
+                    onChange={(e) => {
+                      setPaymentMethod(e.target.value)
+                    }}
+                  >
+                    {payMethod.map((item) => (
                       <option key={item.name} value={item.name}>
-                      {item.name}
-                    </option>
+                        {item.name}
+                      </option>
                     ))}
                   </select>
                 </div>
