@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 function Reservation() {
+  //lang
   const {t} = useTranslation()
   const bookingData = t('booking', {returnObjects:true})
   const [text, setText] = useState(t('reservation.more'))
@@ -16,6 +17,8 @@ function Reservation() {
   const [selectedBranch, setSelectedBranch] = useState("");
   const flatBranches = [].concat(...branch)
   const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
+
+  //validate
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
@@ -24,7 +27,24 @@ function Reservation() {
   const [familyName, setFamilyName] = useState()
   const [givenName, setGivenName] = useState()
   const [gender, setGender] = useState()
-  console.log(gender)
+  const [company, setCompany] = useState()
+  const [secondFamilyName, setSecondFamilyName] = useState()
+  const [secondGivenName, setSecondGivenName] = useState()
+  const [secondGender,  setSecondGender] = useState()
+  const [sameBooker, setSameBooker] = useState()
+  const [bookerName, setBookerName] = useState("Same as person who will stay")
+  const [differentBooker, setDifferentBooker] = useState()
+  const [email, setEmail] = useState()
+  const [phone, setPhone] = useState()
+  const [roomType, setRoomType] = useState()
+  const [contract, setContract] = useState()
+  const [vat, setVat] = useState()
+  const [payment, setPayment] = useState()
+  const [request, setRequest] = useState()
+  const [specialRequest, setSpecialRequest] = useState()
+console.log(request, specialRequest, selectedCity);
+
+  //function
   const min = 1;
   const max = 20;
   const [value, setValue] = useState(1);
@@ -41,8 +61,9 @@ function Reservation() {
     text === t('reservation.more') ? setText(t('reservation.remove')) : setText(t('reservation.more'))
     setShow(!show)
   }
-  const handleSelected =(status) => {
+  const handleSelected =(status, e) => {
     setStatus(status)
+
   }
   const handleSelectedCompany =(statusC) => {
     setStatusC(statusC)
@@ -71,7 +92,7 @@ function DayPicker() {
         </select>
     );
   };
-  function MonthPicker() {
+function MonthPicker() {
     const minMonth = -10
     const maxMonth = 1
     const birthMonth = new Date().getMonth()
@@ -97,7 +118,7 @@ function DayPicker() {
     )
 
   }
-    function YearPicker() {
+function YearPicker() {
     const minYear = -98
     const maxYear = -18
     const birthYear = new Date().getFullYear()
@@ -123,7 +144,7 @@ function DayPicker() {
     )
 
   }
-  function MoreButton() {
+function MoreButton() {
     return(
       <div className="row">
                   <div className="col-md-12 offset-4">
@@ -133,32 +154,30 @@ function DayPicker() {
                 </div>
     )
   }
-  function SecondGuest() {
+function SecondGuest() {
     return(
       <div className="container">
       <div className="row guest-information">
         <div className="col-md-2 name__title">
-          Full Name
+          {t('reservation.name')}
         </div>
         <input
-          placeholder="Family Name"
+          placeholder={t('reservation.family-name')}
           type="text"
-          name="fName"
           className="col-md-2 form__content"
-          onChange={(e)=> setFamilyName(e.target.value)}
+          onChange={(e)=> setSecondFamilyName(e.target.value)}
         />
 
         <input
-          placeholder="Given Name"
+          placeholder={t('reservation.given-name')}
           type="text"
-          name="gName"
           className=" col-md-2 form__content"
-          onChange={(e)=> setGivenName(e.target.value)}
+          onChange={(e)=> setSecondGivenName(e.target.value)}
         />
       </div>
       <div className="row">
         <div className="col-md-2 name__title">
-          Gender
+          {t('reservation.gender')}
         </div>
         <div className="col-md-2">
           <input
@@ -169,58 +188,28 @@ function DayPicker() {
             onChange={(e)=>setGender(e.target.value)}
           />
           <label htmlFor="gMale">
-            Mr.
+            {t('reservation.mr')}
           </label>
         </div>
         <div className="col-md-2">
           <input type="radio" name="gender" id="gFemale" value="female" />
           <label htmlFor="gFemale">
-            Ms.
+          {t('reservation.ms')}
           </label>
         </div>
       </div>
       <div className="row">
         <div className="col-md-2 name__title">
-          Birth Date
+        {t('reservation.birth-date')}
         </div>
-        <select className="col-md-2 form__content day">
-          <option
-            className="guest-birthday"
-            value=""
-            disabled
-            selected
-            hidden
-          >
-            Day
-          </option>
-        </select>
-        <select className="col-md-2 form__content month">
-          <option
-            className="guest-birthMonth"
-            value=""
-            disabled
-            selected
-            hidden
-          >
-            Month
-          </option>
-        </select>
-        <select className="col-md-2 form__content year">
-          <option
-            className="guest-birthYear"
-            value=""
-            disabled
-            selected
-            hidden
-          >
-            Year
-          </option>
-        </select>
+        {<DayPicker />}
+        {<MonthPicker />}
+        {<YearPicker />}
       </div>
       </div>
     )
   }
-  function ShowBooker() {
+function ShowBooker() {
   return(
     <div className="row">
     <div className="col-md-2 name__title">{t('reservation.name')}</div>
@@ -228,12 +217,13 @@ function DayPicker() {
         type="text"
         className="booker-name form__content col-md-2"
         id=""
-        placeholder="Name"
+        placeholder={t('reservation.name')}
+        onChange={(e) => setBookerName(e.target.value)}
       />
       </div>
   )
- }
-  function ShowCompanyName() {
+  }
+function ShowCompanyName() {
     return (
       <div className="row">
       <div className="col-md-2 name__title">{t('reservation.company')}</div>
@@ -241,14 +231,14 @@ function DayPicker() {
           type="text"
           className="booker-name form__content col-md-2"
           id=""
-          placeholder="Company Name"
+          placeholder={t('reservation.company')}
+          onChange={(e) => setCompany(e.target.value)}
         />
         <span className="required__note">{t('reservation.company-note')}</span>
         </div>
     )
   }
-
-  return (
+return (
       <div>
       <div className="reservation__content">
         <div className="container">
@@ -483,9 +473,13 @@ function DayPicker() {
                       type="radio"
                       name="Booker"
                       id="booker"
-                      value="same"
+                      value="Same as person who will stay"
                       checked = {status === 0}
-                      onClick={(e) => handleSelected(0)}
+                      onClick={(e) => {
+                        handleSelected(0)
+                        setSameBooker(e.target.value)
+                      }}
+                        
                     />
                     <label htmlFor="booker">{t('reservation.same-person')}</label>
                     <br />
@@ -493,9 +487,12 @@ function DayPicker() {
                       type="radio"
                       name="Booker"
                       id="booker"
-                      value="different"
+                      value="Different with who will stay"
                       checked = {status === 1}
-                      onClick={(e) => handleSelected(1)}
+                      onClick={(e) => {
+                        handleSelected(1)
+                        setDifferentBooker(e.target.value)
+                      }}
                     />
                     <label htmlFor="booker">{t('reservation.diff-person')}</label>
                   </div>
@@ -506,10 +503,10 @@ function DayPicker() {
                     <span className="col-md-2 required__note">*</span>
                   </div>
                     <input
-                      
                       type="text"
                       className="booker-email form__content col-md-2"
                       placeholder={t('reservation.email')}
+                      onChange={(e)=> setEmail(e.target.value)}
                     />
                     <span className="col-md-8 required__note">
                         {t('reservation.email-note')}
@@ -527,25 +524,12 @@ function DayPicker() {
                           event.preventDefault();
                         }
                       }}
+                      onChange={(e) => setPhone(e.target.value)}
                     />
                     <span className="col-md-8 required__note">
                     {t('reservation.phone-note')}
                     </span>
                 </div>
-                {/* <div className="row">
-                  <div className="col-md-2 name__title">
-                    Kind of Room
-                    <span className="required__note">*</span>
-                  </div>
-                  <select className="col-md-2 form__content room-kind">
-                    <option className="kind-of-room" value="" disabled selected hidden>
-                      Select your kind of room
-                    </option>
-                  </select>
-                  <span className="col-md-2 required__note" style={{ fontWeight: 600 }}>
-                    Not included 8% VAT
-                  </span>
-                </div> */}
                 <div className="row">
                   <div className="col-md-2 name__title">{t('reservation.room-type')}</div>
                   <div className="col-md-2">
@@ -554,7 +538,7 @@ function DayPicker() {
                       name="roomType"
                       id="smk"
                       value={t('reservation.smk')}
-                      
+                      onClick={(e)=> setRoomType(e.target.value)}
                     />
                     <label htmlFor="smk">{t('reservation.smk')}</label>
                   </div>
@@ -564,6 +548,7 @@ function DayPicker() {
                       name="roomType"
                       id="no-smk"
                       value={t('reservation.non-smk')}
+                      onClick={(e)=> setRoomType(e.target.value)}   
                     />
                     <label htmlFor="no-smk">{t('reservation.non-smk')}</label>
                   </div>
@@ -573,12 +558,14 @@ function DayPicker() {
                   <div className="col-md-2">
                     <input
                       type="radio"
-                      name="contract"
                       id="hContract"
                       className="Contract"
                       value={t('reservation.n-cont')}
                       checked = {statusC == 0}
-                      onClick={(e) => handleSelectedCompany(0)}
+                      onClick={(e) => {
+                        setContract(e.target.value);
+                        handleSelectedCompany(0)
+                      }}
                     />
                     <label htmlFor="hContract">{t('reservation.n-cont')}</label>
                   </div>
@@ -590,7 +577,10 @@ function DayPicker() {
                       className="Contract"
                       value={t('reservation.h-cont')}
                       checked = {statusC == 1}
-                      onClick={(e) => handleSelectedCompany(1)}
+                      onClick={(e) => {
+                        setContract(e.target.value);
+                        handleSelectedCompany(1)
+                      }}
                     />
                     <label htmlFor="hContract">{t('reservation.h-cont')}</label>
                   </div>
@@ -605,7 +595,7 @@ function DayPicker() {
                       id="no-need"
                       className="VATInvoice"
                       value={t('reservation.n-need')}
-                      
+                      onClick={(e)=>setVat(e.target.value)}
                     />
                     <label htmlFor="no-need">{t('reservation.n-need')}</label>
                   </div>
@@ -616,6 +606,7 @@ function DayPicker() {
                       id="need"
                       className="VATInvoice"
                       value={t('reservation.need')}
+                      onClick={(e)=>setVat(e.target.value)}
                     />
                     <label htmlFor="need">{t('reservation.need')}</label>
                     <br />
@@ -626,9 +617,13 @@ function DayPicker() {
                 </div>
                 <div className="row">
                   <div className="col-md-2 name__title">{t('reservation.pay-method')}</div>
-                  <select style={{ width: "300px" }} className="col-md-2 form__content">
-                    {payMethod.map(item => (
-                      <option value={item.name}>
+                  <select 
+                  style={{ width: "300px" }} 
+                  className="col-md-2 form__content"
+                  value={payment}
+                  onChange={(e)=>setPayment(e.target.value)}>
+                    {payMethod.map((item )=> (
+                      <option key={item.name} value={item.name}>
                       {item.name}
                     </option>
                     ))}
@@ -651,6 +646,7 @@ function DayPicker() {
                         className="special"
                         id="spcRequire"
                         value={item.name}
+                        onClick={(e)=>setRequest(e.target.value)}
                       />
                       <label htmlFor="spcRequire">{item.name}</label><br />
                       </>
@@ -660,6 +656,7 @@ function DayPicker() {
                       cols="40"
                       rows="6"
                       placeholder={t('reservation.request')}
+                      onChange={(e)=>setSpecialRequest(e.target.value)}
                     ></textarea>
                     </div>
                 </div>
