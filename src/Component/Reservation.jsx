@@ -14,18 +14,17 @@ function Reservation() {
   const requireItem = t('reservation.requirement-item', {returnObjects:true})
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedBranch, setSelectedBranch] = useState("");
-  const [gender, setGender] = useState();
-  console.log(gender);
   const flatBranches = [].concat(...branch)
   const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
-  console.log(selectedCity)
-  console.log(selectedBranch)
-
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null)
-
+  const [roomAmount, setRoomAmount] = useState()
+  const [familyName, setFamilyName] = useState()
+  const [givenName, setGivenName] = useState()
+  const [gender, setGender] = useState()
+  console.log(gender)
   const min = 1;
   const max = 20;
   const [value, setValue] = useState(1);
@@ -33,12 +32,10 @@ function Reservation() {
     const value = Math.max(min, Math.min(max, Number(event.target.value)));
     setValue(value);
   };
-
   const [show, setShow] = useState(false)
   const [status, setStatus] = useState(0)
   const [statusC, setStatusC] = useState(0)
   const [showButton, setShowButton] = useState(1)
-  console.log(showButton);
 
   const handleClick = () => {
     text === t('reservation.more') ? setText(t('reservation.remove')) : setText(t('reservation.more'))
@@ -49,6 +46,82 @@ function Reservation() {
   }
   const handleSelectedCompany =(statusC) => {
     setStatusC(statusC)
+  }
+function DayPicker() {
+  const minDay = -1
+  const maxDay = 29
+    const birthDay = new Date().getDay()
+    const [selectedDay, setSelectedDay] = useState()
+    console.log(selectedDay);
+    const onHandleChange = (e) => {
+      setSelectedDay(e.target.value)
+    };
+    const options = []
+    for (let i = minDay; i <= maxDay; i++) {
+      const day = birthDay + i
+      options.push(<option value={day} key={day}>{day}</option>)
+    }
+    return (
+        <select 
+        className="col-md-2 form__content" 
+        value={selectedDay} 
+        onChange={onHandleChange}>
+          <option className="first-opt" disabled selected>{t('reservation.day')}</option>
+          {options}
+        </select>
+    );
+  };
+  function MonthPicker() {
+    const minMonth = -10
+    const maxMonth = 1
+    const birthMonth = new Date().getMonth()
+    const [selectedMonth, setSelectedMonth] = useState()
+    console.log(selectedMonth);
+   
+    const onHandleChange = (e) => {
+      setSelectedMonth(e.target.value)
+    }
+    const options = []
+    for(let i = minMonth; i <= maxMonth; i++) {
+      const month = birthMonth + i
+      options.push(<option value={month} key={month}>{month}</option>)
+    }
+    return (
+      <select 
+      className="col-md-2 form__content"
+      value={selectedMonth}
+      onChange={onHandleChange}>
+          <option className="first-opt"  disabled selected>{t('reservation.month')}</option>
+        {options}
+      </select>
+    )
+
+  }
+    function YearPicker() {
+    const minYear = -98
+    const maxYear = -18
+    const birthYear = new Date().getFullYear()
+    const [selectedYear, setSelectedYear] = useState()
+    console.log(selectedYear);
+   
+    const onHandleChange = (e) => {
+      setSelectedYear(e.target.value)
+    }
+    const options = []
+    for(let i = minYear; i <= maxYear; i++) {
+      const year = birthYear + i
+      options.push(<option value={year} key={year}>{year}</option>)
+    }
+    return (
+      <select 
+      className="col-md-2 form__content"
+      value={selectedYear}
+      onChange={onHandleChange}>
+        <option className="first-opt" disabled selected>{t('reservation.year')}</option>
+        {options}
+      </select>
+    )
+
   }
   function MoreButton() {
     return(
@@ -72,12 +145,15 @@ function Reservation() {
           type="text"
           name="fName"
           className="col-md-2 form__content"
+          onChange={(e)=> setFamilyName(e.target.value)}
         />
+
         <input
           placeholder="Given Name"
           type="text"
           name="gName"
           className=" col-md-2 form__content"
+          onChange={(e)=> setGivenName(e.target.value)}
         />
       </div>
       <div className="row">
@@ -90,7 +166,7 @@ function Reservation() {
             name="gender"
             id="gMale"
             value="male"
-            
+            onChange={(e)=>setGender(e.target.value)}
           />
           <label htmlFor="gMale">
             Mr.
@@ -214,7 +290,6 @@ function Reservation() {
                     value={selectedCity}
                     className="col-md-2 form__content" 
                     id={selectedCity}
-                    defaultValue={"Ho Chi Minh"}
                     onChange={(e) => {
                       setSelectedCity(e.target.value)
                     }}
@@ -227,7 +302,6 @@ function Reservation() {
                   </select>
                   <select 
                   value={selectedBranch}
-                  defaultValue={"Azumaya Le Thanh Ton"}
                   className="col-md-2 form__content" 
                   disabled={!selectedCity}  
                   onChange={(e)=>setSelectedBranch(e.target.value)}>
@@ -397,25 +471,10 @@ function Reservation() {
                     {t('reservation.birth-date')}
                       <span className="required__note">*</span>
                     </div>
-                    <input 
-                    type="number"
-                    min={1} 
-                    max={31} 
-                    placeholder={t('reservation.day')} 
-                    className="col-md-2 form__content day" />
-                    <input
-                    type="number" 
-                    min={1} 
-                    max={12} 
-                    placeholder={t('reservation.month')}
-                    className="col-md-2 form__content month" />
-                    <input 
-                    type="number" 
-                    min={1925} 
-                    max={2005} 
-                    placeholder={t('reservation.year')}
-                    className="col-md-2 form__content year" />
-                  </div>
+                       {<DayPicker />}
+                       {<MonthPicker />}
+                       {<YearPicker />}
+                    </div>
                   {showButton >= 2 && <MoreButton />}
                 <div className="row">
                   <div className="col-md-2 name__title">{t('reservation.booker')}</div>
@@ -622,7 +681,7 @@ function Reservation() {
               </div>
               </div>
               </div> 
-      </div>
+              </div> 
   );
 }
 export default Reservation;

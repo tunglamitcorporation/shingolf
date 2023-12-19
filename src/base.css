@@ -197,6 +197,9 @@ textarea{
     width: 100%;
     height: auto;
   }
+.form__content>.first-opt{
+    color: #c5c5c5;
+}
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
     .is-sticky{
         position: relative;
