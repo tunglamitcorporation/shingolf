@@ -12,7 +12,7 @@ export default function RoomCarousel() {
     autoPlay
     infiniteLoop>
     <div>
-        <img src="https://azumayavietnam.com/wp-content/themes/azumaya-2023/img/room/HN/HBT-New/DuluxeF1NoView1.jpg" />
+        <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/nkvae8sovorl7ckyrzfd.jpg" />
     </div>
     <div>
         <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gsqhdidm2azopyn4cjkr.jpg" />

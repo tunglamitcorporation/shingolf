@@ -197,6 +197,9 @@ textarea{
     width: 100%;
     height: auto;
   }
+.carousel.carousel-slider .control-arrow{
+    z-index: 0;
+  }
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
     .is-sticky{
         position: relative;

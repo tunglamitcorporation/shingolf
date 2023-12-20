@@ -175,6 +175,276 @@ export default function RoomDetail() {
                         </button>
                       </div>
                     </div>
+                    <div className="col-lg-6">
+                      <div className="room-item">
+                        <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <h2 className="card-title">
+                                  DELUXE 1F (NO VIEW)
+                                </h2>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>Size</th>
+                                    <td>24m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Bed</th>
+                                    <td>1.6m Queen size bed</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Installation</th>
+                                    <td>
+                                      Windows: no view Bathtub LCD TV 32 inches
+                                      Toilet with bidet function
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Price</th>
+                                    <td>$45</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="room-item">
+                        <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <h2 className="card-title">
+                                  DELUXE 1F (NO VIEW)
+                                </h2>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>Size</th>
+                                    <td>24m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Bed</th>
+                                    <td>1.6m Queen size bed</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Installation</th>
+                                    <td>
+                                      Windows: no view Bathtub LCD TV 32 inches
+                                      Toilet with bidet function
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Price</th>
+                                    <td>$45</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="room-item">
+                        <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <h2 className="card-title">
+                                  DELUXE 1F (NO VIEW)
+                                </h2>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>Size</th>
+                                    <td>24m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Bed</th>
+                                    <td>1.6m Queen size bed</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Installation</th>
+                                    <td>
+                                      Windows: no view Bathtub LCD TV 32 inches
+                                      Toilet with bidet function
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Price</th>
+                                    <td>$45</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="room-item">
+                        <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <h2 className="card-title">
+                                  DELUXE 1F (NO VIEW)
+                                </h2>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>Size</th>
+                                    <td>24m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Bed</th>
+                                    <td>1.6m Queen size bed</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Installation</th>
+                                    <td>
+                                      Windows: no view Bathtub LCD TV 32 inches
+                                      Toilet with bidet function
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Price</th>
+                                    <td>$45</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="room-item">
+                        <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <h2 className="card-title">
+                                  DELUXE 1F (NO VIEW)
+                                </h2>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>Size</th>
+                                    <td>24m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Bed</th>
+                                    <td>1.6m Queen size bed</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Installation</th>
+                                    <td>
+                                      Windows: no view Bathtub LCD TV 32 inches
+                                      Toilet with bidet function
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Price</th>
+                                    <td>$45</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="room-item">
+                        <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <h2 className="card-title">
+                                  DELUXE 1F (NO VIEW)
+                                </h2>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>Size</th>
+                                    <td>24m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Bed</th>
+                                    <td>1.6m Queen size bed</td>
+                                  </tr>
+                                  <tr>
+                                    <th>Installation</th>
+                                    <td>
+                                      Windows: no view Bathtub LCD TV 32 inches
+                                      Toilet with bidet function
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>Price</th>
+                                    <td>$45</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
