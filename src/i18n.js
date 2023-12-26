@@ -17,7 +17,7 @@ i18n
   .init({
     resources,
     lng: 'en', // Default language
-    keySeparator: '.', // Remove dots in key names
+    // keySeparator: '.', // Remove dots in key names
     interpolation: {
       escapeValue: false, // Not needed for React
     },

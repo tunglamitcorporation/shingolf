@@ -3,9 +3,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import RoomCarousel from "./Carousel";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 export default function RoomDetail() {
   const { t } = useTranslation();
-  const roomHN = t("hn-room.branch", { returnObjects: true });
+  const roomFeature = t("room.features", { returnObjects: true });
+  const branchHN = t("hn-branch.branch", { returnObjects: true });
+  const room = t("roomHN.hbt1", { returnObjects: true })
+  const roomInstall = t("installationHN.install", { returnObjects: true });
+  console.log(room);
   return (
     <>
       <div className="policies__header">
@@ -21,7 +28,7 @@ export default function RoomDetail() {
       </div>
       <div className="is-sticky">
         <Booking />
-      </div>
+      </div>  
       <div className="container">
         <div className="row">
           <div className="col-md-12" />
@@ -48,9 +55,9 @@ export default function RoomDetail() {
           </div>
         </div>
       </div>
-      <Tabs selectedTabClassName="service__active" className="container">
+      <Tabs selectedTabClassName="service__active" className="container-fluid">
         <TabList className="row" style={{ justifyContent: "space-around", padding:'10px' }}>
-          {roomHN.map((item) => (
+          {branchHN.map((item) => (
             <Tab className="service__location col-md-2">{item.name}</Tab>
           ))}
         </TabList>
@@ -61,8 +68,8 @@ export default function RoomDetail() {
             className="col-md-10 offset-md-1"
           >
             <TabList className="service__list">
-              {roomHN.map((item) => (
-                <Tab className="service">{item.roomfeature}</Tab>
+              {roomFeature.map((item) => (
+                <Tab className="service">{item.name}</Tab>
               ))}
             </TabList>
             <TabPanel>
@@ -83,9 +90,55 @@ export default function RoomDetail() {
                     </p>
                   </div>
                 </div>
+               
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-6">
+                    {room.map((item)=>(
+                        <div className="col-lg-6">
+                      <div className="room-item">
+                     <RoomCarousel />
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <div className="card-title room-name">
+                                  {item.name}
+                                </div>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>{item.sizeTitle}</th>
+                                    <td className="installation">{item.size}m&#178;</td>
+                                  </tr>
+                                  <tr>
+                                    <th>{item.bedTitle}</th>
+                                    <td className="installation">{item.bed}</td>
+                                  </tr>
+                                  <tr>
+                                    <th>{item.install}</th>
+                                    <td className="installation">
+                                    <i class="fa-solid fa-check purple"></i>{item.in1}<br/><i class="fa-solid fa-check purple"></i>{item.in2}<br/><i class="fa-solid fa-check purple"></i>{item.in3}<br/><i class="fa-solid fa-check purple"></i>{item.in4}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{item.priceTitle}</th>
+                                    <td className="installation">{item.price}</td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         <button className="btn__reserve p-0 m-0">
+                          <Link to = "/Component/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}>
+                            Make a Reservation
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    ))}
+                    {/* <div className="col-lg-6">
                       <div className="room-item">
                         <RoomCarousel />
                         <div className="card" style={{ border: "none" }}>
@@ -399,52 +452,7 @@ export default function RoomDetail() {
                           </Link>
                         </button>
                       </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="room-item">
-                        <RoomCarousel />
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <h2 className="card-title">
-                                  DELUXE 1F (NO VIEW)
-                                </h2>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>Size</th>
-                                    <td>24m&#178;</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Bed</th>
-                                    <td>1.6m Queen size bed</td>
-                                  </tr>
-                                  <tr>
-                                    <th>Installation</th>
-                                    <td>
-                                      Windows: no view Bathtub LCD TV 32 inches
-                                      Toilet with bidet function
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>Price</th>
-                                    <td>$45</td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <button className="btn__reserve p-0 m-0">
-                          <Link to = "/Component/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}>
-                            Make a Reservation
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

@@ -14,7 +14,9 @@ root.render(
 
       <BrowserRouter>
         <I18nextProvider>
+          {/* <React.StrictMode> */}
            <App />
+          {/* </React.StrictMode> */}
         </I18nextProvider>
       </BrowserRouter>
    

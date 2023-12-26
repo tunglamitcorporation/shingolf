@@ -18,6 +18,19 @@ code {
 }
 .header, .header__PC{
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2A2F3C;
+  width: 100%;
+  height: 50px;
+  
+}
+.header__PC{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.header-2, .header__PC-2{
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--primary--color);
@@ -105,43 +118,53 @@ code {
   height: 100px;
   width: 150px;
 }
-.header__navbar-list{
+.header__navbar-list-2{
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   list-style: none;
-  margin-right: 50px;
-
+}
+.header__navbar-list{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
 }
 .header__navbar-item{
   position: relative;
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 10px;
   position: relative ;
   color: var(--white--color);
   font-size: 1.2rem;
+  z-index: 3;
  
 }
 .header__navbar-item:hover .header__navbar-link {
   box-shadow: inset 0 -5px 0 0 var(--white--color) ;
 }
-.header__navbar-link-branch{
+.header__navbar-item:hover .header-reserve {
+  box-shadow: inset 0 -5px 0 0 var(--white--color) ;
+}
+/* .header__navbar-link-branch{
   display: block;
   text-decoration: none;
-  color: var(--white--color);
+  color: var(--primary--color);
   font-size: 1.4rem;
   font-weight: bold;
   line-height: 84px;
 }
 .header__navbar-link-branch:hover{
   text-decoration: none;
-  color: var(--white--color);
+  color: var(--primary--color);
   font-size: 1.4rem;
   line-height: 84px;
-}
+} */
 
 .header__navbar-item:hover .header__navbar-item-list{
   z-index: 1;
@@ -152,11 +175,12 @@ code {
 {
   display: block;
   text-decoration: none;
-  color: var(--white--color);
+  color: #ACACAC;
   font-size: 1.4rem;
   font-weight: bold;
   line-height: 94px;
   transition: all 0.2s ease;
+  padding: 0 15px;
 }
 .header__navbar-link:hover{
   text-decoration: none;
@@ -165,24 +189,50 @@ code {
   line-height: 94px;
   transition: all 0.2s ease;
 }
+.header__navbar-link-2
+{
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  color: #ACACAC;
+  font-size: 1.3rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  padding: 0 15px;
+}
+.header__navbar-link-2:hover{
+  color: white;
+  background-color: rgba(72,41,121,0.5);
+  transition: all 0.2s ease;
+}
+
 .header__navbar-item-list{
   display: none;
   position: absolute;
   list-style: none;
-  top: 90px;
+  top: 55px;
   right: 10px;
-  width: 125px;
-  background-color: var(--primary--color);
+  width: 370px;
+  background-color: #2A2F3C;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  
 }
-
+.header__navbar-item-list::after{
+  position: absolute;
+  content: "";
+  display: block;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  transition: all 0.3s ease;
+}
 .header__navbar-item-list::before{
   position: absolute;
   content: "";
   display: block;
-  top: -5px;
+  top: -6px;
   left: 0;
   width: 100%;
   height: 5px;
@@ -200,8 +250,8 @@ code {
   display: block;
   color: var(--white--color);
   text-decoration: none;
-  font-size: 1.4rem;
-  line-height: 4rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
   
 }
 .header__navbar-sub-link a:hover{
@@ -1364,6 +1414,21 @@ a:hover {
 .webkit-appearance{
   -webkit-appearance: none;
 }
+.installation{
+  padding-left: 35px !important;  
+  padding-top: 15px !important;  
+  padding-bottom: 15px !important;  
+  text-align: left !important;
+  line-height: 2.5rem;
+}
+.room-name{ 
+  font-weight: 900;
+  padding-top: 15px !important;  
+  padding-bottom: 15px !important;  
+  text-align: left !important;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
 /* mobile */
 @media screen and (max-width: 46.1875em) {
   html,body{
@@ -1392,7 +1457,7 @@ a:hover {
       display: block;
       margin-bottom: 15px;
   }
-  .header__PC{
+  .header__PC, .header__PC-2, .header{
       display: none;
   }
   .header__mobile-logo{
@@ -1493,11 +1558,8 @@ a:hover {
   display: flex;
   justify-content: center;
 }
-.top-header{
-  padding: 40px;
-}
 .top-header p{
- margin-left: 0 !important;
+  margin-left: 0 !important;
 }
 .btn-en,
 .btn-ja{
@@ -1531,6 +1593,7 @@ a:hover {
 .massage-image{
   margin: 20px 0 !important;
 }
+
 }
 /* tablet */
 @media screen  and (max-width: 46.25em) and (max-width: 63.9375em){
@@ -1549,7 +1612,7 @@ a:hover {
   .header__mobile{
       display: block;
   }
-  .header__PC{
+  .header__PC,  .header__PC-2, .header{
       display: none;
   }
   .header__mobile-logo{

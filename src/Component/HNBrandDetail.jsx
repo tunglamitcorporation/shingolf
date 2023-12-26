@@ -2,16 +2,19 @@ import Booking from "./Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-export default function BrandDetail(){
+export default function HotelHN(){
     const { t } = useTranslation();
+    const brandDetail = t("hn-branch",  {returnObjects: true});
+    const header = t("header",{returnObjects:true})
     const homeNewsData = t("home.new_item", { returnObjects: true });
+    const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
     return(
         <div>
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>Ha Noi</h1>
+                                <h1>{t("header.item7")}</h1>
                             </div>
                         </div>
                     </div>
@@ -33,7 +36,7 @@ export default function BrandDetail(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">Ha Noi</a>
+                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.item7")}</a>
                                    </li>
                        </ul>
                     </div>
@@ -41,34 +44,33 @@ export default function BrandDetail(){
             </div>
             <div className="branch__container">
                 <div className="container">
+                    {HanoiDetail.map((item)=>(
                 <div className="feature__type-item">
                     <div className="card">
                     <div className="row p-0">
                         <div className="col-md-5">
-                        <div className = "brand-img" style={{backgroundImage:"url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg)"}} ></div>
+                        <div className = "brand-img" style={{backgroundImage:`url(${item.image})`}} ></div>
                         </div>
                         <div className="col-md-7">
                             <div className="card-body">
                                 <div className="card-title">
-                                <h2>Hai Ba Trung 1</h2>
+                                <h2>{item.name}</h2>
                                 </div>
                                 <div className="card-text">
-                                <p>Azumaya Hotel Hai Ba Trung 1 is a 31 room hotel located in the middle of Hai Ba Trung district with shower toilet, bathtub, and Japanese TV shows supplied for each room. We have a giant open-air hot bath, Japanese breakfast buffet, Japanese restaurant “Mangetsu” (6pm-2am)original style foot massage which 90% of the customers are repeating. (The last order for massage is 9:45pm.) of all branches, only Hai Ba Trung 1 branch uses the natural stone for open-air hot baths. After relaxing in the open-air hot bath, have our soothing massage, and come satisfy your appetite in “Mangetsu”; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.</p>
-                                <br/>
-                                <br/>
-                                <br/>
+                                <p>{item.desc}</p>
                                 </div>
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/Component/RoomDetail">Click here for detail</Link>
+                                    <Link to = "/Component/RoomDetail">{t("hn-branch.btn-detail")}</Link>
+                                </div>
                                 </div>
                                 </div>
                         </div>
                     </div>
                     </div>
-                    </div>
-                <div className="feature__type-item">
+                    ))}
+                {/* <div className="feature__type-item">
                     <div className="card">
                     <div className="row p-0">
                                 <div className="col-md-5">
@@ -144,7 +146,7 @@ export default function BrandDetail(){
                                 </div>
                                 </div>
                                 </div>
-                    </div>
+                    </div> */}
                     {/* </div> */}
             </div>
             <div className="content__news">

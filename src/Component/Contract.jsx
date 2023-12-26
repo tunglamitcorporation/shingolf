@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Collapsible from "react-collapsible";
 import ReCAPTCHA from "react-google-recaptcha";
+import {useRef} from 'react';
 export default function Contract() {
   const {t} = useTranslation();
   const contract  = t("contract", {returnObjects:true})
@@ -11,7 +12,12 @@ export default function Contract() {
   const faqQ = t("contract.FAQ-trigger", {returnObjects:true})
   const cancel = t("contract.cancel-content", {returnObjects:true})
   const key = '6LefXSUpAAAAAO2hfwoAu_7cdRoXRhIp1o8wIkwW'
-  console.log(contractFeature);
+  const ref = useRef(null);
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
+  
   return (
     <div>
       <div className="contract__background"></div>
@@ -92,7 +98,7 @@ export default function Contract() {
             </p>
           </div>
           <div className="col-md-12 center">
-            <button className="btn-contract">{t('contract.contact')}</button>
+            <button className="btn-contract" onClick={handleClick}>{t('contract.contact')}</button>
           </div>
           <div className="content__feature-title" style={{marginTop:'50px'}}>
             {t('contract.benefit')}
@@ -155,7 +161,7 @@ export default function Contract() {
           </Collapsible>
           ))}
           <div className="col-md-12 center">
-            <button className="btn-contract">{t('contract.contact')}</button>
+            <button className="btn-contract" onClick={handleClick}>{t('contract.contact')}</button>
           </div>
           <div className="contract-benefit contract-title" style={{marginTop:'50px'}}>
           {t('contract.cancel')}
@@ -165,7 +171,7 @@ export default function Contract() {
                 <li>{item.content}</li>
               ))}
           </ul>
-          <div className="col-md-12 center">
+          <div ref={ref} className="col-md-12 center">
                   <form className="contract-form">
                     <div className="contract-title pre-line">
                       <h1>CONTACT</h1>

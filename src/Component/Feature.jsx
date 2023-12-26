@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
 import Booking from "./Booking";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; 
+import { useEffect, useRef } from 'react';
 export default function Feature() {
   const { t } = useTranslation();
   const featureData = t("feature", { returnObjects: true });
   const featureItem = t("feature.feature_item", { returnObjects: true });
+  const targetRef = useRef(null);
+    useEffect(() => {
+      const hash = window.location.hash;
+      if (hash && targetRef.current) {
+        const targetId = hash.substring(1); 
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block:'end', inline:'nearest' });
+        }
+      }
+    }, [window.location.hash]);
   return (
     <div>
       <div className="policies__header">
@@ -54,9 +66,9 @@ export default function Feature() {
         </div>
       </div>
       <div className="feature__type-list">
-        <div className="container">
+        <div className="container" id="containerID">
           {featureItem.map((item) => (
-            <div key={item.id} className="feature__type-item">
+            <div key={item.id} className="feature__type-item" id={item.id} ref={targetRef}>
               <div className="card mb-3" style={{ border: "none" }}>
                 <div className="row g-4">
                   <div className="col-md-4">

@@ -10,14 +10,18 @@ function Reservation() {
   const [text, setText] = useState(t('reservation.more'))
   const city = t('booking.city', {returnObjects:true})
   const branch = t('booking.branch', {returnObjects:true})
+  const room = t('roomHN.hbt1', {returnObjects:true})
   const reservationData = t('reservation', {returnObjects:true})
   const payMethod = t('reservation.method', {returnObjects:true})
   const requireItem = t('reservation.requirement-item', {returnObjects:true})
-  const [selectedCity, setSelectedCity] = useState();
-  const [selectedBranch, setSelectedBranch] = useState();
+  const [selectedCity, setSelectedCity] = useState("Ho Chi Minh");
+  const [selectedBranch, setSelectedBranch] = useState("Le Thanh Ton");
   const [paymentMethod, setPaymentMethod] = useState()
   const flatBranches = [].concat(...branch)
   const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
+  const flatRoom = [].concat(...room)
+  const filteredRoom = flatRoom.filter(r => r.branch_name == selectedBranch)
+  console.log(filteredRoom);
 
   //validate
   const [startDate, setStartDate] = useState(null)
@@ -326,7 +330,7 @@ return (
                   className="col-md-2 form__content" 
                   disabled={!selectedCity}  
                   onChange={(e)=>setSelectedBranch(e.target.value)}>
-                    <option></option>
+                    {/* <option></option> */}
                     {filteredBranches.map((item) => (
                       <option key={item.branch_id} value={item.branch_name}>{item.branch_name}</option>
                     ))}
@@ -401,7 +405,12 @@ return (
                   {t('reservation.room-kind')}
                     <span className="required__note">*</span>
                   </div>
-                  <select className="col-md-2 form__content">
+                  <select 
+                  className="col-md-2 form__content"
+                  disabled={!selectedBranch}>
+                  {filteredRoom.map((item)=>(
+                    <option key={item.branch_id} value={item.name}>{item.name}</option>
+                  ))}
                   </select>
                 </div>
                 <div className="row">

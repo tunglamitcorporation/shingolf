@@ -13,7 +13,8 @@
         "item10": "Da Nang",
         "item11": "Cambodia",
         "item12": "Branch",
-        "item13": "Massage Service"
+        "item13": "Massage Service",
+        "itemTest": "Test"
     },
     "booking": {
         "title": "Booking",
@@ -42,61 +43,61 @@
             {
                 "branch_id": 1,
                 "city_id": 1,
-                "city_name":"Ha Noi",
+                "city_name": "Ha Noi",
                 "branch_name": "Azumaya Hai Ba Trung 1"
             },
             {
                 "branch_id": 2,
                 "city_id": 1,
-                "city_name":"Ha Noi",
+                "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 2"
             },
             {
                 "branch_id": 3,
                 "city_id": 1,
-                "city_name":"Ha Noi",
+                "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 3"
             },
             {
                 "branch_id": 4,
                 "city_id": 1,
-                "city_name":"Ha Noi",
+                "city_name": "Ha Noi",
                 "branch_name": "Azumaya Linh Lang"
             },
             {
                 "branch_id": 5,
                 "city_id": 2,
-                "city_name":"Ho Chi Minh",
+                "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
             },
             {
                 "branch_id": 6,
                 "city_id": 2,
-                "city_name":"Ho Chi Minh",
+                "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
             },
             {
                 "branch_id": 7,
                 "city_id": 2,
-                "city_name":"Ho Chi Minh",
+                "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
             },
             {
                 "branch_id": 8,
                 "city_id": 2,
-                "city_name":"Ho Chi Minh",
+                "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
             },
             {
                 "branch_id": 9,
                 "city_id": 3,
-                "city_name":"Da Nang",
+                "city_name": "Da Nang",
                 "branch_name": "Azumaya Da Nang Hotel"
             },
             {
                 "branch_id": 10,
                 "city_id": 4,
-                "city_name":"Hai Phong",
+                "city_name": "Hai Phong",
                 "branch_name": "Azumaya Hai Phong Hotel"
             }
         ]
@@ -336,37 +337,366 @@
             }
         ]
     },
-    "hn-room":{
-        "branch":[
+    "hn-branch": {
+        "branch": [
             {
                 "id": 1,
-                "name":"Hai Ba Trung 1",
-                "roomfeature":"Room"
+                "name": "Hai Ba Trung 1",
+                "desc": "Azumaya Hotel Hai Ba Trung 1 is a 31 room hotel located in the middle of Hai Ba Trung district with shower toilet, bathtub, and Japanese TV shows supplied for each room. We have a giant open-air hot bath, Japanese breakfast buffet, Japanese restaurant “Mangetsu” (6pm-2am)original style foot massage which 90% of the customers are repeating. (The last order for massage is 9:45pm.) of all branches, only Hai Ba Trung 1 branch uses the natural stone for open-air hot baths. After relaxing in the open-air hot bath, have our soothing massage, and come satisfy your appetite in “Mangetsu”; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg"
             },
             {
                 "id": 2,
-                "name":"Kim Ma 2",
-                "roomfeature":"Room Tariff"
-
+                "name": "Kim Ma 2",
+                "desc": "Azumaya Hotel Kim Ma 2 branch, standing at the location 3 minutes far by walk from Kim Ma Street, has 38 rooms supplied with shower toilet, bathtub, and Japanese TV shows. In addition, we provide 2 annex rooms with separate entry from the main front entrance. For the long stay customers, 11 rooms with a kitchen are available. Both hotel guests and visitors can enjoy our open-air hot bath, Japanese breakfast , original style foot massage which 90% of users are repeat customers, and Japanese restaurant “Suzunoya”. (5pm-1am) After relaxing at our open-air hot bath, soothe your fatigue at foot massage, and satisfy your appetite at “Suzunoya” ; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg"
             },
             {
                 "id": 3,
-                "name":"Kim Ma 3",
-                "roomfeature":"Bussiness Service"
-
+                "name": "Kim Ma 3",
+                "desc": "Azumaya Hotel Kim Ma 3 branch has 42 rooms in total with shower toilet and Japanese TV shows for each room. Moreover, there are open-air hot bath and Japanese breakfast buffet. The Kin Ma 1 branch strands 10 seconds away by feet and Japanese restaurant street at Kim Ma Street is also near enough to walk (about 4 minutes). Its location is much convenient at dinner time. Moreover, far from the main street and nearby the silent pond in front, you can find it peaceful to be here.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg"
             },
             {
                 "id": 4,
-                "name":"Linh Lang",
-                "roomfeature":"Location"
+                "name": "Linh Lang",
+                "desc": "Ling Lang branch has 46 rooms in total with open-air bath, Japanese breakfast , Japanese izakaya \"ISSUN Boushi\" . All the rooms are equipped with shower toilet, bathtub, and Japanese TV show. The hotel is within walking distance from Lotte Centre which is located along Linh Lang road where many Japanese restaurants have opened recently. At the hotel, high-tea massage is also available on the 7th floor. It records over 90% of repeat customer rate. Last order is 9:45 pm.. You can enjoy a night view from each massage chair. It features a spacious outdoor bath. You can have a pleasant morning at the breakfast venue on the 8th floor with a fine view.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png"
+            }
+        ],
+        "btn-detail": "Click here for detail"
+    },
+    "hcm-branch": {
+        "branch": [
+            {
+                "id": 1,
+                "name": "Azumaya Thai Van Lung 1",
+                "desc": "Azumaya Hotel Thai Van Lung 1 branch is located in a perfect location for Japanese businessmen to stay. It is supplied with 51 rooms in total with facilities of toilet with bidet function and Japanese TV shows for each room. In addition, we serve open-air hot bath, Japanese breakfast buffet, and Japanese restaurant “Thien”. Inside our hotel, you can take Azumaya-style massage, which 90% of the repeat customers come back (10:45pm is our last order for massage). In the basement floor, Japanese restaurant “Thien” serves you with various menu of Japanese sake, Sho-chu, and sashimi. Please visit and enjoy our food, we are open until 2:00am. For the hotel guests, you can soothe out your tiredness just by being in our hotel: take a bath at our unique open-air hot bath, satisfy your appetite in Thien, take our massage, watch TV at room and relax. Our Thai Van Lung 2 branch stands across the street and Le Thanh Ton branch is 3 minutes away by walking.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl1_wyk4hz.jpg"
+            },
+            {
+                "id": 2,
+                "name": "Azumaya Thai Van Lung 2",
+                "desc": "Azumaya Hotel Thai Van Lung 2 branch is a newly opened branch in 2016, located in front of the Thai Van Lung 1 branch across the street. There are 58 rooms in total with toilet with bidet functions, bathtubs, and Japanese TV shows in each room. We also serve open-air hot baths, Japanese breakfast, and Japanese food restaurant \"Suizan\" and \"mangetsu\". Female guests can also enjoy our open air hot bath on weekdays. (Only from 17:00 to 18:45) For breakfast, we also have a lot of set manu like continental set other than authentic Japanese sets, Udon noodles. With Thai Van Lung 1 branch located in front and Le Thanh Ton branch standing along Le Thanh Ton street 3 minutes far from here, it is the perfect location for businessmen to stay comfortably.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg"
+            },
+            {
+                "id": 3,
+                "name": "Azumaya Le Thanh Ton",
+                "desc": "Azumaya Hotel Le Thanh Ton branch has 37 rooms in total with toilet with bidet function and Japanese TV shows in each room. We serve open-air hot bath, Japanese breakfast and sho-chu bar “Mangetsu”. For breakfast, we also have a lot of food like continental set other than authentic Japanese sets, Udon noodle. The open-air hot bath in the middle of this city-side will definitely be an oasis soothing your fatigue from daily hard work. Another oasis for the guests who wants to end their day with a nice drink, the sho-chu bar “Mangetsu” in the basement floor is open for you until 2:00am. It stands in the middle of Le Thanh Ton street, there is no such inconvenience for going to a restaurant or a bar. A perfect location for the guests who come to Vietnam for the first time. all these values are prepared only for you to make your business trip comfortable.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg"
+            },
+            {
+                "id": 4,
+                "name": "Azumaya HCM ANNEX",
+                "desc": "Azumaya Hotel HCM Annex is an apartment type hotel with 7 rooms for long stay guests. It is well-supplied with bathtub, toilet with bidet function, and Japanese TV shows for all rooms. located in the back alley of Thai Van Lung 1 branch. The building itself does not have an elevator, but because only 2 rooms for each floor, there is no chance to bump into the other staying customer. Same as the staying guests in Thai Van Lung 1 branch, it is available to enjoy our Japanese breakfast, open-air hot bath, and special discount of using foot massage. the convenient auto door lock makes the accessing way easy & safe. We promise you a comfortable and reasonable stay in the unfamiliar surroundings of Vietnam.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg  "
+            }
+        ],
+        "btn-detail": "Click here for detail"
+    },
+    "dn-branch": {
+        "branch": [
+            {
+                "id": 1,
+                "name": "Da Nang",
+                "desc": "Azumaya Hotel Da Nang branch is located in the middle of city; just 10 minutes far from the airport, and has 32 rooms in total with shower toilet and Japanese TV shows for each room. What makes us unique from other hotels is that we serve open-air hot bath, Japanese breakfast, original style foot massage. Our original style foot massage is our popular service among Japanese visitors and guests which 90% of the repeat customers come back again. If you reserve, you do not have to concern about waiting in the long queue.(The last order for massage is 10:45pm for weekdays and 9:45pm for weekends.) Since the open-air hot bath is facing to the ocean you can enjoy the beautiful view of the ocean spread out before your eyes and sunset over the mountains. Please make yourself comfortable with our first one-stop service in Da Nang.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg"
+            }
+        ],
+        "btn-detail": "Click here for detail"
+    },
+    "hp-branch": {
+        "branch": [
+            {
+                "id": 1,
+                "name": "Hai Phong",
+                "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg"
+            }
+        ],
+        "btn-detail": "Click here for detail"
+    },
+    "room": {
+        "features": [
+            {
+                "name": "Room"
+            },
+            {
+                "name": "Room Tariff"
+            },
+            {
+                "name": "Bussiness Service"
+            },
+            {
+                "name": "Location"
+            }
+        ]
+    },
+    "roomHN": {
+        "hbt1": [
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "d1f",
+                "name": "DELUXE 1F (NO VIEW)",
+                "size": "24",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Windows: no view",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.6m Queen size bed",
+                "price": "1.250.000VND+",
+                "image":[
+                    "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView1_hbld7m.jpg",
+                    "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg",
+                    "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"     
+                ]
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "diwnv",
+                "name": "DELUXE - INSIDE WINDOW (NO VIEW)",
+                "size": "24",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Windows: no view",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.6m Queen size bed",
+                "price": "1.375.000VND+"
+               
+
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "eiw",
+                "name": "EXECUTIVE INSIDE WINDOW",
+                "size": "26",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Windows: no view",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.6m Queen size bed",
+                "price":"1.450.000"
+      
+
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "e",
+                "name": "EXECUTIVE",
+                "size": "26",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Outside windows",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.6m Queen size bed/ Twin beds",
+                "price": "1.500.000VND+"
+            
+
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "ewk",
+                "name": "EXECUTIVE WITH KITCHEN",
+                "size": "26",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Outside windows",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.6m Queen size bed",
+                "price": "1.575.000VND+"
+               
+
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "sswk",
+                "name": "SEMI SUITE WITH KITCHEN",
+                "size": "35",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Outside windows",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.6m Queen size bed/ Twin beds",
+                "price": "1.675.000VND+"
+    
+               
+
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "s",
+                "name": "SUITE",
+                "size": "48",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Outside windows",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.8m King size bed",
+                "price": "1.750.000VND+"
+               
+
+            },
+            {
+                "branch_name": "Azumaya Hai Ba Trung 1",
+                "room_id": "swk",
+                "name": "SUITE WITH KITCHEN",
+                "size": "48",
+                "sizeTitle": "Size",
+                "bedTitle": "Bed",
+                "install": "Installation",
+                "in1": "Outside windows",
+                "in2": "Bathtub",
+                "in3": "LCD TV 50 inches",
+                "in4": "Toilet with bidet function",
+                "priceTitle": "Price",
+                "bed": "1.8m Queen size bed",
+                "price": "1.750.000VND+"
+                
 
             }
         ]
-        
     },
-    "massage":{
-        "title":"Massage Service",
-        "branch":[
+    "HBT1Image":[
+         {
+            "Image":[
+                "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView1_hbld7m.jpg",
+                "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg",
+                "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"     
+            ]
+            },
+            {
+            "Image":[
+                "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-1_zmt7uh.jpg",
+                "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-2_yfyuqp.jpg",
+                "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-3_lchwfy.jpg"  
+            ]
+         }
+        ],
+        "Second":[
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-1_zmt7uh.jpg"
+
+            },
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveInsideWindow1_fdtpsw.jpg"
+
+            },
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive1_ghjhzr.jpg"
+
+            },
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/ExecutiveWithKitchen1_vw87gk.jpg"
+
+            },
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen1_uatnii.jpg"
+
+            },
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite1_amfnye.jpg"
+
+            },
+            {
+                "image1": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SuiteWithKitchen1_zjhzqr.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg "
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-2_yfyuqp.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveInsideWindow2_q6jsk1.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive2_wceibe.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen2_x3hshm.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen2_kfrxav.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite2_edhoz7.jpg"
+
+            },
+            {
+                "image2": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SuiteWithKitchen2_ts93dw.jpg"
+            }
+        ],
+        "Third":[
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-3_lchwfy.jpg"
+
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/ExecutiveInsideWindow3_begrdr.jpg"
+
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive3_h1cm4b.jpg"
+
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen3_inw0ma.jpg"
+
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen3_cnileh.jpg"
+
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite3_aa5lxa.jpg"
+
+            },
+            {
+                "image3": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476776/AzumayaWeb/HBT1/SuiteWithKitchen3_xps567.jpg"
+
+            }
+        ],
+    "massage": {
+        "title": "Massage Service",
+        "branch": [
             {
                 "name": "Azumaya Thai Van Lung 1"
             },
@@ -376,209 +706,203 @@
             {
                 "name": "Azumaya Linh Lang"
             }
-                
         ]
-        
-            
     },
-    "reservation":{
-        "title":"Reservation",
-        "choice":"Choice of Branch: ",
-        "check-in":"Check-in date: ",
-        "check-out":"Check-out date: ",
-        "in-time":"Check-in time:",
-        "in-note":"(Normal check-in: 3:00 PM)",
-        "out-time":"Check-out time:",
-        "out-note":"(Normal check-out: before 12:00 PM)",
-        "out-timeNote":"Please mention if the check out time is prior to 6:00 AM",
-        "room-kind":"Kind of Room:",
-        "room-amount":"Number of Rooms:",
-        "guest-amount":"Number of Guest per Room:",
-        "guest-info":"Guest Information",
-        "name":"Name:",
-        "name-note":"(Please fill in the name of all the members stay)",
-        "family-name":"Family Name",
-        "given-name":"Given Name",
-        "name-required":"Please write in Alphabet",
-        "gender":"Gender:",
-        "mr":"Mr.",
-        "ms":"Ms.",
-        "birth-date":"Birth Date:",
-        "day":"Day",
-        "month":"Month",
-        "year":"Year",
-        "booker":"Name of person who makes reservation:",
-        "same-person":"Same as person who will stay",
-        "diff-person":"Different with who will stay",
-        "email":"E-mail Address",
-        "email-note":"Please leave your exact email address for our soon confirmation or contact",
-        "phone":"Phone Number",
-        "phone-note":" Please input country code if it's not Vietnamese or Japanese telephone's number",
-        "room-type":"Room Type:",
-        "smk":"Smoking",
-        "non-smk":"Non-smoking",
-        "contract":"Contract:",
-        "h-cont":"Have Contract",
-        "n-cont":"No Contract",
-        "company":"Company Name",
-        "company-note":"※The contracting company's name",
-        "vat-invoice":"VAT Invoice:",
-        "need":"Necessarily",
-        "n-need":"No Necessarily",
-        "vat-note":"VAT is Value Added tax. It is a tax on the sale of most goods and services. VAT revenues are collected through businesses who are registered for VAT",
-        "pay-method":"Payment Method:",
-        "method":[
+    "reservation": {
+        "title": "Reservation",
+        "choice": "Choice of Branch: ",
+        "check-in": "Check-in date: ",
+        "check-out": "Check-out date: ",
+        "in-time": "Check-in time:",
+        "in-note": "(Normal check-in: 3:00 PM)",
+        "out-time": "Check-out time:",
+        "out-note": "(Normal check-out: before 12:00 PM)",
+        "out-timeNote": "Please mention if the check out time is prior to 6:00 AM",
+        "room-kind": "Kind of Room:",
+        "room-amount": "Number of Rooms:",
+        "guest-amount": "Number of Guest per Room:",
+        "guest-info": "Guest Information",
+        "name": "Name:",
+        "name-note": "(Please fill in the name of all the members stay)",
+        "family-name": "Family Name",
+        "given-name": "Given Name",
+        "name-required": "Please write in Alphabet",
+        "gender": "Gender:",
+        "mr": "Mr.",
+        "ms": "Ms.",
+        "birth-date": "Birth Date:",
+        "day": "Day",
+        "month": "Month",
+        "year": "Year",
+        "booker": "Name of person who makes reservation:",
+        "same-person": "Same as person who will stay",
+        "diff-person": "Different with who will stay",
+        "email": "E-mail Address",
+        "email-note": "Please leave your exact email address for our soon confirmation or contact",
+        "phone": "Phone Number",
+        "phone-note": " Please input country code if it's not Vietnamese or Japanese telephone's number",
+        "room-type": "Room Type:",
+        "smk": "Smoking",
+        "non-smk": "Non-smoking",
+        "contract": "Contract:",
+        "h-cont": "Have Contract",
+        "n-cont": "No Contract",
+        "company": "Company Name",
+        "company-note": "※The contracting company's name",
+        "vat-invoice": "VAT Invoice:",
+        "need": "Necessarily",
+        "n-need": "No Necessarily",
+        "vat-note": "VAT is Value Added tax. It is a tax on the sale of most goods and services. VAT revenues are collected through businesses who are registered for VAT",
+        "pay-method": "Payment Method:",
+        "method": [
             {
-                "name":"By cash at counter (VND/USD/JPY"
+                "name": "By cash at counter (VND/USD/JPY"
             },
             {
-                "name":"By credit at counter (VND only)"
+                "name": "By credit at counter (VND only)"
             },
             {
-                "name":"By company transfer before check in"
+                "name": "By company transfer before check in"
             },
             {
-                "name":"Others"
+                "name": "Others"
             }
         ],
-        "requirement":"Any special requirement:",
-        "requirement-note":"(late check-out, pick-up, etc,...)",
-        "requirement-item":[
+        "requirement": "Any special requirement:",
+        "requirement-note": "(late check-out, pick-up, etc,...)",
+        "requirement-item": [
             {
-                "name":"Pick up"
+                "name": "Pick up"
             },
             {
-                "name":"Drop off"
+                "name": "Drop off"
             },
             {
-                "name":"Early check-in"
+                "name": "Early check-in"
             },
             {
-                "name":"Late check-out"
+                "name": "Late check-out"
             }
         ],
-        "request":"Please let us know if you have any requests",
-        "send":"Send",
-        "more":"More +",
-        "remove":"Remove",
-        "attention-note":"*Please Attention\nIt will take a little time to transition to the Reservation Completion Page after press \"Send\" button, please wait a moment."
+        "request": "Please let us know if you have any requests",
+        "send": "Send",
+        "more": "More +",
+        "remove": "Remove",
+        "attention-note": "*Please Attention\nIt will take a little time to transition to the Reservation Completion Page after press \"Send\" button, please wait a moment."
     },
-    "contract":{
-        "title":"東屋ホテルでは東南アジアへのご出張が多い企業様向けに特別価格でご宿泊いただける 法人契約を承っております。是非、この機会にご検討くださいませ。",
-        "feature":[
+    "contract": {
+        "title": "東屋ホテルでは東南アジアへのご出張が多い企業様向けに特別価格でご宿泊いただける 法人契約を承っております。是非、この機会にご検討くださいませ。",
+        "feature": [
             {
-                "title":"和朝食",
-                "content":"1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg"
+                "title": "和朝食",
+                "content": "1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg"
             },
             {
-                "title":"日本語のおもてなし",
-                "content":"日本語が話せるスタッフが常駐しておりますので、英語が苦手な方も安心してお過ごしいただけます。",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg"
+                "title": "日本語のおもてなし",
+                "content": "日本語が話せるスタッフが常駐しておりますので、英語が苦手な方も安心してお過ごしいただけます。",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg"
             },
             {
-                "title":"サウナ付き露天風呂",
-                "content":"早朝の目覚め、仕事終わりのリラックスに是非ご利用くださいませ。 サウナ・水風呂も完備しております。(※一部店舗を除く)",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
+                "title": "サウナ付き露天風呂",
+                "content": "早朝の目覚め、仕事終わりのリラックスに是非ご利用くださいませ。 サウナ・水風呂も完備しております。(※一部店舗を除く)",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
             }
         ],
-        "additional":"その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております。",
-        "contact":"お問い合わせはこちら",
-        "benefit":"法人契約のメリット",
-        "benefit_1":"豊富な拠点数と全店舗一括適用",
-        "receipt":"領収書の発行に関する諸注意",
-        "about":"ご契約にあたって",
-        "FAQ":"ご契約に関するFAQ",
-        "cancel":"契約の取り消し",
-        "benefit-content":"ベトナム　カンボジア　ミャンマー3カ国に計10支店以上ある全店舗を一括で契約させていただくので各都市のホテルと個別に契約を結ぶ必要はありません。 東南アジアにご出張の機会の多い企業様に最適です。",
-        "contract-branch":[
+        "additional": "その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております。",
+        "contact": "お問い合わせはこちら",
+        "benefit": "法人契約のメリット",
+        "benefit_1": "豊富な拠点数と全店舗一括適用",
+        "receipt": "領収書の発行に関する諸注意",
+        "about": "ご契約にあたって",
+        "FAQ": "ご契約に関するFAQ",
+        "cancel": "契約の取り消し",
+        "benefit-content": "ベトナム　カンボジア　ミャンマー3カ国に計10支店以上ある全店舗を一括で契約させていただくので各都市のホテルと個別に契約を結ぶ必要はありません。 東南アジアにご出張の機会の多い企業様に最適です。",
+        "contract-branch": [
             {
-                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
             },
             {
-                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
             },
             {
-                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
             },
             {
-                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
             },
             {
-                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
             },
             {
-                "url":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
             }
         ],
-        "receipt-content":"日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",
-        "contractJP-title":"日本法人でのご契約",
-        "contractJP":[
+        "receipt-content": "日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",
+        "contractJP-title": "日本法人でのご契約",
+        "contractJP": [
             {
-                "content":"1.ホテル受付でクレジットカード( VISA, MASTER, JCB)/ 現金でお支払いの場合は VATインボイスの発行可（但し、事前にベトナム法人の情報をお伝えください）。"
+                "content": "1.ホテル受付でクレジットカード( VISA, MASTER, JCB)/ 現金でお支払いの場合は VATインボイスの発行可（但し、事前にベトナム法人の情報をお伝えください）。"
             },
             {
-                "content":"2.銀行振込の場合は領収書のみを発行。"
+                "content": "2.銀行振込の場合は領収書のみを発行。"
             }
         ],
-        "contractVN-title":"ベトナム法人でのご契約",
-        "contractVN-content":"どのようなお支払い方法でもVATインボイスの発行可",
-        "about-content":"お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください",
-        "FAQ-trigger":[
+        "contractVN-title": "ベトナム法人でのご契約",
+        "contractVN-content": "どのようなお支払い方法でもVATインボイスの発行可",
+        "about-content": "お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください",
+        "FAQ-trigger": [
             {
-                "content":"Q. 日本の会社での契約です。税コード欄の記載はどうすれば良いでしょうか？",
-                "answer":"A. 税コードをお持ちでいない場合は空欄のままで問題ございません。"
-
+                "content": "Q. 日本の会社での契約です。税コード欄の記載はどうすれば良いでしょうか？",
+                "answer": "A. 税コードをお持ちでいない場合は空欄のままで問題ございません。"
             },
             {
-                "content":"Q. 代表取締役ではなく担当役員の名前で契約できますか？",
-                "answer":"A. 貴社の代表者様のサインおよび押印にてご契約いただけます。"
-
+                "content": "Q. 代表取締役ではなく担当役員の名前で契約できますか？",
+                "answer": "A. 貴社の代表者様のサインおよび押印にてご契約いただけます。"
             },
             {
-                "content":"Q. 法人契約を締結するとどのような特典が利用出来ますか？",
-                "answer":"A. 宿泊日数に応じて、宿泊料金の割引やランドリーサービスを無料でご利用いただくことが可能です。長期滞在のお客様にはマッサージ無料券もお渡ししています。\n\n-無料ランドリー特典を適用する場合の注意点\n100,000VND/ 日と設定しておりますが、1日の上限ではございません。\n宿泊日数に基づく合計金額をご宿泊期間中にご利用いただけます。\n例：5泊6日のご宿泊の場合 100,000VND×5泊 = 上限金額 500,000VND / 5泊\n万が一、上限金額を超えた場合はチェックアウトの際に超過分を別途請求させていただきます。\n金額の目安 ( エリアにより金額が異なります )\nYシャツ：20,000vnd ズボン：20,000vnd 下着：15,000vnd 靴下：15,000vnd"
-
+                "content": "Q. 法人契約を締結するとどのような特典が利用出来ますか？",
+                "answer": "A. 宿泊日数に応じて、宿泊料金の割引やランドリーサービスを無料でご利用いただくことが可能です。長期滞在のお客様にはマッサージ無料券もお渡ししています。\n\n-無料ランドリー特典を適用する場合の注意点\n100,000VND/ 日と設定しておりますが、1日の上限ではございません。\n宿泊日数に基づく合計金額をご宿泊期間中にご利用いただけます。\n例：5泊6日のご宿泊の場合 100,000VND×5泊 = 上限金額 500,000VND / 5泊\n万が一、上限金額を超えた場合はチェックアウトの際に超過分を別途請求させていただきます。\n金額の目安 ( エリアにより金額が異なります )\nYシャツ：20,000vnd ズボン：20,000vnd 下着：15,000vnd 靴下：15,000vnd"
             }
         ],
-        "cancel-content":[
+        "cancel-content": [
             {
-                "content":"虚偽の申告をした場合"
+                "content": "虚偽の申告をした場合"
             },
             {
-                "content":"ご住所、お電話番号、メールアドレス等のご連絡先が不明となった場合。"
+                "content": "ご住所、お電話番号、メールアドレス等のご連絡先が不明となった場合。"
             },
             {
-                "content":"ホテルのお客様,　ホテル（施設、設備、備品等）及びホテルの従業員に危害及び損害を与えた場合"
+                "content": "ホテルのお客様,　ホテル（施設、設備、備品等）及びホテルの従業員に危害及び損害を与えた場合"
             },
             {
-                "content":"宿泊約款及び規則を厳守されない場合"
+                "content": "宿泊約款及び規則を厳守されない場合"
             },
             {
-                "content":"暴行、傷害、脅迫、恐喝、威圧的不当及びこれらに関する犯罪が認められた場合"
+                "content": "暴行、傷害、脅迫、恐喝、威圧的不当及びこれらに関する犯罪が認められた場合"
             },
             {
-                "content":"暴力団、暴力団員、暴力団関係団体及びその関係者と判断された場合"
+                "content": "暴力団、暴力団員、暴力団関係団体及びその関係者と判断された場合"
             },
             {
-                "content":"暴力団または暴力団員が事業活動を支配する法人その他団体の関係者と判断された場合"
+                "content": "暴力団または暴力団員が事業活動を支配する法人その他団体の関係者と判断された場合"
             },
             {
-                "content":"反社会団体、反社会的団体及びその関係者と判断された場合"
+                "content": "反社会団体、反社会的団体及びその関係者と判断された場合"
             },
             {
-                "content":"その他ホテルが不適当と判断した場合"
+                "content": "その他ホテルが不適当と判断した場合"
             }
         ],
-        "form-title":"日本法人でのご契約をご希望のお客様は日本の情報を、\nベトナム法人でのご契約をご希望のお客様はベトナムの情報をご入力ください。",
-        "company-name":"貴社名(ローマ字)",
-        "address":"ご住所",
-        "company-URL":"企業ホームページURL",
-        "in-charge":"ご担当者氏名(ローマ字)",
-        "first-name":"First Name",
-        "last-name":"Last Name",
-        "email":"メールアドレス",
-        "phone":"お電話番号",
-        "send":"送信"
+        "form-title": "日本法人でのご契約をご希望のお客様は日本の情報を、\nベトナム法人でのご契約をご希望のお客様はベトナムの情報をご入力ください。",
+        "company-name": "貴社名(ローマ字)",
+        "address": "ご住所",
+        "company-URL": "企業ホームページURL",
+        "in-charge": "ご担当者氏名(ローマ字)",
+        "first-name": "First Name",
+        "last-name": "Last Name",
+        "email": "メールアドレス",
+        "phone": "お電話番号",
+        "send": "送信"
     }
 }
