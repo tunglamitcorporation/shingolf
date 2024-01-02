@@ -48,19 +48,19 @@ function Header() {
             <li className="header__navbar-item header-reserve">
               <Link
                 className="header__navbar-link header-reserve"
-                to="/Component/Reservation"
+                to="/Reservation"
                 style={{ color: "#fff" }}
               >
-                {t("header.item3")}
+                {t("header.reservation")}
               </Link>
             </li>
             <li className="header__navbar-item header-reserve">
               <Link
                 className="header__navbar-link header-reserve"
-                to="/Component/BrandDetail"
+                to="/BrandDetail"
                 style={{ color: "#fff" }}
               >
-                {t("header.item11")}
+                {t("header.cambodia")}
               </Link>
             </li>
             <li className="header__navbar-item header-reserve">
@@ -119,61 +119,61 @@ function Header() {
               to="/"
               className="header__mobile-navbar-link"
             >
-              {t("header.item1")}
+              {t("header.home")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Component/Policies"
+              to="/Policies"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
-              {t("header.item2")}
+              {t("header.policies")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Component/Reservation"
+              to="/Reservation"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
-              {t("header.item3")}
+              {t("header.reservation")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Component/Feature"
+              to="/Feature"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
-              {t("header.item4")}
+              {t("header.feature")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Component/Service"
+              to="/Service"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
-              {t("header.item5")}
+              {t("header.service")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Component/Massage"
+              to="/Massage"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
-              {t("header.item13")}
+              {t("header.massage")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Component/Contract"
+              to="/Contract"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
-              {t("header.item6")}
+              {t("header.contract")}
             </Link>
           </li>
         </ul>
@@ -183,50 +183,50 @@ function Header() {
                   <ul className="header__navbar-list mb-0">
                   <li className="header__navbar-item">
                     {/* <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/Test">
+                      <Link className="header__navbar-link-2" to="/Test">
                         {t("header.itemTest")}
                       </Link>
                     </li> */}
                       <Link className="header__navbar-link-2" to="/">
-                        {t("header.item1")}
+                        {t("header.home")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/Policies">
-                        {t("header.item2")}
+                      <Link className="header__navbar-link-2" to="/Policies">
+                        {t("header.policies")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/HCMBrandDetail">
-                        {t("header.item8")}
+                      <Link className="header__navbar-link-2" to="/HCMBrandDetail">
+                        {t("header.hcm")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/HNBrandDetail">
-                        {t("header.item7")}
+                      <Link className="header__navbar-link-2" to="/HN/HNBrandDetail">
+                        {t("header.hn")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/DNBrandDetail">
-                        {t("header.item10")}
+                      <Link className="header__navbar-link-2" to="/DNBrandDetail">
+                        {t("header.dn")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/HPBrandDetail">
-                        {t("header.item9")}
+                      <Link className="header__navbar-link-2" to="/HPBrandDetail">
+                        {t("header.hp")}
                       </Link>
                     </li>
 
                     {/* <li className="header__navbar-item">
-                            <Link  className = "header__navbar-link-2" to = '/Component/Reservation'>{t('header.item3')}</Link></li> */}
+                            <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></li> */}
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/Feature">
-                        {t("header.item4")}
+                      <Link className="header__navbar-link-2" to="/Feature">
+                        {t("header.feature")}
                       </Link>
                       <ul className="header__navbar-item-list">
                         {feature.map((item)=>(
                           <li className = "header__navbar-sub-link"><Link 
-                          to ={`/Component/Feature#${item.id}`}
+                          to ={`/Feature#${item.id}`}
                           onClick={()=>scroller.scrollTo(`${item.id}`,
                           {duration:0,
                           delay:0,
@@ -241,24 +241,24 @@ function Header() {
                         </ul>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/Service">
-                        {t("header.item5")}
+                      <Link className="header__navbar-link-2" to="/Service">
+                        {t("header.service")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/Massage">
-                        {t("header.item13")}
+                      <Link className="header__navbar-link-2" to="/Massage">
+                        {t("header.massage")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Component/Contract">
-                        {t("header.item6")}
+                      <Link className="header__navbar-link-2" to="/Contract">
+                        {t("header.contract")}
                       </Link>
                     </li>
                     {/* <li className="header__navbar-item">
                             <Link  className = "header__navbar-link-branch .header__navbar-link--hover" to=''>{t('header.item12')}</Link>
                                 <ul className="header__navbar-item-list">
-                                    <li className = "header__navbar-sub-link"><Link to = '/Component/BrandDetail'>{t('header.item7')}</Link></li>
+                                    <li className = "header__navbar-sub-link"><Link to = '/BrandDetail'>{t('header.item7')}</Link></li>
                                     <li className = "header__navbar-sub-link"><Link to ="">{t('header.item8')}</Link></li>
                                     <li className = "header__navbar-sub-link"><Link to ="">{t('header.item9')}</Link></li>
                                     <li className = "header__navbar-sub-link"><Link to ="">{t('header.item10')}</Link></li>

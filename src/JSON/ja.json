@@ -1,20 +1,32 @@
 {
     "header": {
         "top-header":"★ こだわりの和朝食と露天風呂がある、ビジネスパーソン向けホテル ★",
-        "item1": "ホーム",
-        "item2": "テル概要",
-        "item3": "ご予約",
-        "item4": "東屋8大魅力",
-        "item5": "提供サービス",
-        "item6": "法人契約のご案内",
-        "item7": "ハノイ",
-        "item8": "ホーチミン",
-        "item9": "ハイフォン",
-        "item10": "ダナン",
-        "item11": "東屋プノンペン",
+        "home": "ホーム",
+        "policies": "テル概要",
+        "reservation": "ご予約",
+        "feature": "東屋8大魅力",
+        "service": "提供サービス",
+        "contract": "法人契約のご案内",
+        "hn": "ハノイ",
+        "hcm": "ホーチミン",
+        "hp": "ハイフォン",
+        "dn": "ダナン",
+        "cambodia": "東屋プノンペン",
         "item12": "支店",
-        "item13":"マッサージサービス",
+        "massage":"マッサージサービス",
         "itemTest":"Test"
+    },
+    "branch":{
+        "hbt1": "東屋 ハイバーチュン店 1",
+        "km2": "東屋金馬 2",
+        "km3": "東屋金馬 3",
+        "ll": "東谷 リン・ラン",
+        "ltt": "東屋 レタントン",
+        "tvl1": "東屋 タイヴァンルン 1",
+        "tvl2": "東屋 タイヴァンルン 2",
+        "annex": "Azumaya Annex",
+        "dn": "東屋ダナン",
+        "hp": "東屋 ハイフォン"
     },
     "booking": {
         "title": "ご予約はこちら",
@@ -418,175 +430,209 @@
         "btn-detail":"詳細はこちら"
 
     },
-    "room":{
-        "features":[
+    "room": {
+        "room":"お部屋のご案内",
+        "roomContent":"和朝食、露天風呂（男性専用）、TV19チャンネル、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
+        "tariff":"価格表一覧",
+        "vat":"*Room price is excluded 10%",
+        "service":"Serviced included :",
+        "serviceContent":"Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "facility":"Amenities & Facilities :",
+        "facilityContent":"Bathtub\nWorking desk\n50 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "rental":"Free Rental : ",
+        "rentalContent":"Transformer (220V → 110V)\nAdditional socket hub",
+        "business":"ビジネスサービス",
+        "businessContent":"For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
+        "pickup":"Pick up & Drop off Service",
+        "pickup_fee1":"$25 (6am~9pm)",
+        "pickup_fee2":"$30 (9pm~6am)",
+        "pickup_car":"Car for 4-7 persons",
+        "minibar":"Minibar",
+        "minibar_fee":"From 15.000 VND",
+        "minibar_type":"Soft drink, beer, etc.",
+        "laundry":"Laundry",
+        "laundry_fee1":"From 12.500 VND",
+        "laundry_fee2":"Special price for long staying guest",
+        "print":"Print & Copy",
+        "print_fee1":"FREE for first 10 pages / day",
+        "print_fee2":"From 11th page, 2.000VND charged per page",
+        "tel":"Tel",
+        "tel_fee1":"FREE for local number",
+        "tel_fee2":"1$ charged for international number",
+        "rental_car":"Rental Car",
+        "tour":"Tour",
+        "visa":"Extend Visa",
+        "food":"Food Delivery",
+        "roten":"Rotenburo",
+        "rotenContent":"Opening time: Mon ~ Fri : 7:00 ~ 9:00/ 17:00 ~ 23:00,\nSat & Sun : 7:00 ~ 23:00 (Only Men)\n* We open for ladies at 23:00 to 24:00 Weekday Please reserve at reception until 16:00 in day.",
+        "breakfast":"Breakfast",
+        "breakfastContent":" Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+        "ask":"Ask receptionist",
+        "board":"Azumaya Hotel Management Board",
+        "contact1":"Reservation can be made via phone:",
+        "contact2":"or Email:",
+        "contact3":"or visit our website:",
+        "phone":"(+842) 4 6278 6688",
+        "email":"reservationhanoi@azumayavietnam.com",
+        "website":"www.azumayavietnam.com",
+        "location":"アクセス",
+        "locationContent":"We are located in the Japanese town of Hai Ba Trung area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
+        "address":"Address : 16 Bui Thi Xuan Street, Hai Ba Trung Dist, Hanoi. Vietnam.",
+        "emailTitle":"Email",
+        "type":"Room Type",
+        "rate":"Room Rate",
+        "desc":"Description",
+        "size":"Size",
+        "window":"Window",
+        "bath":"Babthtub",
+        "reservation":"予約する",
+        "features": [
             {
-                "name":"Room"
+                "name": "お部屋のご案内"
             },
             {
-                "name":"Room Tariff"
+                "name": "価格表一覧"
             },
             {
-                "name":"Bussiness Service"
+                "name": "ビジネスサービス"
             },
             {
-                "name":"Location"
+                "name": "アクセス"
             }
         ]
     },
-    "roomHN": {
-            "hbt1": [
+     "hbt1": [
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "d1f",
                     "name": "DELUXE 1F (NO VIEW)",
                     "size": "24",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Windows: no view",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.6m Queen size bed",
-                    "price": "1.250.000VND+",
-                    "image":[
-                        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView1_hbld7m.jpg",
-                        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg",
-                        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"     
-                    ]
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓 (no view)",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.6m クイーン/ダブル",
+                    "price": "1.250.000VND+"
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "diwnv",
                     "name": "DELUXE - INSIDE WINDOW (NO VIEW)",
                     "size": "24",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Windows: no view",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.6m Queen size bed",
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓 (no view)",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.6m クイーン/ダブル",
                     "price": "1.375.000VND+"
-                   
-    
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "eiw",
                     "name": "EXECUTIVE INSIDE WINDOW",
                     "size": "26",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Windows: no view",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.6m Queen size bed",
-                    "price":"1.450.000"
-          
-    
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓 (no view)",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.6m クイーン/ダブル",
+                    "price":"1.450.000VND+"
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "e",
                     "name": "EXECUTIVE",
                     "size": "26",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Outside windows",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.6m Queen size bed/ Twin beds",
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.6m クイーン/ダブル/ Twin beds",
                     "price": "1.500.000VND+"
-                
-    
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "ewk",
                     "name": "EXECUTIVE WITH KITCHEN",
                     "size": "26",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Outside windows",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.6m Queen size bed",
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.6m クイーン/ダブル",
                     "price": "1.575.000VND+"
-                   
-    
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "sswk",
                     "name": "SEMI SUITE WITH KITCHEN",
                     "size": "35",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Outside windows",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.6m Queen size bed/ Twin beds",
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.6m クイーン/ダブル/ Twin beds",
                     "price": "1.675.000VND+"
-        
-                   
-    
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "s",
                     "name": "SUITE",
                     "size": "48",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Outside windows",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
                     "bed": "1.8m King size bed",
                     "price": "1.750.000VND+"
-                   
-    
                 },
                 {
                     "branch_name": "Azumaya Hai Ba Trung 1",
                     "room_id": "swk",
                     "name": "SUITE WITH KITCHEN",
                     "size": "48",
-                    "sizeTitle": "Size",
-                    "bedTitle": "Bed",
-                    "install": "Installation",
-                    "in1": "Outside windows",
-                    "in2": "Bathtub",
-                    "in3": "LCD TV 50 inches",
-                    "in4": "Toilet with bidet function",
-                    "priceTitle": "Price",
-                    "bed": "1.8m Queen size bed",
+                    "sizeTitle": "広さ",
+                    "bedTitle": "ベットサイズ",
+                    "install": "ベットサイズ",
+                    "in1": "窓",
+                    "in2": "バスタブ",
+                    "in3": "50型ソニーテレビ",
+                    "in4": "洗浄機能付きトイレ",
+                    "priceTitle": "料金",
+                    "bed": "1.8m クイーン/ダブル",
                     "price": "1.750.000VND+"
                     
     
                 }
-            ]
-    },
-
+            ],
     "massage":{
         "title":"マッサージ",
         "branch":[

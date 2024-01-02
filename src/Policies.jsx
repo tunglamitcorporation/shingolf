@@ -21,7 +21,7 @@ export default function Policies(){
                         <div className="re__breadcrumb">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
-                                       <Link  to="/Component/Home">
+                                       <Link  to="/Home">
                                            <i className="fa-solid fa-house"></i>
                                        </Link>
                                    </li>
@@ -29,7 +29,7 @@ export default function Policies(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                       <Link className ="breadcrumb__title" to = '/Component/Policies'>Hotel Policies</Link>
+                                       <Link className ="breadcrumb__title" to = '/Policies'>Hotel Policies</Link>
                                 </li>
                        </ul>
                        </div>

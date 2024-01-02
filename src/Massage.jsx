@@ -36,7 +36,7 @@ export default function Feature() {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/Component/Massage">
+                  <Link className="breadcrumb__title" to="/Massage">
                   {t('massage.title')}
                   </Link>
                 </li>

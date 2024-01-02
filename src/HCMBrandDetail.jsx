@@ -62,7 +62,7 @@ export default function HotelHCM(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/Component/RoomDetail">{t("hcm-branch.btn-detail")}</Link>
+                                    <Link to = "/RoomDetail">{t("hcm-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                         </div>

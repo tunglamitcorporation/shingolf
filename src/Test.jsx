@@ -43,7 +43,7 @@ const RoomComponent = () => {
                 </div>
               </div>
               <button className="btn__reserve p-0 m-0">
-                <Link to="/Component/Reservation" style={{ textDecoration: "none", color: "white" }}>
+                <Link to="/Reservation" style={{ textDecoration: "none", color: "white" }}>
                   Make a Reservation
                 </Link>
               </button>

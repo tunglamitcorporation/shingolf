@@ -42,7 +42,7 @@ export default function Feature() {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/Component/Feature">
+                  <Link className="breadcrumb__title" to="/Feature">
                     Feature
                   </Link>
                 </li>

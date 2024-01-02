@@ -2,12 +2,9 @@ import { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { useTranslation } from "react-i18next";
+import data from "./JSON/data.json"
 
 export default function RoomCarousel() {
-  const {t} = useTranslation()
-  const First=t("HBT1Image.First", {returnObjects: true})
-  const Second=t("HBT1Image.Second", {returnObjects: true})
-  const Third=t("HBT1Image.Third", {returnObjects: true})
   return (
     <div>
           <Carousel 
@@ -18,6 +15,9 @@ export default function RoomCarousel() {
           stopOnHover 
           autoPlay 
           infiniteLoop>
+            {data.image.map((item)=>(
+              <img src={item} alt="" />
+            ))}
           </Carousel>
     </div>
 //     <>

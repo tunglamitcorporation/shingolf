@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import Home from "./Component/Home";
-import Header from "./Component/Header";
-import Footer from "./Component/Footer";
-import Feature from "./Component/Feature";
-import Policies from "./Component/Policies";
-import Contract from "./Component/Contract";
-import Service from "./Component/Service";
-import Reservation from "./Component/Reservation";
-import HotelHN from "./Component/HNBrandDetail";
-import HotelHCM from "./Component/HCMBrandDetail";
-import HotelDN from "./Component/DNBrandDetail";
-import HotelHP from "./Component/HPBrandDetail";
-import RoomDetail from "./Component/RoomDetail";
-import Massage from "./Component/Massage";
-import Test from "./Component/Test";
-import ScrollIndicator from "./Component/IndicatorScroll";
+import Home from "./Home";
+import Header from "./Header";
+import Footer from "./Footer";
+import Feature from "./Feature";
+import Policies from "./Policies";
+import Contract from "./Contract";
+import Service from "./Service";
+import Reservation from "./Reservation";
+import HotelHN from "./HN/HNBrandDetail";
+import HotelHCM from "./HCMBrandDetail";
+import HotelDN from "./DNBrandDetail";
+import HotelHP from "./HPBrandDetail";
+import HNRoomDetail from "./HN/HNRoomDetail";
+import Massage from "./Massage";
+import Test from "./Test";
+import ScrollIndicator from "./IndicatorScroll";
 import './index.css'
 import './base.css'
 import {Route, Routes } from 'react-router-dom'
@@ -47,18 +47,18 @@ function App() {
       <ScrollToTop />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Component/Test" element={<Test />} />
-      <Route path="/Component/Policies" element={<Policies />} />
-      <Route path="/Component/Reservation" element={<Reservation />} />
-      <Route path="/Component/Feature" element={<Feature/>} />
-      <Route path="/Component/Service" element={<Service />} />
-      <Route path="/Component/Contract" element={<Contract />} />
-      <Route path="/Component/HNBrandDetail" element={<HotelHN />} />
-      <Route path="/Component/HCMBrandDetail" element={<HotelHCM />} />
-      <Route path="/Component/DNBrandDetail" element={<HotelDN />} />
-      <Route path="/Component/HPBrandDetail" element={<HotelHP />} />
-      <Route path="/Component/RoomDetail" element={<RoomDetail />} />
-      <Route path="/Component/Massage" element={<Massage />} />
+      <Route path="/Test" element={<Test />} />
+      <Route path="/Policies" element={<Policies />} />
+      <Route path="/Reservation" element={<Reservation />} />
+      <Route path="/Feature" element={<Feature/>} />
+      <Route path="/Service" element={<Service />} />
+      <Route path="/Contract" element={<Contract />} />
+      <Route path="/HN/HNBrandDetail" element={<HotelHN />} />
+      <Route path="/HCMBrandDetail" element={<HotelHCM />} />
+      <Route path="/DNBrandDetail" element={<HotelDN />} />
+      <Route path="/HPBrandDetail" element={<HotelHP />} />
+      <Route path="/HN/HNRoomDetail" element={<HNRoomDetail />} />
+      <Route path="/Massage" element={<Massage />} />
       </Routes> 
     <Footer />
     </div>

@@ -33,13 +33,13 @@ export default function Service() {
             <div className="re__breadcrumb">
               <ul className="breadcrumb__list">
                 <li className="breadcrumb__item">
-                  <Link to="/Component/Home">
+                  <Link to="/Home">
                     <i className="fa-solid fa-house"></i>
                   </Link>
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/Component/Service">
+                  <Link className="breadcrumb__title" to="/Service">
                     Service
                   </Link>
                 </li>

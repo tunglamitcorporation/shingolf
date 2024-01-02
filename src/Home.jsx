@@ -30,7 +30,7 @@ export default function Home() {
             <div className="row g-0 p-0">
               <div className="col-6 col-md-3 offset-0">
                 <div className="content__branch-item">
-                  <Link className='link-route' to = '/Component/BrandDetail' >
+                  <Link className='link-route' to = '/BrandDetail' >
                   <img
                     className="content__branch-img"
                     src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
