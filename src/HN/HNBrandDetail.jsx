@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 export default function HotelHN(){
     const { t } = useTranslation();
-    const brandDetail = t("hn-branch",  {returnObjects: true});
+    const brandDetail = t("hn-branch.branch",  {returnObjects: true});
     const header = t("header",{returnObjects:true})
     const homeNewsData = t("home.new_item", { returnObjects: true });
     const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
@@ -14,7 +14,7 @@ export default function HotelHN(){
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.item7")}</h1>
+                                <h1>{t("header.hn")}</h1>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ export default function HotelHN(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/HN/HNRoomDetail">{t("hn-branch.btn-detail")}</Link>
+                                    <Link to = {item.link}>{t("hn-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                                 </div>

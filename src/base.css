@@ -209,6 +209,9 @@ textarea{
     background-color: #ddd;
     z-index: 999    ;
   }  
+.bold{
+    font-weight: 900;
+}
 .scroll-indicator {
     height: 100%;
     background-color: var(--primary--color);

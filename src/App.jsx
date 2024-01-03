@@ -11,7 +11,8 @@ import HotelHN from "./HN/HNBrandDetail";
 import HotelHCM from "./HCMBrandDetail";
 import HotelDN from "./DNBrandDetail";
 import HotelHP from "./HPBrandDetail";
-import HNRoomDetail from "./HN/HNRoomDetail";
+import HBT1RoomDetail from "./HN/HBT1RoomDetail";
+import KM2RoomDetail from "./HN/KM2RoomDetail";
 import Massage from "./Massage";
 import Test from "./Test";
 import ScrollIndicator from "./IndicatorScroll";
@@ -57,7 +58,8 @@ function App() {
       <Route path="/HCMBrandDetail" element={<HotelHCM />} />
       <Route path="/DNBrandDetail" element={<HotelDN />} />
       <Route path="/HPBrandDetail" element={<HotelHP />} />
-      <Route path="/HN/HNRoomDetail" element={<HNRoomDetail />} />
+      <Route path="/HN/HBT1RoomDetail" element={<HBT1RoomDetail />} />
+      <Route path="/HN/KM2RoomDetail" element={<KM2RoomDetail />} />
       <Route path="/Massage" element={<Massage />} />
       </Routes> 
     <Footer />

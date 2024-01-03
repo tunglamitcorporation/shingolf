@@ -133,6 +133,15 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
+              to="/HN/HNBrandDetail"
+              onClick={handleClick}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.hn")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
               to="/Reservation"
               onClick={handleClick}
               className="header__mobile-navbar-link"
@@ -232,7 +241,7 @@ function Header() {
                           delay:0,
                           smooth: true,
                           containerID:'containerID',
-                          offset:-170})}> 
+                          offset:-250})}> 
                           <span style={{backgroundColor:"#482979", padding:"5px", marginRight:"8px"}}>
                             {item.num}</span>{t(item.title)}
                             </Link>

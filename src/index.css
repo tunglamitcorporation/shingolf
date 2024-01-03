@@ -1455,8 +1455,15 @@ a:hover {
 .table_container{
   overflow-x: auto;
 }
+@media (hover: none){
+  .service__location:active{
+    color: white;
+    border: solid 1px #331464;
+    background-color: #331464;
+  }
+}
 /* mobile */
-@media screen and (max-width: 46.1875em) {
+@media screen and (max-width: 46.1875em){
   html,body{
     overflow-x: clip;
   }
