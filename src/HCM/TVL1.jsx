@@ -1069,15 +1069,15 @@ export default function TVL1RoomDetail() {
                           {km2.map((item) => {
                             if(item.split == true){
                                 return(
-                                    <tr>
+                                  <>
+                            <tr>
                               <td rowSpan={2} style={{ width: "5%" }}>{item.id}</td>
-                              <td rowSpan={2} className="room__tariff-name">{item.name}</td>
+                              <td rowSpan={2}className="room__tariff-name">{item.name}</td>
                               <td rowSpan={2}>{item.price}</td>
-                              <td rowSpan={2}>
+                              <td>
                               {item.size_1}
                               </td>
-                              <td>{item.size_2}</td>        
-                              <td rowSpan={2}>
+                              <td>
                                 <i
                                   className={classNames({
                                     "fa fa-times red": item.tick_k == false,
@@ -1085,10 +1085,10 @@ export default function TVL1RoomDetail() {
                                   })}
                                 />
                               </td>
-                              <td rowSpan={2}>
+                              <td>
                                  <i className="fa fa-check green" />
                               </td>
-                              <td rowSpan={2}>
+                              <td>
                                 <i
                                   className={classNames({
                                     "fa fa-times red": item.tick_t == false,
@@ -1096,10 +1096,39 @@ export default function TVL1RoomDetail() {
                                   })}
                                 />
                               </td>
-                              <td rowSpan={2}>
+                              <td>
                                 <i className="fa fa-check green" />
                               </td>
                             </tr>
+                            <tr>
+                            <td>{item.size_2}</td>
+                            <td>
+                                <i
+                                  className={classNames({
+                                    "fa fa-times red": item.tick_k == false,
+                                    "fa fa-check green": item.tick_k == true,
+                                  })}
+                                />
+                              </td>
+                              <td>
+                                 <i className="fa fa-check green" />
+                              </td>
+                              <td>
+                                <i
+                                  className={classNames({
+                                    "fa fa-times red": item.tick_t == false,
+                                    "fa fa-check green": item.tick_t == true,
+                                  })}
+                                />
+                                ////////âfaf
+                              </td>
+                              <td>
+                                <i className="fa fa-check green" />
+                              </td>
+                            </tr>
+                            </>
+                            
+                            
                                 )
                             }
                             return(
