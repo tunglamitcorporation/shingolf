@@ -2,34 +2,34 @@ import Booking from "../Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import RoomCarousel from "../Carousel";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../JSON/data.json";
 import classNames from "classnames";
 
-export default function HBT1RoomDetail() {
+export default function LLRoomDetail() {
   const { t } = useTranslation();
-  const roomFeature = t("room_hbt1.features", { returnObjects: true });
+  const roomFeature = t("room_ll.features", { returnObjects: true });
   const branchName = t("branch", { returnObjects: true });
   const cityName = t("header", { returnObjects: true });
-  const room = t("room_hbt1", { returnObjects: true });
-  const hbt1 = t("hbt1", { returnObjects: true });
-  const room0 = t("hbt1.0", { returnObjects: true });
-  const room1 = t("hbt1.1", { returnObjects: true });
-  const room2 = t("hbt1.2", { returnObjects: true });
-  const room3 = t("hbt1.3", { returnObjects: true });
-  const room4 = t("hbt1.4", { returnObjects: true });
-  const room5 = t("hbt1.5", { returnObjects: true });
-  const room6 = t("hbt1.6", { returnObjects: true });
-  const room7 = t("hbt1.7", { returnObjects: true });
+  const room = t("room_ll", { returnObjects: true });
+  const ll = t("ll", { returnObjects: true });
+  const room0 = t("ll.0", { returnObjects: true });
+  const room1 = t("ll.1", { returnObjects: true });
+  const room2 = t("ll.2", { returnObjects: true });
+  const room3 = t("ll.3", { returnObjects: true });
+  const room4 = t("ll.4", { returnObjects: true });
+  const room5 = t("ll.5", { returnObjects: true });
+  const room6 = t("ll.6", { returnObjects: true });
+  const room7 = t("ll.7", { returnObjects: true });
+  const room8 = t("ll.8", { returnObjects: true });
   return (
     <>
-      <div className="policies__header">
+      <div className="service__header">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>{t("branch.hbt1")}</h1>
+              <h1>{t("branch.ll")}</h1>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function HBT1RoomDetail() {
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
                 <Link className="breadcrumb__title" href="">
-                  {t("branch.hbt1")}
+                  {t("branch.ll")}
                 </Link>
               </li>
             </ul>
@@ -64,33 +64,32 @@ export default function HBT1RoomDetail() {
         </div>
       </div>
       <div className="container-fluid">
-        <div
+        <ul
           className="row"
           style={{ justifyContent: "space-around", padding: "10px" }}
         >
-          <div className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/HBT1RoomDetail" className="location_link">
+          <li className="service__location  col-md-12 col-lg-12 col-xxl-2">
+            <a href="/HN/ll" className="location_link">
               {t(branchName.hbt1)}
             </a>
-          </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/KM2RoomDetail" className="location_link">
+          </li>
+          <li className="service__location col-md-12 col-lg-12 col-xxl-2">
+            <a href="/HN/KM2" className="location_link">
               {t(branchName.km2)}
             </a>
-          </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/KM3RoomDetail" className="location_link">
+          </li>
+          <li className="service__location col-md-12 col-lg-12 col-xxl-2">
+            <a href="/HN/KM3" className="location_link">
               {t(branchName.km3)}
             </a>
-          </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/LLRoomDetail" className="location_link">
+          </li>
+          <li className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
+            <a href="/HN/LL" className="location_link">
               {t(branchName.ll)}
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-
       <Tabs className="container-fluid">
         <TabPanel>
           <Tabs
@@ -106,14 +105,14 @@ export default function HBT1RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_hbt1.room")}
+                    {t("room_ll.room")}
                     <img
                       className="style-line"
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
-                      {t("room_hbt1.roomContent")}
+                      {t("room_ll.roomContent")}
                     </p>
                   </div>
                 </div>
@@ -130,7 +129,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image0.map((item) => (
+                          {data.siw_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -187,7 +186,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -203,7 +202,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image1.map((item) => (
+                          {data.s_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -260,7 +259,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -276,7 +275,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image2.map((item) => (
+                          {data.d_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -333,7 +332,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -349,7 +348,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image3.map((item) => (
+                          {data.dnw_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -406,7 +405,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -422,7 +421,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image4.map((item) => (
+                          {data.e_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -479,7 +478,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -495,7 +494,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image5.map((item) => (
+                          {data.ef_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -552,7 +551,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -568,7 +567,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image6.map((item) => (
+                          {data.enw_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -625,7 +624,7 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -641,7 +640,7 @@ export default function HBT1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image7.map((item) => (
+                          {data.s1f_ll.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -698,7 +697,80 @@ export default function HBT1RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_hbt1.reservation")}
+                            {t("room_ll.reservation")}
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="room-item">
+                        <Carousel
+                          showArrows
+                          showThumbs={false}
+                          showStatus={false}
+                          emulateTouch
+                          stopOnHover
+                          autoPlay
+                          infiniteLoop
+                        >
+                          {data.s7fwk_ll.map((item) => (
+                            <img src={item} alt="" />
+                          ))}
+                        </Carousel>
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <div className="card-title room-name">
+                                  {room8.name}
+                                </div>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>{room8.sizeTitle}</th>
+                                    <td className="installation">
+                                      {room8.size}m&#178;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room8.bedTitle}</th>
+                                    <td className="installation">
+                                      {room8.bed}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room8.install}</th>
+                                    <td className="installation">
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room8.in1}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room8.in2}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room8.in3}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room8.in4}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room8.priceTitle}</th>
+                                    <td className="installation bold">
+                                      {room8.price}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button className="btn__reserve p-0 m-0">
+                          <Link
+                            to="/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}
+                          >
+                            {t("room_ll.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -711,7 +783,7 @@ export default function HBT1RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_hbt1.tariff")}
+                    {t("room_ll.tariff")}
                     <img
                       className="style-line"
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
@@ -728,27 +800,29 @@ export default function HBT1RoomDetail() {
                               colSpan={2}
                               rowSpan={2}
                             >
-                              {t("room_hbt1.type")}
+                              {t("room_ll.type")}
                             </th>
                             <th style={{ width: "20%" }} rowSpan={2}>
-                              {t("room_hbt1.rate")}
+                              {t("room_ll.rate")}
                             </th>
-                            <th style={{ width: "20%" }} colSpan={3}>
-                              {t("room_hbt1.desc")}
+                            <th style={{ width: "20%" }} colSpan={4}>
+                              {t("room_ll.desc")}
                             </th>
                           </tr>
                           <tr>
                             <th style={{ width: "10%" }}>
-                              {t("room_hbt1.size")} m&#178;
+                              {t("room_ll.size")} m&#178;
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_hbt1.window")}
+                              {t("room_ll.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_hbt1.bath")}
+                              {t("room_ll.bath")}
+                            </th><th style={{ width: "10%" }}>
+                              {t("room_ll.bed")}
                             </th>
                           </tr>
-                          {hbt1.map((item) => (
+                          {ll.map((item) => (
                             <tr>
                               <td style={{ width: "5%" }}>{item.id}</td>
                               <td className="room__tariff-name">{item.name}</td>
@@ -765,33 +839,36 @@ export default function HBT1RoomDetail() {
                               <td>
                                 <i className="fa fa-check green" />
                               </td>
+                              <td>
+                                  {item.bed_size}
+                              </td>
                             </tr>
                           ))}
                         </tbody>
                       </table>
                     </div>
                     <div className="required__note mt-4">
-                      {t("room_hbt1.vat")}
+                      {t("room_ll.vat")}
                     </div>
                     <div className="room__service">
                       <div className="container p-0">
                         <div className="row">
                           <div className="col-md-4">
-                            <h2>{t("room_hbt1.service")}</h2>
+                            <h2>{t("room_ll.service")}</h2>
                             <p className="pre-line">
-                              {t("room_hbt1.serviceContent")}
+                              {t("room_ll.serviceContent")}
                             </p>
                           </div>
                           <div className="col-md-4">
-                            <h2>{t("room_hbt1.facility")}</h2>
+                            <h2>{t("room_ll.facility")}</h2>
                             <p className="pre-line">
-                              {t("room_hbt1.facilityContent")}
+                              {t("room_ll.facilityContent")}
                             </p>
                           </div>
                           <div className="col-md-4">
-                            <h2>{t("room_hbt1.rental")}</h2>
+                            <h2>{t("room_ll.rental")}</h2>
                             <p className="pre-line">
-                              {t("room_hbt1.rentalContent")}
+                              {t("room_ll.rentalContent")}
                             </p>
                           </div>
                         </div>
@@ -805,98 +882,98 @@ export default function HBT1RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_hbt1.business")}
+                    {t("room_ll.business")}
                     <img
                       className="style-line"
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
-                      {t("room_hbt1.businessContent")}
+                      {t("room_ll.businessContent")}
                     </p>
                   </div>
                   <div className="room__container">
                     <table className="room__table room__table-service">
                       <tbody>
                         <tr>
-                          <th rowSpan={2}>{t("room_hbt1.pickup")}</th>
-                          <td>{t("room_hbt1.pickup_fee1")}</td>
-                          <td rowSpan={2}>{t("room_hbt1.pickup_car")}</td>
+                          <th rowSpan={2}>{t("room_ll.pickup")}</th>
+                          <td>{t("room_ll.pickup_fee1")}</td>
+                          <td rowSpan={2}>{t("room_ll.pickup_car")}</td>
                         </tr>
                         <tr>
-                          <td>{t("room_hbt1.pickup_fee2")}</td>
+                          <td>{t("room_ll.pickup_fee2")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.minibar")}</th>
-                          <td>{t("room_hbt1.minibar_fee")}</td>
-                          <td>{t("room_hbt1.minibar_type")}</td>
+                          <th>{t("room_ll.minibar")}</th>
+                          <td>{t("room_ll.minibar_fee")}</td>
+                          <td>{t("room_ll.minibar_type")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.laundry")}</th>
-                          <td>{t("room_hbt1.laundry_fee1")}</td>
-                          <td>{t("room_hbt1.laundry_fee2")}</td>
+                          <th>{t("room_ll.laundry")}</th>
+                          <td>{t("room_ll.laundry_fee1")}</td>
+                          <td>{t("room_ll.laundry_fee2")}</td>
                         </tr>
                         <tr>
-                          <th rowSpan={2}>{t("room_hbt1.print")}</th>
-                          <td colSpan={2}>{t("room_hbt1.print_fee1")}</td>
+                          <th rowSpan={2}>{t("room_ll.print")}</th>
+                          <td colSpan={2}>{t("room_ll.print_fee1")}</td>
                         </tr>
                         <tr>
-                          <td colSpan={2}>{t("room_hbt1.print_fee2")}</td>
+                          <td colSpan={2}>{t("room_ll.print_fee2")}</td>
                         </tr>
                         <tr>
-                          <th rowSpan={2}>{t("room_hbt1.tel")}</th>
-                          <td colSpan={2}>{t("room_hbt1.tel_fee1")}</td>
+                          <th rowSpan={2}>{t("room_ll.tel")}</th>
+                          <td colSpan={2}>{t("room_ll.tel_fee1")}</td>
                         </tr>
                         <tr>
-                          <td colSpan={2}>{t("room_hbt1.tel_fee2")}</td>
+                          <td colSpan={2}>{t("room_ll.tel_fee2")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.rental_car")}</th>
-                          <td colSpan={2}>{t("room_hbt1.ask")}</td>
+                          <th>{t("room_ll.rental_car")}</th>
+                          <td colSpan={2}>{t("room_ll.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.tour")}</th>
-                          <td colSpan={2}>{t("room_hbt1.ask")}</td>
+                          <th>{t("room_ll.tour")}</th>
+                          <td colSpan={2}>{t("room_ll.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.visa")}</th>
-                          <td colSpan={2}>{t("room_hbt1.ask")}</td>
+                          <th>{t("room_ll.visa")}</th>
+                          <td colSpan={2}>{t("room_ll.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.food")}</th>
-                          <td colSpan={2}>{t("room_hbt1.ask")}</td>
+                          <th>{t("room_ll.food")}</th>
+                          <td colSpan={2}>{t("room_ll.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.roten")}</th>
+                          <th>{t("room_ll.roten")}</th>
                           <td className="pre-line" colSpan={2}>
-                            {t("room_hbt1.rotenContent")}
+                            {t("room_ll.rotenContent")}
                           </td>
                         </tr>
                         <tr>
-                          <th>{t("room_hbt1.breakfast")}</th>
+                          <th>{t("room_ll.breakfast")}</th>
                           <td className="pre-line" colSpan={2}>
-                            {t("room_hbt1.breakfastContent")}
+                            {t("room_ll.breakfastContent")}
                           </td>
                         </tr>
                       </tbody>
                     </table>
                     <div className="col-md-12">
                       <div className="table-footer">
-                        <h1>{t("room_hbt1.board")}</h1>
+                        <h1>{t("room_ll.board")}</h1>
                         <p className="mt-5">
-                          {t("room_hbt1.contact1")}
-                          <a className="ml-1" href="http://">
-                            {t("room_hbt1.phone")}
-                          </a>{" "}
-                          <br />
-                          {t("room_hbt1.contact2")}
-                          <a className="ml-1" href="http://">
-                            {t("room_hbt1.email")}
+                          {t("room_ll.contact1")}
+                          <a className="ml-1" href={`tel:${t("room_ll.phone")}`}>
+                          {t("room_ll.phone")}
                           </a>
                           <br />
-                          {t("room_hbt1.contact3")}
-                          <a className="ml-1" href="http://">
-                            {t("room_hbt1.website")}
+                          {t("room_ll.contact2")}
+                          <a className="ml-1" href={`mailto:${t("room_ll.email")}`}>
+                            {t("room_ll.email")}
+                          </a>
+                          <br />
+                          {t("room_ll.contact3")}
+                          <a className="ml-1" href={`https://${t("room_ll.website")}`}>
+                            {t("room_ll.website")}
                           </a>
                         </p>
                       </div>
@@ -909,7 +986,7 @@ export default function HBT1RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_hbt1.location")}
+                    {t("room_ll.location")}
                     <img
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
@@ -919,29 +996,33 @@ export default function HBT1RoomDetail() {
                       <div className="row">
                         <div className="col-md-12">
                           <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
-                            {t("room_hbt1.locationContent")}
+                            {t("room_ll.locationContent")}
                           </p>
                           <div className="hotel__info">
-                            <h1>{t("branch.hbt1")}</h1>
+                            <h1>{t("branch.ll")}</h1>
                             <p>
                               <i className="purple fa-solid fa-location-dot" />
-                              {t("room_hbt1.address")}
+                              {t("room_ll.address")}
                             </p>
                             <p>
                               <i className="purple fa fa-phone" />
-                              {t("room_hbt1.tel")} : {t("room_hbt1.phone")}
+                              {t("room_ll.tel")} : <a className="ml-1 purple" href={`tel:${t("room_ll.phone")}`}>
+                              {t("room_ll.phone")}
+                              </a>
                             </p>
                             <p>
                               <i className="purple fa fa-envelope" />
-                              {t("room_hbt1.emailTitle")} :{" "}
-                              {t("room_hbt1.email")}
+                              {t("room_ll.emailTitle")} :
+                              <a className="ml-1 purple" href={`mailto:${t("room_ll.email")}`}>
+                              {t("room_ll.email")}
+                              </a>
                             </p>
                           </div>
                         </div>
                         <div className="room__container">
                           <div className="gg-map">
                             <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.195372793994!2d105.84877970794305!3d21.01704575027471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8d06272085%3A0xa2c488173a2bd380!2sAzumaya+Hotel+Ha+Noi!5e0!3m2!1svi!2s!4v1480500914009"
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59582.90076034504!2d105.74832752067798!3d21.03543478734608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab149718acdb%3A0xb77ce3d86ae19183!2sAzumaya%20Hotel%20Linh%20Lang!5e0!3m2!1sen!2s!4v1704439192351!5m2!1sen!2s"
                               style={{ border: 0 }}
                               allowFullScreen
                             />

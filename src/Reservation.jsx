@@ -108,8 +108,8 @@ function Reservation() {
       
   }
 function DayPicker() {
-  const minDay = -1
-  const maxDay = 29
+  const minDay = -4
+  const maxDay = 26
     const birthDay = new Date().getDay()
     console.log(selectedDay);
     const onHandleChange = (e) => {
@@ -131,8 +131,8 @@ function DayPicker() {
     );
   }
 function MonthPicker() {
-    const minMonth = -10
-    const maxMonth = 1
+    const minMonth = 1
+    const maxMonth = 12
     const birthMonth = new Date().getMonth()
     console.log(selectedMonth);
    

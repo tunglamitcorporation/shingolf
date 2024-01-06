@@ -6,31 +6,34 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../JSON/data.json";
 import classNames from "classnames";
+import { render } from "@testing-library/react";
 
-export default function KM2RoomDetail() {
+export default function TVL1RoomDetail() {
   const { t } = useTranslation();
-  const roomFeature = t("room_km2.features", { returnObjects: true });
+  const roomFeature = t("room_tvl1.features", { returnObjects: true });
   const branchName = t("branch", { returnObjects: true });
   const cityName = t("header", { returnObjects: true });
-  const room = t("room_km2", { returnObjects: true });
-  const km2 = t("km2", { returnObjects: true });
-  const room0 = t("km2.0", { returnObjects: true });
-  const room1 = t("km2.1", { returnObjects: true });
-  const room2 = t("km2.2", { returnObjects: true });
-  const room3 = t("km2.3", { returnObjects: true });
-  const room4 = t("km2.4", { returnObjects: true });
-  const room5 = t("km2.5", { returnObjects: true });
-  const room6 = t("km2.6", { returnObjects: true });
-  const room7 = t("km2.7", { returnObjects: true });
-  const room8 = t("km2.8", { returnObjects: true });
-  const room9 = t("km2.9", { returnObjects: true });
+  const room = t("room_tvl1", { returnObjects: true });
+  const km2 = t("tvl1", { returnObjects: true });
+  const room0 = t("tvl1.0", { returnObjects: true });
+  const room1 = t("tvl1.1", { returnObjects: true });
+  const room2 = t("tvl1.2", { returnObjects: true });
+  const room3 = t("tvl1.3", { returnObjects: true });
+  const room4 = t("tvl1.4", { returnObjects: true });
+  const room5 = t("tvl1.5", { returnObjects: true });
+  const room6 = t("tvl1.6", { returnObjects: true });
+  const room7 = t("tvl1.7", { returnObjects: true });
+  const room8 = t("tvl1.8", { returnObjects: true });
+  const room9 = t("tvl1.9", { returnObjects: true });
+  const room10 = t("tvl1.10", { returnObjects: true });
+  const room11 = t("tvl1.11", { returnObjects: true });
   return (
     <>
-      <div className="policies__header">
+      <div className="service__header">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>{t("branch.km2")}</h1>
+              <h1>{t("branch.tvl1")}</h1>
             </div>
           </div>
         </div>
@@ -50,14 +53,14 @@ export default function KM2RoomDetail() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/BrandDetail">
-                  {t("header.hn")}
+                <Link className="breadcrumb__title" to="/HCMBranch">
+                  {t("header.hcm")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
                 <Link className="breadcrumb__title" href="">
-                  {t("branch.km2")}
+                  {t("branch.tvl1")}
                 </Link>
               </li>
             </ul>
@@ -69,24 +72,24 @@ export default function KM2RoomDetail() {
           className="row"
           style={{ justifyContent: "space-around", padding: "10px" }}
         >
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/HBT1RoomDetail" className="location_link">
-              {t(branchName.hbt1)}
-            </a>
-          </div>
           <div className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/KM2RoomDetail" className="location_link">
-              {t(branchName.km2)}
+            <a href="/HCM/TVL1" className="location_link">
+              {t(branchName.tvl1)}
             </a>
           </div>
           <div className="service__location col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/KM3RoomDetail" className="location_link">
-              {t(branchName.km3)}
+            <a href="/HCM/TVL2" className="location_link">
+              {t(branchName.tvl2)}
             </a>
           </div>
           <div className="service__location col-md-12 col-lg-12 col-xxl-2">
-            <a href="/HN/LLRoomDetail" className="location_link">
-              {t(branchName.ll)}
+            <a href="/HCM/LTT" className="location_link">
+              {t(branchName.ltt)}
+            </a>
+          </div>
+          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+            <a href="/HCM/Annex" className="location_link">
+              {t(branchName.annex)}
             </a>
           </div>
         </div>
@@ -106,14 +109,14 @@ export default function KM2RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_km2.room")}
+                    {t("room_tvl1.room")}
                     <img
                       className="style-line"
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
-                      {t("room_km2.roomContent")}
+                      {t("room_tvl1.roomContent")}
                     </p>
                   </div>
                 </div>
@@ -130,9 +133,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image0.map((item) => (
+                          {/* {data.dm_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -187,7 +190,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -203,9 +206,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image1.map((item) => (
+                          {/* {data.dl_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -260,7 +263,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -276,9 +279,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image2.map((item) => (
+                          {/* {data.dlwk_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -316,8 +319,6 @@ export default function KM2RoomDetail() {
                                       <i class="fa-solid fa-check purple"></i>
                                       {room2.in4}
                                       <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room2.in5}
                                     </td>
                                   </tr>
                                   <tr>
@@ -336,7 +337,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -352,9 +353,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image3.map((item) => (
+                          {/* {data.ewk_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -392,8 +393,6 @@ export default function KM2RoomDetail() {
                                       <i class="fa-solid fa-check purple"></i>
                                       {room3.in4}
                                       <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room3.in5}
                                     </td>
                                   </tr>
                                   <tr>
@@ -412,7 +411,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -428,9 +427,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image4.map((item) => (
+                          {/* {data.lsm_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -487,7 +486,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -503,9 +502,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image5.map((item) => (
+                          {/* {data.lsmwt_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -563,7 +562,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -579,9 +578,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image6.map((item) => (
+                          {/* {data.lsl_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -619,7 +618,8 @@ export default function KM2RoomDetail() {
                                       <i class="fa-solid fa-check purple"></i>
                                       {room6.in4}
                                       <br />
-                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room5.in5}
                                     </td>
                                   </tr>
                                   <tr>
@@ -638,7 +638,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -654,9 +654,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image7.map((item) => (
+                          {/* {data.lslwt_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -694,8 +694,7 @@ export default function KM2RoomDetail() {
                                       <i class="fa-solid fa-check purple"></i>
                                       {room7.in4}
                                       <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room7.in5}
+                                      <br />
                                     </td>
                                   </tr>
                                   <tr>
@@ -714,7 +713,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -730,9 +729,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image7.map((item) => (
+                          {/* {data.swk_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -770,8 +769,6 @@ export default function KM2RoomDetail() {
                                       <i class="fa-solid fa-check purple"></i>
                                       {room8.in4}
                                       <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room8.in5}
                                     </td>
                                   </tr>
                                   <tr>
@@ -790,7 +787,7 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -806,9 +803,9 @@ export default function KM2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.image7.map((item) => (
+                          {/* {data.awk_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))}
+                          ))} */}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -846,8 +843,6 @@ export default function KM2RoomDetail() {
                                       <i class="fa-solid fa-check purple"></i>
                                       {room9.in4}
                                       <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room9.in5}
                                     </td>
                                   </tr>
                                   <tr>
@@ -866,7 +861,155 @@ export default function KM2RoomDetail() {
                             to="/Reservation"
                             style={{ textDecoration: "none", color: "white" }}
                           >
-                            {t("room_km2.reservation")}
+                            {t("room_tvl1.reservation")}
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="room-item">
+                        <Carousel
+                          showArrows
+                          showThumbs={false}
+                          showStatus={false}
+                          emulateTouch
+                          stopOnHover
+                          autoPlay
+                          infiniteLoop
+                        >
+                          {/* {data.awk_tvl1.map((item) => (
+                            <img src={item} alt="" />
+                          ))} */}
+                        </Carousel>
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <div className="card-title room-name">
+                                  {room10.name}
+                                </div>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>{room10.sizeTitle}</th>
+                                    <td className="installation">
+                                      {room10.size}m&#178;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room10.bedTitle}</th>
+                                    <td className="installation">
+                                      {room10.bed}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room10.install}</th>
+                                    <td className="installation">
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room10.in1}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room10.in2}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room10.in3}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room10.in4}
+                                      <br />
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room10.priceTitle}</th>
+                                    <td className="installation bold">
+                                      {room10.price}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button className="btn__reserve p-0 m-0">
+                          <Link
+                            to="/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}
+                          >
+                            {t("room_tvl1.reservation")}
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="room-item">
+                        <Carousel
+                          showArrows
+                          showThumbs={false}
+                          showStatus={false}
+                          emulateTouch
+                          stopOnHover
+                          autoPlay
+                          infiniteLoop
+                        >
+                          {/* {data.awk_tvl1.map((item) => (
+                            <img src={item} alt="" />
+                          ))} */}
+                        </Carousel>
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <div className="card-title room-name">
+                                  {room11.name}
+                                </div>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>{room11.sizeTitle}</th>
+                                    <td className="installation">
+                                      {room11.size}m&#178;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room11.bedTitle}</th>
+                                    <td className="installation">
+                                      {room11.bed}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room11.install}</th>
+                                    <td className="installation">
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room11.in1}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room11.in2}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room11.in3}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room11.in4}
+                                      <br />
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room11.priceTitle}</th>
+                                    <td className="installation bold">
+                                      {room11.price}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button className="btn__reserve p-0 m-0">
+                          <Link
+                            to="/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}
+                          >
+                            {t("room_tvl1.reservation")}
                           </Link>
                         </button>
                       </div>
@@ -879,7 +1022,7 @@ export default function KM2RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_km2.tariff")}
+                    {t("room_tvl1.tariff")}
                     <img
                       className="style-line"
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
@@ -896,39 +1039,45 @@ export default function KM2RoomDetail() {
                               colSpan={2}
                               rowSpan={2}
                             >
-                              {t("room_km2.type")}
+                              {t("room_tvl1.type")}
                             </th>
                             <th style={{ width: "20%" }} rowSpan={2}>
-                              {t("room_km2.rate")}
+                              {t("room_tvl1.rate")}
                             </th>
                             <th style={{ width: "20%" }} colSpan={5}>
-                              {t("room_km2.desc")}
+                              {t("room_tvl1.desc")}
                             </th>
                           </tr>
                           <tr>
                             <th style={{ width: "10%" }}>
-                              {t("room_km2.size")} m&#178;
+                              {t("room_tvl1.size")} m&#178;
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_km2.kitchen")} m&#178;
+                              {t("room_tvl1.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_km2.bath")}
+                              {t("room_tvl1.bath")} m&#178;
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_km2.terrace")}
+                              {t("room_tvl1.terrace")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_km2.window")}
+                              {t("room_tvl1.bed")}
                             </th>
+                            
                           </tr>
-                          {km2.map((item) => (
-                            <tr>
-                              <td style={{ width: "5%" }}>{item.id}</td>
-                              <td className="room__tariff-name">{item.name}</td>
-                              <td>{item.price}</td>
-                              <td>{item.size}</td>
-                              <td>
+                          {km2.map((item) => {
+                            if(item.split == true){
+                                return(
+                                    <tr>
+                              <td rowSpan={2} style={{ width: "5%" }}>{item.id}</td>
+                              <td rowSpan={2} className="room__tariff-name">{item.name}</td>
+                              <td rowSpan={2}>{item.price}</td>
+                              <td rowSpan={2}>
+                              {item.size_1}
+                              </td>
+                              <td>{item.size_2}</td>        
+                              <td rowSpan={2}>
                                 <i
                                   className={classNames({
                                     "fa fa-times red": item.tick_k == false,
@@ -936,10 +1085,10 @@ export default function KM2RoomDetail() {
                                   })}
                                 />
                               </td>
-                              <td>
+                              <td rowSpan={2}>
                                  <i className="fa fa-check green" />
                               </td>
-                              <td>
+                              <td rowSpan={2}>
                                 <i
                                   className={classNames({
                                     "fa fa-times red": item.tick_t == false,
@@ -947,36 +1096,69 @@ export default function KM2RoomDetail() {
                                   })}
                                 />
                               </td>
-                              <td>
+                              <td rowSpan={2}>
                                 <i className="fa fa-check green" />
                               </td>
                             </tr>
-                          ))}
+                                )
+                            }
+                            return(
+                                <tr>
+                                  <td style={{ width: "5%" }}>{item.id}</td>
+                                  <td className="room__tariff-name">{item.name}</td>
+                                  <td>{item.price}</td>
+                                  <td>{item.size}</td>
+                                  <td>
+                                    <i
+                                      className={classNames({
+                                        "fa fa-times red": item.tick_k == false,
+                                        "fa fa-check green": item.tick_k == true,
+                                      })}
+                                    />
+                                  </td>
+                                  <td>
+                                     <i className="fa fa-check green" />
+                                  </td>
+                                  <td>
+                                    <i
+                                      className={classNames({
+                                        "fa fa-times red": item.tick_t == false,
+                                        "fa fa-check green": item.tick_t == true,
+                                      })}
+                                    />
+                                  </td>
+                                  <td>
+                                    <i className="fa fa-check green" />
+                                  </td>
+                                </tr>
+                            )
+                        
+                        })}
                         </tbody>
                       </table>
                     </div>
                     <div className="required__note mt-4">
-                      {t("room_km2.vat")}
+                      {t("room_tvl1.vat")}
                     </div>
                     <div className="room__service">
                       <div className="container p-0">
                         <div className="row">
                           <div className="col-md-4">
-                            <h2>{t("room_km2.service")}</h2>
+                            <h2>{t("room_tvl1.service")}</h2>
                             <p className="pre-line">
-                              {t("room_km2.serviceContent")}
+                              {t("room_tvl1.serviceContent")}
                             </p>
                           </div>
                           <div className="col-md-4">
-                            <h2>{t("room_km2.facility")}</h2>
+                            <h2>{t("room_tvl1.facility")}</h2>
                             <p className="pre-line">
-                              {t("room_km2.facilityContent")}
+                              {t("room_tvl1.facilityContent")}
                             </p>
                           </div>
                           <div className="col-md-4">
-                            <h2>{t("room_km2.rental")}</h2>
+                            <h2>{t("room_tvl1.rental")}</h2>
                             <p className="pre-line">
-                              {t("room_km2.rentalContent")}
+                              {t("room_tvl1.rentalContent")}
                             </p>
                           </div>
                         </div>
@@ -990,104 +1172,104 @@ export default function KM2RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_km2.business")}
+                    {t("room_tvl1.business")}
                     <img
                       className="style-line"
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
-                      {t("room_km2.businessContent")}
+                      {t("room_tvl1.businessContent")}
                     </p>
                   </div>
                   <div className="room__container">
                     <table className="room__table room__table-service">
                       <tbody>
                         <tr>
-                          <th rowSpan={2}>{t("room_km2.pickup")}</th>
-                          <td>{t("room_km2.pickup_fee1")}</td>
-                          <td rowSpan={2}>{t("room_km2.pickup_car")}</td>
+                          <th rowSpan={2}>{t("room_tvl1.pickup")}</th>
+                          <td>{t("room_tvl1.pickup_fee1")}</td>
+                          <td rowSpan={2}>{t("room_tvl1.pickup_car")}</td>
                         </tr>
                         <tr>
-                          <td>{t("room_km2.pickup_fee2")}</td>
+                          <td>{t("room_tvl1.pickup_fee2")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.minibar")}</th>
-                          <td>{t("room_km2.minibar_fee")}</td>
-                          <td>{t("room_km2.minibar_type")}</td>
+                          <th>{t("room_tvl1.minibar")}</th>
+                          <td>{t("room_tvl1.minibar_fee")}</td>
+                          <td>{t("room_tvl1.minibar_type")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.laundry")}</th>
-                          <td>{t("room_km2.laundry_fee1")}</td>
-                          <td>{t("room_km2.laundry_fee2")}</td>
+                          <th>{t("room_tvl1.laundry")}</th>
+                          <td>{t("room_tvl1.laundry_fee1")}</td>
+                          <td>{t("room_tvl1.laundry_fee2")}</td>
                         </tr>
                         <tr>
-                          <th rowSpan={2}>{t("room_km2.print")}</th>
-                          <td colSpan={2}>{t("room_km2.print_fee1")}</td>
+                          <th rowSpan={2}>{t("room_tvl1.print")}</th>
+                          <td colSpan={2}>{t("room_tvl1.print_fee1")}</td>
                         </tr>
                         <tr>
-                          <td colSpan={2}>{t("room_km2.print_fee2")}</td>
+                          <td colSpan={2}>{t("room_tvl1.print_fee2")}</td>
                         </tr>
                         <tr>
-                          <th rowSpan={2}>{t("room_km2.tel")}</th>
-                          <td colSpan={2}>{t("room_km2.tel_fee1")}</td>
+                          <th rowSpan={2}>{t("room_tvl1.tel")}</th>
+                          <td colSpan={2}>{t("room_tvl1.tel_fee1")}</td>
                         </tr>
                         <tr>
-                          <td colSpan={2}>{t("room_km2.tel_fee2")}</td>
+                          <td colSpan={2}>{t("room_tvl1.tel_fee2")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.rental_car")}</th>
-                          <td colSpan={2}>{t("room_km2.ask")}</td>
+                          <th>{t("room_tvl1.rental_car")}</th>
+                          <td colSpan={2}>{t("room_tvl1.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.tour")}</th>
-                          <td colSpan={2}>{t("room_km2.ask")}</td>
+                          <th>{t("room_tvl1.tour")}</th>
+                          <td colSpan={2}>{t("room_tvl1.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.visa")}</th>
-                          <td colSpan={2}>{t("room_km2.ask")}</td>
+                          <th>{t("room_tvl1.visa")}</th>
+                          <td colSpan={2}>{t("room_tvl1.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.food")}</th>
-                          <td colSpan={2}>{t("room_km2.ask")}</td>
+                          <th>{t("room_tvl1.food")}</th>
+                          <td colSpan={2}>{t("room_tvl1.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.rotenM")}</th>
+                          <th>{t("room_tvl1.rotenM")}</th>
                           <td className="pre-line" colSpan={2}>
-                            {t("room_km2.rotenContent")}
+                            {t("room_tvl1.rotenContent")}
                           </td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.rotenF")}</th>
+                          <th>{t("room_tvl1.rotenF")}</th>
                           <td className="pre-line" colSpan={2}>
-                            {t("room_km2.rotenFContent")}
+                            {t("room_tvl1.rotenFContent")}
                           </td>
                         </tr>
                         <tr>
-                          <th>{t("room_km2.breakfast")}</th>
+                          <th>{t("room_tvl1.breakfast")}</th>
                           <td className="pre-line" colSpan={2}>
-                            {t("room_km2.breakfastContent")}
+                            {t("room_tvl1.breakfastContent")}
                           </td>
                         </tr>
                       </tbody>
                     </table>
                     <div className="col-md-12">
                       <div className="table-footer">
-                        <h1>{t("room_km2.board")}</h1>
+                        <h1>{t("room_tvl1.board")}</h1>
                         <p className="mt-5">
-                          {t("room_km2.contact1")}
-                          <a className="ml-1" href="http://">
-                            {t("room_km2.phone")}
-                          </a>{" "}
-                          <br />
-                          {t("room_km2.contact2")}
-                          <a className="ml-1" href="http://">
-                            {t("room_km2.email")}
+                          {t("room_tvl1.contact1")}
+                          <a className="ml-1" href={`tel:${t("room_tvl1.phone")}`}>
+                          {t("room_tvl1.phone")}
                           </a>
                           <br />
-                          {t("room_km2.contact3")}
-                          <a className="ml-1" href="http://">
-                            {t("room_km2.website")}
+                          {t("room_tvl1.contact2")}
+                          <a className="ml-1" href={`mailto:${t("room_tvl1.email")}`}>
+                            {t("room_tvl1.email")}
+                          </a>
+                          <br />
+                          {t("room_tvl1.contact3")}
+                          <a className="ml-1" href={`https://${t("room_tvl1.website")}`}>
+                            {t("room_tvl1.website")}
                           </a>
                         </p>
                       </div>
@@ -1100,7 +1282,7 @@ export default function KM2RoomDetail() {
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
-                    {t("room_km2.location")}
+                    {t("room_tvl1.location")}
                     <img
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
@@ -1110,22 +1292,26 @@ export default function KM2RoomDetail() {
                       <div className="row">
                         <div className="col-md-12">
                           <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
-                            {t("room_km2.locationContent")}
+                            {t("room_tvl1.locationContent")}
                           </p>
                           <div className="hotel__info">
                             <h1>{t("branch.km2")}</h1>
                             <p>
                               <i className="purple fa-solid fa-location-dot" />
-                              {t("room_km2.address")}
+                              {t("room_tvl1.address")}
                             </p>
                             <p>
                               <i className="purple fa fa-phone" />
-                              {t("room_km2.tel")} : {t("room_km2.phone")}
+                              {t("room_tvl1.tel")} : <a className="ml-1 purple" href={`tel:${t("room_tvl1.phone")}`}>
+                              {t("room_tvl1.phone")}
+                              </a>
                             </p>
                             <p>
                               <i className="purple fa fa-envelope" />
-                              {t("room_km2.emailTitle")} :{" "}
-                              {t("room_km2.email")}
+                              {t("room_tvl1.emailTitle")} :{" "}
+                              <a className="ml-1 purple" href={`mailto:${t("room_tvl1.email")}`}>
+                            {t("room_tvl1.email")}
+                             </a>
                             </p>
                           </div>
                         </div>

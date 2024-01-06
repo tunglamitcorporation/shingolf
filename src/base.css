@@ -210,7 +210,9 @@ textarea{
     z-index: 999    ;
   }  
 .bold{
+    font-size: 1.8rem !important;
     font-weight: 900;
+    color: #482979;
 }
 .scroll-indicator {
     height: 100%;

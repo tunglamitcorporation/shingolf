@@ -133,11 +133,38 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/HN/HNBrandDetail"
+              to="/HN/HNBranch"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
               {t("header.hn")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/HCM/HCMBranch"
+              onClick={handleClick}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.hcm")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/DN/DNBranch"
+              onClick={handleClick}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.dn")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/HP/HPBranch"
+              onClick={handleClick}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.hp")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -193,7 +220,7 @@ function Header() {
                   <li className="header__navbar-item">
                     {/* <li className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Test">
-                        {t("header.itemTest")}
+                        Test Page
                       </Link>
                     </li> */}
                       <Link className="header__navbar-link-2" to="/">
@@ -206,22 +233,22 @@ function Header() {
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/HCMBrandDetail">
+                      <Link className="header__navbar-link-2" to="/HCM/HCMBranch">
                         {t("header.hcm")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/HN/HNBrandDetail">
+                      <Link className="header__navbar-link-2" to="/HN/HNBranch">
                         {t("header.hn")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/DNBrandDetail">
+                      <Link className="header__navbar-link-2" to="/DN/DNBranch">
                         {t("header.dn")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/HPBrandDetail">
+                      <Link className="header__navbar-link-2" to="/HP/HPBranch">
                         {t("header.hp")}
                       </Link>
                     </li>
@@ -254,11 +281,11 @@ function Header() {
                         {t("header.service")}
                       </Link>
                     </li>
-                    <li className="header__navbar-item">
+                    {/* <li className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Massage">
                         {t("header.massage")}
                       </Link>
-                    </li>
+                    </li> */}
                     <li className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Contract">
                         {t("header.contract")}

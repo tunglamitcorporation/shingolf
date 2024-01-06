@@ -1,44 +1,167 @@
 
   {
-    "branch":"HBT1",
-    "image0":[
+    "hbt1":"HBT1",
+    "d1f_hbt1":[
         "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView1_hbld7m.jpg",
         "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg",
         "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"     
     ],
-    "image1":[
+    "diwnv_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-1_zmt7uh.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-2_yfyuqp.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-3_lchwfy.jpg"  
     ],
-    "image2":[
+    "eiw_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveInsideWindow1_fdtpsw.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveInsideWindow2_q6jsk1.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/ExecutiveInsideWindow3_begrdr.jpg"
     ],
-    "image3":[
+    "e_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive1_ghjhzr.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive2_wceibe.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive3_h1cm4b.jpg"
     ],
-    "image4":[
+    "ewk_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/ExecutiveWithKitchen1_vw87gk.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen2_x3hshm.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen3_inw0ma.jpg"
     ],
-    "image5":[
+    "sswk_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen1_uatnii.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen2_kfrxav.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen3_cnileh.jpg"
     ],
-    "image6":[
+    "s_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite1_amfnye.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite2_edhoz7.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite3_aa5lxa.jpg"
     ],
-    "image7":[
+    "swk_hbt1":[
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SuiteWithKitchen1_zjhzqr.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SuiteWithKitchen2_ts93dw.jpg",
       "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476776/AzumayaWeb/HBT1/SuiteWithKitchen3_xps567.jpg"
+    ],
+ 
+    "km2":"KM2",
+    "dm_km2":[
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440340/AzumayaWeb/KM2/DeluxeM_1_carfn7.jpg",
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440341/AzumayaWeb/KM2/DeluxeM_2_bhfezg.jpg",
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/DeluxeM_3_rrtvj0.jpg"     
+    ],
+    "dl_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440338/AzumayaWeb/KM2/DeluxeL_1_jr8o1k.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440339/AzumayaWeb/KM2/DeluxeL_2_tpffli.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440339/AzumayaWeb/KM2/DeluxeL_3_rns7r8.jpg"  
+    ],
+    "dlwk_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440339/AzumayaWeb/KM2/DeluxeL_WithKitchen_1_esclwd.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440340/AzumayaWeb/KM2/DeluxeL_WittKitchen_2_wch9je.jpg"
+    ],
+    "ewk_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/Executive_WithKitchen_1_vxorvm.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/Executive_WithKitchen_2_mldi6o.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440343/AzumayaWeb/KM2/Executive_WithKitchen_3_ux0cfi.jpg"
+    ],
+    "lsm_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_1_rsx5qk.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_2_bijeoo.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_3_qoltwp.jpg"
+    ],
+    "lsmwt_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_WithTerrace_1_awtvba.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440335/AzumayaWeb/KM2/LakesideM_WithTerrace_2_hvhswz.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440335/AzumayaWeb/KM2/LakesideM_WithTerrace_3_hmvkgh.jpg"
+    ],
+    "lsl_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704441440/AzumayaWeb/KM2/LakesideL_1_mvhfnv.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideL_2_zx1q48.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704441439/AzumayaWeb/KM2/LakesideL_3_qerxks.jpg"
+    ],
+    "lslwt_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideL_WithTerrace_1_thf0cn.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideL_WithTerrace_2_lfsfsd.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440335/AzumayaWeb/KM2/LakesideL_WithTerrace_3_ozqvuy.jpg"
+    ],
+    "swk_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440336/AzumayaWeb/KM2/SUITE_WithKitchen_1_o8mba9.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440336/AzumayaWeb/KM2/SUITE_WithKitchen_2_pzu23o.jpg"
+    ],
+    "awk_km2":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_1_bcj6op.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_2_vczaff.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_3_s9yj4b.jpg"
+    ],
+
+    "km3":"KM3",
+    "snw_km3":[
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442134/AzumayaWeb/KM3/Standard_NoWindow_1_mlnr9u.jpg",
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442135/AzumayaWeb/KM3/Standard_NoWindow_2_fsntk7.jpg"   
+    ],
+    "dmnw_km3":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440338/AzumayaWeb/KM2/DeluxeL_1_jr8o1k.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440339/AzumayaWeb/KM2/DeluxeL_2_tpffli.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440339/AzumayaWeb/KM2/DeluxeL_3_rns7r8.jpg"  
+    ],
+    "dlnw_km3":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442136/AzumayaWeb/KM3/DeluxeL_NoWindow_1_obq54p.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442137/AzumayaWeb/KM3/DeluxeL_NoWindow_2_hnaihx.jpg"
+      
+    ],
+    "dlw_km3":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442138/AzumayaWeb/KM3/DeluxeL_Window_1_subvw7.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442140/AzumayaWeb/KM3/DeluxeL_Window_2_w1bwgj.jpg"
+    ],
+    "ls_km3":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442175/AzumayaWeb/KM3/Lakeside_1_qkpdij.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442176/AzumayaWeb/KM3/Lakeside_2_oosb2t.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442177/AzumayaWeb/KM3/Lakeside_3_d2sacd.jpg"
+    ],
+
+    "ll":"LL",
+    "siw_ll":[
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443091/AzumayaWeb/LL/Standard_InsideWindow_1_vqn7kh.jpg",
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443092/AzumayaWeb/LL/Standard_InsideWindow_2_shdbcl.jpg",
+        "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443094/AzumayaWeb/LL/Standard_InsideWindow_3_mhpujf.jpg"     
+    ],
+    "s_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443302/AzumayaWeb/LL/Standard_1_ku5trr.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443087/AzumayaWeb/LL/Standard_2_myi2kr.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443089/AzumayaWeb/LL/Standard_3_aoygct.jpg"  
+    ],
+    "d_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443106/AzumayaWeb/LL/Deluxe_1_wsvu2h.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443072/AzumayaWeb/LL/Deluxe_2_yicgcw.jpg"
+    ],
+    "dnw_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443073/AzumayaWeb/LL/Deluxe_NoWindow_1_hrzifi.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443074/AzumayaWeb/LL/Deluxe_NoWindow_2_xohynm.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443075/AzumayaWeb/LL/Deluxe_NoWindow_3_c51dre.jpg"
+    ],
+    "e_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443077/AzumayaWeb/LL/Executive_1_pso0t4.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443078/AzumayaWeb/LL/Executive_2_muafka.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443080/AzumayaWeb/LL/Executive_3_y7jrll.jpg"
+    ],
+    "ef_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443086/AzumayaWeb/LL/ExecutiveFront_1_kcovgq.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443679/AzumayaWeb/LL/ExecutiveFront_2_bwwwod.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443680/AzumayaWeb/LL/ExecutiveFront_3_c4t4hg.jpg"
+    ],
+    "enw_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443081/AzumayaWeb/LL/Executive_NoWindow_1_sflrms.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443083/AzumayaWeb/LL/Executive_NoWindow_2_ccunrm.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443084/AzumayaWeb/LL/Executive_NoWindow_3_tuvebn.jpg"
+    ],
+    "s1f_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443096/AzumayaWeb/LL/Suite1F_1_fnidb2.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443097/AzumayaWeb/LL/Suite1F_2_ybbdaz.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443099/AzumayaWeb/LL/Suite1F_3_pp8jyb.jpg"
+    ],
+    "s7fwk_ll":[
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443101/AzumayaWeb/LL/Suite7F_1_jgqjhi.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443102/AzumayaWeb/LL/Suite7F_2_rqesx6.jpg",
+      "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443104/AzumayaWeb/LL/Suite7F_3_sjik3m.jpg"
     ]
+
+
   }

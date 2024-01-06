@@ -1,20 +1,20 @@
-import Booking from "./Booking"
+import Booking from "../Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-export default function HotelDN(){
+export default function HotelHCM(){
     const { t } = useTranslation();
-    const brandDetail = t("dn-branch",  {returnObjects: true});
+    const brandDetail = t("hcm-branch",  {returnObjects: true});
     const header = t("header",{returnObjects:true})
     const homeNewsData = t("home.new_item", { returnObjects: true });
-    const DNDetail = t("dn-branch.branch", { returnObjects: true });
+    const HCMDetail = t("hcm-branch.branch", { returnObjects: true });
     return(
         <div>
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.item10")}</h1>
+                                <h1>{t("header.hcm")}</h1>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function HotelDN(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.item10")}</a>
+                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.hcm")}</a>
                                    </li>
                        </ul>
                     </div>
@@ -44,7 +44,7 @@ export default function HotelDN(){
             </div>
             <div className="branch__container">
                 <div className="container">
-                    {DNDetail.map((item)=>(
+                    {HCMDetail.map((item)=>(
                 <div className="feature__type-item">
                     <div className="card">
                     <div className="row p-0">
@@ -62,7 +62,7 @@ export default function HotelDN(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/RoomDetail">{t("dn-branch.btn-detail")}</Link>
+                                    <Link to = {item.link}>{t("hcm-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                         </div>

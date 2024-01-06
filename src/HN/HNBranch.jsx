@@ -1,20 +1,20 @@
-import Booking from "./Booking"
+import Booking from "../Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-export default function HotelHP(){
+export default function HotelHN(){
     const { t } = useTranslation();
-    const brandDetail = t("hp-branch",  {returnObjects: true});
+    const brandDetail = t("hn-branch.branch",  {returnObjects: true});
     const header = t("header",{returnObjects:true})
     const homeNewsData = t("home.new_item", { returnObjects: true });
-    const HPDetail = t("hp-branch.branch", { returnObjects: true });
+    const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
     return(
         <div>
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.item9")}</h1>
+                                <h1>{t("header.hn")}</h1>
                             </div>
                         </div>
                     </div>
@@ -28,15 +28,15 @@ export default function HotelHP(){
                         <div className="col-md-12"></div>
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
-                                       <a href="/AzumayaClone/index.html">
+                                       <Link to = "/">
                                            <i className="fa-solid fa-house"></i>
-                                       </a>
+                                          </Link>
                                    </li>
                                    <li className = "breadcrumb__item">
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.item9")}</a>
+                                        <a className ="breadcrumb__title" href="">{t("header.hn")}</a>
                                    </li>
                        </ul>
                     </div>
@@ -44,7 +44,7 @@ export default function HotelHP(){
             </div>
             <div className="branch__container">
                 <div className="container">
-                    {HPDetail.map((item)=>(
+                    {HanoiDetail.map((item)=>(
                 <div className="feature__type-item">
                     <div className="card">
                     <div className="row p-0">
@@ -62,11 +62,11 @@ export default function HotelHP(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/RoomDetail">{t("hp-branch.btn-detail")}</Link>
+                                    <Link to = {item.link}>{t("hn-branch.btn-detail")}</Link>
+                                </div>
                                 </div>
                                 </div>
                         </div>
-                    </div>
                     </div>
                     </div>
                     ))}
