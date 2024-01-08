@@ -14,7 +14,7 @@ export default function TVL1RoomDetail() {
   const branchName = t("branch", { returnObjects: true });
   const cityName = t("header", { returnObjects: true });
   const room = t("room_tvl1", { returnObjects: true });
-  const km2 = t("tvl1", { returnObjects: true });
+  const tvl1 = t("tvl1", { returnObjects: true });
   const room0 = t("tvl1.0", { returnObjects: true });
   const room1 = t("tvl1.1", { returnObjects: true });
   const room2 = t("tvl1.2", { returnObjects: true });
@@ -1066,7 +1066,7 @@ export default function TVL1RoomDetail() {
                             </th>
                             
                           </tr>
-                          {km2.map((item) => {
+                          {tvl1.map((item) => {
                             if(item.split == true){
                                 return(
                                   <>
@@ -1080,13 +1080,16 @@ export default function TVL1RoomDetail() {
                               <td>
                                 <i
                                   className={classNames({
-                                    "fa fa-times red": item.tick_k == false,
-                                    "fa fa-check green": item.tick_k == true,
+                                    "fa fa-times red": item.tick_w == false,
+                                    "fa fa-check green": item.tick_w == true,
                                   })}
                                 />
                               </td>
                               <td>
-                                 <i className="fa fa-check green" />
+                                 <i className={classNames({
+                                    "fa fa-times red": item.tick_b == false,
+                                    "fa fa-check green": item.tick_b == true,
+                                  })} />
                               </td>
                               <td>
                                 <i
@@ -1097,7 +1100,7 @@ export default function TVL1RoomDetail() {
                                 />
                               </td>
                               <td>
-                                <i className="fa fa-check green" />
+                              {item.bed_size}
                               </td>
                             </tr>
                             <tr>
@@ -1105,30 +1108,30 @@ export default function TVL1RoomDetail() {
                             <td>
                                 <i
                                   className={classNames({
-                                    "fa fa-times red": item.tick_k == false,
-                                    "fa fa-check green": item.tick_k == true,
+                                    "fa fa-times red": item.tick_w == false,
+                                    "fa fa-check green": item.tick_w== true,
                                   })}
                                 />
                               </td>
                               <td>
-                                 <i className="fa fa-check green" />
+                                 <i className={classNames({
+                                    "fa fa-times red": item.tick_b_1 == false,
+                                    "fa fa-check green": item.tick_b_1 == true,
+                                  })} />
                               </td>
                               <td>
                                 <i
                                   className={classNames({
-                                    "fa fa-times red": item.tick_t == false,
-                                    "fa fa-check green": item.tick_t == true,
+                                    "fa fa-times red": item.tick_t_1 == false,
+                                    "fa fa-check green": item.tick_t_1 == true,
                                   })}
                                 />
-                                ////////âfaf
                               </td>
                               <td>
-                                <i className="fa fa-check green" />
+                               {item.bed_size}
                               </td>
                             </tr>
                             </>
-                            
-                            
                                 )
                             }
                             return(
@@ -1140,13 +1143,16 @@ export default function TVL1RoomDetail() {
                                   <td>
                                     <i
                                       className={classNames({
-                                        "fa fa-times red": item.tick_k == false,
-                                        "fa fa-check green": item.tick_k == true,
+                                        "fa fa-times red": item.tick_w == false,
+                                        "fa fa-check green": item.tick_w == true,
                                       })}
                                     />
                                   </td>
                                   <td>
-                                     <i className="fa fa-check green" />
+                                     <i className={classNames({
+                                    "fa fa-times red": item.tick_b == false,
+                                    "fa fa-check green": item.tick_b == true,
+                                  })} />
                                   </td>
                                   <td>
                                     <i
@@ -1157,7 +1163,7 @@ export default function TVL1RoomDetail() {
                                     />
                                   </td>
                                   <td>
-                                    <i className="fa fa-check green" />
+                                  {item.bed_size}
                                   </td>
                                 </tr>
                             )
@@ -1263,21 +1269,21 @@ export default function TVL1RoomDetail() {
                           <td colSpan={2}>{t("room_tvl1.ask")}</td>
                         </tr>
                         <tr>
-                          <th>{t("room_tvl1.rotenM")}</th>
+                          <th>{t("room_tvl1.roten")}</th>
                           <td className="pre-line" colSpan={2}>
                             {t("room_tvl1.rotenContent")}
-                          </td>
-                        </tr>
-                        <tr>
-                          <th>{t("room_tvl1.rotenF")}</th>
-                          <td className="pre-line" colSpan={2}>
-                            {t("room_tvl1.rotenFContent")}
                           </td>
                         </tr>
                         <tr>
                           <th>{t("room_tvl1.breakfast")}</th>
                           <td className="pre-line" colSpan={2}>
                             {t("room_tvl1.breakfastContent")}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th>{t("room_tvl1.massage")}</th>
+                          <td className="pre-line" colSpan={2}>
+                            {t("room_tvl1.massageContent")}
                           </td>
                         </tr>
                       </tbody>
@@ -1324,7 +1330,7 @@ export default function TVL1RoomDetail() {
                             {t("room_tvl1.locationContent")}
                           </p>
                           <div className="hotel__info">
-                            <h1>{t("branch.km2")}</h1>
+                            <h1>{t("branch.tvl1")}</h1>
                             <p>
                               <i className="purple fa-solid fa-location-dot" />
                               {t("room_tvl1.address")}
@@ -1347,7 +1353,7 @@ export default function TVL1RoomDetail() {
                         <div className="room__container">
                           <div className="gg-map">
                             <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59589.61281346326!2d105.81481133159495!3d21.018645116070616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab695c3c7ed5%3A0x98d46b56d0e49ab8!2sAzumaya+Kim+Ma+2!5e0!3m2!1svi!2s!4v1480501292956"
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4155081221156!2d106.70226331420403!3d10.779454062086852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f48e8ac8da7%3A0xdf1add902008fcb9!2sAzumaya+Hotel!5e0!3m2!1svi!2s!4v1480500414644"
                               style={{ border: 0 }}
                               allowFullScreen
                             />

@@ -1460,6 +1460,20 @@ a:hover {
 .table_container{
   overflow-x: auto;
 }
+.fix_bed{
+  padding-top: 18px !important;  
+  padding-bottom: 18px !important; 
+}
+.annex_h2{
+  font-size: 3rem;
+  font-weight: bold;
+  text-align:left !important ;
+}
+.annex_p{
+  text-align: left !important;
+  font-size: 1.4rem;
+  padding-top: 10px;
+}
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{
     color: white;

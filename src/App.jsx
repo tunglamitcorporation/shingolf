@@ -16,10 +16,16 @@ import KM2RoomDetail from "./HN/KM2";
 import KM3RoomDetail from "./HN/KM3";
 import LLRoomDetail from "./HN/LL";
 import TVL1RoomDetail from "./HCM/TVL1";
+import TVL2RoomDetail from "./HCM/TVL2";
+import LTTRoomDetail from "./HCM/LTT";
+import AnnexRoomDetail from "./HCM/Annex";
 // import Massage from "./Massage";
 import Breakfast from "./Test/breakfast";
 import Rotenburo from "./Test/rotenburo";
 import Massage from "./Test/massage";
+import BreakfastPP from "./Test/Cambodia/breakfast";
+import RotenburoPP from "./Test/Cambodia/rotenburo";
+import MassagePP from "./Test/Cambodia/massage"
 import ScrollIndicator from "./IndicatorScroll";
 import './index.css'
 import './base.css'
@@ -56,6 +62,9 @@ function App() {
       <Route path="/Test/breakfast" element={<Breakfast/>} />
       <Route path="/Test/rotenburo" element={<Rotenburo/>} />
       <Route path="/Test/massage" element={<Massage/>} />
+      <Route path="/Test/Cambodia/breakfast" element={<BreakfastPP/>} />
+      <Route path="/Test/Cambodia/rotenburo" element={<RotenburoPP/>} />
+      <Route path="/Test/Cambodia/massage" element={<MassagePP/>} />
       <Route path="/Policies" element={<Policies />} />
       <Route path="/Reservation" element={<Reservation />} />
       <Route path="/Feature" element={<Feature/>} />
@@ -70,6 +79,9 @@ function App() {
       <Route path="/HN/KM3" element={<KM3RoomDetail />} />
       <Route path="/HN/LL" element={<LLRoomDetail />} />
       <Route path="/HCM/TVL1" element={<TVL1RoomDetail />} />
+      <Route path="/HCM/TVL2" element={<TVL2RoomDetail />} />
+      <Route path="/HCM/LTT" element={<LTTRoomDetail />} />
+      <Route path="/HCM/Annex" element={<AnnexRoomDetail />} />
       {/* <Route path="/Massage" element={<Massage />} /> */}
       </Routes> 
     <Footer />
