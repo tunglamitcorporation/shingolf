@@ -14,7 +14,7 @@ export default function HotelDN(){
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.item10")}</h1>
+                                <h1>{t("header.dn")}</h1>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function HotelDN(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.item10")}</a>
+                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.dn")}</a>
                                    </li>
                        </ul>
                     </div>
@@ -62,7 +62,7 @@ export default function HotelDN(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/RoomDetail">{t("dn-branch.btn-detail")}</Link>
+                                    <Link to = "/DN/DN">{t("dn-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                         </div>

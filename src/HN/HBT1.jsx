@@ -39,7 +39,7 @@ export default function HBT1RoomDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12" />
+          <div className="col-md-12">
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
@@ -61,12 +61,13 @@ export default function HBT1RoomDetail() {
               </li>
             </ul>
           </div>
+          </div>
         </div>
       </div>
       <div className="container-fluid">
         <ul
           className="row"
-          style={{ justifyContent: "space-around", padding: "10px" }}
+          style={{ justifyContent: "space-around", padding: "10px", textAlign:"justify" }}
         >
           <li className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
             <a href="/HN/HBT1" className="location_link">
@@ -884,8 +885,11 @@ export default function HBT1RoomDetail() {
                         <h1>{t("room_hbt1.board")}</h1>
                         <p className="mt-5">
                           {t("room_hbt1.contact1")}
-                          <a className="ml-1" href={`tel:${t("room_hbt1.phone")}`}>
-                          {t("room_hbt1.phone")}
+                          <a className="ml-1" href={`tel:${t("room_hbt1.phone1")}`}>
+                          {t("room_hbt1.phone1")}
+                          </a> 
+                          <a className="ml-1" href={`tel:${t("room_hbt1.phone2")}`}>
+                          {t("room_hbt1.phone2")}
                           </a>
                           <br />
                           {t("room_hbt1.contact2")}
@@ -928,8 +932,11 @@ export default function HBT1RoomDetail() {
                             </p>
                             <p>
                               <i className="purple fa fa-phone" />
-                              {t("room_hbt1.tel")} : <a className="ml-1 purple" href={`tel:${t("room_hbt1.phone")}`}>
-                              {t("room_hbt1.phone")}
+                              {t("room_hbt1.tel")} : <a className="ml-1 purple" href={`tel:${t("room_hbt1.phone1")}`}>
+                              {t("room_hbt1.phone1")}
+                              </a> 
+                              <a className="ml-1 purple" href={`tel:${t("room_hbt1.phone2")}`}>
+                              {t("room_hbt1.phone2")}
                               </a>
                             </p>
                             <p>

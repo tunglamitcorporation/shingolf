@@ -25,7 +25,7 @@ export default function HotelHN(){
             <div className="re__breadcrumb">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12"></div>
+                        <div className="col-md-12">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
                                        <Link to = "/">
@@ -39,6 +39,7 @@ export default function HotelHN(){
                                         <a className ="breadcrumb__title" href="">{t("header.hn")}</a>
                                    </li>
                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>

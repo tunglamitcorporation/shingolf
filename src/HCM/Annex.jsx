@@ -35,7 +35,7 @@ export default function AnnexRoomDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12" />
+          <div className="col-md-12">
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
@@ -56,6 +56,7 @@ export default function AnnexRoomDetail() {
                 </Link>
               </li>
             </ul>
+          </div>
           </div>
         </div>
       </div>
@@ -114,7 +115,7 @@ export default function AnnexRoomDetail() {
                       {t("branch.annex")}
                     </h2>
                     <p className="annex_p pre-line">
-                      {t("room_annex.addContent")}
+                      {t("room_annex.roomContent")}
                     </p>
                   <div className="row">
                     <div className="col-md-6">
@@ -128,9 +129,9 @@ export default function AnnexRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dm_annex.map((item) => (
+                          {data.m_annex.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -195,9 +196,9 @@ export default function AnnexRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dl_annex.map((item) => (
+                          {data.l_annex.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -330,7 +331,6 @@ export default function AnnexRoomDetail() {
                                   </td>
                                 </tr>
                             )
-                        
                         })}
                         </tbody>
                       </table>
@@ -369,7 +369,7 @@ export default function AnnexRoomDetail() {
             <TabPanel>
               <div className="service__content">
                 <div className="room__content">
-                  <div className="room__title">
+                  <div className="room__title" style={{margin:0}}>
                     {t("room_annex.business")}
                     <img
                       className="style-line"
@@ -381,7 +381,10 @@ export default function AnnexRoomDetail() {
                     </p>
                   </div>
                   <div className="room__container">
-                    <table className="room__table room__table-service">
+                    <div style={{display:"flex",justifyContent:"center"}}>
+                    <p className="pre-line" style={{textAlign:"justify"}}>{t("room_annex.business_annex")}</p>
+                    </div>
+                    {/* <table className="room__table room__table-service">
                       <tbody>
                         <tr>
                           <th rowSpan={2}>{t("room_annex.pickup")}</th>
@@ -444,10 +447,10 @@ export default function AnnexRoomDetail() {
                           </td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table> */}
                     <div className="col-md-12">
                       <div className="table-footer">
-                        <h1>{t("room_annex.board")}</h1>
+                        {/* <h1>{t("room_annex.board")}</h1> */}
                         <p className="mt-5">
                           {t("room_annex.contact1")}
                           <a className="ml-1" href={`tel:${t("room_annex.phone")}`}>
@@ -510,7 +513,7 @@ export default function AnnexRoomDetail() {
                         <div className="room__container">
                           <div className="gg-map">
                             <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d244.96238500598545!2d106.704948!3d10.780786!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x67e160ffb3c3584!2sAzumaya!5e0!3m2!1sja!2sus!4v1482111022771"
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2199.698144276659!2d106.7045507240879!3d10.779387184617876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f6b3078e69f%3A0x6c318309761ace52!2sAZ%20ANNEX!5e0!3m2!1sen!2s!4v1704763802002!5m2!1sen!2s"
                               style={{ border: 0 }}
                               allowFullScreen
                             />

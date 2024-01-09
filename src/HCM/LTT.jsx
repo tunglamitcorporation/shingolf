@@ -35,7 +35,7 @@ export default function LTTRoomDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12" />
+          <div className="col-md-12">
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
@@ -56,13 +56,14 @@ export default function LTTRoomDetail() {
                 </Link>
               </li>
             </ul>
+            </div>
           </div>
         </div>
       </div>
       <div className="container-fluid">
         <div
           className="row"
-          style={{ justifyContent: "space-around", padding: "10px" }}
+          style={{ justifyContent: "space-around", padding: "10px", textAlign:"justify" }}
         >
           <div className="service__location col-md-12 col-lg-12 col-xxl-2">
             <a href="/HCM/TVL1" className="location_link">
@@ -125,9 +126,9 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dm_ltt.map((item) => (
+                          {data.d_ltt.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -192,9 +193,9 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dl_ltt.map((item) => (
+                          {data.efs_ltt.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -259,9 +260,9 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dlwk_ltt.map((item) => (
+                          {data.ebs_ltt.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -327,9 +328,9 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.ewk_ltt.map((item) => (
+                          {data.dgf_ltt.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">

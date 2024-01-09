@@ -40,7 +40,7 @@ export default function TVL2RoomDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12" />
+          <div className="col-md-12">
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
@@ -62,12 +62,13 @@ export default function TVL2RoomDetail() {
               </li>
             </ul>
           </div>
+          </div>
         </div>
       </div>
       <div className="container-fluid">
         <div
           className="row"
-          style={{ justifyContent: "space-around", padding: "10px" }}
+          style={{ justifyContent: "space-around", padding: "10px", textAlign:"justify" }}
         >
           <div className="service__location col-md-12 col-lg-12 col-xxl-2">
             <a href="/HCM/TVL2" className="location_link">
@@ -130,9 +131,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dm_tvl2.map((item) => (
+                          {data.dnw_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -197,9 +198,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dl_tvl2.map((item) => (
+                          {data.dlnw_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -264,9 +265,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dlwk_tvl2.map((item) => (
+                          {data.ef_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -332,9 +333,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.ewk_tvl2.map((item) => (
+                          {data.eb_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -400,9 +401,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lsm_tvl2.map((item) => (
+                          {data.etnw_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -470,9 +471,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lsmwt_tvl2.map((item) => (
+                          {data.ss_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -543,9 +544,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lsl_tvl2.map((item) => (
+                          {data.s_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -613,9 +614,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lslwt_tvl2.map((item) => (
+                          {data.dm_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -682,9 +683,9 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.swk_tvl2.map((item) => (
+                          {data.dl_tvl2.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -715,7 +716,7 @@ export default function TVL2RoomDetail() {
                                       <br />
                                       <i class="fa-solid fa-check purple"></i>
                                       {room8.in4}
-                                      <br />
+                                      <br />   
                                     </td>
                                   </tr>
                                   <tr>

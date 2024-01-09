@@ -35,7 +35,7 @@ export default function KM3RoomDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12" />
+          <div className="col-md-12">
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
@@ -57,12 +57,13 @@ export default function KM3RoomDetail() {
               </li>
             </ul>
           </div>
+          </div>
         </div>
       </div>
       <div className="container-fluid">
         <div
           className="row"
-          style={{ justifyContent: "space-around", padding: "10px" }}
+          style={{ justifyContent: "space-around", padding: "10px", textAlign:"justify" }}
         >
           <div className="service__location col-md-12 col-lg-12 col-xxl-2">
             <a href="/HN/HBT1" className="location_link">

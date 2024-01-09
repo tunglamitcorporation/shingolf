@@ -14,7 +14,7 @@ export default function HotelHP(){
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.item9")}</h1>
+                                <h1>{t("header.hp")}</h1>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function HotelHP(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.item9")}</a>
+                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.hp")}</a>
                                    </li>
                        </ul>
                     </div>
@@ -62,7 +62,7 @@ export default function HotelHP(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/RoomDetail">{t("hp-branch.btn-detail")}</Link>
+                                    <Link to = "/HP/HP">{t("hp-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                         </div>

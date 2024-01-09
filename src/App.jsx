@@ -19,6 +19,8 @@ import TVL1RoomDetail from "./HCM/TVL1";
 import TVL2RoomDetail from "./HCM/TVL2";
 import LTTRoomDetail from "./HCM/LTT";
 import AnnexRoomDetail from "./HCM/Annex";
+import DNRoomDetail from "./DN/DN";
+import HPRoomDetail from "./HP/HP";
 // import Massage from "./Massage";
 import Breakfast from "./Test/breakfast";
 import Rotenburo from "./Test/rotenburo";
@@ -82,6 +84,8 @@ function App() {
       <Route path="/HCM/TVL2" element={<TVL2RoomDetail />} />
       <Route path="/HCM/LTT" element={<LTTRoomDetail />} />
       <Route path="/HCM/Annex" element={<AnnexRoomDetail />} />
+      <Route path="/DN/DN" element={<DNRoomDetail />} />
+      <Route path="/HP/HP" element={<HPRoomDetail />} />
       {/* <Route path="/Massage" element={<Massage />} /> */}
       </Routes> 
     <Footer />

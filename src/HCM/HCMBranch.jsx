@@ -25,7 +25,7 @@ export default function HotelHCM(){
             <div className="re__breadcrumb">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12"></div>
+                        <div className="col-md-12">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
                                        <a href="/AzumayaClone/index.html">
@@ -39,6 +39,7 @@ export default function HotelHCM(){
                                         <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.hcm")}</a>
                                    </li>
                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>

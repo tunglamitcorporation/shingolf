@@ -43,7 +43,7 @@ export default function TVL1RoomDetail() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12" />
+          <div className="col-md-12">
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
@@ -64,6 +64,7 @@ export default function TVL1RoomDetail() {
                 </Link>
               </li>
             </ul>
+          </div>
           </div>
         </div>
       </div>
@@ -115,7 +116,7 @@ export default function TVL1RoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px",  textAlign:"justify" }}>
                       {t("room_tvl1.roomContent")}
                     </p>
                   </div>
@@ -133,9 +134,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dm_tvl1.map((item) => (
+                          {data.enw_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -206,9 +207,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dl_tvl1.map((item) => (
+                          {data.e_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -279,9 +280,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.dlwk_tvl1.map((item) => (
+                          {data.s_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -353,9 +354,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.ewk_tvl1.map((item) => (
+                          {data.dnw_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -427,9 +428,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lsm_tvl1.map((item) => (
+                          {data.dm_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -502,9 +503,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lsmwt_tvl1.map((item) => (
+                          {data.dl_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -578,9 +579,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lsl_tvl1.map((item) => (
+                          {data.tm_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -654,9 +655,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.lslwt_tvl1.map((item) => (
+                          {data.tl_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -729,9 +730,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.swk_tvl1.map((item) => (
+                          {data.suite_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -803,9 +804,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.awk_tvl1.map((item) => (
+                          {data.st_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -877,9 +878,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.awk_tvl1.map((item) => (
+                          {data.vip_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
@@ -951,9 +952,9 @@ export default function TVL1RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {/* {data.awk_tvl1.map((item) => (
+                          {data.ph_tvl1.map((item) => (
                             <img src={item} alt="" />
-                          ))} */}
+                          ))}
                         </Carousel>
                         <div className="card" style={{ border: "none" }}>
                           <div className="row p-0">
