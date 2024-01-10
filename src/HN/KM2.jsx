@@ -911,7 +911,7 @@ export default function KM2RoomDetail() {
                               {t("room_km2.size")} m&#178;
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_km2.kitchen")} m&#178;
+                              {t("room_km2.kitchen")}
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_km2.bath")}
@@ -1110,7 +1110,7 @@ export default function KM2RoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"left" }}>
                             {t("room_km2.locationContent")}
                           </p>
                           <div className="hotel__info">

@@ -33,14 +33,15 @@
         "date_in": "Check in date",
         "date_out": "Check out date",
         "reserve": "Reserve",
+        "placeHolder":"Please choose a city",
         "city": [
             {
                 "id": 1,
-                "city_name": "Ha Noi"
+                "city_name": "Ho Chi Minh"
             },
             {
                 "id": 2,
-                "city_name": "Ho Chi Minh"
+                "city_name": "Ha Noi"
             },
             {
                 "id": 3,
@@ -53,52 +54,52 @@
         ],
         "branch": [
             {
-                "branch_id": 1,
-                "city_id": 1,
-                "city_name": "Ha Noi",
-                "branch_name": "Azumaya Hai Ba Trung 1"
-            },
-            {
-                "branch_id": 2,
-                "city_id": 1,
-                "city_name": "Ha Noi",
-                "branch_name": "Azumaya Kim Ma 2"
-            },
-            {
-                "branch_id": 3,
-                "city_id": 1,
-                "city_name": "Ha Noi",
-                "branch_name": "Azumaya Kim Ma 3"
-            },
-            {
-                "branch_id": 4,
-                "city_id": 1,
-                "city_name": "Ha Noi",
-                "branch_name": "Azumaya Linh Lang"
-            },
-            {
                 "branch_id": 5,
-                "city_id": 2,
+                "city_id": 1,
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
             },
             {
                 "branch_id": 6,
-                "city_id": 2,
+                "city_id": 1,
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
             },
             {
                 "branch_id": 7,
-                "city_id": 2,
+                "city_id": 1,
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
             },
             {
                 "branch_id": 8,
-                "city_id": 2,
+                "city_id": 1,
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
+            },
+            {
+                "branch_id": 1,
+                "city_id": 2,
+                "city_name": "Ha Noi",
+                "branch_name": "Azumaya Hai Ba Trung 1"
+            },
+            {
+                "branch_id": 2,
+                "city_id": 2,
+                "city_name": "Ha Noi",
+                "branch_name": "Azumaya Kim Ma 2"
+            },
+            {
+                "branch_id": 3,
+                "city_id": 2,
+                "city_name": "Ha Noi",
+                "branch_name": "Azumaya Kim Ma 3"
+            },
+            {
+                "branch_id": 4,
+                "city_id": 2,
+                "city_name": "Ha Noi",
+                "branch_name": "Azumaya Linh Lang"
             },
             {
                 "branch_id": 9,
@@ -1103,6 +1104,7 @@
         "window": "Window",
         "bath": "Babthtub",
         "mattress": "Bed (Massage Mattress)",
+        "bed":"Bed Size",
         "washlet": "Auto Washlet",
         "reservation": "Make a Reservation",
         "features": [
@@ -2097,6 +2099,7 @@
         "bath": "Babthtub",
         "kitchen": "Kitchen",
         "terrace": "Terrace",
+        "elevator":"Elevator",
         "bed": "Bed Size",
         "tv": "LED TV 32 inches",
         "reservation": "Make a Reservation",

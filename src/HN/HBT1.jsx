@@ -112,12 +112,12 @@ export default function HBT1RoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_hbt1.roomContent")}
                     </p>
                   </div>
                 </div>
-                <div className="container">
+                <div className="container room-mobile">
                   <div className="row">
                     <div className="col-md-6">
                       <div className="room-item">
@@ -811,7 +811,7 @@ export default function HBT1RoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_hbt1.businessContent")}
                     </p>
                   </div>
@@ -921,7 +921,7 @@ export default function HBT1RoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"left" }}>
                             {t("room_hbt1.locationContent")}
                           </p>
                           <div className="hotel__info">

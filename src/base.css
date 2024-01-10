@@ -198,7 +198,7 @@ textarea{
     height: auto;
   }
 .carousel.carousel-slider .control-arrow{
-    z-index: 0;
+    z-index: 1;
   }
 .scroll-indicator-container {
     position: fixed;

@@ -127,7 +127,7 @@ export default function Contract() {
             </div>
           </div>
           <div className="contract-benefit contract-title">
-            {t('conrtact.receipt')}
+            {t('contract.receipt')}
           </div>
           <div className="contract-text">
             <p>

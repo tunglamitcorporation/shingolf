@@ -77,7 +77,7 @@ export default function AnnexRoomDetail() {
           </div>
           <div className="service__location col-md-12 col-lg-12 col-xxl-2">
             <a href="/HCM/LTT" className="location_link">
-              {t(branchName.annex)}
+              {t(branchName.ltt)}
             </a>
           </div>
           <div className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
@@ -162,6 +162,12 @@ export default function AnnexRoomDetail() {
                                       <br />
                                       <i class="fa-solid fa-check purple"></i>
                                       {room0.in4}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room0.in5}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room0.in6}
                                     </td>
                                   </tr>
                                   <tr>
@@ -229,6 +235,12 @@ export default function AnnexRoomDetail() {
                                       <br />
                                       <i class="fa-solid fa-check purple"></i>
                                       {room1.in4}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room1.in5}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room1.in6}
                                     </td>
                                   </tr>
                                   <tr>
@@ -282,7 +294,7 @@ export default function AnnexRoomDetail() {
                             <th style={{ width: "20%" }} rowSpan={2}>
                               {t("room_annex.rate")}
                             </th>
-                            <th style={{ width: "20%" }} colSpan={5}>
+                            <th style={{ width: "20%" }} colSpan={6}>
                               {t("room_annex.desc")}
                             </th>
                           </tr>
@@ -294,10 +306,13 @@ export default function AnnexRoomDetail() {
                               {t("room_annex.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_annex.bath")} m&#178;
+                              {t("room_annex.bath")}
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_annex.terrace")}
+                            </th>
+                            <th style={{ width: "10%" }}>
+                              {t("room_annex.elevator")}
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_annex.bed")}
@@ -325,6 +340,10 @@ export default function AnnexRoomDetail() {
                                         "fa fa-times red": item.tick_b == false,
                                         "fa fa-check green": item.tick_b == true,
                                       })} />
+                                  </td>
+                                  <td>
+                                    <i
+                                      className="fa fa-times red" />
                                   </td>
                                   <td>
                                     {item.bed_size}
@@ -376,7 +395,7 @@ export default function AnnexRoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_annex.businessContent")}
                     </p>
                   </div>
@@ -486,7 +505,7 @@ export default function AnnexRoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                             {t("room_annex.locationContent")}
                           </p>
                           <div className="hotel__info">

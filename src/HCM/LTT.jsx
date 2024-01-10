@@ -108,7 +108,7 @@ export default function LTTRoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_ltt.roomContent")}
                     </p>
                   </div>
@@ -427,7 +427,7 @@ export default function LTTRoomDetail() {
                               {t("room_ltt.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_ltt.bath")} m&#178;
+                              {t("room_ltt.bath")}
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_ltt.terrace")}
@@ -510,7 +510,7 @@ export default function LTTRoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_ltt.businessContent")}
                     </p>
                   </div>
@@ -617,7 +617,7 @@ export default function LTTRoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                             {t("room_ltt.locationContent")}
                           </p>
                           <div className="hotel__info">

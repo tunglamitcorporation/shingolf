@@ -499,7 +499,7 @@ export default function DNRoomDetail() {
                               {t("room_dn.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_dn.bath")} m&#178;
+                              {t("room_dn.bath")}
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_dn.bed")}
@@ -575,7 +575,7 @@ export default function DNRoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_dn.businessContent")}
                     </p>
                   </div>
@@ -693,7 +693,7 @@ export default function DNRoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                             {t("room_dn.locationContent")}
                           </p>
                           <div className="hotel__info">

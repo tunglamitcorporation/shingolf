@@ -1057,7 +1057,7 @@ export default function TVL1RoomDetail() {
                               {t("room_tvl1.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_tvl1.bath")} m&#178;
+                              {t("room_tvl1.bath")}
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_tvl1.terrace")}
@@ -1214,7 +1214,7 @@ export default function TVL1RoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_tvl1.businessContent")}
                     </p>
                   </div>
@@ -1327,7 +1327,7 @@ export default function TVL1RoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                             {t("room_tvl1.locationContent")}
                           </p>
                           <div className="hotel__info">

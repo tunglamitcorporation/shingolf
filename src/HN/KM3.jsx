@@ -700,7 +700,7 @@ export default function KM3RoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"left" }}>
                             {t("room_km3.locationContent")}
                           </p>
                           <div className="hotel__info">

@@ -187,7 +187,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Service"
+              to="/Test/breakfast"
               onClick={handleClick}
               className="header__mobile-navbar-link"
             >
@@ -277,7 +277,7 @@ function Header() {
                         </ul>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Service">
+                      <Link className="header__navbar-link-2" to="/Test/breakfast">
                         {t("header.service")}
                       </Link>
                     </li>

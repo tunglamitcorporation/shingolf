@@ -7,12 +7,14 @@ export default function Booking (){
     const bookingData = t('booking', {returnObjects:true})
     const city = t('booking.city', {returnObjects:true})
     const branch = t('booking.branch', {returnObjects:true})
+    const header = t('header', {returnObjects:true})
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     console.log(startDate);
     console.log(endDate); 
-    const [selectedCity, setSelectedCity] = useState("Ho Chi Minh");
-    const [selectedBranch, setSelectedBranch] = useState("Le Thanh Ton");
+    const [selectedCity, setSelectedCity] = useState();
+    // (`${t('header.hcm')}`);
+    const [selectedBranch, setSelectedBranch] = useState();
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
     return(
@@ -56,9 +58,9 @@ export default function Booking (){
                         {city.map(item => (
                             <option key={item.id} value={item.city_name}>{item.city_name}</option>
                         ))}
-                        {/* <option value="" disabled selected hidden>
-                        Please select a city
-                        </option> */}
+                        <option value="" disabled selected hidden>
+                        {t('booking.placeHolder')}
+                        </option>
                     </select>
                 </div>
                 </div>

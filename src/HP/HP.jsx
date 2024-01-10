@@ -799,10 +799,10 @@ export default function HPRoomDetail() {
                               {t("room_hp.window")}
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_hp.bath")} m&#178;
+                              {t("room_hp.bath")} 
                             </th>
                             <th style={{ width: "10%" }}>
-                              {t("room_hp.kitchen")} m&#178;
+                              {t("room_hp.kitchen")} 
                             </th>
                             <th style={{ width: "10%" }}>
                               {t("room_hp.bed")}
@@ -880,7 +880,7 @@ export default function HPRoomDetail() {
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
                       alt=""
                     />
-                    <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                    <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                       {t("room_hp.businessContent")}
                     </p>
                   </div>
@@ -996,7 +996,7 @@ export default function HPRoomDetail() {
                     <div className="container">
                       <div className="row">
                         <div className="col-md-12">
-                          <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
+                          <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
                             {t("room_hp.locationContent")}
                           </p>
                           <div className="hotel__info">

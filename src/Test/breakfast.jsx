@@ -38,7 +38,7 @@ const Breakfast = () => {
     <div className="container">
       <div className="row">
           <div className="col-md-12">
-            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704681369/AzumayaWeb/breakfast_fuw8d0.jpg" alt="" />
+            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704877089/AzumayaWeb/breakfast__2_v4esjd.jpg" alt="" />
           </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ const Rotenburo = () => {
     <div className="container">
       <div className="row">
           <div className="col-md-12">
-            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704681371/AzumayaWeb/rotenburo_ximvwy.jpg" alt="" />
+            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704878360/AzumayaWeb/rotenburo__2_dw5ns3.jpg" alt="" />
           </div>
       </div>
     </div>

@@ -351,12 +351,12 @@ code {
   content: '';
   position: absolute;
   top: -35px;
-  left: -200px;
+  left: -300px;
   right: 0;
   /* right: calc(50% + 50vw);
   left: calc(50% + 50vw); */
   height: 10px;
-  width: 300vw;
+  width: 400vw;
   background-color: var(--primary--color);
   pointer-events: none;
 }
@@ -973,7 +973,7 @@ code {
 
 }
 .service__content{
-  padding: 30px;
+  padding: 10px;
   height: 100%;
   width: 100%;
   border: solid 1px #c5c5c5;
@@ -1206,7 +1206,6 @@ code {
   font-size: 4rem;
   font-weight: 600;
   margin: 5% 0;
-  margin-left: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1474,6 +1473,30 @@ a:hover {
   font-size: 1.4rem;
   padding-top: 10px;
 }
+.massage-hn a{
+  position: absolute;
+  left: 52%;
+  top: 35%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #482979;
+}
+.massage-dn a{
+  position: absolute;
+  left: 68%;
+  top: 35%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #482979;
+}
+.massage-hcm a{
+  position: absolute;
+  left: 85%;
+  top: 35%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #482979;
+}
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{
     color: white;
@@ -1667,6 +1690,17 @@ a:hover {
   width: 98%;
 
 }
+.room-mobile{
+  margin: 0!important;
+  padding: 0!important;
+}
+.service__content{
+  padding: 0
+}
+.room__title p{
+  padding-left: 10px;
+  padding-right: 10px
+}
 }
 /* tablet */
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em){
@@ -1727,5 +1761,16 @@ a:hover {
 }
 .card-text{
   padding-bottom: 40px;
+}
+.room-mobile{
+  margin: 0!important;
+  padding: 0!important;
+}
+.service__content{
+  padding: 0
+}
+.room__title p{
+  padding-left: 10px;
+  padding-right: 10px
 }
 }

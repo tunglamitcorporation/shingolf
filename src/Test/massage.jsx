@@ -36,7 +36,16 @@ const Massage = () => {
     <div className="container">
       <div className="row">
           <div className="col-md-12">
-            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704681363/AzumayaWeb/massage_tqb5vt.jpg" alt="" />
+            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704878354/AzumayaWeb/massage__2_rzu6gl.jpg" alt="" />
+            <div className='massage-hn'>
+            <a href="tel:01234455667"> <i className="purple fa fa-phone m-2" />:マッサージご予約</a>
+            </div>
+            <div className='massage-dn'>
+            <a href="tel:01234455667"> <i className="purple fa fa-phone m-2" />:マッサージご予約</a>
+            </div>
+            <div className='massage-hcm'>
+            <a href="tel:01234455667"> <i className="purple fa fa-phone m-2" />:マッサージご予約</a>
+            </div>
           </div>
       </div>
     </div>

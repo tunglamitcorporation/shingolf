@@ -29,6 +29,9 @@ const BreakfastPP = () => {
       <Tab className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
       <a href="/Test/Cambodia/massage" className="location_link">Massage</a>
       </Tab>
+      <Tab className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
+      <a href="/Test/breakfast" className="location_link">Vietnam</a>
+      </Tab>
     </TabList>
 
     <TabPanel>
