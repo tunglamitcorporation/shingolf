@@ -1,6 +1,8 @@
 import Booking from "../Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
+import Header from "../Header";
+import Footer from "../Footer";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -21,6 +23,7 @@ export default function AnnexRoomDetail() {
   const room3 = t("annex.3", { returnObjects: true });
   return (
     <>
+    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -65,22 +68,22 @@ export default function AnnexRoomDetail() {
           className="row"
           style={{ justifyContent: "space-around", padding: "10px" }}
         >
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HCM/TVL1" className="location_link">
               {t(branchName.tvl1)}
             </a>
           </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HCM/TVL2" className="location_link">
               {t(branchName.tvl2)}
             </a>
           </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HCM/LTT" className="location_link">
               {t(branchName.ltt)}
             </a>
           </div>
-          <div className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location service__active col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HCM/Annex" className="location_link">
               {t(branchName.annex)}
             </a>
@@ -547,6 +550,7 @@ export default function AnnexRoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
+    <Footer />
     </>
   );
 }

@@ -36,81 +36,81 @@
         "placeHolder":"都市を選択してください",
         "city": [
             {
-                "id": 1,
+                "id": "HCM",
                 "city_name": "ホーチミン"
             },
            {
-                "id": 2,
+                "id": "HN",
                 "city_name": "ハノイ"
             },
             {
-                "id": 3,
+                "id": "DN",
                 "city_name": "ダナン"
             },
             {
-                "id": 4,
+                "id": "HP",
                 "city_name": "ハイフォン"
             }
         ],
         "branch": [
             [
                 {
-                    "branch_id": 5,
-                    "city_id": 1,
+                    "branch_id": "LTT",
+                    "city_id": "HCM",
                     "city_name":"ホーチミン",
                     "branch_name": "東屋 レタントン"
                 },
                 {
-                    "branch_id": 6,
-                    "city_id": 1,
+                    "branch_id": "TVL1",
+                    "city_id": "HCM",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 タイヴァンルン 1"
                 },
                 {
-                    "branch_id": "7日",
-                    "city_id": 1,
+                    "branch_id": "TVL2",
+                    "city_id": "HCM",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 タイヴァンルン 2"
                 },
                 {
-                    "branch_id": 8,
-                    "city_id": 1,
+                    "branch_id": "Annex",
+                    "city_id": "HCM",
                     "city_name": "ホーチミン",
-                    "branch_name": "Azumaya Annex"
+                    "branch_name": "東屋アネックス"
                 },
                 {
-                    "branch_id": 1,
-                    "city_id": 2,
+                    "branch_id": "HBT1",
+                    "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東屋 ハイバーチュン店 1"
                 },
                 {
-                    "branch_id": 2,
-                    "city_id": 2,
+                    "branch_id": "KM2",
+                    "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東屋金馬 2"
                 },
                 {
-                    "branch_id": 3,
-                    "city_id": 2,
+                    "branch_id": "KM3",
+                    "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東屋金馬 3"
                 },
                 {
-                    "branch_id": 4,
-                    "city_id": 2,
+                    "branch_id": "LL",
+                    "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東谷 リン・ラン"
                 },
                 {
-                    "branch_id": 9,
-                    "city_id": 3,
+                    "branch_id": "DN",
+                    "city_id": "DN",
                     "city_name": "ダナン",
                     "branch_name": "東屋ダナン"
                 },
                 {
-                    "branch_id": 10,
-                    "city_id": 4,
+                    "branch_id": "HP",
+                    "city_id": "HP",
                     "city_name": "ハイフォン",
                     "branch_name": "東屋 ハイフォン"
                 }

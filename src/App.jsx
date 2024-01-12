@@ -7,6 +7,8 @@ import Policies from "./Policies";
 import Contract from "./Contract";
 import Service from "./Service";
 import Reservation from "./Reservation";
+import Login from "./Login";
+import SignUp from "./SignUp";
 import HotelHN from "./HN/HNBranch";
 import HotelHCM from "./HCM/HCMBranch";
 import HotelDN from "./DN/DNBranch";
@@ -22,12 +24,12 @@ import AnnexRoomDetail from "./HCM/Annex";
 import DNRoomDetail from "./DN/DN";
 import HPRoomDetail from "./HP/HP";
 // import Massage from "./Massage";
-import Breakfast from "./Test/breakfast";
-import Rotenburo from "./Test/rotenburo";
-import Massage from "./Test/massage";
-import BreakfastPP from "./Test/Cambodia/breakfast";
-import RotenburoPP from "./Test/Cambodia/rotenburo";
-import MassagePP from "./Test/Cambodia/massage"
+import Breakfast from "./Service/Test/breakfast";
+import Rotenburo from "./Service/Test/rotenburo";
+import Massage from "./Service/Test/massage";
+import BreakfastPP from "./Service/Test/Cambodia/breakfast";
+import RotenburoPP from "./Service/Test/Cambodia/rotenburo";
+import MassagePP from "./Service/Test/Cambodia/massage"
 import ScrollIndicator from "./IndicatorScroll";
 import './index.css'
 import './base.css'
@@ -51,8 +53,9 @@ function App() {
           }
 
   return (
+    <>
     <div>
-    <Header />
+    {/* <Header /> */}
     {/* <ScrollIndicator /> */}
     <div className ="top">
             {showTop && (<button className="btn__top" onClick={scrollToTop}>
@@ -61,12 +64,12 @@ function App() {
       <ScrollToTop />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Test/breakfast" element={<Breakfast/>} />
-      <Route path="/Test/rotenburo" element={<Rotenburo/>} />
-      <Route path="/Test/massage" element={<Massage/>} />
-      <Route path="/Test/Cambodia/breakfast" element={<BreakfastPP/>} />
-      <Route path="/Test/Cambodia/rotenburo" element={<RotenburoPP/>} />
-      <Route path="/Test/Cambodia/massage" element={<MassagePP/>} />
+      <Route path="/Service/Test/breakfast" element={<Breakfast/>} />
+      <Route path="/Service/Test/rotenburo" element={<Rotenburo/>} />
+      <Route path="/Service/Test/massage" element={<Massage/>} />
+      <Route path="/Service/Test/Cambodia/breakfast" element={<BreakfastPP/>} />
+      <Route path="/Service/Test/Cambodia/rotenburo" element={<RotenburoPP/>} />
+      <Route path="/Service/Test/Cambodia/massage" element={<MassagePP/>} />
       <Route path="/Policies" element={<Policies />} />
       <Route path="/Reservation" element={<Reservation />} />
       <Route path="/Feature" element={<Feature/>} />
@@ -86,10 +89,19 @@ function App() {
       <Route path="/HCM/Annex" element={<AnnexRoomDetail />} />
       <Route path="/DN/DN" element={<DNRoomDetail />} />
       <Route path="/HP/HP" element={<HPRoomDetail />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/SignUp" element={<SignUp />} />
       {/* <Route path="/Massage" element={<Massage />} /> */}
       </Routes> 
-    <Footer />
+    {/* <Footer /> */}
     </div>
+
+    {/* <div>
+      <Routes>
+      
+      </Routes>
+    </div> */}
+    </>
   )
 }
 

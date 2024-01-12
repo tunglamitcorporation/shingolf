@@ -6,6 +6,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../JSON/data.json";
 import classNames from "classnames";
+import Header from "../Header";
+import Footer from "../Footer";
 
 
 export default function DNRoomDetail() {
@@ -22,6 +24,7 @@ export default function DNRoomDetail() {
   const room4 = t("dn.4", { returnObjects: true });
   return (
     <>
+    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -735,6 +738,7 @@ export default function DNRoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
+    <Footer />
     </>
   );
 }

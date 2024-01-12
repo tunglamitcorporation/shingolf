@@ -1,10 +1,12 @@
 import React from 'react';
-import Booking from '../Booking';
+import Booking from '../../Booking';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
+import Header from "../../Header";
+import Footer from "../../Footer";
 const Rotenburo = () => {
   return (
     <>
+    <Header />
     <div className="policies__header">
     <div className="container">
       <div className="row">
@@ -14,7 +16,7 @@ const Rotenburo = () => {
       </div>
     </div>
   </div>
-  <div className="is-sticky">
+  <div className="">
     <Booking />
   </div>
   <Tabs 
@@ -22,29 +24,30 @@ const Rotenburo = () => {
     <TabList  className="row"
           style={{ justifyContent: "center", padding: "10px" }}> 
           <Tab className="service__location  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-        <a href="/Test/breakfast" className="location_link">Breakfast</a>
+        <a href="/Service/Test/breakfast" className="location_link">Breakfast</a>
         </Tab>
       <Tab className="service__location service__active   col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-      <a href="/Test/rotenburo" className="location_link">Rotenburo</a>
+      <a href="/Service/Test/rotenburo" className="location_link">Rotenburo</a>
       </Tab>
       <Tab className="service__location  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-      <a href="/Test/massage" className="location_link">Massage</a>
+      <a href="/Service/Test/massage" className="location_link">Massage</a>
       </Tab>
       <Tab className="service__location  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-      <a href="/Test/Cambodia/breakfast" className="location_link">Cambodia</a>
+      <a href="/Service/Test/Cambodia/breakfast" className="location_link">Cambodia</a>
       </Tab>
     </TabList>
     <TabPanel>
     <div className="container">
-      <div className="row">
-          <div className="col-md-12">
-            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704878360/AzumayaWeb/rotenburo__2_dw5ns3.jpg" alt="" />
+      <div className="row justify-content-center">
+          
+            <img className='image-holder' style={{width: "80%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1705047269/AzumayaWeb/rotenburo__1_csd2hb.jpg" alt="" />
           </div>
-      </div>
+      
     </div>
     </TabPanel>
   </Tabs>
    
+    <Footer />
     </>
   );
 };

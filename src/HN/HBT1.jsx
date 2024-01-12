@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import RoomCarousel from "../Carousel";
+import Header from "../Header";
+import Footer from "../Footer";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../JSON/data.json";
@@ -25,6 +27,7 @@ export default function HBT1RoomDetail() {
   const room7 = t("hbt1.7", { returnObjects: true });
   return (
     <>
+    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -69,22 +72,22 @@ export default function HBT1RoomDetail() {
           className="row"
           style={{ justifyContent: "space-around", padding: "10px", textAlign:"justify" }}
         >
-          <li className="service__location service__active col-md-12 col-lg-12 col-xxl-2">
+          <li className="service__location service__active col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/HBT1" className="location_link">
               {t(branchName.hbt1)}
             </a>
           </li>
-          <li className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <li className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/KM2" className="location_link">
               {t(branchName.km2)}
             </a>
           </li>
-          <li className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <li className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/KM3" className="location_link">
               {t(branchName.km3)}
             </a>
           </li>
-          <li className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <li className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/LL" className="location_link">
               {t(branchName.ll)}
             </a>
@@ -966,6 +969,7 @@ export default function HBT1RoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
+    <Footer />
     </>
   );
 }

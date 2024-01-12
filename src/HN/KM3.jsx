@@ -1,6 +1,8 @@
 import Booking from "../Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
+import Header from "../Header";
+import Footer from "../Footer";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -21,6 +23,7 @@ export default function KM3RoomDetail() {
   const room4 = t("km3.4", { returnObjects: true });
   return (
     <>
+    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -65,22 +68,22 @@ export default function KM3RoomDetail() {
           className="row"
           style={{ justifyContent: "space-around", padding: "10px", textAlign:"justify" }}
         >
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/HBT1" className="location_link">
               {t(branchName.hbt1)}
             </a>
           </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/KM2" className="location_link">
               {t(branchName.km2)}
             </a>
           </div>
-          <div className="service__location service__active  col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location service__active  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/KM3" className="location_link">
               {t(branchName.km3)}
             </a>
           </div>
-          <div className="service__location col-md-12 col-lg-12 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
             <a href="/HN/LL" className="location_link">
               {t(branchName.ll)}
             </a>
@@ -742,6 +745,7 @@ export default function KM3RoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
+    <Footer />
     </>
   );
 }

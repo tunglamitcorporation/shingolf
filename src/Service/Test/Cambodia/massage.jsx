@@ -1,10 +1,12 @@
 import React from 'react';
-import Booking from '../../Booking';
+import Booking from '../../../Booking';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
+import Header from "../../../Header";
+import Footer from "../../../Footer";
 const MassagePP = () => {
   return (
     <>
+    <Header />
     <div className="policies__header">
     <div className="container">
       <div className="row">
@@ -14,19 +16,19 @@ const MassagePP = () => {
       </div>
     </div>
   </div>
-  <div className="is-sticky">
+  <div className="">
     <Booking />
   </div>
   <Tabs className="container-fluid" style={{marginTop: 20}}>
     <TabList  className="row" style={{ justifyContent: "center", padding: "10px" }}> 
       <Tab className="service__location  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-        <a href="/Test/Cambodia/breakfast" className="location_link">Breakfast</a>
+        <a href="/Service/Test/Cambodia/breakfast" className="location_link">Breakfast</a>
         </Tab>
       <Tab className="service__location  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-      <a href="/Test/Cambodia/rotenburo" className="location_link">Rotenburo</a>
+      <a href="/Service/Test/Cambodia/rotenburo" className="location_link">Rotenburo</a>
       </Tab>
       <Tab className="service__location service__active  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
-      <a href="/Test/Cambodia/massage" className="location_link">Massage</a>
+      <a href="/Service/Test/Cambodia/massage" className="location_link">Massage</a>
       </Tab>
     </TabList>
     <TabPanel>
@@ -40,6 +42,7 @@ const MassagePP = () => {
     </TabPanel>
   </Tabs>
    
+    <Footer />
     </>
   );
 };

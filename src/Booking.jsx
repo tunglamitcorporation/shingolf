@@ -12,11 +12,14 @@ export default function Booking (){
     const [endDate, setEndDate] = useState(null);
     console.log(startDate);
     console.log(endDate); 
+   
     const [selectedCity, setSelectedCity] = useState();
     // (`${t('header.hcm')}`);
     const [selectedBranch, setSelectedBranch] = useState();
     const flatBranches = [].concat(...branch)
-    const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
+    const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
+    console.log(selectedCity);
+    console.log(selectedBranch);
     return(
         <div>              
         <div className="content__booking">
@@ -56,7 +59,7 @@ export default function Booking (){
                     value={selectedCity}
                     onChange={(e)=>setSelectedCity(e.target.value)}>
                         {city.map(item => (
-                            <option key={item.id} value={item.city_name}>{item.city_name}</option>
+                            <option key={item.id} value={item.id}>{item.city_name}</option>
                         ))}
                         <option value="" disabled selected hidden>
                         {t('booking.placeHolder')}
@@ -71,14 +74,14 @@ export default function Booking (){
                     value={selectedBranch}
                     onChange={(e)=>setSelectedBranch(e.target.value)}>
                         {filteredBranches.map(item =>(
-                            <option key = {item.branch_id} value={item.branch_name}>{item.branch_name}</option>
+                            <option key = {item.branch_id} value={item.branch_id}>{item.branch_name}</option>
                         ))}
                     </select>
                 </div>
                 </div>
                 <div className="col-md-2">
                 <button className="base__btn btn--mobile">{t('booking.reserve')}
-                    <Link to = '/Reservation'></Link>
+                    <Link to = {`/${selectedCity}/${selectedBranch}`}></Link>
                 </button> 
                 </div>  
                 </div>

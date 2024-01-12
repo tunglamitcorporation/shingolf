@@ -36,80 +36,80 @@
         "placeHolder":"Please choose a city",
         "city": [
             {
-                "id": 1,
+                "id": "HCM",
                 "city_name": "Ho Chi Minh"
             },
             {
-                "id": 2,
+                "id": "HN",
                 "city_name": "Ha Noi"
             },
             {
-                "id": 3,
+                "id": "DN",
                 "city_name": "Da Nang"
             },
             {
-                "id": 4,
+                "id": "HP",
                 "city_name": "Hai Phong"
             }
         ],
         "branch": [
             {
-                "branch_id": 5,
-                "city_id": 1,
+                "branch_id": "LTT",
+                "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
             },
             {
-                "branch_id": 6,
-                "city_id": 1,
+                "branch_id": "TVL1",
+                "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
             },
             {
-                "branch_id": 7,
-                "city_id": 1,
+                "branch_id": "TVL2",
+                "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
             },
             {
-                "branch_id": 8,
-                "city_id": 1,
+                "branch_id": "Annex",
+                "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
             },
             {
-                "branch_id": 1,
-                "city_id": 2,
+                "branch_id": "HBT1",
+                "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Hai Ba Trung 1"
             },
             {
-                "branch_id": 2,
-                "city_id": 2,
+                "branch_id": "KM2",
+                "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 2"
             },
             {
-                "branch_id": 3,
-                "city_id": 2,
+                "branch_id": "KM3",
+                "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 3"
             },
             {
-                "branch_id": 4,
-                "city_id": 2,
+                "branch_id":"LL",
+                "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Linh Lang"
             },
             {
-                "branch_id": 9,
-                "city_id": 3,
+                "branch_id": "DN",
+                "city_id": "DN",
                 "city_name": "Da Nang",
                 "branch_name": "Azumaya Da Nang Hotel"
             },
             {
-                "branch_id": 10,
-                "city_id": 4,
+                "branch_id": "HP",
+                "city_id": "HP",
                 "city_name": "Hai Phong",
                 "branch_name": "Azumaya Hai Phong Hotel"
             }
@@ -141,7 +141,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "No 3",
                 "hasLink": true,
-                "link": "/Test/rotenburo"
+                "link": "/Service/Test/rotenburo"
             },
             {
                 "id": 4,
@@ -150,7 +150,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
                 "hasLink": true,
                 "num": "No 4",
-                "link": "/Test/breakfast"
+                "link": "/Service/Test/breakfast"
             },
             {
                 "id": 5,
@@ -173,7 +173,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "No 7",
                 "hasLink": true,
-                "link": "/Test/massage"
+                "link": "/Service/Test/massage"
             },
             {
                 "id": 8,

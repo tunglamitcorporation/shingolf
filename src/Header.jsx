@@ -1,18 +1,144 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { scroller } from "react-scroll";
+import { useState, useEffect } from "react";
 function Header() {
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+  const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
   const feature = t("feature.feature_item", { returnObjects: true });
-  const handleClick = () => {
-    document.getElementsByClassName(
-      "header__mobile-navbar-list"
-    ).style.display = "none";
-  };
+  const [isOpen, setIsOpen] = useState(false)
+  // const handleClick = () => {
+  //   document.getElementsByClassName(
+  //     "header__mobile-navbar-list"
+  //   ).style.display = "none";
+  // };
+  const toggleHeader = () => {
+      setIsOpen(!isOpen)
+  }
+  useEffect(()=>{
+    if(isOpen) {
+      document.body.style.position= "fixed";
+    }else{
+      document.body.style.position = "";
+    }
+  })
+ 
+  const HeaderMobile = () => {
+    return(
+    <ul className={`header__mobile-navbar-list ${isOpen ? 'open' :''}`}>
+          <button
+            onClick={()=> setIsOpen(false)}
+            className="header__mobile-navbar-closed"
+          >
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+          <li className="header__mobile-navbar-item">
+            <Link
+              onClick={()=> setIsOpen(false)}
+              Link
+              to="/"
+              className="header__mobile-navbar-link"
+            >
+              {t("header.home")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/Policies"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.policies")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/HN/HNBranch"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.hn")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/HCM/HCMBranch"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.hcm")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/DN/DNBranch"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.dn")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/HP/HPBranch"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.hp")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/Reservation"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.reservation")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/Feature"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.feature")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="Service/Test/breakfast"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.service")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/Massage"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.massage")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/Contract"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.contract")}
+            </Link>
+          </li>
+        </ul>
+    )
+  }
   return (
     <>
       <div className='top-header'>
@@ -57,7 +183,7 @@ function Header() {
             <li className="header__navbar-item header-reserve">
               <Link
                 className="header__navbar-link header-reserve"
-                to="/BrandDetail"
+                to="/Reservation"
                 style={{ color: "#fff" }}
               >
                 {t("header.cambodia")}
@@ -65,10 +191,12 @@ function Header() {
             </li>
             <li className="header__navbar-item header-reserve">
               <Link
+                to = "/Login"
+                target="_blank"
                 className="header__navbar-link header-reserve"
                 style={{ color: "#fff" }}
               >
-                Log In / Sign Up
+                Sign In
               </Link>
             </li>
             {/* <li className="header__navbar-item header-reserve btn-lang">
@@ -91,7 +219,16 @@ function Header() {
             />
           </Link>
         </div>
-        <label htmlFor="header__mobile-input" className="header__mobile">
+        <div className="btn__header-mobile">
+          <button
+           onClick={toggleHeader}
+           className="header__mobile">
+            <i className="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <HeaderMobile />
+        {/* {isOpen && <HeaderMobile />} */}
+        {/* <label htmlFor="header__mobile-input" className="header__mobile">
           <i className="fa-solid fa-bars"></i>
         </label>
         <input
@@ -103,116 +240,8 @@ function Header() {
         <label
           htmlFor="header__mobile-input"
           className="header__mobile-overlay"
-        ></label>
-        <ul className="header__mobile-navbar-list">
-          <label
-            htmlFor="header__mobile-input"
-            className="header__mobile-navbar-closed"
-          >
-            <i className="fa-solid fa-xmark"></i>
-          </label>
-          <li className="header__mobile-navbar-item">
-            <Link
-              htmlFor="header__mobile-input"
-              onClick={handleClick}
-              Link
-              to="/"
-              className="header__mobile-navbar-link"
-            >
-              {t("header.home")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/Policies"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.policies")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/HN/HNBranch"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.hn")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/HCM/HCMBranch"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.hcm")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/DN/DNBranch"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.dn")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/HP/HPBranch"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.hp")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/Reservation"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.reservation")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/Feature"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.feature")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/Test/breakfast"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.service")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/Massage"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.massage")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/Contract"
-              onClick={handleClick}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.contract")}
-            </Link>
-          </li>
-        </ul>
+        ></label> */}
+        
       </div>
       <div className="header ">
         <div className="header__PC">
@@ -277,7 +306,7 @@ function Header() {
                         </ul>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Test/breakfast">
+                      <Link className="header__navbar-link-2" to="/Service/Test/breakfast">
                         {t("header.service")}
                       </Link>
                     </li>
