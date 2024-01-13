@@ -12,10 +12,6 @@ export default function Login() {
       <h4 className="animation a2">Log in to your account using email and password</h4>
      </div>
 		<form className="login_card-form">
-			<div className="login_input animation a3">
-				<input type="text" className="login_input-field" required/>
-				<label className="login_input-label ml-0">Full name</label>
-			</div>
 						<div className="login_input animation a4">
 				<input type="text" className="login_input-field" required/>
 				<label className="login_input-label ml-0">Email</label>

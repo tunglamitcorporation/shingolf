@@ -136,6 +136,8 @@ code {
   cursor: pointer;
 }
 .container_login {
+  overflow: scroll;
+  
   display: flex;
   height: 100vh !important;
   
@@ -169,11 +171,37 @@ code {
   margin-bottom: 60px;
  
 }
+.left_signup{
+  flex: 1;
+  background-color: black;
+  transition: 0.5s;
+  background-image: url("https://res.cloudinary.com/dtdfsaaei/image/upload/v1705024651/AzumayaWeb/login-bg_xvuisw.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: 1px solid #482979;
+  border-top: 1px solid #482979;
+  border-bottom: 1px solid #482979;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.right_signup{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: right;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  border: 1px solid #482979;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 .animation {
   animation-name: move;
-  animation-duration: .8s;
+  animation-duration: .5s;
   animation-fill-mode: both;
-  animation-delay: 2s;
 }
 .a0{
   animation-delay: 1.9s;
@@ -210,7 +238,12 @@ code {
 .a9 {
   animation-delay: 2.9s;
 }
-
+.a10 {
+  animation-delay: 3s;
+}
+.a11 {
+    animation-delay: 3.1s;
+ }
 @keyframes move {
   0% {
     opacity: 0;
@@ -233,12 +266,24 @@ code {
 
   100% {
     opacity: 1;
+    padding: 20px 40px;
+    width: 440px;
+  }
+}
+@keyframes right {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
     padding: 20px 20px;
     width: 440px;
   }
 }
 .login_card-form {
-	padding: 2rem 1rem 0;
+	padding: 0 5px;
 }
 
 .login_input  {
@@ -368,6 +413,7 @@ code {
   align-items: center;
   justify-content: flex-end;
   list-style: none;
+  margin-right: 30px;
 }
 .header__navbar-list{
   height: 100%;
@@ -1740,7 +1786,9 @@ a:hover {
   font-weight: bold;
   color: #482979;
 }
-
+.content__banner{
+  height: 200px;
+}
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{
     color: white;
@@ -1956,6 +2004,16 @@ a:hover {
   margin: 0;
   border: none
 }
+.left_signup{
+  display: none;
+}
+.right_signup{
+  margin: 0;
+  border: none;
+}
+.container-login{
+  padding-top:0;
+}
 }
 /* tablet */
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em){
@@ -2036,6 +2094,13 @@ a:hover {
   margin: 0;
 }
 .left_login{
+  margin: 0;
+  border: none;
+}
+.left_signup{
+  display: none;
+}
+.right_signup{
   margin: 0;
   border: none;
 }

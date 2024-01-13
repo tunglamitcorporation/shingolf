@@ -40,7 +40,7 @@ const Rotenburo = () => {
     <div className="container">
       <div className="row justify-content-center">
           
-            <img className='image-holder' style={{width: "80%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1705047269/AzumayaWeb/rotenburo__1_csd2hb.jpg" alt="" />
+            <img className='image-holder' style={{width: "80%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1705112600/AzumayaWeb/rotenburo__3_q9ttiw.jpg" alt="" />
           </div>
       
     </div>
