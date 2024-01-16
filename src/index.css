@@ -725,7 +725,6 @@ code {
   font-weight: 600;
   background-color: #9CD53A ;
   cursor: default;
-  
 }
 .content__news-branch--bg{
   display: inline-block;
@@ -737,6 +736,17 @@ code {
   font-weight: 600;
   cursor: default;
   background-color: #F75A5A;
+}
+.content__news-pp{
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+  height: 22px;
+  line-height: 22px;
+  color: var(--white--color);
+  font-weight: 600;
+  cursor: default;
+  background-color: #833D1F;
 }
 .content__news-branch--bg2{
   background-color: #6498E7;
@@ -1764,7 +1774,7 @@ a:hover {
 }
 .massage-hn a{
   position: absolute;
-  top:58%;
+  top:62.8%;
   left: 46% ;
   font-size: 1.6rem;
   font-weight: bold;
@@ -1772,7 +1782,7 @@ a:hover {
 }
 .massage-dn a{
   position: absolute;
-  top:58%;
+  top:62.8%;
   left: 65%;
   font-size: 1.6rem;
   font-weight: bold;
@@ -1780,7 +1790,7 @@ a:hover {
 }
 .massage-hcm a{
   position: absolute;
-  top:58%;
+  top:62.8%;
   left: 28%;
   font-size: 1.6rem;
   font-weight: bold;

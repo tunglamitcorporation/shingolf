@@ -10,7 +10,7 @@ function Header() {
   };
   const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
-  const feature = t("feature.feature_item", { returnObjects: true });
+  const feature = t("feature_pp.feature_item", { returnObjects: true });
   const [isOpen, setIsOpen] = useState(false)
   // const handleClick = () => {
   //   document.getElementsByClassName(
@@ -41,7 +41,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/"
+              to="/Cambodia/Cambodia"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}
@@ -67,7 +67,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Feature"
+              to="/Cambodia/Feature"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -125,7 +125,7 @@ function Header() {
             <div className="container">
               <div className="row">
                 <div className="col-md-12">
-                  <Link to="/">
+                  <Link to="/Cambodia/Cambodia">
                     <img
                       src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png"
                       alt="logo"
@@ -151,7 +151,7 @@ function Header() {
                 to="/"
                 style={{ color: "#fff" }}
               >
-                {t("header.cambodia")}
+                {t("header.vietnam")}
               </Link>
             </li>
             <li className="header__navbar-item header-reserve">
@@ -191,7 +191,7 @@ function Header() {
           </ul>
         </div>
         <div className="header__mobile-logo">
-          <Link to="/">
+          <Link to="/Cambodia/Cambodia">
             <img
               src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png"
               alt="logo"
@@ -230,7 +230,7 @@ function Header() {
                         Test Page
                       </Link>
                     </li> */}
-                      <Link className="header__navbar-link-2" to="/">
+                      <Link className="header__navbar-link-2" to="/Cambodia/Cambodia">
                         {t("header.home")}
                       </Link>
                     </li>
@@ -240,20 +240,20 @@ function Header() {
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Room">
+                      <Link className="header__navbar-link-2" to="/Cambodia/PhnomPenh">
                         {t("header.room")}
                       </Link>
                     </li>
                     {/* <li className="header__navbar-item">
                             <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></li> */}
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Feature">
+                      <Link className="header__navbar-link-2" to="/Cambodia/Feature">
                         {t("header.feature")}
                       </Link>
                       <ul className="header__navbar-item-list">
                         {feature.map((item)=>(
                           <li className = "header__navbar-sub-link"><Link 
-                          to ={`/Feature#${item.id}`}
+                          to ={`/Cambodia/Feature#${item.id}`}
                           onClick={()=>scroller.scrollTo(`${item.id}`,
                           {duration:0,
                           delay:0,

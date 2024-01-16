@@ -184,7 +184,7 @@ function Header() {
             <li className="header__navbar-item header-reserve">
               <Link
                 className="header__navbar-link header-reserve"
-                to="/Cambodia/CambodiaHome"
+                to="/Cambodia/Cambodia"
                 style={{ color: "#fff" }}
               >
                 {t("header.cambodia")}

@@ -7,9 +7,9 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import {Link} from "react-router-dom"
-export default function Home() {
+export default function Cambodia() {
   const { t } = useTranslation();
-  const featureItem = t("feature.feature_item", { returnObjects: true });
+  const featureItem = t("feature_pp.feature_item", { returnObjects: true });
   const homeData = t("home_pp", { returnObjects: true });
   const pp = t("pp-branch.image", { returnObjects: true });
   console.log(pp);
@@ -18,7 +18,7 @@ export default function Home() {
   // console.log(homeNewsData)
   const WelcomeData = t("home_pp.welcome", { returnObjects: true });
 
-  return (
+  return ( 
     <>
     <Header />
     <div className="homepage">
@@ -29,8 +29,8 @@ export default function Home() {
       <AnimatedOnScroll>
         <div className="content__news">
           <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-8 offset-md-1">
+            <div className="row justify-content-center">
+              <div className="col-12 col-md-8">
                 <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home_pp.news_title")}</h2>
                 <ul className="content__news-list">
                   {homeNewsData.map((item) => (
@@ -39,11 +39,7 @@ export default function Home() {
                         {item.month} {item.day} {item.year}{" "}
                       </span>
                       <span
-                        className={classNames({
-                          "content__news-branch": item.location == "Hanoi",
-                          "content__news-branch--bg":
-                            item.location == "All Branches",
-                        })}
+                        className="content__news-pp"
                       >
                         {item.location}
                       </span>

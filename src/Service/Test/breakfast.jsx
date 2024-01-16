@@ -39,7 +39,7 @@ const Breakfast = () => {
     <TabPanel>
     <div className="container">
       <div className="row justify-content-center">
-            <img className='image-holder' style={{width: "80%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1705113756/AzumayaWeb/breakfast__3_bpy1cu.jpg" alt="" />
+      <img className='image-holder' style={{width: "80%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1705287708/breakfast__4_cfzc8i.jpg" alt="" />
       </div>
     </div>
     </TabPanel>

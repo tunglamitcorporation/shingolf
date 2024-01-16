@@ -38,10 +38,8 @@ const BreakfastPP = () => {
 
     <TabPanel>
     <div className="container">
-      <div className="row">
-          <div className="col-md-12">
-            <img className='image-holder' style={{width: "100%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1704681367/AzumayaWeb/breakfast-pp_bmqve7.jpg" alt="" />
-          </div>
+      <div className="row justify-content-center">
+            <img className='image-holder' style={{width: "80%", height: "100%"}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1705287704/breakfast-pp_1_l6vfuo.jpg" alt="" />
       </div>
     </div>
     </TabPanel>

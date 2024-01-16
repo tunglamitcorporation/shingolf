@@ -23,7 +23,9 @@ import LTTRoomDetail from "./HCM/LTT";
 import AnnexRoomDetail from "./HCM/Annex";
 import DNRoomDetail from "./DN/DN";
 import HPRoomDetail from "./HP/HP";
-import CambodiaHome from "./Cambodia/Cambodia";
+import Cambodia from "./Cambodia/Cambodia";
+import Feature_PP from "./Cambodia/Feature";
+import PhnomPenhRoomDetail from "./Cambodia/PhnomPenh";
 // import Massage from "./Massage";
 import Breakfast from "./Service/Test/breakfast";
 import Rotenburo from "./Service/Test/rotenburo";
@@ -90,7 +92,9 @@ function App() {
       <Route path="/HCM/Annex" element={<AnnexRoomDetail />} />
       <Route path="/DN/DN" element={<DNRoomDetail />} />
       <Route path="/HP/HP" element={<HPRoomDetail />} />
-      <Route path="/Cambodia/Cambodia" element={<CambodiaHome />} />
+      <Route path="/Cambodia/Cambodia" element={<Cambodia/>} />
+      <Route path="/Cambodia/Feature" element={<Feature_PP />} />
+      <Route path="/Cambodia/PhnomPenh" element={<PhnomPenhRoomDetail />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/SignUp" element={<SignUp />} />
       {/* <Route path="/Massage" element={<Massage />} /> */}
