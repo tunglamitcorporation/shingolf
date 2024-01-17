@@ -1,13 +1,16 @@
-import Booking from "../Booking";
+import Booking from "./Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
+import Header from "./Header";
+import Footer from "./Footer";
+import { useLocation, useParams} from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../JSON/data.json";
 import classNames from "classnames";
+import GalleryPP from "../FancyBox/PhnomPenh/GalleryPP";
 
 export default function PhnomPenhRoomDetail() {
   const { t } = useTranslation();
@@ -21,6 +24,29 @@ export default function PhnomPenhRoomDetail() {
   const room2 = t("pp.2", { returnObjects: true });
   const room3 = t("pp.3", { returnObjects: true });
   const room4 = t("pp.4", { returnObjects: true });
+
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const initialActiveTab = parseInt(params.get('tab'), 10) || 0;
+  const [activeTab, setActiveTab] = useState(initialActiveTab);
+
+  useEffect(() => {
+    // Update the selected tab when the URL parameter changes
+    const newActiveTab = parseInt(params.get('tab'), 10) || 0;
+    if (newActiveTab !== activeTab) {
+      setActiveTab(newActiveTab);
+    }
+  }, [params, activeTab]);
+
+  const handleTabSelect = (index) => {
+    // Update the URL parameter when a tab is selected
+    const newParams = new URLSearchParams(search);
+    newParams.set('tab', index);
+    // Replace the current URL without triggering a full page reload
+    window.history.replaceState(null, null, `?${newParams.toString()}`);
+    setActiveTab(index)
+  };
+
   return (
     <>
     <Header />
@@ -66,6 +92,8 @@ export default function PhnomPenhRoomDetail() {
         <Tabs className="container-fluid">
         <TabPanel>
           <Tabs
+            defaultIndex={activeTab}
+            onSelect={handleTabSelect}
             selectedTabClassName="service__active"
             className="col-md-10 offset-md-1"
           >
@@ -740,7 +768,7 @@ export default function PhnomPenhRoomDetail() {
                   </div>
                 </div>
             </TabPanel>
-                        <TabPanel>
+              <TabPanel>
               <div className="service__content">
                 <div className="room__content">
                   <div className="room__title">
@@ -780,65 +808,92 @@ export default function PhnomPenhRoomDetail() {
                           <td colSpan={2}>{t("room_pp.breakfastNote2")}</td>
                         </tr>
                         <tr>
-                          <th rowSpan={6}>{t("room_pp.breakfast")}</th>
-                          <td colSpan={2}>{t("room_pp.ground")}</td>
-                          <td rowSpan={6}>{t("room_pp.visitor")}</td>
-                        </tr>
-                        {/* <tr>
-                          <th rowSpan={2}>{t("room_pp.tel")}</th>
-                          <td colSpan={2}>{t("room_pp.tel_fee1")}</td>
+                          <th rowSpan={10}>{t("room_pp.rotenburo")}</th>
+                          <td colSpan={2}>{t("room_pp.rotenFloor")}</td>
+                          <td rowSpan={10}></td>
                         </tr>
                         <tr>
-                          <td colSpan={2}>{t("room_pp.tel_fee2")}</td>
-                        </tr>
-                        <tr>
-                          <th>{t("room_pp.rental_car")}</th>
-                          <td colSpan={2}>{t("room_pp.ask")}</td>
-                        </tr>
-                        <tr>
-                          <th>{t("room_pp.tour")}</th>
-                          <td colSpan={2}>{t("room_pp.ask")}</td>
-                        </tr>
-                        <tr>
-                          <th>{t("room_pp.visa")}</th>
-                          <td colSpan={2}>{t("room_pp.ask")}</td>
-                        </tr>
-                        <tr>
-                          <th>{t("room_pp.food")}</th>
-                          <td colSpan={2}>{t("room_pp.ask")}</td>
-                        </tr>
-                        <tr>
-                          <th>{t("room_pp.roten")}</th>
-                          <td className="pre-line" colSpan={2}>
-                            {t("room_pp.rotenContent")}
+                        <td style={{width:"10%"}} rowSpan={4}>{t("room_pp.weekday")}</td>
+                        <td>                            
+                          <strong>{t("room_pp.rotenContent1")}</strong>
                           </td>
                         </tr>
                         <tr>
-                          <th>{t("room_pp.breakfast")}</th>
-                          <td className="pre-line" colSpan={2}>
-                            {t("room_pp.breakfastContent")}
+                          <td>{t("room_pp.rotenNote1")}</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <strong>{t("room_pp.rotenContent2")}</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>{t("room_pp.rotenNote2")}</td>
+                        </tr>
+                        <tr>
+                        <td style={{width:"10%"}} rowSpan={2}>{t("room_pp.weekend")}</td>
+                        <td>                            
+                          <strong>{t("room_pp.rotenContent3")}</strong>
                           </td>
-                        </tr> */}
+                        </tr>
+                        <tr>
+                          <td>{t("room_pp.rotenNote2")}</td>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                          <td colSpan={2}>
+                            <strong>
+                            {t("room_pp.rotenNote3")}
+                            </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td colSpan={2}>{t("room_pp.rotenNote4")}</td>
+                        </tr>
+                       <tr>
+                        <th rowSpan={5}>{t("room_pp.massage")}</th>
+                        <td colSpan={2}>{t("room_pp.rotenFloor")}</td>
+                        <td rowSpan={5}>{t("room_pp.massageVisitor")}</td>
+                       </tr>
+                       <tr>
+                        <td style={{width:"10%"}} rowSpan={2}>{t("room_pp.weekday")}</td>
+                        <td>
+                        <strong>
+                        {t("room_pp.massageContent1")}
+                        </strong>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>{t("room_pp.massageNote1")}</td>
+                       </tr>
+                       <tr>
+                        <td rowSpan={2} style={{width:"10%"}}>{t("room_pp.weekend")}</td>
+                        <td>
+                          <strong>
+                          {t("room_pp.massageContent2")}
+                          </strong>
+                        </td>
+                       </tr>
+                       <tr>
+                        <td>{t("room_pp.massageNote1")}</td>
+                       </tr>
+                       <tr>
+                       </tr>
+                       <tr>
+                          <th>{t("room_pp.reception")}</th>
+                          <td colSpan={2}>{t("room_pp.receptionAsk")}</td>
+                          <td></td>
+                       </tr>
                       </tbody>
                     </table>
                     <div className="col-md-12">
-                      <div className="table-footer">
-                        <h1>{t("room_pp.board")}</h1>
+                      <div className="table-footer pre-line">
+                        <h1>{t("room_pp.attention")}</h1>
                         <p className="mt-5">
-                          {t("room_pp.contact1")}
-                          <a className="ml-1" href={`tel:${t("room_pp.phone")}`}>
-                          {t("room_pp.phone")}
-                          </a>
-                          <br />
-                          {t("room_pp.contact2")}
-                          <a className="ml-1" href={`mailto:${t("room_pp.email")}`}>
-                            {t("room_pp.email")}
-                          </a>
-                          <br />
-                          {t("room_pp.contact3")}
-                          <a className="ml-1" href={`https://${t("room_pp.website")}`}>
-                            {t("room_pp.website")}
-                          </a>
+                          {t("room_pp.attentionContent")}
+                        </p>
+                        <p className="bold">
+                          {t("room_pp.thanks")}
                         </p>
                       </div>
                     </div>
@@ -847,7 +902,24 @@ export default function PhnomPenhRoomDetail() {
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="service__content">
+            <div className="service__content">
+                <div className="room__content">
+                  <div className="room__title">
+                    {t("room_pp.gallery")}
+                    <img
+                      className="style-line"
+                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      alt=""
+                    />
+                  </div>
+                  <div className="room__container">
+              <GalleryPP />
+              </div>
+              </div>
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <div className="service__content" >
                 <div className="room__content">
                   <div className="room__title">
                     {t("room_pp.location")}
@@ -886,7 +958,7 @@ export default function PhnomPenhRoomDetail() {
                         <div className="room__container">
                           <div className="gg-map">
                             <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1425198025727!2d105.80795031540231!3d21.026982693213633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab6c8e38f813%3A0x8b329251df596aaf!2sAzumaya%20Kim%20M%C3%A3%203!5e0!3m2!1sen!2s!4v1575276143809!5m2!1sen!2s"
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.898317763967!2d104.91757566157965!3d11.55914669421962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513c1345804d%3A0xeeaf7f7f10b9ffc1!2sAzumaya%20Hotel%20Phnom%20Penh!5e0!3m2!1sen!2s!4v1705458694367!5m2!1sen!2s"
                               style={{ border: 0 }}
                               allowFullScreen
                             />

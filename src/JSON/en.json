@@ -147,7 +147,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "No 3",
                 "hasLink": true,
-                "link": "/Service/Test/breakfast#rotenburo"
+                "link": "/Service/Test/Vietnam/Service?tab=rotenburo"
             },
             {
                 "id": 4,
@@ -156,7 +156,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
                 "hasLink": true,
                 "num": "No 4",
-                "link": "/Service/Test/breakfast"
+                "link": "/Service/Test/Vietnam/Service?tab=breakfast"
             },
             {
                 "id": 5,
@@ -179,7 +179,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "No 7",
                 "hasLink": true,
-                "link": "/Service/Test/massage"
+                "link": "/Service/Test/Vietnam/Service?tab=massage"
             },
             {
                 "id": 8,
@@ -250,11 +250,11 @@
             },
             {
                 "name": "EARLY CHECK-IN",
-                "content": "Will be subject to the availability of hotel room status.- Check in early until 10:00 : 100% charged of one night room rate.- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
+                "content": "Will be subject to the availability of hotel room status.\n- Check in early until 10:00 : 100% charged of one night room rate.\n- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
             },
             {
                 "name": "CHECK-OUT LATE",
-                "content": "Will be subject to the availability of hotel room status. - Check out late until 18:00 : 50% charged of the one night.- Check out late from 18:00 : 100% charged of the one night."
+                "content": "Will be subject to the availability of hotel room status.\n- Check out late until 18:00 : 50% charged of the one night.\n- Check out late from 18:00 : 100% charged of the one night."
             },
             {
                 "name": "NO SHOW",
@@ -262,19 +262,19 @@
             },
             {
                 "name": "LATE CANCELLATION",
-                "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
+                "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.\n- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
             },
             {
                 "name": "EARLY CHECK-OUT",
-                "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
+                "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
             },
             {
                 "name": "Exchange rate is based on",
-                "content": "The guest with Corporate Contract: the hotel rate on check in date is applied.The guest without Corporate Contract: the selling rate from Vietcombank at 6pm on check in date is applied."
+                "content": "The guest with Corporate Contract: the hotel rate on check in date is applied.\nThe guest without Corporate Contract: the selling rate from Vietcombank at 6pm on check in date is applied."
             },
             {
                 "name": "Please be noted ",
-                "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.2.The valid Passport ( non Vietnamese ) or ID ( Vietnamese ) is required for guest registration as Vietnamese laws."
+                "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Vietnamese ) or ID ( Vietnamese ) is required for guest registration as Vietnamese laws."
             }
         ]
     },
@@ -2875,19 +2875,37 @@
         "breakfastNote1":"*Before 6:00 am: take-away breakfast is available.",
         "breakfastNote2":"Please reserve at reception in advance (riceball/sandwich)",
         "visitor":"Visitor\n\nBuffet or\n Japanese set 8$\n\nOther breakfast\nset menu 6$",
+        "rotenburo":"Open Air Hot Bath (Only for male)",
+        "rotenFloor":"7th Floor",
+        "rotenContent1":"5:30 am - 10:00 am",
+        "rotenNote1":"(Last entry 9:30 am)",
+        "rotenContent2":"5:30 am - 11:00 am",
+        "rotenNote2":"(Last entry 10:30 am)",
+        "rotenContent3":"7:00 am - 11:00 am",
+        "rotenNote3":"*We open for ladies at 11:15pm - 1:15am",
+        "rotenNote4":"*Please bring bath towels & hand towels from room",
         "massage": "Foot Massage",
-        "massageContent": "Mon ~ Fri: 14:00 - 22:30 (last entry: 22:15)\nWeekend: 12:00 - 22:30 (last entry: 22:15)",
-        "ask": "Ask receptionist",
+        "massageContent1": "1:00 pm - 10:00 pm",
+        "massageNote1":"(Last order 9:20 pm)",
+        "massageContent2": "10:00 am - 10:00 pm",
+        "massageVisitor":"Visitor\n40min：10$\n70min：15$\n100min：20$\n\nStaying guest\n10% discount",
+        "reception": "Reception",
+        "receptionAsk":"Please dial \" 0 \" or \" 100 \" to contact us (24/7 available)",
+        "attention": "ATTENTION: TO KEEP YOURSELF SAFE OUTSIDE",
+        "attentionContent":"Recently, the number of snatching crime by motor driver is increasing\nPlease be aware of bag snatcher while you are walking along the streets.\nIf any help is needed, please don't hesitate to call us.",
+        "thanks":"Thank you for choosing us! Please enjoy your stay in Azumaya!",
         "board": "Azumaya Hotel Management Board",
         "contact1": "Reservation can be made via phone:",
         "contact2": "or Email:",
         "contact3": "or visit our website:",
+        "tel":"Tel",
         "phone": "(+855) 23 218 961",
         "email": "reservation@azumayacambodia.com",
         "website": "www.azumayavietnam.com",
         "location": "Location",
-        "locationContent": "Azumaya Hotel Hai Phong branch is located in the middle of city; just 10 minutes far from airport and 30 minutes far from Nomura Industrial Zone.",
-        "address": "Address ： 195 Vu Trong Khanh Str.,(195/420 Lach Tray Str.,) Ngo Quyen Dist., Hai Phong",
+        "gallery": "Gallery",
+        "locationContent": "We are located in front of the Phnom Penh Tower, which can save up your commute time. In addition, it is easily accessible to various sites in Phnom Penh.",
+        "address": "Address : No. 302 St.228, Phnom Penh, Cambodia (In front of Phnom Penh Tower)",
         "emailTitle": "Email",
         "type": "Room Type",
         "rate": "Room Rate",
@@ -2912,6 +2930,9 @@
             },
             {
                 "name": "Hotel Service"
+            },
+            {
+                "name": "Gallery"
             },
             {
                 "name": "Location"
@@ -3159,6 +3180,51 @@
                 "content": "UNAGI HITSUMABUSHI UNA UNA Specialty Hitsumabishi is served with chopped up Unagi(Eel), Soup. Dashi, Pickles&Condiments such as Nori (Seaweed), Wasabi and Spring Onion. Hitsumabishi is Nagoya’s style of cooking freshwater eel, and there are three ways to eat it. First, divide the bowl into portions. Enjoy the first portion on its own and relish the eel’s depth of flavour. Then, for the second portion, add nori (seaweed), wasabi, and spring onions to the Hokkaido rice and eel. For the third portion, add the clear dashi to the above mix. Enjoy Hitsumabushi in your favorite way!",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/No.8-Japanese-restaurant-Uya-1024x577_jdtrvl.jpg",
                 "num": "No 8"
+            }
+        ]
+    },
+    "policy_pp": {
+        "title": "Hotel Policies",
+        "data": [
+            {
+                "name": "CHECK-IN",
+                "content": "After 15:00."
+            },
+            {
+                "name": "CHECK-OUT",
+                "content": "Until 12:00"
+            },
+            {
+                "name": "EARLY CHECK-IN",
+                "content": "Will be subject to the availability of hotel room status.\n- Check in early until 10:00 : 100% charged of one night room rate.\n- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
+            },
+            {
+                "name": "CHECK-OUT LATE",
+                "content": "Will be subject to the availability of hotel room status.\n- Check out late until 18:00 : 50% charged of the one night.\n- Check out late from 18:00 : 100% charged of the one night."
+            },
+            {
+                "name": "NO SHOW",
+                "content": "100% charged one night."
+            },
+            {
+                "name": "LATE CANCELLATION",
+                "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.\n- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
+            },
+            {
+                "name": "EARLY CHECK-OUT",
+                "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
+            },
+            {
+                "name":"ADVANNCED PAYMENT BEFORE CHECK-OUT",
+                "content": "We do welcome the payment before check-out to make it smoothly."
+            },
+            {
+                "name": "Exchange rate is based on",
+                "content": "The hotel rate upon check-out date for non-contractor. The selling rate of ACLEDA BANK at 6:00 upon check-out date for contractor."
+            },
+            {
+                "name": "Please be noted ",
+                "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
             }
         ]
     }

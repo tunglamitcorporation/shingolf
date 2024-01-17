@@ -235,7 +235,7 @@ function Header() {
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Policies">
+                      <Link className="header__navbar-link-2" to="/Cambodia/Policies">
                         {t("header.policies")}
                       </Link>
                     </li>
@@ -268,12 +268,12 @@ function Header() {
                         </ul>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Service/Test/breakfast">
+                      <Link className="header__navbar-link-2" to="/Service/Test/Cambodia/Service">
                         {t("header.service")}
                       </Link>
                     </li>
                     <li className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Contact">
+                      <Link className="header__navbar-link-2" to="/Cambodia/PhnomPenh?tab=5">
                         {t("header.contact")}
                       </Link>
                     </li>

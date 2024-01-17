@@ -11,9 +11,7 @@ export default function Booking (){
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
 
-   
     const [selectedCity, setSelectedCity] = useState(city);
-    // (`${t('header.hcm')}`);
     const [selectedBranch, setSelectedBranch] = useState(branch);
 
     console.log(selectedCity);

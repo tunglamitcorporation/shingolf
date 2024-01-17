@@ -10,14 +10,13 @@ export default function Booking (){
     const header = t('header', {returnObjects:true})
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
-    console.log(startDate);
-    console.log(endDate); 
+
    
     const [selectedCity, setSelectedCity] = useState();
-    // (`${t('header.hcm')}`);
     const [selectedBranch, setSelectedBranch] = useState();
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
+
     console.log(selectedCity);
     console.log(selectedBranch);
     return(

@@ -25,19 +25,17 @@ import DNRoomDetail from "./DN/DN";
 import HPRoomDetail from "./HP/HP";
 import Cambodia from "./Cambodia/Cambodia";
 import Feature_PP from "./Cambodia/Feature";
+import Policies_PP from "./Cambodia/Policies";
 import PhnomPenhRoomDetail from "./Cambodia/PhnomPenh";
 // import Massage from "./Massage";
-import Breakfast from "./Service/Test/breakfast";
-import Rotenburo from "./Service/Test/rotenburo";
-import Massage from "./Service/Test/massage";
-import BreakfastPP from "./Service/Test/Cambodia/breakfast";
-import RotenburoPP from "./Service/Test/Cambodia/rotenburo";
-import MassagePP from "./Service/Test/Cambodia/massage"
+import VietnamService from "./Service/Vietnam/Service";
+import CambodiaService from "./Service/Test/Cambodia/Service";
 import ScrollIndicator from "./IndicatorScroll";
 import './index.css'
 import './base.css'
 import {Route, Router, Routes } from 'react-router-dom'
 import ScrollToTop from "./ScrollToTop";
+
 function App() {
   const [showTop, setShowTop] = useState(false)
   useEffect(() =>{
@@ -67,12 +65,8 @@ function App() {
       <ScrollToTop />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Service/Test/breakfast" element={<Breakfast/>} />
-      <Route path="/Service/Test/rotenburo" element={<Rotenburo/>} />
-      <Route path="/Service/Test/massage" element={<Massage/>} />
-      <Route path="/Service/Test/Cambodia/breakfast" element={<BreakfastPP/>} />
-      <Route path="/Service/Test/Cambodia/rotenburo" element={<RotenburoPP/>} />
-      <Route path="/Service/Test/Cambodia/massage" element={<MassagePP/>} />
+      <Route path="/Service/Test/Vietnam/Service" element={<VietnamService />} />
+      <Route path="/Service/Test/Cambodia/Service" element={<CambodiaService />} />
       <Route path="/Policies" element={<Policies />} />
       <Route path="/Reservation" element={<Reservation />} />
       <Route path="/Feature" element={<Feature/>} />
@@ -94,6 +88,7 @@ function App() {
       <Route path="/HP/HP" element={<HPRoomDetail />} />
       <Route path="/Cambodia/Cambodia" element={<Cambodia/>} />
       <Route path="/Cambodia/Feature" element={<Feature_PP />} />
+      <Route path="/Cambodia/Policies" element={<Policies_PP />} />
       <Route path="/Cambodia/PhnomPenh" element={<PhnomPenhRoomDetail />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/SignUp" element={<SignUp />} />

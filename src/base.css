@@ -211,8 +211,8 @@ textarea{
   }  
 .bold{
     font-size: 1.8rem !important;
-    font-weight: 900;
-    color: #482979;
+    font-weight: 900 !important;
+    color: #482979 !important;
 }
 .scroll-indicator {
     height: 100%;
