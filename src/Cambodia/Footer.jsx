@@ -1,4 +1,4 @@
-function Footer() {
+function Footer_PP() {
     return(
         <div className="footer">
         <div className="footer__container">
@@ -182,4 +182,4 @@ function Footer() {
         </div>
     )
 }
-export default (Footer)
+export default Footer_PP

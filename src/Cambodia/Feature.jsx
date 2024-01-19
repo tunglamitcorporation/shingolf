@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import Booking from "./Booking";
-import Header from "./Header";
-import Footer from "./Footer";
 import { useTranslation } from "react-i18next"; 
 import { useEffect, useRef } from 'react';
 export default function Feature_PP() {
@@ -21,7 +19,6 @@ export default function Feature_PP() {
     }, [window.location.hash]);
   return (
     <div>
-    <Header />
       <div className="policies__header">
         <div className="container">
           <div className="row">
@@ -97,7 +94,6 @@ export default function Feature_PP() {
           ) )}
         </div>
       </div>
-    <Footer />
     </div>
   );
 }

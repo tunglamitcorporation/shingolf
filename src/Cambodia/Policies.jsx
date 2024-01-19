@@ -1,14 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import {Link} from 'react-router-dom'
-import Header from "./Header";
-import Footer from "./Footer";
 export default function Policies_PP(){
     const {t} = useTranslation()
     const policiesData = t('policy_pp',{returnObjects:true})
     const data = t('policy_pp.data',{returnObjects:true})
     return(
         <div> 
-    <Header />
             <div className="policies__header">
                     <div classNameName="container">
                         <div className="row">
@@ -55,7 +52,6 @@ export default function Policies_PP(){
                     </div>
                     </div>
                 </div>
-    <Footer />
             </div>
        
     )

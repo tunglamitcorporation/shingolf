@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { scroller } from "react-scroll";
 import { useState, useEffect } from "react";
 import Avatar from 'react-avatar';
-function Header() {
+function Header_PP() {
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -303,4 +303,4 @@ function Header() {
     </>
   );
 }
-export default Header;
+export default Header_PP;

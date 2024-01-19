@@ -2,8 +2,6 @@ import Booking from "../Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-import Header from "../Header";
-import Footer from "../Footer";
 export default function HotelHP(){
     const { t } = useTranslation();
     const brandDetail = t("hp-branch",  {returnObjects: true});
@@ -12,7 +10,6 @@ export default function HotelHP(){
     const HPDetail = t("hp-branch.branch", { returnObjects: true });
     return(
         <div>
-    <Header />
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
@@ -105,7 +102,6 @@ export default function HotelHP(){
               </div>
               </div>
         </div>
-    <Footer />
         </div> 
     )
 }

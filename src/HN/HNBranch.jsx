@@ -1,8 +1,6 @@
 import Booking from "../Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
-import Header from "../Header";
-import Footer from "../Footer";
 import classNames from "classnames";
 export default function HotelHN(){
     const { t } = useTranslation();
@@ -12,7 +10,6 @@ export default function HotelHN(){
     const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
     return(
         <div>
-    <Header />
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
@@ -106,7 +103,6 @@ export default function HotelHN(){
               </div>
               </div>
         </div>
-    <Footer />
         </div> 
     )
 }

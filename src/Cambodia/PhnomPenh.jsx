@@ -1,8 +1,6 @@
 import Booking from "./Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
 import { useLocation, useParams} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -49,7 +47,6 @@ export default function PhnomPenhRoomDetail() {
 
   return (
     <>
-    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -973,7 +970,6 @@ export default function PhnomPenhRoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
-    <Footer />
     </>
   );
 }

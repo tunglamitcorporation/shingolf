@@ -1,8 +1,6 @@
 import Booking from "../Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -23,7 +21,6 @@ export default function LTTRoomDetail() {
   const room3 = t("ltt.3", { returnObjects: true });
   return (
     <>
-    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -662,7 +659,6 @@ export default function LTTRoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
-    <Footer />
     </>
   );
 }

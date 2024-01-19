@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "flatpickr/dist/themes/airbnb.css";
 import Booking from "./Booking";
-import Header from "./Header";
-import Footer from "./Footer";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
@@ -20,7 +18,6 @@ export default function Cambodia() {
 
   return ( 
     <>
-    <Header />
     <div className="homepage">
       <div className="content">
           <div className="content__background" style={{backgroundImage:`url(${pp})`, paddingTop:"35%"}}>
@@ -101,7 +98,6 @@ export default function Cambodia() {
         </div>
       </AnimatedOnScroll>
     </div>
-    <Footer />
     </>
   );
 }

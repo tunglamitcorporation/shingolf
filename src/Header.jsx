@@ -1,13 +1,16 @@
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { scroller } from "react-scroll";
 import { useState, useEffect } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+
 import Avatar from 'react-avatar';
 function Header() {
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+ 
   const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
   const feature = t("feature.feature_item", { returnObjects: true });
@@ -140,6 +143,11 @@ function Header() {
         </ul>
     )
   }
+
+  const [active, setActive] = useState(false)
+  const handleActive = () => {
+    setActive(!active)
+  }
   return (
     <>
       <div className='top-header'>
@@ -172,9 +180,11 @@ function Header() {
             </div>
           </div>
           <ul className="header__navbar-list-2">
-            <li className="header__navbar-item header-reserve">
+            <li className="header__navbar-item header-reserve"> 
               <Link
-                className="header__navbar-link header-reserve"
+                className={`header__navbar-link header-reserve ${active? 'tab_active' : ''}`}
+                onClick={handleActive}
+                onBlur={(e)=>setActive(false)}
                 to="/Reservation"
                 style={{ color: "#fff" }}
               >
@@ -259,53 +269,55 @@ function Header() {
         
       </div>
       <div className="header ">
-        <div className="header__PC">
-                  <ul className="header__navbar-list mb-0">
-                  <li className="header__navbar-item">
-                    {/* <li className="header__navbar-item">
+        <Tabs
+        selectedTabClassName="service__active" 
+        className="header__PC">
+                  <TabList className="header__navbar-list mb-0">
+                  <Tab className="header__navbar-item">
+                    {/* <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Test">
                         Test Page
                       </Link>
-                    </li> */}
+                    </Tab> */}
                       <Link className="header__navbar-link-2" to="/">
                         {t("header.home")}
                       </Link>
-                    </li>
-                    <li className="header__navbar-item">
+                    </Tab>
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Policies">
                         {t("header.policies")}
                       </Link>
-                    </li>
-                    <li className="header__navbar-item">
+                    </Tab>
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/HCM/HCMBranch">
                         {t("header.hcm")}
                       </Link>
-                    </li>
-                    <li className="header__navbar-item">
+                    </Tab>
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/HN/HNBranch">
                         {t("header.hn")}
                       </Link>
-                    </li>
-                    <li className="header__navbar-item">
+                    </Tab>
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/DN/DNBranch">
                         {t("header.dn")}
                       </Link>
-                    </li>
-                    <li className="header__navbar-item">
+                    </Tab>
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/HP/HPBranch">
                         {t("header.hp")}
                       </Link>
-                    </li>
+                    </Tab>
 
-                    {/* <li className="header__navbar-item">
-                            <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></li> */}
-                    <li className="header__navbar-item">
+                    {/* <Tab className="header__navbar-item">
+                            <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></Tab> */}
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Feature">
                         {t("header.feature")}
                       </Link>
                       <ul className="header__navbar-item-list">
                         {feature.map((item)=>(
-                          <li className = "header__navbar-sub-link"><Link 
+                          <Tab className = "header__navbar-sub-link"><Link 
                           to ={`/Feature#${item.id}`}
                           onClick={()=>scroller.scrollTo(`${item.id}`,
                           {duration:0,
@@ -316,26 +328,26 @@ function Header() {
                           <span style={{backgroundColor:"#482979", padding:"5px", marginRight:"8px"}}>
                             {item.num}</span>{t(item.title)}
                             </Link>
-                            </li>
+                            </Tab>
                         ))}
                         </ul>
-                    </li>
-                    <li className="header__navbar-item">
+                    </Tab>
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Service/Test/Vietnam/Service">
                         {t("header.service")}
                       </Link>
-                    </li>
-                    {/* <li className="header__navbar-item">
+                    </Tab>
+                    {/* <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Massage">
                         {t("header.massage")}
                       </Link>
-                    </li> */}
-                    <li className="header__navbar-item">
+                    </Tab> */}
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Contract">
                         {t("header.contract")}
                       </Link>
-                    </li>
-                    {/* <li className="header__navbar-item">
+                    </Tab>
+                    {/* <Tab className="header__navbar-item">
                             <Link  className = "header__navbar-link-branch .header__navbar-link--hover" to=''>{t('header.item12')}</Link>
                                 <ul className="header__navbar-item-list">
                                     <li className = "header__navbar-sub-link"><Link to = '/BrandDetail'>{t('header.item7')}</Link></li>
@@ -344,9 +356,9 @@ function Header() {
                                     <li className = "header__navbar-sub-link"><Link to ="">{t('header.item10')}</Link></li>
                                     <li className = "header__navbar-sub-link"><Link to ="">{t('header.item11')}</Link></li>
                                 </ul>
-                        </li> */}
-                  </ul>
-              </div>
+                        </Tab> */}
+                  </TabList>
+                  </Tabs>
             </div>
     </>
   );

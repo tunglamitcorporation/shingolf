@@ -1,9 +1,7 @@
 import Booking from "../Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import Header from "../Header";
-import Footer from "../Footer";
+import { useTranslation } from "react-i18next"
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import data from "../JSON/data.json";
@@ -31,7 +29,6 @@ export default function TVL1RoomDetail() {
   const room11 = t("tvl1.11", { returnObjects: true });
   return (
     <>
-    <Header />
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -1372,7 +1369,6 @@ export default function TVL1RoomDetail() {
           </Tabs>
         </TabPanel>
       </Tabs>
-    <Footer />
     </>
   );
 }

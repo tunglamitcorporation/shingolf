@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Header from "./Header";
-import Footer from "./Footer";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 function Reservation() {
@@ -277,7 +275,6 @@ function ShowCompanyName() {
   }
 return (
       <div>
-    <Header />
       <div className="reservation__content">
         <div className="container">
           <div className="row">
@@ -727,7 +724,6 @@ return (
               </div>
               </div>
               </div> 
-    <Footer />
       </div> 
   );
 }

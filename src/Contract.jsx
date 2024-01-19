@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Header from "./Header";
-import Footer from "./Footer";
 import Collapsible from "react-collapsible";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useRef} from 'react';
@@ -22,7 +21,6 @@ export default function Contract() {
   
   return (
     <div>
-    <Header />
       <div className="contract__background"></div>
       <div className="container pl-5 pr-5">
         <div className="row">
@@ -238,7 +236,6 @@ export default function Contract() {
       </div>
         </div>
       </div>
-    <Footer />
     </div>
   );
 }
