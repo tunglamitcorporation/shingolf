@@ -1,8 +1,6 @@
 import React from 'react';
 import Booking from '../../../Cambodia/Booking';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Header from "../../../Cambodia/Header";
-import Footer from "../../../Cambodia/Footer";
 import { useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 export default function CambodiaService() {
@@ -29,7 +27,6 @@ export default function CambodiaService() {
   };
   return (
     <>
-    <Header />
     <div className="policies__header">
     <div className="container">
       <div className="row">
@@ -49,7 +46,7 @@ export default function CambodiaService() {
   className="container-fluid" style={{marginTop: 20}}>
     <TabList  className="row"
           style={{ justifyContent: "center", padding: "10px" }}> 
-          <Tab className="service__location   col-md-12 col-lg-2 col-xl-2 col-xxl-2">Breakfast</Tab>
+      <Tab className="service__location   col-md-12 col-lg-2 col-xl-2 col-xxl-2">Breakfast</Tab>
       <Tab className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">Rotenburo</Tab>
       <Tab className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">Massage</Tab>
       <Tab className="service__location  col-md-12 col-lg-2 col-xl-2 col-xxl-2">
@@ -78,8 +75,6 @@ export default function CambodiaService() {
     </div>
     </TabPanel>
   </Tabs>
-   
-    <Footer />
     </>
   );
 };

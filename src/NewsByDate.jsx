@@ -1,11 +1,17 @@
-import { useTranslation } from "react-i18next";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { format } from "date-fns";
-export default function NewsList({ news }) {
+import { useTranslation } from "react-i18next";
+import {format} from 'date-fns'
+export default function NewsByDate({ news }) {
   const { t } = useTranslation();
   const branch = t("booking.city", { returnObjects: true });
+  const { date } = useParams();
+  const formattedDate = decodeURIComponent(date);
   const groupedNews = groupNewsByDate(news);
-  console.log(branch);
+  // Filter news by the selected date
+  const filteredNews = news.filter(
+    (article) => formatDate(article.date) === formattedDate
+  );
   return (
     <div>
       <div className="policies__header">
@@ -31,6 +37,10 @@ export default function NewsList({ news }) {
                 <li className="breadcrumb__item">
                   <span className="breadcrumb__title">{t("news.news")}</span>
                 </li>
+                <li className="breadcrumb__item">/</li>
+                <li className="breadcrumb__item">
+                  <span className="breadcrumb__title">{formattedDate}</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -39,17 +49,17 @@ export default function NewsList({ news }) {
       <div className="container">
         <div className="row">
           <div className="new_container col-md-10">
-            {news.map((article) => {
-               const formattedDate = format(new Date(article.date), 'MMM do yyyy')
-               const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
-              if (article.allBranch == true)
-               {
+            {filteredNews.map((article) => {
+                const formattedDate = format(new Date(article.date), 'MMM do yyyy')
+                const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
+
+              if (article.allBranch == true) {
                 return (
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">
                       <div className="news_box1">
                         <div className="news_time">
-                          <div className="month pl-2">{month}</div>
+                        <div className="month pl-2">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
@@ -89,12 +99,7 @@ export default function NewsList({ news }) {
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">
                       <div className="news_box1">
-                        <div className="news_time">
-                          <div className="month pl-2">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
+                        <div className="news_time">{article.date}</div>
                         <div className="hanoi">{t("header.hn")}</div>
                       </div>
                     </div>
@@ -127,12 +132,7 @@ export default function NewsList({ news }) {
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">
                       <div className="news_box1">
-                        <div className="news_time">
-                          <div className="month pl-2">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
+                        <div className="news_time">{article.date}</div>
                         <div className="haiphong">{t("header.hp")}</div>
                       </div>
                     </div>
@@ -165,12 +165,7 @@ export default function NewsList({ news }) {
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">
                       <div className="news_box1">
-                        <div className="news_time">
-                          <div className="month pl-2">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
+                        <div className="news_time">{article.date}</div>
                         <div className="danang">{t("header.dn")}</div>
                       </div>
                     </div>
@@ -203,12 +198,7 @@ export default function NewsList({ news }) {
                   <div className="row news_block">
                     <div className="col-md-2 mt-1 ">
                       <div className="news_box1">
-                        <div className="news_time">
-                          <div className="month pl-2">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
+                        <div className="news_time">{article.date}</div>
                         <div className="hochiminh">{t("header.hcm")}</div>
                       </div>
                     </div>
@@ -241,12 +231,7 @@ export default function NewsList({ news }) {
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">
                       <div className="news_box1">
-                        <div className="news_time">
-                          <div className="month pl-2">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
+                        <div className="news_time">{article.date}</div>
                         <div className="azumaya">{t("header.az")}</div>
                       </div>
                     </div>
@@ -292,8 +277,8 @@ export default function NewsList({ news }) {
                   </li>
                 ))}
               </ul>
-              </div>
-              <div>
+
+              <div></div>
             </div>
           </div>
         </div>

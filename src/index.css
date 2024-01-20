@@ -1813,53 +1813,44 @@ a:hover {
     width :150px;
     margin-top: 3px;
     margin-right: 10px ;
-}
-.danang{
-  color: #fff;
-  background: #ff9d45;
-  text-align: center;
-  height: 24px;
-  line-height: 24px;
-  font-size: 1.2rem;
-  width :80px;
-  margin-right: 10px ;
-  margin-top: 5px;
-}
-.hanoi{
-    color: #fff;
-    background: #9cd53a;
-    text-align: center;
-    height: 24px;
-    line-height: 24px;
-    font-size: 1.2rem;
-    width :60px;
-    margin-right: 10px ;
-  margin-top: 5px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
 
 }
-.haiphong{
-  color: #fff;
-  background: #6a51b3;
-  text-align: center;
-  height: 24px;
-  line-height: 24px;
-  font-size: 1.2rem;
-  width :100px;
-  margin-right: 10px ;
-  margin-top: 5px;
-
-}
+.azumaya,
+.hanoi,
+.danang,
+.haiphong,
 .hochiminh{
   color: #fff;
-  background: #6498e7;
   text-align: center;
   height: 24px;
   line-height: 24px;
   font-size: 1.2rem;
-  width :110px;
   margin-right: 10px ;
   margin-top: 5px;
-
+  font-weight: 600;
+}
+.azumaya{
+  background: #482979;
+  width: 80px;
+}
+.danang{
+  background: #ff9d45;
+  width :80px;
+}
+.hanoi{
+    background: #9cd53a;
+    width :60px;
+}
+.haiphong{
+  background: #6a51b3;
+  width :100px;
+}
+.hochiminh{
+  background: #6498e7;
+  width :110px;
 }
 .news_box1{
   display: flex;

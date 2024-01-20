@@ -9,6 +9,7 @@ import Service from "./Service";
 import Reservation from "./Reservation";
 import NewsList from "./NewsList";
 import News from "./News";
+import NewsByDate from "./NewsByDate";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import HotelHN from "./HN/HNBranch";
@@ -87,6 +88,7 @@ function App() {
       <Route path="/Contract" element={<Contract />} />
       <Route path="/News/:title" element={<News news={news} />} />
       <Route path="/NewsList" element={<NewsList news={news} />} />
+      <Route path="/NewsByDate/:date" element={<NewsByDate news={news} />} />
       <Route path="/HN/HNBranch" element={<HotelHN />} />
       <Route path="/HCM/HCMBranch" element={<HotelHCM />} />
       <Route path="/DN/DNBranch" element={<HotelDN />} />
