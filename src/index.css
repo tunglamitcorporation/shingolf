@@ -672,13 +672,27 @@ code {
     padding: 8px;
     border-radius: 3px;
     background: #fff;
+    width: 100%;
 }
-.content__booking-date-in input,
-.content__booking-date-out input,
+.content__booking-date {
+  display: inline-block;
+  margin-top: 20px;
+  width: 100% !important;
+  height: 40px;
+  padding: 8px;
+  border-radius: 1px;
+  border: 2px solid var(--white--color);
+  background-color: var(--primary--color);
+  color: var(--white--color);
+  font-size: 1.4rem;  
+  cursor: pointer;
+}
+.content__booking-date::placeholder{
+  color: #A9A9AC !important;
+}
 .content__booking-branch-select, 
 .content__booking-hotel-name-select 
 {
-  position: relative;
   display: inline-block;
   margin-top: 20px;
   width: 100%;
@@ -691,13 +705,6 @@ code {
   font-size: 1.4rem;  
   cursor: pointer;
 
-}
-.content__booking-date-in input:focus,
-.content__booking-date-out input:focus,
-.content__booking-branch-select:focus, 
-.content__booking-hotel-name-select:focus 
-{
-  outline: #482979;
 }
 .content__news{
   width: 100%;
@@ -730,17 +737,7 @@ code {
   background-color: #9CD53A ;
   cursor: default;
 }
-.content__news-branch--bg{
-  display: inline-block;
-  text-align: center;
-  min-width: 100px;
-  height: 22px;
-  line-height: 22px;
-  color: var(--white--color);
-  font-weight: 600;
-  cursor: default;
-  background-color: #F75A5A;
-}
+
 .content__news-pp{
   display: inline-block;
   text-align: center;
@@ -955,6 +952,7 @@ code {
 .footer__copyright{
   color: var(--white--color);
   font-size: 1.8rem;
+  
 }
 /* Reservation */
 .reservation__content{
@@ -979,7 +977,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 50%;
+  width: 100%;
   margin-left: 10px;
   list-style: none;
   font-size: 1.4rem;
@@ -1743,6 +1741,8 @@ a:hover {
 }
 .webkit-appearance{
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .installation{
   padding-left: 35px !important;  
@@ -1803,7 +1803,8 @@ a:hover {
 .content__banner{
   height: 200px;
 }
-.news_time{
+.news_time,
+.news_time-home{
     color: #fff;
     background: #482979;
     text-align: center;
@@ -1818,11 +1819,13 @@ a:hover {
     justify-content: center;
 
 }
+
 .azumaya,
 .hanoi,
 .danang,
 .haiphong,
-.hochiminh{
+.hochiminh,
+.allbranch{
   color: #fff;
   text-align: center;
   height: 24px;
@@ -1852,6 +1855,42 @@ a:hover {
   background: #6498e7;
   width :110px;
 }
+.allbranch{
+  background-color: #F75A5A;
+  width: 100px;
+}
+
+
+.allbranch_home{
+  background-color: #F75A5A;
+  width: 120px
+}
+.azumaya_home{
+  background: #482979;
+  width: 120px
+}
+.danang_home{
+  background: #ff9d45;
+  width :120px
+}
+.hanoi_home{
+    background: #9cd53a;
+    width :120px
+}
+.haiphong_home{
+  background: #6a51b3;
+  width :120px
+}
+.hochiminh_home{
+  background: #6498e7;
+  width :120px
+}
+.news_time-home{
+  color: black;
+  background: none;
+  text-align: left;
+}
+
 .news_box1{
   display: flex;
   flex-direction: column;
@@ -1873,11 +1912,15 @@ a:hover {
   color: #482979;
   font-weight: 600;
 }
-.news_title{
+.news_title,
+.news_homeTitle{
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 900;
   color:black
+}
+.news_homeTitle{
+  font-size: 1.4rem
 }
 .news_content{
   font-size: 1.4rem;
@@ -2021,7 +2064,7 @@ a:hover {
     font-size: 1.3rem;
 }
 .footer__container3{
-  height: 100px;
+  height: 120px;
 }
 .footer__container>.container>.row,
 .footer__container2>.container>.row{

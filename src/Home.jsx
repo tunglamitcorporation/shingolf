@@ -5,14 +5,13 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import {Link} from "react-router-dom"
-export default function Home() {
+import {format, parse} from "date-fns"
+export default function Home({news}) {
   const { t } = useTranslation();
   const featureItem = t("feature.feature_item", { returnObjects: true });
   const homeData = t("home", { returnObjects: true });
-  // console.log(homeData)
-  const homeNewsData = t("home.new_item", { returnObjects: true });
-  // console.log(homeNewsData)
   const WelcomeData = t("home.welcome", { returnObjects: true });
+  const homeNews = news.slice(0,4)
   return (
     <>
     <div className="homepage">
@@ -27,60 +26,7 @@ export default function Home() {
             />
             {/* <span>{t("home.name")}</span> */}
           {/* </div> */}
-          <div className="container-fluid">
-            <div className="row g-0 p-0">
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                  <Link className='link-route' to = '/BrandDetail' >
-                  <img
-                    className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
-                    alt=""
-                  />
-                  </Link>
-                </div>
-              </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                  <img
-                    className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                  <img
-                    className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                  <img
-                    className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <div className="is-sticky">
-        <Booking />
-      </div>
-      <AnimatedOnScroll>
-        <div className="content__news">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-8 offset-md-1">
-                <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
-                <ul className="content__news-list">
-                  {homeNewsData.map((item) => (
+          {/* {homeNewsData.map((item) => (
                     <li className="content__news-item" key={item.id}>
                       <span className="content__news-date">
                         {item.month} {item.day} {item.year}{" "}
@@ -98,7 +44,242 @@ export default function Home() {
                         <a href={item.link}>{item.new}</a>
                       </span>
                     </li>
-                  ))}
+                  ))} */}
+          <div className="container-fluid">
+            <div className="row g-0 p-0">
+              <div className="col-6 col-md-3 offset-0">
+                <div className="content__branch-item">
+                  <Link className='link-route' to = '/HN/HNBranch' >
+                  <img
+                    className="content__branch-img"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
+                    alt=""
+                  />
+                  </Link>
+                </div>
+              </div>
+              <div className="col-6 col-md-3 offset-0">
+                <div className="content__branch-item">
+                <Link className='link-route' to = '/HCM/HCMBranch' >
+                  <img
+                    className="content__branch-img"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
+                    alt=""
+                  />
+                   </Link>
+                </div>
+              </div>
+              <div className="col-6 col-md-3 offset-0">
+                <div className="content__branch-item">
+                <Link className='link-route' to = '/DN/DNBranch' >
+                  <img
+                    className="content__branch-img"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
+                    alt=""
+                  />
+                  </Link>
+                </div>
+              </div>
+              <div className="col-6 col-md-3 offset-0">
+                <div className="content__branch-item">
+                <Link className='link-route' to = '/HP/HPBranch' >
+                  <img
+                    className="content__branch-img"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                    alt=""
+                  />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div className="is-sticky">
+        <Booking />
+      </div>
+      <AnimatedOnScroll>
+        <div className="content__news">
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-md-8 offset-md-1">
+                <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
+                <ul className="content__news-list">
+                {homeNews.map((article) => {
+               const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
+               const formattedDate = format(parsedDate, 'MMM do yyyy')
+               const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
+               console.log(formattedDate);
+              if (article.allBranch == true)
+               {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                        <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2 mt">
+                          <div className="allbranch allbranch_home">{t("header.allbranch")}</div>
+                        </div>
+                    <div className="col-md-7 mt-2">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title news_homeTitle"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div>{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else if (article.hn == true) {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                        <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2">
+                          <div className="hanoi hanoi_home">{t("header.hn")}</div>
+                        </div>
+                    <div className="col-md-7 mt-2">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title news_homeTitle"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div>{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else if (article.hp == true) {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                        <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2">
+                          <div className="haiphong haiphong_home">{t("header.hp")}</div>
+                        </div>
+                    <div className="col-md-7 mt-2">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div>{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else if (article.dn == true) {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                          <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2">
+                          <div className="danang danang_home">{t("header.dn")}</div>
+                        </div>
+                    <div className="col-md-7 mt-2">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div>{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else if (article.hcm == true) {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1 ">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                          <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2">
+                          <div className="hochiminh hochiminh_home">{t("header.hcm")}</div>
+                        </div>
+                    <div className="col-md-7 mt-2">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title news_homeTitle"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div>{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else if (article.az == true) {
+                return (
+                  <div className="row align-item-center">
+                    <div className="col-md-2 mt-1">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                          <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2">
+                          <div className="azumaya azumaya_home">{t("header.az")}</div>
+                        </div>
+                    <div className="col-md-6">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title news_homeTitle"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div>{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                    </div>
+                );
+              }
+            })}
                 </ul>
               </div>
               <div className="col-12 col-md-1">

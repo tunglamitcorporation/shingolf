@@ -44,7 +44,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/"
+              to="/NewsList"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}
@@ -275,7 +275,7 @@ function Header() {
                   <TabList className="header__navbar-list mb-0">
                   <Tab className="header__navbar-item">
                     {/* <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Test">
+                      <Link className="header__navbar-link-2" to="/NewsList">
                         Test Page
                       </Link>
                     </Tab> */}

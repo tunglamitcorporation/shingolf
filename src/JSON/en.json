@@ -12,6 +12,7 @@
         "hcm": "Ho Chi Minh",
         "hp": "Hai Phong",
         "dn": "Da Nang",
+        "allbranch": "All Branch",
         "vietnam":"Vietnam",
         "cambodia": "Cambodia",
         "item12": "Branch",
@@ -369,33 +370,27 @@
             {
                 "title": "2024 Tet (Lunar New Year) Information",
                 "content":"Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
-                "date":"01-01-2024",
+                "date":"2024-01-01",
                 "allBranch":true
                
             },
             {
                 "title": "Open Air Hot Bath Renewal Open @ Azumaya Thai Van Lung 1",
                 "content":"Azumaya Thai Van Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thai Van Lung 2 (30 seconds on foot from Azumaya Thai Van Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on weekdays only at Le Thanh Ton branch.",
-                "date":"12-29-2023",
+                "date":"2023-12-29",
                 "hcm":true
             },
             {
                 "title": "Azumaya Ho Chi Minh 2024 New Year Day Limited Breakfast Set Menu",
                 "content":"Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nOpening hour: 6am~10am\nPlace: Azumaya Thai Van Lung 1, Azumaya Thai Van Lung 2, Azumaya Le Than Ton",
-                "date":"12-29-2023",
+                "date":"2023-07-07",
                 "hcm":true
             },
             {
                 "title": "Open women Rotenburo in Azumaya Kim Ma 2 Branch",
                 "content":"From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
-                "date":"12-29-2023",
+                "date":"2023-12-29",
                 "hn":true
-            },
-            {
-                "title": "Open women",
-                "content":"From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
-                "date":"12-29-2023",
-                "az": true
             }
           
         ]
@@ -3265,6 +3260,44 @@
                 "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
             }
         ]
-    }
+    },
+    "date":[
+        {
+            "date":"December 2024"
+        },
+        {
+            "date":"November 2024"
+        },
+        {
+            "date":"October 2024"
+        },
+        {
+            "date":"September 2024"
+        },
+        {
+            "date":"August 2024"
+        },
+        {
+            "date":"July 2024"
+        }, 
+        {
+            "date":"June 2024"
+        },
+        {
+            "date":"May 2024"
+        }, 
+        {
+            "date":"April 2024"
+        }, 
+        {
+            "date":"March 2024"
+        }, 
+        {
+            "date":"February 2024"
+        }, 
+        {
+            "date":"January 2024"
+        }
+    ]
    
 }

@@ -173,7 +173,7 @@ function Footer() {
                             <div className="col-md-12">
                     <img className="footer__logo" src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png" alt="" />
                     <div className="footer__copyright">
-                        <p>Copyright © 2023 - Azumaya - All Right Reversed</p>
+                        <p className="mb-0">Copyright © 2023 - Azumaya - All Right Reversed</p>
                     </div>
                 </div>
                 </div>

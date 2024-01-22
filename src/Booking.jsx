@@ -23,20 +23,42 @@ export default function Booking (){
         <div>              
         <div className="content__booking">
         <div className="container">
-            <div className="row gx-3">
+            <div className="row gx-3 justify-content-center">
                 <div className="col-md-12 ">
                 <div className="content__booking-title">{t('booking.title')}</div>
                 </div>
-                <div className="col-md-2 offset-md-1">
-                <div className="content__booking-date-in">
-                <Flatpickr 
-                value={startDate}
-                options={{
-                    minDate:'today',
-                  }}
-                className="flatpickr check-in-time webkit-appearance" 
-                placeholder={t('booking.date_in')} 
-                onChange={(startDate) => setStartDate(startDate)}/>
+                <div className="col-md-2">
+                  <Flatpickr 
+                  value={startDate}
+                  options={{
+                    minDate:'today'}} 
+                  className="col-md-12 content__booking-date webkit-appearance" 
+                  placeholder={t('booking.date_in')} 
+                  onChange={(startDate)=>{
+                    setStartDate(startDate);
+                    }} />
+                    </div>
+                <div className="col-md-2">
+                  <Flatpickr 
+                  value={endDate}
+                  options={{minDate:new Date(startDate)}} 
+                  className="col-md-12 content__booking-date webkit-appearance" 
+                  placeholder={t('booking.date_out')} 
+                  onChange={(endDate) =>{
+                    setEndDate(endDate)
+                  }} />
+                  </div>
+            
+                {/* <div className="col-md-2 offset-md-1">
+                    <div className="content__booking-date-in">
+                        <Flatpickr 
+                        value={startDate}
+                        options={{
+                            minDate:'today',
+                        }}
+                        className="form__content webkit-appearance" 
+                        placeholder={t('booking.date_in')} 
+                        onChange={(startDate) => setStartDate(startDate)}/>
                 </div>
                 </div>
                 <div className="col-md-2">
@@ -46,11 +68,11 @@ export default function Booking (){
                 options={{
                     minDate:new Date(startDate),
                   }}
-                className="flatpickr check-out-time webkit-appearance" 
+                className="flatpickr webkit-appearance" 
                 placeholder={t('booking.date_out')} 
                 onChange = {(endDate) => setEndDate(endDate)} />
                 </div>
-                </div>
+                </div> */}
                 <div className="col-md-2">
                 <div className="content__booking-branch">
                     <select className="content__booking-branch-select"

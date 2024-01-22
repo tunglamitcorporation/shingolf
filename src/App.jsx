@@ -78,7 +78,7 @@ function App() {
     </div>
       <ScrollToTop />
       <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home news = {news} />} />
       <Route path="/Service/Test/Vietnam/Service" element={<VietnamService />} />
       <Route path="/Service/Test/Cambodia/Service" element={<CambodiaService />} />
       <Route path="/Policies" element={<Policies />} />

@@ -1,15 +1,15 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 const News = ({ news }) => {
   const { t } = useTranslation();
   const branch = t("booking.city", { returnObjects: true });
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
   const article = news.find((article) => article.title === decodedTitle);
-
-  const formattedDate = format(new Date(article.date), 'MMM do yyyy')
+  const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date());
+  const formattedDate = format(parsedDate, 'MMM do yyyy')
   const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
   if (!article) {
     return <div>Article not found</div>;
