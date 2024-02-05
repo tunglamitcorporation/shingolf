@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { format, parse } from "date-fns";
 export default function NewsList({ news }) {
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ export default function NewsList({ news }) {
             <div className="re__breadcrumb">
               <ul className="breadcrumb__list">
                 <li className="breadcrumb__item">
-                  <Link to="/Home">
+                  <Link to="/">
                     <i className="fa-solid fa-house"></i>
                   </Link>
                 </li>
@@ -293,7 +293,7 @@ export default function NewsList({ news }) {
                     </Link>
                   </li>
                 ))}
-              </ul>
+              </ul> 
               </div>
               <div>
             </div>

@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import {BrowserRouter} from 'react-router-dom';
+import FontProvider from './FontProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-import './i18n'
+import i18n from'./i18n'
 import { I18nextProvider } from 'react-i18next';
 root.render(
   // <React.StrictMode>
 
       <BrowserRouter>
-        <I18nextProvider>
+        <I18nextProvider i18n={i18n}>
+            <FontProvider>
            <App />
+            </FontProvider>
         </I18nextProvider>
       </BrowserRouter>
    

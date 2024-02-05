@@ -1,22 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Booking from "./Booking";
 import { useTranslation } from "react-i18next"; 
-import { useEffect, useRef } from 'react';
+import { useEffect} from 'react';
 export default function Feature() {
   const { t } = useTranslation();
   const featureData = t("feature", { returnObjects: true });
   const featureItem = t("feature.feature_item", { returnObjects: true });
-  const targetRef = useRef(null);
+  // const targetRef = useRef(null);
+  //   useEffect(() => {
+  //     const hash = window.location.hash;
+  //     if (hash && targetRef.current) {
+  //       const targetId = hash.substring(1); 
+  //       const targetElement = document.getElementById(targetId);
+  //       if (targetElement) {
+  //         targetElement.scrollIntoView({ behavior: 'smooth', block:'end', inline:'nearest' });
+  //       }
+  //     }
+  //   }, [window.location.hash]);
+    const {featureID} = useParams()
     useEffect(() => {
-      const hash = window.location.hash;
-      if (hash && targetRef.current) {
-        const targetId = hash.substring(1); 
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth', block:'end', inline:'nearest' });
+      // Scroll to the element with the specified index
+      if (featureID !== undefined) {
+        const elementToScroll = document.getElementById(`${featureID}`);
+        if (elementToScroll) {
+          elementToScroll.scrollIntoView({ behavior: 'smooth', block:'center', inline:'nearest' });
         }
       }
-    }, [window.location.hash]);
+    }, [featureID]);
   return (
     <div>
       <div className="policies__header">
@@ -71,7 +81,7 @@ export default function Feature() {
             {
               if(item.hasLink==true){
                 return(
-              <div key={item.id} className="feature__type-item" id={item.id} ref={targetRef}>
+              <div key={item.id} className="feature__type-item" id={item.id}>
               <div className="card mb-3" style={{ border: "none" }}>
                 <div className="row g-4">
                   <div className="col-md-4">
@@ -97,7 +107,7 @@ export default function Feature() {
                 )
               }
               return(
-                <div key={item.id} className="feature__type-item" id={item.id} ref={targetRef}>
+                <div key={item.id} className="feature__type-item" id={item.id}>
                 <div className="card mb-3" style={{ border: "none" }}>
                   <div className="row g-4">
                     <div className="col-md-4">

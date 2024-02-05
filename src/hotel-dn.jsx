@@ -1,51 +1,51 @@
-import Booking from "../Booking"
+import Booking from "./Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-export default function HotelHN(){
+export default function HotelDN(){
     const { t } = useTranslation();
-    const brandDetail = t("hn-branch.branch",  {returnObjects: true});
+    const brandDetail = t("dn-branch",  {returnObjects: true});
     const header = t("header",{returnObjects:true})
     const homeNewsData = t("home.new_item", { returnObjects: true });
-    const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
+    const DNDetail = t("dn-branch.branch", { returnObjects: true });
     return(
         <div>
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.hn")}</h1>
+                                <h1>{t("header.dn")}</h1>
                             </div>
                         </div>
                     </div>
             </div>
-            <div classNameName = 'is-sticky'>
+            <div className = 'is-sticky'>
                 <Booking />
             </div>
-            <div className="re__breadcrumb">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
+                         <div className="re__breadcrumb">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
-                                       <Link to = "/">
+                                       <a href="/">
                                            <i className="fa-solid fa-house"></i>
-                                          </Link>
+                                       </a>
                                    </li>
                                    <li className = "breadcrumb__item">
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="">{t("header.hn")}</a>
+                                        <a className ="breadcrumb__title" href="/hotel-dn">{t("header.dn")}</a>
                                    </li>
                        </ul>
                     </div>
-                    </div>
+                        </div>
                 </div>
             </div>
             <div className="branch__container">
                 <div className="container">
-                    {HanoiDetail.map((item)=>(
+                    {DNDetail.map((item)=>(
                 <div className="feature__type-item">
                     <div className="card">
                     <div className="row p-0">
@@ -63,11 +63,11 @@ export default function HotelHN(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = {item.link}>{t("hn-branch.btn-detail")}</Link>
-                                </div>
+                                    <Link to = {item.link}>{t("dn-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                         </div>
+                    </div>
                     </div>
                     </div>
                     ))}

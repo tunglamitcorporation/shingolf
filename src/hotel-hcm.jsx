@@ -1,34 +1,34 @@
-import Booking from "../Booking"
+import Booking from "./Booking"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
-export default function HotelHP(){
+export default function HotelHCM(){
     const { t } = useTranslation();
-    const brandDetail = t("hp-branch",  {returnObjects: true});
+    const brandDetail = t("hcm-branch",  {returnObjects: true});
     const header = t("header",{returnObjects:true})
     const homeNewsData = t("home.new_item", { returnObjects: true });
-    const HPDetail = t("hp-branch.branch", { returnObjects: true });
+    const HCMDetail = t("hcm-branch.branch", { returnObjects: true });
     return(
         <div>
              <div className="policies__header">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t("header.hp")}</h1>
+                                <h1>{t("header.hcm")}</h1>
                             </div>
                         </div>
                     </div>
             </div>
-            <div classNameName = 'is-sticky'>
+            <div className = 'is-sticky'>
                 <Booking />
             </div>
-            <div className="re__breadcrumb">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12"></div>
+                        <div className="col-md-12">
+            <div className="re__breadcrumb">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
-                                       <a href="/AzumayaClone/index.html">
+                                       <a href="/">
                                            <i className="fa-solid fa-house"></i>
                                        </a>
                                    </li>
@@ -36,15 +36,16 @@ export default function HotelHP(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/AzumayaClone/html/hanoibranchdetail.html">{t("header.hp")}</a>
+                                        <a className ="breadcrumb__title" href="/hotel-hcm">{t("header.hcm")}</a>
                                    </li>
                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>
             <div className="branch__container">
                 <div className="container">
-                    {HPDetail.map((item)=>(
+                    {HCMDetail.map((item)=>(
                 <div className="feature__type-item">
                     <div className="card">
                     <div className="row p-0">
@@ -62,7 +63,7 @@ export default function HotelHP(){
                                 </div>
                                 <div className="btn-holder">
                                 <div className="btn__detail control-position">
-                                    <Link to = "/HP/HP">{t("hp-branch.btn-detail")}</Link>
+                                    <Link to = {item.link}>{t("hcm-branch.btn-detail")}</Link>
                                 </div>
                                 </div>
                         </div>

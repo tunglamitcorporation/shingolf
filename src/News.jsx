@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import { format, parse } from "date-fns";
-const News = ({ news }) => {
+export default function News ({ news })  {
   const { t } = useTranslation();
   const branch = t("booking.city", { returnObjects: true });
   const { title } = useParams();
@@ -31,13 +31,13 @@ const News = ({ news }) => {
             <div className="re__breadcrumb">
               <ul className="breadcrumb__list">
                 <li className="breadcrumb__item">
-                  <Link to="/Home">
+                  <Link to="/">
                     <i className="fa-solid fa-house"></i>
                   </Link>
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/Policies">
+                  <Link className="breadcrumb__title" to="/NewsList">
                     {t("news.news")}
                   </Link>
                 </li>
@@ -297,4 +297,3 @@ const News = ({ news }) => {
   );
 };
 
-export default News;

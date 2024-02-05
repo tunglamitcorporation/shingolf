@@ -4,7 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Feature from "./Feature";
 import Policies from "./Policies";
-import Contract from "./Contract";
+import Contract from "./contract";
 import Service from "./Service";
 import Reservation from "./Reservation";
 import NewsList from "./NewsList";
@@ -12,20 +12,20 @@ import News from "./News";
 import NewsByDate from "./NewsByDate";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import HotelHN from "./HN/HNBranch";
-import HotelHCM from "./HCM/HCMBranch";
-import HotelDN from "./DN/DNBranch";
-import HotelHP from "./HP/HPBranch";
-import HBT1RoomDetail from "./HN/HBT1";
-import KM2RoomDetail from "./HN/KM2";
-import KM3RoomDetail from "./HN/KM3";
-import LLRoomDetail from "./HN/LL";
-import TVL1RoomDetail from "./HCM/TVL1";
-import TVL2RoomDetail from "./HCM/TVL2";
-import LTTRoomDetail from "./HCM/LTT";
-import AnnexRoomDetail from "./HCM/Annex";
-import DNRoomDetail from "./DN/DN";
-import HPRoomDetail from "./HP/HP";
+import HotelHN from "./hotel-hn";
+import HotelHCM from "./hotel-hcm";
+import HotelDN from "./hotel-dn";
+import HotelHP from "./hotel-hp";
+import HBT1RoomDetail from "./hai-ba-trung-detail/room";
+import KM2RoomDetail from "./kim-ma-2-detail/room";
+import KM3RoomDetail from "./kim-ma-3-detail/room";
+import LLRoomDetail from "./linh-lang-detail/room";
+import TVL1RoomDetail from "./thai-van-lung-1-detail/room";
+import TVL2RoomDetail from "./thai-van-lung-2-detail/room";
+import LTTRoomDetail from "./le-thanh-ton-detail/room";
+import AnnexRoomDetail from "./annex-detail/room";
+import DNRoomDetail from "./da-nang/room";
+import HPRoomDetail from "./hai-phong/room";
 import Cambodia from "./Cambodia/Cambodia";
 import Header_PP from "./Cambodia/Header";
 import Footer_PP from "./Cambodia/Footer";
@@ -84,25 +84,26 @@ function App() {
       <Route path="/Policies" element={<Policies />} />
       <Route path="/Reservation" element={<Reservation />} />
       <Route path="/Feature" element={<Feature/>} />
+      <Route path="/Feature/:featureID" element={<Feature/>} />
       <Route path="/Service" element={<Service />} />
       <Route path="/Contract" element={<Contract />} />
       <Route path="/News/:title" element={<News news={news} />} />
       <Route path="/NewsList" element={<NewsList news={news} />} />
       <Route path="/NewsByDate/:date" element={<NewsByDate news={news} />} />
-      <Route path="/HN/HNBranch" element={<HotelHN />} />
-      <Route path="/HCM/HCMBranch" element={<HotelHCM />} />
-      <Route path="/DN/DNBranch" element={<HotelDN />} />
-      <Route path="/HP/HPBranch" element={<HotelHP />} />
-      <Route path="/HN/HBT1" element={<HBT1RoomDetail />} />
-      <Route path="/HN/KM2" element={<KM2RoomDetail />} />
-      <Route path="/HN/KM3" element={<KM3RoomDetail />} />
-      <Route path="/HN/LL" element={<LLRoomDetail />} />
-      <Route path="/HCM/TVL1" element={<TVL1RoomDetail />} />
-      <Route path="/HCM/TVL2" element={<TVL2RoomDetail />} />
-      <Route path="/HCM/LTT" element={<LTTRoomDetail />} />
-      <Route path="/HCM/Annex" element={<AnnexRoomDetail />} />
-      <Route path="/DN/DN" element={<DNRoomDetail />} />
-      <Route path="/HP/HP" element={<HPRoomDetail />} />
+      <Route path="/hotel-hn" element={<HotelHN />} />
+      <Route path="/hotel-hcm" element={<HotelHCM />} />
+      <Route path="/hotel-dn" element={<HotelDN />} />
+      <Route path="/hotel-hp" element={<HotelHP />} />
+      <Route path="/hai-ba-trung-detail/room" element={<HBT1RoomDetail />} />
+      <Route path="/kim-ma-2-detail/room" element={<KM2RoomDetail />} />
+      <Route path="/kim-ma-3-detail/room" element={<KM3RoomDetail />} />
+      <Route path="/linh-lang-detail/room" element={<LLRoomDetail />} />
+      <Route path="/thai-van-lung-1-detail/room" element={<TVL1RoomDetail />} />
+      <Route path="/thai-van-lung-2-detail/room" element={<TVL2RoomDetail />} />
+      <Route path="/le-thanh-ton-detail/room" element={<LTTRoomDetail />} />
+      <Route path="/annex-detail/room" element={<AnnexRoomDetail />} />
+      <Route path="/da-nang/room" element={<DNRoomDetail />} />
+      <Route path="/hai-phong/room" element={<HPRoomDetail />} />
       </Routes> 
     <Footer />
     </div>

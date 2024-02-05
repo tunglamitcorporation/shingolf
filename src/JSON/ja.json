@@ -1,8 +1,9 @@
 {
     "header": {
         "top-header":"★ こだわりの和朝食と露天風呂がある、ビジネスパーソン向けホテル ★",
+        "azumaya":"東屋ホテル",
         "home": "ホーム",
-        "policies": "テル概要",
+        "policies": "Q&A",
         "reservation": "ご予約",
         "feature": "東屋8大魅力",
         "service": "提供サービス",
@@ -11,7 +12,8 @@
         "hcm": "ホーチミン",
         "hp": "ハイフォン",
         "dn": "ダナン",
-        "cambodia": "東屋プノンペン",
+        "cambodia": "カンボジア",
+        "vietnam":"ベトナム",
         "item12": "支店",
         "massage":"マッサージサービス",
         "room":"お部屋のご案内",
@@ -28,7 +30,8 @@
         "tvl2": "東屋 タイヴァンルン 2",
         "annex": "東屋アネックス",
         "dn": "東屋ダナン",
-        "hp": "東屋 ハイフォン"
+        "hp": "東屋 ハイフォン",
+        "pp":"東屋 プノンペン"
     },
     "booking": {
         "title": "ご予約はこちら",
@@ -52,72 +55,85 @@
             {
                 "id": "HP",
                 "city_name": "ハイフォン"
+            },
+            {
+                "id": "PP",
+                "city_name": "プノンペン"
             }
         ],
         "branch": [
             [
                 {
-                    "branch_id": "LTT",
+                    "branch_id": "le-thanh-ton-detail",
                     "city_id": "HCM",
                     "city_name":"ホーチミン",
                     "branch_name": "東屋 レタントン"
                 },
                 {
-                    "branch_id": "TVL1",
+                    "branch_id": "thai-van-lung-1-detail",
                     "city_id": "HCM",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 タイヴァンルン 1"
                 },
                 {
-                    "branch_id": "TVL2",
+                    "branch_id": "thai-van-lung-2-detail",
                     "city_id": "HCM",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 タイヴァンルン 2"
                 },
                 {
-                    "branch_id": "Annex",
+                    "branch_id": "annex-detail",
                     "city_id": "HCM",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋アネックス"
                 },
                 {
-                    "branch_id": "HBT1",
+                    "branch_id": "hai-ba-trung-detail",
                     "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東屋 ハイバーチュン店 1"
                 },
                 {
-                    "branch_id": "KM2",
+                    "branch_id": "kim-ma-2-detail",
                     "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東屋金馬 2"
                 },
                 {
-                    "branch_id": "KM3",
+                    "branch_id": "kim-ma-3-detail",
                     "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東屋金馬 3"
                 },
                 {
-                    "branch_id": "LL",
+                    "branch_id": "linh-lang-detail",
                     "city_id": "HN",
                     "city_name": "ハノイ",
                     "branch_name": "東谷 リン・ラン"
                 },
                 {
-                    "branch_id": "DN",
+                    "branch_id": "da-nang",
                     "city_id": "DN",
                     "city_name": "ダナン",
                     "branch_name": "東屋ダナン"
                 },
                 {
-                    "branch_id": "HP",
+                    "branch_id": "hai-phong",
                     "city_id": "HP",
                     "city_name": "ハイフォン",
                     "branch_name": "東屋 ハイフォン"
+                },
+                {
+                    "branch_id": "phnom-penh",
+                    "city_id": "PP",
+                    "city_name": "プノンペン",
+                    "branch_name": "東屋 プノンペン"
                 }
             ]
-        ]
+            
+        ],
+        "city_pp": "プノンペン",
+        "branch_pp":"東屋 プノンペン"
     },
     "feature": {
         "name": "東屋8大魅力",
@@ -229,7 +245,7 @@
         ]
     },
     "policy":{
-        "title":"ホテル概要",
+        "title":"Q&A",
         "data":[
             {
                 "name":"チェックイン",
@@ -274,6 +290,128 @@
             }
 
         ]     
+    },
+    "faq":{
+        
+        "title2":"各種サービスに関するFAQ",
+        "title3":"朝食に関するFAQ",
+        "title4":"アクセスに関するFAQ",
+        "title5":"お支払いに関するFAQ",
+        "data":[
+            {
+                "title":"ご宿泊に関するFAQ",
+                "question":"Q. ホテル滞在中、急に体調が悪くなったら？",
+                "answer":"A. 24時間体制で日本語のできるスタッフがホテルに常勤し、お客様のサポートを行っております。お客様より体調不良のご連絡があれば、症状や状況などをお伺いした上でそれらに応じた最寄りの病院をご紹介し、手配いたします。"
+            },
+            {
+                "question":"Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
+                "answer":"A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
+            },
+            {
+                "question":"Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
+                "answer":"A. お部屋に空きがある場合は、承ることができます。(有料)\n・10:00 a.m.より前のアーリーチェックイン：一泊分の100%チャージ\n・10:00 a.m.より後のアーリーチェックイン：一泊分の50%チャージ\n・18:00 p.m.までのレイトチェックアウト：一泊分の50%チャージ\n・18:00 p.m.以降のレイトチェックアウト：一泊分の100%チャージ"
+            },
+            {
+                "question":"Q.門限はありますか？",
+                "answer":"A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
+            },
+            {
+                "question":"Q.電子機器はそのまま利用できますか？",
+                "answer":"A.ご利用いただけます。コンセントの型は日本と同じA型ですがベトナム、カンボジアの電圧はほとんどが220Vですのでお気をつけてご使用くださいませ。日本の電気製品でも、100～240V対応の物であれば変圧器なしで使用できますが、念のため使用予定の電気製品の取り扱い説明書をお読み頂くことをお勧め致します。ただし100～240V対応製品でもプラグの変換アダプターは必要となる場合がございますのでご注意ください。"
+            },
+            {
+                "question":"Q.レストランは全て禁煙ですか？ロビーに喫煙場所はありますか？",
+                "answer":"A.全支店、出口付近に灰皿がございます。"
+            },
+            {
+                "question":"Q.深夜のチェックイン、又は早朝のチェックアウトはできますか？",
+                "answer":"A.可能でございます。受付は２４時間対応しておりますので、ご安心くださいませ。ご精算はいつでも対応可能でございますので、お時間のある時に受付へお申し付けくださいませ。"
+            },
+            {
+                "question":"Q.チェックアウト後、荷物を預かってもらえますか？",
+                "answer":"A.お預かりいたします。大変恐れ入りますが、貴重品はご自身で管理頂きますようお願い致します。"
+            },
+            {
+                "question":"Q.チェックアウト後、露天風呂を無料で利用できますか？",
+                "answer":"A.チェックイン・チェックアウトの当日に限り、ご宿泊者様には露天風呂を無料でご利用頂くことができます。深夜便の前に、是非ご利用くださいませ"
+            },
+            {
+                "question":"Q. 長期滞在の場合、途中退出は可能ですか？",
+                "answer":"A. 可能でございます。変更するチェックアウトの日の15時を起点としてそれより48時間前にご連絡をいただければ、キャンセル料金は発生致しません。"
+            },
+            {
+                "question":"Q. シーズンや土日料金等はありますか？",
+                "answer":"A. 料金の変動はございません。"
+            },
+            {
+                "title":"各種サービスに関するFAQ",
+                "question":"Q.マッサージの事前予約はできますか？",
+                "answer":"A.可能でございます。夕方及び週末は大変混み合いますので、事前にご予約されることをお勧めいたします。"
+            },
+            {
+                "question":"Q.両替サービスはありますか？",
+                "answer":"A.外貨（日本円・USドル）から、ベトナムドンへの両替のみ承っております。当ホテル独自の為替レートに則って両替させて頂きます。"
+            },
+            {
+                "question":"Q.コインランドリーはありますか？",
+                "answer":"A.　あいにくホテル館内にはございませんが、ホテルのランドリーサービスをご利用いただけます。目安：ワイシャツ１枚＝20.000ドン（約１００円）です。また、一部店舗にて洗濯乾燥機を無料でご利用いただけます。"
+            },
+            {
+                "question":"Q.アイロンはありますか？",
+                "answer":"A.貸出用のアイロンはございません。スタッフがアイロンがけをさせて頂きますので、ご希望の際は受付へお申し付けくださいませ。"
+            },
+            {
+                "question":"Q.客室でのインターネット環境は？",
+                "answer":"A. 公共スペース・全客室・レストランにてWi-Fiを無料でご使用いただけます。"
+            },
+            {
+                "title":"朝食に関するFAQ",
+                "question":"Q.朝食は、どんな内容ですか？",
+                "answer":"A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
+            },
+            {
+                "question":"Q.ブッフェを提供している店舗を教えてください。",
+                "answer":"A.全店舗にてビュッフェスタイルのご朝食をご提供しております。\n※特別な事情によりセットメニューに変更させていただくことがございます"
+            },
+            {
+                "question":"Q.朝食なしのプランはありますか？",
+                "answer":"A.宿泊代に朝食も含まれており、あいにく朝食をご利用にならない場合の割引等はございません。 早朝のご出発でご朝食をお召し上がりいただけない場合は、おにぎりもしくはサンドイッチをご用意いたします。前日までに受付にてお申し付けくださいませ。 "
+            },
+            {
+                "title":"アクセスに関するFAQ",
+                "question":"Q.空港～ホテル間の送迎サービスはありますか？",
+                "answer":"A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
+            },
+            {
+                "question":"Q.コンビニエンスストアはありますか？",
+                "answer":"A.ホテル館内にはございませんが、各支店の徒歩圏内にございます。スタッフがご案内させて頂きますのでご遠慮なくお申し付けくださいませ。 "
+            },
+            {
+                "question":"Q.駐車場はありますか？",
+                "answer":"A.恐れ入りますが、ございません。バイクでお越しの場合は、近隣の駐輪場をご案内いたします。（※東屋プノンペンのみ建物周辺に駐車場所有）"
+            },
+            {
+                "title":"お支払いに関するFAQ",
+                "question":"Q.オンライン決済はできますか？",
+                "answer":"A.恐れ入りますが、現在のところオンラインでの決済サービスはございません。チェックイン前の銀行お振込みをご希望の際は、ご予約時にお申し付けくださいませ。"
+            },
+            {
+                "question":"Q.精算はいつすればいいですか？",
+                "answer":"A.チェックインの際に宿泊費の前払いをお願いしております。銀行振り込みをご希望の場合、チェックインまでにお支払い頂く必要がございます。(※弊社との法人契約がある企業様のみチェックアウト後の銀行振り込みも可能でございます。)"
+            },
+            {
+                "question":"Q. 宿泊者本人による現地払いではなく、会社より日本の口座からの銀行振込は可能ですか？可能な場合はどの通貨での支払いとなりますか？",
+                "answer":"A. 可能でございます。外国送金振込手数料はご負担いただきますようお願いをしております。お支払いいただける通貨は日本円・USドル・ベトナムドンです。"
+            },
+            {
+                "question":"Q. 数日～数週間の短期滞在でも銀行振込は可能ですか？",
+                "answer":"A. 可能でございます。"
+            },
+            {
+                "question":"Q. 長期滞在で会社による銀行振込の場合、支払いはどうすれば良いでしょうか？",
+                "answer":"A. 月に一度のご精算をお願いしております。\n領収書を月末に発行し貴社に送付致しますので、受取り次第7日以内にお支払いください。"
+            }
+        ]
     },
     "service": {
         "name": "提供サービス",
@@ -366,28 +504,28 @@
                 "name":"ハイバーチュン１号店",
                 "desc":"全31部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。立地もハイバーチュン区中心に位置。ホーチミンで有名な日本食居酒屋「満月」は午後6時〜深夜２時まで営業、夕食や締めの一杯に焼き鳥とラーメンでお待ちしております。サウナと水風呂で体を整え、露天風呂で体を温め、「満月」で美味しいものを食べて気分が良くなれば快眠間違いなし。朝は和朝食で一日の活力を提供します。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg",
-                "link": "/HN/HBT1"
+                "link": "/hai-ba-trung-detail/room"
             },
             {
                 "id": 2,
                 "name":"キンマー２号店",
                 "desc":"全37部屋、露天風呂、女性専用露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。ホテルとは独立した入り口を持つアネックスも1部屋完備。長期滞在者向けにキッチン付きのお部屋も10部屋ご用意。立地もキンマー通りまで徒歩３分。 館内１階のもつ鍋居酒屋「鈴の屋」は午後5時〜深夜1時まで営業、夕食や締めの一杯に合うおつまみも充実のご用意でお待ちしております。 男性専用・女性専用露天風呂、サウナ、水風呂で体を整え、「鈴の屋」で美味しいものを食べて気分が良くなれば快眠間違いなし。朝は和朝食で一日の活力を提供します。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
-                "link": "/HN/KM2"
+                "link": "kim-ma-2-detail/room"
             },
             {
                 "id": 3,
                 "name":"キンマー 3号店",
                 "desc":"全42部屋。2023年オープン、最上階の広々とした露天風呂＆サウナ＆水風呂、和朝食ビュッフェ、全室にシャワートイレ、バスタブ、日本語放送を完備。キンマー2号店から徒歩2分、同じく湖のほとりに位置する3号店も、人気のレイクサイドのお部屋やリーズナブルな内窓のお部屋を多数ご用意しております。和朝食ビュッフェはロビーに併設する朝食会場で、一日の活力を提供します。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
-                "link": "/HN/KM3"
+                "link": "kim-ma-3-detail/room"
             },
             {
                 "id": 4,
                 "name":"リンラン店",
                 "desc":"全46部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。立地はロッテセンターの徒歩圏内、近年日本食レストランが立ち並ぶリンラン通りに位置し、館内7階にはリピート率90％以上を誇る自慢の東屋マッサージを併設。(ラストオーダー午後9:30) 各マッサージチェアからは夜景を楽しむことができます。夕食や締めの一杯には、地階に併設する焼き鳥居酒屋「松木」をご利用いただけます。 広々とした露天風呂、サウナ、水風呂でごゆっくりお寛ぎいただき、翌朝は8階の見晴らしのいい朝食会場で気持ちのよい朝をお迎えいただけます。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
-                "link": "/HN/LL"
+                "link": "/linh-lang-detail/room"
             }
         ],
         "btn-detail":"詳細はこちら"
@@ -1306,28 +1444,28 @@
                 "name":"タイバンルン１号店",
                 "desc":"全51部屋、露天風呂、和朝食ビュッフェ、フットマッサージ、居酒屋「テン」、全室に洗浄機能付きトイレ、日本語放送を完備。館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:45がラストオーダー。また深夜２時までオープンしている日本食居酒屋「テン」では日本酒、焼酎、刺身を含む居酒屋メニューが満載。一人でもお気軽にどうぞ。露天風呂に浸かり、居酒屋テンで一杯、マッサージを受けて、部屋でスポーツニュースを観て一日の疲れを癒す、東屋が誇るワンストップサービスを提供しています。立地もタイバンルン２号店向かい、レタントン店へも徒歩３分ほどの抜群のロケーションです。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl1_wyk4hz.jpg",
-                "link": "/HCM/TVL1"
+                "link": "/thai-van-lung-1-detail/room"
             },
             {
                 "id":2,
                 "name":"タイバンルン２号店",
                 "desc":"全58部屋、露天風呂、和朝食セット、日本食店『スイザン』、 焼酎バー『満月』、全室に洗浄機能付きトイレとバスタブ、 日本語放送を完備。露天風呂は平日の夕方限定で女性の お客様にもお楽しみいただけます。朝食は和朝食以外にも 明太子定食、卵かけご飯定食、コンチネンタルセット、 うどんなどをご用意しています。立地もタイバンルン1号店 向かいレタントン店へも徒歩3分ほどの抜群のロケーション です。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
-                "link": "/HCM/TVL2"
+                "link": "/thai-van-lung-2-detail/room"
             },
             {
                 "id":3,
                 "name":"レタントン店",
                 "desc":"全37部屋、露天風呂、和朝食セット、焼酎バー「満月」、全室に洗浄機能付きトイレ、日本語放送を完備。レタントン通りのど真ん中という抜群の立地で初めてベトナムの来られる方でも食べに行くのも飲みに行くのも困りません。都会の真ん中にある露天風呂はまさに都会のオアシス。地階にある焼酎バー「満月」は深夜２時まで営業しているため締めの一杯にも最適です。朝食は和朝食以外にも明太子定食、卵かけご飯定食、コンチネンタルセット、うどんなどをご用意しています。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
-                "link": "/HCM/LTT"
+                "link": "/le-thanh-ton-detail/room"
             },
             {
                 "id":4,
                 "name":"アネックス店",
                 "desc":"全７部屋の長期滞在者向けアパート型ホテル。全部屋バスタブ、洗浄機能付きトイレ、日本語放送完備。タイバンルン１号店の真裏、路地裏に位置する。エレベーターなしの４階建て、各階に２部屋ずつありホテル滞在に比べ出入りの際にお客様同士はち合うこともありません。ホテルゲスト同様にタイバンルン１号店の東屋サービス（和朝食、露天風呂、マッサージ宿泊者割引）をご利用できます。便利なオートロックドア、慣れないベトナムでの安全かつ快適かつリーズナブルな滞在をお約束します。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg  ",
-                "link": "/HCM/Annex"
+                "link": "/annex-detail/room"
             }
         ],
         "btn-detail":"詳細はこちら"
@@ -2174,7 +2312,7 @@
                 "name":"ダナン店",
                 "desc":"全32部屋、展望露天風呂、和朝食、フットマッサージ、全室にシャワートイレ、日本語放送を完備。空港から10分と中心に位置し、館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:45(休日午後9:45) がラストオーダー。 そしてダナン店自慢の展望露天風呂をぜひご堪能ください。ダナン店は湾に面しているためホテルの目の前に広がる海、山に沈みゆく夕日を観ながら堪能する露天風呂は格別。日本でもそうそうお目にかかることがない景色を楽しめます。ダナン初の東屋ワンストップサービスで癒されてください。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
-                "link":"/DN/DN"
+                "link":"/da-nang/room"
             }
         ],
         "btn-detail":"詳細はこちら"
@@ -2622,7 +2760,7 @@
                 "name":"ハイフォン",
                 "desc":"全46部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。長期滞在者向けにキッチン付きのお部屋もご用意。工業団地まで車で30分、ハイフォン空港まで10分という好立地に位置しております。当館1階に併設されている日本居酒屋「炭ぼうず」はランチタイム (午前11時～午後1時)、ディナータイム（午後5時半～午後10時）にて営業しております。炭ぼうず自慢の焼き鳥とおつまみでお腹を満たした後は、露天風呂・サウナ・水風呂で一日の疲れを癒していただけます。翌朝は9階にある朝食会場でハイフォンの眺望とともに東屋自慢の和朝食をお楽しみください。",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
-                "link":"/HP/HP"
+                "link":"/hai-phong/room" 
             }
         ],  
         "btn-detail":"詳細はこちら"
@@ -3093,5 +3231,400 @@
         "email":"メールアドレス",
         "phone":"お電話番号",
         "send":"送信"
-    }
+    },
+    "pp-branch": {
+        "id": 1,
+        "name": "東屋ホテルカンボジア　プノンペン店",
+        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705138315/AzumayaWeb/cambodia_slide1_u4465b.jpg"
+      },
+      "room_pp": {
+          "room": "お部屋のご案内",
+          "roomContent": "和朝食、露天風呂(女性専用時間あり)、日本語10チャンネル、高速無線インターネット （有線がありません。）、ベッドメイキング、ミネラルウォーター2本／日、これらは料金に含まれております。",
+          "tariff": "価格表一覧",
+          "vat": "※客室代にて消費税(VAT)別途",
+          "service": "料金表に含まれるもの:",
+          "serviceContent": "和朝食\n露天風呂（男性専用）\n日本語8チャンネル\n高速無線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料",
+          "facility": "アメニティー&設備:",
+          "facilityContent": "バスタブ\nワーキングデスク\n32型ソニーテレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
+          "rental": "無料のレンタル:",
+          "rentalContent": "220V → 110V の変圧器\n追加のハブ",
+          "business": "ビジネスサービス",
+          "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　プノンペン店では様々なサービスをご用意しております。\n日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
+          "pickup": "空港送迎サービス",
+          "pickup_fee1": "$15",
+          "pickup_fee2": "$25",
+          "pickup_car": "4人乗り、出待ち",
+          "pickup_car2":"16人乗り、出待ち",
+          "minibar": "ミニバー",
+          "minibar_fee": "$1～",
+          "minibar_type": "ソフトドリンク、ビール等",
+          "laundry": "ランドリーサービス",
+          "laundry_fee1": "$0.5～",
+          "laundry_fee2": "長期滞在者のための特別価格あり",
+          "print": "プリント・コピー利用",
+          "print_fee1": "1日10ページまで無料 ・ 11ページ目から1枚0.1$",
+          "hotelService":"ホテルサービス",
+          "roten": "露天風呂",
+          "breakfast": "朝食",
+          "ground":"ロビー",
+          "weekday":"月 - 金",
+          "weekend":"土 - 日",
+          "breakfastContent1": "ビュッフェ 6:00 ~ 8:30, セットメニュー 8:30 ~10:00 (ラストオーダー 9:45)",
+          "breakfastContent2": "セットメニュー 6:00 ~ 10:00 (ラストオーダー 9:45)",
+          "breakfastNote1":"※朝6時までは朝食のテイクアウトも可能です。",
+          "breakfastNote2":"事前に受付にてご予約ください（おにぎり・サンドイッチ）",
+          "visitor":"ビジター料金\n\nビュッフェor\n 和定食 8$\n\nその他の\n朝食セット 6$",
+          "rotenburo":"露天風呂(男性専用)",
+          "rotenFloor":"7階 (6階から階段でお上がりください)",
+          "rotenContent1":"5:30 ~ 10:00",
+          "rotenNote1":"(最終入場 9:30)",
+          "rotenContent2":"17:00 ～23:00",
+          "rotenNote2":"(最終入場 22:30)",
+          "rotenContent3":"7:00 ~ 23:00",
+          "rotenNote3":"※ 女性専用時間：毎日23:15 ～ 1:15",
+          "rotenNote4":"※ お部屋のバスタオルとハンドタオルをご持参ください",
+          "massage": "フットマッサージ",
+          "massageContent1": "13:00 ～ 22:00",
+          "massageNote1":"(最終入場 21:20)",
+          "massageContent2": "10:00 ～ 22:00",
+          "massageVisitor":"ビジター料金\n40分：10$\n70分：15$\n100分：20$\n\nご宿泊者料金\n記から10%\nOFF",
+          "reception": "受付",
+          "receptionAsk":"内線 ： 0番 もしくは 100番",
+          "attention": "外出の際の注意",
+          "attentionContent":"バイクによる財布・カバン・携帯電話のひったくりが多発しております。ショルダーバッグであってもひったくりに遭う場合がございます。道を渡る際、また歩道を歩いている際は周りに十分ご注意くださいませ。",
+          "thanks":"ごゆっくりとおくつろぎくださいませ。",
+          "board": "お問い合わせ",
+          "contact1": "ご予約はお電話：",
+          "contact2": "か Eメール:",
+          "contact3": "もしくはホテルのウィブサイト:",
+          "contact4":"からお願いします。",
+          "tel":"電話番号",
+          "phone": "(+855) 23 218 961",
+          "email": "reservation@azumayacambodia.com",
+          "website": "www.azumayavietnam.com",
+          "location": "アクセス",
+          "gallery": "ギャラリー",
+          "locationContent": "東屋ホテル　プノンペン店ではプノンペンタワーの真向かいという好立地で、遠方から朝の渋滞の中勤務をする必要がございません。 また、プノンペンの真ん中に位置するため、様々な場所へのアクセスも簡単でございます。",
+          "address": " 住所： No. 302 St.228, Phnom Penh, Cambodia (プノンペンタワー真向かい)",
+          "emailTitle": "Eメール",
+          "type": "部屋タイプ",
+          "rate": "客室料金",
+          "desc": "説明",
+          "size": "広さ m²",
+          "window": "窓",
+          "bath": "バスタブ",
+          "kitchen": "キッチン",
+          "terrace": "テラス",
+          "bed": "ベッドのサイズ",
+          "tv": "32型ソニーテレビ",
+          "reservation": "予約する",
+          "features": [
+              {
+                  "name": "お部屋のご案内"
+              },
+              {
+                  "name": "価格表一覧"
+              },
+              {
+                  "name": "ビジネスサービス"
+              },
+              {
+                  "name": "ホテルサービス"
+              },
+              {
+                  "name": "ギャラリー"
+              },
+              {
+                  "name": "アクセス"
+              }
+          ]
+      },
+      "pp": [
+          {
+              "id": 1,
+              "branch_name": "Azumaya Phnom Penh",
+              "room_id": "diw",
+              "name": "DELUXE INSIDE WINDOW",
+              "size": "23",
+              "sizeTitle": "Size",
+              "bedTitle": "Bed",
+              "install": "Installation",
+              "in1": "Bathtub",
+              "in2": "Toilet with bidet function",
+              "in3": "Working desk",
+              "in4": "32 Inch Sony TV",
+              "in5": "International TV channels",
+              "in6": "Free Wi-Fi",
+              "in7": "Security box",
+              "in8": "Hair drier",
+              "in9": "Shavor & tooth brush",
+              "in10": "Slippers",
+              "in11": "Shampoo, conditioner, and body soap",
+              "priceTitle": "Price",
+              "bed": "King",
+              "tick_w": false,
+              "price": "$45"
+          },
+          {
+              "id": 2,
+              "branch_name": "Azumaya Phnom Penh",
+              "room_id": "d",
+              "name": "DELUXE",
+              "size": "23",
+              "sizeTitle": "Size",
+              "bedTitle": "Bed",
+              "install": "Installation",
+              "in1": "Bathtub",
+              "in2": "Toilet with bidet function",
+              "in3": "Working desk",
+              "in4": "32 Inch Sony TV",
+              "in5": "International TV channels",
+              "in6": "Free Wi-Fi",
+              "in7": "Security box",
+              "in8": "Hair drier",
+              "in9": "Shavor & tooth brush",
+              "in10": "Slippers",
+              "in11": "Shampoo, conditioner, and body soap",
+              "priceTitle": "Price",
+              "bed": "Double",
+              "tick_w": true,
+              "price": "$50"
+          },
+          {
+              "id": 3,
+              "branch_name": "Azumaya Phnom Penh",
+              "room_id": "dt",
+              "name": "DELUXE TWIN",
+              "size": "23",
+              "sizeTitle": "Size",
+              "bedTitle": "Bed",
+              "install": "Installation",
+              "in1": "Bathtub",
+              "in2": "Toilet with bidet function",
+              "in3": "Working desk",
+              "in4": "32 Inch Sony TV",
+              "in5": "International TV channels",
+              "in6": "Free Wi-Fi",
+              "in7": "Security box",
+              "in8": "Hair drier",
+              "in9": "Shavor & tooth brush",
+              "in10": "Slippers",
+              "in11": "Shampoo, conditioner, and body soap",
+              "priceTitle": "Price",
+              "bed": "Twin",
+              "tick_w": true,
+              "price": "$50"
+          },
+          {
+              "id": 4,
+              "branch_name": "Azumaya Phnom Penh",
+              "room_id": "df",
+              "name": "DELUXE FRONT",
+              "size": "28",
+              "sizeTitle": "Size",
+              "bedTitle": "Bed",
+              "install": "Installation",
+              "in1": "Bathtub",
+              "in2": "Toilet with bidet function",
+              "in3": "Working desk",
+              "in4": "32 Inch Sony TV",
+              "in5": "International TV channels",
+              "in6": "Free Wi-Fi",
+              "in7": "Security box",
+              "in8": "Hair drier",
+              "in9": "Shavor & tooth brush",
+              "in10": "Slippers",
+              "in11": "Shampoo, conditioner, and body soap",
+              "priceTitle": "Price",
+              "bed": "King",
+              "tick_w": true,
+              "price": "$55"
+          },
+          {
+              "id": 5,
+              "branch_name": "Azumaya Phnom Penh",
+              "room_id": "e",
+              "name": "EXECUTIVE",
+              "size": "31",
+              "sizeTitle": "Size",
+              "bedTitle": "Bed",
+              "install": "Installation",
+              "in1": "Bathtub",
+              "in2": "Toilet with bidet function",
+              "in3": "Working desk",
+              "in4": "32 Inch Sony TV",
+              "in5": "International TV channels",
+              "in6": "Free Wi-Fi",
+              "in7": "Security box",
+              "in8": "Hair drier",
+              "in9": "Shavor & tooth brush",
+              "in10": "Slippers",
+              "in11": "Shampoo, conditioner, and body soap",
+              "priceTitle": "Price",
+              "bed": "Double",
+              "tick_w": true,
+              "price": "$60"
+          }
+         
+      ],
+      "home_pp": {
+          "name": "東屋ホテル",
+          "news_title": "ニュース",
+          "welcome_title": "ようこそ、東屋ホテルへ",
+          "welcome_sub-title": "海外出張者のための心安らぐ空間を",
+          "welcome_content": "現在、カンボジア（プノンペン）にビジネス出張される方が年々増えております。そんな中、言葉や食事など、カンボジアでの滞在に対し不安を抱えておられるはずです。ここ東屋では「和」をコンセプトに、日本人出張者の皆様が異国を感じない心安らぐ空間を提供しております。ゆっくりと足を伸ばしてお入り頂ける「露天風呂」や、一日の活力となる「こだわりの和朝食」、溜まった疲れをほぐすことのできる「フットマッサージ」などをご用意しており、お仕事終わりにたっぷりとおくつろぎ頂くことができます。 フロントには日本語対応可能なスタッフが常駐しており、お部屋ではNHKなどの日本の民放が視聴でき、空港からの送迎サービスや長期出張者のためのランドリーサービスを始め、高速無線インターネットやレンタカー手配代行など、安心してご滞在頂けるよう最善のおもてなしを心がけております。",
+          "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
+          "new_item": [
+              {
+                  "id": 1,
+                  "new": " AZUMAYA COFFEE AND SNACK OPEN",
+                  "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                  "month": "Jul",
+                  "day": "7th",
+                  "year": 2023,
+                  "location": "PhnomPenh"
+              },
+              {
+                  "id": 2,
+                  "new": "Re-opening Open Air Hot Bath for Visitor from 24th May 2023",
+                  "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                  "month": "Jul",
+                  "day": "7th",
+                  "year": 2023,
+                  "location": "PhnomPenh"
+              },
+              {
+                  "id": 3,
+                  "new": "Notice of Open Air Hot Bath Visitor Service Closing from April 1st 2022",
+                  "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                  "month": "Jul",
+                  "day": "7th",
+                  "year": 2023,
+                  "location": "PhnomPenh"
+              },
+              {
+                  "id": 4,
+                  "new":  "Re-opening Open Air Hot Bath and Massage from October 18th, 2021",
+                  "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
+                  "month": "Jul",
+                  "day": "7th",
+                  "year": 2023,
+                  "location": "PhnomPenh"
+              }
+          ]
+      },
+      "feature_pp": {
+          "name": "東屋8大魅力",
+          "main_title": "東屋8大魅力",
+          "main_content": "東屋ホテルをいつもご愛顧頂きまして誠にありがとうございます。カンボジアという異国へご出張される方に、日本と変わらぬ快適な環境を提供致したいという一心で、今回はプノンペンへの出店となりました。プノンペンへご主張の際は、是非とも東屋ホテルにお越しくださいませ。プノンペン店もベトナム店同様の変わらぬ東屋８大サービスを提供して参ります。",
+          "feature_item": [
+              {
+                  "id": 1,
+                  "title": "一泊45$からのリーズナブルな価格",
+                  "content": "東屋価格はリーズナブルな価格で提供しております。$1当たりの価格追求にこだわり、決して豪華ではない内装ですが、その分価格に反映する努力を惜しみません。全部屋シャワートイレ付き、アメニティーも日系会社より取り寄せ、小さめヘッドの歯ブラシ、髭剃りやコンディショナー含め８種類ご用意。会社契約で更にお安くご宿泊頂けます。長期滞在者にもさらなる割引をご用意しております。お気軽に受付までお問い合わせください。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
+                  "num": "その 1"
+              },
+              {
+                  "id": 2,
+                  "title": "プノンペンタワーの\n真向かいという好立地",
+                  "content": "日系オフィスが数多く入るプノンペンの中心的オフィスビルのプノンペンタワー真向かいでどこへ行くにも便利なロケーションです。日本食が多いBKK1地区へも1ブロック、空港近くの経済特区へ行かれる際も空港までの大通りまですぐに出ることができます。プノンペンの中心地のため、様々な場所へのアクセスが簡単です。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/f2-1_pjlnx4.jpg",
+                  "num": "その 2"
+              },
+              {
+                  "id": 3,
+                  "title": "水風呂付き露天風呂&サウナ",
+                  "content": "プノンペンのど真ん中にも露天風呂というオアシスができました。清潔感のあるサウナと水風呂も完備致しております。早朝の目覚めや、仕事終わりでリラックスしたい時、暑いカンボジアでの疲れを取りたい時に是非ともご利用くださいませ。営業時間は平日朝6am – 10am, 夕方5pm – 11pm、土日祝は朝7am – 11pmまで通しで営業しております。\n※ 女性専用時間：毎日11:15pm – 1:15am",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
+                  "num": "その 3",
+                  "hasLink": true,
+                  "link": "/"
+              },
+              {
+                  "id": 4,
+                  "title": "和朝食",
+                  "content": "1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。焼き魚・煮物・揚げ物・炒め物など、全9品からなるボリューム満点の東屋自慢の和朝食セットをご用意しております。今後は午前6時～8時に和朝食ビュッフェを、午前８時〜10時はセットメニューをご用意する予定でございます。その他、丼ものやカレーライス、豚の生姜焼きなど長期滞在の方でも飽きることのないようメニュー構成に気をつけております。ビジターの$8でご利用いただけます。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
+                  "hasLink": true,
+                  "num": "その 4",
+                  "link": "/"
+              },
+              {
+                  "id": 5,
+                  "title": "リピート率90%以上の本格派フットマッサージ併設",
+                  "content": "全てのスタッフがしっかりと研修を受け、ご自身の調子が悪いところをちゃんと認識でき、溜まった疲れが取れるマッサージを受けられます。70分のコースでは自慢のツボ押しをメインとしたフットマッサージと、頭・首・肩・腕・背中まで全身くまなくマッサージを受けられます。ホテル内にマッサージルームを併設しており、男女問わず誰でも気軽にご利用頂けます。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
+                  "num": "その 7",
+                  "hasLink": true,
+                  "link": "/"
+              },
+              {
+                  "id": 6,
+                  "title": "日本語の\nおもてなし",
+                  "content": "受付は日本語の話せるスタッフが常駐、マネージャーも日本語対応可能なので英語が苦手でも安心です。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg",
+                  "num": "その 6"
+              },
+              {
+                  "id": 7,
+                  "title": "日本語テレビ視聴可能",
+                  "content": "TBS・フジ・日テレなど主要民放局にNHK総合、WOWOWなど日本での生活と変わらぬ日本語放送をオンタイムでご視聴頂けます。その日のスポーツニュースや見ていた連続ドラマも録画を気にすることなく日本と変わらぬ環境でリラックスしていただけます。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/JPTV_oueohf.jpg",
+                  "num": "その 5"
+              },
+              {
+                  "id": 8,
+                  "title": "日系レストラン テナント募集中!",
+                  "content": "当館内のスペースにてレストランテナントを募集しております。日本から出張者様や在住邦 人の方々、または現地の人々へおいしいごはんをご提供されたい方をお待ちしております。 寿司やラーメン、居酒屋やイタリアンなど、種類は問いませんので、お気軽にお問合せくだ さいませ。",
+                  "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1707123029/AzumayaWeb/wanted-en_yhr6un.png",
+                  "num": "その 8"
+              }
+          ]
+      },
+      "policy_pp": {
+          "title": "Hotel Policies",
+          "data": [
+              {
+                  "name": "CHECK-IN",
+                  "content": "After 15:00."
+              },
+              {
+                  "name": "CHECK-OUT",
+                  "content": "Until 12:00"
+              },
+              {
+                  "name": "EARLY CHECK-IN",
+                  "content": "Will be subject to the availability of hotel room status.\n- Check in early until 10:00 : 100% charged of one night room rate.\n- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
+              },
+              {
+                  "name": "CHECK-OUT LATE",
+                  "content": "Will be subject to the availability of hotel room status.\n- Check out late until 18:00 : 50% charged of the one night.\n- Check out late from 18:00 : 100% charged of the one night."
+              },
+              {
+                  "name": "NO SHOW",
+                  "content": "100% charged one night."
+              },
+              {
+                  "name": "LATE CANCELLATION",
+                  "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.\n- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
+              },
+              {
+                  "name": "EARLY CHECK-OUT",
+                  "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
+              },
+              {
+                  "name":"ADVANNCED PAYMENT BEFORE CHECK-OUT",
+                  "content": "We do welcome the payment before check-out to make it smoothly."
+              },
+              {
+                  "name": "Exchange rate is based on",
+                  "content": "The hotel rate upon check-out date for non-contractor. The selling rate of ACLEDA BANK at 6:00 upon check-out date for contractor."
+              },
+              {
+                  "name": "Please be noted ",
+                  "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
+              }
+          ]
+      }  
 }

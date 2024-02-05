@@ -14,6 +14,11 @@ function Header() {
   const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
   const feature = t("feature.feature_item", { returnObjects: true });
+  const hcm = t("hcm-branch.branch", {returnObjects:true})
+  const hn = t("hn-branch.branch", {returnObjects:true})
+  const dn = t("dn-branch.branch", {returnObjects:true})
+  const hp = t("hp-branch.branch", {returnObjects:true})
+  const service = t("service.service_name", {returnObjects:true})
   const [isOpen, setIsOpen] = useState(false)
   // const handleClick = () => {
   //   document.getElementsByClassName(
@@ -270,7 +275,7 @@ function Header() {
       </div>
       <div className="header ">
         <Tabs
-        selectedTabClassName="service__active" 
+        // selectedTabClassName="service__active" 
         className="header__PC">
                   <TabList className="header__navbar-list mb-0">
                   <Tab className="header__navbar-item">
@@ -284,29 +289,65 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Policies">
-                        {t("header.policies")}
+                      <Link className="header__navbar-link-2" to="/NewsList">
+                        {t("header.news")}
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/HCM/HCMBranch">
+                      <Link className="header__navbar-link-2" to="/hotel-hcm">
                         {t("header.hcm")}
                       </Link>
+                      <ul className="header__navbar-item-list" style={{width:200}}>
+                        {hcm.map((item)=>(
+                          <li className = "header__navbar-sub-link" >
+                          <Link 
+                          to ={item.link}>{item.name}
+                          </Link>
+                            </li>
+                        ))}
+                        </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/HN/HNBranch">
+                      <Link className="header__navbar-link-2" to="/hotel-hn">
                         {t("header.hn")}
                       </Link>
+                      <ul className="header__navbar-item-list" style={{width:200}}>
+                        {hn.map((item)=>(
+                          <li className = "header__navbar-sub-link" >
+                          <Link 
+                          to ={item.link}>{item.name}
+                          </Link>
+                            </li>
+                        ))}
+                        </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/DN/DNBranch">
+                      <Link className="header__navbar-link-2" to="/hotel-dn">
                         {t("header.dn")}
                       </Link>
+                      <ul className="header__navbar-item-list" style={{width:200}}>
+                        {dn.map((item)=>(
+                          <li className = "header__navbar-sub-link" >
+                          <Link 
+                          to ={item.link}>{item.name}
+                          </Link>
+                            </li>
+                        ))}
+                        </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/HP/HPBranch">
+                      <Link className="header__navbar-link-2" to="/hotel-hp">
                         {t("header.hp")}
                       </Link>
+                      <ul className="header__navbar-item-list" style={{width:200}}>
+                        {hp.map((item)=>(
+                          <li className = "header__navbar-sub-link" >
+                          <Link 
+                          to ={item.link}>{item.name}
+                          </Link>
+                            </li>
+                        ))}
+                        </ul>
                     </Tab>
 
                     {/* <Tab className="header__navbar-item">
@@ -317,14 +358,9 @@ function Header() {
                       </Link>
                       <ul className="header__navbar-item-list">
                         {feature.map((item)=>(
-                          <Tab className = "header__navbar-sub-link"><Link 
-                          to ={`/Feature#${item.id}`}
-                          onClick={()=>scroller.scrollTo(`${item.id}`,
-                          {duration:0,
-                          delay:0,
-                          smooth: true,
-                          containerID:'containerID',
-                          offset:-250})}> 
+                          <Tab className = "header__navbar-sub-link">
+                          <Link 
+                          to ={`/Feature/${item.id}`}> 
                           <span style={{backgroundColor:"#482979", padding:"5px", marginRight:"8px"}}>
                             {item.num}</span>{t(item.title)}
                             </Link>
@@ -336,6 +372,15 @@ function Header() {
                       <Link className="header__navbar-link-2" to="/Service/Test/Vietnam/Service">
                         {t("header.service")}
                       </Link>
+                      <ul className="header__navbar-item-list" style={{width: 100}}>
+                        {service.map((item)=>(
+                          <li className = "header__navbar-sub-link" >
+                          <Link 
+                          to ={item.link}>{item.name}
+                          </Link>
+                            </li>
+                        ))}
+                        </ul>
                     </Tab>
                     {/* <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Massage">
@@ -345,6 +390,11 @@ function Header() {
                     <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Contract">
                         {t("header.contract")}
+                      </Link>
+                    </Tab>
+                    <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/Policies">
+                        {t("header.policies")}
                       </Link>
                     </Tab>
                     {/* <Tab className="header__navbar-item">

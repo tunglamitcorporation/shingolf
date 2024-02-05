@@ -3,7 +3,8 @@
         "top-header": "★ Business hotel with Japanese breakfast and Open-air hot tub ★",
         "az":"Azumaya",
         "home": "Home",
-        "policies": "Hotel Policies",
+        "news":"News",
+        "policies": "Q&A",
         "reservation": "Reservation",
         "feature": "Feature",
         "service": "Service",
@@ -60,61 +61,67 @@
         ],
         "branch": [
             {
-                "branch_id": "LTT",
+                "branch_id": "le-thanh-ton-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
+                
             },
             {
-                "branch_id": "TVL1",
+                "branch_id": "thai-van-lung-1-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
+      
             },
             {
-                "branch_id": "TVL2",
+                "branch_id": "thai-van-lung-2-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
+ 
             },
             {
-                "branch_id": "Annex",
+                "branch_id": "annex-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
+     
             },
             {
-                "branch_id": "HBT1",
+                "branch_id": "hai-ba-trung-detail",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Hai Ba Trung 1"
+         
+
             },
             {
-                "branch_id": "KM2",
+                "branch_id": "kim-ma-2-detail",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 2"
             },
             {
-                "branch_id": "KM3",
+                "branch_id": "kim-ma-3-detail",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 3"
             },
             {
-                "branch_id":"LL",
+                "branch_id":"linh-lang-detailL",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Linh Lang"
             },
             {
-                "branch_id": "DN",
+                "branch_id": "da-nang",
                 "city_id": "DN",
                 "city_name": "Da Nang",
                 "branch_name": "Azumaya Da Nang Hotel"
             },
             {
-                "branch_id": "HP",
+                "branch_id": "hai-phong",
                 "city_id": "HP",
                 "city_name": "Hai Phong",
                 "branch_name": "Azumaya Hai Phong Hotel"
@@ -240,7 +247,7 @@
         ]
     },
     "policy": {
-        "title": "Hotel Policies",
+        "title": "Q&A",
         "data": [
             {
                 "name": "CHECK-IN",
@@ -298,13 +305,16 @@
         ],
         "service_name": [
             {
-                "name": "Rotenburo"
+                "name": "Rotenburo",
+                "link":"/Service/Test/Vietnam/Service?tab=rotenburo"
             },
             {
-                "name": "Breakfast"
+                "name": "Breakfast",
+                "link":"/Service/Test/Vietnam/Service?tab=breakfast"
             },
             {
-                "name": "Massage"
+                "name": "Massage",
+                "link":"/Service/Test/Vietnam/Service?tab=massage"
             }
         ],
         "hcm-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
@@ -364,6 +374,128 @@
             }
         ]
     },
+    "faq":{
+        
+        "title2":"各種サービスに関するFAQ",
+        "title3":"朝食に関するFAQ",
+        "title4":"アクセスに関するFAQ",
+        "title5":"お支払いに関するFAQ",
+        "data":[
+            {
+                "title":"ご宿泊に関するFAQ",
+                "question":"Q. ホテル滞在中、急に体調が悪くなったら？",
+                "answer":"A. 24時間体制で日本語のできるスタッフがホテルに常勤し、お客様のサポートを行っております。お客様より体調不良のご連絡があれば、症状や状況などをお伺いした上でそれらに応じた最寄りの病院をご紹介し、手配いたします。"
+            },
+            {
+                "question":"Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
+                "answer":"A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
+            },
+            {
+                "question":"Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
+                "answer":"A. お部屋に空きがある場合は、承ることができます。(有料)\n・10:00 a.m.より前のアーリーチェックイン：一泊分の100%チャージ\n・10:00 a.m.より後のアーリーチェックイン：一泊分の50%チャージ\n・18:00 p.m.までのレイトチェックアウト：一泊分の50%チャージ\n・18:00 p.m.以降のレイトチェックアウト：一泊分の100%チャージ"
+            },
+            {
+                "question":"Q.門限はありますか？",
+                "answer":"A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
+            },
+            {
+                "question":"Q.電子機器はそのまま利用できますか？",
+                "answer":"A.ご利用いただけます。コンセントの型は日本と同じA型ですがベトナム、カンボジアの電圧はほとんどが220Vですのでお気をつけてご使用くださいませ。日本の電気製品でも、100～240V対応の物であれば変圧器なしで使用できますが、念のため使用予定の電気製品の取り扱い説明書をお読み頂くことをお勧め致します。ただし100～240V対応製品でもプラグの変換アダプターは必要となる場合がございますのでご注意ください。"
+            },
+            {
+                "question":"Q.レストランは全て禁煙ですか？ロビーに喫煙場所はありますか？",
+                "answer":"A.全支店、出口付近に灰皿がございます。"
+            },
+            {
+                "question":"Q.深夜のチェックイン、又は早朝のチェックアウトはできますか？",
+                "answer":"A.可能でございます。受付は２４時間対応しておりますので、ご安心くださいませ。ご精算はいつでも対応可能でございますので、お時間のある時に受付へお申し付けくださいませ。"
+            },
+            {
+                "question":"Q.チェックアウト後、荷物を預かってもらえますか？",
+                "answer":"A.お預かりいたします。大変恐れ入りますが、貴重品はご自身で管理頂きますようお願い致します。"
+            },
+            {
+                "question":"Q.チェックアウト後、露天風呂を無料で利用できますか？",
+                "answer":"A.チェックイン・チェックアウトの当日に限り、ご宿泊者様には露天風呂を無料でご利用頂くことができます。深夜便の前に、是非ご利用くださいませ"
+            },
+            {
+                "question":"Q. 長期滞在の場合、途中退出は可能ですか？",
+                "answer":"A. 可能でございます。変更するチェックアウトの日の15時を起点としてそれより48時間前にご連絡をいただければ、キャンセル料金は発生致しません。"
+            },
+            {
+                "question":"Q. シーズンや土日料金等はありますか？",
+                "answer":"A. 料金の変動はございません。"
+            },
+            {
+                "title":"各種サービスに関するFAQ",
+                "question":"Q.マッサージの事前予約はできますか？",
+                "answer":"A.可能でございます。夕方及び週末は大変混み合いますので、事前にご予約されることをお勧めいたします。"
+            },
+            {
+                "question":"Q.両替サービスはありますか？",
+                "answer":"A.外貨（日本円・USドル）から、ベトナムドンへの両替のみ承っております。当ホテル独自の為替レートに則って両替させて頂きます。"
+            },
+            {
+                "question":"Q.コインランドリーはありますか？",
+                "answer":"A.　あいにくホテル館内にはございませんが、ホテルのランドリーサービスをご利用いただけます。目安：ワイシャツ１枚＝20.000ドン（約１００円）です。また、一部店舗にて洗濯乾燥機を無料でご利用いただけます。"
+            },
+            {
+                "question":"Q.アイロンはありますか？",
+                "answer":"A.貸出用のアイロンはございません。スタッフがアイロンがけをさせて頂きますので、ご希望の際は受付へお申し付けくださいませ。"
+            },
+            {
+                "question":"Q.客室でのインターネット環境は？",
+                "answer":"A. 公共スペース・全客室・レストランにてWi-Fiを無料でご使用いただけます。"
+            },
+            {
+                "title":"朝食に関するFAQ",
+                "question":"Q.朝食は、どんな内容ですか？",
+                "answer":"A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
+            },
+            {
+                "question":"Q.ブッフェを提供している店舗を教えてください。",
+                "answer":"A.全店舗にてビュッフェスタイルのご朝食をご提供しております。\n※特別な事情によりセットメニューに変更させていただくことがございます"
+            },
+            {
+                "question":"Q.朝食なしのプランはありますか？",
+                "answer":"A.宿泊代に朝食も含まれており、あいにく朝食をご利用にならない場合の割引等はございません。 早朝のご出発でご朝食をお召し上がりいただけない場合は、おにぎりもしくはサンドイッチをご用意いたします。前日までに受付にてお申し付けくださいませ。 "
+            },
+            {
+                "title":"アクセスに関するFAQ",
+                "question":"Q.空港～ホテル間の送迎サービスはありますか？",
+                "answer":"A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
+            },
+            {
+                "question":"Q.コンビニエンスストアはありますか？",
+                "answer":"A.ホテル館内にはございませんが、各支店の徒歩圏内にございます。スタッフがご案内させて頂きますのでご遠慮なくお申し付けくださいませ。 "
+            },
+            {
+                "question":"Q.駐車場はありますか？",
+                "answer":"A.恐れ入りますが、ございません。バイクでお越しの場合は、近隣の駐輪場をご案内いたします。（※東屋プノンペンのみ建物周辺に駐車場所有）"
+            },
+            {
+                "title":"お支払いに関するFAQ",
+                "question":"Q.オンライン決済はできますか？",
+                "answer":"A.恐れ入りますが、現在のところオンラインでの決済サービスはございません。チェックイン前の銀行お振込みをご希望の際は、ご予約時にお申し付けくださいませ。"
+            },
+            {
+                "question":"Q.精算はいつすればいいですか？",
+                "answer":"A.チェックインの際に宿泊費の前払いをお願いしております。銀行振り込みをご希望の場合、チェックインまでにお支払い頂く必要がございます。(※弊社との法人契約がある企業様のみチェックアウト後の銀行振り込みも可能でございます。)"
+            },
+            {
+                "question":"Q. 宿泊者本人による現地払いではなく、会社より日本の口座からの銀行振込は可能ですか？可能な場合はどの通貨での支払いとなりますか？",
+                "answer":"A. 可能でございます。外国送金振込手数料はご負担いただきますようお願いをしております。お支払いいただける通貨は日本円・USドル・ベトナムドンです。"
+            },
+            {
+                "question":"Q. 数日～数週間の短期滞在でも銀行振込は可能ですか？",
+                "answer":"A. 可能でございます。"
+            },
+            {
+                "question":"Q. 長期滞在で会社による銀行振込の場合、支払いはどうすれば良いでしょうか？",
+                "answer":"A. 月に一度のご精算をお願いしております。\n領収書を月末に発行し貴社に送付致しますので、受取り次第7日以内にお支払いください。"
+            }
+        ]
+    },
     "news":{
         "news":"News",
         "source":[
@@ -402,28 +534,28 @@
                 "name": "Azumaya Hai Ba Trung 1",
                 "desc": "Azumaya Hotel Hai Ba Trung 1 is a 31 room hotel located in the middle of Hai Ba Trung district with shower toilet, bathtub, and Japanese TV shows supplied for each room. We have a giant open-air hot bath, Japanese breakfast buffet, Japanese restaurant “Mangetsu” (6pm-2am)original style foot massage which 90% of the customers are repeating. (The last order for massage is 9:45pm.) of all branches, only Hai Ba Trung 1 branch uses the natural stone for open-air hot baths. After relaxing in the open-air hot bath, have our soothing massage, and come satisfy your appetite in “Mangetsu”; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg",
-                "link": "/HN/HBT1"
+                "link": "/hai-ba-trung-detail/room"
             },
             {
                 "id": 2,
                 "name": "Azumaya Kim Ma 2",
                 "desc": "Azumaya Hotel Kim Ma 2 branch, standing at the location 3 minutes far by walk from Kim Ma Street, has 38 rooms supplied with shower toilet, bathtub, and Japanese TV shows. In addition, we provide 2 annex rooms with separate entry from the main front entrance. For the long stay customers, 11 rooms with a kitchen are available. Both hotel guests and visitors can enjoy our open-air hot bath, Japanese breakfast , original style foot massage which 90% of users are repeat customers, and Japanese restaurant “Suzunoya”. (5pm-1am) After relaxing at our open-air hot bath, soothe your fatigue at foot massage, and satisfy your appetite at “Suzunoya” ; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
-                "link": "/HN/KM2"
+                "link": "/kim-ma-2-detail/room"
             },
             {
                 "id": 3,
                 "name": "Azumaya Kim Ma 3",
                 "desc": "Azumaya Hotel Kim Ma 3 branch has 42 rooms in total with shower toilet and Japanese TV shows for each room. Moreover, there are open-air hot bath and Japanese breakfast buffet. The Kin Ma 1 branch strands 10 seconds away by feet and Japanese restaurant street at Kim Ma Street is also near enough to walk (about 4 minutes). Its location is much convenient at dinner time. Moreover, far from the main street and nearby the silent pond in front, you can find it peaceful to be here.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
-                "link": "/HN/KM3"
+                "link": "/kim-ma-3-detail/room"
             },
             {
                 "id": 4,
                 "name": "Azumaya Linh Lang",
                 "desc": "Ling Lang branch has 46 rooms in total with open-air bath, Japanese breakfast , Japanese izakaya \"ISSUN Boushi\" . All the rooms are equipped with shower toilet, bathtub, and Japanese TV show. The hotel is within walking distance from Lotte Centre which is located along Linh Lang road where many Japanese restaurants have opened recently. At the hotel, high-tea massage is also available on the 7th floor. It records over 90% of repeat customer rate. Last order is 9:45 pm.. You can enjoy a night view from each massage chair. It features a spacious outdoor bath. You can have a pleasant morning at the breakfast venue on the 8th floor with a fine view.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
-                "link": "/HN/LL"
+                "link": "/linh-lang-detail/room"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -1341,28 +1473,28 @@
                 "name": "Azumaya Thai Van Lung 1",
                 "desc": "Azumaya Hotel Thai Van Lung 1 branch is located in a perfect location for Japanese businessmen to stay. It is supplied with 51 rooms in total with facilities of toilet with bidet function and Japanese TV shows for each room. In addition, we serve open-air hot bath, Japanese breakfast buffet, and Japanese restaurant “Thien”. Inside our hotel, you can take Azumaya-style massage, which 90% of the repeat customers come back (10:45pm is our last order for massage). In the basement floor, Japanese restaurant “Thien” serves you with various menu of Japanese sake, Sho-chu, and sashimi. Please visit and enjoy our food, we are open until 2:00am. For the hotel guests, you can soothe out your tiredness just by being in our hotel: take a bath at our unique open-air hot bath, satisfy your appetite in Thien, take our massage, watch TV at room and relax. Our Thai Van Lung 2 branch stands across the street and Le Thanh Ton branch is 3 minutes away by walking.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl1_wyk4hz.jpg",
-                "link": "/HCM/TVL1"
+                "link": "/thai-van-lung-1-detail/room"
             },
             {
                 "id": 2,
                 "name": "Azumaya Thai Van Lung 2",
                 "desc": "Azumaya Hotel Thai Van Lung 2 branch is a newly opened branch in 2016, located in front of the Thai Van Lung 1 branch across the street. There are 58 rooms in total with toilet with bidet functions, bathtubs, and Japanese TV shows in each room. We also serve open-air hot baths, Japanese breakfast, and Japanese food restaurant \"Suizan\" and \"mangetsu\". Female guests can also enjoy our open air hot bath on weekdays. (Only from 17:00 to 18:45) For breakfast, we also have a lot of set manu like continental set other than authentic Japanese sets, Udon noodles. With Thai Van Lung 1 branch located in front and Le Thanh Ton branch standing along Le Thanh Ton street 3 minutes far from here, it is the perfect location for businessmen to stay comfortably.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
-                "link": "/HCM/TVL2"
+                "link": "/thai-van-lung-2-detail/room"
             },
             {
                 "id": 3,
                 "name": "Azumaya Le Thanh Ton",
                 "desc": "Azumaya Hotel Le Thanh Ton branch has 37 rooms in total with toilet with bidet function and Japanese TV shows in each room. We serve open-air hot bath, Japanese breakfast and sho-chu bar “Mangetsu”. For breakfast, we also have a lot of food like continental set other than authentic Japanese sets, Udon noodle. The open-air hot bath in the middle of this city-side will definitely be an oasis soothing your fatigue from daily hard work. Another oasis for the guests who wants to end their day with a nice drink, the sho-chu bar “Mangetsu” in the basement floor is open for you until 2:00am. It stands in the middle of Le Thanh Ton street, there is no such inconvenience for going to a restaurant or a bar. A perfect location for the guests who come to Vietnam for the first time. all these values are prepared only for you to make your business trip comfortable.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
-                "link": "/HCM/LTT"
+                "link": "/le-thanh-ton-detail/room"
             },
             {
                 "id": 4,
                 "name": "Azumaya HCM ANNEX",
                 "desc": "Azumaya Hotel HCM Annex is an apartment type hotel with 7 rooms for long stay guests. It is well-supplied with bathtub, toilet with bidet function, and Japanese TV shows for all rooms. located in the back alley of Thai Van Lung 1 branch. The building itself does not have an elevator, but because only 2 rooms for each floor, there is no chance to bump into the other staying customer. Same as the staying guests in Thai Van Lung 1 branch, it is available to enjoy our Japanese breakfast, open-air hot bath, and special discount of using foot massage. the convenient auto door lock makes the accessing way easy & safe. We promise you a comfortable and reasonable stay in the unfamiliar surroundings of Vietnam.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg",
-                "link": "/HCM/Annex"
+                "link": "/annex-detail/room"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2207,7 +2339,8 @@
                 "id": 1,
                 "name": "Azumaya Da Nang",
                 "desc": "Azumaya Hotel Da Nang branch is located in the middle of city; just 10 minutes far from the airport, and has 32 rooms in total with shower toilet and Japanese TV shows for each room. What makes us unique from other hotels is that we serve open-air hot bath, Japanese breakfast, original style foot massage. Our original style foot massage is our popular service among Japanese visitors and guests which 90% of the repeat customers come back again. If you reserve, you do not have to concern about waiting in the long queue.(The last order for massage is 10:45pm for weekdays and 9:45pm for weekends.) Since the open-air hot bath is facing to the ocean you can enjoy the beautiful view of the ocean spread out before your eyes and sunset over the mountains. Please make yourself comfortable with our first one-stop service in Da Nang.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg"
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
+                "link":"/da-nang/room"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2394,7 +2527,8 @@
                 "id": 1,
                 "name": "Azumaya Hai Phong",
                 "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg"
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
+                "link":"/hai-phong/room"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2861,9 +2995,6 @@
         "phone": "お電話番号",
         "send": "送信"
     },
-
-
-
     "pp-branch": {
       "id": 1,
       "name": "Azumaya Phnom Penh",
@@ -2898,7 +3029,6 @@
         "print_fee1": "Free 1~10 pages/day ・ from 11 pages: $0.1/page per day",
         "hotelService":"Hotel Service",
         "roten": "Rotenburo",
-        "rotenContent": "AM: Mon - Fri: 6am - 9am (last entry 8:30am) / Sat - Sun : 7am - 12pm (last entry 11:30am)\nPM: Mon - Sun : 5:30pm - 11pm (last entry 10:30pm)",
         "breakfast": "Breakfast",
         "ground":"Ground",
         "weekday":"Monday - Friday",
@@ -3209,9 +3339,9 @@
             },
             {
                 "id": 8,
-                "title": "Japanese Restaurant “UYA” Open",
-                "content": "UNAGI HITSUMABUSHI UNA UNA Specialty Hitsumabishi is served with chopped up Unagi(Eel), Soup. Dashi, Pickles&Condiments such as Nori (Seaweed), Wasabi and Spring Onion. Hitsumabishi is Nagoya’s style of cooking freshwater eel, and there are three ways to eat it. First, divide the bowl into portions. Enjoy the first portion on its own and relish the eel’s depth of flavour. Then, for the second portion, add nori (seaweed), wasabi, and spring onions to the Hokkaido rice and eel. For the third portion, add the clear dashi to the above mix. Enjoy Hitsumabushi in your favorite way!",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/No.8-Japanese-restaurant-Uya-1024x577_jdtrvl.jpg",
+                "title": "Japanese Restaurant Tenant Wanted",
+                "content": "We are looking for restaurant tenants who have a great passion to serve delicious food to our guests and local customers. For more details, please contact us by email.",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1707123029/AzumayaWeb/wanted-en_yhr6un.png",
                 "num": "No 8"
             }
         ]
@@ -3260,44 +3390,5 @@
                 "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
             }
         ]
-    },
-    "date":[
-        {
-            "date":"December 2024"
-        },
-        {
-            "date":"November 2024"
-        },
-        {
-            "date":"October 2024"
-        },
-        {
-            "date":"September 2024"
-        },
-        {
-            "date":"August 2024"
-        },
-        {
-            "date":"July 2024"
-        }, 
-        {
-            "date":"June 2024"
-        },
-        {
-            "date":"May 2024"
-        }, 
-        {
-            "date":"April 2024"
-        }, 
-        {
-            "date":"March 2024"
-        }, 
-        {
-            "date":"February 2024"
-        }, 
-        {
-            "date":"January 2024"
-        }
-    ]
-   
+    }  
 }

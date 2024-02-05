@@ -102,7 +102,7 @@ export default function Booking (){
                 </div>
                 <div className="col-md-2">
                 <button className="base__btn btn--mobile">{t('booking.reserve')}
-                    <Link to = {`/${selectedCity}/${selectedBranch}`}></Link>
+                    <Link to = {`/${selectedBranch}/room`}></Link>
                 </button> 
                 </div>  
                 </div>

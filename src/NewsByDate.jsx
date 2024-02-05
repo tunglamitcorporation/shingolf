@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {format, parse} from 'date-fns'
-import enUS from "date-fns/locale/en-US";
 export default function NewsByDate({ news }) {
   const { t } = useTranslation();
   const branch = t("booking.city", { returnObjects: true });
@@ -31,7 +30,7 @@ export default function NewsByDate({ news }) {
             <div className="re__breadcrumb">
               <ul className="breadcrumb__list">
                 <li className="breadcrumb__item">
-                  <Link to="/Home">
+                  <Link to="/">
                     <i className="fa-solid fa-house"></i>
                   </Link>
                 </li>

@@ -1,10 +1,9 @@
-import { useState } from "react";
 import "flatpickr/dist/themes/airbnb.css";
 import Booking from "./Booking";
 import { useTranslation } from "react-i18next";
-import classNames from "classnames";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import {Link} from "react-router-dom"
+import { scroller } from "react-scroll";
 import {format, parse} from "date-fns"
 export default function Home({news}) {
   const { t } = useTranslation();
@@ -16,7 +15,7 @@ export default function Home({news}) {
     <>
     <div className="homepage">
       <div className="content">
-          <div className="content__background">
+      <div className="content__background">
           </div>
           {/* <div className="content__title">
             <img
@@ -26,30 +25,11 @@ export default function Home({news}) {
             />
             {/* <span>{t("home.name")}</span> */}
           {/* </div> */}
-          {/* {homeNewsData.map((item) => (
-                    <li className="content__news-item" key={item.id}>
-                      <span className="content__news-date">
-                        {item.month} {item.day} {item.year}{" "}
-                      </span>
-                      <span
-                        className={classNames({
-                          "content__news-branch": item.location == "Hanoi",
-                          "content__news-branch--bg":
-                            item.location == "All Branches",
-                        })}
-                      >
-                        {item.location}
-                      </span>
-                      <span className="content__news-link">
-                        <a href={item.link}>{item.new}</a>
-                      </span>
-                    </li>
-                  ))} */}
           <div className="container-fluid">
             <div className="row g-0 p-0">
               <div className="col-6 col-md-3 offset-0">
                 <div className="content__branch-item">
-                  <Link className='link-route' to = '/HN/HNBranch' >
+                  <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
                     src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
@@ -60,35 +40,35 @@ export default function Home({news}) {
               </div>
               <div className="col-6 col-md-3 offset-0">
                 <div className="content__branch-item">
-                <Link className='link-route' to = '/HCM/HCMBranch' >
+                <Link className='link-route' to = '/hotel-hcm' >
                   <img
                     className="content__branch-img"
                     src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
                     alt=""
                   />
-                   </Link>
+                 </Link>
                 </div>
               </div>
               <div className="col-6 col-md-3 offset-0">
                 <div className="content__branch-item">
-                <Link className='link-route' to = '/DN/DNBranch' >
+                <Link className='link-route' to = '/hotel-dn' >
                   <img
                     className="content__branch-img"
                     src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
                     alt=""
                   />
-                  </Link>
+                 </Link>
                 </div>
               </div>
               <div className="col-6 col-md-3 offset-0">
                 <div className="content__branch-item">
-                <Link className='link-route' to = '/HP/HPBranch' >
+                <Link className='link-route' to = '/hotel-hp' >
                   <img
                     className="content__branch-img"
                     src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
                     alt=""
                   />
-                  </Link>
+                 </Link>
                 </div>
               </div>
             </div>
@@ -100,8 +80,8 @@ export default function Home({news}) {
       <AnimatedOnScroll>
         <div className="content__news">
           <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-8 offset-md-1">
+            <div className="row align-item-center justify-content-center">
+              <div className="col-md-8" style={{marginTop: 60}}>
                 <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
                 <ul className="content__news-list">
                 {homeNews.map((article) => {
@@ -282,7 +262,7 @@ export default function Home({news}) {
             })}
                 </ul>
               </div>
-              <div className="col-12 col-md-1">
+              <div className="col-md-2">
                 <div className="content__qr">
                   <img
                     className="content__qr-img"
@@ -301,8 +281,8 @@ export default function Home({news}) {
       <AnimatedOnScroll>
         <div className="content__welcome">
           <div className="container">
-            <div className="row">
-              <div className="col-10 offset-0 col-md-10 offset-1">
+            <div className="row justify-content-center align-item-center">
+              <div className="col-md-12">
                 <h1 className="content__welcome-text">
                   {t("home.welcome_title")}
                   <small>{t("home.welcome_sub-title")}</small>
@@ -331,7 +311,11 @@ export default function Home({news}) {
                       <a href="">{item.title}</a>
                     </div>
                     <div className="content__feature-text">
-                      <p style={{ textAlign: "justify" }}>{item.content}</p>
+                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 90)}...
+                      <Link 
+                      className="continue_link" 
+                      to = {`/Feature/${item.id}`}
+                      >Continue Reading</Link></p>
                     </div>
                   </div>
                 </div>
