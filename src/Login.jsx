@@ -41,7 +41,7 @@ export default function Login() {
     </div>
 		</div>
     <div className="animation a9">
-			<p  style={{fontSize:"1.4rem"}}>Have not account ? <Link to ="/SignUp" style={{color:"#482979", fontWeight:600}}>Sign Up here</Link></p>
+			<p  style={{fontSize:"1.4rem"}}>Have not account ? <Link to ="/News" style={{color:"#482979", fontWeight:600}}>Sign Up here</Link></p>
   </div>
   </div>
   <div className="right_login"></div>

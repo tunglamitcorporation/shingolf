@@ -3,6 +3,7 @@
         "top-header":"★ こだわりの和朝食と露天風呂がある、ビジネスパーソン向けホテル ★",
         "azumaya":"東屋ホテル",
         "home": "ホーム",
+        "news":"ニュース",
         "policies": "Q&A",
         "reservation": "ご予約",
         "feature": "東屋8大魅力",
@@ -139,6 +140,7 @@
         "name": "東屋8大魅力",
         "main_title": "東屋8大魅力",
         "main_content": "東屋ホテルをいつもご愛顧頂きまして誠にありがとうございます。ベトナムという異国へご出張される方に、日本と変わらぬ快適な環境を提供致したいという一心で、2011年にタイバンルン通りにて東屋1号店をオープン致しました。現在はハノイに5店舗、ダナンに1店舗、ホーチミンに4店舗ございます。 ベトナムへご出張の際は、是非とも東屋ホテルにお越しくださいませ。 どの店舗も変わらぬ東屋８大サービスを提供して参ります",
+        "continue":"読み続けて",
         "feature_item": [
             {
                 "id": 1,
@@ -620,13 +622,13 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick": false,
-            "price": "1.250.000VND+"
+            "price": "1.310.000VND+"
         },
         {
             "id": 2,
             "branch_name": "Azumaya Hai Ba Trung 1",
             "room_id": "diwnv",
-            "name": "DELUXE - INSIDE 窓 (NO VIEW)",
+            "name": "DELUXE - INSIDE WINDOW",
             "size": "24",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
@@ -638,14 +640,14 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick": false,
-            "price": "1.375.000VND+"
+            "price": "1.440.000VND+"
         },
         {
             "id": 3,
             "branch_name": "Azumaya Hai Ba Trung 1",
-            "room_id": "eiw",
-            "name": "EXECUTIVE INSIDE 窓",
-            "size": "24 ~ 26",
+            "room_id": "e",
+            "name": "EXECUTIVE",
+            "size": "26",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
             "install": "設備",
@@ -654,30 +656,12 @@
             "in3": "50型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
             "priceTitle": "料金",
-            "bed": "1.6m クイーン",
+            "bed": "1.6m クイーン/ツインズ",
             "tick": true,
-            "price": "1.450.000VND+"
+            "price": "1.580.000VND+"
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Hai Ba Trung 1",
-            "room_id": "e",
-            "name": "EXECUTIVE",
-            "size": "26",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブ",
-            "in3": "50型ソニーテレビ",
-            "in4": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "1.6m クイーン",
-            "tick": true,
-            "price": "1.500.000VND+"
-        },
-        {
-            "id": 5,
             "branch_name": "Azumaya Hai Ba Trung 1",
             "room_id": "ewk",
             "name": "EXECUTIVE WITH KITCHEN",
@@ -692,10 +676,10 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick": true,
-            "price": "1.575.000VND+"
+            "price": "1.650.000VND+"
         },
         {
-            "id": 6,
+            "id": 5,
             "branch_name": "Azumaya Hai Ba Trung 1",
             "room_id": "sswk",
             "name": "SEMI SUITE WITH KITCHEN",
@@ -710,10 +694,10 @@
             "priceTitle": "料金",
             "bed": "クイーン/ツインズ",
             "tick": true,
-            "price": "1.675.000VND+"
+            "price": "1.760.000VND+"
         },
         {
-            "id": 7,
+            "id": 6,
             "branch_name": "Azumaya Hai Ba Trung 1",
             "room_id": "s",
             "name": "SUITE",
@@ -728,25 +712,7 @@
             "priceTitle": "料金",
             "bed": "1.8m  キング",
             "tick": true,
-            "price": "1.750.000VND+"
-        },
-        {
-            "id": 8,
-            "branch_name": "Azumaya Hai Ba Trung 1",
-            "room_id": "swk",
-            "name": "SUITE WITH KITCHEN",
-            "size": "48",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブ",
-            "in3": "50型ソニーテレビ",
-            "in4": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "1.8mキング",
-            "tick": true,
-            "price": "1.750.000VND+"
+            "price": "1.840.000VND+"
         }
     ],
     "room_km2": {
@@ -828,8 +794,8 @@
         {
             "id": 1,
             "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "dm",
-            "name": "DELUXE M",
+            "room_id": "d",
+            "name": "DELUXE",
             "size": "19",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
@@ -842,14 +808,34 @@
             "bed": "クイーン",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.500.000VND+"
+            "price": "1.580.000VND+"
         },
         {
             "id": 2,
             "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "dl",
-            "name": "DELUXE L",
-            "size": "23",
+            "room_id": "lsm",
+            "name": "LAKE SIDE M",
+            "size": "19",
+            "sizeTitle": "広さ",
+            "bedTitle": "ベットサイズ",
+            "install": "設備",
+            "in1": "窓",
+            "in2": "バスタブ",
+            "in3": "32型ソニーテレビ",
+            "in4": "洗浄機能付きトイレ",
+            "in5": "",
+            "priceTitle": "料金",
+            "bed": "クイーン",
+            "tick_k": false,
+            "tick_t": false,
+            "price": "1.700.000VND+"
+        },
+        {
+            "id": 3,
+            "branch_name": "Azumaya Kim Ma 2",
+            "room_id": "lsl",
+            "name": "LAKE SIDE L",
+            "size": "22",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
             "install": "設備",
@@ -861,27 +847,7 @@
             "bed": "クイーン",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.625.000VND+"
-        },
-        {
-            "id": 3,
-            "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "dlwk",
-            "name": "DELUXE L WITH KITCHEN",
-            "size": "25",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓: no view",
-            "in2": "バスタブ",
-            "in3": "32型ソニーテレビ",
-            "in4": "キッチン",
-            "in5": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "クイーン",
-            "tick_k": true,
-            "tick_t": false,
-            "price": "1.750.000VND+"
+            "price": "1.840.000VND+"
         },
         {
             "id": 4,
@@ -901,89 +867,10 @@
             "bed": "キング",
             "tick_k": true,
             "tick_t": false,
-            "price": "1.750.000VND+"
+            "price": "1.840.000VND+"
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "lsm",
-            "name": "LAKE SIDE M",
-            "size": "19",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブ",
-            "in3": "32型ソニーテレビ",
-            "in4": "洗浄機能付きトイレ",
-            "in5": "",
-            "priceTitle": "料金",
-            "bed": "クイーン",
-            "tick_k": false,
-            "tick_t": false,
-            "price": "1.550.000VND+"
-        },
-        {
-            "id": 6,
-            "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "lsmwt",
-            "name": "LAKE SIDE M WITH TERRACE",
-            "size": "19",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "テラス",
-            "in3": "バスタブ",
-            "in4": "32型ソニーテレビ",
-            "in5": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "クイーン",
-            "tick_k": false,
-            "tick_t": true,
-            "price": "1.625.000VND+"
-        },
-        {
-            "id": 7,
-            "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "lsl",
-            "name": "LAKE SIDE L",
-            "size": "22",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブ",
-            "in3": "32型ソニーテレビ",
-            "in4": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "クイーン",
-            "tick_k": false,
-            "tick_t": false,
-            "price": "1.675.000VND+"
-        },
-        {
-            "id": 8,
-            "branch_name": "Azumaya Kim Ma 2",
-            "room_id": "lslwt",
-            "name": "LAKE SIDE L WITH TERRACE",
-            "size": "22",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "テラス",
-            "in3": "バスタブ",
-            "in4": "32型ソニーテレビ",
-            "in5": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "クイーン",
-            "tick_k": false,
-            "tick_t": true,
-            "price": "1.750.000VND+"
-        },
-        {
-            "id": 9,
             "branch_name": "Azumaya Kim Ma 2",
             "room_id": "lslwt",
             "name": "SUITE WITH KITCHEN",
@@ -1000,10 +887,11 @@
             "bed": "クイーン",
             "tick_k": true,
             "tick_t": true,
-            "price": "1.875.000VND+"
+            "price": "1.970.000VND+"
+           
         },
         {
-            "id": 10,
+            "id": 6,
             "branch_name": "Azumaya Kim Ma 2",
             "room_id": "awk",
             "name": "ANNEX WITH KITCHEN",
@@ -1020,7 +908,7 @@
             "bed": "クイーン",
             "tick_k": true,
             "tick_t": false,
-            "price": "1.125.000VND+"
+            "price": "1.180.000VND+"
         }
     ],
     "room_km3": {
@@ -1113,13 +1001,13 @@
             "bed": "クイーン",
             "mattress": "ダブル",
             "tick_w": false,
-            "price": "1.200.000VND+"
+            "price": "1.260.000VND+"
         },
         {
             "id": 2,
             "branch_name": "Azumaya Kim Ma 3",
-            "room_id": "dmnw",
-            "name": "DELUXE M NO WINDOW",
+            "room_id": "dmswib",
+            "name": "DELUXE M SMALL WINDOW IN BATH",
             "size": "17",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
@@ -1131,7 +1019,7 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": false,
-            "price": "1.300.000VND+"
+            "price": "1.370.000VND+"
         },
         {
             "id": 3,
@@ -1149,10 +1037,28 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": false,
-            "price": "1.375.000VND+"
+            "price": "1.450.000VND+"
         },
         {
             "id": 4,
+            "branch_name": "Azumaya Kim Ma 3",
+            "room_id": "dlsmwib",
+            "name": "DELUXE L SMALL WINDOW IN BATH",
+            "size": "17",
+            "sizeTitle": "広さ",
+            "bedTitle": "ベットサイズ",
+            "install": "設備",
+            "in1": "バスタブ",
+            "in2": "40型シャープテレビ",
+            "in3": "洗浄機能付きトイレ",
+            "priceTitle": "料金",
+            "bed": "クイーン",
+            "mattress": "クイーン",
+            "tick_w": false,
+            "price": "1.450.000VND+"
+        },
+        {
+            "id": 5,
             "branch_name": "Azumaya Kim Ma 3",
             "room_id": "ewk",
             "name": "DELUXE L WINDOW",
@@ -1168,10 +1074,10 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": true,
-            "price": "1.500.000VND+"
+            "price": "1.580.000VND+"
         },
         {
-            "id": 5,
+            "id": 6,
             "branch_name": "Azumaya Kim Ma 3",
             "room_id": "ls",
             "name": "LAKE SIDE",
@@ -1187,7 +1093,7 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": true,
-            "price": "1.625.000VND+"
+            "price": "1.700.000VND+"
         }
     ],
     "room_ll": {
@@ -1567,7 +1473,7 @@
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.075.000VND+"
+            "price": "1.130.000VND+"
         },
         {
             "id": 2,
@@ -1588,7 +1494,7 @@
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.125.000VND+"
+            "price": "1.180.000VND+"
         },
         {
             "id": 3,
@@ -1609,7 +1515,7 @@
             "tick_w": true,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.250.000VND+"
+            "price": "1.310.000VND+"
         },
         {
             "id": 4,
@@ -1630,7 +1536,7 @@
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.375.000VND+"
+            "price": "1.440.000VND+"
         },
         {
             "id": 5,
@@ -1657,7 +1563,7 @@
             "split": true,
             "size_1": "18.5 (表側)",
             "size_2": "18.6 (裏側)",
-            "price": "1.500.000VND+"
+            "price": "1.580.000VND+"
         },
         {
             "id": 6,
@@ -1684,7 +1590,7 @@
             "split": true,
             "size_1": "21.5 (表側)",
             "size_2": "21.7 (裏側)",
-            "price": "1.625.000VND+"
+            "price": "1.710.000VND+"
         },
         {
             "id": 7,
@@ -1706,7 +1612,7 @@
             "tick_w": true,
             "tick_t": true,
             "tick_b": true,
-            "price": "1.500.000VND+"
+            "price": "1.580.000VND+"
         },
         {
             "id": 8,
@@ -1727,7 +1633,7 @@
             "tick_w": true,
             "tick_t": true,
             "tick_b": true,
-            "price": "1.625.000VND+"
+            "price": "1.710.000VND+"
         },
         {
             "id": 9,
@@ -1748,7 +1654,7 @@
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "1.875.000VND+"
+            "price": "1.970.000VND+"
         },
         {
             "id": 10,
@@ -1769,13 +1675,13 @@
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "1.875.000VND+"
+            "price": "1.970.000VND+"
         },
         {
             "id": 11,
             "branch_name": "Azumaya Thai Van Lung 1",
             "room_id": "v",
-            "name": "VIP",
+            "name": "VIP TATAMI",
             "size": "30",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
@@ -1791,28 +1697,7 @@
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "2.375.000VND+"
-        },
-        {
-            "id": 12,
-            "branch_name": "Azumaya Thai Van Lung 1",
-            "room_id": "ph",
-            "name": "PENT HOUSE",
-            "size": "21.5",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブなし",
-            "in3": "50型ソニーテレビ",
-            "in4": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "1.6m クイーン",
-            "bed_size": "ダブル",
-            "tick_w": true,
-            "tick_t": true,
-            "tick_b": false,
-            "price": "1.625.000VND+"
+            "price": "2.380.000VND+"
         }
     ],
     "room_tvl2": {
@@ -1895,7 +1780,7 @@
             "id": 1,
             "branch_name": "Azumaya Thai Van Lung 2",
             "room_id": "dnw",
-            "name": "DELUXE NO WINDOW",
+            "name": "DELUXE M NO WINDOW",
             "size": "15",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
@@ -1907,7 +1792,7 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": false,
-            "price": "1.325.000VND+"
+            "price": "1.390.000VND+"
         },
         {
             "id": 2,
@@ -1925,7 +1810,7 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": false,
-            "price": "1.400.000VND+"
+            "price": "1.470.000VND+"
         },
         {
             "id": 3,
@@ -1943,7 +1828,7 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.575.000VND+"
+            "price": "1.650.000VND+"
         },
         {
             "id": 4,
@@ -1961,7 +1846,7 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.575.000VND+"
+            "price": "1.650.000VND+"
         },
         {
             "id": 5,
@@ -1979,7 +1864,7 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": false,
-            "price": "1.700.000VND+"
+            "price": "1.790.000VND+"
         },
         {
             "id": 6,
@@ -1997,7 +1882,7 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick_w": true,
-            "price": "1.775.000VND+"
+            "price": "1.860.000VND+"
         },
         {
             "id": 7,
@@ -2015,13 +1900,13 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.825.000VND+"
+            "price": "1.920.000VND+"
         },
         {
             "id": 8,
             "branch_name": "Azumaya Thai Van Lung 2",
             "room_id": "tl",
-            "name": "DELUXE M",
+            "name": "DELUXE",
             "size": "18",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",
@@ -2033,25 +1918,7 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.375.000VND+"
-        },
-        {
-            "id": 9,
-            "branch_name": "Azumaya Thai Van Lung 2",
-            "room_id": "dl",
-            "name": "DELUXE L",
-            "size": "20",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブ",
-            "in3": "薄型テレビ32インチ",
-            "in4": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": "",
-            "tick_w": true,
-            "price": "1.500.000VND+"
+            "price": "1.580.000VND+"
         }
     ],
     "room_ltt": {
@@ -2133,6 +2000,25 @@
         {
             "id": 1,
             "branch_name": "Azumaya Thai Van Lung 2",
+            "room_id": "dg",
+            "name": "DELUXE GROUND",
+            "size": "14.5",
+            "sizeTitle": "広さ",
+            "bedTitle": "ベットサイズ",
+            "install": "設備",
+            "in1": "窓",
+            "in2": "バスタブ",
+            "in3": "32型ソニーテレビ",
+            "in4": "洗浄機能付きトイレ",
+            "priceTitle": "料金",
+            "bed": " 1.6m キング",
+            "bed_size": "クイーン",
+            "tick_b": false,
+            "price": "1.390.000VND+"
+        },
+        {
+            "id": 2,
+            "branch_name": "Azumaya Thai Van Lung 2",
             "room_id": "d",
             "name": "DELUXE",
             "size": "14.5",
@@ -2147,10 +2033,10 @@
             "bed": "1.4m ダブル",
             "bed_size": "ダブル",
             "tick_b": false,
-            "price": "1.450.000VND+"
+            "price": "1.520.000VND+"
         },
         {
-            "id": 2,
+            "id": 3,
             "branch_name": "Azumaya Thai Van Lung 2",
             "room_id": "efs",
             "name": "EXECUTIVE (FRONT SIDE)",
@@ -2166,12 +2052,13 @@
             "bed": "1.6m クイーン",
             "bed_size": "ダブル",
             "tick_b": false,
-            "price": "1.700.000VND+"
+            "price": "1.790.000VND+"
+           
         },
         {
-            "id": 3,
+            "id": 4,
             "branch_name": "Azumaya Thai Van Lung 2",
-            "room_id": "ef",
+            "room_id": "ebf",
             "name": "EXECUTIVE (BACK SIDE)",
             "size": "21",
             "sizeTitle": "広さ",
@@ -2185,26 +2072,9 @@
             "bed": "1.6m クイーン",
             "bed_size": "クイーン",
             "tick_b": true,
-            "price": "1.700.000VND+"
-        },
-        {
-            "id": 4,
-            "branch_name": "Azumaya Thai Van Lung 2",
-            "room_id": "eb",
-            "name": "DELUXE GROUND FLOOR",
-            "size": "14.5",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "窓",
-            "in2": "バスタブ",
-            "in3": "32型ソニーテレビ",
-            "in4": "洗浄機能付きトイレ",
-            "priceTitle": "料金",
-            "bed": " 1.6m キング",
-            "bed_size": "クイーン",
-            "tick_b": false,
-            "price": "1.325.000VND+"
+            "price": "1.790.000VND+"
+            
+            
         }
     ],
     "room_annex": {
@@ -2281,7 +2151,7 @@
             "bed": "1.6m クイーン",
             "bed_size": "ダブル",
             "tick_b": true,
-            "price": "1.000.000VND+"
+            "price": "1.050.000VND+"
         },
         {
             "id": 2,
@@ -2302,7 +2172,7 @@
             "bed": "1.6m クイーン",
             "bed_size": "ダブル",
             "tick_b": true,
-            "price": "1.125.000VND+"
+            "price": "1.180.000VND+"
         }
     ],
     "dn-branch":{
@@ -3346,22 +3216,22 @@
               "room_id": "diw",
               "name": "DELUXE INSIDE WINDOW",
               "size": "23",
-              "sizeTitle": "Size",
-              "bedTitle": "Bed",
-              "install": "Installation",
-              "in1": "Bathtub",
-              "in2": "Toilet with bidet function",
-              "in3": "Working desk",
-              "in4": "32 Inch Sony TV",
-              "in5": "International TV channels",
-              "in6": "Free Wi-Fi",
-              "in7": "Security box",
-              "in8": "Hair drier",
-              "in9": "Shavor & tooth brush",
-              "in10": "Slippers",
-              "in11": "Shampoo, conditioner, and body soap",
-              "priceTitle": "Price",
-              "bed": "King",
+              "sizeTitle": "広さ",
+              "bedTitle": "ベットサイズ",
+              "install": "設備",
+              "in1": "バスタブ",
+              "in2": "洗浄機能付きトイレ",
+              "in3": "ワーキングデスク",
+              "in4": "32型ソニーテレビ",
+              "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
+              "in6": "無料wifi",
+              "in7": "セキュリティーボックス",
+              "in8": "ヘアドライヤー",
+              "in9": "髭剃り、歯ブラシ",
+              "in10": "スリッパ",
+              "in11": "シャンプー、コンディショナー、ボディーソープ等",
+              "priceTitle": "料金",
+              "bed": "キング",
               "tick_w": false,
               "price": "$45"
           },
@@ -3371,22 +3241,22 @@
               "room_id": "d",
               "name": "DELUXE",
               "size": "23",
-              "sizeTitle": "Size",
-              "bedTitle": "Bed",
-              "install": "Installation",
-              "in1": "Bathtub",
-              "in2": "Toilet with bidet function",
-              "in3": "Working desk",
-              "in4": "32 Inch Sony TV",
-              "in5": "International TV channels",
-              "in6": "Free Wi-Fi",
-              "in7": "Security box",
-              "in8": "Hair drier",
-              "in9": "Shavor & tooth brush",
-              "in10": "Slippers",
-              "in11": "Shampoo, conditioner, and body soap",
-              "priceTitle": "Price",
-              "bed": "Double",
+              "sizeTitle": "広さ",
+              "bedTitle": "ベットサイズ",
+              "install": "設備",
+              "in1": "バスタブ",
+              "in2": "洗浄機能付きトイレ",
+              "in3": "ワーキングデスク",
+              "in4": "32型ソニーテレビ",
+              "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
+              "in6": "無料wifi",
+              "in7": "セキュリティーボックス",
+              "in8": "ヘアドライヤー",
+              "in9": "髭剃り、歯ブラシ",
+              "in10": "スリッパ",
+              "in11": "シャンプー、コンディショナー、ボディーソープ等",
+              "priceTitle": "料金",
+              "bed": "ダブル",
               "tick_w": true,
               "price": "$50"
           },
@@ -3396,22 +3266,22 @@
               "room_id": "dt",
               "name": "DELUXE TWIN",
               "size": "23",
-              "sizeTitle": "Size",
-              "bedTitle": "Bed",
-              "install": "Installation",
-              "in1": "Bathtub",
-              "in2": "Toilet with bidet function",
-              "in3": "Working desk",
-              "in4": "32 Inch Sony TV",
-              "in5": "International TV channels",
-              "in6": "Free Wi-Fi",
-              "in7": "Security box",
-              "in8": "Hair drier",
-              "in9": "Shavor & tooth brush",
-              "in10": "Slippers",
-              "in11": "Shampoo, conditioner, and body soap",
-              "priceTitle": "Price",
-              "bed": "Twin",
+              "sizeTitle": "広さ",
+              "bedTitle": "ベットサイズ",
+              "install": "設備",
+              "in1": "バスタブ",
+              "in2": "洗浄機能付きトイレ",
+              "in3": "ワーキングデスク",
+              "in4": "32型ソニーテレビ",
+              "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
+              "in6": "無料wifi",
+              "in7": "セキュリティーボックス",
+              "in8": "ヘアドライヤー",
+              "in9": "髭剃り、歯ブラシ",
+              "in10": "スリッパ",
+              "in11": "シャンプー、コンディショナー、ボディーソープ等",
+              "priceTitle": "料金",
+              "bed": "ツイン",
               "tick_w": true,
               "price": "$50"
           },
@@ -3421,22 +3291,22 @@
               "room_id": "df",
               "name": "DELUXE FRONT",
               "size": "28",
-              "sizeTitle": "Size",
-              "bedTitle": "Bed",
-              "install": "Installation",
-              "in1": "Bathtub",
-              "in2": "Toilet with bidet function",
-              "in3": "Working desk",
-              "in4": "32 Inch Sony TV",
-              "in5": "International TV channels",
-              "in6": "Free Wi-Fi",
-              "in7": "Security box",
-              "in8": "Hair drier",
-              "in9": "Shavor & tooth brush",
-              "in10": "Slippers",
-              "in11": "Shampoo, conditioner, and body soap",
-              "priceTitle": "Price",
-              "bed": "King",
+              "sizeTitle": "広さ",
+              "bedTitle": "ベットサイズ",
+              "install": "設備",
+              "in1": "バスタブ",
+              "in2": "洗浄機能付きトイレ",
+              "in3": "ワーキングデスク",
+              "in4": "32型ソニーテレビ",
+              "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
+              "in6": "無料wifi",
+              "in7": "セキュリティーボックス",
+              "in8": "ヘアドライヤー",
+              "in9": "髭剃り、歯ブラシ",
+              "in10": "スリッパ",
+              "in11": "シャンプー、コンディショナー、ボディーソープ等",
+              "priceTitle": "料金",
+              "bed": "キング",
               "tick_w": true,
               "price": "$55"
           },
@@ -3446,22 +3316,22 @@
               "room_id": "e",
               "name": "EXECUTIVE",
               "size": "31",
-              "sizeTitle": "Size",
-              "bedTitle": "Bed",
-              "install": "Installation",
-              "in1": "Bathtub",
-              "in2": "Toilet with bidet function",
-              "in3": "Working desk",
-              "in4": "32 Inch Sony TV",
-              "in5": "International TV channels",
-              "in6": "Free Wi-Fi",
-              "in7": "Security box",
-              "in8": "Hair drier",
-              "in9": "Shavor & tooth brush",
-              "in10": "Slippers",
-              "in11": "Shampoo, conditioner, and body soap",
-              "priceTitle": "Price",
-              "bed": "Double",
+              "sizeTitle": "広さ",
+              "bedTitle": "ベットサイズ",
+              "install": "設備",
+              "in1": "バスタブ",
+              "in2": "洗浄機能付きトイレ",
+              "in3": "ワーキングデスク",
+              "in4": "32型ソニーテレビ",
+              "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
+              "in6": "無料wifi",
+              "in7": "セキュリティーボックス",
+              "in8": "ヘアドライヤー",
+              "in9": "髭剃り、歯ブラシ",
+              "in10": "スリッパ",
+              "in11": "シャンプー、コンディショナー、ボディーソープ等",
+              "priceTitle": "料金",
+              "bed": "ダブル",
               "tick_w": true,
               "price": "$60"
           }

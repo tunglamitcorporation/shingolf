@@ -19,6 +19,7 @@ export default function KM3RoomDetail() {
   const room2 = t("km3.2", { returnObjects: true });
   const room3 = t("km3.3", { returnObjects: true });
   const room4 = t("km3.4", { returnObjects: true });
+  const room5 = t("km3.5", { returnObjects: true });
   return (
     <>
       <div className="service__header">
@@ -115,7 +116,7 @@ export default function KM3RoomDetail() {
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -186,7 +187,7 @@ export default function KM3RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -197,7 +198,7 @@ export default function KM3RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.dmnw_km3.map((item) => (
+                          {data.dmswib_km3.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -257,7 +258,7 @@ export default function KM3RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -328,7 +329,7 @@ export default function KM3RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -339,7 +340,7 @@ export default function KM3RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.dlw_km3.map((item) => (
+                          {data.dlswib_km3.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -399,7 +400,7 @@ export default function KM3RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -410,7 +411,7 @@ export default function KM3RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.ls_km3.map((item) => (
+                          {data.dlnw_km3.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -455,6 +456,79 @@ export default function KM3RoomDetail() {
                                     <th>{room4.priceTitle}</th>
                                     <td className="installation bold">
                                       {room4.price}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button className="btn__reserve p-0 m-0">
+                          <Link
+                            to="/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}
+                          >
+                            {t("room_km3.reservation")}
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
+                    <div className="col-md-12 col-lg-6">
+                      <div className="room-item">
+                        <Carousel
+                          showArrows
+                          showThumbs={false}
+                          showStatus={false}
+                          emulateTouch
+                          stopOnHover
+                          autoPlay
+                          infiniteLoop
+                        >
+                          {data.ls_km3.map((item) => (
+                            <img src={item} alt="" />
+                          ))}
+                        </Carousel>
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <div className="card-title room-name">
+                                  {room5.name}
+                                </div>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>{room5.sizeTitle}</th>
+                                    <td className="installation">
+                                      {room5.size}m&#178;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room5.bedTitle}</th>
+                                    <td className="installation">
+                                      {room5.bed}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room5.install}</th>
+                                    <td className="installation">
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room5.in1}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room5.in2}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room5.in3}
+                                      <br />
+                                      <i class="fa-solid fa-check purple"></i>
+                                      {room5.in4}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{room5.priceTitle}</th>
+                                    <td className="installation bold">
+                                      {room5.price}
                                     </td>
                                   </tr>
                                 </table>

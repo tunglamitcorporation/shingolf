@@ -118,7 +118,7 @@ export default function AnnexRoomDetail() {
                       {t("room_annex.roomContent")}
                     </p>
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -191,7 +191,7 @@ export default function AnnexRoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows

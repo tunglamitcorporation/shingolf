@@ -1,4 +1,4 @@
-import {useState } from "react";
+import {useState, useEffect } from "react";
 import Flatpickr from "react-flatpickr";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -17,13 +17,19 @@ export default function Booking (){
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
 
+    useEffect(() => {
+        if(selectedBranch == undefined) {
+            setSelectedBranch(selectedBranch)
+        }
+    }, [selectedBranch])
+
     console.log(selectedCity);
     console.log(selectedBranch);
     return(
         <div>              
         <div className="content__booking">
         <div className="container">
-            <div className="row gx-3 justify-content-center">
+            <div className="row gx-3 p-0 justify-content-center">
                 <div className="col-md-12 ">
                 <div className="content__booking-title">{t('booking.title')}</div>
                 </div>
@@ -73,6 +79,7 @@ export default function Booking (){
                 onChange = {(endDate) => setEndDate(endDate)} />
                 </div>
                 </div> */}
+
                 <div className="col-md-2">
                 <div className="content__booking-branch">
                     <select className="content__booking-branch-select"
@@ -94,15 +101,16 @@ export default function Booking (){
                     disabled={!selectedCity}
                     value={selectedBranch}
                     onChange={(e)=>setSelectedBranch(e.target.value)}>
-                        {filteredBranches.map(item =>(
-                            <option key = {item.branch_id} value={item.branch_id}>{item.branch_name}</option>
+                        {filteredBranches.map((item, index) => (
+                            <option key = {item.branch_id} value={item.branch_id} hidden = {index === 0}>{item.branch_name}</option>
                         ))}
                     </select>
                 </div>
                 </div>
                 <div className="col-md-2">
-                <button className="base__btn btn--mobile">{t('booking.reserve')}
-                    <Link to = {`/${selectedBranch}/room`}></Link>
+                <button
+                className="base__btn btn--mobile" style={{marginTop:10}}>{t('booking.reserve')}
+                {startDate == undefined && endDate == undefined && selectedBranch == undefined ? <Link to = {`/Reservation`} ></Link> :  <Link to = {`/${selectedBranch}/room`} ></Link> }
                 </button> 
                 </div>  
                 </div>

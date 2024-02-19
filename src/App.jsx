@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Home from "./Home";
 import Header from "./Header";
+import MainHeader from "./MainHeader";
 import Footer from "./Footer";
 import Feature from "./Feature";
 import Policies from "./Policies";
@@ -47,6 +48,7 @@ function App() {
   const display = !['/Login','/SignUp','/Cambodia/Cambodia','/Cambodia/PhnomPenh','/Cambodia/Policies','/Cambodia/Feature'].some(substring =>location.pathname.includes(substring))
   const [showTop, setShowTop] = useState(false)
   const {t} = useTranslation()
+  
   const [news, setNews] = useState([])
   useEffect(() =>{
               const handleScroll = () => {

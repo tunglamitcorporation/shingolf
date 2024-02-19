@@ -2,29 +2,58 @@ import "flatpickr/dist/themes/airbnb.css";
 import Booking from "./Booking";
 import { useTranslation } from "react-i18next";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import { scroller } from "react-scroll";
 import {format, parse} from "date-fns"
+import { useState, useEffect } from "react";
+import { Carousel } from "react-responsive-carousel";
+import data from "./JSON/data.json";
+import CityProvinceInput from "./Test";
 export default function Home({news}) {
   const { t } = useTranslation();
   const featureItem = t("feature.feature_item", { returnObjects: true });
   const homeData = t("home", { returnObjects: true });
   const WelcomeData = t("home.welcome", { returnObjects: true });
   const homeNews = news.slice(0,4)
+
+  const navigate = useNavigate()
+  const headerData = t("header", { returnObjects: true });
+  const feature = t("feature.feature_item", { returnObjects: true });
+  const hcm = t("hcm-branch.branch", {returnObjects:true})
+  const hn = t("hn-branch.branch", {returnObjects:true})
+  const dn = t("dn-branch.branch", {returnObjects:true})
+  const hp = t("hp-branch.branch", {returnObjects:true})
+  const service = t("service.service_name", {returnObjects:true})
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleHeader = () => {
+    setIsOpen(!isOpen)
+}
+useEffect(()=>{
+  if(isOpen) {
+    document.body.style.position= "fixed";
+  }else{
+    document.body.style.position = "";
+  }
+})
   return (
     <>
     <div className="homepage">
       <div className="content">
-      <div className="content__background">
-          </div>
-          {/* <div className="content__title">
-            <img
-              // className="content__title-logo"
-              src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png"
-              alt=""
-            />
-            {/* <span>{t("home.name")}</span> */}
-          {/* </div> */}
+      {/* <div className="content__background"> */}
+      <Carousel
+                          showArrows
+                          showThumbs={false}
+                          showStatus={false}
+                          emulateTouch
+                          stopOnHover
+                          autoPlay
+                          infiniteLoop
+                        >
+                          {data.home.map((item) => (
+                            <img src={item} alt="" />
+                          ))}
+                        </Carousel>
+      {/* </div> */}
           <div className="container-fluid">
             <div className="row g-0 p-0">
               <div className="col-6 col-md-3 offset-0">
@@ -311,11 +340,11 @@ export default function Home({news}) {
                       <a href="">{item.title}</a>
                     </div>
                     <div className="content__feature-text">
-                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 90)}...
+                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 70)}...
                       <Link 
                       className="continue_link" 
                       to = {`/Feature/${item.id}`}
-                      >Continue Reading</Link></p>
+                      >{t("feature.continue")}</Link></p>
                     </div>
                   </div>
                 </div>
@@ -325,6 +354,7 @@ export default function Home({news}) {
         </div>
       </AnimatedOnScroll>
     </div>
+    <CityProvinceInput />
     </>
   );
 }

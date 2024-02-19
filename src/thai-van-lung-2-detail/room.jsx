@@ -23,7 +23,6 @@ export default function TVL2RoomDetail() {
   const room5 = t("tvl2.5", { returnObjects: true });
   const room6 = t("tvl2.6", { returnObjects: true });
   const room7 = t("tvl2.7", { returnObjects: true });
-  const room8 = t("tvl2.8", { returnObjects: true });
   return (
     <>
       <div className="service__header">
@@ -120,7 +119,7 @@ export default function TVL2RoomDetail() {
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -187,7 +186,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -254,7 +253,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -322,7 +321,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -390,7 +389,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -460,7 +459,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -533,7 +532,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -603,7 +602,7 @@ export default function TVL2RoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -614,7 +613,7 @@ export default function TVL2RoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.dm_tvl2.map((item) => (
+                          {data.d_tvl2.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -655,74 +654,6 @@ export default function TVL2RoomDetail() {
                                     <th>{room7.priceTitle}</th>
                                     <td className="installation bold">
                                       {room7.price}
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_tvl2.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="room-item">
-                        <Carousel
-                          showArrows
-                          showThumbs={false}
-                          showStatus={false}
-                          emulateTouch
-                          stopOnHover
-                          autoPlay
-                          infiniteLoop
-                        >
-                          {data.dl_tvl2.map((item) => (
-                            <img src={item} alt="" />
-                          ))}
-                        </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {room8.name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{room8.sizeTitle}</th>
-                                    <td className="installation">
-                                      {room8.size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room8.install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room8.in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room8.in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room8.in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room8.in4}
-                                      <br />   
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room8.priceTitle}</th>
-                                    <td className="installation bold">
-                                      {room8.price}
                                     </td>
                                   </tr>
                                 </table>

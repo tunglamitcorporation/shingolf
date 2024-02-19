@@ -17,16 +17,17 @@ code {
   display: none;
 }
 .header, .header__PC{
+  position: absolute;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #2A2F3C;
+  transition: background-color 0.5s ease;
   width: 100%;
-  height: 50px;
+  height: 100px;
+  left: 0;
   
 }
 .header__PC{
-  margin-left: 100px;
   margin-right: 100px;
 }
 .header-2, .header__PC-2{
@@ -37,16 +38,14 @@ code {
   width: 100%;
   height: 84px;
 }
+.header_container{
+  display: none;
+}
 .header__mobile{
-  position: absolute;
-  top: 70px ;
-  right: 25px;
-  width: 28px;
-  height: 28px;
-  margin-left: 10px;
+
+  margin-right: 10px;
   color: var(--white--color);
   text-align: center;
-  vertical-align: center;
   background-color: var(--primary--color);
   text-decoration: none;
   font-size: 4rem;
@@ -420,7 +419,7 @@ code {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
   list-style: none;
 }
 .header__navbar-item{
@@ -486,9 +485,11 @@ code {
 {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
+  width: 110px;
   text-decoration: none;
-  color: #ACACAC;
+  color: #ffffff;
   font-size: 1.3rem;
   font-weight: bold;
   transition: all 0.2s ease;
@@ -504,7 +505,7 @@ code {
   display: none;
   position: absolute;
   list-style: none;
-  top: 55px;
+  top: 105px;
   right: 10px;
   width: 370px;
   background-color: #2A2F3C;
@@ -531,6 +532,7 @@ code {
   height: 5px;
   background-color: var(--white--color);
   transition: all 0.3s ease;
+  z-index: 999;
 }
 .header__navbar-sub-link{
   padding: 0 12px;
@@ -562,7 +564,7 @@ code {
 }
 .content__background{
   padding-top: 50%;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701654567/AzumayaWeb/main-banner-2-transformed_jmkswh.jpg) top center / cover no-repeat;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1707206593/AzumayaWeb/azumaya-transformed_wxpavz.jpg) top center / cover no-repeat;
   padding-bottom: 2px;
 
 }
@@ -633,7 +635,8 @@ code {
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
+  padding-bottom: 20px;
   background-color: var(--primary--color);
   color: var(--white--color);
   font-size: 1.4rem;
@@ -642,7 +645,7 @@ code {
 .content__booking-title::before{
   content: '';
   position: absolute;
-  top: -35px;
+  top: -10px;
   left: -300px;
   right: 0;
   /* right: calc(50% + 50vw);
@@ -675,7 +678,7 @@ code {
 }
 .content__booking-date {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100% !important;
   height: 40px;
   padding: 8px;
@@ -693,7 +696,7 @@ code {
 .content__booking-hotel-name-select 
 {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   height: 40px;
   padding: 8px;
@@ -1988,18 +1991,16 @@ a:hover {
   }
   .header__mobile{
       display: block;
-      margin-bottom: 15px;
   }
   .header__PC, .header__PC-2, .header{
       display: none;
   }
   .header__mobile-logo{
     display: block;
-    position: absolute;
-    width: 100%;
-    height: auto;
-    margin-left: 15px;
 
+  }
+  .header_container{
+    display: block;
   }
   .feature__content-title{
       font-size: 1.4rem;
@@ -2155,7 +2156,8 @@ a:hover {
   padding-right: 10px
 }
 .btn__header-mobile{
-  display: block;
+  display: flex;
+  align-items: center;
 }
 .right_login{
   display: none;
@@ -2204,14 +2206,6 @@ a:hover {
   .header__mobile-logo{
     display: block;
   }
-  .header__mobile{
-    position: absolute;
-    right: 5px;
-    width: 28px;
-    height: 28px;
-    font-size: 4rem;
-    margin-bottom: 35px;
-  }
   .feature__content-title{
     font-size: 1.4rem;
 }
@@ -2253,7 +2247,8 @@ a:hover {
   padding-right: 10px
 }
 .btn__header-mobile{
-  display: block;
+  display: flex;
+  align-items: center;
 }
 .right_login{
   display: none;

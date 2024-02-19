@@ -115,7 +115,7 @@ export default function LTTRoomDetail() {
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -126,7 +126,7 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.d_ltt.map((item) => (
+                          {data.dgf_ltt.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -182,7 +182,7 @@ export default function LTTRoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -193,7 +193,7 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.efs_ltt.map((item) => (
+                          {data.d_ltt.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -249,7 +249,7 @@ export default function LTTRoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -260,7 +260,7 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.ebs_ltt.map((item) => (
+                          {data.efs_ltt.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>
@@ -317,7 +317,7 @@ export default function LTTRoomDetail() {
                         </button>
                       </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-12 col-lg-6">
                       <div className="room-item">
                         <Carousel
                           showArrows
@@ -328,7 +328,7 @@ export default function LTTRoomDetail() {
                           autoPlay
                           infiniteLoop
                         >
-                          {data.dgf_ltt.map((item) => (
+                          {data.ebs_ltt.map((item) => (
                             <img src={item} alt="" />
                           ))}
                         </Carousel>

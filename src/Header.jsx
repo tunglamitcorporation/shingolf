@@ -10,7 +10,6 @@ function Header() {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
- 
   const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
   const feature = t("feature.feature_item", { returnObjects: true });
@@ -20,11 +19,30 @@ function Header() {
   const hp = t("hp-branch.branch", {returnObjects:true})
   const service = t("service.service_name", {returnObjects:true})
   const [isOpen, setIsOpen] = useState(false)
-  // const handleClick = () => {
-  //   document.getElementsByClassName(
-  //     "header__mobile-navbar-list"
-  //   ).style.display = "none";
-  // };
+
+  const [backgroundColor, setBackgroundColor] = useState('transparent');
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const position = window.scrollY;
+  
+        // You can define your conditions for changing the background color here
+        if (position > 100) {
+          setBackgroundColor('#482979'); // Change to whatever color you want
+        } else {
+          setBackgroundColor('transparent'); // Change to default color
+        }
+      };
+  
+      // Add scroll event listener when component mounts
+      window.addEventListener('scroll', handleScroll);
+  
+      // Clean up the event listener when component unmounts
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+     // Empty dependency array ensures the effect runs only once
   const toggleHeader = () => {
       setIsOpen(!isOpen)
   }
@@ -168,6 +186,7 @@ function Header() {
                     </div>
                 </div>
             </div>
+      <div className="header_container">
       <div className="header-2">
         <div className="header__PC-2">
           <div className="header__logo">
@@ -229,16 +248,6 @@ function Header() {
                  />
               </Link>
             </li>
-            {/* <li className="header__navbar-item header-reserve btn-lang">
-              <button
-                className="btn-en"
-                onClick={() => changeLanguage("en")}
-              ></button>
-              <button
-                className="btn-ja"
-                onClick={() => changeLanguage("ja")}
-              ></button>
-            </li> */}
           </ul>
         </div>
         <div className="header__mobile-logo">
@@ -257,33 +266,34 @@ function Header() {
           </button>
         </div>
         <HeaderMobile />
-        {/* {isOpen && <HeaderMobile />} */}
-        {/* <label htmlFor="header__mobile-input" className="header__mobile">
-          <i className="fa-solid fa-bars"></i>
-        </label>
-        <input
-          type="checkbox"
-          name=""
-          className="header__input"
-          id="header__mobile-input"
-        />
-        <label
-          htmlFor="header__mobile-input"
-          className="header__mobile-overlay"
-        ></label> */}
-        
       </div>
-      <div className="header ">
+      </div>
+     <div className="is-sticky">
+     <div className="container">
+      <div className="header" style={{backgroundColor: backgroundColor}}>
         <Tabs
         // selectedTabClassName="service__active" 
         className="header__PC">
+             <TabList className="header__navbar-list mb-0 justify-content-start">
+             <Tab className="header__navbar-item">
+             <div className="header__logo">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-12">
+                  <Link to="/">
+                    <img
+                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png"
+                      alt="logo"
+                    />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+                </Tab>
+              </TabList>      
                   <TabList className="header__navbar-list mb-0">
                   <Tab className="header__navbar-item">
-                    {/* <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/NewsList">
-                        Test Page
-                      </Link>
-                    </Tab> */}
                       <Link className="header__navbar-link-2" to="/">
                         {t("header.home")}
                       </Link>
@@ -393,23 +403,25 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/Reservation">
+                        {t("header.reservation")}
+                      </Link>
+                    </Tab>
+                    {/* <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/Login">
+                        Sign In
+                      </Link>
+                    </Tab> */}
+                    <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/Policies">
                         {t("header.policies")}
                       </Link>
                     </Tab>
-                    {/* <Tab className="header__navbar-item">
-                            <Link  className = "header__navbar-link-branch .header__navbar-link--hover" to=''>{t('header.item12')}</Link>
-                                <ul className="header__navbar-item-list">
-                                    <li className = "header__navbar-sub-link"><Link to = '/BrandDetail'>{t('header.item7')}</Link></li>
-                                    <li className = "header__navbar-sub-link"><Link to ="">{t('header.item8')}</Link></li>
-                                    <li className = "header__navbar-sub-link"><Link to ="">{t('header.item9')}</Link></li>
-                                    <li className = "header__navbar-sub-link"><Link to ="">{t('header.item10')}</Link></li>
-                                    <li className = "header__navbar-sub-link"><Link to ="">{t('header.item11')}</Link></li>
-                                </ul>
-                        </Tab> */}
                   </TabList>
                   </Tabs>
             </div>
+            </div>
+     </div>
     </>
   );
 }
