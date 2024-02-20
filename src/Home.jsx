@@ -45,7 +45,7 @@ useEffect(()=>{
                           showThumbs={false}
                           showStatus={false}
                           emulateTouch
-                          stopOnHover
+                          interval={5000}
                           autoPlay
                           infiniteLoop
                         >
@@ -110,7 +110,7 @@ useEffect(()=>{
         <div className="content__news">
           <div className="container">
             <div className="row align-item-center justify-content-center">
-              <div className="col-md-8" style={{marginTop: 60}}>
+              <div className="col-md-12 col-lg-10" style={{marginTop: 60}}>
                 <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
                 <ul className="content__news-list">
                 {homeNews.map((article) => {
@@ -122,26 +122,26 @@ useEffect(()=>{
                {
                 return (
                   <div className="row">
-                    <div className="col-md-2 mt-1">
+                    <div className="col-md-2 mt-1 news_date-container">
                       <div className="news_box1">
                         <div className="news_time-home">
-                        <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="month">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                         </div>
                       </div>
                     </div>
-                        <div className="col-md-2 mt">
+                    <div className="col-md-2 news_branch-container">
                           <div className="allbranch allbranch_home">{t("header.allbranch")}</div>
-                        </div>
-                    <div className="col-md-7 mt-2">
+                    </div>
+                    <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
-                          <div>{article.title}</div>
+                          <div className="article_title">{article.title}</div>
                         </Link>
                       </div>
                     </div>
@@ -150,26 +150,26 @@ useEffect(()=>{
               } else if (article.hn == true) {
                 return (
                   <div className="row">
-                    <div className="col-md-2 mt-1">
+                    <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
-                        <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="month">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                         </div>
                       </div>
                     </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 news_branch-container" >
                           <div className="hanoi hanoi_home">{t("header.hn")}</div>
                         </div>
-                    <div className="col-md-7 mt-2">
+                    <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
-                          <div>{article.title}</div>
+                          <div className="article_title">{article.title}</div>
                         </Link>
                       </div>
                     </div>
@@ -178,26 +178,26 @@ useEffect(()=>{
               } else if (article.hp == true) {
                 return (
                   <div className="row">
-                    <div className="col-md-2 mt-1">
+                    <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
-                        <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                        <div className="month">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                         </div>
                       </div>
                     </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 news_branch-container" >
                           <div className="haiphong haiphong_home">{t("header.hp")}</div>
                         </div>
-                    <div className="col-md-7 mt-2">
+                    <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>
                         <Link
                           className="news_title"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
-                          <div>{article.title}</div>
+                          <div className="article_title">{article.title}</div>
                         </Link>
                       </div>
                     </div>
@@ -206,26 +206,26 @@ useEffect(()=>{
               } else if (article.dn == true) {
                 return (
                   <div className="row">
-                    <div className="col-md-2 mt-1">
+                    <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
-                          <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                          <div className="month">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                         </div>
                       </div>
                     </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 news_branch-container" >
                           <div className="danang danang_home">{t("header.dn")}</div>
                         </div>
-                    <div className="col-md-7 mt-2">
+                    <div className="col-md-7 mt-2 news_title-container"> 
                       <div key={article.id}>
                         <Link
                           className="news_title"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
-                          <div>{article.title}</div>
+                          <div className="article_title">{article.title}</div>
                         </Link>
                       </div>
                     </div>
@@ -234,26 +234,26 @@ useEffect(()=>{
               } else if (article.hcm == true) {
                 return (
                   <div className="row">
-                    <div className="col-md-2 mt-1 ">
+                    <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
-                          <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                          <div className="month">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                         </div>
                       </div>
                     </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 news_branch-container" >
                           <div className="hochiminh hochiminh_home">{t("header.hcm")}</div>
                         </div>
-                    <div className="col-md-7 mt-2">
+                    <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
-                          <div>{article.title}</div>
+                          <div className="article_title">{article.title}</div>
                         </Link>
                       </div>
                     </div>
@@ -261,27 +261,27 @@ useEffect(()=>{
                 );
               } else if (article.az == true) {
                 return (
-                  <div className="row align-item-center">
-                    <div className="col-md-2 mt-1">
+                  <div className="row">
+                    <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
-                          <div className="month" style={{paddingLeft: 60}}>{month}</div>
+                          <div className="month">{month}</div>
                         <div className="day pl-2">{day}</div>
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                         </div>
                       </div>
                     </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 news_branch-container" >
                           <div className="azumaya azumaya_home">{t("header.az")}</div>
                         </div>
-                    <div className="col-md-6">
+                    <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
-                          <div>{article.title}</div>
+                          <div className="article_title">{article.title}</div>
                         </Link>
                       </div>
                     </div>
@@ -310,7 +310,7 @@ useEffect(()=>{
       <AnimatedOnScroll>
         <div className="content__welcome">
           <div className="container">
-            <div className="row justify-content-center align-item-center">
+            <div className="row align-item-center">
               <div className="col-md-12">
                 <h1 className="content__welcome-text">
                   {t("home.welcome_title")}

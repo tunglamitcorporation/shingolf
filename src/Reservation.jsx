@@ -48,9 +48,18 @@ function Reservation() {
   const [roomType, setRoomType] = useState()
   const [contract, setContract] = useState()
   const [vat, setVat] = useState()
-  const [request, setRequest] = useState()
+  const [request, setRequest] = useState([])
   const [specialRequest, setSpecialRequest] = useState()
 
+  const handleCheckboxClick = (value) => {
+    if (request.includes(value)) {
+      // If the value is already in the array, remove it
+      setRequest(request.filter(item => item !== value));
+    } else {
+      // Otherwise, add the value to the array
+      setRequest([...request, value]);
+    }
+  };
   //function
   const min = 1;
   const max = 20;
@@ -108,8 +117,8 @@ function Reservation() {
       
   }
 function DayPicker() {
-  const minDay = -4
-  const maxDay = 26
+  const minDay = -1
+  const maxDay = 29
     const birthDay = new Date().getDay()
     console.log(selectedDay);
     const onHandleChange = (e) => {
@@ -131,8 +140,8 @@ function DayPicker() {
     );
   }
 function MonthPicker() {
-    const minMonth = 1
-    const maxMonth = 12
+    const minMonth = 0
+    const maxMonth = 11
     const birthMonth = new Date().getMonth()
     console.log(selectedMonth);
    
@@ -218,8 +227,8 @@ function SecondGuest() {
         <div className="col-md-2">
           <input
             type="radio"
-            name="gender"
-            id="gMale"
+            name="2ndgender"
+            id="2ndgMale"
             value="male"
             onChange={(e)=>setGender(e.target.value)}
           />
@@ -228,8 +237,8 @@ function SecondGuest() {
           </label>
         </div>
         <div className="col-md-2">
-          <input type="radio" name="gender" id="gFemale" value="female" />
-          <label htmlFor="gFemale">
+          <input type="radio" name="2ndgender" id="2ndgFemale" value="female" />
+          <label htmlFor="2ndgFemale">
           {t('reservation.ms')}
           </label>
         </div>
@@ -692,7 +701,7 @@ return (
                         className="special"
                         id="spcRequire"
                         value={item.name}
-                        onClick={(e)=>setRequest(e.target.value)}
+                        onClick={(e)=>handleCheckboxClick(e.target.value)}
                       />
                       <label htmlFor="spcRequire">{item.name}</label><br />
                       </>
