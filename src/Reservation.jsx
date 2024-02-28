@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect, useImperativeHandle, forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
+import ReceiverPage from "./Test2";
 function Reservation() {
   //lang
   const {t} = useTranslation()
@@ -14,8 +15,8 @@ function Reservation() {
   const reservationData = t('reservation', {returnObjects:true})
   const payMethod = t('reservation.method', {returnObjects:true})
   const requireItem = t('reservation.requirement-item', {returnObjects:true})
-  const [selectedCity, setSelectedCity] = useState("Ho Chi Minh");
-  const [selectedBranch, setSelectedBranch] = useState("Le Thanh Ton");
+  const [selectedCity, setSelectedCity] = useState();
+  const [selectedBranch, setSelectedBranch] = useState();
   const [paymentMethod, setPaymentMethod] = useState()
   const flatBranches = [].concat(...branch)
   const filteredBranches = flatBranches.filter(b => b.city_name == selectedCity)
@@ -37,11 +38,8 @@ function Reservation() {
   const [selectedYear, setSelectedYear] = useState()
   const [gender, setGender] = useState()
   const [company, setCompany] = useState()
-  const [secondFamilyName, setSecondFamilyName] = useState()
-  const [secondGivenName, setSecondGivenName] = useState()
-  const [secondGender,  setSecondGender] = useState()
-  const [sameBooker, setSameBooker] = useState()
-  const [bookerName, setBookerName] = useState("Same as person who will stay")
+  const [sameBooker, setSameBooker] = useState("Same as person who will stay")
+  const [bookerName, setBookerName] = useState()
   const [differentBooker, setDifferentBooker] = useState()
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState()
@@ -50,7 +48,6 @@ function Reservation() {
   const [vat, setVat] = useState()
   const [request, setRequest] = useState([])
   const [specialRequest, setSpecialRequest] = useState()
-
   const handleCheckboxClick = (value) => {
     if (request.includes(value)) {
       // If the value is already in the array, remove it
@@ -68,11 +65,39 @@ function Reservation() {
     const value = Math.max(min, Math.min(max, Number(e.target.value)));
     setValue(value);
   };
+  
+  const input3Ref = useRef(null)
+  const input4Ref = useRef(null)
   const [show, setShow] = useState(false)
   const [status, setStatus] = useState(0)
   const [statusC, setStatusC] = useState(0)
   const [showButton, setShowButton] = useState(1)
-
+  const [secondFamilyName, setSecondFamilyName] = useState()
+  const [secondGivenName, setSecondGivenName] = useState()
+  const [secondGender,  setSecondGender] = useState()
+  const inputRef = useRef(null)
+  const input2Ref = useRef(null)
+  useEffect(() => {
+    if(show){
+      inputRef.current.focus()
+    }
+  },[show])
+  const handleSecondFamilyName = (e) => {
+    const newValue = e.target.value
+    setSecondFamilyName(newValue)
+    // onFamilyNameChange(newValue)
+  }
+  const handleSecondGivenName = (e) => {
+    const newValue = e.target.value
+    setSecondGivenName(newValue)
+    // onGivenNameChange(newValue)
+  } 
+  const handleSecondFamilyNameClick = () => {
+    inputRef.current.focus()
+  }
+  const handleSecondGivenNameClick = () => {
+    input2Ref.current.focus()
+  }
   const handleClick = () => {
     text === t('reservation.more') ? setText(t('reservation.remove')) : setText(t('reservation.more'))
     setShow(!show)
@@ -84,7 +109,6 @@ function Reservation() {
     setStatusC(statusC)
   }
   const validateForm=() => {
-
         alert(
           selectedCity + ' ' +
           selectedBranch+ ' ' + 
@@ -107,19 +131,19 @@ function Reservation() {
           differentBooker+ ' ' +
           email+ ' ' +
           phone+ ' ' +
-          roomType+ ' ' +
+          roomType+ ' ' + 
           contract+ ' ' + 
+          company+ ' ' +
           vat+ ' ' +
           paymentMethod+ ' ' +
           request+ ' ' +
           specialRequest
           )
-      
   }
 function DayPicker() {
-  const minDay = -1
-  const maxDay = 29
-    const birthDay = new Date().getDay()
+  const minDay = 1
+  const maxDay = 31
+    const birthDay = 0
     console.log(selectedDay);
     const onHandleChange = (e) => {
       setSelectedDay(e.target.value)
@@ -142,7 +166,7 @@ function DayPicker() {
 function MonthPicker() {
     const minMonth = 0
     const maxMonth = 11
-    const birthMonth = new Date().getMonth()
+    const birthMonth = 1
     console.log(selectedMonth);
    
     const onHandleChange = (e) => {
@@ -165,9 +189,9 @@ function MonthPicker() {
 
   }
 function YearPicker() {
-    const minYear = -98
-    const maxYear = -18
-    const birthYear = new Date().getFullYear()
+    const minYear = 1925
+    const maxYear = 2005
+    const birthYear = 0
     console.log(selectedYear);
    
     const onHandleChange = (e) => {
@@ -189,94 +213,48 @@ function YearPicker() {
     )
 
   }
-function MoreButton() {
-    return(
-      <div className="row">
-                  <div className="col-md-12 offset-4">
-                    <button className="base__btn btn__send" onClick={handleClick}>{text}</button>
-                  </div>
-                  {show && <SecondGuest />}
-                </div>
-    )
-  }
-function SecondGuest() {
-    return(
-      <div className="container">
-      <div className="row guest-information">
-        <div className="col-md-2 name__title">
-          {t('reservation.name')}
-        </div>
-        <input
-          placeholder={t('reservation.family-name')}
-          type="text"
-          className="col-md-2 form__content"
-          onChange={(e)=> setSecondFamilyName(e.target.value)}
-        />
-
-        <input
-          placeholder={t('reservation.given-name')}
-          type="text"
-          className=" col-md-2 form__content"
-          onChange={(e)=> setSecondGivenName(e.target.value)}
-        />
-      </div>
-      <div className="row">
-        <div className="col-md-2 name__title">
-          {t('reservation.gender')}
-        </div>
-        <div className="col-md-2">
-          <input
-            type="radio"
-            name="2ndgender"
-            id="2ndgMale"
-            value="male"
-            onChange={(e)=>setGender(e.target.value)}
-          />
-          <label htmlFor="gMale">
-            {t('reservation.mr')}
-          </label>
-        </div>
-        <div className="col-md-2">
-          <input type="radio" name="2ndgender" id="2ndgFemale" value="female" />
-          <label htmlFor="2ndgFemale">
-          {t('reservation.ms')}
-          </label>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-2 name__title">
-        {t('reservation.birth-date')}
-        </div>
-        {<DayPicker />}
-        {<MonthPicker />}
-        {<YearPicker />}
-      </div>
-      </div>
-    )
-  }
 function ShowBooker() {
+  useEffect(() => {
+    if(status === 1) {
+      input3Ref.current.focus();
+    }
+  },[status])
+  const handleChangeBookerName = (e) => {
+    setBookerName(e.target.value)
+  }
   return(
     <div className="row">
     <div className="col-md-2 name__title">{t('reservation.name')}</div>
       <input
+        ref={input3Ref}
         type="text"
         className="booker-name form__content col-md-2"
+        value={bookerName}
         placeholder={t('reservation.name')}
-        onChange={(e) => setBookerName(e.target.value)}
+        onChange={handleChangeBookerName}
       />
       </div>
   )
   }
 function ShowCompanyName() {
+    useEffect (()=>{
+      if(statusC === 1) {
+        input4Ref.current.focus()
+      }
+    }, [statusC])
+    const handleChangeCompanyName = (e) => {
+      setCompany(e.target.value)
+    }
     return (
       <div className="row">
       <div className="col-md-2 name__title">{t('reservation.company')}</div>
         <input
+          ref={input4Ref}
           type="text"
           className="booker-name form__content col-md-2"
-          id=""
           placeholder={t('reservation.company')}
-          onChange={(e) => setCompany(e.target.value)}
+          value = {company}
+          onChange={handleChangeCompanyName}
         />
         <span className="required__note">{t('reservation.company-note')}</span>
         </div>
@@ -312,6 +290,7 @@ return (
           </div>
         </div>
       </div>
+      <ReceiverPage />
               <div className="container">
                 <div className=" reservation__container">
               <div className="reserve-container">
@@ -328,11 +307,15 @@ return (
                       setSelectedCity(e.target.value)
                     }}
                   >
+                    <option value="" disabled selected hidden>
+                        {t('booking.placeHolder')}
+                        </option>
                     {city.map((item) => (
                       <option key={item.id} value={item.city_name}>
                         {item.city_name}
                       </option>
                     ))}
+                     
                   </select>
                   <select 
                   value={selectedBranch}
@@ -387,7 +370,7 @@ return (
                   minTime:'15:00',
                   time_24hr:true
                   }}
-                  placeholder="Check in time"
+                  placeholder= {t('reservation.in-time')}
                   onChange={(startTime)=> setStartTime(startTime)}
                   className="col-md-2 form__content webkit-appearance" />
                   <div className="col-md-2 offset-2 name__title check-out-time">
@@ -405,7 +388,7 @@ return (
                     maxTime:'12:00',
                     time_24hr:true
                   }}
-                  placeholder="Check out time"
+                  placeholder={t('reservation.out-time')}
                   onChange={(endTime => setEndTime(endTime))}
                   className="col-md-2 form__content webkit-appearance" />
                 </div>
@@ -516,7 +499,75 @@ return (
                        {<MonthPicker />}
                        {<YearPicker />}
                     </div>
-                  {showButton >= 2 && <MoreButton />}
+                  {showButton >= 2 &&  <div className="row">
+                  <div className="col-md-12 offset-4">
+                    <button className="base__btn btn__send" onClick={handleClick}>{text}</button>
+                  </div>
+                  {show && 
+      <div className="container">
+      <div className="row guest-information">
+        <div className="col-md-2 name__title">
+          {t('reservation.name')}
+        </div>
+        <input
+          ref={inputRef}
+          placeholder={t('reservation.family-name')}
+          type="text"
+          className="col-md-2 form__content"
+          value={secondFamilyName}
+          onClick={handleSecondFamilyNameClick}
+          onChange={handleSecondFamilyName}
+        />
+
+        <input
+          ref={input2Ref}
+          placeholder={t('reservation.given-name')}
+          type="text"
+          className=" col-md-2 form__content"
+          value={secondGivenName}
+          onClick={handleSecondGivenNameClick}
+          onChange={handleSecondGivenName}
+          
+        />
+      </div>
+      <div className="row">
+        <div className="col-md-2 name__title">
+          {t('reservation.gender')}
+        </div>
+        <div className="col-md-2">
+          <input
+            type="radio"
+            name="2ndgender"
+            id="2ndgMale"
+            value="male"
+            onChange={(e)=>setSecondGender(e.target.value)}
+          />
+          <label htmlFor="gMale">
+            {t('reservation.mr')}
+          </label>
+        </div>
+        <div className="col-md-2">
+          <input type="radio" 
+          name="2ndgender" 
+          id="2ndgFemale" 
+          value="female" 
+          onChange={(e)=> setSecondGender(e.target.value)}
+          />
+          <label htmlFor="2ndgFemale">
+          {t('reservation.ms')}
+          </label>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-2 name__title">
+        {t('reservation.birth-date')}
+        </div>
+        {<DayPicker />}
+        {<MonthPicker />}
+        {<YearPicker />}
+      </div>
+      </div>}
+      </div>}
                 <div className="row">
                   <div className="col-md-2 name__title">{t('reservation.booker')}</div>
                   <div className="col-md-6">

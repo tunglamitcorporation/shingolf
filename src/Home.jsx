@@ -3,12 +3,13 @@ import Booking from "./Booking";
 import { useTranslation } from "react-i18next";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import {Link, useNavigate} from "react-router-dom"
-import { scroller } from "react-scroll";
 import {format, parse} from "date-fns"
 import { useState, useEffect } from "react";
-import { Carousel } from "react-responsive-carousel";
-import data from "./JSON/data.json";
-import CityProvinceInput from "./Test";
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
+import SenderPage from "./Test";
 export default function Home({news}) {
   const { t } = useTranslation();
   const featureItem = t("feature.feature_item", { returnObjects: true });
@@ -18,6 +19,7 @@ export default function Home({news}) {
 
   const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
+  const caption = t("caption", {returnObjects: true})
   const feature = t("feature.feature_item", { returnObjects: true });
   const hcm = t("hcm-branch.branch", {returnObjects:true})
   const hn = t("hn-branch.branch", {returnObjects:true})
@@ -35,25 +37,48 @@ useEffect(()=>{
     document.body.style.position = "";
   }
 })
+const AutoPlaySlider =  withAutoplay(AwesomeSlider)
   return (
     <>
     <div className="homepage">
       <div className="content">
-      {/* <div className="content__background"> */}
-      <Carousel
+      <div className="overlay"></div>
+      <AutoPlaySlider
+      animation = "scaleOutAnimation"
+      mobileTouch
+      infinite
+      play
+      interval = {5000}>
+         {caption.map((item) => (
+              <div data-src={item.image}>
+                              <div className="container">
+                                <div className="row">
+                                  <div className="col-md-12">
+                                  <p className="carousel_name pre-line">{item.caption}</p>
+                                  <div className="btn_container">
+                                  <Link to = {item.link}><i class="fa-solid fa-angle-right"></i></Link>
+                                  </div>
+                                  </div>
+                                  </div>
+                              </div>
+                              </div>
+                          ))}
+        </AutoPlaySlider>
+            {/* <Carousel
                           showArrows
                           showThumbs={false}
                           showStatus={false}
                           emulateTouch
-                          interval={5000}
+                          interval={3000}
                           autoPlay
                           infiniteLoop
                         >
                           {data.home.map((item) => (
-                            <img src={item} alt="" />
+                            <img className="carousel-img" src={item} alt="" />
                           ))}
-                        </Carousel>
-      {/* </div> */}
+      </Carousel> */}
+      </div>
+      <div className="content">
           <div className="container-fluid">
             <div className="row g-0 p-0">
               <div className="col-6 col-md-3 offset-0">
@@ -106,6 +131,7 @@ useEffect(()=>{
       <div className="is-sticky">
         <Booking />
       </div>
+      <SenderPage />
       <AnimatedOnScroll>
         <div className="content__news">
           <div className="container">
@@ -340,7 +366,7 @@ useEffect(()=>{
                       <a href="">{item.title}</a>
                     </div>
                     <div className="content__feature-text">
-                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 70)}...
+                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 55)}...
                       <Link 
                       className="continue_link" 
                       to = {`/Feature/${item.id}`}
@@ -354,7 +380,6 @@ useEffect(()=>{
         </div>
       </AnimatedOnScroll>
     </div>
-    <CityProvinceInput />
     </>
   );
 }

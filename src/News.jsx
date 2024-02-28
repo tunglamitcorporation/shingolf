@@ -61,10 +61,12 @@ export default function News ({ news })  {
                         <sub className="suffix pt-2">{suffix}</sub>
                         <div className="year pl-2">{year}</div>
                 </div>
+                <div className="area">
                 <div className="danang">{t("header.dn")}</div>
                 <div className="hanoi">{t("header.hn")}</div>
                 <div className="haiphong">{t("header.hp")}</div>
                 <div className="hochiminh">{t("header.hcm")}</div>
+                </div>
               </div>
             </div>
             <div className="col-md-8 pre-line">

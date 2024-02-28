@@ -77,10 +77,7 @@ export default function Feature() {
       </div>
       <div className="feature__type-list">
         <div className="container" id="containerID">
-          {featureItem.map((item) => 
-            {
-              if(item.hasLink==true){
-                return(
+          {featureItem.map((item) => (
               <div key={item.id} className="feature__type-item" id={item.id}>
               <div className="card mb-3" style={{ border: "none" }}>
                 <div className="row g-4">
@@ -105,30 +102,8 @@ export default function Feature() {
               </div>
             </div>
                 )
-              }
-              return(
-                <div key={item.id} className="feature__type-item" id={item.id}>
-                <div className="card mb-3" style={{ border: "none" }}>
-                  <div className="row g-4">
-                    <div className="col-md-4">
-                      <img className="img-fluid" src={item.image} alt="" />
-                      <div className="feature__number">
-                        <span>{item.num}</span>
-                      </div>
-                    </div>
-                    <div className="col-md-8">
-                      <div className="card-body" style={{ padding: 0 }}>
-                        <h2 className="card-title">{item.title}</h2>
-                        <p className="card-text">{item.content}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
                 )
             }
-            
-            )}
         </div>
       </div>
     </div>

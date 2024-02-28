@@ -206,7 +206,6 @@
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767640/AzumayaWeb/TVL2/DELUXEM_1_j2fzt6.jpg",
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767642/AzumayaWeb/TVL2/DELUXEM_2_ylzbtk.jpg"
   ],
-
   "ltt": "LTT",
   "d_ltt": [
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769271/AzumayaWeb/LTT/DELUXE_1_xjyeed.jpg",
@@ -302,7 +301,7 @@
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_2_dxcut3.jpg",
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_3_cnec2s.jpg"
   ],
-  "pp":"PP",
+  "pp": "PP",
   "diw_pp": [
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705396113/AzumayaWeb/PP/DeluxeInsideWindow_1_kzgpcr.jpg",
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705396113/AzumayaWeb/PP/DeluxeInsideWindow_2_mrqyhi.jpg"
@@ -324,12 +323,5 @@
   "e_pp": [
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705396114/AzumayaWeb/PP/Execuitve_1_jpc3iu.jpg",
     "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705396114/AzumayaWeb/PP/Executive_2_z72mnl.jpg"
-  ],
-
-  "home": [
-    "https://res.cloudinary.com/dtdfsaaei/image/upload/v1707206593/AzumayaWeb/azumaya-transformed_wxpavz.jpg",
-    "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701655335/AzumayaWeb/welcome-bg_z5dr6z.jpg",
-    "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/glf8jtstb8jsemfppqzp.jpg",
-    "https://res.cloudinary.com/dsm20cmen/image/upload/v1707191395/test/20240121_073506_sufd6q.jpg"
   ]
 }

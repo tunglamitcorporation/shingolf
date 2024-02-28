@@ -1,4 +1,4 @@
-import Booking from "../Booking";
+import BookingRoom from "../BookingRoom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -9,11 +9,13 @@ import classNames from "classnames";
 
 export default function KM3RoomDetail() {
   const { t } = useTranslation();
+  const featureItem = t("feature.feature_item", { returnObjects: true });
   const roomFeature = t("room_km3.features", { returnObjects: true });
   const branchName = t("branch", { returnObjects: true });
   const cityName = t("header", { returnObjects: true });
   const room = t("room_km3", { returnObjects: true });
   const km3 = t("km3", { returnObjects: true });
+  const business_km3 = t("business_km3", { returnObjects: true });
   const room0 = t("km3.0", { returnObjects: true });
   const room1 = t("km3.1", { returnObjects: true });
   const room2 = t("km3.2", { returnObjects: true });
@@ -32,7 +34,7 @@ export default function KM3RoomDetail() {
         </div>
       </div>
       <div className="is-sticky">
-        <Booking />
+      <BookingRoom />
       </div>
       <div className="container">
         <div className="row">
@@ -672,7 +674,7 @@ export default function KM3RoomDetail() {
                     </p>
                   </div>
                   <div className="room__container">
-                    <table className="room__table room__table-service">
+                    {/* <table className="room__table room__table-service">
                       <tbody>
                         <tr>
                           <th rowSpan={2}>{t("room_km3.pickup")}</th>
@@ -735,10 +737,42 @@ export default function KM3RoomDetail() {
                           </td>
                         </tr>
                       </tbody>
-                    </table>
+                    </table> */}
+      <div className="feature__type-list">
+        <div className="container" id="containerID">
+          <div className="container">
+            <div className="row">
+            {business_km3.map((item) => (
+              <div key={item.id} className="business-card col-md-4 ml-3 pre-line pt-1" id={item.id}>
+              <div className="card" style={{ border: "none" }}>
+                <div className="row g-4">
+                  <div className="col-md-12">
+                    <img className="business-img" src={item.image} alt="" />
+                  </div>
+                  <div className="col-md-12">
+                    <div className="card-body" style={{ padding: 0 }}>
+                      <h2 className="card-title">{item.title}</h2>
+                      <p className="card-text left">{item.content}</p>
+                      <p className="card-text left">{item.note}</p>
+                      <div className="btn-holder">
+                      <div className="btn__detail control-position">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                )
+                )
+            }
+            </div>
+          </div>
+        </div>
+      </div>
                     <div className="col-md-12">
                       <div className="table-footer">
-                        <h1>{t("room_km3.board")}</h1>
+                        {/* <h1>{t("room_km3.board")}</h1> */}
                         <p className="mt-5">
                           {t("room_km3.contact1")}
                           <a className="ml-1" href={`tel:${t("room_km3.phone")}`}>

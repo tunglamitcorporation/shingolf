@@ -3,12 +3,13 @@ import { useTranslation } from "react-i18next";
 import { scroller } from "react-scroll";
 import { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
+import Cookies from "js-cookie";
 import Avatar from 'react-avatar';
 function Header() {
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    Cookies.set('selectedLanguage', lng, {expires: 365})
   };
   const navigate = useNavigate()
   const headerData = t("header", { returnObjects: true });
@@ -22,10 +23,15 @@ function Header() {
 
   const [backgroundColor, setBackgroundColor] = useState('transparent');
 
+    useEffect(()=>{
+      const savedLang = Cookies.get('selectedLanguage');
+      if(savedLang && i18n.language !== savedLang){
+        i18n.changeLanguage(savedLang)
+      }
+    })
     useEffect(() => {
       const handleScroll = () => {
         const position = window.scrollY;
-  
         // You can define your conditions for changing the background color here
         if (position > 100) {
           setBackgroundColor('#482979'); // Change to whatever color you want

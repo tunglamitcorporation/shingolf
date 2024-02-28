@@ -1,13 +1,15 @@
 import Booking from "./Booking";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import classNames from "classnames";
-export default function HotelHP() {
+import {format, parse} from "date-fns"
+
+export default function HotelHP({news}) {
   const { t } = useTranslation();
   const brandDetail = t("hp-branch", { returnObjects: true });
   const header = t("header", { returnObjects: true });
-  const homeNewsData = t("home.new_item", { returnObjects: true });
   const HPDetail = t("hp-branch.branch", { returnObjects: true });
+  const homeNews = news
+
   return (
     <div>
       <div className="policies__header">
@@ -80,34 +82,75 @@ export default function HotelHP() {
         </div>
         <div className="content__news">
           <div className="container">
-            <div className="row">
-              <div className="col-12 col-md-8 offset-md-3">
-                <h2
-                  className="content__news-title"
-                  style={{ fontWeight: "bold" }}
-                >
-                  {t("home.news_title")}
-                </h2>
+            <div className="row align-item-center justify-content-center">
+              <div className="col-md-12" style={{marginTop: 60}}>
+                <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
                 <ul className="content__news-list">
-                  {homeNewsData.map((item) => (
-                    <li className="content__news-item" key={item.id}>
-                      <span className="content__news-date">
-                        {item.month} {item.day} {item.year}{" "}
-                      </span>
-                      <span
-                        className={classNames({
-                          "content__news-branch": item.location == "Hanoi",
-                          "content__news-branch--bg":
-                            item.location == "All Branches",
-                        })}
-                      >
-                        {item.location}
-                      </span>
-                      <span className="content__news-link">
-                        <a href={item.link}>{item.new}</a>
-                      </span>
-                    </li>
-                  ))}
+                {homeNews.map((article) => {
+               const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
+               const formattedDate = format(parsedDate, 'MMM do yyyy')
+               const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
+               console.log(formattedDate);
+               if (article.allBranch == true)
+               {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1 news_date-container">
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                        <div className="month">{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-2 news_branch-container">
+                          <div className="allbranch allbranch_home">{t("header.allbranch")}</div>
+                    </div>
+                    <div className="col-md-7 mt-2 news_title-container">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title news_homeTitle"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div className="article_title">{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+               if (article.hp == true) {
+                return (
+                  <div className="row">
+                    <div className="col-md-2 mt-1 news_date-container" >
+                      <div className="news_box1">
+                        <div className="news_time-home">
+                        <div className="month">{month}</div>
+                        <div className="day pl-2">{day}</div>
+                        <sub className="suffix pt-2">{suffix}</sub>
+                        <div className="year pl-2">{year}</div>
+                        </div>
+                      </div>
+                    </div>
+                        <div className="col-md-2 news_branch-container" >
+                          <div className="haiphong haiphong_home">{t("header.hp")}</div>
+                        </div>
+                    <div className="col-md-7 mt-2 news_title-container">
+                      <div key={article.id}>
+                        <Link
+                          className="news_title news_homeTitle"
+                          to={`/News/${encodeURIComponent(article.title)}`}
+                        >
+                          <div className="article_title">{article.title}</div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            })}
                 </ul>
               </div>
             </div>

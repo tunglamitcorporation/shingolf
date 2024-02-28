@@ -1,4 +1,4 @@
-import Booking from "../Booking";
+import BookingRoom from "../BookingRoom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next"
@@ -37,7 +37,7 @@ export default function TVL1RoomDetail() {
         </div>
       </div>
       <div className="is-sticky">
-        <Booking />
+      <BookingRoom />
       </div>
       <div className="container">
         <div className="row">

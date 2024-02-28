@@ -2,7 +2,7 @@ import {useState, useEffect } from "react";
 import Flatpickr from "react-flatpickr";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-export default function Booking (){
+export default function BookingRoom (){
     const {t} = useTranslation()
     const bookingData = t('booking', {returnObjects:true})
     const city = t('booking.city', {returnObjects:true})

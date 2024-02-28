@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Home from "./Home";
 import Header from "./Header";
-import MainHeader from "./MainHeader";
 import Footer from "./Footer";
 import Feature from "./Feature";
 import Policies from "./Policies";
@@ -92,10 +91,10 @@ function App() {
       <Route path="/News/:title" element={<News news={news} />} />
       <Route path="/NewsList" element={<NewsList news={news} />} />
       <Route path="/NewsByDate/:date" element={<NewsByDate news={news} />} />
-      <Route path="/hotel-hn" element={<HotelHN />} />
-      <Route path="/hotel-hcm" element={<HotelHCM />} />
-      <Route path="/hotel-dn" element={<HotelDN />} />
-      <Route path="/hotel-hp" element={<HotelHP />} />
+      <Route path="/hotel-hn" element={<HotelHN news = {news}/>} />
+      <Route path="/hotel-hcm" element={<HotelHCM news = {news} />} />
+      <Route path="/hotel-dn" element={<HotelDN news = {news}/>} />
+      <Route path="/hotel-hp" element={<HotelHP news = {news} />} />
       <Route path="/hai-ba-trung-detail/room" element={<HBT1RoomDetail />} />
       <Route path="/kim-ma-2-detail/room" element={<KM2RoomDetail />} />
       <Route path="/kim-ma-3-detail/room" element={<KM3RoomDetail />} />

@@ -22,6 +22,97 @@
         "contact": "Contact",
         "itemTest": "Test"
     },
+    "footer":{
+        "branch":[
+            {
+                "name":"Azumaya Thai Van Lung 1",
+                "add":"8A/7D1 - 8A/8D1 - 8A/9D1 Thai Van Lung St., Dist. 1, HCMC",
+                "num":"+84.28.3824 6835",
+                "mail":"reservation@azumayavietnam.com"
+
+
+            },
+            {
+                "name":"Azumaya HCM ANNEX",
+                "add":"8A/8D2 Thai Van Lung St., Dist. 1, HCMC",
+                "num":"+84.28.3824 6835",
+                "mail":"reservation@azumayavietnam.com"
+
+                
+
+            },
+            {
+                "name":"Azumaya Le Thanh Ton",
+                "add":"15/3 Le Thanh Ton St., Dist. 1, HCMC",
+                "num":"+84.28.3827 1110",
+                "mail":"reservation2@azumayavietnam.com"
+
+                
+
+            },
+            {
+                "name":"Azumaya Thai Van Lung 2",
+                "add":"29 Thai Van Lung St., Dist. 1, HCMC",
+                "num":"+84.28.3827 1071 & +84.28.3827.1072",
+                "mail":"reservation3@azumayavietnam.com"
+
+
+            },
+            {
+                "name":"Azumaya Hai Ba Trung 1",
+                "add":"16 Bui Thi Xuan St., Hai Ba Trung Dist., Ha Noi",
+                "num":"+84.24.6278 6688",
+                "mail":"reservationhanoi@azumayavietnam.com"
+
+
+
+            },
+            {
+                "name":"Azumaya Linh Lang",
+                "add":"26 Linh Lang St, Ba Dinh Dist., Hanoi",
+                "num":"+84.24.3862 0620",
+                "mail":"reservationhanoi5@azumayavietnam.com"
+
+
+
+            },
+            {
+                "name":"Azumaya Kim Ma 2",
+                "add":"18A Pham Huy Thong St., Ba Dinh Dist., Ha Noi",
+                "num":"+84.24.3724 7570",
+                "mail":"reservationhanoi3@azumayavietnam.com"
+
+
+
+            },
+            {
+                "name":"Azumaya Kim Ma 3",
+                "add":"68 Pham Huy Thong St., Ba Dinh Dist., Ha Noi",
+                "num":"+84.24 3734 9730",
+                "mail":"reservationhanoi6@azumayavietnam.com"
+
+
+
+            },
+            {
+                "name":"Azumaya Hai Phong",
+                "add":"195 Vu Trong Khanh Str.,(195/420 Lach Tray Str.,) Ngo Quyen Dist., Hai Phong",
+                "num":"+84.225.3828 969",
+                "mail":"reservationhaiphong@azumayavietnam.com"
+
+
+
+            },
+            {
+                "name":"Azumaya Da Nang",
+                "add":"31 Nguyen Tat Thanh St., Hai Chau Dist., Da Nang",
+                "num":"+84.236.3743 888",
+                "mail":"reservationdanang@azumayavietnam.com"
+
+
+            }
+        ]
+    },
     "branch": {
         "hbt1": "Azumaya Hai Ba Trung 1",
         "km2": "Azumaya Kim Ma 2",
@@ -162,6 +253,7 @@
         "main_title": "Azumaya Hotel's 8 Characteristics",
         "main_content": "Thank you always for your kind attention to Azumaya Hotel. Azumaya Hotel is a Japanese-style business hotel opened in Ho Chi Minh for whom are stressed out with their business trip and looking for comfortable place to be relieved. The first branch opened in Thai Van Lung St. in 2011 and now we have 5 branches in Ha Noi, one in Da Nang, 4 branches in Ho Chi Minh. We serve 8 characteristics of service with high-standard quality in all branches.",
         "continue":"Continue Reading",
+        "detail":"Click here for details",
         "feature_item": [
             {
                 "id": 1,
@@ -190,7 +282,7 @@
                 "id": 4,
                 "title": "Japanese breakfast",
                 "content": "For Japanese business travelers, high performance of working in foreign countries only can be produced by Japanese breakfast. Grilled fish, stewed meat, fried seafood, sauteed vegetables, and some other remarkable Japanese dishes can be enjoyed only in Azumaya Hotel. Both authentic Japanese breakfast set and continental set can be enjoyed, but there are also bowl dish, curry rice, gingered sautéed pork set, and other wide-range of Japanese set menu you can choose from. Buffet is served for limited time from 6am to 8am, and set menu is served after buffet time from 8am to 10am. We also serve the breakfast for visitors from 150.000VND (The price depends on each branches).",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
                 "num": "No 4",
                 "link": "/Service/Test/Vietnam/Service?tab=breakfast"
@@ -234,45 +326,7 @@
         "welcome_sub-title": "Comfort served for business travelers",
         "welcome_content": "Nowadays, more and more businessmen from advanced countries move into Vietnam. However, during the stay, there must be many anxieties to face; such as languages and food. For their distress, we had one mission came into our mind. “Why don’t we provide comfortable space to relieve their stress?” The answer was clear: we prepare Rotenburo (open air hot bath) and foot massage to soothe their tiredness, and authentic Japanese breakfast & continental breakfast for their daily vitality. Following ― Japanese-available receptionist, pick-up / drop-off service from / to airport, free laundry service for long-stay customers, free high-speed Wi-Fi service, Japanese TV program, arrangement service for rental car / tour, etc. Moreover, “Omotenashi” (Japanese hospitality) is always in our heart to serve you a pleasure in life of foreign land.",
         "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
-        "line_btn": "Click here for detail",
-        "new_item": [
-            {
-                "id": 1,
-                "new": " Open women Rotenburo in Azumaya Kim Ma 2 Branch",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "Hanoi"
-            },
-            {
-                "id": 2,
-                "new": "★ Notice of Vietnam Value Added Tax (VAT) change ★",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "All Branches"
-            },
-            {
-                "id": 3,
-                "new": " 2023 Tet (Lunar New Year) Information",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "Hanoi"
-            },
-            {
-                "id": 4,
-                "new": " Azumaya Thai Van Lung 1 Rotenburo Visitor price change",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "All Branches"
-            }
-        ]
+        "line_btn": "Click here for detail"
     },
     "policy": {
         "title": "Q&A",
@@ -551,6 +605,30 @@
                 "content":"From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
                 "date":"2023-12-29",
                 "hn":true
+            },
+            {
+                "title": "★ Notice of Vietnam Value Added Tax (VAT) change ★",
+                "content":"From July 1st 2023 to December 31st 2023, Vietnam Value Added Tax (VAT) will be applied at 8%. We appreciate your understanding.",
+                "date":"2023-07-03",
+                "allBranch":true
+            },
+            {
+                "title": "2023 Tet (Lunar New Year) Information",
+                "content":"Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Le Thanh Ton & Thai Van Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Ma 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Da Nang 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hai Phong 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
+                "date":"2023-01-17",
+                "allBranch":true
+            },
+            {
+                "title": "Reopen Massage service from Apr 2022",
+                "content":"Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Da Nang‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Da Nang government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
+                "date":"2023-04-15",
+                "dn":true
+            },
+            {
+                "title": "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hai Phong",
+                "content":"Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hai Phong \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hai Phong \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hai Phong City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
+                "date":"2023-04-15",
+                "hp":true
             }
           
         ]
@@ -977,31 +1055,6 @@
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
         "businessContent": "For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
-        "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "625.000 VND (6:00 ~ 20:59)",
-        "pickup_fee2": "750.000 VND (21:00 ~ 5:59)",
-        "pickup_car": "Car for 4-7 persons",
-        "minibar": "Minibar",
-        "minibar_fee": "From 20.000 VND",
-        "minibar_type": "Soft drink, beer, etc.",
-        "laundry": "Laundry",
-        "laundry_fee1": "From 20.000 VND",
-        "laundry_fee2": "Special price for long staying guest",
-        "print": "Print & Copy",
-        "print_fee1": "FREE for first 10 pages / day",
-        "print_fee2": "From 11th page, 2.000VND charged per page",
-        "tel": "Tel",
-        "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
-        "rental_car": "Rental Car",
-        "tour": "Tour",
-        "visa": "Extend Visa",
-        "food": "Food Delivery",
-        "roten": "Male Rotenburo",
-        "rotenContent": "Opening time: Mon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat & Sun: 7:00 ~ 23:00\nWe open for ladies everyday at Kim Ma 2 Branch Opening time: Mon ~ Fri: 17:00 ~ 23:00\nSat & Sun: 7:00 ~ 23:00\nIf you want to use this service, please contact reception in advance .",
-        "breakfast": "Breakfast",
-        "breakfastContent": " Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
-        "ask": "Ask receptionist",
         "board": "Azumaya Hotel Management Board",
         "contact1": "Reservation can be made via phone:",
         "contact2": "or Email:",
@@ -1148,6 +1201,74 @@
             "tick_w": true,
             "price": "1.700.000VND+"
         }
+    ],
+    "business_km3":[
+        {
+            "id": 1,
+            "title":"Pick up & Drop off Service",
+            "content":"From 6:00 to 20:59: 625.000 VND\nFrom 21:00 to 5:59: 750.000 VND\n\nCar for 4-7 persons",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/pu-do_ea9m4c.jpg"
+        },
+        {
+            "id":2,
+            "title":"Minibar",
+            "content":"Soft drink, beer, etc.\nFrom 20.000 VND",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/minibar_wpox8f.jpg"
+        },
+        {
+            "id":3,
+            "title":"Laundry",
+            "content":"Special price for long staying guest\nFrom 20.000 VND",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/laundry_ahnuwq.jpg"
+        },
+        {
+            "id":4,
+            "title":"Print & Copy",
+            "content":"FREE for first 10 pages / day\nFrom 11th page, 2.000VND charged per page",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/printcopy_cxbs5v.webp"
+        },
+        {
+            "id":5,
+            "title":"Tel",
+            "content":"FREE for local number / day\n20.000VND charged for international number",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/tel_jjorhm.jpg"
+        },
+        {
+            "id":6,
+            "title":"Rental Car",
+            "content":"Ask receptionist",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/rentalcar_fhqsms.jpg"
+        },
+        {
+            "id":7,
+            "title":"Tour",
+            "content":"Ask receptionist",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/tour_asodqe.jpg"
+        },
+        {
+            "id": 8,
+            "title":"Extend Visa",
+            "content":"Ask receptionist",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/visa_htwjfp.jpg"
+        },
+        {
+            "id": 9,
+            "title":"Food Delivery",
+            "content":"Ask receptionist",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/food_brzm3q.jpg"
+        },
+        {
+            "id":10,
+            "title":"Male Rotenburo",
+            "content":"* Opening time: \nMon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* We open for ladies everyday at Kim Ma 2 Branch \n*Opening time: \nMon ~ Fri : 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* If you want to use this service, please contact reception in advance.",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
+        },
+        {
+            "id":11,
+            "title":"Breakfast",
+            "content":"Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664685/AzumayaWeb/breakfast_vpnvhg.jpg"
+        }   
     ],
     "room_ll": {
         "room": "Room",
@@ -3208,5 +3329,63 @@
                 "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
             }
         ]
-    }  
+    },
+    "caption": [
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
+          "caption": "Azumaya \nHotel \nHai \nBa \nTrung \n1",
+          "link":"/hai-ba-trung-detail/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
+          "caption": "Azumaya \nHotel \nLe \nThanh \nTon",
+          "link":"/le-thanh-ton-detail/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
+          "caption": "Azumaya \nHotel \nKim \nMa \n2",
+          "link":"/kim-ma-2-detail/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
+          "caption": "Azumaya \nHotel \nPhnom\nPenh",
+          "link":""
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
+          "caption": "Azumaya \nHotel \nDa \nNang",
+          "link":"/da-nang/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
+          "caption": "Azumaya \nHotel \nThai \nVan \nLung \n1",
+          "link":"/thai-van-lung-1-detail/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
+          "caption": "Azumaya \nHotel \nHai \nPhong",
+          "link":"/hai-phong/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
+          "caption": "Azumaya \nHotel \nLinh \nLang",
+          "link":"/linh-lang-detail/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
+          "caption": "Azumaya \nHotel \nThai \nVan \nLung \n2",
+          "link":"/thai-van-lung-2-detail/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
+          "caption": "Azumaya \nHotel \nDa \nNang",
+          "link":"/da-nang/room"
+        },
+        {
+          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
+          "caption": "Azumaya \nHotel \nKim \nMa \n3",
+          "link":"/kim-ma-3-detail/room"
+        }
+      ]
+ 
 }

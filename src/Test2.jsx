@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const SenderPage = () => {
-  const [date1, setDate1] = useState('');
-  const [date2, setDate2] = useState('');
-  const [select1, setSelect1] = useState('');
-  const [select2, setSelect2] = useState('');
+const ReceiverPage = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  
+  const initialDate1 = queryParams.get('date1') || '';
+  const initialDate2 = queryParams.get('date2') || '';
+  const initialSelect1 = queryParams.get('select1') || '';
+  const initialSelect2 = queryParams.get('select2') || '';
+
+  const [date1, setDate1] = useState(initialDate1);
+  const [date2, setDate2] = useState(initialDate2);
+  const [select1, setSelect1] = useState(initialSelect1);
+  const [select2, setSelect2] = useState(initialSelect2);
 
   const handleDateChange1 = (e) => {
     setDate1(e.target.value);
@@ -41,11 +49,8 @@ const SenderPage = () => {
         <option value="option3">Option 3</option>
         <option value="option4">Option 4</option>
       </select>
-      <Link to={`/Reservation?date1=${date1}&date2=${date2}&select1=${select1}&select2=${select2}`}>
-        Send Data
-      </Link>
     </div>
   );
 };
 
-export default SenderPage;
+export default ReceiverPage;
