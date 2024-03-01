@@ -23,7 +23,6 @@ export default function Service() {
           </div>
         </div>
       </div>
-
       <div className="is-sticky">
         <Booking />
       </div>

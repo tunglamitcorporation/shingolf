@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 
 const SenderPage = () => {
+  const [open, setOpen] = useState(false);
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
   const [date1, setDate1] = useState('');
   const [date2, setDate2] = useState('');
   const [select1, setSelect1] = useState('');
@@ -44,6 +51,10 @@ const SenderPage = () => {
       <Link to={`/Reservation?date1=${date1}&date2=${date2}&select1=${select1}&select2=${select2}`}>
         Send Data
       </Link>
+      <button onClick={onOpenModal}>Open modal</button>
+      <Modal open={open} onClose={onCloseModal} center>
+        <h2>Simple centered modal</h2>
+      </Modal>
     </div>
   );
 };

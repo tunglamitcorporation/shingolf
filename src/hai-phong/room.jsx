@@ -36,7 +36,7 @@ export default function HPRoomDetail() {
         </div>
       </div>
       <div className="is-sticky">
-        <Booking />
+        <BookingRoom />
       </div>
       <div className="container p-0">
         <div className="row">

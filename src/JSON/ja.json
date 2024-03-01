@@ -3347,5 +3347,121 @@
             "caption": "東\n屋\n金\n馬 \n3",
             "link":"kim-ma-3-detail/room"
         }
+    ],
+    "service_breakfast":{
+        "openHour":"《営業時間》",
+        "price":"《料金》",
+        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172400/AzumayaWeb/Az_website_service_page_photos-1_hewnid.jpg",
+        "table1":[
+            {
+                "row1":"月 ~ 土",
+                "row2":"ビュッフェ:",
+                "row4":"6:00 ~ 8:00"
+            },
+            {
+                "row1":"",
+                "row2":"セットメニュー:",
+                "row4":"6:00 ~ 10:00"
+            },
+            {
+                "row1":"日",
+                "row2":"セットメニュー:",
+                "row4":"6:00 ~ 10:00"
+            }
+        ],
+        "table2":[
+            {
+                "row1":"セットメニュー:",
+                "row2":"150.000 ~ 180.000VND"
+            },
+            {
+                "row1":"ビュッフェ:",
+                "row2":"200.000~220.000VND"
+            }
+
+        ]
+    },
+    "service_roten":{
+    "openHour":"《営業時間》" ,
+    "price":"《ビジター料金》",
+    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172401/AzumayaWeb/Az_website_service_page_photos-2_ximtqy.jpg",
+    "hn_note1":"[男性]",
+    "hn_note2":"[女性:",
+    "hn_note3":"(キンマー2号店のみ)]",
+    "hn_note4":"*女性ビジター様は : 平日午後・週末のみ ",
+    "table_hcm1":[
+        {
+            "row1":"平日 :",
+            "row2":"6:00 ~ 10:00",
+            "row3":"※タイバンルン2号店のみ"
+        },
+        {
+            "row1":"",
+            "row2":"17:00 ~ 24:00",
+            "row3":"平日17:00-18:45は"
+        },
+        {
+            "row1":"週末 :",
+            "row2":"7:00 ~ 24:00",
+            "row3":"女性専用時間となります。"
+        }
+    ],
+    "table_hcm2":[
+        {
+            "row1":"タイバンルン1号店 : ",
+            "row2":"250.000 VND"
+        },
+        {
+            "row1":"タイバンルン2号店(男性) : ",
+            "row2":"200.000 VND"
+        },
+        {
+            "row1":"タイバンルン2号店(女性) : ",
+            "row2":"150.000 VND"
+        },
+        {
+            "row1":"レタントン店 : ",
+            "row2":"150.000VND"
+        }
+    ],
+    "table_hn1":[
+        {
+            "row1":"平日 :",
+            "row2":"6:00 ~ 9:00",
+            "row3":"平日 :",
+            "row4":"6:00 ~ 9:00"
+        },
+        {
+            "row1":"",
+            "row2":"17:00 ~ 23:00",
+            "row3":"",
+            "row4":"17:00 ~ 23:00"
+        },
+        {
+            "row1":"週末 :",
+            "row2":"7:00 ~ 23:00",
+            "row3":"週末 :",
+            "row4":"7:00 ~ 23:00"
+        }
+    ],
+    "table2_hn2":[
+        {
+            "row1":"タイバンルン1号店 : ",
+            "row2":"250.000 VND"
+        },
+        {
+            "row1":"タイバンルン2号店(男性) : ",
+            "row2":"200.000 VND"
+        },
+        {
+            "row1":"タイバンルン2号店(女性) : ",
+            "row2":"150.000 VND"
+        },
+        {
+            "row1":"レタントン店 : ",
+            "row2":"150.000VND"
+        }
     ]
+
+    }
 }

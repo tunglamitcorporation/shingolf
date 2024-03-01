@@ -527,7 +527,7 @@ code {
   position: absolute;
   content: "";
   display: block;
-  top: -6px;
+  top: -5px;
   left: 0;
   width: 100%;
   height: 5px;
@@ -1998,7 +1998,7 @@ height: 250px;
 filter: brightness(0.5);
 }
 .carousel_name{
-  width:120px!important;
+  width: 120px!important;
   height: 400px !important;
   z-index: 3;
   font-size: 2.5rem;
@@ -2032,6 +2032,83 @@ filter: brightness(0.5);
   justify-content: center;
   align-items: center;
   text-decoration: none;
+}
+.image-holder img{
+  height: 100%;
+  width: 100%;
+  padding: 5px 12px;
+
+}
+/* .image-holder{
+  overflow: hidden; 
+}
+
+.image-holder img{
+  transition: transform 0.3s ease; 
+}
+
+.image-holder:hover img{
+  transform: scale(1.1); 
+} */
+.service_table{
+  width: 500px;
+}
+.service_table td {
+  font-size: 1.6rem;
+  border-top: none;
+  padding: 0 10px;
+  font-weight: bold;
+    /* border: 1px solid #000; */
+}
+.massage_table{
+  width: 300px;
+}
+.massage_table td {
+  font-size: 1.6rem;
+  border-top: none;
+  padding: 0 10px;
+  font-weight: bold;
+  /* border: 1px solid #000; */
+
+}
+.service_header{
+  font-size: 2.5rem;
+  color: #482979;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.service_branch{
+  color: #fff;
+  height: 40px;
+  width: fit-content;
+  background-color: #482979;
+  font-size: 2.8rem;
+  border-radius: 3%;
+  padding: 0 15px;
+}
+.service_table-note{
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+}
+.massage_branch-note{
+  font-size: 1.6rem;
+  color: #000;
+}
+.call-btn{
+  height: 40px;
+  width: 200px;
+  background-color: #482979;
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  border-radius: 4%;
+  padding: 0 15px;
+}
+.call-btn{
+  transition: transform 0.3s ease;
+}
+.call-btn:hover{
+  transform: scale(1.1);
 }
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{

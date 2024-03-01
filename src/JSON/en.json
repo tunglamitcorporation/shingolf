@@ -3386,6 +3386,122 @@
           "caption": "Azumaya \nHotel \nKim \nMa \n3",
           "link":"/kim-ma-3-detail/room"
         }
-      ]
+      ],
+      "service_breakfast":{
+        "openHour":"《Opening Hour》",
+        "price":"《Visitor Price》",
+        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281232/AzumayaWeb/Az_website_service_page_EN_page-0001_v7ukjt.jpg",
+        "table1":[
+            {
+                "row1":"Mon ~ Sat",
+                "row2":"Buffet :",
+                "row4":"6:00 ~ 8:00"
+            },
+            {
+                "row1":"",
+                "row2":"Set menu :",
+                "row4":"6:00 ~ 10:00"
+            },
+            {
+                "row1":"Sun",
+                "row2":"Set menu:",
+                "row4":"6:00 ~ 10:00"
+            }
+        ],
+        "table2":[
+            {
+                "row1":"Set menu: ",
+                "row2":"150.000 ~ 180.000VND"
+            },
+            {
+                "row1":"Buffet: ",
+                "row2":"200.000~220.000VND"
+            }
+
+        ]
+    },
+    "service_roten":{
+        "openHour":"《Opening Hour》" ,
+        "price":"《Visitor Price》",
+        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281235/AzumayaWeb/Az_website_service_page_EN_page-0002_hhm1jy.jpg",
+        "hn_note1":"[Male]",
+        "hn_note2":"[Female:",
+        "hn_note3":"(Only Kim Ma 2)]",
+        "hn_note4":"* Female visitors can use during weekday afternoon & weekends.",
+        "table_hcm1":[
+            {
+                "row1":"Weekday :",
+                "row2":"6:00 ~ 10:00",
+                "row3":"* Thai Van Lung 2 is open only for  "
+            },
+            {
+                "row1":"",
+                "row2":"17:00 ~ 24:00",
+                "row3":"female from 17:00-18:45 on"
+            },
+            {
+                "row1":"Weekend :",
+                "row2":"7:00 ~ 24:00",
+                "row3":"weekdays "
+            }
+        ],
+        "table_hcm2":[
+            {
+                "row1":"Thai Van Lung 1 : ",
+                "row2":"250.000 VND"
+            },
+            {
+                "row1":"Thai Van Lung 2 (Male) : ",
+                "row2":"200.000 VND"
+            },
+            {
+                "row1":"Thai Van Lung 2 (Female) : ",
+                "row2":"150.000 VND"
+            },
+            {
+                "row1":"Le Thanh Ton : ",
+                "row2":"150.000VND"
+            }
+        ],
+        "table_hn1":[
+            {
+                "row1":"Weekday :",
+                "row2":"6:00 ~ 9:00",
+                "row3":"Weekday :",
+                "row4":"6:00 ~ 9:00"
+            },
+            {
+                "row1":"",
+                "row2":"17:00 ~ 23:00",
+                "row3":"",
+                "row4":"17:00 ~ 23:00"
+            },
+            {
+                "row1":"Weekend :",
+                "row2":"7:00 ~ 23:00",
+                "row3":"Weekend :",
+                "row4":"7:00 ~ 23:00"
+            }
+        ],
+        "table_hn2":[
+            {
+                "row1":"Thai Van Lung 1 : ",
+                "row2":"250.000 VND"
+            },
+            {
+                "row1":"Thai Van Lung 2 (Male) : ",
+                "row2":"200.000 VND"
+            },
+            {
+                "row1":"Thai Van Lung 2 (Female) : ",
+                "row2":"150.000 VND"
+            },
+            {
+                "row1":"Le Thanh Ton : ",
+                "row2":"150.000VND"
+            }
+        ]
+    
+        }
  
 }

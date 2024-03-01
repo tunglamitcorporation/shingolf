@@ -217,9 +217,11 @@ textarea{
     text-transform: uppercase;
 }
 .left{
-    text-align: left;
+    text-align: left !important;
 }
-
+.right{
+    text-align: right !important;
+}
 .scroll-indicator {
     height: 100%;
     background-color: var(--primary--color);
@@ -261,5 +263,13 @@ textarea{
     }
     to{
         opacity: 0;
+    }
+}
+@keyframes darken {
+    from{
+        filter: brightness(1);
+    }
+    to{
+        filter: brightness(0.5);
     }
 }
