@@ -1,9 +1,9 @@
 {
     "header": {
         "top-header": "★ Business hotel with Japanese breakfast and Open-air hot tub ★",
-        "az":"Azumaya",
+        "az": "Azumaya",
         "home": "Home",
-        "news":"News",
+        "news": "News",
         "policies": "Q&A",
         "reservation": "Reservation",
         "feature": "Feature",
@@ -14,7 +14,7 @@
         "hp": "Hai Phong",
         "dn": "Da Nang",
         "allbranch": "All Branch",
-        "vietnam":"Vietnam",
+        "vietnam": "Vietnam",
         "cambodia": "Cambodia",
         "item12": "Branch",
         "massage": "Massage Service",
@@ -22,94 +22,67 @@
         "contact": "Contact",
         "itemTest": "Test"
     },
-    "footer":{
-        "branch":[
+    "footer": {
+        "branch": [
             {
-                "name":"Azumaya Thai Van Lung 1",
-                "add":"8A/7D1 - 8A/8D1 - 8A/9D1 Thai Van Lung St., Dist. 1, HCMC",
-                "num":"+84.28.3824 6835",
-                "mail":"reservation@azumayavietnam.com"
-
-
+                "name": "Azumaya Thai Van Lung 1",
+                "add": "8A/7D1 - 8A/8D1 - 8A/9D1 Thai Van Lung St., Dist. 1, HCMC",
+                "num": "+84.28.3824 6835",
+                "mail": "reservation@azumayavietnam.com"
             },
             {
-                "name":"Azumaya HCM ANNEX",
-                "add":"8A/8D2 Thai Van Lung St., Dist. 1, HCMC",
-                "num":"+84.28.3824 6835",
-                "mail":"reservation@azumayavietnam.com"
-
-                
-
+                "name": "Azumaya HCM ANNEX",
+                "add": "8A/8D2 Thai Van Lung St., Dist. 1, HCMC",
+                "num": "+84.28.3824 6835",
+                "mail": "reservation@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Le Thanh Ton",
-                "add":"15/3 Le Thanh Ton St., Dist. 1, HCMC",
-                "num":"+84.28.3827 1110",
-                "mail":"reservation2@azumayavietnam.com"
-
-                
-
+                "name": "Azumaya Le Thanh Ton",
+                "add": "15/3 Le Thanh Ton St., Dist. 1, HCMC",
+                "num": "+84.28.3827 1110",
+                "mail": "reservation2@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Thai Van Lung 2",
-                "add":"29 Thai Van Lung St., Dist. 1, HCMC",
-                "num":"+84.28.3827 1071 & +84.28.3827.1072",
-                "mail":"reservation3@azumayavietnam.com"
-
-
+                "name": "Azumaya Thai Van Lung 2",
+                "add": "29 Thai Van Lung St., Dist. 1, HCMC",
+                "num": "+84.28.3827 1071 & +84.28.3827.1072",
+                "mail": "reservation3@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Hai Ba Trung 1",
-                "add":"16 Bui Thi Xuan St., Hai Ba Trung Dist., Ha Noi",
-                "num":"+84.24.6278 6688",
-                "mail":"reservationhanoi@azumayavietnam.com"
-
-
-
+                "name": "Azumaya Hai Ba Trung 1",
+                "add": "16 Bui Thi Xuan St., Hai Ba Trung Dist., Ha Noi",
+                "num": "+84.24.6278 6688",
+                "mail": "reservationhanoi@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Linh Lang",
-                "add":"26 Linh Lang St, Ba Dinh Dist., Hanoi",
-                "num":"+84.24.3862 0620",
-                "mail":"reservationhanoi5@azumayavietnam.com"
-
-
-
+                "name": "Azumaya Linh Lang",
+                "add": "26 Linh Lang St, Ba Dinh Dist., Hanoi",
+                "num": "+84.24.3862 0620",
+                "mail": "reservationhanoi5@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Kim Ma 2",
-                "add":"18A Pham Huy Thong St., Ba Dinh Dist., Ha Noi",
-                "num":"+84.24.3724 7570",
-                "mail":"reservationhanoi3@azumayavietnam.com"
-
-
-
+                "name": "Azumaya Kim Ma 2",
+                "add": "18A Pham Huy Thong St., Ba Dinh Dist., Ha Noi",
+                "num": "+84.24.3724 7570",
+                "mail": "reservationhanoi3@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Kim Ma 3",
-                "add":"68 Pham Huy Thong St., Ba Dinh Dist., Ha Noi",
-                "num":"+84.24 3734 9730",
-                "mail":"reservationhanoi6@azumayavietnam.com"
-
-
-
+                "name": "Azumaya Kim Ma 3",
+                "add": "68 Pham Huy Thong St., Ba Dinh Dist., Ha Noi",
+                "num": "+84.24 3734 9730",
+                "mail": "reservationhanoi6@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Hai Phong",
-                "add":"195 Vu Trong Khanh Str.,(195/420 Lach Tray Str.,) Ngo Quyen Dist., Hai Phong",
-                "num":"+84.225.3828 969",
-                "mail":"reservationhaiphong@azumayavietnam.com"
-
-
-
+                "name": "Azumaya Hai Phong",
+                "add": "195 Vu Trong Khanh Str.,(195/420 Lach Tray Str.,) Ngo Quyen Dist., Hai Phong",
+                "num": "+84.225.3828 969",
+                "mail": "reservationhaiphong@azumayavietnam.com"
             },
             {
-                "name":"Azumaya Da Nang",
-                "add":"31 Nguyen Tat Thanh St., Hai Chau Dist., Da Nang",
-                "num":"+84.236.3743 888",
-                "mail":"reservationdanang@azumayavietnam.com"
-
-
+                "name": "Azumaya Da Nang",
+                "add": "31 Nguyen Tat Thanh St., Hai Chau Dist., Da Nang",
+                "num": "+84.236.3743 888",
+                "mail": "reservationdanang@azumayavietnam.com"
             }
         ]
     },
@@ -124,14 +97,14 @@
         "annex": "Azumaya Annex",
         "dn": "Azumaya Da Nang Hotel",
         "hp": "Azumaya Hai Phong Hotel",
-        "pp":"Azumaya PhnomPenh"
+        "pp": "Azumaya PhnomPenh"
     },
     "booking": {
         "title": "Booking",
         "date_in": "Check in date",
         "date_out": "Check out date",
         "reserve": "Reserve",
-        "placeHolder":"Please choose a city",
+        "placeHolder": "Please choose a city",
         "city": [
             {
                 "id": "HCM",
@@ -156,51 +129,42 @@
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Please select a branch"
-                
             },
             {
                 "branch_id": "le-thanh-ton-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
-                
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
-      
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
- 
             },
             {
                 "branch_id": "annex-detail",
                 "city_id": "HCM",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
-     
             },
             {
                 "branch_id": "hn-select",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Please select a branch"
-         
-
             },
             {
                 "branch_id": "hai-ba-trung-detail",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Hai Ba Trung 1"
-         
-
             },
             {
                 "branch_id": "kim-ma-2-detail",
@@ -215,7 +179,7 @@
                 "branch_name": "Azumaya Kim Ma 3"
             },
             {
-                "branch_id":"linh-lang-detail",
+                "branch_id": "linh-lang-detail",
                 "city_id": "HN",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Linh Lang"
@@ -246,14 +210,14 @@
             }
         ],
         "city_pp": "Phnom Penh",
-        "branch_pp":"Azumaya Phnom Penh"
+        "branch_pp": "Azumaya Phnom Penh"
     },
     "feature": {
         "name": "Feature",
         "main_title": "Azumaya Hotel's 8 Characteristics",
         "main_content": "Thank you always for your kind attention to Azumaya Hotel. Azumaya Hotel is a Japanese-style business hotel opened in Ho Chi Minh for whom are stressed out with their business trip and looking for comfortable place to be relieved. The first branch opened in Thai Van Lung St. in 2011 and now we have 5 branches in Ha Noi, one in Da Nang, 4 branches in Ho Chi Minh. We serve 8 characteristics of service with high-standard quality in all branches.",
-        "continue":"Continue Reading",
-        "detail":"Click here for details",
+        "continue": "Continue Reading",
+        "detail": "Click here for details",
         "feature_item": [
             {
                 "id": 1,
@@ -388,15 +352,15 @@
         "service_name": [
             {
                 "name": "Rotenburo",
-                "link":"/Service/Test/Vietnam/Service?tab=rotenburo"
+                "link": "/Service/Test/Vietnam/Service?tab=rotenburo"
             },
             {
                 "name": "Breakfast",
-                "link":"/Service/Test/Vietnam/Service?tab=breakfast"
+                "link": "/Service/Test/Vietnam/Service?tab=breakfast"
             },
             {
                 "name": "Massage",
-                "link":"/Service/Test/Vietnam/Service?tab=massage"
+                "link": "/Service/Test/Vietnam/Service?tab=massage"
             }
         ],
         "hcm-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
@@ -456,181 +420,178 @@
             }
         ]
     },
-    "faq":{
-        
-        "title2":"各種サービスに関するFAQ",
-        "title3":"朝食に関するFAQ",
-        "title4":"アクセスに関するFAQ",
-        "title5":"お支払いに関するFAQ",
-        "data":[
+    "faq": {
+        "title2": "各種サービスに関するFAQ",
+        "title3": "朝食に関するFAQ",
+        "title4": "アクセスに関するFAQ",
+        "title5": "お支払いに関するFAQ",
+        "data": [
             {
-                "title":"ご宿泊に関するFAQ",
-                "question":"Q. ホテル滞在中、急に体調が悪くなったら？",
-                "answer":"A. 24時間体制で日本語のできるスタッフがホテルに常勤し、お客様のサポートを行っております。お客様より体調不良のご連絡があれば、症状や状況などをお伺いした上でそれらに応じた最寄りの病院をご紹介し、手配いたします。"
+                "title": "ご宿泊に関するFAQ",
+                "question": "Q. ホテル滞在中、急に体調が悪くなったら？",
+                "answer": "A. 24時間体制で日本語のできるスタッフがホテルに常勤し、お客様のサポートを行っております。お客様より体調不良のご連絡があれば、症状や状況などをお伺いした上でそれらに応じた最寄りの病院をご紹介し、手配いたします。"
             },
             {
-                "question":"Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
-                "answer":"A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
+                "question": "Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
+                "answer": "A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
             },
             {
-                "question":"Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
-                "answer":"A. お部屋に空きがある場合は、承ることができます。(有料)\n・10:00 a.m.より前のアーリーチェックイン：一泊分の100%チャージ\n・10:00 a.m.より後のアーリーチェックイン：一泊分の50%チャージ\n・18:00 p.m.までのレイトチェックアウト：一泊分の50%チャージ\n・18:00 p.m.以降のレイトチェックアウト：一泊分の100%チャージ"
+                "question": "Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
+                "answer": "A. お部屋に空きがある場合は、承ることができます。(有料)\n・10:00 a.m.より前のアーリーチェックイン：一泊分の100%チャージ\n・10:00 a.m.より後のアーリーチェックイン：一泊分の50%チャージ\n・18:00 p.m.までのレイトチェックアウト：一泊分の50%チャージ\n・18:00 p.m.以降のレイトチェックアウト：一泊分の100%チャージ"
             },
             {
-                "question":"Q.門限はありますか？",
-                "answer":"A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
+                "question": "Q.門限はありますか？",
+                "answer": "A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
             },
             {
-                "question":"Q.電子機器はそのまま利用できますか？",
-                "answer":"A.ご利用いただけます。コンセントの型は日本と同じA型ですがベトナム、カンボジアの電圧はほとんどが220Vですのでお気をつけてご使用くださいませ。日本の電気製品でも、100～240V対応の物であれば変圧器なしで使用できますが、念のため使用予定の電気製品の取り扱い説明書をお読み頂くことをお勧め致します。ただし100～240V対応製品でもプラグの変換アダプターは必要となる場合がございますのでご注意ください。"
+                "question": "Q.電子機器はそのまま利用できますか？",
+                "answer": "A.ご利用いただけます。コンセントの型は日本と同じA型ですがベトナム、カンボジアの電圧はほとんどが220Vですのでお気をつけてご使用くださいませ。日本の電気製品でも、100～240V対応の物であれば変圧器なしで使用できますが、念のため使用予定の電気製品の取り扱い説明書をお読み頂くことをお勧め致します。ただし100～240V対応製品でもプラグの変換アダプターは必要となる場合がございますのでご注意ください。"
             },
             {
-                "question":"Q.レストランは全て禁煙ですか？ロビーに喫煙場所はありますか？",
-                "answer":"A.全支店、出口付近に灰皿がございます。"
+                "question": "Q.レストランは全て禁煙ですか？ロビーに喫煙場所はありますか？",
+                "answer": "A.全支店、出口付近に灰皿がございます。"
             },
             {
-                "question":"Q.深夜のチェックイン、又は早朝のチェックアウトはできますか？",
-                "answer":"A.可能でございます。受付は２４時間対応しておりますので、ご安心くださいませ。ご精算はいつでも対応可能でございますので、お時間のある時に受付へお申し付けくださいませ。"
+                "question": "Q.深夜のチェックイン、又は早朝のチェックアウトはできますか？",
+                "answer": "A.可能でございます。受付は２４時間対応しておりますので、ご安心くださいませ。ご精算はいつでも対応可能でございますので、お時間のある時に受付へお申し付けくださいませ。"
             },
             {
-                "question":"Q.チェックアウト後、荷物を預かってもらえますか？",
-                "answer":"A.お預かりいたします。大変恐れ入りますが、貴重品はご自身で管理頂きますようお願い致します。"
+                "question": "Q.チェックアウト後、荷物を預かってもらえますか？",
+                "answer": "A.お預かりいたします。大変恐れ入りますが、貴重品はご自身で管理頂きますようお願い致します。"
             },
             {
-                "question":"Q.チェックアウト後、露天風呂を無料で利用できますか？",
-                "answer":"A.チェックイン・チェックアウトの当日に限り、ご宿泊者様には露天風呂を無料でご利用頂くことができます。深夜便の前に、是非ご利用くださいませ"
+                "question": "Q.チェックアウト後、露天風呂を無料で利用できますか？",
+                "answer": "A.チェックイン・チェックアウトの当日に限り、ご宿泊者様には露天風呂を無料でご利用頂くことができます。深夜便の前に、是非ご利用くださいませ"
             },
             {
-                "question":"Q. 長期滞在の場合、途中退出は可能ですか？",
-                "answer":"A. 可能でございます。変更するチェックアウトの日の15時を起点としてそれより48時間前にご連絡をいただければ、キャンセル料金は発生致しません。"
+                "question": "Q. 長期滞在の場合、途中退出は可能ですか？",
+                "answer": "A. 可能でございます。変更するチェックアウトの日の15時を起点としてそれより48時間前にご連絡をいただければ、キャンセル料金は発生致しません。"
             },
             {
-                "question":"Q. シーズンや土日料金等はありますか？",
-                "answer":"A. 料金の変動はございません。"
+                "question": "Q. シーズンや土日料金等はありますか？",
+                "answer": "A. 料金の変動はございません。"
             },
             {
-                "title":"各種サービスに関するFAQ",
-                "question":"Q.マッサージの事前予約はできますか？",
-                "answer":"A.可能でございます。夕方及び週末は大変混み合いますので、事前にご予約されることをお勧めいたします。"
+                "title": "各種サービスに関するFAQ",
+                "question": "Q.マッサージの事前予約はできますか？",
+                "answer": "A.可能でございます。夕方及び週末は大変混み合いますので、事前にご予約されることをお勧めいたします。"
             },
             {
-                "question":"Q.両替サービスはありますか？",
-                "answer":"A.外貨（日本円・USドル）から、ベトナムドンへの両替のみ承っております。当ホテル独自の為替レートに則って両替させて頂きます。"
+                "question": "Q.両替サービスはありますか？",
+                "answer": "A.外貨（日本円・USドル）から、ベトナムドンへの両替のみ承っております。当ホテル独自の為替レートに則って両替させて頂きます。"
             },
             {
-                "question":"Q.コインランドリーはありますか？",
-                "answer":"A.　あいにくホテル館内にはございませんが、ホテルのランドリーサービスをご利用いただけます。目安：ワイシャツ１枚＝20.000ドン（約１００円）です。また、一部店舗にて洗濯乾燥機を無料でご利用いただけます。"
+                "question": "Q.コインランドリーはありますか？",
+                "answer": "A.　あいにくホテル館内にはございませんが、ホテルのランドリーサービスをご利用いただけます。目安：ワイシャツ１枚＝20.000ドン（約１００円）です。また、一部店舗にて洗濯乾燥機を無料でご利用いただけます。"
             },
             {
-                "question":"Q.アイロンはありますか？",
-                "answer":"A.貸出用のアイロンはございません。スタッフがアイロンがけをさせて頂きますので、ご希望の際は受付へお申し付けくださいませ。"
+                "question": "Q.アイロンはありますか？",
+                "answer": "A.貸出用のアイロンはございません。スタッフがアイロンがけをさせて頂きますので、ご希望の際は受付へお申し付けくださいませ。"
             },
             {
-                "question":"Q.客室でのインターネット環境は？",
-                "answer":"A. 公共スペース・全客室・レストランにてWi-Fiを無料でご使用いただけます。"
+                "question": "Q.客室でのインターネット環境は？",
+                "answer": "A. 公共スペース・全客室・レストランにてWi-Fiを無料でご使用いただけます。"
             },
             {
-                "title":"朝食に関するFAQ",
-                "question":"Q.朝食は、どんな内容ですか？",
-                "answer":"A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
+                "title": "朝食に関するFAQ",
+                "question": "Q.朝食は、どんな内容ですか？",
+                "answer": "A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
             },
             {
-                "question":"Q.ブッフェを提供している店舗を教えてください。",
-                "answer":"A.全店舗にてビュッフェスタイルのご朝食をご提供しております。\n※特別な事情によりセットメニューに変更させていただくことがございます"
+                "question": "Q.ブッフェを提供している店舗を教えてください。",
+                "answer": "A.全店舗にてビュッフェスタイルのご朝食をご提供しております。\n※特別な事情によりセットメニューに変更させていただくことがございます"
             },
             {
-                "question":"Q.朝食なしのプランはありますか？",
-                "answer":"A.宿泊代に朝食も含まれており、あいにく朝食をご利用にならない場合の割引等はございません。 早朝のご出発でご朝食をお召し上がりいただけない場合は、おにぎりもしくはサンドイッチをご用意いたします。前日までに受付にてお申し付けくださいませ。 "
+                "question": "Q.朝食なしのプランはありますか？",
+                "answer": "A.宿泊代に朝食も含まれており、あいにく朝食をご利用にならない場合の割引等はございません。 早朝のご出発でご朝食をお召し上がりいただけない場合は、おにぎりもしくはサンドイッチをご用意いたします。前日までに受付にてお申し付けくださいませ。 "
             },
             {
-                "title":"アクセスに関するFAQ",
-                "question":"Q.空港～ホテル間の送迎サービスはありますか？",
-                "answer":"A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
+                "title": "アクセスに関するFAQ",
+                "question": "Q.空港～ホテル間の送迎サービスはありますか？",
+                "answer": "A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
             },
             {
-                "question":"Q.コンビニエンスストアはありますか？",
-                "answer":"A.ホテル館内にはございませんが、各支店の徒歩圏内にございます。スタッフがご案内させて頂きますのでご遠慮なくお申し付けくださいませ。 "
+                "question": "Q.コンビニエンスストアはありますか？",
+                "answer": "A.ホテル館内にはございませんが、各支店の徒歩圏内にございます。スタッフがご案内させて頂きますのでご遠慮なくお申し付けくださいませ。 "
             },
             {
-                "question":"Q.駐車場はありますか？",
-                "answer":"A.恐れ入りますが、ございません。バイクでお越しの場合は、近隣の駐輪場をご案内いたします。（※東屋プノンペンのみ建物周辺に駐車場所有）"
+                "question": "Q.駐車場はありますか？",
+                "answer": "A.恐れ入りますが、ございません。バイクでお越しの場合は、近隣の駐輪場をご案内いたします。（※東屋プノンペンのみ建物周辺に駐車場所有）"
             },
             {
-                "title":"お支払いに関するFAQ",
-                "question":"Q.オンライン決済はできますか？",
-                "answer":"A.恐れ入りますが、現在のところオンラインでの決済サービスはございません。チェックイン前の銀行お振込みをご希望の際は、ご予約時にお申し付けくださいませ。"
+                "title": "お支払いに関するFAQ",
+                "question": "Q.オンライン決済はできますか？",
+                "answer": "A.恐れ入りますが、現在のところオンラインでの決済サービスはございません。チェックイン前の銀行お振込みをご希望の際は、ご予約時にお申し付けくださいませ。"
             },
             {
-                "question":"Q.精算はいつすればいいですか？",
-                "answer":"A.チェックインの際に宿泊費の前払いをお願いしております。銀行振り込みをご希望の場合、チェックインまでにお支払い頂く必要がございます。(※弊社との法人契約がある企業様のみチェックアウト後の銀行振り込みも可能でございます。)"
+                "question": "Q.精算はいつすればいいですか？",
+                "answer": "A.チェックインの際に宿泊費の前払いをお願いしております。銀行振り込みをご希望の場合、チェックインまでにお支払い頂く必要がございます。(※弊社との法人契約がある企業様のみチェックアウト後の銀行振り込みも可能でございます。)"
             },
             {
-                "question":"Q. 宿泊者本人による現地払いではなく、会社より日本の口座からの銀行振込は可能ですか？可能な場合はどの通貨での支払いとなりますか？",
-                "answer":"A. 可能でございます。外国送金振込手数料はご負担いただきますようお願いをしております。お支払いいただける通貨は日本円・USドル・ベトナムドンです。"
+                "question": "Q. 宿泊者本人による現地払いではなく、会社より日本の口座からの銀行振込は可能ですか？可能な場合はどの通貨での支払いとなりますか？",
+                "answer": "A. 可能でございます。外国送金振込手数料はご負担いただきますようお願いをしております。お支払いいただける通貨は日本円・USドル・ベトナムドンです。"
             },
             {
-                "question":"Q. 数日～数週間の短期滞在でも銀行振込は可能ですか？",
-                "answer":"A. 可能でございます。"
+                "question": "Q. 数日～数週間の短期滞在でも銀行振込は可能ですか？",
+                "answer": "A. 可能でございます。"
             },
             {
-                "question":"Q. 長期滞在で会社による銀行振込の場合、支払いはどうすれば良いでしょうか？",
-                "answer":"A. 月に一度のご精算をお願いしております。\n領収書を月末に発行し貴社に送付致しますので、受取り次第7日以内にお支払いください。"
+                "question": "Q. 長期滞在で会社による銀行振込の場合、支払いはどうすれば良いでしょうか？",
+                "answer": "A. 月に一度のご精算をお願いしております。\n領収書を月末に発行し貴社に送付致しますので、受取り次第7日以内にお支払いください。"
             }
         ]
     },
-    "news":{
-        "news":"News",
-        "source":[
+    "news": {
+        "news": "News",
+        "source": [
             {
                 "title": "2024 Tet (Lunar New Year) Information",
-                "content":"Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
-                "date":"2024-01-01",
-                "allBranch":true
-               
+                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
+                "date": "2024-01-01",
+                "allBranch": true
             },
             {
                 "title": "Open Air Hot Bath Renewal Open @ Azumaya Thai Van Lung 1",
-                "content":"Azumaya Thai Van Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thai Van Lung 2 (30 seconds on foot from Azumaya Thai Van Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on weekdays only at Le Thanh Ton branch.",
-                "date":"2023-12-29",
-                "hcm":true
+                "content": "Azumaya Thai Van Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thai Van Lung 2 (30 seconds on foot from Azumaya Thai Van Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on weekdays only at Le Thanh Ton branch.",
+                "date": "2023-12-29",
+                "hcm": true
             },
             {
                 "title": "Azumaya Ho Chi Minh 2024 New Year Day Limited Breakfast Set Menu",
-                "content":"Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nOpening hour: 6am~10am\nPlace: Azumaya Thai Van Lung 1, Azumaya Thai Van Lung 2, Azumaya Le Than Ton",
-                "date":"2023-07-07",
-                "hcm":true
+                "content": "Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nOpening hour: 6am~10am\nPlace: Azumaya Thai Van Lung 1, Azumaya Thai Van Lung 2, Azumaya Le Than Ton",
+                "date": "2023-07-07",
+                "hcm": true
             },
             {
                 "title": "Open women Rotenburo in Azumaya Kim Ma 2 Branch",
-                "content":"From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
-                "date":"2023-12-29",
-                "hn":true
+                "content": "From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
+                "date": "2023-12-29",
+                "hn": true
             },
             {
                 "title": "★ Notice of Vietnam Value Added Tax (VAT) change ★",
-                "content":"From July 1st 2023 to December 31st 2023, Vietnam Value Added Tax (VAT) will be applied at 8%. We appreciate your understanding.",
-                "date":"2023-07-03",
-                "allBranch":true
+                "content": "From July 1st 2023 to December 31st 2023, Vietnam Value Added Tax (VAT) will be applied at 8%. We appreciate your understanding.",
+                "date": "2023-07-03",
+                "allBranch": true
             },
             {
                 "title": "2023 Tet (Lunar New Year) Information",
-                "content":"Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Le Thanh Ton & Thai Van Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Ma 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Da Nang 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hai Phong 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
-                "date":"2023-01-17",
-                "allBranch":true
+                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Le Thanh Ton & Thai Van Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Ma 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Da Nang 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hai Phong 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
+                "date": "2023-01-17",
+                "allBranch": true
             },
             {
                 "title": "Reopen Massage service from Apr 2022",
-                "content":"Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Da Nang‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Da Nang government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
-                "date":"2023-04-15",
-                "dn":true
+                "content": "Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Da Nang‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Da Nang government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
+                "date": "2023-04-15",
+                "dn": true
             },
             {
                 "title": "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hai Phong",
-                "content":"Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hai Phong \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hai Phong \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hai Phong City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
-                "date":"2023-04-15",
-                "hp":true
+                "content": "Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hai Phong \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hai Phong \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hai Phong City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
+                "date": "2023-04-15",
+                "hp": true
             }
-          
         ]
     },
     "hn-branch": {
@@ -1202,73 +1163,73 @@
             "price": "1.700.000VND+"
         }
     ],
-    "business_km3":[
+    "business_km3": [
         {
             "id": 1,
-            "title":"Pick up & Drop off Service",
-            "content":"From 6:00 to 20:59: 625.000 VND\nFrom 21:00 to 5:59: 750.000 VND\n\nCar for 4-7 persons",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/pu-do_ea9m4c.jpg"
+            "title": "Pick up & Drop off Service",
+            "content": "From 6:00 to 20:59: 625.000 VND\nFrom 21:00 to 5:59: 750.000 VND\n\nCar for 4-7 persons",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/pu-do_ea9m4c.jpg"
         },
         {
-            "id":2,
-            "title":"Minibar",
-            "content":"Soft drink, beer, etc.\nFrom 20.000 VND",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/minibar_wpox8f.jpg"
+            "id": 2,
+            "title": "Minibar",
+            "content": "Soft drink, beer, etc.\nFrom 20.000 VND",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/minibar_wpox8f.jpg"
         },
         {
-            "id":3,
-            "title":"Laundry",
-            "content":"Special price for long staying guest\nFrom 20.000 VND",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/laundry_ahnuwq.jpg"
+            "id": 3,
+            "title": "Laundry",
+            "content": "Special price for long staying guest\nFrom 20.000 VND",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/laundry_ahnuwq.jpg"
         },
         {
-            "id":4,
-            "title":"Print & Copy",
-            "content":"FREE for first 10 pages / day\nFrom 11th page, 2.000VND charged per page",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/printcopy_cxbs5v.webp"
+            "id": 4,
+            "title": "Print & Copy",
+            "content": "FREE for first 10 pages / day\nFrom 11th page, 2.000VND charged per page",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/printcopy_cxbs5v.webp"
         },
         {
-            "id":5,
-            "title":"Tel",
-            "content":"FREE for local number / day\n20.000VND charged for international number",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/tel_jjorhm.jpg"
+            "id": 5,
+            "title": "Tel",
+            "content": "FREE for local number / day\n20.000VND charged for international number",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/tel_jjorhm.jpg"
         },
         {
-            "id":6,
-            "title":"Rental Car",
-            "content":"Ask receptionist",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/rentalcar_fhqsms.jpg"
+            "id": 6,
+            "title": "Rental Car",
+            "content": "Ask receptionist",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/rentalcar_fhqsms.jpg"
         },
         {
-            "id":7,
-            "title":"Tour",
-            "content":"Ask receptionist",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/tour_asodqe.jpg"
+            "id": 7,
+            "title": "Tour",
+            "content": "Ask receptionist",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/tour_asodqe.jpg"
         },
         {
             "id": 8,
-            "title":"Extend Visa",
-            "content":"Ask receptionist",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/visa_htwjfp.jpg"
+            "title": "Extend Visa",
+            "content": "Ask receptionist",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/visa_htwjfp.jpg"
         },
         {
             "id": 9,
-            "title":"Food Delivery",
-            "content":"Ask receptionist",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/food_brzm3q.jpg"
+            "title": "Food Delivery",
+            "content": "Ask receptionist",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/food_brzm3q.jpg"
         },
         {
-            "id":10,
-            "title":"Male Rotenburo",
-            "content":"* Opening time: \nMon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* We open for ladies everyday at Kim Ma 2 Branch \n*Opening time: \nMon ~ Fri : 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* If you want to use this service, please contact reception in advance.",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
+            "id": 10,
+            "title": "Male Rotenburo",
+            "content": "* Opening time: \nMon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* We open for ladies everyday at Kim Ma 2 Branch \n*Opening time: \nMon ~ Fri : 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* If you want to use this service, please contact reception in advance.",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
         },
         {
-            "id":11,
-            "title":"Breakfast",
-            "content":"Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
-            "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664685/AzumayaWeb/breakfast_vpnvhg.jpg"
-        }   
+            "id": 11,
+            "title": "Breakfast",
+            "content": "Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664685/AzumayaWeb/breakfast_vpnvhg.jpg"
+        }
     ],
     "room_ll": {
         "room": "Room",
@@ -1326,7 +1287,7 @@
         "window": "Window",
         "bath": "Babthtub",
         "mattress": "Bed (Massage Mattress)",
-        "bed":"Bed Size",
+        "bed": "Bed Size",
         "washlet": "Auto Washlet",
         "reservation": "Make a Reservation",
         "features": [
@@ -2016,7 +1977,7 @@
             "bed": "",
             "tick_w": true,
             "price": "1.580.000VND+"
-        }   
+        }
     ],
     "room_ltt": {
         "room": "Room",
@@ -2112,7 +2073,6 @@
             "bed_size": "QUEEN",
             "tick_b": false,
             "price": "1.390.000VND+"
-           
         },
         {
             "id": 2,
@@ -2132,7 +2092,6 @@
             "bed_size": "DOUBLE",
             "tick_b": false,
             "price": "1.520.000VND+"
-           
         },
         {
             "id": 3,
@@ -2152,7 +2111,6 @@
             "bed_size": "DOUBLE",
             "tick_b": false,
             "price": "1.790.000VND+"
-            
         },
         {
             "id": 4,
@@ -2209,7 +2167,7 @@
         "bath": "Babthtub",
         "kitchen": "Kitchen",
         "terrace": "Terrace",
-        "elevator":"Elevator",
+        "elevator": "Elevator",
         "bed": "Bed Size",
         "tv": "LED TV 32 inches",
         "reservation": "Make a Reservation",
@@ -2279,7 +2237,7 @@
                 "name": "Azumaya Da Nang",
                 "desc": "Azumaya Hotel Da Nang branch is located in the middle of city; just 10 minutes far from the airport, and has 32 rooms in total with shower toilet and Japanese TV shows for each room. What makes us unique from other hotels is that we serve open-air hot bath, Japanese breakfast, original style foot massage. Our original style foot massage is our popular service among Japanese visitors and guests which 90% of the repeat customers come back again. If you reserve, you do not have to concern about waiting in the long queue.(The last order for massage is 10:45pm for weekdays and 9:45pm for weekends.) Since the open-air hot bath is facing to the ocean you can enjoy the beautiful view of the ocean spread out before your eyes and sunset over the mountains. Please make yourself comfortable with our first one-stop service in Da Nang.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
-                "link":"/da-nang/room"
+                "link": "/da-nang/room"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2467,7 +2425,7 @@
                 "name": "Azumaya Hai Phong",
                 "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
-                "link":"/hai-phong/room"
+                "link": "/hai-phong/room"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2489,7 +2447,7 @@
         "pickup_fee1": "625,000 VND (6:00 ~ 20:59)",
         "pickup_fee2": "750,000 VND (21:00 ~ 5:59)",
         "pickup_car": "CAT BI AIRPORT\nCar for 4-7 persons",
-        "pickup_car2":"NOI BAI AIRPORT\n4 - Seat car: 1.750.000VND+\n 7 - Seat car: 1.875.000VND+\n(Prices exclude VAT)",
+        "pickup_car2": "NOI BAI AIRPORT\n4 - Seat car: 1.750.000VND+\n 7 - Seat car: 1.875.000VND+\n(Prices exclude VAT)",
         "minibar": "Minibar",
         "minibar_fee": "From 20.000 VND",
         "minibar_type": "Soft drink, beer, etc.",
@@ -2935,10 +2893,10 @@
         "send": "送信"
     },
     "pp-branch": {
-      "id": 1,
-      "name": "Azumaya Phnom Penh",
-      "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
-      "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705138315/AzumayaWeb/cambodia_slide1_u4465b.jpg"
+        "id": 1,
+        "name": "Azumaya Phnom Penh",
+        "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
+        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705138315/AzumayaWeb/cambodia_slide1_u4465b.jpg"
     },
     "room_pp": {
         "room": "Room",
@@ -2957,7 +2915,7 @@
         "pickup_fee1": "$15",
         "pickup_fee2": "$25",
         "pickup_car": "Maximum 4 passengers available",
-        "pickup_car2":"Maximum 16 passengers available",
+        "pickup_car2": "Maximum 16 passengers available",
         "minibar": "Minibar",
         "minibar_fee": "$1～",
         "minibar_type": "Soft drink, beer, etc.",
@@ -2966,41 +2924,41 @@
         "laundry_fee2": "Special price for long staying guest",
         "print": "Print & Copy",
         "print_fee1": "Free 1~10 pages/day ・ from 11 pages: $0.1/page per day",
-        "hotelService":"Hotel Service",
+        "hotelService": "Hotel Service",
         "roten": "Rotenburo",
         "breakfast": "Breakfast",
-        "ground":"Ground",
-        "weekday":"Monday - Friday",
-        "weekend":"Sat - Sun",
+        "ground": "Ground",
+        "weekday": "Monday - Friday",
+        "weekend": "Sat - Sun",
         "breakfastContent1": "Buffet 6am - 8:30am, Set menu 8:30am - 10am (Last order 9:45am)",
         "breakfastContent2": "Set menu only 6am - 10am ( Last order 9:45am )",
-        "breakfastNote1":"*Before 6:00 am: take-away breakfast is available.",
-        "breakfastNote2":"Please reserve at reception in advance (riceball/sandwich)",
-        "visitor":"Visitor\n\nBuffet or\n Japanese set 8$\n\nOther breakfast\nset menu 6$",
-        "rotenburo":"Open Air Hot Bath (Only for male)",
-        "rotenFloor":"7th Floor",
-        "rotenContent1":"5:30 am - 10:00 am",
-        "rotenNote1":"(Last entry 9:30 am)",
-        "rotenContent2":"5:30 am - 11:00 am",
-        "rotenNote2":"(Last entry 10:30 am)",
-        "rotenContent3":"7:00 am - 11:00 am",
-        "rotenNote3":"*We open for ladies at 11:15pm - 1:15am",
-        "rotenNote4":"*Please bring bath towels & hand towels from room",
+        "breakfastNote1": "*Before 6:00 am: take-away breakfast is available.",
+        "breakfastNote2": "Please reserve at reception in advance (riceball/sandwich)",
+        "visitor": "Visitor\n\nBuffet or\n Japanese set 8$\n\nOther breakfast\nset menu 6$",
+        "rotenburo": "Open Air Hot Bath (Only for male)",
+        "rotenFloor": "7th Floor",
+        "rotenContent1": "5:30 am - 10:00 am",
+        "rotenNote1": "(Last entry 9:30 am)",
+        "rotenContent2": "5:30 am - 11:00 am",
+        "rotenNote2": "(Last entry 10:30 am)",
+        "rotenContent3": "7:00 am - 11:00 am",
+        "rotenNote3": "*We open for ladies at 11:15pm - 1:15am",
+        "rotenNote4": "*Please bring bath towels & hand towels from room",
         "massage": "Foot Massage",
         "massageContent1": "1:00 pm - 10:00 pm",
-        "massageNote1":"(Last order 9:20 pm)",
+        "massageNote1": "(Last order 9:20 pm)",
         "massageContent2": "10:00 am - 10:00 pm",
-        "massageVisitor":"Visitor\n40min：10$\n70min：15$\n100min：20$\n\nStaying guest\n10% discount",
+        "massageVisitor": "Visitor\n40min：10$\n70min：15$\n100min：20$\n\nStaying guest\n10% discount",
         "reception": "Reception",
-        "receptionAsk":"Please dial \" 0 \" or \" 100 \" to contact us (24/7 available)",
+        "receptionAsk": "Please dial \" 0 \" or \" 100 \" to contact us (24/7 available)",
         "attention": "ATTENTION: TO KEEP YOURSELF SAFE OUTSIDE",
-        "attentionContent":"Recently, the number of snatching crime by motor driver is increasing\nPlease be aware of bag snatcher while you are walking along the streets.\nIf any help is needed, please don't hesitate to call us.",
-        "thanks":"Thank you for choosing us! Please enjoy your stay in Azumaya!",
+        "attentionContent": "Recently, the number of snatching crime by motor driver is increasing\nPlease be aware of bag snatcher while you are walking along the streets.\nIf any help is needed, please don't hesitate to call us.",
+        "thanks": "Thank you for choosing us! Please enjoy your stay in Azumaya!",
         "board": "Azumaya Hotel Management Board",
         "contact1": "Reservation can be made via phone:",
         "contact2": "or Email:",
         "contact3": "or visit our website:",
-        "tel":"Tel",
+        "tel": "Tel",
         "phone": "(+855) 23 218 961",
         "email": "reservation@azumayacambodia.com",
         "website": "www.azumayavietnam.com",
@@ -3167,7 +3125,6 @@
             "tick_w": true,
             "price": "$60"
         }
-       
     ],
     "home_pp": {
         "name": "Azumaya Hotel",
@@ -3207,7 +3164,7 @@
             },
             {
                 "id": 4,
-                "new":  "Re-opening Open Air Hot Bath and Massage from October 18th, 2021",
+                "new": "Re-opening Open Air Hot Bath and Massage from October 18th, 2021",
                 "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
                 "month": "Jul",
                 "day": "7th",
@@ -3317,7 +3274,7 @@
                 "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
             },
             {
-                "name":"ADVANNCED PAYMENT BEFORE CHECK-OUT",
+                "name": "ADVANNCED PAYMENT BEFORE CHECK-OUT",
                 "content": "We do welcome the payment before check-out to make it smoothly."
             },
             {
@@ -3332,176 +3289,327 @@
     },
     "caption": [
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
-          "caption": "Azumaya \nHotel \nHai \nBa \nTrung \n1",
-          "link":"/hai-ba-trung-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
+            "caption": "Azumaya \nHotel \nHai \nBa \nTrung \n1",
+            "link": "/hai-ba-trung-detail/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
-          "caption": "Azumaya \nHotel \nLe \nThanh \nTon",
-          "link":"/le-thanh-ton-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
+            "caption": "Azumaya \nHotel \nLe \nThanh \nTon",
+            "link": "/le-thanh-ton-detail/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
-          "caption": "Azumaya \nHotel \nKim \nMa \n2",
-          "link":"/kim-ma-2-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
+            "caption": "Azumaya \nHotel \nKim \nMa \n2",
+            "link": "/kim-ma-2-detail/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
-          "caption": "Azumaya \nHotel \nPhnom\nPenh",
-          "link":""
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
+            "caption": "Azumaya \nHotel \nPhnom\nPenh",
+            "link": ""
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
-          "caption": "Azumaya \nHotel \nDa \nNang",
-          "link":"/da-nang/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
+            "caption": "Azumaya \nHotel \nDa \nNang",
+            "link": "/da-nang/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
-          "caption": "Azumaya \nHotel \nThai \nVan \nLung \n1",
-          "link":"/thai-van-lung-1-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
+            "caption": "Azumaya \nHotel \nThai \nVan \nLung \n1",
+            "link": "/thai-van-lung-1-detail/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
-          "caption": "Azumaya \nHotel \nHai \nPhong",
-          "link":"/hai-phong/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
+            "caption": "Azumaya \nHotel \nHai \nPhong",
+            "link": "/hai-phong/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
-          "caption": "Azumaya \nHotel \nLinh \nLang",
-          "link":"/linh-lang-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
+            "caption": "Azumaya \nHotel \nLinh \nLang",
+            "link": "/linh-lang-detail/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
-          "caption": "Azumaya \nHotel \nThai \nVan \nLung \n2",
-          "link":"/thai-van-lung-2-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
+            "caption": "Azumaya \nHotel \nThai \nVan \nLung \n2",
+            "link": "/thai-van-lung-2-detail/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
-          "caption": "Azumaya \nHotel \nDa \nNang",
-          "link":"/da-nang/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
+            "caption": "Azumaya \nHotel \nDa \nNang",
+            "link": "/da-nang/room"
         },
         {
-          "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
-          "caption": "Azumaya \nHotel \nKim \nMa \n3",
-          "link":"/kim-ma-3-detail/room"
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
+            "caption": "Azumaya \nHotel \nKim \nMa \n3",
+            "link": "/kim-ma-3-detail/room"
         }
-      ],
-      "service_breakfast":{
-        "openHour":"《Opening Hour》",
-        "price":"《Visitor Price》",
-        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281232/AzumayaWeb/Az_website_service_page_EN_page-0001_v7ukjt.jpg",
-        "table1":[
+    ],
+    "service_breakfast": {
+        "openHour": "《Opening Hour》",
+        "price": "《Visitor Price》",
+        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281232/AzumayaWeb/Az_website_service_page_EN_page-0001_v7ukjt.jpg",
+        "table1": [
             {
-                "row1":"Mon ~ Sat",
-                "row2":"Buffet :",
-                "row4":"6:00 ~ 8:00"
+                "row1": "Mon ~ Sat",
+                "row2": "Buffet :",
+                "row4": "6:00 ~ 8:00"
             },
             {
-                "row1":"",
-                "row2":"Set menu :",
-                "row4":"6:00 ~ 10:00"
+                "row1": "",
+                "row2": "Set menu :",
+                "row4": "6:00 ~ 10:00"
             },
             {
-                "row1":"Sun",
-                "row2":"Set menu:",
-                "row4":"6:00 ~ 10:00"
+                "row1": "Sun",
+                "row2": "Set menu:",
+                "row4": "6:00 ~ 10:00"
             }
         ],
-        "table2":[
+        "table2": [
             {
-                "row1":"Set menu: ",
-                "row2":"150.000 ~ 180.000VND"
+                "row1": "Set menu: ",
+                "row2": "150.000 ~ 180.000VND"
             },
             {
-                "row1":"Buffet: ",
-                "row2":"200.000~220.000VND"
+                "row1": "Buffet: ",
+                "row2": "200.000 ~ 220.000VND"
             }
-
         ]
     },
-    "service_roten":{
-        "openHour":"《Opening Hour》" ,
-        "price":"《Visitor Price》",
-        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281235/AzumayaWeb/Az_website_service_page_EN_page-0002_hhm1jy.jpg",
-        "hn_note1":"[Male]",
-        "hn_note2":"[Female:",
-        "hn_note3":"(Only Kim Ma 2)]",
-        "hn_note4":"* Female visitors can use during weekday afternoon & weekends.",
-        "table_hcm1":[
+    "service_roten": {
+        "openHour": "《Opening Hour》",
+        "price": "《Visitor Price》",
+        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281235/AzumayaWeb/Az_website_service_page_EN_page-0002_hhm1jy.jpg",
+        "hcm_note": "※Thai Van Lung 2 is open only for female from 17:00-18:45 on weekend",
+        "hn_note1": "[Male]",
+        "hn_note2": "[Female : (Only Kim Ma 2)]",
+        "hn_note4": "※Female visitors can use during weekday afternoon & weekends.",
+        "table_hcm1": [
             {
-                "row1":"Weekday :",
-                "row2":"6:00 ~ 10:00",
-                "row3":"* Thai Van Lung 2 is open only for  "
+                "row1": "Weekday :",
+                "row2": "6:00 ~ 10:00"
             },
             {
-                "row1":"",
-                "row2":"17:00 ~ 24:00",
-                "row3":"female from 17:00-18:45 on"
+                "row1": "",
+                "row2": "17:00 ~ 24:00"
             },
             {
-                "row1":"Weekend :",
-                "row2":"7:00 ~ 24:00",
-                "row3":"weekdays "
+                "row1": "Weekend :",
+                "row2": "7:00 ~ 24:00"
             }
         ],
-        "table_hcm2":[
+        "table_hcm2": [
             {
-                "row1":"Thai Van Lung 1 : ",
-                "row2":"250.000 VND"
+                "row1": "Thai Van Lung 1 : ",
+                "row2": "250.000 VND"
             },
             {
-                "row1":"Thai Van Lung 2 (Male) : ",
-                "row2":"200.000 VND"
+                "row1": "Thai Van Lung 2 (Male) : ",
+                "row2": "200.000 VND"
             },
             {
-                "row1":"Thai Van Lung 2 (Female) : ",
-                "row2":"150.000 VND"
+                "row1": "Thai Van Lung 2 (Female) : ",
+                "row2": "150.000 VND"
             },
             {
-                "row1":"Le Thanh Ton : ",
-                "row2":"150.000VND"
+                "row1": "Le Thanh Ton : ",
+                "row2": "150.000VND"
             }
         ],
-        "table_hn1":[
+        "table_hn1": [
             {
-                "row1":"Weekday :",
-                "row2":"6:00 ~ 9:00",
-                "row3":"Weekday :",
-                "row4":"6:00 ~ 9:00"
+                "row1": "Weekday :",
+                "row2": "6:00 ~ 9:00",
+                "row3": "Weekday :",
+                "row4": "6:00 ~ 9:00"
             },
             {
-                "row1":"",
-                "row2":"17:00 ~ 23:00",
-                "row3":"",
-                "row4":"17:00 ~ 23:00"
+                "row1": "",
+                "row2": "17:00 ~ 23:00",
+                "row3": "",
+                "row4": "17:00 ~ 23:00"
             },
             {
-                "row1":"Weekend :",
-                "row2":"7:00 ~ 23:00",
-                "row3":"Weekend :",
-                "row4":"7:00 ~ 23:00"
+                "row1": "Weekend :",
+                "row2": "7:00 ~ 23:00",
+                "row3": "Weekend :",
+                "row4": "7:00 ~ 23:00"
             }
         ],
-        "table_hn2":[
+        "table_hn2": [
             {
-                "row1":"Thai Van Lung 1 : ",
-                "row2":"250.000 VND"
+                "row1": "Male: ",
+                "row2": "150.000 VND"
             },
             {
-                "row1":"Thai Van Lung 2 (Male) : ",
-                "row2":"200.000 VND"
+                "row1": "Female : ",
+                "row2": "100.000 VND"
+            }
+        ],
+        "table_dn1": [
+            {
+                "row1": "Weekday :",
+                "row2": "6:00 ~ 9:00"
             },
             {
-                "row1":"Thai Van Lung 2 (Female) : ",
-                "row2":"150.000 VND"
+                "row1": "",
+                "row2": "17:00 ~ 22:15"
             },
             {
-                "row1":"Le Thanh Ton : ",
-                "row2":"150.000VND"
+                "row1": "Weekend :",
+                "row2": "07:00 ~ 10:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:00 ~ 22:15"
+            }
+        ],
+        "table_dn2": [
+            {
+                "row1": "150.000VND"
+            }
+        ],
+        "table_hp1": [
+            {
+                "row1": "Weekday :",
+                "row2": "6:00 ~ 9:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:30 ~ 23:00"
+            },
+            {
+                "row1": "Weekend :",
+                "row2": "07:00 ~ 12:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:30 ~ 23:00"
+            }
+        ],
+        "table_hp2": [
+            {
+                "row1": "150.000VND"
+            }
+        ],
+        "special_note": [
+            {
+                "content": "※ Combo with Massage or Breakfast are available"
+            },
+            {
+                "content": "※ Please receive bath towel at reception desk"
+            },
+            {
+                "content": "※ Shampoo, conditioner, body soap, hair dryer and cottton are available"
+            },
+            {
+                "content": "※ On check in & check out date, guests can use Open air hot bath for free"
+            },
+            {
+                "content": "※ Please contact us for more information of only female time"
+            },
+            {
+                "fe_content": "※ Private open air hot bath is available"
+            },
+            {
+                "fe_content": "1 ~ 4 people / 1 hour : 800.000VND"
+            },
+            {
+                "fe_content": "5 ~ 8 people / 1 hour : 1.000.000VND"
             }
         ]
-    
-        }
- 
+    },
+    "service_massage": {
+        "openHour": "《Opening Hour》",
+        "price": "《Price》",
+        "reservation": "Reservation ",
+        "contact": "Contact Us",
+        "contact_title": "Kindly select a preferred method of contact with us",
+        "table_ll1": [
+            {
+                "row1": "Weekday",
+                "row2": "13:00 ~ 22:00"
+            },
+            {
+                "row1": "Weekend",
+                "row2": "10:00 ~ 22:00"
+            }
+        ],
+        "table_ll2": [
+            {
+                "row1": "40 minutes",
+                "row2": "200.000VND"
+            },
+            {
+                "row1": "70 minutes",
+                "row2": "250.000VND"
+            },
+            {
+                "row1": "100 minutes",
+                "row2": "350.000VND"
+            }
+        ],
+        "table_dn1": [
+            {
+                "row1": "Weekday",
+                "row2": "14:00 ~ 22:30"
+            },
+            {
+                "row1": "Weekend",
+                "row2": "12:00 ~ 22:30"
+            }
+        ],
+        "table_dn2": [
+            {
+                "row1": "40 minutes",
+                "row2": "200.000VND"
+            },
+            {
+                "row1": "70 minutes",
+                "row2": "250.000VND"
+            },
+            {
+                "row1": "100 minutes",
+                "row2": "350.000VND"
+            }
+        ],
+        "table_tvl1": [
+            {
+                "row1": "Weekday",
+                "row2": "10:00 ~ 23:00"
+            },
+            {
+                "row1": "Weekend",
+                "row2": "10:00 ~ 23:00"
+            }
+        ],
+        "table_tvl2": [
+            {
+                "row1": "40 minutes",
+                "row2": "250.000VND"
+            },
+            {
+                "row1": "70 minutes",
+                "row2": "300.000VND"
+            },
+            {
+                "row1": "100 minutes",
+                "row2": "400.000VND"
+            }
+        ],
+        "special_note": [
+            {
+                "content": "※ 10% discount for Hotel guests"
+            },
+            {
+                "content": "※ We appreciate tip if you like our massage service"
+            },
+            {
+                "content": "※ Reservation in advance is recommended"
+            },
+            {
+                "content": "※ Combo with Open air hot bath is available"
+            }
+        ]
+    }
 }

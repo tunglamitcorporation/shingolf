@@ -90,7 +90,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/HN/HNBranch"
+              to="/hotel-hn"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -99,7 +99,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/HCM/HCMBranch"
+              to="/hotel-hcm"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -108,7 +108,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/DN/DNBranch"
+              to="/hotel-dn"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -117,7 +117,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/HP/HPBranch"
+              to="/hotel-hp"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >

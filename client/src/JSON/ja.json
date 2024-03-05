@@ -13,7 +13,7 @@
         "hcm": "ホーチミン",
         "hp": "ハイフォン",
         "dn": "ダナン",
-        "allbranch":"すべての支店",
+        "allbranch": "すべての支店",
         "cambodia": "カンボジア",
         "vietnam": "ベトナム",
         "item12": "支店",
@@ -90,7 +90,7 @@
         "hbt1": "東屋 ハイバーチュン店 1",
         "km2": "東屋金馬 2",
         "km3": "東屋金馬 3",
-        "ll": "東谷 リン・ラン",
+        "ll": "東屋リンラン店にて",
         "ltt": "東屋 レタントン",
         "tvl1": "東屋 タイヴァンルン 1",
         "tvl2": "東屋 タイヴァンルン 2",
@@ -175,7 +175,7 @@
                     "branch_id": "linh-lang-detail",
                     "city_id": "HN",
                     "city_name": "ハノイ",
-                    "branch_name": "東谷 リン・ラン"
+                    "branch_name": "東屋リンラン店にて"
                 },
                 {
                     "branch_id": "da-nang",
@@ -205,7 +205,7 @@
         "main_title": "東屋8大魅力",
         "main_content": "東屋ホテルをいつもご愛顧頂きまして誠にありがとうございます。ベトナムという異国へご出張される方に、日本と変わらぬ快適な環境を提供致したいという一心で、2011年にタイバンルン通りにて東屋1号店をオープン致しました。現在はハノイに5店舗、ダナンに1店舗、ホーチミンに4店舗ございます。 ベトナムへご出張の際は、是非とも東屋ホテルにお越しくださいませ。 どの店舗も変わらぬ東屋８大サービスを提供して参ります",
         "continue": "読み続けて",
-        "detail":"詳細はこちら",
+        "detail": "詳細はこちら",
         "feature_item": [
             {
                 "id": 1,
@@ -2696,7 +2696,7 @@
                 "name": "東屋ダナン"
             },
             {
-                "name": "東谷 リン・ラン"
+                "name": "東屋リンラン店にて"
             }
         ]
     },
@@ -3295,173 +3295,322 @@
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
             "caption": "東\n屋\n ハ\nイ\nバ\nー\nュ\nン\n店 \n1",
-            "link":"/hai-ba-trung-detail/room"
+            "link": "/hai-ba-trung-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
             "caption": "東\n屋 \nレ\nタ\nン\nト\nン",
-            "link":"/le-thanh-ton-detail/room"
+            "link": "/le-thanh-ton-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
             "caption": "東\n屋\n金\n馬 \n2",
-            "link":"kim-ma-2-detail/room"
+            "link": "kim-ma-2-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
             "caption": "東\n屋 \nプ\nノ\nン\nペ\nン",
-            "link":""
+            "link": ""
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
             "caption": "東\n屋\nダ\nナ\nン",
-            "link":"/da-nang/room"
+            "link": "/da-nang/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
             "caption": "東\n屋 \nタ\nイ\nヴ\nァ\nン\nル\nン \n1",
-            "link":"/thai-van-lung-1-detail/room"
+            "link": "/thai-van-lung-1-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
             "caption": "東\n屋 \nハ\nイ\nフ\nォ\nン",
-            "link":"/hai-phong/room"
+            "link": "/hai-phong/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
             "caption": "東\n谷 \nリ\nン\n・\nラ\nン",
-            "link":"/linh-lang-detail/room"
+            "link": "/linh-lang-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
             "caption": "東\n屋 \nタ\nイ\nヴ\nァ\nン\nル\nン \n2",
-            "link":"/thai-van-lung-2-detail/room"
+            "link": "/thai-van-lung-2-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
             "caption": "東\n屋\nダ\nナ\nン",
-            "link":"/da-nang/room"
+            "link": "/da-nang/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
             "caption": "東\n屋\n金\n馬 \n3",
-            "link":"kim-ma-3-detail/room"
+            "link": "kim-ma-3-detail/room"
         }
     ],
-    "service_breakfast":{
-        "openHour":"《営業時間》",
-        "price":"《料金》",
-        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172400/AzumayaWeb/Az_website_service_page_photos-1_hewnid.jpg",
-        "table1":[
+    "service_breakfast": {
+        "openHour": "《営業時間》",
+        "price": "《料金》",
+        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172400/AzumayaWeb/Az_website_service_page_photos-1_hewnid.jpg",
+        "table1": [
             {
-                "row1":"月 ~ 土",
-                "row2":"ビュッフェ:",
-                "row4":"6:00 ~ 8:00"
+                "row1": "月 ~ 土",
+                "row2": "ビュッフェ:",
+                "row4": "06:00 ~ 8:00"
             },
             {
-                "row1":"",
-                "row2":"セットメニュー:",
-                "row4":"6:00 ~ 10:00"
+                "row1": "",
+                "row2": "セットメニュー:",
+                "row4": "06:00 ~ 10:00"
             },
             {
-                "row1":"日",
-                "row2":"セットメニュー:",
-                "row4":"6:00 ~ 10:00"
+                "row1": "日",
+                "row2": "セットメニュー:",
+                "row4": "06:00 ~ 10:00"
             }
         ],
-        "table2":[
+        "table2": [
             {
-                "row1":"セットメニュー:",
-                "row2":"150.000 ~ 180.000VND"
+                "row1": "セットメニュー:",
+                "row2": "150.000 ~ 180.000VND"
             },
             {
-                "row1":"ビュッフェ:",
-                "row2":"200.000~220.000VND"
+                "row1": "ビュッフェ:",
+                "row2": "200.000~220.000VND"
             }
-
         ]
     },
-    "service_roten":{
-    "openHour":"《営業時間》" ,
-    "price":"《ビジター料金》",
-    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172401/AzumayaWeb/Az_website_service_page_photos-2_ximtqy.jpg",
-    "hn_note1":"[男性]",
-    "hn_note2":"[女性:",
-    "hn_note3":"(キンマー2号店のみ)]",
-    "hn_note4":"*女性ビジター様は : 平日午後・週末のみ ",
-    "table_hcm1":[
-        {
-            "row1":"平日 :",
-            "row2":"6:00 ~ 10:00",
-            "row3":"※タイバンルン2号店のみ"
-        },
-        {
-            "row1":"",
-            "row2":"17:00 ~ 24:00",
-            "row3":"平日17:00-18:45は"
-        },
-        {
-            "row1":"週末 :",
-            "row2":"7:00 ~ 24:00",
-            "row3":"女性専用時間となります。"
-        }
-    ],
-    "table_hcm2":[
-        {
-            "row1":"タイバンルン1号店 : ",
-            "row2":"250.000 VND"
-        },
-        {
-            "row1":"タイバンルン2号店(男性) : ",
-            "row2":"200.000 VND"
-        },
-        {
-            "row1":"タイバンルン2号店(女性) : ",
-            "row2":"150.000 VND"
-        },
-        {
-            "row1":"レタントン店 : ",
-            "row2":"150.000VND"
-        }
-    ],
-    "table_hn1":[
-        {
-            "row1":"平日 :",
-            "row2":"6:00 ~ 9:00",
-            "row3":"平日 :",
-            "row4":"6:00 ~ 9:00"
-        },
-        {
-            "row1":"",
-            "row2":"17:00 ~ 23:00",
-            "row3":"",
-            "row4":"17:00 ~ 23:00"
-        },
-        {
-            "row1":"週末 :",
-            "row2":"7:00 ~ 23:00",
-            "row3":"週末 :",
-            "row4":"7:00 ~ 23:00"
-        }
-    ],
-    "table2_hn2":[
-        {
-            "row1":"タイバンルン1号店 : ",
-            "row2":"250.000 VND"
-        },
-        {
-            "row1":"タイバンルン2号店(男性) : ",
-            "row2":"200.000 VND"
-        },
-        {
-            "row1":"タイバンルン2号店(女性) : ",
-            "row2":"150.000 VND"
-        },
-        {
-            "row1":"レタントン店 : ",
-            "row2":"150.000VND"
-        }
-    ]
-
+    "service_roten": {
+        "openHour": "《営業時間》",
+        "price": "《ビジター料金》",
+        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172401/AzumayaWeb/Az_website_service_page_photos-2_ximtqy.jpg",
+        "hcm_note": "※タイバンルン2号店のみ平日17:00-18:45は女性専用時間となります。",
+        "hn_note1": "[男性]",
+        "hn_note2": "[女性 : (キンマー2号店のみ)]",
+        "hn_note4": "*女性ビジター様は : 平日午後・週末のみ ",
+        "table_hcm1": [
+            {
+                "row1": "平日 :",
+                "row2": "06:00 ~ 10:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:00 ~ 24:00"
+            },
+            {
+                "row1": "週末 :",
+                "row2": "7:00 ~ 24:00"
+            }
+        ],
+        "table_hcm2": [
+            {
+                "row1": "タイバンルン1号店 : ",
+                "row2": "250.000 VND"
+            },
+            {
+                "row1": "タイバンルン2号店(男性) : ",
+                "row2": "200.000 VND"
+            },
+            {
+                "row1": "タイバンルン2号店(女性) : ",
+                "row2": "150.000 VND"
+            },
+            {
+                "row1": "レタントン店 : ",
+                "row2": "150.000VND"
+            }
+        ],
+        "table_hn1": [
+            {
+                "row1": "平日 :",
+                "row2": "06:00 ~ 09:00",
+                "row3": "平日 :",
+                "row4": "06:00 ~ 09:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:00 ~ 23:00",
+                "row3": "",
+                "row4": "17:00 ~ 23:00"
+            },
+            {
+                "row1": "週末 :",
+                "row2": "07:00 ~ 23:00",
+                "row3": "週末 :",
+                "row4": "07:00 ~ 23:00"
+            }
+        ],
+        "table_hn2": [
+            {
+                "row1": "男性 : ",
+                "row2": "150.000 VND"
+            },
+            {
+                "row1": "女性 : ",
+                "row2": "100.000 VND"
+            }
+        ],
+        "table_dn1": [
+            {
+                "row1": "平日 : ",
+                "row2": "6:00 ~ 9:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:00 ~ 22:15"
+            },
+            {
+                "row1": "週末 : ",
+                "row2": "07:00 ~ 10:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:00 ~ 22:15"
+            }
+        ],
+        "table_dn2": [
+            {
+                "row1": "150.000VND"
+            }
+        ],
+        "table_hp1": [
+            {
+                "row1": "平日 : ",
+                "row2": "6:00 ~ 9:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:30 ~ 23:00"
+            },
+            {
+                "row1": "週末 : ",
+                "row2": "07:00 ~ 12:00"
+            },
+            {
+                "row1": "",
+                "row2": "17:30 ~ 23:00"
+            }
+        ],
+        "table_hp2": [
+            {
+                "row1": "150.000VND"
+            }
+        ],
+        "special_note": [
+            {
+                "content": "※マッサージ・朝食とお得なセットあり"
+            },
+            {
+                "content": "※バスタオルは受付でお渡し"
+            },
+            {
+                "content": "※シャンプー、コンディショナー、ボディソープ、ドライヤー、綿棒あり"
+            },
+            {
+                "content": "※チェックインチェックアウト当日無料"
+            },
+            {
+                "content": "※女性専用時間については各店舗までお問い合わせください。"
+            },
+            {
+                "fe_content": "1~4名 / 時間 : 800.000VND"
+            },
+            {
+                "fe_content": "5~8名 / 時間 : 1.000.000VND"
+            }
+        ]
+    },
+    "service_massage": {
+        "openHour": "《営業時間》",
+        "price": "《料金》",
+        "reservation": "ご予約",
+        "contact": "お問い合わせください",
+        "contact_title": "ご希望の連絡方法を選択してください",
+        "table_ll1": [
+            {
+                "row1": "平日",
+                "row2": "13:00 ~ 22:00"
+            },
+            {
+                "row1": "休日",
+                "row2": "10:00 ~ 22:00"
+            }
+        ],
+        "table_ll2": [
+            {
+                "row1": "40分コース<",
+                "row2": "200.000VND"
+            },
+            {
+                "row1": "70分コース<",
+                "row2": "250.000VND"
+            },
+            {
+                "row1": "100分コース<",
+                "row2": "350.000VND"
+            }
+        ],
+        "table_dn1": [
+            {
+                "row1": "平日",
+                "row2": "14:00 ~ 22:30"
+            },
+            {
+                "row1": "休日",
+                "row2": "12:00 ~ 22:30"
+            }
+        ],
+        "table_dn2": [
+            {
+                "row1": "40 分コース<",
+                "row2": "200.000VND"
+            },
+            {
+                "row1": "70 分コース<",
+                "row2": "250.000VND"
+            },
+            {
+                "row1": "100 分コース<",
+                "row2": "350.000VND"
+            }
+        ],
+        "table_tvl1": [
+            {
+                "row1": "平日",
+                "row2": "10:00 ~ 23:00"
+            },
+            {
+                "row1": "休日",
+                "row2": "10:00 ~ 23:00"
+            }
+        ],
+        "table_tvl2": [
+            {
+                "row1": "40 分コース<",
+                "row2": "250.000VND"
+            },
+            {
+                "row1": "70 分コース<",
+                "row2": "300.000VND"
+            },
+            {
+                "row1": "100 分コース<",
+                "row2": "400.000VND"
+            }
+        ],
+        "special_note": [
+            {
+                "content": "※宿泊者は10%割引"
+            },
+            {
+                "content": "※チップはお気持ちでいただいております。"
+            },
+            {
+                "content": "※事前のご予約をおすすめ"
+            },
+            {
+                "content": "※露天風呂とのお得なセットもあり"
+            }
+        ]
     }
 }
