@@ -716,7 +716,8 @@
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed",
             "tick": false,
-            "price": "1.310.000VND+"
+            "price": "1.310.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView1_hbld7m.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"]
         },
         {
             "id": 2,
@@ -734,7 +735,8 @@
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed",
             "tick": false,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-1_zmt7uh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-2_yfyuqp.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-3_lchwfy.jpg"]
         },
         {
             "id": 3,
@@ -752,7 +754,8 @@
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed /Twin beds",
             "tick": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive1_ghjhzr.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive2_wceibe.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive3_h1cm4b.jpg"]
         },
         {
             "id": 4,
@@ -770,7 +773,8 @@
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed",
             "tick": true,
-            "price": "1.650.000VND+"
+            "price": "1.650.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/ExecutiveWithKitchen1_vw87gk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen2_x3hshm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen3_inw0ma.jpg"]
         },
         {
             "id": 5,
@@ -788,7 +792,8 @@
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed/ Twin beds",
             "tick": true,
-            "price": "1.760.000VND+"
+            "price": "1.760.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen1_uatnii.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen2_kfrxav.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen3_cnileh.jpg"]
         },
         {
             "id": 6,
@@ -806,7 +811,8 @@
             "priceTitle": "Price",
             "bed": "1.8m King size bed",
             "tick": true,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite1_amfnye.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite2_edhoz7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite3_aa5lxa.jpg"]
         }
     ],
     "room_km2": {
@@ -898,11 +904,13 @@
             "in2": "Bathtub",
             "in3": "TV 32 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440340/AzumayaWeb/KM2/DeluxeM_1_carfn7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440341/AzumayaWeb/KM2/DeluxeM_2_bhfezg.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/DeluxeM_3_rrtvj0.jpg"]
         },
         {
             "id": 2,
@@ -917,11 +925,13 @@
             "in2": "Bathtub",
             "in3": "TV 32 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.700.000VND+"
+            "price": "1.700.000VND+",
+            "images":[  "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_1_rsx5qk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_2_bijeoo.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_3_qoltwp.jpg"]
         },
         {
             "id": 3,
@@ -936,11 +946,13 @@
             "in2": "Bathtub",
             "in3": "TV 32 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "tick_k": true,
             "tick_t": false,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704441440/AzumayaWeb/KM2/LakesideL_1_mvhfnv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideL_2_zx1q48.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704441439/AzumayaWeb/KM2/LakesideL_3_qerxks.jpg"]
         },
         {
             "id": 4,
@@ -960,7 +972,8 @@
             "bed": "King size bed/ Twin beds",
             "tick_k": true,
             "tick_t": false,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/Executive_WithKitchen_1_vxorvm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/Executive_WithKitchen_2_mldi6o.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440343/AzumayaWeb/KM2/Executive_WithKitchen_3_ux0cfi.jpg"]
         },
         {
             "id": 5,
@@ -980,7 +993,8 @@
             "bed": "Queen size bed",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.970.000VND+"
+            "price": "1.970.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440336/AzumayaWeb/KM2/SUITE_WithKitchen_1_o8mba9.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440336/AzumayaWeb/KM2/SUITE_WithKitchen_2_pzu23o.jpg"]
         },
         {
             "id": 6,
@@ -1000,7 +1014,8 @@
             "bed": "Queen size bed",
             "tick_k": false,
             "tick_t": true,
-            "price": "1.180.000VND+"
+            "price": "1.180.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_1_bcj6op.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_2_vczaff.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_3_s9yj4b.jpg"]
         }
     ],
     "room_km3": {
@@ -1064,17 +1079,20 @@
             "in1": "Bathtub",
             "in2": "TV 40 inches",
             "in3": "Toilet with bidet function",
+            "in4":"",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "mattress": "Double",
             "tick_w": false,
-            "price": "1.260.000VND+"
+            "price": "1.260.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442134/AzumayaWeb/KM3/Standard_NoWindow_1_mlnr9u.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442135/AzumayaWeb/KM3/Standard_NoWindow_2_fsntk7.jpg"]
         },
         {
             "id": 2,
             "branch_name": "Azumaya Kim Ma 3",
             "room_id": "dmnw",
-            "name": "DELUXE M SMALL WINDOW IN BATH",
+            "name": "DELUXE M SMALL WINDOW",
             "size": "17",
             "sizeTitle": "Size",
             "bedTitle": "Bed",
@@ -1082,11 +1100,14 @@
             "in1": "Bathtub",
             "in2": "TV 40 inches",
             "in3": "Toilet with bidet function",
+            "in4":"",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "mattress": "Queen",
             "tick_w": false,
-            "price": "1.370.000VND+"
+            "price": "1.370.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442141/AzumayaWeb/KM3/DeluxeM_NoWindow_1_h4ksba.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442173/AzumayaWeb/KM3/DeluxeM_NoWindow_2_spue6x.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442174/AzumayaWeb/KM3/DeluxeM_NoWindow_3_phkop5.jpg"]
         },
         {
             "id": 3,
@@ -1100,11 +1121,14 @@
             "in1": "Bathtub",
             "in2": "TV 40 inches",
             "in3": "Toilet with bidet function",
+            "in4":"",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "mattress": "Queen",
             "tick_w": false,
-            "price": "1.450.000VND+"
+            "price": "1.450.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442136/AzumayaWeb/KM3/DeluxeL_NoWindow_1_obq54p.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442137/AzumayaWeb/KM3/DeluxeL_NoWindow_2_hnaihx.jpg"]
         },
         {
             "id": 4,
@@ -1118,11 +1142,14 @@
             "in1": "Bathtub",
             "in2": "TV 40 inches",
             "in3": "Toilet with bidet function",
+            "in4":"",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "mattress": "Queen",
             "tick_w": false,
-            "price": "1.450.000VND+"
+            "price": "1.450.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442141/AzumayaWeb/KM3/DeluxeM_NoWindow_1_h4ksba.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442173/AzumayaWeb/KM3/DeluxeM_NoWindow_2_spue6x.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442174/AzumayaWeb/KM3/DeluxeM_NoWindow_3_phkop5.jpg"]
         },
         {
             "id": 5,
@@ -1137,11 +1164,13 @@
             "in2": "Bathtub",
             "in3": "TV 40 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "mattress": "Queen",
             "tick_w": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442138/AzumayaWeb/KM3/DeluxeL_Window_1_subvw7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442140/AzumayaWeb/KM3/DeluxeL_Window_2_w1bwgj.jpg"]
         },
         {
             "id": 6,
@@ -1156,11 +1185,13 @@
             "in2": "Bathtub",
             "in3": "TV 40 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "Queen size bed",
             "mattress": "Queen",
             "tick_w": true,
-            "price": "1.700.000VND+"
+            "price": "1.700.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442175/AzumayaWeb/KM3/Lakeside_1_qkpdij.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442176/AzumayaWeb/KM3/Lakeside_2_oosb2t.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442177/AzumayaWeb/KM3/Lakeside_3_d2sacd.jpg"]
         }
     ],
     "business_km3": [
@@ -1323,7 +1354,8 @@
             "bed": "1.6m Queen size bed",
             "bed_size": "QUEEN",
             "tick": true,
-            "price": "1.260.000VND+"
+            "price": "1.260.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443091/AzumayaWeb/LL/Standard_InsideWindow_1_vqn7kh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443092/AzumayaWeb/LL/Standard_InsideWindow_2_shdbcl.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443094/AzumayaWeb/LL/Standard_InsideWindow_3_mhpujf.jpg"]
         },
         {
             "id": 2,
@@ -1342,7 +1374,8 @@
             "bed": "1.8m King size bed",
             "bed_size": "KING",
             "tick": true,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443106/AzumayaWeb/LL/Deluxe_1_wsvu2h.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443072/AzumayaWeb/LL/Deluxe_2_yicgcw.jpg"]
         },
         {
             "id": 3,
@@ -1361,7 +1394,8 @@
             "bed": "1.8m King size bed",
             "bed_size": "KING",
             "tick": false,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443081/AzumayaWeb/LL/Executive_NoWindow_1_sflrms.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443083/AzumayaWeb/LL/Executive_NoWindow_2_ccunrm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443084/AzumayaWeb/LL/Executive_NoWindow_3_tuvebn.jpg"]
         },
         {
             "id": 4,
@@ -1380,7 +1414,8 @@
             "bed": "1.8m King size bed",
             "bed_size": "KING",
             "tick": true,
-            "price": "1.640.000VND+"
+            "price": "1.640.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443077/AzumayaWeb/LL/Executive_1_pso0t4.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443078/AzumayaWeb/LL/Executive_2_muafka.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443080/AzumayaWeb/LL/Executive_3_y7jrll.jpg"]
         },
         {
             "id": 5,
@@ -1399,7 +1434,8 @@
             "bed": "1.8m king size bed",
             "bed_size": "QUEEN",
             "tick": true,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443101/AzumayaWeb/LL/Suite7F_1_jgqjhi.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443102/AzumayaWeb/LL/Suite7F_2_rqesx6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443104/AzumayaWeb/LL/Suite7F_3_sjik3m.jpg"]
         }
     ],
     "hcm-branch": {
@@ -1525,13 +1561,15 @@
             "in2": "No Bathtub",
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.4m Double size bed",
             "bed_size": "DOUBLE",
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.130.000VND+"
+            "price": "1.130.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764745/AzumayaWeb/TVL1/ECONOMYNOWINDOW_2_gvjqca.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764745/AzumayaWeb/TVL1/ECONOMYNOWINDOW_3_qyytbg.jpg"]
         },
         {
             "id": 2,
@@ -1546,13 +1584,15 @@
             "in2": "No Bathtub",
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.4m Double size bed",
             "bed_size": "DOUBLE",
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.180.000VND+"
+            "price": "1.180.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764745/AzumayaWeb/TVL1/ECONOMY_1_uzmm0k.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMY_2_a83hxn.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMY_3_czs5wr.jpg"]
         },
         {
             "id": 3,
@@ -1567,13 +1607,15 @@
             "in2": "No Bathtub",
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.4m Double size bed",
             "bed_size": "DOUBLE",
             "tick_w": true,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.310.000VND+"
+            "price": "1.310.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764733/AzumayaWeb/TVL1/STANDARD_1_y2pplo.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764733/AzumayaWeb/TVL1/STANDARD_2_uw2t6y.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764735/AzumayaWeb/TVL1/STANDARD_3_yb0bgn.jpg"]
         },
         {
             "id": 4,
@@ -1588,13 +1630,15 @@
             "in2": "No Bathtub",
             "in3": "LED TV 50 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed",
             "bed_size": "QUEEN",
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/DELUXENOWINDOW_1_tlstm1.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764743/AzumayaWeb/TVL1/DELUXENOWINDOW_2_spe1qz.jpg"]
         },
         {
             "id": 5,
@@ -1621,7 +1665,8 @@
             "split": true,
             "size_1": "18.5 (Front)",
             "size_2": "18.6 (Back)",
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764741/AzumayaWeb/TVL1/DELUXEM_1_oong6q.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764742/AzumayaWeb/TVL1/DELUXEM_2_pvxnbl.jpg"]
         },
         {
             "id": 6,
@@ -1648,7 +1693,8 @@
             "split": true,
             "size_1": "21.5 (Front)",
             "size_2": "21.7 (Back)",
-            "price": "1.710.000VND+"
+            "price": "1.710.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765862/AzumayaWeb/TVL1/DELUXEL_1_qdshs6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765863/AzumayaWeb/TVL1/DELUXEL_2_fvzhfc.jpg"]
         },
         {
             "id": 7,
@@ -1670,7 +1716,8 @@
             "tick_w": true,
             "tick_t": true,
             "tick_b": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765851/AzumayaWeb/TVL1/TERRACEM_1_gbx73p.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765853/AzumayaWeb/TVL1/TERRACEM_2_sqtyef.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765853/AzumayaWeb/TVL1/TERRACEM_3_kszgdq.jpg"]
         },
         {
             "id": 8,
@@ -1685,13 +1732,15 @@
             "in2": "Bathtub",
             "in3": "LED TV 50 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed",
             "bed_size": "QUEEN",
             "tick_w": true,
             "tick_t": true,
             "tick_b": true,
-            "price": "1.710.000VND+"
+            "price": "1.710.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765849/AzumayaWeb/TVL1/TERRACEL_1_uvqyp7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765850/AzumayaWeb/TVL1/TERRACEL_2_hocm7w.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765850/AzumayaWeb/TVL1/TERRACEL_3_prwj0s.jpg"]
         },
         {
             "id": 9,
@@ -1706,13 +1755,15 @@
             "in2": "Bathtub",
             "in3": "LED TV 50 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.8m King size bed",
             "bed_size": "KING",
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "1.970.000VND+"
+            "price": "1.970.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765838/AzumayaWeb/TVL1/SUITE_1_zo2vt2.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765844/AzumayaWeb/TVL1/SUITE_2_pmjdzz.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765845/AzumayaWeb/TVL1/SUITE_3_auhfiy.jpg"]
         },
         {
             "id": 10,
@@ -1727,13 +1778,15 @@
             "in2": "Bathtub",
             "in3": "LED TV 50 inches",
             "in4": "Toilet with bidet function",
+            "in5":"",
             "priceTitle": "Price",
             "bed": "1.6m Queen and 1.4 Double size bed",
             "bed_size": "QUEEN /DOUBLE",
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "1.970.000VND+"
+            "price": "1.970.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765846/AzumayaWeb/TVL1/SUITETWIN_1_weuwyn.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765848/AzumayaWeb/TVL1/SUITETWIN_2_vl2ayg.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765848/AzumayaWeb/TVL1/SUITETWIN_3_kiwewj.jpg"]
         },
         {
             "id": 11,
@@ -1755,7 +1808,8 @@
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "2.380.000VND+"
+            "price": "2.380.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1705973583/AzumayaWeb/TVL1/VIP_4_y1cfxt.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765855/AzumayaWeb/TVL1/VIP_2_hnlxe0.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765857/AzumayaWeb/TVL1/VIP_3_vhz2mh.jpg"]
         }
     ],
     "room_tvl2": {
@@ -1850,7 +1904,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": false,
-            "price": "1.390.000VND+"
+            "price": "1.390.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767644/AzumayaWeb/TVL2/DELUXENOWINDOW_1_cavxcu.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767644/AzumayaWeb/TVL2/DELUXENOWINDOW_2_liirgh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767645/AzumayaWeb/TVL2/DELUXENOWINDOW_3_swjhp0.jpg"]
         },
         {
             "id": 2,
@@ -1868,7 +1923,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": false,
-            "price": "1.470.000VND+"
+            "price": "1.470.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767638/AzumayaWeb/TVL2/DELUXELNOWINDOW_1_dfruww.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767638/AzumayaWeb/TVL2/DELUXELNOWINDOW_2_z0zlxa.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767639/AzumayaWeb/TVL2/DELUXELNOWINDOW_3_kldoyz.jpg"]
         },
         {
             "id": 3,
@@ -1886,7 +1942,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": true,
-            "price": "1.650.000VND+"
+            "price": "1.650.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767650/AzumayaWeb/TVL2/EXECUTIVEFRONTSIDE_1_vspvoa.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767650/AzumayaWeb/TVL2/EXECUTIVEFRONTSIDE_2_xsyccd.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767651/AzumayaWeb/TVL2/EXECUTIVEFRONTSIDE_3_crtqjw.jpg"]
         },
         {
             "id": 4,
@@ -1904,7 +1961,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": true,
-            "price": "1.650.000VND+"
+            "price": "1.650.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767646/AzumayaWeb/TVL2/EXECUTIVEBACKSIDE_1_uadmg9.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767647/AzumayaWeb/TVL2/EXECUTIVEBACKSIDE_2_vtoded.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767648/AzumayaWeb/TVL2/EXECUTIVEBACKSIDE_3_rcd8hf.jpg"]
         },
         {
             "id": 5,
@@ -1922,7 +1980,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": false,
-            "price": "1.790.000VND+"
+            "price": "1.790.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767626/AzumayaWeb/TVL2/EXECUTIVETWINNOWINDOW_1_ggfcno.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767625/AzumayaWeb/TVL2/EXECUTIVETWINNOWINDOW_2_ohksnw.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767626/AzumayaWeb/TVL2/EXECUTIVETWINNOWINDOW_3_vizcik.jpg"]
         },
         {
             "id": 6,
@@ -1940,7 +1999,8 @@
             "priceTitle": "Price",
             "bed": "1.6m Queen size bed",
             "tick_w": true,
-            "price": "1.860.000VND+"
+            "price": "1.860.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767627/AzumayaWeb/TVL2/SEMISUITE_1_dklgyv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767630/AzumayaWeb/TVL2/SEMISUITE_2_vexysl.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767629/AzumayaWeb/TVL2/SEMISUITE_3_qqkwty.jpg"]
         },
         {
             "id": 7,
@@ -1958,7 +2018,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": true,
-            "price": "1.920.000VND+"
+            "price": "1.920.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767631/AzumayaWeb/TVL2/SUITE_1_mee176.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767632/AzumayaWeb/TVL2/SUITE_2_s62xnp.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767632/AzumayaWeb/TVL2/SUITE_3_ldijxg.jpg"]
         },
         {
             "id": 8,
@@ -1976,7 +2037,8 @@
             "priceTitle": "Price",
             "bed": "",
             "tick_w": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767640/AzumayaWeb/TVL2/DELUXEM_1_j2fzt6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767642/AzumayaWeb/TVL2/DELUXEM_2_ylzbtk.jpg"]
         }
     ],
     "room_ltt": {
@@ -2072,7 +2134,8 @@
             "bed": "1.6m Double size bed",
             "bed_size": "QUEEN",
             "tick_b": false,
-            "price": "1.390.000VND+"
+            "price": "1.390.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769268/AzumayaWeb/LTT/GROUNDFLOOR_1_qolupr.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769270/AzumayaWeb/LTT/GROUNDFLOOR_2_d6otnh.jpg"]
         },
         {
             "id": 2,
@@ -2091,7 +2154,8 @@
             "bed": "1.4m Double size bed",
             "bed_size": "DOUBLE",
             "tick_b": false,
-            "price": "1.520.000VND+"
+            "price": "1.520.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769271/AzumayaWeb/LTT/DELUXE_1_xjyeed.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769377/AzumayaWeb/LTT/DELUXE_2_lesvfo.jpg"]
         },
         {
             "id": 3,
@@ -2110,7 +2174,8 @@
             "bed": "1.6m Queen size bed",
             "bed_size": "DOUBLE",
             "tick_b": false,
-            "price": "1.790.000VND+"
+            "price": "1.790.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769267/AzumayaWeb/LTT/EXECUTIVE_FRONTSIDE__1_pkm9sq.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769268/AzumayaWeb/LTT/EXECUTIVE_FRONTSIDE__2_baifaf.jpg"]
         },
         {
             "id": 4,
@@ -2129,7 +2194,8 @@
             "bed": "1.6m Queen size bed",
             "bed_size": "QUEEN",
             "tick_b": true,
-            "price": "1.790.000VND+"
+            "price": "1.790.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769502/AzumayaWeb/LTT/EXECUTIVE_BACKSIDE__1_ptv1se.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769504/AzumayaWeb/LTT/EXECUTIVE_BACKSIDE__2_uutulh.jpg"]
         }
     ],
     "room_annex": {
@@ -2206,7 +2272,8 @@
             "bed": "1.6m Queen size bed",
             "bed_size": "DOUBLE",
             "tick_b": true,
-            "price": "1.050.000VND+"
+            "price": "1.050.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771122/AzumayaWeb/Annex/ANNEXM_1_mx5qf1.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771123/AzumayaWeb/Annex/ANNEXM_2_rcb9yz.jpg"]
         },
         {
             "id": 2,
@@ -2227,7 +2294,8 @@
             "bed": "1.6m Queen size bed",
             "bed_size": "DOUBLE",
             "tick_b": true,
-            "price": "1.180.000VND+"
+            "price": "1.180.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771121/AzumayaWeb/Annex/ANNEXL_1_ysscmv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771121/AzumayaWeb/Annex/ANNEXL_2_hxeynf.jpg"]
         }
     ],
     "dn-branch": {
@@ -2339,7 +2407,8 @@
             "bed": "Double",
             "tick_b": false,
             "tick_w": false,
-            "price": "1.000.000VND+"
+            "price": "1.000.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774395/AzumayaWeb/DN/DeluxeNoWindowDouble_1_sbia9j.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774374/AzumayaWeb/DN/DeluxeNoWindowDouble_2_ataifd.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774375/AzumayaWeb/DN/DeluxeNoWindowDouble_3_kaykf3.jpg"]
         },
         {
             "id": 2,
@@ -2358,7 +2427,8 @@
             "bed": "Twin",
             "tick_b": false,
             "tick_w": false,
-            "price": "1.000.000VND+"
+            "price": "1.000.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774378/AzumayaWeb/DN/DeluxeNowindowTwin_1_sshk95.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774379/AzumayaWeb/DN/DeluxeNoWindowTwin_2_wf2a7g.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774380/AzumayaWeb/DN/DeluxeNoWindowTwin_3_phvbd8.jpg"]
         },
         {
             "id": 3,
@@ -2377,7 +2447,8 @@
             "bed": "Double",
             "tick_w": true,
             "tick_b": false,
-            "price": "1.250.000VND+"
+            "price": "1.250.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774722/AzumayaWeb/DN/ExecutiveDouble_1_r9xk4w.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774383/AzumayaWeb/DN/ExecutiveDouble_2_ezbe3a.jpg"]
         },
         {
             "id": 4,
@@ -2396,13 +2467,14 @@
             "bed": "Twin",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.250.000VND+"
+            "price": "1.250.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774386/AzumayaWeb/DN/ExecutiveTwin_1_eu0ezx.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774388/AzumayaWeb/DN/ExecutiveTwin_2_icb7rb.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774390/AzumayaWeb/DN/ExecutiveTwin_3_umngzq.jpg"]
         },
         {
             "id": 5,
             "branch_name": "Azumaya Da Nang Hotel",
             "room_id": "eb",
-            "name": "EXECUTIVE TWIN",
+            "name": "SUITE",
             "size": "28",
             "sizeTitle": "Size",
             "bedTitle": "Bed",
@@ -2415,7 +2487,8 @@
             "bed": "Double",
             "tick_b": true,
             "tick_w": true,
-            "price": "1.500.000VND+"
+            "price": "1.500.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774392/AzumayaWeb/DN/Suite_1_oe2vkg.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774394/AzumayaWeb/DN/Suite_2_p9tedx.jpg"]
         }
     ],
     "hp-branch": {
@@ -2526,7 +2599,8 @@
             "bed": "Double",
             "tick_b": false,
             "tick_w": false,
-            "price": "1.200.000VND+"
+            "price": "1.200.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARDNOWINDOW_1_uoqgwn.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARDNOWINDOW_2_nem3cz.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARDNOWINDOW_3_bcr7e8.jpg"]
         },
         {
             "id": 2,
@@ -2545,7 +2619,8 @@
             "bed": "Double",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.325.000VND+"
+            "price": "1.325.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786106/AzumayaWeb/HP/STANDARD_1_weyzfx.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786106/AzumayaWeb/HP/STANDARD_2_lwbowi.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARD_3_qnyife.jpg"]
         },
         {
             "id": 3,
@@ -2564,7 +2639,8 @@
             "bed": "Double",
             "tick_w": true,
             "tick_b": false,
-            "price": "1.375.000VND+"
+            "price": "1.375.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786113/AzumayaWeb/HP/DELUXEM_1_rqtfpr.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786115/AzumayaWeb/HP/DELUXEM_2_y893bk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/DELUXEM_3_okngt5.jpg"]
         },
         {
             "id": 4,
@@ -2583,7 +2659,8 @@
             "bed": "Double",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.500.000VND+"
+            "price": "1.500.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/DELUXEL_1_ep5epv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/DELUXEL_2_clnegk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/DELUXEL_3_sm94wh.jpg"]
         },
         {
             "id": 5,
@@ -2602,7 +2679,8 @@
             "bed": "Double",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.625.000VND+"
+            "price": "1.625.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786115/AzumayaWeb/HP/EXECUTIVECITYVIEW_1_roi8oq.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786114/AzumayaWeb/HP/EXECUTIVECITYVIEW_2_jor37h.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786104/AzumayaWeb/HP/EXECUTIVECITYVIEW_3_br94v1.jpg"]
         },
         {
             "id": 6,
@@ -2621,7 +2699,8 @@
             "bed": "Double",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.625.000VND+"
+            "price": "1.625.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786106/AzumayaWeb/HP/EXECUTIVELAKEVIEW_1_aun9oc.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786107/AzumayaWeb/HP/EXECUTIVELAKEVIEW_2_ose0lb.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786105/AzumayaWeb/HP/EXECUTIVELAKEVIEW_3_knmngd.jpg"]
         },
         {
             "id": 7,
@@ -2640,7 +2719,8 @@
             "bed": "King",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.750.000VND+"
+            "price": "1.750.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/SUITE_1_jqgpgp.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/SUITE_2_jf3eqd.jpg"]
         },
         {
             "id": 8,
@@ -2659,7 +2739,8 @@
             "bed": "Double",
             "tick_b": true,
             "tick_w": true,
-            "price": "1.750.000VND+"
+            "price": "1.750.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786104/AzumayaWeb/HP/EXECUTIVECITYVIEWWITHKITCHEN_1_kqrpxm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786105/AzumayaWeb/HP/EXECUTIVECITYVIEWWITHKITCHEN_2_ticto4.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786105/AzumayaWeb/HP/EXECUTIVECITYVIEWWITHKITCHEN_3_kipcyf.jpg"]
         },
         {
             "id": 9,
@@ -2678,7 +2759,8 @@
             "bed": "King",
             "tick_b": true,
             "tick_w": true,
-            "price": "1.875.000VND+"
+            "price": "1.875.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_1_pfmu4y.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_2_dxcut3.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_3_cnec2s.jpg"]
         }
     ],
     "massage": {
@@ -3361,17 +3443,17 @@
             },
             {
                 "row1": "Sun",
-                "row2": "Set menu:",
+                "row2": "Set menu :",
                 "row4": "6:00 ~ 10:00"
             }
         ],
         "table2": [
             {
-                "row1": "Set menu: ",
+                "row1": "Set menu : ",
                 "row2": "150.000 ~ 180.000VND"
             },
             {
-                "row1": "Buffet: ",
+                "row1": "Buffet : ",
                 "row2": "200.000 ~ 220.000VND"
             }
         ]
@@ -3611,5 +3693,28 @@
                 "content": "※ Combo with Open air hot bath is available"
             }
         ]
-    }
+    },
+    "testroom": [
+        {
+          "name": "Standard Room",
+          "size": "300 sqft",
+          "price": "$100 per night",
+          "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg"]
+        },
+        {
+          "name": "Deluxe Room",
+          "size": "400 sqft",
+          "price": "$150 per night",
+          "images": ["image4.jpg", "image5.jpg", "image6.jpg"]
+        },
+        {
+          "name": "Suite Room",
+          "size": "600 sqft",
+          "price": "$200 per night",
+          "images": ["image7.jpg", "image8.jpg", "image9.jpg"]
+        }
+      ]
+    
+
+    
 }

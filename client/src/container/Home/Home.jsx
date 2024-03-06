@@ -10,6 +10,8 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 import SenderPage from "../../Test";
+import RoomCard from "../../components/BranchDetail/thai-van-lung-1-detail/Test3";
+import HotelRoomsPage from "../../components/BranchDetail/thai-van-lung-1-detail/Test3";
 export default function Home({news}) {
   const { t } = useTranslation();
   const featureItem = t("feature.feature_item", { returnObjects: true });

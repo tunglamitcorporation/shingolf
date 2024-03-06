@@ -721,7 +721,7 @@ export default function VietnamService() {
                         <table className="service_table">
                           {breakfast_price.map((item) => (
                             <tr>
-                              <td className="right" width="30%">
+                              <td className="left" width="30%">
                                 {item.row1}
                               </td>
                               <td>{item.row2}</td>

@@ -1,13 +1,93 @@
+
 import BookingRoom from "../../../container/BookingRoom/BookingRoom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-//import RoomCarousel from "../Carousel";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import data from "../../../JSON/data.json"; //"../JSON/data.json";
 import classNames from "classnames";
 
+const RoomCard = ({room_id, name, size, sizeTitle, bedTitle, install, in1, in2, in3, in4, in5, priceTitle, bed, price, images}) => {
+  const { t } = useTranslation();
+    return(
+      <div key={room_id} className="room-item">
+                        <Carousel 
+       showArrows
+       showThumbs={false}
+       showStatus={false}
+       emulateTouch
+       stopOnHover
+       autoPlay
+       infiniteLoop>
+        {images.map((image, index) => (
+            <img
+              src={image}
+              alt={`Slide ${index}`}
+            />
+         
+        ))}
+      </Carousel>
+                        <div className="card" style={{ border: "none" }}>
+                          <div className="row p-0">
+                            <div className="col-md-12"></div>
+                            <div className="col-md-12">
+                              <div className="card-body">
+                                <div className="card-title room-name">
+                                  {name}
+                                </div>
+                                <table className="room__des-table">
+                                  <tr>
+                                    <th>{sizeTitle}</th>
+                                    <td className="installation">
+                                      {size}m&#178;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{bedTitle}</th>
+                                    <td className="installation">
+                                      {bed}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{install}</th>
+                                    <td className="installation">
+                                      <i class="fa-solid fa-check purple mr-2"></i>
+                                      {in1}
+                                      <br />
+                                      <i class="fa-solid fa-check purple mr-2"></i>
+                                      {in2}
+                                      <br />
+                                      <i class="fa-solid fa-check purple mr-2"></i>
+                                      {in3}
+                                      <br />
+                                      <i class="fa-solid fa-check purple mr-2"></i>
+                                      {in4}
+                                      <br />
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th>{priceTitle}</th>
+                                    <td className="installation bold">
+                                      {price}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button className="btn__reserve p-0 m-0">
+                          <Link
+                            to="/Reservation"
+                            style={{ textDecoration: "none", color: "white" }}
+                          >
+                            {t("room_tvl1.reservation")}
+                          </Link>
+                        </button>
+                      </div>
+    
+)
+                                      }
 
 export default function DNRoomDetail() {
   const { t } = useTranslation();
@@ -16,11 +96,6 @@ export default function DNRoomDetail() {
   const cityName = t("header", { returnObjects: true });
   const room = t("room_dn", { returnObjects: true });
   const dn = t("dn", { returnObjects: true });
-  const room0 = t("dn.0", { returnObjects: true });
-  const room1 = t("dn.1", { returnObjects: true });
-  const room2 = t("dn.2", { returnObjects: true });
-  const room3 = t("dn.3", { returnObjects: true });
-  const room4 = t("dn.4", { returnObjects: true });
   return (
     <>
       <div className="service__header">
@@ -90,374 +165,11 @@ export default function DNRoomDetail() {
                 </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-6">
-                      <div className="room-item">
-                        <Carousel
-                          showArrows
-                          showThumbs={false}
-                          showStatus={false}
-                          emulateTouch
-                          stopOnHover
-                          autoPlay
-                          infiniteLoop
-                        >
-                          {data.dnwd_dn.map((item) => (
-                            <img src={item} alt="" />
-                          ))}
-                        </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {room0.name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{room0.sizeTitle}</th>
-                                    <td className="installation">
-                                      {room0.size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.bedTitle}</th>
-                                    <td className="installation">
-                                      {room0.bed}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room0.in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room0.in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room0.in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room0.in4}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.priceTitle}</th>
-                                    <td className="installation bold">
-                                      {room0.price}
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_dn.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="room-item">
-                        <Carousel
-                          showArrows
-                          showThumbs={false}
-                          showStatus={false}
-                          emulateTouch
-                          stopOnHover
-                          autoPlay
-                          infiniteLoop
-                        >
-                          {data.dnwt_dn.map((item) => (
-                            <img src={item} alt="" />
-                          ))}
-                        </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {room1.name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{room1.sizeTitle}</th>
-                                    <td className="installation">
-                                      {room1.size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.bedTitle}</th>
-                                    <td className="installation">
-                                      {room0.bed}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room1.install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room1.in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room1.in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room1.in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room1.in4}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room1.priceTitle}</th>
-                                    <td className="installation bold">
-                                      {room1.price}
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_dn.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="room-item">
-                        <Carousel
-                          showArrows
-                          showThumbs={false}
-                          showStatus={false}
-                          emulateTouch
-                          stopOnHover
-                          autoPlay
-                          infiniteLoop
-                        >
-                          {data.ed_dn.map((item) => (
-                            <img src={item} alt="" />
-                          ))}
-                        </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {room2.name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{room2.sizeTitle}</th>
-                                    <td className="installation">
-                                      {room2.size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.bedTitle}</th>
-                                    <td className="installation">
-                                      {room0.bed}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room2.install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room2.in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room2.in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room2.in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room2.in4}
-                                      <br />
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room2.priceTitle}</th>
-                                    <td className="installation bold">
-                                      {room2.price}
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_dn.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="room-item">
-                        <Carousel
-                          showArrows
-                          showThumbs={false}
-                          showStatus={false}
-                          emulateTouch
-                          stopOnHover
-                          autoPlay
-                          infiniteLoop
-                        >
-                          {data.et_dn.map((item) => (
-                            <img src={item} alt="" />
-                          ))}
-                        </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {room3.name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{room3.sizeTitle}</th>
-                                    <td className="installation">
-                                      {room3.size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.bedTitle}</th>
-                                    <td className="installation">
-                                      {room0.bed}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room3.install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room3.in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room3.in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room3.in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room3.in4}
-                                      <br />
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room3.priceTitle}</th>
-                                    <td className="installation bold">
-                                      {room3.price}
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_dn.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="room-item">
-                        <Carousel
-                          showArrows
-                          showThumbs={false}
-                          showStatus={false}
-                          emulateTouch
-                          stopOnHover
-                          autoPlay
-                          infiniteLoop
-                        >
-                          {data.s_dn.map((item) => (
-                            <img src={item} alt="" />
-                          ))}
-                        </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {room4.name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{room4.sizeTitle}</th>
-                                    <td className="installation">
-                                      {room4.size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room0.bedTitle}</th>
-                                    <td className="installation">
-                                      {room0.bed}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room4.install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room4.in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room4.in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room4.in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple"></i>
-                                      {room4.in4}
-                                      <br />
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{room4.priceTitle}</th>
-                                    <td className="installation bold">
-                                      {room4.price}
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_dn.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-                    </div>
+                  {dn.map((item)=>(
+                    <div className="col-md-12 col-lg-6">
+                      <RoomCard {...item}/>
+                       </div>       
+            ))}
                   </div>
                 </div>
               </div>

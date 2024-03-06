@@ -7,7 +7,7 @@ import Footer from "./container/Units/Footer";
 import Feature from "./container/Feature/Feature";
 import Policies from "./container/Policies/Policies";
 import Contract from "./container/Contract/Contract";
-//import Service from "./Service";
+import Test3 from './components/BranchDetail/thai-van-lung-1-detail/Test3';
 import Reservation from "./container/Reservation/Reservation";
 import NewsList from "./components/Home/NewsList";
 import News from "./components/Home/News";
@@ -70,6 +70,7 @@ function NewRouter(props) {
                 <Route path="/annex-detail/room" element={<AnnexRoomDetail />} />
                 <Route path="/da-nang/room" element={<DNRoomDetail />} />
                 <Route path="/hai-phong/room" element={<HPRoomDetail />} />
+                <Route path='/test-new-room/Test3'element={<Test3 />} />
             </Routes>
         </section>
     );
