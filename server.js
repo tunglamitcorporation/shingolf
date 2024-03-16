@@ -42,6 +42,17 @@ route(app)
 //  });
 //
 
+const URI = process.env.MONGODB_URL
+mongoose.connect(URI, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, err => {
+    if(err) throw err;
+    console.log("Connected to mongodb...")
+})
+
 app.get('*', function (req, res) {
     res.sendFile(__dirname + "/client/build/index.html");
 });
