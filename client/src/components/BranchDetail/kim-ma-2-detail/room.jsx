@@ -1,107 +1,138 @@
 import React from "react";
+import {useState, useEffect } from "react";
 import BookingRoom from "../../../container/BookingRoom/BookingRoom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
 
-const RoomCard = ({room_id, name, size, sizeTitle, bedTitle, install, in1, in2, in3, in4, in5, priceTitle, bed, price, images}) => {
+
+export default function KM2RoomDetail() {
   const { t } = useTranslation();
-    return(
-      <div key={room_id} className="room-item">
-                        <Carousel 
-       showArrows
-       showThumbs={false}
-       showStatus={false}
-       emulateTouch
-       stopOnHover
-       autoPlay
-       infiniteLoop>
-        {images.map((image, index) => (
-            <img
-              src={image}
-              alt={`Slide ${index}`}
-            />
-         
-        ))}
-      </Carousel>
-                        <div className="card" style={{ border: "none" }}>
-                          <div className="row p-0">
-                            <div className="col-md-12"></div>
-                            <div className="col-md-12">
-                              <div className="card-body">
-                                <div className="card-title room-name">
-                                  {name}
-                                </div>
-                                <table className="room__des-table">
-                                  <tr>
-                                    <th>{sizeTitle}</th>
-                                    <td className="installation">
-                                      {size}m&#178;
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{bedTitle}</th>
-                                    <td className="installation">
-                                      {bed}
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{install}</th>
-                                    <td className="installation">
-                                      <i class="fa-solid fa-check purple mr-2"></i>
-                                      {in1}
-                                      <br />
-                                      <i class="fa-solid fa-check purple mr-2"></i>
-                                      {in2}
-                                      <br />
-                                      <i class="fa-solid fa-check purple mr-2"></i>
-                                      {in3}
-                                      <br />
-                                      <i class="fa-solid fa-check purple mr-2"></i>
-                                      {in4}
-                                      <br />
-                                      {in5 !== "" ? (
-                                        <React.Fragment>
+  const location = useLocation();
+  const navigate = useNavigate();
+  const receivedData = location.state;
+  const roomFeature = t("room_km2.features", { returnObjects: true });
+  const branchName = t("branch", { returnObjects: true });
+  const km2 = t("km2", { returnObjects: true });
+
+  const [startDate, setStartDate] = useState(receivedData ? receivedData.startDate : '');
+  const [endDate, setEndDate] = useState(receivedData ? receivedData.endDate : '');
+  const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
+  const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
+  
+//   const flatBranches = [].concat(...branch)
+//   const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
+
+//   useEffect(() => {
+//     if(selectedBranch == undefined) {
+//         setSelectedBranch(selectedBranch)
+//     }
+// }, [selectedBranch])
+
+const handleContinue = (selectedRoom) => {
+  // Prepare data to pass to Receiver2Page
+  const data = {
+    ...receivedData,
+    startDate,
+    endDate,
+    selectedCity,
+    selectedBranch,
+    selectedRoom
+  };
+
+  // Navigate to Receiver2Page and pass data
+  navigate('/reservation', { state: data });
+};
+
+
+  const RoomCard = ({room_id, name, size, sizeTitle, bedTitle, install, in1, in2, in3, in4, in5, priceTitle, bed, price, images}) => {
+    const { t } = useTranslation();
+      return(
+        <div key={room_id} className="room-item">
+                          <Carousel 
+         showArrows
+         showThumbs={false}
+         showStatus={false}
+         emulateTouch
+         stopOnHover
+         autoPlay
+         infiniteLoop>
+          {images.map((image, index) => (
+              <img
+                src={image}
+                alt={`${name} ${index} azumaya kim ma 2 azumaya hotel ha noi `}
+              />
+           
+          ))}
+        </Carousel>
+                          <div className="card" style={{ border: "none" }}>
+                            <div className="row p-0">
+                              <div className="col-md-12"></div>
+                              <div className="col-md-12">
+                                <div className="card-body">
+                                  <div className="card-title room-name">
+                                    {name}
+                                  </div>
+                                  <table className="room__des-table">
+                                    <tr>
+                                      <th>{sizeTitle}</th>
+                                      <td className="installation">
+                                        {size}m&#178;
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th>{bedTitle}</th>
+                                      <td className="installation">
+                                        {bed}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th>{install}</th>
+                                      <td className="installation">
                                         <i class="fa-solid fa-check purple mr-2"></i>
-                                        {in5}
-                                        </React.Fragment>
-                                      ): null}
-                                      <br />
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <th>{priceTitle}</th>
-                                    <td className="installation bold">
-                                      {price}
-                                    </td>
-                                  </tr>
-                                </table>
+                                        {in1}
+                                        <br />
+                                        <i class="fa-solid fa-check purple mr-2"></i>
+                                        {in2}
+                                        <br />
+                                        <i class="fa-solid fa-check purple mr-2"></i>
+                                        {in3}
+                                        <br />
+                                        <i class="fa-solid fa-check purple mr-2"></i>
+                                        {in4}
+                                        <br />
+                                        {in5 !== "" ? (
+                                          <React.Fragment>
+                                          <i class="fa-solid fa-check purple mr-2"></i>
+                                          {in5}
+                                          </React.Fragment>
+                                        ): null}
+                                        <br />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th>{priceTitle}</th>
+                                      <td className="installation bold">
+                                        {price}
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
                               </div>
                             </div>
                           </div>
+                          <button 
+                          onClick={() => handleContinue(`${name}`)}
+                          className="btn__reserve p-0 m-0">
+                              {t("room_tvl1.reservation")}
+                          </button>
                         </div>
-                        <button className="btn__reserve p-0 m-0">
-                          <Link
-                            to="/Reservation"
-                            style={{ textDecoration: "none", color: "white" }}
-                          >
-                            {t("room_tvl1.reservation")}
-                          </Link>
-                        </button>
-                      </div>
-    
-)
-}
-export default function KM2RoomDetail() {
-  const { t } = useTranslation();
-  const roomFeature = t("room_km2.features", { returnObjects: true });
-  const branchName = t("branch", { returnObjects: true });
-  const cityName = t("header", { returnObjects: true });
-  const room = t("room_km2", { returnObjects: true });
-  const km2 = t("km2", { returnObjects: true });
+      
+  )
+  }
   return (
     <>
       <div className="service__header">
@@ -114,7 +145,15 @@ export default function KM2RoomDetail() {
         </div>
       </div>
       <div className="is-sticky">
-      <BookingRoom />
+      <BookingRoom 
+      startDate={startDate} 
+      endDate={endDate} 
+      selectedCity={selectedCity} 
+      selectedBranch={selectedBranch}
+      setStartDate={setStartDate}
+      setEndDate={setEndDate}
+      setSelectedCity={setSelectedCity}
+      setSelectedBranch={setSelectedBranch} />
       </div>
       <div className="container">
         <div className="row">

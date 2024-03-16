@@ -3,20 +3,10 @@ import Booking from "../Units/Booking";
 import { useTranslation } from "react-i18next"; 
 import { useEffect} from 'react';
 export default function Feature() {
+  // document.title = "Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル"
   const { t } = useTranslation();
   const featureData = t("feature", { returnObjects: true });
   const featureItem = t("feature.feature_item", { returnObjects: true });
-  // const targetRef = useRef(null);
-  //   useEffect(() => {
-  //     const hash = window.location.hash;
-  //     if (hash && targetRef.current) {
-  //       const targetId = hash.substring(1); 
-  //       const targetElement = document.getElementById(targetId);
-  //       if (targetElement) {
-  //         targetElement.scrollIntoView({ behavior: 'smooth', block:'end', inline:'nearest' });
-  //       }
-  //     }
-  //   }, [window.location.hash]);
     const {featureID} = useParams()
     useEffect(() => {
       // Scroll to the element with the specified index
@@ -25,6 +15,7 @@ export default function Feature() {
         if (elementToScroll) {
           elementToScroll.scrollIntoView({ behavior: 'smooth', block:'center', inline:'nearest' });
         }
+        
       }
     }, [featureID]);
   return (
@@ -82,7 +73,7 @@ export default function Feature() {
               <div className="card mb-3" style={{ border: "none" }}>
                 <div className="row g-4">
                   <div className="col-md-4">
-                    <img className="img-fluid" src={item.image} alt="" />
+                    <img className="img-fluid" src={item.image} alt={item.title} />
                     <div className="feature__number">
                       <span>{item.num}</span>
                     </div>

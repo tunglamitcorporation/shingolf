@@ -1,27 +1,34 @@
 import {useState, useEffect } from "react";
 import Flatpickr from "react-flatpickr";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-export default function BookingRoom (){
+import { Link, useNavigate} from "react-router-dom";
+import { format } from 'date-fns';
+export default function BookingRoom ({startDate, endDate, selectedCity, selectedBranch, setStartDate, setEndDate, setSelectedCity, setSelectedBranch}){
+
     const {t} = useTranslation()
-    const bookingData = t('booking', {returnObjects:true})
+    const navigate = useNavigate()
     const city = t('booking.city', {returnObjects:true})
     const branch = t('booking.branch', {returnObjects:true})
-    const header = t('header', {returnObjects:true})
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
 
-    const [selectedCity, setSelectedCity] = useState();
-    const [selectedBranch, setSelectedBranch] = useState();
+    const handleSendData = () => {
+        const data = {
+            startDate: startDate ? format(startDate, 'yyyy-MM-dd'): '',
+            endDate: endDate ? format(endDate,'yyyy-MM-dd'): '',
+            selectedCity,
+            selectedBranch
+        }
+        navigate(`/${selectedBranch}/room`,{state: data})
+    }
+    
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
 
-    useEffect(() => {
-        if(selectedBranch == undefined) {
-            setSelectedBranch(selectedBranch)
-        }
-    }, [selectedBranch])
-
+    // useEffect(() => {
+    //     if(selectedBranch == undefined) {
+    //         setSelectedBranch(selectedBranch)
+    //     }
+    // }, [selectedBranch])
+    // console.log(selectedBranch);
     return(
         <div>              
         <div className="content__booking">
@@ -34,49 +41,26 @@ export default function BookingRoom (){
                   <Flatpickr 
                   value={startDate}
                   options={{
-                    minDate:'today'}} 
+                    minDate:'today',
+                    dateFormat:'Y-m-d'}} 
                   className="col-md-12 content__booking-date webkit-appearance" 
                   placeholder={t('booking.date_in')} 
-                  onChange={(startDate)=>{
-                    setStartDate(startDate);
+                  onChange={(dates)=>{
+                    setStartDate(dates[0]);
                     }} />
                     </div>
                 <div className="col-md-2">
                   <Flatpickr 
                   value={endDate}
-                  options={{minDate:new Date(startDate)}} 
+                  options={{
+                    minDate:new Date(startDate),
+                    dateFormat:'Y-m-d'}} 
                   className="col-md-12 content__booking-date webkit-appearance" 
                   placeholder={t('booking.date_out')} 
-                  onChange={(endDate) =>{
-                    setEndDate(endDate)
+                  onChange={(dates) =>{
+                    setEndDate(dates[0])
                   }} />
                   </div>
-            
-                {/* <div className="col-md-2 offset-md-1">
-                    <div className="content__booking-date-in">
-                        <Flatpickr 
-                        value={startDate}
-                        options={{
-                            minDate:'today',
-                        }}
-                        className="form__content webkit-appearance" 
-                        placeholder={t('booking.date_in')} 
-                        onChange={(startDate) => setStartDate(startDate)}/>
-                </div>
-                </div>
-                <div className="col-md-2">
-                <div className="content__booking-date-out">
-                <Flatpickr 
-                value={endDate}
-                options={{
-                    minDate:new Date(startDate),
-                  }}
-                className="flatpickr webkit-appearance" 
-                placeholder={t('booking.date_out')} 
-                onChange = {(endDate) => setEndDate(endDate)} />
-                </div>
-                </div> */}
-
                 <div className="col-md-2">
                 <div className="content__booking-branch">
                     <select className="content__booking-branch-select"
@@ -97,7 +81,7 @@ export default function BookingRoom (){
                     <select className="content__booking-hotel-name-select"
                     disabled={!selectedCity}
                     value={selectedBranch}
-                    onChange={(e)=>setSelectedBranch(e.target.value)}>
+                    onChange={(e)=> {setSelectedBranch(e.target.value)}}>
                         {filteredBranches.map((item, index) => (
                             <option key = {item.branch_id} value={item.branch_id} hidden = {index === 0}>{item.branch_name}</option>
                         ))}
@@ -106,8 +90,9 @@ export default function BookingRoom (){
                 </div>
                 <div className="col-md-2">
                 <button
+                onClick={handleSendData}
                 className="base__btn btn--mobile" style={{marginTop:10}}>{t('booking.reserve')}
-                {startDate == undefined && endDate == undefined && selectedBranch == undefined ? <Link to = {`/Reservation`} ></Link> :  <Link to = {`/${selectedBranch}/room`} ></Link> }
+                {/* {startDate == undefined && endDate == undefined && selectedBranch == undefined ? <Link to = {`/Reservation`} ></Link> :  <Link to = {`/${selectedBranch}/room`} ></Link> } */}
                 </button> 
                 </div>  
                 </div>

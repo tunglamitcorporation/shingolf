@@ -4,8 +4,6 @@ import { useTranslation } from "react-i18next";
 import {format, parse} from "date-fns"
 export default function HotelHCM({news}){
     const { t } = useTranslation();
-    const brandDetail = t("hcm-branch",  {returnObjects: true});
-    const header = t("header",{returnObjects:true})
     const homeNews = news.slice(0,5)
     const HCMDetail = t("hcm-branch.branch", { returnObjects: true });
     return(

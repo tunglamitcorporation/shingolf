@@ -5,8 +5,6 @@ import {format, parse} from "date-fns"
 
 export default function HotelDN({news}){
     const { t } = useTranslation();
-    const brandDetail = t("dn-branch",  {returnObjects: true});
-    const header = t("header",{returnObjects:true})
     const DNDetail = t("dn-branch.branch", { returnObjects: true });
     const homeNews = news
 

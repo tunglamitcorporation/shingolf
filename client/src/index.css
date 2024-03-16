@@ -955,7 +955,7 @@ code {
 /* Reservation */
 .reservation__content{
   width: 100%;
-  padding: 100px 0;
+  padding: 300px 0;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/rd2qg5wkfxdoarlvcuwl.jpg) center center / cover no-repeat fixed;
   background-attachment: fixed;
   position: relative;
@@ -1067,7 +1067,7 @@ code {
 /* Hotel Policies */
 .policies__header {
   width: 100%;
-  padding: 100px 0;
+  padding: 300px 0;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/jlrespa749hwpa3n7zxw.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   position: relative;
@@ -1178,7 +1178,7 @@ code {
   font-size: 1.4rem;
 }
 .service__header {
-  padding: 90px 0;
+  padding: 300px 0;
   position: relative;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/wnyhgvfrdrrbyjkbb501.jpg) center center / cover no-repeat;
   height: 280px;
@@ -1725,7 +1725,7 @@ a:hover {
 }
 .massage__header {
   width: 100%;
-  padding: 100px 0;
+  padding: 300px 0;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1702435598/AzumayaWeb/bkej2rsxkcv8gomuys0l.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   position: relative;
@@ -2220,6 +2220,58 @@ filter: brightness(0.5);
 }
 .business-card{
   width: 100%;
+}
+.Collapsible__contentInner--active {
+  max-height: 500px; /* Adjust as needed */
+}
+.error-message {
+  position: absolute;
+  top:23%; /* Position below the input field */
+  left: 31.8%;
+  width: 130px !important;
+  padding: 5px;
+  background-color: #ffcccc; /* Light red background */
+  color: #cc0000; /* Dark red text color */
+  font-size: 1rem;
+  border-radius: 4px;
+  z-index: 1; /* Ensure error message is above other content */
+}
+/* Style for form container */
+.form-container {
+  position: relative;
+}
+
+/* Style for select field */
+.select-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for error message */
+.error-message {
+  position: absolute;
+  top: 100%; /* Position below the select field */
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: #ffcccc; /* Light red background */
+  color: #cc0000; /* Dark red text color */
+  font-size: 14px;
+  border-radius: 4px;
+  z-index: 1; /* Ensure error message is above other content */
+}
+
+/* Optional: Style for valid select field */
+.select-field.valid {
+  border-color: #00cc00; /* Green border color for valid select field */
+}
+
+/* Optional: Style for invalid select field */
+.select-field.invalid {
+  border-color: #cc0000; /* Red border color for invalid select field */
 }
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Header from "../Units/Header";
 import Collapsible from "react-collapsible";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useRef} from 'react';
@@ -53,46 +52,6 @@ export default function Contract() {
             </div>
           </div>
           ))}
-          {/* <div className="col-md-4">
-            <div className="content__feature-item content__contract-item">
-              <div className="content__feature-container">
-                <div
-                  className="content__feature-img"
-                  style={{
-                    backgroundImage: `url("https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg")`,
-                  }}
-                ></div>
-              </div>
-              <div className="content__feature-name mt-1">
-                <a href="">和朝食</a>
-              </div>
-              <div className="content__feature-text mt-1">
-                <p className="mt-0">
-                  1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="content__feature-item content__contract-item">
-              <div className="content__feature-container">
-                <div
-                  className="content__feature-img"
-                  style={{
-                    backgroundImage: `url("https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg")`,
-                  }}
-                ></div>
-              </div>
-              <div className="content__feature-name mt-1">
-                <a href="">和朝食</a>
-              </div>
-              <div className="content__feature-text mt-1">
-                <p className="mt-0">
-                  1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div className="contract-text col-md-12">
             <p>
               {t('contract.additional')}。
@@ -117,11 +76,13 @@ export default function Contract() {
               {contractBranch.map((item)=> (
           <div className="col-6 col-md-2 p-0">
             <div className="content__branch-item">
+              <Link to = {item.link}>
               <img
                 className="content__branch-img"
                 src={item.url}
-                alt=""
+                alt='azumaya hotel branch ho chi minh ha noi da nang hai phong cambodia'
               />
+              </Link>
             </div>
           </div>
               ))}

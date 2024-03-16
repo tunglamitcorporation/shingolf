@@ -1,6 +1,5 @@
-import { Link, useNavigate} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { scroller } from "react-scroll";
 import { useState, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Cookies from "js-cookie";
@@ -11,8 +10,7 @@ function Header() {
     i18n.changeLanguage(lng);
     Cookies.set('selectedLanguage', lng, {expires: 365})
   };
-  const navigate = useNavigate()
-  const headerData = t("header", { returnObjects: true });
+
   const feature = t("feature.feature_item", { returnObjects: true });
   const hcm = t("hcm-branch.branch", {returnObjects:true})
   const hn = t("hn-branch.branch", {returnObjects:true})
@@ -73,7 +71,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/NewsList"
+              to="/news-list"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}
@@ -81,7 +79,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Policies"
+              to="/q&a"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -126,7 +124,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Reservation"
+              to="/reservation"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -135,7 +133,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Feature"
+              to="/feature"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -144,14 +142,14 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="Service/Test/Vietnam/Service"
+              to="/service"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
               {t("header.service")}
             </Link>
           </li>
-          <li className="header__mobile-navbar-item">
+          {/* <li className="header__mobile-navbar-item">
             <Link
               to="/Massage"
               onClick={()=> setIsOpen(false)}
@@ -159,10 +157,10 @@ function Header() {
             >
               {t("header.massage")}
             </Link>
-          </li>
+          </li> */}
           <li className="header__mobile-navbar-item">
             <Link
-              to="/Contract"
+              to="/contract"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -215,7 +213,7 @@ function Header() {
                 className={`header__navbar-link header-reserve ${active? 'tab_active' : ''}`}
                 onClick={handleActive}
                 onBlur={(e)=>setActive(false)}
-                to="/Reservation"
+                to="reservation"
                 style={{ color: "#fff" }}
               >
                 {t("header.reservation")}
@@ -305,7 +303,7 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/NewsList">
+                      <Link className="header__navbar-link-2" to="/news-list">
                         {t("header.news")}
                       </Link>
                     </Tab>
@@ -369,7 +367,7 @@ function Header() {
                     {/* <Tab className="header__navbar-item">
                             <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></Tab> */}
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Feature">
+                      <Link className="header__navbar-link-2" to="/feature">
                         {t("header.feature")}
                       </Link>
                       <ul className="header__navbar-item-list">
@@ -385,7 +383,7 @@ function Header() {
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Service/Test/Vietnam/Service">
+                      <Link className="header__navbar-link-2" to="/service">
                         {t("header.service")}
                       </Link>
                       <ul className="header__navbar-item-list" style={{width: 100}}>
@@ -404,12 +402,12 @@ function Header() {
                       </Link>
                     </Tab> */}
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Contract">
+                      <Link className="header__navbar-link-2" style={{width:140}} to="/contract">
                         {t("header.contract")}
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Reservation">
+                      <Link className="header__navbar-link-2" to="/reservation">
                         {t("header.reservation")}
                       </Link>
                     </Tab>
@@ -419,7 +417,7 @@ function Header() {
                       </Link>
                     </Tab> */}
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Policies">
+                      <Link className="header__navbar-link-2" to="/q&a">
                         {t("header.policies")}
                       </Link>
                     </Tab>

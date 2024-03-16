@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .App-logo {
@@ -39,4 +40,16 @@
 @font-face {
   font-family: open-sans;
   src: url('https://cdn.jsdelivr.net/npm/open-sans-fonts@1.6.2/open-sans.min.css');
+}
+
+
+.light {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+}
+
+
+.dark {
+  background-color: #333 !important;
+  color: #ffffff !important;
 }

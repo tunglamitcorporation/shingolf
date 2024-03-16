@@ -287,7 +287,7 @@ export default function NewsList({ news }) {
                     {/* Link to the News by Date component */}
                     <Link
                       className="recent_news-link"
-                      to={`/NewsByDate/${encodeURIComponent(date)}`}
+                      to={`/news-by-date/${encodeURIComponent(date)}`}
                     >
                       {formatDate(date)}
                     </Link>

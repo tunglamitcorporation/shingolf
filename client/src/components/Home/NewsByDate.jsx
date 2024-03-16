@@ -296,7 +296,7 @@ export default function NewsByDate({ news }) {
                   <li className="recent_news-item" key={date}>
                     <Link
                       className="recent_news-link"
-                      to={`/NewsByDate/${encodeURIComponent(date)}`}
+                      to={`/news-by-date/${encodeURIComponent(date)}`}
                     >
                       {formatDate(date)}
                     </Link>

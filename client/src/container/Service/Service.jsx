@@ -1,5 +1,5 @@
 import React from "react";
-import BookingRoom from "../../BookingRoom/BookingRoom";
+import BookingRoom from "../BookingRoom/BookingRoom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { useLocation, useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -551,12 +551,30 @@ function MassageThaiVanLung1Modal(props) {
 }
 
 export default function VietnamService() {
-  const { search } = useLocation();
-  const params = new URLSearchParams(search);
-  const initialActiveTab = params.get("tab") || "breakfast";
-  const [activeTab, setActiveTab] = useState(initialActiveTab);
   const { t } = useTranslation();
+  const location = useLocation();
+  const [selectedTab, setSelectedTab] = useState(0)
+  const serviceTitle = t('service.service_name', {returnObjects: true})
+  useEffect(() => {
+    // Parse URL and set initial tab based on the pathname
+    switch (location.pathname) {
+      case '/breakfast':
+        setSelectedTab(0);
+        break;
+      case '/rotenburo':
+        setSelectedTab(1);
+        break;
+        case '/massage':
+        setSelectedTab(2);
+        break;
+      default:
+        setSelectedTab(0); // Default to Home tab
+    }
+  }, [location]);
 
+  const handleTabSelect = (index) => {
+    setSelectedTab(index);
+  }
   const breakfast_hour = t("service_breakfast.table1", { returnObjects: true });
   const breakfast_price = t("service_breakfast.table2", { returnObjects: true });
   const rotenHCM_hour = t("service_roten.table_hcm1", { returnObjects: true });
@@ -570,7 +588,7 @@ export default function VietnamService() {
   const specialNote = t("service_roten.special_note", { returnObjects: true });
   const massageHN_hour = t("service_massage.table_ll1", { returnObjects: true  });
   const massageHN_price = t("service_massage.table_ll2", {returnObjects: true });
-  const massageDN_hour = t("service_massage.table_dn1", {returnObjects: true });
+  const massageDN_hour = t("service_massage.table_dn1", {returnObjects: true });7
   const massageDN_price = t("service_massage.table_dn2", {returnObjects: true});
   const massageHCM_hour = t("service_massage.table_tvl1", {returnObjects: true});
   const massageHCM_price = t("service_massage.table_tvl2", {returnObjects: true});
@@ -579,50 +597,19 @@ export default function VietnamService() {
   const [modalShow, setModalShow] = useState(false);
   const [modalShow1, setModalShow1] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
-
-  useEffect(() => {
-    // Update the selected tab when the URL parameter changes
-    const newActiveTab = params.get("tab") || "breakfast";
-    if (newActiveTab !== activeTab) {
-      setActiveTab(newActiveTab);
-    }
-  }, [params, activeTab]);
-
-  const handleTabSelect = (index) => {
-    // Update the URL parameter when a tab is selected
-    const newParams = new URLSearchParams(search);
-    switch (index) {
-      case 0:
-        newParams.set("tab", "breakfast");
-        break;
-      case 1:
-        newParams.set("tab", "rotenburo");
-        break;
-      case 2:
-        newParams.set("tab", "massage");
-        break;
-      default:
-        break;
-    }
-    // Replace the current URL without triggering a full page reload
-    window.history.replaceState(null, null, `?${newParams.toString()}`);
-    // Manually update the activeTab state
-    setActiveTab(newParams.get("tab"));
-  };
   return (
     <>
       <div className="service__header">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Service</h1>
+              <h1>{t('header.service')}</h1>
             </div>
           </div>
         </div>
       </div>
       <div className="is-sticky">
         <BookingRoom />
-        <div></div>
       </div>
       <div className="container">
         <div className="row">
@@ -636,8 +623,8 @@ export default function VietnamService() {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/HNBranch">
-                    Service
+                  <Link className="breadcrumb__title" to="/service">
+                    {t('header.service')}
                   </Link>
                 </li>
               </ul>
@@ -649,29 +636,23 @@ export default function VietnamService() {
         <TabPanel>
           <Tabs
             className="col-md-12 p-0"
-            defaultIndex={
-              activeTab === "breakfast" ? 0 : activeTab === "rotenburo" ? 1 : 2
-            }
+            selectedIndex={selectedTab}
             onSelect={handleTabSelect}
             selectedTabClassName="service__active"
             style={{ marginTop: 20 }}
           >
             <TabList className="service__list">
-              <Tab id="breakfast" className="service">
-                Breakfast
+              {serviceTitle.map((item)=>(
+              <Tab className="service">
+                {item.name}
               </Tab>
-              <Tab id="rotenburo" className="service">
-                Rotenburo
-              </Tab>
-              <Tab id="massage" className="service">
-                Massage
-              </Tab>
+              ))}
               <Tab className="service">
                 <a
-                  href="/Service/Test/Cambodia/Service"
+                  href="http://localhost:3000/service"
                   className="location_link"
                 >
-                  Cambodia
+                  {t('header.cambodia')}
                 </a>
               </Tab>
             </TabList>
@@ -679,7 +660,7 @@ export default function VietnamService() {
               <div className="service__content pt-0">
                 <div className="row justify-content-center">
                   <Link className="image-holder p-0" to="">
-                    <img src={t("service_breakfast.image")} alt="" />
+                    <img src={t("service_breakfast.image")} alt="breakfast azumaya hotel" />
                   </Link>
                   <div className="row">
                     <div
@@ -741,7 +722,7 @@ export default function VietnamService() {
                     <img
                       style={{ padding: "5px 22px" }}
                       src={t("service_roten.image")}
-                      alt=""
+                      alt="rotenburo open air bath azumaya hotel"
                     />
                   </Link>
                   <div className="row">
@@ -998,8 +979,8 @@ export default function VietnamService() {
                     <img
                       style={{ padding: "5px 22px" }}
                       className="image-holder"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172400/AzumayaWeb/Az_website_service_page_photos-3_c5c7kv.jpg"
-                      alt=""
+                      src={t('service_massage.image')}
+                      alt="massage azumaya hotel"
                     />
                   </Link>
                   <div className="row">

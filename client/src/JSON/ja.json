@@ -107,95 +107,601 @@
         "placeHolder": "都市を選択してください",
         "city": [
             {
-                "id": "HCM",
+                "id": "hotel-hcm",
                 "city_name": "ホーチミン"
             },
             {
-                "id": "HN",
+                "id": "hotel-hn",
                 "city_name": "ハノイ"
             },
             {
-                "id": "DN",
+                "id": "hotel-dn",
                 "city_name": "ダナン"
             },
             {
-                "id": "HP",
+                "id": "hotel-hp",
                 "city_name": "ハイフォン"
-            },
-            {
-                "id": "PP",
-                "city_name": "プノンペン"
             }
         ],
         "branch": [
             [
                 {
+                    "branch_id": "hcm-select",
+                    "city_id": "hotel-hcm",
+                    "city_name": "ホーチミン",
+                    "branch_name": "支店を選択してください"
+                },
+                {
                     "branch_id": "le-thanh-ton-detail",
-                    "city_id": "HCM",
+                    "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 レタントン"
                 },
                 {
                     "branch_id": "thai-van-lung-1-detail",
-                    "city_id": "HCM",
+                    "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 タイヴァンルン 1"
                 },
                 {
                     "branch_id": "thai-van-lung-2-detail",
-                    "city_id": "HCM",
+                    "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋 タイヴァンルン 2"
                 },
                 {
                     "branch_id": "annex-detail",
-                    "city_id": "HCM",
+                    "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋アネックス"
                 },
                 {
+                    "branch_id": "hn-select",
+                    "city_id": "hotel-hn",
+                    "city_name": "ハノイ",
+                    "branch_name": "支店を選択してください"
+                },
+                {
                     "branch_id": "hai-ba-trung-detail",
-                    "city_id": "HN",
+                    "city_id": "hotel-hn",
                     "city_name": "ハノイ",
                     "branch_name": "東屋 ハイバーチュン店 1"
                 },
                 {
                     "branch_id": "kim-ma-2-detail",
-                    "city_id": "HN",
+                    "city_id": "hotel-hn",
                     "city_name": "ハノイ",
                     "branch_name": "東屋金馬 2"
                 },
                 {
                     "branch_id": "kim-ma-3-detail",
-                    "city_id": "HN",
+                    "city_id": "hotel-hn",
                     "city_name": "ハノイ",
                     "branch_name": "東屋金馬 3"
                 },
                 {
                     "branch_id": "linh-lang-detail",
-                    "city_id": "HN",
+                    "city_id": "hotel-hn",
                     "city_name": "ハノイ",
                     "branch_name": "東屋リンラン店にて"
                 },
                 {
+                    "branch_id": "da-nang-select",
+                    "city_id": "hotel-dn",
+                    "city_name": "ダナン",
+                    "branch_name": "支店を選択してください"
+                },
+                {
                     "branch_id": "da-nang",
-                    "city_id": "DN",
+                    "city_id": "hotel-dn",
                     "city_name": "ダナン",
                     "branch_name": "東屋ダナン"
                 },
                 {
-                    "branch_id": "hai-phong",
-                    "city_id": "HP",
+                    "branch_id": "hai-phong-select",
+                    "city_id": "hotel-hp",
                     "city_name": "ハイフォン",
-                    "branch_name": "東屋 ハイフォン"
+                    "branch_name": "支店を選択してください"
                 },
                 {
-                    "branch_id": "phnom-penh",
-                    "city_id": "PP",
-                    "city_name": "プノンペン",
-                    "branch_name": "東屋 プノンペン"
+                    "branch_id": "hai-phong",
+                    "city_id": "hotel-hp",
+                    "city_name": "ハイフォン",
+                    "branch_name": "東屋 ハイフォン"
                 }
             ]
+            
+        ],
+        "room":[
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "room_name":"お部屋の種類を選択してください"
+
+            },
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.390.000VND+",
+                "room_name":"DELUXE GROUND"
+
+            },
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.520.000VND+",
+                "room_name":"DELUXE"
+
+            },   
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.790.000VND+",
+                "room_name":"EXECUTIVE (FRONT SIDE)"
+
+            },   
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.790.000VND+",
+                "room_name":"EXECUTIVE (BACK SIDE)"
+
+            },
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "room_name":"お部屋の種類を選択してください"
+
+            },
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.130.000VND+",
+                "room_name":"ECONOMY/NO-WINDOW"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.180.000VND+",
+                "room_name":"ECONOMY"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.310.000VND+",
+                "room_name":"STANDARD"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.440.000VND+",
+                "room_name":"DELUXE/NO-WINDOW"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE-M"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.710.000VND+",
+                "room_name":"DELUXE-L"
+
+            },    
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.580.000VND+",
+                "room_name":"TERRACE-M"
+
+            },   
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.710.000VND+",
+                "room_name":"TERRACE-L"
+            }, 
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.970.000VND+",
+                "room_name":"SUITE"
+
+            },  
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.970.000VND+",
+                "room_name":"SUITE - TWIN"
+
+            },   
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"2.380.000VND+",
+                "room_name":"VIP TATAMI"
+            },  
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "room_name":"お部屋の種類を選択してください"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.390.000VND+",
+                "room_name":"DELUXE M NO WINDOW"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.470.000VND+",
+                "room_name":"DELUXE L NO WINDOW"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.650.000VND+",
+                "room_name":"EXECUTIVE FRONTSIDE"
+            },   
+
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.650.000VND+",
+                "room_name":"EXECUTIVE BACKSIDE"
+            },  
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.790.000VND+",
+                "room_name":"EXECUTIVE TWIN NO WINDOW"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.860.000VND+",
+                "room_name":"SEMI SUITE"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.920.000VND+",
+                "room_name":"SUITE"
+
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE"
+
+            },   
+            {
+                "branch_id":"annex-detail",
+                "branch_name":"Azumaya Annex",
+                "room_name":"お部屋の種類を選択してください"
+
+            },
+            {
+                "branch_id":"annex-detail",
+                "branch_name":"Azumaya Annex",
+                "price":"1.050.000VND+",
+                "room_name":"ANNEX M"
+
+            },   
+            {
+                "branch_id":"annex-detail",
+                "branch_name":"Azumaya Annex",
+                "price":"1.180.000VND+",
+                "room_name":"ANNEX L"
+
+            },
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "room_name":"お部屋の種類を選択してください"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.310.000VND+",
+                "room_name":"DELUXE 1F (NO VIEW)"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.440.000VND+",
+                "room_name":"DELUXE - INSIDE WINDOW"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.580.000VND+",
+                "room_name":"EXECUTIVE"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.650.000VND+",
+                "room_name":"EXECUTIVE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.760.000VND+",
+                "room_name":"SEMI SUITE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.840.000VND+",
+                "room_name":"SUITE"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "room_name":"お部屋の種類を選択してください"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.700.000VND+",
+                "room_name":"LAKE SIDE M"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.840.000VND+",
+                "room_name":"LAKE SIDE L"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.840.000VND+",
+                "room_name":"EXECUTIVE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.970.000VND+",
+                "room_name":"SUITE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.180.000VND+",
+                "room_name":"ANNEX WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "room_name":"お部屋の種類を選択してください"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.260.000VND+",
+                "room_name":"STANDARD NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.370.000VND+",
+                "room_name":"DELUXE M SMALL WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.450.000VND+",
+                "room_name":"DELUXE L NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.450.000VND+",
+                "room_name":"DELUXE L SMALL WINDOW IN BATH"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE L WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.700.000VND+",
+                "room_name":"LAKE SIDE"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "room_name":"お部屋の種類を選択してください"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.260.000VND+",
+                "room_name":"STANDARD INSIDE WINDOW ( NO VIEW )"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.440.000VND+",
+                "room_name":"DELUXE"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.440.000VND+",
+                "room_name":"EXECUTIVE NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.640.000VND+",
+                "room_name":"EXECUTIVE"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.840.000VND+",
+                "room_name":"SUITE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "room_name":"お部屋の種類を選択してください"
+
+            },
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.000.000VND+",
+                "room_name":"DELUXE NO WINDOW DOUBLE"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.000.000VND+",
+                "room_name":"DELUXE NO WINDOW TWIN"
+
+            }, 
+
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.250.000VND+",
+                "room_name":"EXECUTIVE DOULE"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.250.000VND+",
+                "room_name":"EXECUTIVE TWIN"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.500.000VND+",
+                "room_name":"SUITE"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "room_name":"お部屋の種類を選択してください"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.200.000VND+",
+                "room_name":"STANDARD NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.325.000VND+",
+                "room_name":"STANDARD"
+
+            }, 
+
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.375.000VND+",
+                "room_name":"DELUXE M"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.500.000VND+",
+                "room_name":"DELUXE L"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.625.000VND+",
+                "room_name":"EXECUTIVE CITY VIEW"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.625.000VND+",
+                "room_name":"EXECUTIVE LAKE VIEW"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.750.000VND+",
+                "room_name":"SUITE"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.750.000VND+",
+                "room_name":"EXECUTIVE LAKE VIEW WITH KITCHEN"
+
+            }, 
+
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.875.000VND+",
+                "room_name":"SUITE WITH KITCHEN"
+
+            }
         ],
         "city_pp": "プノンペン",
         "branch_pp": "東屋 プノンペン"
@@ -306,7 +812,7 @@
                 "content": "変更後のチェックアウト日の15時より48時間以内：1泊分の50％チャージ変更後のチェックアウト日の15時より24時間以内：1泊分の100％チャージ"
             },
             {
-                "name": "為替レート  ",
+                "name": "為替レート ",
                 "content": "法人契約をお持ちでない場合はチェックイン当日のホテルレートを適応します。法人契約をお持ちの場合はご精算日午前6時のVietcombank販売レートを適応します。"
             },
             {
@@ -316,10 +822,6 @@
         ]
     },
     "faq": {
-        "title2": "各種サービスに関するFAQ",
-        "title3": "朝食に関するFAQ",
-        "title4": "アクセスに関するFAQ",
-        "title5": "お支払いに関するFAQ",
         "data": [
             {
                 "title": "ご宿泊に関するFAQ",
@@ -489,6 +991,10 @@
             }
         ]
     },
+    "thank_you":{
+        "title":"まだ予約は完了しておりません。",
+        "content":"ご予約ありがとうございます。\n受付による確認後、予約確認書がメールで届きます。n万が一、当ホテルよりメールが届かない場合はお手数ですが下記までご連絡ください。"
+    },
     "service": {
         "name": "提供サービス",
         "location": [
@@ -507,15 +1013,19 @@
         ],
         "service_name": [
             {
-                "name": "露天風呂"
+                "name": "朝食",
+                "link": "/breakfast"
             },
             {
-                "name": "朝食"
+                "name": "露天風呂",
+                "link": "/rotenburo"
             },
             {
-                "name": "マッサージ"
+                "name": "マッサージ",
+                "link": "/massage"
             }
         ],
+        
         "hcm-roten-title": "露天風呂(男性のみ)は以下の営業時間となっております。ビジターの方もご利用可能です。",
         "hcm-roten-female": "※女性専用は東屋タイバンルン２にて月～金：17時～18時45分・料金：150,000VND/名\n※露天風呂の貸切：月～金の午前11時〜午後5時まで（最終予約・入場は午後4時）の時間のみ。\n料金: 1〜4名：800,000 VND/１hour\n5～8名：1,000,000 VND/１hour\n女性のお客様もご利用可能です。事前に要予約となります。\n貸切をご希望の際はご利用時間と人数を事前に教え頂けますようお願いいたします。",
         "hcm-breakfast-title": "東屋朝食は全日営業しております。\nビジターの方もご利用可能です。",
@@ -587,20 +1097,20 @@
                 "name": "キンマー２号店",
                 "desc": "全37部屋、露天風呂、女性専用露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。ホテルとは独立した入り口を持つアネックスも1部屋完備。長期滞在者向けにキッチン付きのお部屋も10部屋ご用意。立地もキンマー通りまで徒歩３分。 館内１階のもつ鍋居酒屋「鈴の屋」は午後5時〜深夜1時まで営業、夕食や締めの一杯に合うおつまみも充実のご用意でお待ちしております。 男性専用・女性専用露天風呂、サウナ、水風呂で体を整え、「鈴の屋」で美味しいものを食べて気分が良くなれば快眠間違いなし。朝は和朝食で一日の活力を提供します。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
-                "link": "kim-ma-2-detail/room"
+                "link": "/kim-ma-2-detail/room"
             },
             {
                 "id": 3,
                 "name": "キンマー 3号店",
                 "desc": "全42部屋。2023年オープン、最上階の広々とした露天風呂＆サウナ＆水風呂、和朝食ビュッフェ、全室にシャワートイレ、バスタブ、日本語放送を完備。キンマー2号店から徒歩2分、同じく湖のほとりに位置する3号店も、人気のレイクサイドのお部屋やリーズナブルな内窓のお部屋を多数ご用意しております。和朝食ビュッフェはロビーに併設する朝食会場で、一日の活力を提供します。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
-                "link": "kim-ma-3-detail/room"
+                "link": "/kim-ma-3-detail/room"
             },
             {
                 "id": 4,
                 "name": "リンラン店",
                 "desc": "全46部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。立地はロッテセンターの徒歩圏内、近年日本食レストランが立ち並ぶリンラン通りに位置し、館内7階にはリピート率90％以上を誇る自慢の東屋マッサージを併設。(ラストオーダー午後9:30) 各マッサージチェアからは夜景を楽しむことができます。夕食や締めの一杯には、地階に併設する焼き鳥居酒屋「松木」をご利用いただけます。 広々とした露天風呂、サウナ、水風呂でごゆっくりお寛ぎいただき、翌朝は8階の見晴らしのいい朝食会場で気持ちのよい朝をお迎えいただけます。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710306679/AzumayaWeb/AZ-LL-FRONT-FIX-2_b1tphv.jpg",
                 "link": "/linh-lang-detail/room"
             }
         ],
@@ -695,7 +1205,9 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick": false,
-            "price": "1.310.000VND+"
+            "price": "1.310.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView1_hbld7m.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView2_dwhqwh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/DuluxeF1NoView3_iuuryf.jpg"]
+
         },
         {
             "id": 2,
@@ -713,7 +1225,9 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick": false,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-1_zmt7uh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-2_yfyuqp.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/DuluxeInsideWindowNoView-3_lchwfy.jpg"]
+
         },
         {
             "id": 3,
@@ -731,7 +1245,9 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン/ツインズ",
             "tick": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive1_ghjhzr.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive2_wceibe.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/Executive3_h1cm4b.jpg"]
+
         },
         {
             "id": 4,
@@ -749,7 +1265,9 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick": true,
-            "price": "1.650.000VND+"
+            "price": "1.650.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476773/AzumayaWeb/HBT1/ExecutiveWithKitchen1_vw87gk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen2_x3hshm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476774/AzumayaWeb/HBT1/ExecutiveWithKitchen3_inw0ma.jpg"]
+
         },
         {
             "id": 5,
@@ -767,7 +1285,9 @@
             "priceTitle": "料金",
             "bed": "クイーン/ツインズ",
             "tick": true,
-            "price": "1.760.000VND+"
+            "price": "1.760.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen1_uatnii.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen2_kfrxav.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/SemiSuiteWithKitchen3_cnileh.jpg"]
+
         },
         {
             "id": 6,
@@ -785,7 +1305,9 @@
             "priceTitle": "料金",
             "bed": "1.8m  キング",
             "tick": true,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite1_amfnye.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite2_edhoz7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703476775/AzumayaWeb/HBT1/Suite3_aa5lxa.jpg"]
+
         }
     ],
     "room_km2": {
@@ -881,7 +1403,9 @@
             "bed": "クイーン",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440340/AzumayaWeb/KM2/DeluxeM_1_carfn7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440341/AzumayaWeb/KM2/DeluxeM_2_bhfezg.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/DeluxeM_3_rrtvj0.jpg"]
+
         },
         {
             "id": 2,
@@ -901,7 +1425,9 @@
             "bed": "クイーン",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.700.000VND+"
+            "price": "1.700.000VND+",
+            "images":[  "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_1_rsx5qk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_2_bijeoo.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideM_3_qoltwp.jpg"]
+
         },
         {
             "id": 3,
@@ -920,7 +1446,9 @@
             "bed": "クイーン",
             "tick_k": false,
             "tick_t": false,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704441440/AzumayaWeb/KM2/LakesideL_1_mvhfnv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440334/AzumayaWeb/KM2/LakesideL_2_zx1q48.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704441439/AzumayaWeb/KM2/LakesideL_3_qerxks.jpg"]
+
         },
         {
             "id": 4,
@@ -940,7 +1468,9 @@
             "bed": "キング",
             "tick_k": true,
             "tick_t": false,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/Executive_WithKitchen_1_vxorvm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440342/AzumayaWeb/KM2/Executive_WithKitchen_2_mldi6o.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440343/AzumayaWeb/KM2/Executive_WithKitchen_3_ux0cfi.jpg"]
+
         },
         {
             "id": 5,
@@ -960,7 +1490,9 @@
             "bed": "クイーン",
             "tick_k": true,
             "tick_t": true,
-            "price": "1.970.000VND+"
+            "price": "1.970.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440336/AzumayaWeb/KM2/SUITE_WithKitchen_1_o8mba9.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440336/AzumayaWeb/KM2/SUITE_WithKitchen_2_pzu23o.jpg"]
+
         },
         {
             "id": 6,
@@ -980,7 +1512,9 @@
             "bed": "クイーン",
             "tick_k": true,
             "tick_t": false,
-            "price": "1.180.000VND+"
+            "price": "1.180.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_1_bcj6op.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_2_vczaff.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704440337/AzumayaWeb/KM2/Annex_WithKitchen_3_s9yj4b.jpg"]
+
         }
     ],
     "room_km3": {
@@ -1073,7 +1607,9 @@
             "bed": "クイーン",
             "mattress": "ダブル",
             "tick_w": false,
-            "price": "1.260.000VND+"
+            "price": "1.260.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442134/AzumayaWeb/KM3/Standard_NoWindow_1_mlnr9u.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442135/AzumayaWeb/KM3/Standard_NoWindow_2_fsntk7.jpg"]
+
         },
         {
             "id": 2,
@@ -1091,7 +1627,10 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": false,
-            "price": "1.370.000VND+"
+            "price": "1.370.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442141/AzumayaWeb/KM3/DeluxeM_NoWindow_1_h4ksba.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442173/AzumayaWeb/KM3/DeluxeM_NoWindow_2_spue6x.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442174/AzumayaWeb/KM3/DeluxeM_NoWindow_3_phkop5.jpg"]
+
+            
         },
         {
             "id": 3,
@@ -1109,7 +1648,9 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": false,
-            "price": "1.450.000VND+"
+            "price": "1.450.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442136/AzumayaWeb/KM3/DeluxeL_NoWindow_1_obq54p.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442137/AzumayaWeb/KM3/DeluxeL_NoWindow_2_hnaihx.jpg"]
+
         },
         {
             "id": 4,
@@ -1127,7 +1668,9 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": false,
-            "price": "1.450.000VND+"
+            "price": "1.450.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442141/AzumayaWeb/KM3/DeluxeM_NoWindow_1_h4ksba.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442173/AzumayaWeb/KM3/DeluxeM_NoWindow_2_spue6x.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442174/AzumayaWeb/KM3/DeluxeM_NoWindow_3_phkop5.jpg"]
+
         },
         {
             "id": 5,
@@ -1146,7 +1689,9 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442138/AzumayaWeb/KM3/DeluxeL_Window_1_subvw7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442140/AzumayaWeb/KM3/DeluxeL_Window_2_w1bwgj.jpg"]
+
         },
         {
             "id": 6,
@@ -1165,7 +1710,9 @@
             "bed": "クイーン",
             "mattress": "クイーン",
             "tick_w": true,
-            "price": "1.700.000VND+"
+            "price": "1.700.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442175/AzumayaWeb/KM3/Lakeside_1_qkpdij.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442176/AzumayaWeb/KM3/Lakeside_2_oosb2t.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704442177/AzumayaWeb/KM3/Lakeside_3_d2sacd.jpg"]
+
         }
     ],
     "business_km3": [
@@ -1328,7 +1875,9 @@
             "bed": "1.6m クイーン",
             "bed_size": "クイーン",
             "tick": true,
-            "price": "1.260.000VND+"
+            "price": "1.260.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443091/AzumayaWeb/LL/Standard_InsideWindow_1_vqn7kh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443092/AzumayaWeb/LL/Standard_InsideWindow_2_shdbcl.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443094/AzumayaWeb/LL/Standard_InsideWindow_3_mhpujf.jpg"]
+
         },
         {
             "id": 2,
@@ -1347,7 +1896,9 @@
             "bed": "キングサイズ 1,8m",
             "bed_size": "キング",
             "tick": true,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443106/AzumayaWeb/LL/Deluxe_1_wsvu2h.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443072/AzumayaWeb/LL/Deluxe_2_yicgcw.jpg"]
+
         },
         {
             "id": 3,
@@ -1366,7 +1917,9 @@
             "bed": "キングサイズ 1,8m",
             "bed_size": "キング",
             "tick": false,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443081/AzumayaWeb/LL/Executive_NoWindow_1_sflrms.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443083/AzumayaWeb/LL/Executive_NoWindow_2_ccunrm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443084/AzumayaWeb/LL/Executive_NoWindow_3_tuvebn.jpg"]
+
         },
         {
             "id": 4,
@@ -1385,7 +1938,9 @@
             "bed": "キングサイズ 1,8m",
             "bed_size": "キング",
             "tick": true,
-            "price": "1.640.000VND+"
+            "price": "1.640.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443077/AzumayaWeb/LL/Executive_1_pso0t4.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443078/AzumayaWeb/LL/Executive_2_muafka.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443080/AzumayaWeb/LL/Executive_3_y7jrll.jpg"]
+
         },
         {
             "id": 5,
@@ -1404,7 +1959,9 @@
             "bed": "1.8mクイーン/ダブル",
             "bed_size": "クイーン",
             "tick": true,
-            "price": "1.840.000VND+"
+            "price": "1.840.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443101/AzumayaWeb/LL/Suite7F_1_jgqjhi.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443102/AzumayaWeb/LL/Suite7F_2_rqesx6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443104/AzumayaWeb/LL/Suite7F_3_sjik3m.jpg"]
+
         }
     ],
     "hcm-branch": {
@@ -1530,13 +2087,16 @@
             "in2": "バスタブなし",
             "in3": "32型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.4m ダブル",
             "bed_size": "ダブル",
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.130.000VND+"
+            "price": "1.130.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764745/AzumayaWeb/TVL1/ECONOMYNOWINDOW_2_gvjqca.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764745/AzumayaWeb/TVL1/ECONOMYNOWINDOW_3_qyytbg.jpg"]
+
         },
         {
             "id": 2,
@@ -1551,13 +2111,16 @@
             "in2": "バスタブなし",
             "in3": "32型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.4m ダブル",
             "bed_size": "ダブル",
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.180.000VND+"
+            "price": "1.180.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764745/AzumayaWeb/TVL1/ECONOMY_1_uzmm0k.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMY_2_a83hxn.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMY_3_czs5wr.jpg"]
+
         },
         {
             "id": 3,
@@ -1572,13 +2135,16 @@
             "in2": "バスタブなし",
             "in3": "32型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.4m ダブル",
             "bed_size": "ダブル",
             "tick_w": true,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.310.000VND+"
+            "price": "1.310.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764733/AzumayaWeb/TVL1/STANDARD_1_y2pplo.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764733/AzumayaWeb/TVL1/STANDARD_2_uw2t6y.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764735/AzumayaWeb/TVL1/STANDARD_3_yb0bgn.jpg"]
+
         },
         {
             "id": 4,
@@ -1593,13 +2159,16 @@
             "in2": "バスタブなし",
             "in3": "50型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "bed_size": "クイーン",
             "tick_w": false,
             "tick_t": false,
             "tick_b": false,
-            "price": "1.440.000VND+"
+            "price": "1.440.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/DELUXENOWINDOW_1_tlstm1.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764743/AzumayaWeb/TVL1/DELUXENOWINDOW_2_spe1qz.jpg"]
+
         },
         {
             "id": 5,
@@ -1626,7 +2195,9 @@
             "split": true,
             "size_1": "18.5 (表側)",
             "size_2": "18.6 (裏側)",
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764741/AzumayaWeb/TVL1/DELUXEM_1_oong6q.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764742/AzumayaWeb/TVL1/DELUXEM_2_pvxnbl.jpg"]
+
         },
         {
             "id": 6,
@@ -1653,7 +2224,9 @@
             "split": true,
             "size_1": "21.5 (表側)",
             "size_2": "21.7 (裏側)",
-            "price": "1.710.000VND+"
+            "price": "1.710.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765862/AzumayaWeb/TVL1/DELUXEL_1_qdshs6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765863/AzumayaWeb/TVL1/DELUXEL_2_fvzhfc.jpg"]
+
         },
         {
             "id": 7,
@@ -1675,7 +2248,9 @@
             "tick_w": true,
             "tick_t": true,
             "tick_b": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765851/AzumayaWeb/TVL1/TERRACEM_1_gbx73p.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765853/AzumayaWeb/TVL1/TERRACEM_2_sqtyef.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765853/AzumayaWeb/TVL1/TERRACEM_3_kszgdq.jpg"]
+
         },
         {
             "id": 8,
@@ -1690,13 +2265,16 @@
             "in2": "バスタブ",
             "in3": "50型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "bed_size": "クイーン",
             "tick_w": true,
             "tick_t": true,
             "tick_b": true,
-            "price": "1.710.000VND+"
+            "price": "1.710.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765849/AzumayaWeb/TVL1/TERRACEL_1_uvqyp7.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765850/AzumayaWeb/TVL1/TERRACEL_2_hocm7w.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765850/AzumayaWeb/TVL1/TERRACEL_3_prwj0s.jpg"]
+
         },
         {
             "id": 9,
@@ -1711,13 +2289,16 @@
             "in2": "バスタブ",
             "in3": "50型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.8m キング",
             "bed_size": "キング",
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "1.970.000VND+"
+            "price": "1.970.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765838/AzumayaWeb/TVL1/SUITE_1_zo2vt2.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765844/AzumayaWeb/TVL1/SUITE_2_pmjdzz.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765845/AzumayaWeb/TVL1/SUITE_3_auhfiy.jpg"]
+
         },
         {
             "id": 10,
@@ -1732,13 +2313,17 @@
             "in2": "バスタブ",
             "in3": "50型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
+            "in5":"",
             "priceTitle": "料金",
             "bed": "1.6m クイーン , 1.4m ダブル",
             "bed_size": "クイーン /ダブル",
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "1.970.000VND+"
+            "price": "1.970.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765846/AzumayaWeb/TVL1/SUITETWIN_1_weuwyn.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765848/AzumayaWeb/TVL1/SUITETWIN_2_vl2ayg.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765848/AzumayaWeb/TVL1/SUITETWIN_3_kiwewj.jpg"]
+
+
         },
         {
             "id": 11,
@@ -1760,7 +2345,10 @@
             "tick_w": true,
             "tick_t": false,
             "tick_b": true,
-            "price": "2.380.000VND+"
+            "price": "2.380.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1705973583/AzumayaWeb/TVL1/VIP_4_y1cfxt.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765855/AzumayaWeb/TVL1/VIP_2_hnlxe0.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704765857/AzumayaWeb/TVL1/VIP_3_vhz2mh.jpg"]
+
+
         }
     ],
     "room_tvl2": {
@@ -1855,7 +2443,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": false,
-            "price": "1.390.000VND+"
+            "price": "1.390.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767644/AzumayaWeb/TVL2/DELUXENOWINDOW_1_cavxcu.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767644/AzumayaWeb/TVL2/DELUXENOWINDOW_2_liirgh.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767645/AzumayaWeb/TVL2/DELUXENOWINDOW_3_swjhp0.jpg"]
+
         },
         {
             "id": 2,
@@ -1873,7 +2463,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": false,
-            "price": "1.470.000VND+"
+            "price": "1.470.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767638/AzumayaWeb/TVL2/DELUXELNOWINDOW_1_dfruww.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767638/AzumayaWeb/TVL2/DELUXELNOWINDOW_2_z0zlxa.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767639/AzumayaWeb/TVL2/DELUXELNOWINDOW_3_kldoyz.jpg"]
+
         },
         {
             "id": 3,
@@ -1891,7 +2483,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.650.000VND+"
+            "price": "1.650.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767650/AzumayaWeb/TVL2/EXECUTIVEFRONTSIDE_1_vspvoa.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767650/AzumayaWeb/TVL2/EXECUTIVEFRONTSIDE_2_xsyccd.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767651/AzumayaWeb/TVL2/EXECUTIVEFRONTSIDE_3_crtqjw.jpg"]
+
         },
         {
             "id": 4,
@@ -1909,7 +2503,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.650.000VND+"
+            "price": "1.650.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767646/AzumayaWeb/TVL2/EXECUTIVEBACKSIDE_1_uadmg9.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767647/AzumayaWeb/TVL2/EXECUTIVEBACKSIDE_2_vtoded.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767648/AzumayaWeb/TVL2/EXECUTIVEBACKSIDE_3_rcd8hf.jpg"]
+
         },
         {
             "id": 5,
@@ -1927,7 +2523,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": false,
-            "price": "1.790.000VND+"
+            "price": "1.790.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767626/AzumayaWeb/TVL2/EXECUTIVETWINNOWINDOW_1_ggfcno.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767625/AzumayaWeb/TVL2/EXECUTIVETWINNOWINDOW_2_ohksnw.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767626/AzumayaWeb/TVL2/EXECUTIVETWINNOWINDOW_3_vizcik.jpg"]
+
         },
         {
             "id": 6,
@@ -1945,7 +2543,9 @@
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
             "tick_w": true,
-            "price": "1.860.000VND+"
+            "price": "1.860.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767627/AzumayaWeb/TVL2/SEMISUITE_1_dklgyv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767630/AzumayaWeb/TVL2/SEMISUITE_2_vexysl.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767629/AzumayaWeb/TVL2/SEMISUITE_3_qqkwty.jpg"]
+
         },
         {
             "id": 7,
@@ -1963,7 +2563,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.920.000VND+"
+            "price": "1.920.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767631/AzumayaWeb/TVL2/SUITE_1_mee176.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767632/AzumayaWeb/TVL2/SUITE_2_s62xnp.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767632/AzumayaWeb/TVL2/SUITE_3_ldijxg.jpg"]
+
         },
         {
             "id": 8,
@@ -1981,7 +2583,9 @@
             "priceTitle": "料金",
             "bed": "",
             "tick_w": true,
-            "price": "1.580.000VND+"
+            "price": "1.580.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767640/AzumayaWeb/TVL2/DELUXEM_1_j2fzt6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704767642/AzumayaWeb/TVL2/DELUXEM_2_ylzbtk.jpg"]
+
         }
     ],
     "room_ltt": {
@@ -2077,7 +2681,9 @@
             "bed": " 1.6m キング",
             "bed_size": "クイーン",
             "tick_b": false,
-            "price": "1.390.000VND+"
+            "price": "1.390.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769268/AzumayaWeb/LTT/GROUNDFLOOR_1_qolupr.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769270/AzumayaWeb/LTT/GROUNDFLOOR_2_d6otnh.jpg"]
+
         },
         {
             "id": 2,
@@ -2096,7 +2702,9 @@
             "bed": "1.4m ダブル",
             "bed_size": "ダブル",
             "tick_b": false,
-            "price": "1.520.000VND+"
+            "price": "1.520.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769271/AzumayaWeb/LTT/DELUXE_1_xjyeed.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769377/AzumayaWeb/LTT/DELUXE_2_lesvfo.jpg"]
+
         },
         {
             "id": 3,
@@ -2115,7 +2723,9 @@
             "bed": "1.6m クイーン",
             "bed_size": "ダブル",
             "tick_b": false,
-            "price": "1.790.000VND+"
+            "price": "1.790.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769267/AzumayaWeb/LTT/EXECUTIVE_FRONTSIDE__1_pkm9sq.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769268/AzumayaWeb/LTT/EXECUTIVE_FRONTSIDE__2_baifaf.jpg"]
+
         },
         {
             "id": 4,
@@ -2134,7 +2744,9 @@
             "bed": "1.6m クイーン",
             "bed_size": "クイーン",
             "tick_b": true,
-            "price": "1.790.000VND+"
+            "price": "1.790.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769502/AzumayaWeb/LTT/EXECUTIVE_BACKSIDE__1_ptv1se.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704769504/AzumayaWeb/LTT/EXECUTIVE_BACKSIDE__2_uutulh.jpg"]
+
         }
     ],
     "room_annex": {
@@ -2211,7 +2823,9 @@
             "bed": "1.6m クイーン",
             "bed_size": "ダブル",
             "tick_b": true,
-            "price": "1.050.000VND+"
+            "price": "1.050.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771122/AzumayaWeb/Annex/ANNEXM_1_mx5qf1.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771123/AzumayaWeb/Annex/ANNEXM_2_rcb9yz.jpg"]
+
         },
         {
             "id": 2,
@@ -2232,7 +2846,9 @@
             "bed": "1.6m クイーン",
             "bed_size": "ダブル",
             "tick_b": true,
-            "price": "1.180.000VND+"
+            "price": "1.180.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771121/AzumayaWeb/Annex/ANNEXL_1_ysscmv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704771121/AzumayaWeb/Annex/ANNEXL_2_hxeynf.jpg"]
+
         }
     ],
     "dn-branch": {
@@ -2344,7 +2960,9 @@
             "bed": "ダブル",
             "tick_b": false,
             "tick_w": false,
-            "price": "1.000.000VND+"
+            "price": "1.000.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774395/AzumayaWeb/DN/DeluxeNoWindowDouble_1_sbia9j.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774374/AzumayaWeb/DN/DeluxeNoWindowDouble_2_ataifd.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774375/AzumayaWeb/DN/DeluxeNoWindowDouble_3_kaykf3.jpg"]
+
         },
         {
             "id": 2,
@@ -2363,7 +2981,9 @@
             "bed": "ツイン",
             "tick_b": false,
             "tick_w": false,
-            "price": "1.000.000VND+"
+            "price": "1.000.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774378/AzumayaWeb/DN/DeluxeNowindowTwin_1_sshk95.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774379/AzumayaWeb/DN/DeluxeNoWindowTwin_2_wf2a7g.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774380/AzumayaWeb/DN/DeluxeNoWindowTwin_3_phvbd8.jpg"]
+
         },
         {
             "id": 3,
@@ -2382,7 +3002,9 @@
             "bed": "ダブル",
             "tick_w": true,
             "tick_b": false,
-            "price": "1.250.000VND+"
+            "price": "1.250.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774722/AzumayaWeb/DN/ExecutiveDouble_1_r9xk4w.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774383/AzumayaWeb/DN/ExecutiveDouble_2_ezbe3a.jpg"]
+
         },
         {
             "id": 4,
@@ -2401,7 +3023,9 @@
             "bed": "ツイン",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.250.000VND+"
+            "price": "1.250.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774386/AzumayaWeb/DN/ExecutiveTwin_1_eu0ezx.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774388/AzumayaWeb/DN/ExecutiveTwin_2_icb7rb.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774390/AzumayaWeb/DN/ExecutiveTwin_3_umngzq.jpg"]
+
         },
         {
             "id": 5,
@@ -2420,7 +3044,9 @@
             "bed": "ダブル",
             "tick_b": true,
             "tick_w": true,
-            "price": "1.500.000VND+"
+            "price": "1.500.000VND+", 
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774392/AzumayaWeb/DN/Suite_1_oe2vkg.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704774394/AzumayaWeb/DN/Suite_2_p9tedx.jpg"]
+
         }
     ],
     "hp-branch": {
@@ -2444,7 +3070,7 @@
         "serviceContent": "和朝食\n露天風呂（男性専用）\n日本語19チャンネル\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n無料ミニバー３本／日（ビール、コーラ、ポカリ）",
         "facility": "アメニティー&設備:",
         "facilityContent": "ワーキングデスク\n32型ソニーテレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ、櫛、綿棒\nスリッパ\nシャンプー、コンディショナー、ボディーソープ等\nミニバー",
-        "rental": "無料のレンタル:: ",
+        "rental": "無料のレンタル: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
         "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル・ハイフォン店では様々なサービスをご用意しております。日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
@@ -2477,7 +3103,7 @@
         "massageContent": "",
         "ask": "受付までお申し付けください。",
         "board": "お問い合わせ",
-        "contact1": "ご予約はお電話：:",
+        "contact1": "ご予約はお電話:",
         "contact2": "か Eメール:",
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 22 5382 8969",
@@ -2531,7 +3157,9 @@
             "bed": "ダブル",
             "tick_b": false,
             "tick_w": false,
-            "price": "1.200.000VND+"
+            "price": "1.200.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARDNOWINDOW_1_uoqgwn.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARDNOWINDOW_2_nem3cz.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARDNOWINDOW_3_bcr7e8.jpg"]
+
         },
         {
             "id": 2,
@@ -2550,7 +3178,9 @@
             "bed": "ダブル",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.325.000VND+"
+            "price": "1.325.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786106/AzumayaWeb/HP/STANDARD_1_weyzfx.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786106/AzumayaWeb/HP/STANDARD_2_lwbowi.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/STANDARD_3_qnyife.jpg"]
+
         },
         {
             "id": 3,
@@ -2569,7 +3199,9 @@
             "bed": "ダブル",
             "tick_w": true,
             "tick_b": false,
-            "price": "1.375.000VND+"
+            "price": "1.375.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786113/AzumayaWeb/HP/DELUXEM_1_rqtfpr.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786115/AzumayaWeb/HP/DELUXEM_2_y893bk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/DELUXEM_3_okngt5.jpg"]
+
         },
         {
             "id": 4,
@@ -2588,7 +3220,9 @@
             "bed": "ダブル",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.500.000VND+"
+            "price": "1.500.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/DELUXEL_1_ep5epv.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/DELUXEL_2_clnegk.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/DELUXEL_3_sm94wh.jpg"]
+
         },
         {
             "id": 5,
@@ -2607,7 +3241,9 @@
             "bed": "ダブル",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.625.000VND+"
+            "price": "1.625.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786115/AzumayaWeb/HP/EXECUTIVECITYVIEW_1_roi8oq.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786114/AzumayaWeb/HP/EXECUTIVECITYVIEW_2_jor37h.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786104/AzumayaWeb/HP/EXECUTIVECITYVIEW_3_br94v1.jpg"]
+
         },
         {
             "id": 6,
@@ -2626,7 +3262,9 @@
             "bed": "ダブル",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.625.000VND+"
+            "price": "1.625.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786106/AzumayaWeb/HP/EXECUTIVELAKEVIEW_1_aun9oc.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786107/AzumayaWeb/HP/EXECUTIVELAKEVIEW_2_ose0lb.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786105/AzumayaWeb/HP/EXECUTIVELAKEVIEW_3_knmngd.jpg"]
+
         },
         {
             "id": 7,
@@ -2645,7 +3283,9 @@
             "bed": "キング",
             "tick_b": false,
             "tick_w": true,
-            "price": "1.750.000VND+"
+            "price": "1.750.000VND+",
+            "images":[ "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786112/AzumayaWeb/HP/SUITE_1_jqgpgp.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786108/AzumayaWeb/HP/SUITE_2_jf3eqd.jpg"]
+
         },
         {
             "id": 8,
@@ -2664,7 +3304,9 @@
             "bed": "ダブル",
             "tick_b": true,
             "tick_w": true,
-            "price": "1.750.000VND+"
+            "price": "1.750.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786104/AzumayaWeb/HP/EXECUTIVECITYVIEWWITHKITCHEN_1_kqrpxm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786105/AzumayaWeb/HP/EXECUTIVECITYVIEWWITHKITCHEN_2_ticto4.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786105/AzumayaWeb/HP/EXECUTIVECITYVIEWWITHKITCHEN_3_kipcyf.jpg"]
+
         },
         {
             "id": 9,
@@ -2683,7 +3325,9 @@
             "bed": "キング",
             "tick_b": true,
             "tick_w": true,
-            "price": "1.875.000VND+"
+            "price": "1.875.000VND+",
+            "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_1_pfmu4y.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_2_dxcut3.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704786110/AzumayaWeb/HP/SUITEWITHKITCHEN_3_cnec2s.jpg"]
+
         }
     ],
     "massage": {
@@ -2762,18 +3406,31 @@
         ],
         "requirement": "そのほかの要望:",
         "requirement-note": "(レイトチェックアウト ピックアップ, etc..)",
-        "requirement-item": [
+        "pickup":"ピックアップ",
+        "pickupTime":"フライトの到着時間をお教えください",
+        "pickupNumber":"便名を教えてください",
+        "dropOff":"ドロップオフ",
+        "dropOffTime":"フライトの出発時間をお教えください",
+        "dropOffNumber":"便名を教えてください",
+        "DO_PU_note":"約25-30$/片道 (時間帯による)",
+        "earlyIn":"アーリーチェックイン",
+        "earlyInTime":"チェックインしたい時間を入力してください",
+        "earlyIn_note":[
             {
-                "name": " ピックアップ"
+                "note":"午前10時まで：1泊分の100％チャージ"
             },
             {
-                "name": "ドロップオフ"
+                "note":"午前10時以降：1泊分の50％チャージ"
+            }
+        ],
+        "lateOut":"レイトチェックアウト",
+        "lateOutTime":"チェックアウトしたい時間を入力してください",
+        "lateOut_note":[
+            {
+                "note":"午後6時まで：1泊分の50％チャージ"
             },
             {
-                "name": "アーリーチェックイン"
-            },
-            {
-                "name": "レイトチェックアウト"
+                "note":"午後6時以降：1泊分の100％チャージ"
             }
         ],
         "request": "その他ご要望がございましたらご記入くださいませ",
@@ -2896,400 +3553,6 @@
         "email": "メールアドレス",
         "phone": "お電話番号",
         "send": "送信"
-    },
-    "pp-branch": {
-        "id": 1,
-        "name": "東屋ホテルカンボジア　プノンペン店",
-        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705138315/AzumayaWeb/cambodia_slide1_u4465b.jpg"
-    },
-    "room_pp": {
-        "room": "お部屋のご案内",
-        "roomContent": "和朝食、露天風呂(女性専用時間あり)、日本語10チャンネル、高速無線インターネット （有線がありません。）、ベッドメイキング、ミネラルウォーター2本／日、これらは料金に含まれております。",
-        "tariff": "価格表一覧",
-        "vat": "※客室代にて消費税(VAT)別途",
-        "service": "料金表に含まれるもの:",
-        "serviceContent": "和朝食\n露天風呂（男性専用）\n日本語8チャンネル\n高速無線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料",
-        "facility": "アメニティー&設備:",
-        "facilityContent": "バスタブ\nワーキングデスク\n32型ソニーテレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
-        "rental": "無料のレンタル:",
-        "rentalContent": "220V → 110V の変圧器\n追加のハブ",
-        "business": "ビジネスサービス",
-        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　プノンペン店では様々なサービスをご用意しております。\n日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
-        "pickup": "空港送迎サービス",
-        "pickup_fee1": "$15",
-        "pickup_fee2": "$25",
-        "pickup_car": "4人乗り、出待ち",
-        "pickup_car2": "16人乗り、出待ち",
-        "minibar": "ミニバー",
-        "minibar_fee": "$1～",
-        "minibar_type": "ソフトドリンク、ビール等",
-        "laundry": "ランドリーサービス",
-        "laundry_fee1": "$0.5～",
-        "laundry_fee2": "長期滞在者のための特別価格あり",
-        "print": "プリント・コピー利用",
-        "print_fee1": "1日10ページまで無料 ・ 11ページ目から1枚0.1$",
-        "hotelService": "ホテルサービス",
-        "roten": "露天風呂",
-        "breakfast": "朝食",
-        "ground": "ロビー",
-        "weekday": "月 - 金",
-        "weekend": "土 - 日",
-        "breakfastContent1": "ビュッフェ 6:00 ~ 8:30, セットメニュー 8:30 ~10:00 (ラストオーダー 9:45)",
-        "breakfastContent2": "セットメニュー 6:00 ~ 10:00 (ラストオーダー 9:45)",
-        "breakfastNote1": "※朝6時までは朝食のテイクアウトも可能です。",
-        "breakfastNote2": "事前に受付にてご予約ください（おにぎり・サンドイッチ）",
-        "visitor": "ビジター料金\n\nビュッフェor\n 和定食 8$\n\nその他の\n朝食セット 6$",
-        "rotenburo": "露天風呂(男性専用)",
-        "rotenFloor": "7階 (6階から階段でお上がりください)",
-        "rotenContent1": "5:30 ~ 10:00",
-        "rotenNote1": "(最終入場 9:30)",
-        "rotenContent2": "17:00 ～23:00",
-        "rotenNote2": "(最終入場 22:30)",
-        "rotenContent3": "7:00 ~ 23:00",
-        "rotenNote3": "※ 女性専用時間：毎日23:15 ～ 1:15",
-        "rotenNote4": "※ お部屋のバスタオルとハンドタオルをご持参ください",
-        "massage": "フットマッサージ",
-        "massageContent1": "13:00 ～ 22:00",
-        "massageNote1": "(最終入場 21:20)",
-        "massageContent2": "10:00 ～ 22:00",
-        "massageVisitor": "ビジター料金\n40分：10$\n70分：15$\n100分：20$\n\nご宿泊者料金\n記から10%\nOFF",
-        "reception": "受付",
-        "receptionAsk": "内線 ： 0番 もしくは 100番",
-        "attention": "外出の際の注意",
-        "attentionContent": "バイクによる財布・カバン・携帯電話のひったくりが多発しております。ショルダーバッグであってもひったくりに遭う場合がございます。道を渡る際、また歩道を歩いている際は周りに十分ご注意くださいませ。",
-        "thanks": "ごゆっくりとおくつろぎくださいませ。",
-        "board": "お問い合わせ",
-        "contact1": "ご予約はお電話：",
-        "contact2": "か Eメール:",
-        "contact3": "もしくはホテルのウィブサイト:",
-        "contact4": "からお願いします。",
-        "tel": "電話番号",
-        "phone": "(+855) 23 218 961",
-        "email": "reservation@azumayacambodia.com",
-        "website": "www.azumayavietnam.com",
-        "location": "アクセス",
-        "gallery": "ギャラリー",
-        "locationContent": "東屋ホテル　プノンペン店ではプノンペンタワーの真向かいという好立地で、遠方から朝の渋滞の中勤務をする必要がございません。 また、プノンペンの真ん中に位置するため、様々な場所へのアクセスも簡単でございます。",
-        "address": " 住所： No. 302 St.228, Phnom Penh, Cambodia (プノンペンタワー真向かい)",
-        "emailTitle": "Eメール",
-        "type": "部屋タイプ",
-        "rate": "客室料金",
-        "desc": "説明",
-        "size": "広さ m²",
-        "window": "窓",
-        "bath": "バスタブ",
-        "kitchen": "キッチン",
-        "terrace": "テラス",
-        "bed": "ベッドのサイズ",
-        "tv": "32型ソニーテレビ",
-        "reservation": "予約する",
-        "features": [
-            {
-                "name": "お部屋のご案内"
-            },
-            {
-                "name": "価格表一覧"
-            },
-            {
-                "name": "ビジネスサービス"
-            },
-            {
-                "name": "ホテルサービス"
-            },
-            {
-                "name": "ギャラリー"
-            },
-            {
-                "name": "アクセス"
-            }
-        ]
-    },
-    "pp": [
-        {
-            "id": 1,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "diw",
-            "name": "DELUXE INSIDE WINDOW",
-            "size": "23",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "バスタブ",
-            "in2": "洗浄機能付きトイレ",
-            "in3": "ワーキングデスク",
-            "in4": "32型ソニーテレビ",
-            "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
-            "in6": "無料wifi",
-            "in7": "セキュリティーボックス",
-            "in8": "ヘアドライヤー",
-            "in9": "髭剃り、歯ブラシ",
-            "in10": "スリッパ",
-            "in11": "シャンプー、コンディショナー、ボディーソープ等",
-            "priceTitle": "料金",
-            "bed": "キング",
-            "tick_w": false,
-            "price": "$45"
-        },
-        {
-            "id": 2,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "d",
-            "name": "DELUXE",
-            "size": "23",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "バスタブ",
-            "in2": "洗浄機能付きトイレ",
-            "in3": "ワーキングデスク",
-            "in4": "32型ソニーテレビ",
-            "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
-            "in6": "無料wifi",
-            "in7": "セキュリティーボックス",
-            "in8": "ヘアドライヤー",
-            "in9": "髭剃り、歯ブラシ",
-            "in10": "スリッパ",
-            "in11": "シャンプー、コンディショナー、ボディーソープ等",
-            "priceTitle": "料金",
-            "bed": "ダブル",
-            "tick_w": true,
-            "price": "$50"
-        },
-        {
-            "id": 3,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "dt",
-            "name": "DELUXE TWIN",
-            "size": "23",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "バスタブ",
-            "in2": "洗浄機能付きトイレ",
-            "in3": "ワーキングデスク",
-            "in4": "32型ソニーテレビ",
-            "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
-            "in6": "無料wifi",
-            "in7": "セキュリティーボックス",
-            "in8": "ヘアドライヤー",
-            "in9": "髭剃り、歯ブラシ",
-            "in10": "スリッパ",
-            "in11": "シャンプー、コンディショナー、ボディーソープ等",
-            "priceTitle": "料金",
-            "bed": "ツイン",
-            "tick_w": true,
-            "price": "$50"
-        },
-        {
-            "id": 4,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "df",
-            "name": "DELUXE FRONT",
-            "size": "28",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "バスタブ",
-            "in2": "洗浄機能付きトイレ",
-            "in3": "ワーキングデスク",
-            "in4": "32型ソニーテレビ",
-            "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
-            "in6": "無料wifi",
-            "in7": "セキュリティーボックス",
-            "in8": "ヘアドライヤー",
-            "in9": "髭剃り、歯ブラシ",
-            "in10": "スリッパ",
-            "in11": "シャンプー、コンディショナー、ボディーソープ等",
-            "priceTitle": "料金",
-            "bed": "キング",
-            "tick_w": true,
-            "price": "$55"
-        },
-        {
-            "id": 5,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "e",
-            "name": "EXECUTIVE",
-            "size": "31",
-            "sizeTitle": "広さ",
-            "bedTitle": "ベットサイズ",
-            "install": "設備",
-            "in1": "バスタブ",
-            "in2": "洗浄機能付きトイレ",
-            "in3": "ワーキングデスク",
-            "in4": "32型ソニーテレビ",
-            "in5": "民放、NHK、WOWOWなど日本語放送10チャンネル",
-            "in6": "無料wifi",
-            "in7": "セキュリティーボックス",
-            "in8": "ヘアドライヤー",
-            "in9": "髭剃り、歯ブラシ",
-            "in10": "スリッパ",
-            "in11": "シャンプー、コンディショナー、ボディーソープ等",
-            "priceTitle": "料金",
-            "bed": "ダブル",
-            "tick_w": true,
-            "price": "$60"
-        }
-    ],
-    "home_pp": {
-        "name": "東屋ホテル",
-        "news_title": "ニュース",
-        "welcome_title": "ようこそ、東屋ホテルへ",
-        "welcome_sub-title": "海外出張者のための心安らぐ空間を",
-        "welcome_content": "現在、カンボジア（プノンペン）にビジネス出張される方が年々増えております。そんな中、言葉や食事など、カンボジアでの滞在に対し不安を抱えておられるはずです。ここ東屋では「和」をコンセプトに、日本人出張者の皆様が異国を感じない心安らぐ空間を提供しております。ゆっくりと足を伸ばしてお入り頂ける「露天風呂」や、一日の活力となる「こだわりの和朝食」、溜まった疲れをほぐすことのできる「フットマッサージ」などをご用意しており、お仕事終わりにたっぷりとおくつろぎ頂くことができます。 フロントには日本語対応可能なスタッフが常駐しており、お部屋ではNHKなどの日本の民放が視聴でき、空港からの送迎サービスや長期出張者のためのランドリーサービスを始め、高速無線インターネットやレンタカー手配代行など、安心してご滞在頂けるよう最善のおもてなしを心がけております。",
-        "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
-        "new_item": [
-            {
-                "id": 1,
-                "new": " AZUMAYA COFFEE AND SNACK OPEN",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            },
-            {
-                "id": 2,
-                "new": "Re-opening Open Air Hot Bath for Visitor from 24th May 2023",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            },
-            {
-                "id": 3,
-                "new": "Notice of Open Air Hot Bath Visitor Service Closing from April 1st 2022",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            },
-            {
-                "id": 4,
-                "new": "Re-opening Open Air Hot Bath and Massage from October 18th, 2021",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            }
-        ]
-    },
-    "feature_pp": {
-        "name": "東屋8大魅力",
-        "main_title": "東屋8大魅力",
-        "main_content": "東屋ホテルをいつもご愛顧頂きまして誠にありがとうございます。カンボジアという異国へご出張される方に、日本と変わらぬ快適な環境を提供致したいという一心で、今回はプノンペンへの出店となりました。プノンペンへご主張の際は、是非とも東屋ホテルにお越しくださいませ。プノンペン店もベトナム店同様の変わらぬ東屋８大サービスを提供して参ります。",
-        "feature_item": [
-            {
-                "id": 1,
-                "title": "一泊45$からのリーズナブルな価格",
-                "content": "東屋価格はリーズナブルな価格で提供しております。$1当たりの価格追求にこだわり、決して豪華ではない内装ですが、その分価格に反映する努力を惜しみません。全部屋シャワートイレ付き、アメニティーも日系会社より取り寄せ、小さめヘッドの歯ブラシ、髭剃りやコンディショナー含め８種類ご用意。会社契約で更にお安くご宿泊頂けます。長期滞在者にもさらなる割引をご用意しております。お気軽に受付までお問い合わせください。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
-                "num": "その 1"
-            },
-            {
-                "id": 2,
-                "title": "プノンペンタワーの\n真向かいという好立地",
-                "content": "日系オフィスが数多く入るプノンペンの中心的オフィスビルのプノンペンタワー真向かいでどこへ行くにも便利なロケーションです。日本食が多いBKK1地区へも1ブロック、空港近くの経済特区へ行かれる際も空港までの大通りまですぐに出ることができます。プノンペンの中心地のため、様々な場所へのアクセスが簡単です。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/f2-1_pjlnx4.jpg",
-                "num": "その 2"
-            },
-            {
-                "id": 3,
-                "title": "水風呂付き露天風呂&サウナ",
-                "content": "プノンペンのど真ん中にも露天風呂というオアシスができました。清潔感のあるサウナと水風呂も完備致しております。早朝の目覚めや、仕事終わりでリラックスしたい時、暑いカンボジアでの疲れを取りたい時に是非ともご利用くださいませ。営業時間は平日朝6am – 10am, 夕方5pm – 11pm、土日祝は朝7am – 11pmまで通しで営業しております。\n※ 女性専用時間：毎日11:15pm – 1:15am",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
-                "num": "その 3",
-                "hasLink": true,
-                "link": "/"
-            },
-            {
-                "id": 4,
-                "title": "和朝食",
-                "content": "1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。焼き魚・煮物・揚げ物・炒め物など、全9品からなるボリューム満点の東屋自慢の和朝食セットをご用意しております。今後は午前6時～8時に和朝食ビュッフェを、午前８時〜10時はセットメニューをご用意する予定でございます。その他、丼ものやカレーライス、豚の生姜焼きなど長期滞在の方でも飽きることのないようメニュー構成に気をつけております。ビジターの$8でご利用いただけます。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
-                "hasLink": true,
-                "num": "その 4",
-                "link": "/"
-            },
-            {
-                "id": 5,
-                "title": "リピート率90%以上の本格派フットマッサージ併設",
-                "content": "全てのスタッフがしっかりと研修を受け、ご自身の調子が悪いところをちゃんと認識でき、溜まった疲れが取れるマッサージを受けられます。70分のコースでは自慢のツボ押しをメインとしたフットマッサージと、頭・首・肩・腕・背中まで全身くまなくマッサージを受けられます。ホテル内にマッサージルームを併設しており、男女問わず誰でも気軽にご利用頂けます。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
-                "num": "その 7",
-                "hasLink": true,
-                "link": "/"
-            },
-            {
-                "id": 6,
-                "title": "日本語の\nおもてなし",
-                "content": "受付は日本語の話せるスタッフが常駐、マネージャーも日本語対応可能なので英語が苦手でも安心です。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg",
-                "num": "その 6"
-            },
-            {
-                "id": 7,
-                "title": "日本語テレビ視聴可能",
-                "content": "TBS・フジ・日テレなど主要民放局にNHK総合、WOWOWなど日本での生活と変わらぬ日本語放送をオンタイムでご視聴頂けます。その日のスポーツニュースや見ていた連続ドラマも録画を気にすることなく日本と変わらぬ環境でリラックスしていただけます。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/JPTV_oueohf.jpg",
-                "num": "その 5"
-            },
-            {
-                "id": 8,
-                "title": "日系レストラン テナント募集中!",
-                "content": "当館内のスペースにてレストランテナントを募集しております。日本から出張者様や在住邦 人の方々、または現地の人々へおいしいごはんをご提供されたい方をお待ちしております。 寿司やラーメン、居酒屋やイタリアンなど、種類は問いませんので、お気軽にお問合せくだ さいませ。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1707123029/AzumayaWeb/wanted-en_yhr6un.png",
-                "num": "その 8"
-            }
-        ]
-    },
-    "policy_pp": {
-        "title": "Hotel Policies",
-        "data": [
-            {
-                "name": "CHECK-IN",
-                "content": "After 15:00."
-            },
-            {
-                "name": "CHECK-OUT",
-                "content": "Until 12:00"
-            },
-            {
-                "name": "EARLY CHECK-IN",
-                "content": "Will be subject to the availability of hotel room status.\n- Check in early until 10:00 : 100% charged of one night room rate.\n- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
-            },
-            {
-                "name": "CHECK-OUT LATE",
-                "content": "Will be subject to the availability of hotel room status.\n- Check out late until 18:00 : 50% charged of the one night.\n- Check out late from 18:00 : 100% charged of the one night."
-            },
-            {
-                "name": "NO SHOW",
-                "content": "100% charged one night."
-            },
-            {
-                "name": "LATE CANCELLATION",
-                "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.\n- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
-            },
-            {
-                "name": "EARLY CHECK-OUT",
-                "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
-            },
-            {
-                "name": "ADVANNCED PAYMENT BEFORE CHECK-OUT",
-                "content": "We do welcome the payment before check-out to make it smoothly."
-            },
-            {
-                "name": "Exchange rate is based on",
-                "content": "The hotel rate upon check-out date for non-contractor. The selling rate of ACLEDA BANK at 6:00 upon check-out date for contractor."
-            },
-            {
-                "name": "Please be noted ",
-                "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
-            }
-        ]
     },
     "caption": [
         {
@@ -3512,6 +3775,9 @@
             {
                 "content": "※女性専用時間については各店舗までお問い合わせください。"
             },
+             {
+                "fe_content": "1~4名 / 時間 : 800.000VND"
+            },
             {
                 "fe_content": "1~4名 / 時間 : 800.000VND"
             },
@@ -3526,6 +3792,7 @@
         "reservation": "ご予約",
         "contact": "お問い合わせください",
         "contact_title": "ご希望の連絡方法を選択してください",
+        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172400/AzumayaWeb/Az_website_service_page_photos-3_c5c7kv.jpg",
         "table_ll1": [
             {
                 "row1": "平日",
@@ -3612,5 +3879,9 @@
                 "content": "※露天風呂とのお得なセットもあり"
             }
         ]
+    },
+    "error":{
+        "title":"お探しのページは存在しません。",
+        "content":" ホームページに戻る"
     }
 }

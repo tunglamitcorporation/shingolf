@@ -107,109 +107,601 @@
         "placeHolder": "Please choose a city",
         "city": [
             {
-                "id": "HCM",
+                "id": "hotel-hcm",
                 "city_name": "Ho Chi Minh"
             },
             {
-                "id": "HN",
+                "id": "hotel-hn",
                 "city_name": "Ha Noi"
             },
             {
-                "id": "DN",
+                "id": "hotel-dn",
                 "city_name": "Da Nang"
             },
             {
-                "id": "HP",
+                "id": "hotel-hp",
                 "city_name": "Hai Phong"
             }
         ],
         "branch": [
             {
                 "branch_id": "hcm-select",
-                "city_id": "HCM",
+                "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Please select a branch"
             },
             {
                 "branch_id": "le-thanh-ton-detail",
-                "city_id": "HCM",
+                "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Le Thanh Ton"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "city_id": "HCM",
+                "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 1"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "city_id": "HCM",
+                "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Thai Van Lung 2"
             },
             {
                 "branch_id": "annex-detail",
-                "city_id": "HCM",
+                "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
             },
             {
                 "branch_id": "hn-select",
-                "city_id": "HN",
+                "city_id": "hotel-hn",
                 "city_name": "Ha Noi",
                 "branch_name": "Please select a branch"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "city_id": "HN",
+                "city_id": "hotel-hn",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Hai Ba Trung 1"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "city_id": "HN",
+                "city_id": "hotel-hn",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 2"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "city_id": "HN",
+                "city_id": "hotel-hn",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Kim Ma 3"
             },
             {
                 "branch_id": "linh-lang-detail",
-                "city_id": "HN",
+                "city_id": "hotel-hn",
                 "city_name": "Ha Noi",
                 "branch_name": "Azumaya Linh Lang"
             },
             {
                 "branch_id": "da-nang-select",
-                "city_id": "DN",
+                "city_id": "hotel-dn",
                 "city_name": "Da Nang",
                 "branch_name": "Please select a branch"
             },
             {
                 "branch_id": "da-nang",
-                "city_id": "DN",
+                "city_id": "hotel-dn",
                 "city_name": "Da Nang",
                 "branch_name": "Azumaya Da Nang Hotel"
             },
             {
                 "branch_id": "hai-phong-select",
-                "city_id": "HP",
+                "city_id": "hotel-hp",
                 "city_name": "Hai Phong",
                 "branch_name": "Please select a branch"
             },
             {
                 "branch_id": "hai-phong",
-                "city_id": "HP",
+                "city_id": "hotel-hp",
                 "city_name": "Hai Phong",
                 "branch_name": "Azumaya Hai Phong Hotel"
             }
         ],
-        "city_pp": "Phnom Penh",
+        "room":[
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "room_name":"Please select a kind of room"
+
+            },
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.390.000VND+",
+                "room_name":"DELUXE GROUND"
+
+            },
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.520.000VND+",
+                "room_name":"DELUXE"
+
+            },   
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.790.000VND+",
+                "room_name":"EXECUTIVE (FRONT SIDE)"
+
+            },   
+            {
+                "branch_id":"le-thanh-ton-detail",
+                "branch_name":"Azumaya Le Thanh Ton",
+                "price":"1.790.000VND+",
+                "room_name":"EXECUTIVE (BACK SIDE)"
+
+            },
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "room_name":"Please select a kind of room"
+
+            },
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.130.000VND+",
+                "room_name":"ECONOMY/NO-WINDOW"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.180.000VND+",
+                "room_name":"ECONOMY"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.310.000VND+",
+                "room_name":"STANDARD"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.440.000VND+",
+                "room_name":"DELUXE/NO-WINDOW"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE-M"
+
+            },        
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.710.000VND+",
+                "room_name":"DELUXE-L"
+
+            },    
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.580.000VND+",
+                "room_name":"TERRACE-M"
+
+            },   
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.710.000VND+",
+                "room_name":"TERRACE-L"
+            }, 
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.970.000VND+",
+                "room_name":"SUITE"
+
+            },  
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"1.970.000VND+",
+                "room_name":"SUITE - TWIN"
+
+            },   
+            {
+                "branch_id":"thai-van-lung-1-detail",
+                "branch_name":"Azumaya Thai Van Lung 1",
+                "price":"2.380.000VND+",
+                "room_name":"VIP TATAMI"
+            },  
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "room_name":"Please select a kind of room"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.390.000VND+",
+                "room_name":"DELUXE M NO WINDOW"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.470.000VND+",
+                "room_name":"DELUXE L NO WINDOW"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.650.000VND+",
+                "room_name":"EXECUTIVE FRONTSIDE"
+            },   
+
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.650.000VND+",
+                "room_name":"EXECUTIVE BACKSIDE"
+            },  
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.790.000VND+",
+                "room_name":"EXECUTIVE TWIN NO WINDOW"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.860.000VND+",
+                "room_name":"SEMI SUITE"
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.920.000VND+",
+                "room_name":"SUITE"
+
+            },   
+            {
+                "branch_id":"thai-van-lung-2-detail",
+                "branch_name":"Azumaya Thai Van Lung 2",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE"
+
+            },   
+            {
+                "branch_id":"annex-detail",
+                "branch_name":"Azumaya Annex",
+                "room_name":"Please select a kind of room"
+
+            },
+            {
+                "branch_id":"annex-detail",
+                "branch_name":"Azumaya Annex",
+                "price":"1.050.000VND+",
+                "room_name":"ANNEX M"
+
+            },   
+            {
+                "branch_id":"annex-detail",
+                "branch_name":"Azumaya Annex",
+                "price":"1.180.000VND+",
+                "room_name":"ANNEX L"
+
+            },
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "room_name":"Please select a kind of room"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.310.000VND+",
+                "room_name":"DELUXE 1F (NO VIEW)"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.440.000VND+",
+                "room_name":"DELUXE - INSIDE WINDOW"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.580.000VND+",
+                "room_name":"EXECUTIVE"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.650.000VND+",
+                "room_name":"EXECUTIVE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.760.000VND+",
+                "room_name":"SEMI SUITE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"hai-ba-trung-detail",
+                "branch_name":"Azumaya Hai Ba Trung 1",
+                "price":"1.840.000VND+",
+                "room_name":"SUITE"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "room_name":"Please select a kind of room"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.700.000VND+",
+                "room_name":"LAKE SIDE M"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.840.000VND+",
+                "room_name":"LAKE SIDE L"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.840.000VND+",
+                "room_name":"EXECUTIVE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.970.000VND+",
+                "room_name":"SUITE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"kim-ma-2-detail",
+                "branch_name":"Azumaya Kim Ma 2",
+                "price":"1.180.000VND+",
+                "room_name":"ANNEX WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "room_name":"Please select a kind of room"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.260.000VND+",
+                "room_name":"STANDARD NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.370.000VND+",
+                "room_name":"DELUXE M SMALL WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.450.000VND+",
+                "room_name":"DELUXE L NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.450.000VND+",
+                "room_name":"DELUXE L SMALL WINDOW IN BATH"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.580.000VND+",
+                "room_name":"DELUXE L WINDOW"
+
+            }, 
+            {
+                "branch_id":"kim-ma-3-detail",
+                "branch_name":"Azumaya Kim Ma 3",
+                "price":"1.700.000VND+",
+                "room_name":"LAKE SIDE"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "room_name":"Please select a kind of room"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.260.000VND+",
+                "room_name":"STANDARD INSIDE WINDOW ( NO VIEW )"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.440.000VND+",
+                "room_name":"DELUXE"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.440.000VND+",
+                "room_name":"EXECUTIVE NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.640.000VND+",
+                "room_name":"EXECUTIVE"
+
+            }, 
+            {
+                "branch_id":"linh-lang-detail",
+                "branch_name":"Azumaya Linh Lang",
+                "price":"1.840.000VND+",
+                "room_name":"SUITE WITH KITCHEN"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "room_name":"Please select a kind of room"
+
+            },
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.000.000VND+",
+                "room_name":"DELUXE NO WINDOW DOUBLE"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.000.000VND+",
+                "room_name":"DELUXE NO WINDOW TWIN"
+
+            }, 
+
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.250.000VND+",
+                "room_name":"EXECUTIVE DOULE"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.250.000VND+",
+                "room_name":"EXECUTIVE TWIN"
+
+            }, 
+            {
+                "branch_id":"da-nang",
+                "branch_name":"Azumaya Da Nang Hotel",
+                "price":"1.500.000VND+",
+                "room_name":"SUITE"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "room_name":"Please select a kind of room"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.200.000VND+",
+                "room_name":"STANDARD NO WINDOW"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.325.000VND+",
+                "room_name":"STANDARD"
+
+            }, 
+
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.375.000VND+",
+                "room_name":"DELUXE M"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.500.000VND+",
+                "room_name":"DELUXE L"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.625.000VND+",
+                "room_name":"EXECUTIVE CITY VIEW"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.625.000VND+",
+                "room_name":"EXECUTIVE LAKE VIEW"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.750.000VND+",
+                "room_name":"SUITE"
+
+            }, 
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.750.000VND+",
+                "room_name":"EXECUTIVE LAKE VIEW WITH KITCHEN"
+
+            }, 
+
+            {
+                "branch_id":"hai-phong",
+                "branch_name":"Azumaya Hai Phong Hotel",
+                "price":"1.875.000VND+",
+                "room_name":"SUITE WITH KITCHEN"
+
+            }
+
+        ],
+        "city_pp": "phnom-penh",
         "branch_pp": "Azumaya Phnom Penh"
     },
     "feature": {
@@ -349,20 +841,20 @@
                 "name": "Hai Phong"
             }
         ],
-        "service_name": [
-            {
-                "name": "Rotenburo",
-                "link": "/Service/Test/Vietnam/Service?tab=rotenburo"
-            },
-            {
-                "name": "Breakfast",
-                "link": "/Service/Test/Vietnam/Service?tab=breakfast"
-            },
-            {
-                "name": "Massage",
-                "link": "/Service/Test/Vietnam/Service?tab=massage"
-            }
-        ],
+            "service_name": [
+                {
+                    "name": "Breakfast",
+                    "link": "/breakfast"
+                },
+                {
+                    "name": "Rotenburo",
+                    "link": "/rotenburo"
+                },
+                {
+                    "name": "Massage",
+                    "link": "/massage"
+                }
+            ],
         "hcm-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
         "hcm-roten-female": "※Female can use Rotenburo at Azumaya Thai Van Lung 2, From Mon - Fri : 17:00 - 18:45, price is 150.000/pax \n※Private - Rotenburo is available from Mon To Fri: 11:00 to 17:00 (last order 16:00) \nPrice: 800.000vnd/hour for 1~4pax & 1.000.000vnd/hour for 5~8pax \nFemale customer also can use. Booking a day before is required.",
         "hcm-breakfast-title": "Azumaya Breakfast are open daily from 6am to 10am. Visitor are also welcoming. Price for visitor is as following",
@@ -594,6 +1086,10 @@
             }
         ]
     },
+    "thank_you":{
+        "title":"Your reservation has not yet completed.",
+        "content":"Your reservation has not yet completed. Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception address"
+    },
     "hn-branch": {
         "branch": [
             {
@@ -621,7 +1117,7 @@
                 "id": 4,
                 "name": "Azumaya Linh Lang",
                 "desc": "Ling Lang branch has 46 rooms in total with open-air bath, Japanese breakfast , Japanese izakaya \"ISSUN Boushi\" . All the rooms are equipped with shower toilet, bathtub, and Japanese TV show. The hotel is within walking distance from Lotte Centre which is located along Linh Lang road where many Japanese restaurants have opened recently. At the hotel, high-tea massage is also available on the 7th floor. It records over 90% of repeat customer rate. Last order is 9:45 pm.. You can enjoy a night view from each massage chair. It features a spacious outdoor bath. You can have a pleasant morning at the breakfast venue on the 8th floor with a fine view.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710306679/AzumayaWeb/AZ-LL-FRONT-FIX-2_b1tphv.jpg",
                 "link": "/linh-lang-detail/room"
             }
         ],
@@ -1780,7 +2276,7 @@
             "in4": "Toilet with bidet function",
             "in5":"",
             "priceTitle": "Price",
-            "bed": "1.6m Queen and 1.4 Double size bed",
+            "bed": "1.6m Queen and 1.4m Double size bed",
             "bed_size": "QUEEN /DOUBLE",
             "tick_w": true,
             "tick_t": false,
@@ -2839,18 +3335,31 @@
         ],
         "requirement": "Any special requirement:",
         "requirement-note": "(late check-out, pick-up, etc,...)",
-        "requirement-item": [
+        "pickup":"Pick up",
+        "pickupTime":"Please tell me the arrival time at the airport",
+        "pickupNumber":"Flight Number",
+        "dropOff":"Drop off",
+        "dropOffTime":"Please mention the return flight time",
+        "dropOffNumber":"Flight Number",
+        "DO_PU_note":"$25-30/one way (depends on the time)",
+        "earlyIn":"Early check-in",
+        "earlyInTime":"Please input time you want to check in",
+        "earlyIn_note":[
             {
-                "name": "Pick up"
+                "note":"Check in early until 10:00 : 100% charged of one night room rate"
             },
             {
-                "name": "Drop off"
+                "note":"Check in early from 10:00 and before 15:00 : 50% charged of one night room rate"
+            }
+        ],
+        "lateOut":"Late check-out",
+        "lateOutTime":"Please input time you want to check out",
+        "lateOut_note":[
+            {
+                "note":"Check out late until 18:00 : 50% charged of the one night"
             },
             {
-                "name": "Early check-in"
-            },
-            {
-                "name": "Late check-out"
+                "note":"Check out late from 18:00 : 100% charged of the one night"
             }
         ],
         "request": "Please let us know if you have any requests",
@@ -2889,22 +3398,28 @@
         "benefit-content": "ベトナム　カンボジア　ミャンマー3カ国に計10支店以上ある全店舗を一括で契約させていただくので各都市のホテルと個別に契約を結ぶ必要はありません。 東南アジアにご出張の機会の多い企業様に最適です。",
         "contract-branch": [
             {
+                "link":"/hotel-hn",
                 "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
             },
             {
+                "link":"/hotel-hcm",
                 "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
             },
             {
+                "link":"/hotel-dn",
                 "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
             },
             {
+                "link":"/hotel-hp",
                 "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
             },
             {
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                "link":"/",
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710316925/AzumayaWeb/cambodia_p5nuet.jpg"
             },
             {
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                "link":"/",
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710317764/AzumayaWeb/coming_soon_auhag4.jpg"
             }
         ],
         "receipt-content": "日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",
@@ -2973,401 +3488,6 @@
         "email": "メールアドレス",
         "phone": "お電話番号",
         "send": "送信"
-    },
-    "pp-branch": {
-        "id": 1,
-        "name": "Azumaya Phnom Penh",
-        "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
-        "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705138315/AzumayaWeb/cambodia_slide1_u4465b.jpg"
-    },
-    "room_pp": {
-        "room": "Room",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for both Men and Women Please show the time of each), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, 2 bottles of water every day.",
-        "tariff": "Room Tariff",
-        "vat": "*Room price is excluded 10%",
-        "service": "Serviced included :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nJapanese TV channels\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
-        "facility": "Amenities & Facilities :",
-        "facilityContent": "Bathtub\nWorking desk\nTV 32 inches\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
-        "rental": "Free Rental : ",
-        "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
-        "business": "Business Service",
-        "businessContent": "For whom desiresacomfortable business trip, Azumaya Hotel Phnom Penh Branch provides various services to support you",
-        "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "$15",
-        "pickup_fee2": "$25",
-        "pickup_car": "Maximum 4 passengers available",
-        "pickup_car2": "Maximum 16 passengers available",
-        "minibar": "Minibar",
-        "minibar_fee": "$1～",
-        "minibar_type": "Soft drink, beer, etc.",
-        "laundry": "Laundry",
-        "laundry_fee1": "$0.5～",
-        "laundry_fee2": "Special price for long staying guest",
-        "print": "Print & Copy",
-        "print_fee1": "Free 1~10 pages/day ・ from 11 pages: $0.1/page per day",
-        "hotelService": "Hotel Service",
-        "roten": "Rotenburo",
-        "breakfast": "Breakfast",
-        "ground": "Ground",
-        "weekday": "Monday - Friday",
-        "weekend": "Sat - Sun",
-        "breakfastContent1": "Buffet 6am - 8:30am, Set menu 8:30am - 10am (Last order 9:45am)",
-        "breakfastContent2": "Set menu only 6am - 10am ( Last order 9:45am )",
-        "breakfastNote1": "*Before 6:00 am: take-away breakfast is available.",
-        "breakfastNote2": "Please reserve at reception in advance (riceball/sandwich)",
-        "visitor": "Visitor\n\nBuffet or\n Japanese set 8$\n\nOther breakfast\nset menu 6$",
-        "rotenburo": "Open Air Hot Bath (Only for male)",
-        "rotenFloor": "7th Floor",
-        "rotenContent1": "5:30 am - 10:00 am",
-        "rotenNote1": "(Last entry 9:30 am)",
-        "rotenContent2": "5:30 am - 11:00 am",
-        "rotenNote2": "(Last entry 10:30 am)",
-        "rotenContent3": "7:00 am - 11:00 am",
-        "rotenNote3": "*We open for ladies at 11:15pm - 1:15am",
-        "rotenNote4": "*Please bring bath towels & hand towels from room",
-        "massage": "Foot Massage",
-        "massageContent1": "1:00 pm - 10:00 pm",
-        "massageNote1": "(Last order 9:20 pm)",
-        "massageContent2": "10:00 am - 10:00 pm",
-        "massageVisitor": "Visitor\n40min：10$\n70min：15$\n100min：20$\n\nStaying guest\n10% discount",
-        "reception": "Reception",
-        "receptionAsk": "Please dial \" 0 \" or \" 100 \" to contact us (24/7 available)",
-        "attention": "ATTENTION: TO KEEP YOURSELF SAFE OUTSIDE",
-        "attentionContent": "Recently, the number of snatching crime by motor driver is increasing\nPlease be aware of bag snatcher while you are walking along the streets.\nIf any help is needed, please don't hesitate to call us.",
-        "thanks": "Thank you for choosing us! Please enjoy your stay in Azumaya!",
-        "board": "Azumaya Hotel Management Board",
-        "contact1": "Reservation can be made via phone:",
-        "contact2": "or Email:",
-        "contact3": "or visit our website:",
-        "tel": "Tel",
-        "phone": "(+855) 23 218 961",
-        "email": "reservation@azumayacambodia.com",
-        "website": "www.azumayavietnam.com",
-        "location": "Location",
-        "gallery": "Gallery",
-        "locationContent": "We are located in front of the Phnom Penh Tower, which can save up your commute time. In addition, it is easily accessible to various sites in Phnom Penh.",
-        "address": "Address : No. 302 St.228, Phnom Penh, Cambodia (In front of Phnom Penh Tower)",
-        "emailTitle": "Email",
-        "type": "Room Type",
-        "rate": "Room Rate",
-        "desc": "Description",
-        "size": "Size",
-        "window": "Window",
-        "bath": "Babthtub",
-        "kitchen": "Kitchen",
-        "terrace": "Terrace",
-        "bed": "Bed Size",
-        "tv": "TV 32 inches",
-        "reservation": "Make a Reservation",
-        "features": [
-            {
-                "name": "Room"
-            },
-            {
-                "name": "Room Tariff"
-            },
-            {
-                "name": "Business Service"
-            },
-            {
-                "name": "Hotel Service"
-            },
-            {
-                "name": "Gallery"
-            },
-            {
-                "name": "Location"
-            }
-        ]
-    },
-    "pp": [
-        {
-            "id": 1,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "diw",
-            "name": "DELUXE INSIDE WINDOW",
-            "size": "23",
-            "sizeTitle": "Size",
-            "bedTitle": "Bed",
-            "install": "Installation",
-            "in1": "Bathtub",
-            "in2": "Toilet with bidet function",
-            "in3": "Working desk",
-            "in4": "32 Inch Sony TV",
-            "in5": "International TV channels",
-            "in6": "Free Wi-Fi",
-            "in7": "Security box",
-            "in8": "Hair drier",
-            "in9": "Shavor & tooth brush",
-            "in10": "Slippers",
-            "in11": "Shampoo, conditioner, and body soap",
-            "priceTitle": "Price",
-            "bed": "King",
-            "tick_w": false,
-            "price": "$45"
-        },
-        {
-            "id": 2,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "d",
-            "name": "DELUXE",
-            "size": "23",
-            "sizeTitle": "Size",
-            "bedTitle": "Bed",
-            "install": "Installation",
-            "in1": "Bathtub",
-            "in2": "Toilet with bidet function",
-            "in3": "Working desk",
-            "in4": "32 Inch Sony TV",
-            "in5": "International TV channels",
-            "in6": "Free Wi-Fi",
-            "in7": "Security box",
-            "in8": "Hair drier",
-            "in9": "Shavor & tooth brush",
-            "in10": "Slippers",
-            "in11": "Shampoo, conditioner, and body soap",
-            "priceTitle": "Price",
-            "bed": "Double",
-            "tick_w": true,
-            "price": "$50"
-        },
-        {
-            "id": 3,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "dt",
-            "name": "DELUXE TWIN",
-            "size": "23",
-            "sizeTitle": "Size",
-            "bedTitle": "Bed",
-            "install": "Installation",
-            "in1": "Bathtub",
-            "in2": "Toilet with bidet function",
-            "in3": "Working desk",
-            "in4": "32 Inch Sony TV",
-            "in5": "International TV channels",
-            "in6": "Free Wi-Fi",
-            "in7": "Security box",
-            "in8": "Hair drier",
-            "in9": "Shavor & tooth brush",
-            "in10": "Slippers",
-            "in11": "Shampoo, conditioner, and body soap",
-            "priceTitle": "Price",
-            "bed": "Twin",
-            "tick_w": true,
-            "price": "$50"
-        },
-        {
-            "id": 4,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "df",
-            "name": "DELUXE FRONT",
-            "size": "28",
-            "sizeTitle": "Size",
-            "bedTitle": "Bed",
-            "install": "Installation",
-            "in1": "Bathtub",
-            "in2": "Toilet with bidet function",
-            "in3": "Working desk",
-            "in4": "32 Inch Sony TV",
-            "in5": "International TV channels",
-            "in6": "Free Wi-Fi",
-            "in7": "Security box",
-            "in8": "Hair drier",
-            "in9": "Shavor & tooth brush",
-            "in10": "Slippers",
-            "in11": "Shampoo, conditioner, and body soap",
-            "priceTitle": "Price",
-            "bed": "King",
-            "tick_w": true,
-            "price": "$55"
-        },
-        {
-            "id": 5,
-            "branch_name": "Azumaya Phnom Penh",
-            "room_id": "e",
-            "name": "EXECUTIVE",
-            "size": "31",
-            "sizeTitle": "Size",
-            "bedTitle": "Bed",
-            "install": "Installation",
-            "in1": "Bathtub",
-            "in2": "Toilet with bidet function",
-            "in3": "Working desk",
-            "in4": "32 Inch Sony TV",
-            "in5": "International TV channels",
-            "in6": "Free Wi-Fi",
-            "in7": "Security box",
-            "in8": "Hair drier",
-            "in9": "Shavor & tooth brush",
-            "in10": "Slippers",
-            "in11": "Shampoo, conditioner, and body soap",
-            "priceTitle": "Price",
-            "bed": "Double",
-            "tick_w": true,
-            "price": "$60"
-        }
-    ],
-    "home_pp": {
-        "name": "Azumaya Hotel",
-        "news_title": "WHAT'S NEWS ?",
-        "welcome_title": "Welcome to Azumaya Hotel",
-        "welcome_sub-title": "Comfort served for business travelers",
-        "welcome_content": "Nowadays, more and more businessmen from advanced countries move into Phnom Penh (Cambodia). However, during the stay, there must be many anxieties to face; such as languages and food. For their distress, we had one mission came into our mind. “Why don’t we provide comfortable space to relieve their stress?” The answer was clear: we prepare Rotenburo (open air bath tub) and foot massage to soothe their tiredness, and authentic Japanese breakfast & continental breakfast for their daily vitality. Following ― English-available receptionist, pick-up / drop-off service from / to airport, free laundry service for long-stay customers, free high-speed Wi-Fi service, arrangement service for rental car / tour, etc. Moreover, “Omotenashi” (Japanese hospitality) is always in our heart to serve you a pleasure in life of foreign land.",
-        "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
-        "line_btn": "Click here for detail",
-        "new_item": [
-            {
-                "id": 1,
-                "new": " AZUMAYA COFFEE AND SNACK OPEN",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            },
-            {
-                "id": 2,
-                "new": "Re-opening Open Air Hot Bath for Visitor from 24th May 2023",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            },
-            {
-                "id": 3,
-                "new": "Notice of Open Air Hot Bath Visitor Service Closing from April 1st 2022",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            },
-            {
-                "id": 4,
-                "new": "Re-opening Open Air Hot Bath and Massage from October 18th, 2021",
-                "link": "https://azumayavietnam.com/open-women-rotenburo-in-azumaya-kim-ma-2-branch/",
-                "month": "Jul",
-                "day": "7th",
-                "year": 2023,
-                "location": "PhnomPenh"
-            }
-        ]
-    },
-    "feature_pp": {
-        "name": "Feature",
-        "main_title": "Azumaya Hotel's 8 Characteristics",
-        "main_content": "Thank you always for your kind attention to Azumaya Hotel.Azumaya Hotel is a Japanese-style business hotel opened in Phnom Penh for whom are stressed out with their business trip and looking for comfortable place to be relieved. We serve 6 characteristics of service with the same quality as our Vietnam branches.",
-        "feature_item": [
-            {
-                "id": 1,
-                "title": "Reasonable price from $40 per night",
-                "content": "All rooms have shower toilet and amenity which are ordered from Japanese supplyer, 8 kinds of amenities including small head toothbrush, shaving and conditioner are prepared. You can stay with cheaper price with signing our contract. We would like offer more discounts for long term resident. Please feel free to contact to our receptionist.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
-                "num": "No 1"
-            },
-            {
-                "id": 2,
-                "title": "Best location for Japanese businessmen",
-                "content": "We are located in front of the Phnom Penh Tower, which can save up your commute time. In addition, it is easily accessible to various sites in Phnom Penh.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/f2-1_pjlnx4.jpg",
-                "num": "No 2"
-            },
-            {
-                "id": 3,
-                "title": "Japanese-style open-air hot bath with Sauna",
-                "content": "Here is the only place you can find Japanese style hot tub in Phnom Penh. We also have cold water bathtub, which you can experience sensational feeling of comfort in this roasting country.\n※ Women time : 11:15pm-1:15am (everyday)",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
-                "num": "No 3",
-                "hasLink": true,
-                "link": "/Service/Test/breakfast#rotenburo"
-            },
-            {
-                "id": 4,
-                "title": "Japanese breakfast",
-                "content": "Grilled fish, stewed meat, fried seafood, sautéed vegetables, and some other remarkable Japanese dishes you can enjoy. We also have authentic continental breakfast for whom wants to have a break for Asian food. From 2017, we are going to have buffet from 6am to 8am.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/nlsyeqwpqkna8vrareip.jpg",
-                "hasLink": true,
-                "num": "No 4",
-                "link": "/Service/Test/breakfast"
-            },
-            {
-                "id": 5,
-                "title": "Original style foot massage",
-                "content": "Completely outstanding and memorable massage opened in Phnom Penh. Over 90% are the repeat customers in Vietnam, we have absolute confident in our massage. Mainly we rub and push the point from head, shoulder, back, and finally to feet. To release the tiredness, find yourself great pleasure at our massage.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
-                "num": "No 7",
-                "hasLink": true,
-                "link": "/Service/Test/massage"
-            },
-            {
-                "id": 6,
-                "title": "Japanese hospitality",
-                "content": "We serve you with our Japanese available staff and manager for whom are not confident with English speaking.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg",
-                "num": "No 6"
-            },
-            {
-                "id": 7,
-                "title": "Japanese TV shows available",
-                "content": "You can watch the main local Japanese TV shows such as NHK, TBS, Fuji TV, Nihon TV in live same as you do in Japan. Please lean back and relax watching your favorite TV shows.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1705390320/AzumayaWeb/JPTV_oueohf.jpg",
-                "num": "No 5"
-            },
-            {
-                "id": 8,
-                "title": "Japanese Restaurant Tenant Wanted",
-                "content": "We are looking for restaurant tenants who have a great passion to serve delicious food to our guests and local customers. For more details, please contact us by email.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1707123029/AzumayaWeb/wanted-en_yhr6un.png",
-                "num": "No 8"
-            }
-        ]
-    },
-    "policy_pp": {
-        "title": "Hotel Policies",
-        "data": [
-            {
-                "name": "CHECK-IN",
-                "content": "After 15:00."
-            },
-            {
-                "name": "CHECK-OUT",
-                "content": "Until 12:00"
-            },
-            {
-                "name": "EARLY CHECK-IN",
-                "content": "Will be subject to the availability of hotel room status.\n- Check in early until 10:00 : 100% charged of one night room rate.\n- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
-            },
-            {
-                "name": "CHECK-OUT LATE",
-                "content": "Will be subject to the availability of hotel room status.\n- Check out late until 18:00 : 50% charged of the one night.\n- Check out late from 18:00 : 100% charged of the one night."
-            },
-            {
-                "name": "NO SHOW",
-                "content": "100% charged one night."
-            },
-            {
-                "name": "LATE CANCELLATION",
-                "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.\n- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
-            },
-            {
-                "name": "EARLY CHECK-OUT",
-                "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
-            },
-            {
-                "name": "ADVANNCED PAYMENT BEFORE CHECK-OUT",
-                "content": "We do welcome the payment before check-out to make it smoothly."
-            },
-            {
-                "name": "Exchange rate is based on",
-                "content": "The hotel rate upon check-out date for non-contractor. The selling rate of ACLEDA BANK at 6:00 upon check-out date for contractor."
-            },
-            {
-                "name": "Please be noted ",
-                "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Cambodian ) or ID ( Cambodian ) is required for guest registration as Cambodian laws"
-            }
-        ]
     },
     "caption": [
         {
@@ -3607,6 +3727,7 @@
         "reservation": "Reservation ",
         "contact": "Contact Us",
         "contact_title": "Kindly select a preferred method of contact with us",
+        "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281239/AzumayaWeb/Az_website_service_page_EN_page-0003_oa9abr.jpg",
         "table_ll1": [
             {
                 "row1": "Weekday",
@@ -3694,26 +3815,10 @@
             }
         ]
     },
-    "testroom": [
-        {
-          "name": "Standard Room",
-          "size": "300 sqft",
-          "price": "$100 per night",
-          "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg","https://res.cloudinary.com/dtdfsaaei/image/upload/v1704764744/AzumayaWeb/TVL1/ECONOMYNOWINDOW_1_w6wbtc.jpg"]
-        },
-        {
-          "name": "Deluxe Room",
-          "size": "400 sqft",
-          "price": "$150 per night",
-          "images": ["image4.jpg", "image5.jpg", "image6.jpg"]
-        },
-        {
-          "name": "Suite Room",
-          "size": "600 sqft",
-          "price": "$200 per night",
-          "images": ["image7.jpg", "image8.jpg", "image9.jpg"]
-        }
-      ]
+    "error":{
+        "title":"The page you are looking for does not exist",
+        "content":"Return to"
+    }
     
 
     
