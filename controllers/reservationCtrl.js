@@ -24,6 +24,21 @@ const contentCtrl = {
             return res.status(500).json({msg: err.message})
         }
     }, 
+    findCompanyByName: async (req, res) => {
+        try {
+            const dataOnBody = req.body;
+
+            const linkFindCompany = "https://database.azumayareport.com/company/find_company2";
+            await axios.post(linkFindCompany, dataOnBody, {
+                headers: { Authorization: CODE_AUTH_OTHER_BRANCH }
+            }).then(response => {
+                return res.json(response.data)
+            });
+        } catch (err) {
+            console.log("err.message", err.message);
+            return res.status(500).json({msg: err.message})
+        }
+    }
 }
 
 module.exports = contentCtrl
