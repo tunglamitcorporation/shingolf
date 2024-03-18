@@ -13,7 +13,13 @@ const FontProvider = ({ children }) => {
         document.body.style.fontFamily = 'Open Sans';
         break;
       case 'ja':
-        document.body.style.fontFamily = 'Yu Mincho Regular, Kozuka Gothic Pr6N, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, MS PGothic, メイリオ, Meiryo, ＭＳ Ｐゴシック';
+        document.body.style.fontFamily = 'Yu Mincho Regular';
+        break;
+      case 'vie':
+        document.body.style.fontFamily = 'Arial Regular';
+        break;
+      case 'kor':
+        document.body.style.fontFamily = 'Gadugi';
         break;
       // Add more cases for other languages
       default:

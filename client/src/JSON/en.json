@@ -1091,6 +1091,24 @@
         "content":"Your reservation has not yet completed. Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception address"
     },
     "hn-branch": {
+        "slider":[
+            {
+                "desc":"Azumaya Ha Noi",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746791/AzumayaWeb/rtbrll_v24sdc.jpg"
+            },
+            {
+                "desc":"Azumaya Ha Noi",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+            },
+            {
+                "desc":"Azumaya Ha Noi",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/oskm2_iiija5.jpg"
+            },
+            {
+                "desc":"Azumaya Ha Noi",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746782/AzumayaWeb/lbhbt1_wdmtl0.jpg"
+            }
+    ],
         "branch": [
             {
                 "id": 1,
@@ -1935,6 +1953,24 @@
         }
     ],
     "hcm-branch": {
+        "slider":[
+                {
+                    "desc":"Azumaya Ho Chi Minh",
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737801/AzumayaWeb/rtbrtvl1_omastk.jpg"
+                },
+                {
+                    "desc":"Azumaya Ho Chi Minh",
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737800/AzumayaWeb/bftvl1_p5zw59.jpg"
+                },
+                {
+                    "desc":"Azumaya Ho Chi Minh",
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737784/AzumayaWeb/rltt_ztlqi6.jpg"
+                },
+                {
+                    "desc":"Azumaya Ho Chi Minh",
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737787/AzumayaWeb/osltt_mgu5vd.jpg"
+                }
+        ],
         "branch": [
             {
                 "id": 1,
@@ -2795,6 +2831,24 @@
         }
     ],
     "dn-branch": {
+        "slider":[
+            {
+                "desc":"Azumaya Da Nang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750483/AzumayaWeb/trbrdn2_cm4gom.jpg"
+            },
+            {
+                "desc":"Azumaya Da Nang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/bfdn_j8zx9t.jpg"
+            },
+            {
+                "desc":"Azumaya Da Nang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/osdn_s2w5yt.jpg"
+            },
+            {
+                "desc":"Azumaya Da Nang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750482/AzumayaWeb/lbdn_fip42v.jpg"
+            }
+    ],
         "branch": [
             {
                 "id": 1,
@@ -2988,6 +3042,24 @@
         }
     ],
     "hp-branch": {
+        "slider":[
+            {
+                "desc":"Azumaya Hai Phong",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748998/AzumayaWeb/rtbrhp_i5vsby.jpg"
+            },
+            {
+                "desc":"Azumaya Hai Phong",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748981/AzumayaWeb/rhp_khwvjz.webp"
+            },
+            {
+                "desc":"Azumaya Hai Phong",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748976/AzumayaWeb/oshp1_syqj1u.jpg"
+            },
+            {
+                "desc":"Azumaya Hai Phong",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748979/AzumayaWeb/hplb_mat7sr.webp"
+            }
+    ],
         "branch": [
             {
                 "id": 1,
@@ -3399,27 +3471,27 @@
         "contract-branch": [
             {
                 "link":"/hotel-hn",
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735800/AzumayaWeb/hanoi1_yrqgvy.png"
             },
             {
                 "link":"/hotel-hcm",
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/hochiminh1_glyoyn.png"
             },
             {
                 "link":"/hotel-dn",
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/danang1_om37cr.png"
             },
             {
                 "link":"/hotel-hp",
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735806/AzumayaWeb/haiphong1_vr2jyt.png"
             },
             {
                 "link":"/",
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710316925/AzumayaWeb/cambodia_p5nuet.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/cambodia1_salltm.png"
             },
             {
                 "link":"/",
-                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710317764/AzumayaWeb/coming_soon_auhag4.jpg"
+                "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735799/AzumayaWeb/coming_soon.jpg_nzxihy.png"
             }
         ],
         "receipt-content": "日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",

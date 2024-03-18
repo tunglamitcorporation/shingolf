@@ -2,7 +2,7 @@ import "flatpickr/dist/themes/airbnb.css";
 import Booking from "../Units/Booking";
 import { useTranslation } from "react-i18next";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-import {Link} from "react-router-dom"
+import {Form, Link} from "react-router-dom"
 import {format, parse} from "date-fns"
 import { useState, useEffect } from "react";
 import AwesomeSlider from 'react-awesome-slider';
@@ -11,9 +11,6 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
-import FormValidationWithYup from "../../Test";
-import BookingForm from "../../Test";
-import FormExample from "../../Test2";
 
 function Example(props) {
   return (
@@ -97,7 +94,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                   <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701493774/AzumayaWeb/hanoi_n4ucud.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735800/AzumayaWeb/hanoi1_yrqgvy.png"
                     alt="hotel hanoi azumaya hotel"
                   />
                   </Link>
@@ -108,7 +105,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 <Link className='link-route' to = '/hotel-hcm' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701497032/AzumayaWeb/hochiminh_ongsjz.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/hochiminh1_glyoyn.png"
                     alt="hotel ho chi minh azumaya hotel"
                   />
                  </Link>
@@ -119,7 +116,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 <Link className='link-route' to = '/hotel-dn' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701494392/AzumayaWeb/danang_lxgklz.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/danang1_om37cr.png"
                     alt="hotel da nang azumaya hotel"
                   />
                  </Link>
@@ -130,7 +127,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 <Link className='link-route' to = '/hotel-hp' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1701496773/AzumayaWeb/haiphong_kllzzj.jpg"
+                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735806/AzumayaWeb/haiphong1_vr2jyt.png"
                     alt="hotel hai phong azumaya"
                   />
                  </Link>
@@ -141,7 +138,6 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
         </div>
       <div className="is-sticky">
         <Booking />
-        <FormExample />
       </div>
       <AnimatedOnScroll>
         <div className="content__news">

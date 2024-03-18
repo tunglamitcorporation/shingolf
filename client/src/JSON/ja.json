@@ -1084,6 +1084,24 @@
         ]
     },
     "hn-branch": {
+        "slider":[
+            {
+                "desc":"ハノイ",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746791/AzumayaWeb/rtbrll_v24sdc.jpg"
+            },
+            {
+                "desc":"ハノイ",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+            },
+            {
+                "desc":"ハノイ",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/oskm2_iiija5.jpg"
+            },
+            {
+                "desc":"ハノイ",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746782/AzumayaWeb/lbhbt1_wdmtl0.jpg"
+            }
+    ],
         "branch": [
             {
                 "id": 1,
@@ -1965,6 +1983,24 @@
         }
     ],
     "hcm-branch": {
+        "slider":[
+            {
+                "desc":"ホーチミン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737801/AzumayaWeb/rtbrtvl1_omastk.jpg"
+            },
+            {
+                "desc":"ホーチミン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737800/AzumayaWeb/bftvl1_p5zw59.jpg"
+            },
+            {
+                "desc":"ホーチミン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737784/AzumayaWeb/rltt_ztlqi6.jpg"
+            },
+            {
+                "desc":"ホーチミン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737787/AzumayaWeb/osltt_mgu5vd.jpg"
+            }
+    ],
         "branch": [
             {
                 "id": 1,
@@ -2852,10 +2888,28 @@
         }
     ],
     "dn-branch": {
+        "slider":[
+            {
+                "desc":"ダナン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750483/AzumayaWeb/trbrdn2_cm4gom.jpg"
+            },
+            {
+                "desc":"ダナン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/bfdn_j8zx9t.jpg"
+            },
+            {
+                "desc":"ダナン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/osdn_s2w5yt.jpg"
+            },
+            {
+                "desc":"ダナン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750482/AzumayaWeb/lbdn_fip42v.jpg"
+            }
+    ],
         "branch": [
             {
                 "id": 1,
-                "name": "ダナン店",
+                "name": "ダナン",
                 "desc": "全32部屋、展望露天風呂、和朝食、フットマッサージ、全室にシャワートイレ、日本語放送を完備。空港から10分と中心に位置し、館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:45(休日午後9:45) がラストオーダー。 そしてダナン店自慢の展望露天風呂をぜひご堪能ください。ダナン店は湾に面しているためホテルの目の前に広がる海、山に沈みゆく夕日を観ながら堪能する露天風呂は格別。日本でもそうそうお目にかかることがない景色を楽しめます。ダナン初の東屋ワンストップサービスで癒されてください。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
                 "link": "/da-nang/room"
@@ -3050,6 +3104,24 @@
         }
     ],
     "hp-branch": {
+        "slider":[
+            {
+                "desc":"ハイフォン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748998/AzumayaWeb/rtbrhp_i5vsby.jpg"
+            },
+            {
+                "desc":"ハイフォン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748981/AzumayaWeb/rhp_khwvjz.webp"
+            },
+            {
+                "desc":"ハイフォン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748976/AzumayaWeb/oshp1_syqj1u.jpg"
+            },
+            {
+                "desc":"ハイフォン",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748979/AzumayaWeb/hplb_mat7sr.webp"
+            }
+    ],
         "branch": [
             {
                 "id": 1,

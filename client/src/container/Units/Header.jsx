@@ -179,13 +179,15 @@ function Header() {
     <>
       <div className='top-header'>
                 <div className='container'>
-                    <div className='row'>
-                        <div className='col-md-11'>
+                    <div className='row align-items-center'>
+                        <div className='col-md-10'>
                         <p style={{marginLeft:'110px'}}>{t('header.top-header')}</p>
                         </div>
-                        <div className='btn-lang col-md-1'>
-                        <button className ='btn-en' onClick={()=>changeLanguage('en')}></button>                
-                        <button className ='btn-ja' onClick={()=>changeLanguage('ja')}></button>  
+                        <div className='btn-lang col-md-2'>
+                        <button className ='btn-en mr-3' onClick={()=>changeLanguage('en')}></button>                
+                        <button className ='btn-ja mr-3' onClick={()=>changeLanguage('ja')}></button>  
+                        <button className ='btn-vie mr-3' onClick={()=>changeLanguage('vie')}></button>  
+                        <button className ='btn-kor mr-3' onClick={()=>changeLanguage('kor')}></button>  
                         </div>
                     </div>
                 </div>

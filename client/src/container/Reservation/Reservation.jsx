@@ -1,14 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 import { sendReservationRequest } from "../../api/reservation";
+import { format } from "date-fns";
 function Reservation() {
   const { t } = useTranslation();
   const location = useLocation();
   const receivedData = location.state || {};
-
+  const navigate = useNavigate()
   const [text, setText] = useState(`${t("reservation.more")}`);
   const city = t("booking.city", { returnObjects: true });
   const branch = t("booking.branch", { returnObjects: true });
@@ -25,7 +26,9 @@ function Reservation() {
   const [selectedRoom, setSelectedRoom] = useState(
     receivedData ? receivedData.selectedRoom : ""
   );
-  const [paymentMethod, setPaymentMethod] = useState();
+  
+  const [saveCityValue, setSaveCityValue] = useState('')
+  const [saveBranchValue, setSaveBranchValue] = useState('')
 
   const flatBranches = [].concat(...branch);
   const filteredBranches = flatBranches.filter(
@@ -33,10 +36,7 @@ function Reservation() {
   );
   const flatRoom = [].concat(...room);
   const filteredRoom = flatRoom.filter((r) => r.branch_id == selectedBranch);
-  console.log(filteredBranches);
-  console.log(filteredRoom);
   const cityParam = selectedCity ? selectedCity.replace(/\s+/g, "-") : "";
-  console.log(selectedRoom);
   const [startDate, setStartDate] = useState(
     receivedData ? receivedData.startDate : ""
   );
@@ -45,30 +45,36 @@ function Reservation() {
   );
   const [startTime, setStartTime] = useState("15:00");
   const [endTime, setEndTime] = useState("12:00");
-  const [roomAmount, setRoomAmount] = useState();
-  const [guestAmount, seGuestAmount] = useState();
-  const [familyName, setFamilyName] = useState();
-  const [givenName, setGivenName] = useState();
-  const [selectedDay, setSelectedDay] = useState();
-  const [selectedMonth, setSelectedMonth] = useState();
-  const [selectedYear, setSelectedYear] = useState();
-  const [gender, setGender] = useState();
-  const [company, setCompany] = useState();
-  const [sameBooker, setSameBooker] = useState("Same as person who will stay");
-  const [bookerName, setBookerName] = useState();
-  const [differentBooker, setDifferentBooker] = useState();
-  const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
-  const [roomType, setRoomType] = useState();
+  const [roomAmount, setRoomAmount] = useState(1);
+  const [guestAmount, seGuestAmount] = useState(1);
+  const [familyName, setFamilyName] = useState('');
+  const [givenName, setGivenName] = useState('');
+  const [secondFamilyName, setSecondFamilyName] = useState('');
+  const [secondGivenName, setSecondGivenName] = useState('');
+  const [secondGender, setSecondGender] = useState('');
+  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
+  const [SecondSelectedDay, setSecondSelectedDay] = useState('');
+  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('');
+  const [SecondSelectedYear, setSecondSelectedYear] = useState('');
+  const [gender, setGender] = useState('');
+  const [company, setCompany] = useState('');
+  const [booker, setBooker] = useState(`${t('reservation.same-person')}`);
+  const [bookerName, setBookerName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [roomType, setRoomType] = useState('');
   const [contract, setContract] = useState("No Contract");
-  const [vat, setVat] = useState();
-  const [specialRequest, setSpecialRequest] = useState();
-  const [pickupTime, setPickupTime] = useState();
-  const [pickupNumber, setPickupNumber] = useState();
+  const [vat, setVat] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const [specialRequest, setSpecialRequest] = useState('');
+  const [pickupTime, setPickupTime] = useState('');
+  const [pickupNumber, setPickupNumber] = useState('');
   const [dropOffTime, setDropOfTime] = useState();
-  const [dropOffNumber, setDropOffNumber] = useState();
-  const [earlyIn, setEarlyIn] = useState();
-  const [lateOut, setLateOut] = useState();
+  const [dropOffNumber, setDropOffNumber] = useState('');
+  const [earlyIn, setEarlyIn] = useState('');
+  const [lateOut, setLateOut] = useState('');
 
   const handleStartTimeChange = (selectedDates) => {
     if (selectedDates.length > 0) {
@@ -130,6 +136,7 @@ function Reservation() {
   const handleChange = (e) => {
     const value = Math.max(min, Math.min(max, Number(e.target.value)));
     setValue(value);
+    setRoomAmount(value)
   };
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState(0);
@@ -139,9 +146,6 @@ function Reservation() {
   const [statusEI, setStatusEI] = useState(false);
   const [statusLO, setStatusLO] = useState(false);
   const [showButton, setShowButton] = useState(1);
-  const [secondFamilyName, setSecondFamilyName] = useState();
-  const [secondGivenName, setSecondGivenName] = useState();
-  const [secondGender, setSecondGender] = useState();
   const inputRef = useRef(null);
   const input2Ref = useRef(null);
   const input3Ref = useRef(null);
@@ -216,182 +220,207 @@ function Reservation() {
     return emailRegex.test(email);
   };
   const [errors, setErrors] = useState({})
-  const [isVaLid, setIsValid] = useState()
+  console.log(gender);
   const validateForm = () => {
     let errors = {}
+    let isVaLid = true
+
     if (!selectedCity) {
-      errors.selectedCity = 'City field is required';
-    } 
+      errors.selectedCity = 'required';
+      isVaLid = false
+    } else {
+      errors.selectedCity = ''
+    }
+
     if (!selectedBranch) {
-      errors.selectedBranch = 'Branch field is required';
-    } 
+      errors.selectedBranch = 'required';
+      isVaLid = false
+    } else {
+      errors.selectedBranch = ''
+    }
+
     if (!startDate) {
-      errors.startDate = 'Check-in date field is required';
+      errors.startDate = 'required';
+      isVaLid = false
     } 
     if (!endDate) {
-      errors.endDate = 'Check-out date field is required';
+      errors.endDate = 'required';
+      isVaLid = false
+
     } 
     if (!selectedRoom) {
-      errors.selectedRoom = 'Kind of room field field is required';
+      errors.selectedRoom = 'required';
+      isVaLid = false
+
     } 
     if (!roomAmount) {
-      errors.roomAmount = 'Number of room field field is required';
+      errors.roomAmount = 'required';
+      isVaLid = false
+
     } 
     if (!guestAmount) {
-      errors.guestAmount = 'Number of guest field field is required';
+      errors.guestAmount = 'required';
+      isVaLid = false
+
     } 
     if (!familyName) {
-      errors.familyName = 'Name field field is required';
+      errors.familyName = 'required';
+      isVaLid = false
+
     } 
     if (!givenName ) {
-      errors.familyName = 'Name field field is required';
+      errors.givenName = 'required';
+      isVaLid = false
+
     } 
     if (!gender) {
-      errors.familyName = 'Gender field field is required';
+      errors.gender = 'required';
+      isVaLid = false
+
     } 
     if (!selectedDay) {
-      errors.selectedDay = 'Birthday field field is required';
+      errors.selectedDay = 'required';
+      isVaLid = false
+
     } 
     if (!selectedMonth) {
-      errors.selectedMonth = 'Birthday field field is required';
+      errors.selectedMonth = 'required';
+      isVaLid = false
+
     } 
     if (!selectedYear) {
-      errors.selectedYear = 'Birthday field field is required';
+      errors.selectedYear = 'required';
+      isVaLid = false
+
     } 
-    if (!bookerName) {
-      errors.bookerName = 'Booker name field field is required';
-    } 
+    // if (!bookerName) {
+    //   errors.bookerName = 'Booker name field field is required';
+    //   isVaLid = false
+
+    // } 
     if (!email) {
-      errors.email = 'Email field field is required';
+      errors.email = 'required';
+      isVaLid = false
+
     }  else if (!validateEmail(email)) {
       errors.email = 'Invalid email format';
+      isVaLid = false
+
     }
     if (!phone) {
-      errors.bookerName = 'Phone number field field is required';
+      errors.bookerName = 'required';
+      isVaLid = false
+
     } 
     setErrors(errors);
-    return Object.keys(errors).length === 0;
-
-  
+    return isVaLid
   }
-  const sendData = async () => {
-    const source = await sendReservationRequest([selectedCity,
-      selectedBranch,
-      startDate,
-      endDate,
-      selectedRoom,
-      roomAmount,
-      guestAmount,
-      familyName,
-      givenName,
-      gender,
-      selectedDay,
-      selectedMonth,
-      selectedYear,
-      bookerName,
-      email,
-      phone])
-      console.log(source);
-  }
-  sendData()
-    const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
+    switch (selectedCity) {
+      case 'hotel-hn':
+        setSaveCityValue('Ha Noi')
+        break;
+      case 'hotel-hcm':
+        setSaveCityValue("Ho CHi Minh")
+        break;
+      case 'hotel-hp':
+        setSaveCityValue('Hai Phong')
+        break;
+      case 'hotel-dn':
+        setSaveCityValue('Da Nang')
+        break;
+      default:
+        setSaveCityValue('')
+        break;
+    }
+    switch (selectedBranch) {
+      case 'thai-van-lung-1-detail':
+        setSaveBranchValue('Thai Van Lung 1')
+        break;
+      case 'thai-van-lung-2-detail':
+        setSaveBranchValue("Thai Van Lung 2")
+        break;
+      case 'le-thanh-ton-detail':
+        setSaveBranchValue('Le Thanh Ton')
+        break;
+      case 'annex-detail':
+        setSaveBranchValue('Annex')
+        break;
+        case 'hai-ba-trung-detail':
+        setSaveBranchValue('Hai Ba Trung 1')
+        break;
+        case 'kim-ma-2-detail':
+        setSaveBranchValue('Kim Ma 2')
+        break;
+        case 'kim-ma-3-detail':
+        setSaveBranchValue('Kim Ma 3')
+        break;
+        case 'linh-lang-detail':
+        setSaveBranchValue('Linh Lang')
+        break;
+        case 'hai-phong':
+        setSaveBranchValue('Hai Phong')
+        break;
+        case 'da-nang':
+        setSaveBranchValue('Da Nang')
+        break;
+      default:
+        setSaveBranchValue('')
+        break;
+    }
+    const dataObject = {
+        saveCityValue ,
+        saveBranchValue ,
+        startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
+        endDate: endDate ? format(endDate, 'yyyy-MM-dd') :'',
+        startTime ,
+        endTime ,
+        selectedRoom ,
+        roomAmount ,
+        guestAmount ,
+        familyName ,
+        givenName ,
+        gender ,
+        selectedDay ,
+        selectedMonth ,
+        selectedYear ,
+        secondFamilyName ,
+        secondGivenName ,
+        SecondSelectedDay ,
+        SecondSelectedMonth ,
+        SecondSelectedYear ,
+        secondGender ,
+        bookerName ,
+        booker ,
+        email ,
+        phone ,
+        roomType ,
+        contract ,
+        company ,
+        vat ,
+        paymentMethod ,
+        pickupTime: pickupTime ? format(pickupTime, 'HH:mm') :'',
+        pickupNumber ,
+        dropOffTime: dropOffTime ? format(dropOffTime, 'HH:mm') :'',
+        dropOffNumber ,
+        earlyIn: earlyIn ? format(earlyIn, 'HH:mm') :'',
+        lateOut: lateOut ? format(lateOut, 'HH:mm') : '' ,
+        specialRequest
+    }
       e.preventDefault();
       if (validateForm()) {
-        // Form data is valid, proceed with submission or further processing
-        console.log('Form data:', {
-          selectedCity,
-          selectedBranch,
-          startDate,
-          endDate,
-          selectedRoom,
-          roomAmount,
-          guestAmount,
-          familyName,
-          givenName,
-          gender,
-          selectedDay,
-          selectedMonth,
-          selectedYear,
-          bookerName,
-          email,
-          phone
-          // Include other form fields here
-        });
+        const source = await sendReservationRequest(dataObject)
+        navigate(`/thank-you/${cityParam}`)
+        console.log(source);
       } else {
+        const validateError = document.querySelector('.validate_failed')
+                  if(validateError) {
+                    validateError.scrollIntoView({behavior:'smooth', block:'center'})
+                  }
         console.error('Form data is invalid');
       }
+      
     };
-  
-    // alert(
-    //   selectedCity +
-    //     " " +
-    //     selectedBranch +
-    //     " " +
-    //     startDate +
-    //     " " +
-    //     endDate +
-    //     " " +
-    //     startTime +
-    //     " " +
-    //     endTime +
-    //     " " +
-    //     selectedRoom +
-    //     " " +
-    //     roomAmount +
-    //     " " +
-    //     guestAmount +
-    //     " " +
-    //     familyName +
-    //     " " +
-    //     givenName +
-    //     " " +
-    //     gender +
-    //     " " +
-    //     selectedDay +
-    //     " " +
-    //     selectedMonth +
-    //     " " +
-    //     selectedYear +
-    //     " " +
-    //     secondFamilyName +
-    //     " " +
-    //     secondGivenName +
-    //     " " +
-    //     secondGender +
-    //     " " +
-    //     bookerName +
-    //     " " +
-    //     differentBooker +
-    //     " " +
-    //     email +
-    //     " " +
-    //     phone +
-    //     " " +
-    //     roomType +
-    //     " " +
-    //     contract +
-    //     " " +
-    //     company +
-    //     " " +
-    //     vat +
-    //     " " +
-    //     paymentMethod +
-    //     " " +
-    //     pickupTime +
-    //     " " +
-    //     pickupNumber +
-    //     " " +
-    //     dropOffTime +
-    //     " " +
-    //     dropOffNumber +
-    //     " " +
-    //     earlyIn +
-    //     " " +
-    //     lateOut +
-    //     " " +
-    //     specialRequest
-    // );
-
   function DayPicker() {
     const minDay = 1;
     const maxDay = 31;
@@ -410,7 +439,7 @@ function Reservation() {
     }
     return (
       <select
-        className="col-md-2 form__content"
+        className={errors.selectedDay? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
         value={selectedDay}
         onChange={onHandleChange}
       >
@@ -440,7 +469,7 @@ function Reservation() {
     }
     return (
       <select
-        className="col-md-2 form__content"
+        className={errors.selectedMonth? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
         value={selectedMonth}
         onChange={onHandleChange}
       >
@@ -470,8 +499,97 @@ function Reservation() {
     }
     return (
       <select
-        className="col-md-2 form__content"
+        className={errors.selectedYear? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
         value={selectedYear}
+        onChange={onHandleChange}
+      >
+        <option className="first-opt" disabled selected>
+          {t("reservation.year")}
+        </option>
+        {options}
+      </select>
+    );
+  }
+  function SecondDayPicker() {
+    const minDay = 1;
+    const maxDay = 31;
+    const birthDay = 0;
+    const onHandleChange = (e) => {
+      setSecondSelectedDay(e.target.value);
+    };
+    const options = [];
+    for (let i = minDay; i <= maxDay; i++) {
+      const day = birthDay + i;
+      options.push(
+        <option value={day} key={day}>
+          {day}
+        </option>
+      );
+    }
+    return (
+      <select
+        className="col-md-2 form__content"
+        value={SecondSelectedDay}
+        onChange={onHandleChange}
+      >
+        <option className="first-opt" disabled selected>
+          {t("reservation.day")}
+        </option>
+        {options}
+      </select>
+    );
+  }
+  function SecondMonthPicker() {
+    const minMonth = 0;
+    const maxMonth = 11;
+    const birthMonth = 1;
+
+    const onHandleChange = (e) => {
+      setSecondSelectedMonth(e.target.value);
+    };
+    const options = [];
+    for (let i = minMonth; i <= maxMonth; i++) {
+      const month = birthMonth + i;
+      options.push(
+        <option value={month} key={month}>
+          {month}
+        </option>
+      );
+    }
+    return (
+      <select
+        className="col-md-2 form__content"
+        value={SecondSelectedMonth}
+        onChange={onHandleChange}
+      >
+        <option className="first-opt" disabled selected>
+          {t("reservation.month")}
+        </option>
+        {options}
+      </select>
+    );
+  }
+  function SecondYearPicker() {
+    const minYear = 1925;
+    const maxYear = 2005;
+    const birthYear = 0;
+
+    const onHandleChange = (e) => {
+      setSecondSelectedYear(e.target.value);
+    };
+    const options = [];
+    for (let i = minYear; i <= maxYear; i++) {
+      const year = birthYear + i;
+      options.push(
+        <option value={year} key={year}>
+          {year}
+        </option>
+      );
+    }
+    return (
+      <select
+        className="col-md-2 form__content"
+        value={SecondSelectedYear}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -522,15 +640,12 @@ function Reservation() {
               {t("reservation.choice")}
               <span className="required__note">*</span>
             </div>
-            {errors.selectedCity && <p className="col-md-2 error-message">{errors.selectedCity}</p>}
             <select
-                className="col-md-2 form__content"
+                className={errors.selectedCity ? "col-md-2 form__content validate_failed" : "col-md-2 form__content " }
                 value={selectedCity}
                 id={selectedCity}
-                onChange={(e) => {
-                  setSelectedCity(e.target.value);
-                }}
-              >
+                onChange={(e)=>setSelectedCity(e.target.value)}
+                >
                 <option value="" disabled selected hidden>
                   {t("booking.placeHolder")}
                 </option>
@@ -540,19 +655,24 @@ function Reservation() {
                   </option>
                 ))}
               </select>
-              {errors.selectedBranch && <p className=" col-md-2 error-message">{errors.selectedBranch}</p>}
+              {errors.selectedCity &&
+                <p className="col-md-1 error-message">{errors.selectedCity}</p>
+              }
               <select
-                className="col-md-2 form__content"
+                className={errors.selectedBranch ? "col-md-2 form__content validate_failed" : "col-md-2 form__content " }
                 value={selectedBranch}
                 disabled={!selectedCity}
-                onChange={(e) => setSelectedBranch(e.target.value)}
-              >
+                onChange={(e)=> setSelectedBranch(e.target.value)}
+                >
                 {filteredBranches.map((item) => (
                   <option key={item.branch_id} value={item.branch_id}>
                     {item.branch_name}
                   </option>
                 ))}
               </select>
+              {errors.selectedBranch && 
+                <p className="col-md-1 error-message">{errors.selectedBranch}</p>
+              }
           </div>
           <div className="row">
             <div className="col-md-2 name__title">
@@ -565,12 +685,14 @@ function Reservation() {
                 minDate: "today",
                 dateFormat: "Y-m-d",
               }}
-              className="col-md-2 form__content webkit-appearance"
+              className={errors.startDate? "col-md-2 form__content webkit-appearance validate_failed" : "col-md-2 form__content webkit-appearance" }
               placeholder={t("booking.date_in")}
               onChange={(dates) => {
                 setStartDate(dates[0]);
               }}
             />
+            {errors.startDate && 
+                <p className="col-md-1 error-message">{errors.startDate}</p>}
             <div className="col-md-2 offset-2 name__title check-out-date">
               {t("reservation.check-out")}
               <span className="required__note">*</span>
@@ -581,12 +703,14 @@ function Reservation() {
                 minDate: new Date(startDate),
                 dateFormat: "Y-m-d",
               }}
-              className="col-md-2 form__content webkit-appearance"
+              className={errors.endDate? "col-md-2 form__content webkit-appearance validate_failed" : "col-md-2 form__content webkit-appearance" }
               placeholder={t("booking.date_out")}
               onChange={(dates) => {
                 setEndDate(dates[0]);
               }}
             />
+             {errors.endDate && 
+                <p className="col-md-1 error-message">{errors.endDate}</p>}
           </div>
           <div className="row">
             <div className="col-md-2 name__title">
@@ -637,17 +761,19 @@ function Reservation() {
             </div>
             <select
               value={selectedRoom}
-              className="col-md-4 form__content"
+              className={errors.selectedRoom? "col-md-4 form__content validate_failed" : "col-md-4 form__content" }
               onChange={(e) => {
                 setSelectedRoom(e.target.value);
               }}
             >
-              {room.map((item) => (
+              {filteredRoom.map((item) => (
                 <option key={item.room_name} value={item.room_name}>
                   {item.room_name} <span>{item.price}</span>{" "}
                 </option>
               ))}
             </select>
+            {errors.selectedRoom && 
+                <p className="col-md-1 error-message">{errors.selectedRoom}</p>}
           </div>
           <div className="row">
             <div className="col-md-2 name__title">
@@ -656,10 +782,12 @@ function Reservation() {
             </div>
             <input
               type="number"
-              value={value}
+              value={roomAmount}
               onChange={handleChange}
-              className="col-md-2 form__content"
+              className={errors.roomAmount? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
             />
+             {errors.roomAmount && 
+                <p className="col-md-1 error-message">{errors.roomAmount}</p>}
             <div className="col-md-2 offset-0 offset-md-2 name__title">
               {t("reservation.guest-amount")}
               <span className="required__note">*</span>
@@ -669,12 +797,14 @@ function Reservation() {
               min={1}
               max={4}
               value={showButton}
-              className="col-md-2 form__content"
+              className={errors.guestAmountAmount? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
               onChange={(e) => {
                 seGuestAmount(e.target.value);
                 setShowButton(e.target.value);
               }}
             />
+             {errors.guestAmount && 
+                <p className="col-md-2 error-message">{errors.guestAmount}</p>}
           </div>
         </div>
         <div className="guest-container">
@@ -692,18 +822,22 @@ function Reservation() {
                 <input
                   placeholder={t("reservation.family-name")}
                   type="text"
-                  className="col-md-2 form__content"
+                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                   onChange={(e) => {
                     setFamilyName(e.target.value);
                   }}
                 />
+                 {errors.familyName && 
+                <p className="col-md-1 error-message">{errors.familyName}</p>}
                 <input
                   placeholder={t("reservation.given-name")}
                   type="text"
                   name="gName"
-                  className=" col-md-2 form__content"
+                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                   onChange={(e) => setGivenName(e.target.value)}
                 />
+                 {errors.givenName && 
+                <p className="col-md-1 error-message">{errors.givenName}</p>}
                 <span className="col-md-4 required__note">
                   {t("reservation.name-required")}
                 </span>
@@ -713,13 +847,15 @@ function Reservation() {
                   {t("reservation.gender")}
                   <span className="required__note">*</span>
                 </div>
-                <div className="col-md-2 form__group">
+                <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
                   <input
                     type="radio"
                     name="gender"
                     id="gMale"
-                    value="male"
-                    onClick={(e) => setGender(e.target.value)}
+                    value="Mr"
+                    checked={gender === "Mr"}
+                    onChange={(e) => setGender(e.target.value)}
+                    
                   />
                   <label htmlFor="gMale">{t("reservation.mr")}</label>
                 </div>
@@ -728,20 +864,29 @@ function Reservation() {
                     type="radio"
                     name="gender"
                     id="gFemale"
-                    value="female"
-                    onClick={(e) => setGender(e.target.value)}
+                    value="Ms"
+                    checked = {gender === "Ms"}
+                    onChange={(e) => setGender(e.target.value)}
                   />
                   <label htmlFor="gFemale">{t("reservation.ms")}</label>
                 </div>
+                {errors.gender && 
+                <p className="col-md-2 error-message">{errors.gender}</p>}
               </div>
               <div className="row">
                 <div className="col-md-2 name__title">
                   {t("reservation.birth-date")}
                   <span className="required__note">*</span>
                 </div>
-                {<DayPicker />}
-                {<MonthPicker />}
-                {<YearPicker />}
+                <DayPicker />
+                {errors.selectedDay && 
+                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
+                <MonthPicker />
+                {errors.selectedMonth&& 
+                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
+                <YearPicker />
+                {errors.selectedYear && 
+                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
               </div>
               {showButton >= 2 && (
                 <div className="row">
@@ -810,9 +955,9 @@ function Reservation() {
                         <div className="col-md-2 name__title">
                           {t("reservation.birth-date")}
                         </div>
-                        {<DayPicker />}
-                        {<MonthPicker />}
-                        {<YearPicker />}
+                        <SecondDayPicker />
+                        <SecondMonthPicker />
+                        <SecondYearPicker />
                       </div>
                     </div>
                   )}
@@ -827,12 +972,13 @@ function Reservation() {
                     type="radio"
                     name="Booker"
                     id="booker"
-                    value="Same as person who will stay"
+                    value={`${t('reservation.same-person')}`}
                     checked={status === 0}
                     onClick={(e) => {
                       handleSelected(0);
-                      setSameBooker(e.target.value);
+                     
                     }}
+                    onChange={(e) => setBooker(e.target.value)}
                   />
                   <label htmlFor="booker">
                     {t("reservation.same-person")}
@@ -842,12 +988,13 @@ function Reservation() {
                     type="radio"
                     name="Booker"
                     id="booker"
-                    value="Different with who will stay"
+                    value={`${t('reservation.diff-person')}`}
                     checked={status === 1}
                     onClick={(e) => {
                       handleSelected(1);
-                      setDifferentBooker(e.target.value);
+                      
                     }}
+                    onChange={(e) => setBooker(e.target.value)}
                   />
                   <label htmlFor="booker">
                     {t("reservation.diff-person")}
@@ -873,13 +1020,15 @@ function Reservation() {
                 </div>
                 <input
                   type="text"
-                  className="booker-email form__content col-md-2"
+                  className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                   placeholder={t("reservation.email")}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <span className="col-md-6 required__note">
                   {t("reservation.email-note")}
                 </span>
+                {errors.email && 
+                <p className="col-md-1 error-message">{errors.email}</p>}
               </div>
               <div className="row">
                 <div className="col-md-2 name__title">
@@ -887,7 +1036,7 @@ function Reservation() {
                 </div>
                 <input
                   type="text"
-                  className="booker-phone form__content col-md-2"
+                  className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                   id=""
                   placeholder={t("reservation.phone")}
                   onKeyPress={(event) => {
@@ -900,6 +1049,8 @@ function Reservation() {
                 <span className="col-md-6 required__note">
                   {t("reservation.phone-note")}
                 </span>
+                {errors.phone && 
+                <p className="col-md-1 error-message">{errors.phone}</p>}
               </div>
               <div className="row">
                 <div className="col-md-2 name__title">
@@ -1189,10 +1340,7 @@ function Reservation() {
                 id="send"
                 className="base__btn btn__send"
                 type="submit"
-                onClick={() => validateForm()}
               >
-                {" "}
-                {/* <Link to={`/thank-you/${cityParam}`}></Link> */}
                 {t("reservation.send")}
               </button>
             </div>

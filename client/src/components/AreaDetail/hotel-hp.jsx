@@ -2,15 +2,21 @@ import Booking from "../../container/Units/Booking";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {format, parse} from "date-fns"
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 
 export default function HotelHP({news}) {
   const { t } = useTranslation();
   const HPDetail = t("hp-branch.branch", { returnObjects: true });
   const homeNews = news
+  const hpArea = t('hp-branch.slider', {returnObjects: true})
+  const AutoPlaySlider =  withAutoplay(AwesomeSlider)
 
   return (
     <div>
-      <div className="policies__header">
+      {/* <div className="policies__header">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -18,6 +24,28 @@ export default function HotelHP({news}) {
             </div>
           </div>
         </div>
+      </div> */}
+       <div className="area_header" >
+              <div className="overlay"></div>
+              <AutoPlaySlider
+              style={{height: '600px'}}
+              animation = "scaleOutAnimation"
+              mobileTouch
+              infinite
+              play
+              interval = {5000}>
+          {hpArea.map((item)=>(
+              <div data-src={item.image} style={{height:'120%'}}>
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-12">
+                  <h1>{item.desc}</h1>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+          ))}
+      </AutoPlaySlider>
       </div>
       <div className="is-sticky">
         <Booking />

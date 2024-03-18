@@ -187,7 +187,7 @@ textarea{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999;
 }
 .carousel-item img {
     width: 100%;
@@ -227,7 +227,6 @@ textarea{
     background-color: var(--primary--color);
     transition: width 0.3s;
   }
-
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
     .is-sticky{
         position: relative;
