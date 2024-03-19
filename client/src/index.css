@@ -6,15 +6,11 @@ html,body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
+  overflow-x: hidden;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-::-webkit-scrollbar {
-  width: 12px;
-  background: transparent;
-  display: none;
 }
 .header, .header__PC{
   position: absolute;
@@ -1595,7 +1591,7 @@ a:hover {
   width: 25px;
   height: 15px;
   border: none;
-  background: url('https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/jp.svg') center center / contain no-repeat;
+  background: url('https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/jp.svg') center center / contain no-repeat
 }
 .btn-en {
   width: 25px;
@@ -1617,7 +1613,7 @@ a:hover {
 }
 .contract__background{
   padding-top: 35%;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701660726/AzumayaWeb/bg-contract_frmwem.jpg) center center / cover no-repeat;
+  background: url('https://res.cloudinary.com/dtdfsaaei/image/upload/v1701660726/AzumayaWeb/bg-contract_frmwem.jpg') center center / cover no-repeat;
 
 }
 .content__contract-item a{
@@ -2400,7 +2396,9 @@ filter: brightness(0.5);
   margin-left: 0 !important;
 }
 .btn-en,
-.btn-ja{
+.btn-ja,
+.btn-vie,
+.btn-kor{
   padding: 10px;
 }
 .service__content-body--table th,
@@ -2540,6 +2538,10 @@ font-size: 1.2rem !important;
 }
 .space-line{
   display: block;
+}
+.area_header h1{
+  font-size: 32px;
+
 }
 }
 /* tablet */

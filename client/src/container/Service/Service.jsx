@@ -793,7 +793,7 @@ export default function VietnamService() {
                           {t("service_roten.openHour")}
                         </div>
                       </div>
-                      <div className="d-flex justify-content-center">
+                      <div className="d-flex justify-content-end">
                         <div className="row service_roten">
                           <div
                             style={{ paddingLeft: "10%" }}

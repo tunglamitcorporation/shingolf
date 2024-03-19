@@ -3,9 +3,9 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
-import { sendReservationRequest } from "../../api/reservation";
+import { findCompanyByRequest, sendReservationRequest } from "../../api/reservation";
 import { format } from "date-fns";
-function Reservation() {
+function Reservation({token}) {
   const { t } = useTranslation();
   const location = useLocation();
   const receivedData = location.state || {};
@@ -26,7 +26,7 @@ function Reservation() {
   const [selectedRoom, setSelectedRoom] = useState(
     receivedData ? receivedData.selectedRoom : ""
   );
-  
+
   const [saveCityValue, setSaveCityValue] = useState('')
   const [saveBranchValue, setSaveBranchValue] = useState('')
 
@@ -71,11 +71,13 @@ function Reservation() {
   const [specialRequest, setSpecialRequest] = useState('');
   const [pickupTime, setPickupTime] = useState('');
   const [pickupNumber, setPickupNumber] = useState('');
-  const [dropOffTime, setDropOfTime] = useState();
+  const [dropOffTime, setDropOffTime] = useState('');
   const [dropOffNumber, setDropOffNumber] = useState('');
   const [earlyIn, setEarlyIn] = useState('');
   const [lateOut, setLateOut] = useState('');
-
+  const [discount, setDiscount] = useState('');
+  const [searchCompany, setSearchCompany] = useState([]);
+  console.log(searchCompany);
   const handleStartTimeChange = (selectedDates) => {
     if (selectedDates.length > 0) {
       const selectedDate = new Date(selectedDates[0]);
@@ -107,9 +109,9 @@ function Reservation() {
     if (selectedDates.length > 0) {
       const selectedDate = new Date(selectedDates[0]);
       const timeString = selectedDate.toTimeString().split(" ")[0];
-      setDropOfTime(timeString);
+      setDropOffTime(timeString);
     } else {
-      setDropOfTime(null);
+      setDropOffTime(null);
     }
   };
   const handleEarlyInTimeChange = (selectedDates) => {
@@ -152,6 +154,7 @@ function Reservation() {
   const input4Ref = useRef(null);
   const input5Ref = useRef(null);
   const input6Ref = useRef(null);
+
   useEffect(() => {
     if (show) {
       inputRef.current.focus();
@@ -172,8 +175,22 @@ function Reservation() {
   };
   const handleChangeCompanyName = (e) => {
     setCompany(e.target.value);
-  };
 
+    if(company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 4000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
+  };
   const handleSecondFamilyName = (e) => {
     const newValue = e.target.value;
     setSecondFamilyName(newValue);
@@ -200,6 +217,10 @@ function Reservation() {
   const handleSelectedCompany = (statusC) => {
     setStatusC(statusC);
   };
+  const handleChooseCompany = (value) => {
+    setCompany(value)
+    setSearchCompany('')
+  }
   const handlePickupNumber = (e) => {
     const newValue = e.target.value;
     setPickupNumber(newValue);
@@ -220,7 +241,6 @@ function Reservation() {
     return emailRegex.test(email);
   };
   const [errors, setErrors] = useState({})
-  console.log(gender);
   const validateForm = () => {
     let errors = {}
     let isVaLid = true
@@ -293,11 +313,6 @@ function Reservation() {
       isVaLid = false
 
     } 
-    // if (!bookerName) {
-    //   errors.bookerName = 'Booker name field field is required';
-    //   isVaLid = false
-
-    // } 
     if (!email) {
       errors.email = 'required';
       isVaLid = false
@@ -308,7 +323,7 @@ function Reservation() {
 
     }
     if (!phone) {
-      errors.bookerName = 'required';
+      errors.phone = 'required';
       isVaLid = false
 
     } 
@@ -316,61 +331,31 @@ function Reservation() {
     return isVaLid
   }
   const handleSubmit = async(e) => {
-    switch (selectedCity) {
-      case 'hotel-hn':
-        setSaveCityValue('Ha Noi')
-        break;
-      case 'hotel-hcm':
-        setSaveCityValue("Ho CHi Minh")
-        break;
-      case 'hotel-hp':
-        setSaveCityValue('Hai Phong')
-        break;
-      case 'hotel-dn':
-        setSaveCityValue('Da Nang')
-        break;
-      default:
-        setSaveCityValue('')
-        break;
+    function getCityValue(value){
+      switch(value){
+        case 'hotel-hn': return "Ha Noi"
+        case 'hotel-hcm': return "Ho Chi Minh"
+        case 'hotel-dn': return "Da Nang"
+        case 'hotel-hp': return "Hai Phong"
+      }
     }
-    switch (selectedBranch) {
-      case 'thai-van-lung-1-detail':
-        setSaveBranchValue('Thai Van Lung 1')
-        break;
-      case 'thai-van-lung-2-detail':
-        setSaveBranchValue("Thai Van Lung 2")
-        break;
-      case 'le-thanh-ton-detail':
-        setSaveBranchValue('Le Thanh Ton')
-        break;
-      case 'annex-detail':
-        setSaveBranchValue('Annex')
-        break;
-        case 'hai-ba-trung-detail':
-        setSaveBranchValue('Hai Ba Trung 1')
-        break;
-        case 'kim-ma-2-detail':
-        setSaveBranchValue('Kim Ma 2')
-        break;
-        case 'kim-ma-3-detail':
-        setSaveBranchValue('Kim Ma 3')
-        break;
-        case 'linh-lang-detail':
-        setSaveBranchValue('Linh Lang')
-        break;
-        case 'hai-phong':
-        setSaveBranchValue('Hai Phong')
-        break;
-        case 'da-nang':
-        setSaveBranchValue('Da Nang')
-        break;
-      default:
-        setSaveBranchValue('')
-        break;
+    function getBranchValue(value){
+      switch(value){
+        case 'thai-van-lung-1-detail': return "Thai Van Lung 1"
+        case 'thai-van-lung-2-detail': return "Thai Van Lung 2"
+        case 'le-thanh-ton-detail': return "Le Thanh Ton"
+        case 'annex-detail': return "Azumaya Annex"
+        case 'hai-ba-trung-detail': return "Hai Ba Trung 1"
+        case 'kim-ma-2-detail': return "Kim Ma 2"
+        case 'kim-ma-3-detail': return "Kim Ma 3"
+        case 'linh-lang-detail': return "Linh Lang"
+        case 'hai-phong': return "Hai Phong"
+        case 'da-nang': return "Da Nang"
+      }
     }
     const dataObject = {
-        saveCityValue ,
-        saveBranchValue ,
+        saveCityValue: getCityValue(selectedCity),
+        saveBranchValue : getBranchValue(selectedBranch),
         startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
         endDate: endDate ? format(endDate, 'yyyy-MM-dd') :'',
         startTime ,
@@ -399,27 +384,26 @@ function Reservation() {
         company ,
         vat ,
         paymentMethod ,
-        pickupTime: pickupTime ? format(pickupTime, 'HH:mm') :'',
+        pickupTime ,
         pickupNumber ,
-        dropOffTime: dropOffTime ? format(dropOffTime, 'HH:mm') :'',
+        dropOffTime ,
         dropOffNumber ,
-        earlyIn: earlyIn ? format(earlyIn, 'HH:mm') :'',
-        lateOut: lateOut ? format(lateOut, 'HH:mm') : '' ,
+        earlyIn ,
+        lateOut ,
         specialRequest
     }
+    console.log(dataObject);
       e.preventDefault();
       if (validateForm()) {
         const source = await sendReservationRequest(dataObject)
         navigate(`/thank-you/${cityParam}`)
-        console.log(source);
       } else {
         const validateError = document.querySelector('.validate_failed')
                   if(validateError) {
                     validateError.scrollIntoView({behavior:'smooth', block:'center'})
                   }
         console.error('Form data is invalid');
-      }
-      
+      }  
     };
   function DayPicker() {
     const minDay = 1;
@@ -641,7 +625,7 @@ function Reservation() {
               <span className="required__note">*</span>
             </div>
             <select
-                className={errors.selectedCity ? "col-md-2 form__content validate_failed" : "col-md-2 form__content " }
+                className ={errors.selectedCity ? "col-md-2 form__content validate_failed" : "col-md-2 form__content " }
                 value={selectedCity}
                 id={selectedCity}
                 onChange={(e)=>setSelectedCity(e.target.value)}
@@ -852,8 +836,8 @@ function Reservation() {
                     type="radio"
                     name="gender"
                     id="gMale"
-                    value="Mr"
-                    checked={gender === "Mr"}
+                    value="Mr."
+                    checked={gender === "Mr."}
                     onChange={(e) => setGender(e.target.value)}
                     
                   />
@@ -864,8 +848,8 @@ function Reservation() {
                     type="radio"
                     name="gender"
                     id="gFemale"
-                    value="Ms"
-                    checked = {gender === "Ms"}
+                    value="Ms."
+                    checked = {gender === "Ms."}
                     onChange={(e) => setGender(e.target.value)}
                   />
                   <label htmlFor="gFemale">{t("reservation.ms")}</label>
@@ -1033,6 +1017,7 @@ function Reservation() {
               <div className="row">
                 <div className="col-md-2 name__title">
                   {t("reservation.phone")}
+                  <span className="col-md-2 required__note">*</span>
                 </div>
                 <input
                   type="text"
@@ -1117,12 +1102,73 @@ function Reservation() {
                <input
                  ref={input4Ref}
                  type="text"
-                 className="booker-name form__content col-md-2"
+                 className="booker-name form__content col-md-4"
                  placeholder={t("reservation.company")}
                  value={company}
                  onChange={handleChangeCompanyName}
                />
-               <span className="required__note">{t("reservation.company-note")}</span>
+               {searchCompany && company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='5% off'
+                onChange={(e) => setDiscount(e.target.value)}
+              />
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Free Laundry"
+                onChange={(e) => setDiscount(e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Free Laundry"
+                onChange={(e) => setDiscount(e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
              </div>}
               <div className="row">
                 <div className="col-md-2 name__title">

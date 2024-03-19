@@ -33,7 +33,7 @@ export default function HotelHN({ news }) {
               play
               interval = {5000}>
           {hnArea.map((item)=>(
-              <div data-src={item.image} style={{height:'120%'}}>
+              <div data-src={item.image} style={{height:'100%'}}>
               <div className="container">
                 <div className="row">
                   <div className="col-md-12">
