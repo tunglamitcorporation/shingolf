@@ -93,6 +93,7 @@ export default function HotelHN({ news }) {
       <div className="branch__container">
         <div className="container">
           {HanoiDetail.map((item) => (
+            <Link to ={item.link} style={{textDecoration:"none"}}>
             <div className="feature__type-item">
               <div className="card">
                 <div className="row p-0">
@@ -120,6 +121,7 @@ export default function HotelHN({ news }) {
                 </div>
               </div>
             </div>
+            </Link>
           ))}
         </div>
         <div className="content__news">
