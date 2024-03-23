@@ -8,7 +8,7 @@ import Modal from "react-bootstrap/Modal";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 import Button from "react-bootstrap/Button";
-
+import { Helmet } from "react-helmet";
 function MassageLinhLangModal(props) {
   const [startDate, setStartDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
@@ -599,6 +599,24 @@ export default function VietnamService() {
   const [modalShow2, setModalShow2] = useState(false);
   return (
     <>
+    <Helmet>
+    <meta name="description" content="It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath." />
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://azumayavietnam.com/service/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+		<meta property="og:description" content="It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath." />
+		<meta property="og:url" content="https://azumayavietnam.com/service/" />
+    <meta property="og:image" content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172401/AzumayaWeb/Az_website_service_page_photos-2_ximtqy.jpg" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+		<meta name="twitter:description" content="It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath." />
+    <script type="application/ld+json" class="aioseo-schema">
+			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/service\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/service\/#listItem"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/service\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/service\/","name":"Service","description":"It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath.","url":"https:\/\/azumayavietnam.com\/service\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/service\/#webpage","url":"https:\/\/azumayavietnam.com\/service\/","name":"Service - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath.","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/service\/#breadcrumblist"},"datePublished":"2019-01-11T02:40:44+07:00","dateModified":"2020-07-06T03:48:50+07:00"}]`}
+		</script>
+    </Helmet>
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -1134,7 +1152,7 @@ export default function VietnamService() {
                         {massageHCM_price.map((item) => (
                           <tr>
                             <td>{item.row1}</td>
-                            <td>2{item.row2}</td>
+                            <td>{item.row2}</td>
                           </tr>
                         ))}
                       </table>

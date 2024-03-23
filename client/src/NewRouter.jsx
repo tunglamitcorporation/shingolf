@@ -131,7 +131,7 @@ function NewRouter(props) {
                 <Route path="/contract" element={<Contract />} />
                 <Route path="/thank-you/:selectedCity" element={<ThankYou />} />
                 <Route path="/news/:title" element={<News news={news} />} />
-                <Route path="/news-list" element={<NewsList news={news} />} />
+                <Route path="/news" element={<NewsList news={news} />} />
                 <Route path="/news-by-date/:date" element={<NewsByDate news={news} />} />
                 <Route path="/hotel-hn" element={<HotelHN news = {news}/>} />
                 <Route path="/hotel-hcm" element={<HotelHCM news = {news} />} />

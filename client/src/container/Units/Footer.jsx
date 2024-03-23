@@ -28,12 +28,12 @@ export default function Footer() {
                 <div className="row left">
                     <div className="col-md-12 offset-md-5">
                         <div className="footer__branch-name mb-3 mt-3">
-                            <div className="bold-white">AZUMAYA PHNOM PENH</div>
+                            <div className="bold-white">{t('footer.name')}</div>
                         </div>
                         <div className="footer__branch-location">
-                            <p>No. 302 St.228, Phnom Penh, Cambodia<br />
-                            (+855) 23 218 961<br />
-                            reservation@azumayacambodia.com </p>
+                            <p>{t("footer.add")}<br />
+                            {t('footer.num')}<br />
+                            {t('footer.mail')}</p>
                         </div>
                     </div> 
                 </div>

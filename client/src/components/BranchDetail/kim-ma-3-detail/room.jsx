@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
+import { Helmet } from "react-helmet";
 
 export default function KM3RoomDetail() {
   const { t } = useTranslation();
@@ -20,8 +21,8 @@ export default function KM3RoomDetail() {
   console.log(receivedData);
   const [startDate, setStartDate] = useState(receivedData ? receivedData.startDate : '');
   const [endDate, setEndDate] = useState(receivedData ? receivedData.endDate : '');
-  const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
-  const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
+  // const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
+  // const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
   
   const handleContinue = (selectedRoom) => {
     // Prepare data to pass to Receiver2Page
@@ -37,7 +38,39 @@ export default function KM3RoomDetail() {
     // Navigate to Receiver2Page and pass data
     navigate('/reservation', { state: data })
   };
-
+const [selectedCity, setSelectedCity] = useState('hotel-hcm');
+  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  const handleBranchValue = (cityId) => {
+    switch(cityId) {
+       case 'hotel-hcm':
+        setSelectedBranch('le-thanh-ton-detail')
+        break;
+      case 'hotel-hn':
+        setSelectedBranch('hai-ba-trung-detail')
+        break;
+      case 'hotel-dn': 
+        setSelectedBranch('da-nang');
+        break;
+      case 'hotel-hp':
+        setSelectedBranch('hai-phong');
+        break;
+      default:
+        setSelectedBranch('');
+    }
+  };
+  const handleCityChange = (e) => {
+    const cityId = e.target.value;
+    setSelectedCity(cityId);
+    handleBranchValue(cityId);
+  };
+  useEffect(() => {
+    if (receivedData && receivedData.selectedCity) {
+      setSelectedCity(receivedData.selectedCity);
+    }
+    if (receivedData && receivedData.selectedBranch) {
+      setSelectedBranch(receivedData.selectedBranch);
+    }
+  }, [receivedData]);
   const RoomCard = ({room_id, name, size, sizeTitle, bedTitle, install, in1, in2, in3, in4, in5, priceTitle, bed, price, images}) => {
     const { t } = useTranslation();
       return(
@@ -129,6 +162,25 @@ export default function KM3RoomDetail() {
   }
   return (
     <>
+    <Helmet>
+    <meta name="description" content="We are situated in the Japanese town of Kim Ma area, the center of Ha Noi city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers." />
+    <meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://azumayavietnam.com/kim-ma-3-detail/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Kim Ma 3 Detail - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+    <meta property="og:description" content="We are situated in the Japanese town of Kim Ma area, the center of Ha Noi city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers." />
+		<meta property="og:url" content="https://azumayavietnam.com/kim-ma-3-detail/" />
+    <meta property="og:image" content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg" />
+		<meta property="article:published_time" content="2019-12-09T08:12:43+00:00" />
+		<meta property="article:modified_time" content="2019-12-09T08:22:58+00:00" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Kim Ma 3 Detail - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/room"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/room","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/","name":"Kim Ma 3 Detail","url":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/#webpage","url":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/","name":"Kim Ma 3 Detail - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/kim-ma-3-detail\/#breadcrumblist"},"datePublished":"2019-12-09T08:12:43+07:00","dateModified":"2019-12-09T08:22:58+07:00"}]`}
+		</script>
+    </Helmet>
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -146,7 +198,7 @@ export default function KM3RoomDetail() {
       selectedBranch={selectedBranch}
       setStartDate={setStartDate}
       setEndDate={setEndDate}
-      setSelectedCity={setSelectedCity}
+      setSelectedCity={handleCityChange}
       setSelectedBranch={setSelectedBranch} />
       </div>
       <div className="container">

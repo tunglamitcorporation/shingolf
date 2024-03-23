@@ -84,7 +84,12 @@
                 "num": "+84.236.3743 888",
                 "mail": "reservationdanang@azumayavietnam.com"
             }
-        ]
+            
+        ],
+                "name": "Azumaya PhnomPenh",
+                "add": "No. 302, St. 228., PhnomPenh., Campuchia",
+                "num": "+84.236.3743 888",
+                "mail": "reservationdanang@azumayavietnam.com"
     },
     "branch": {
         "hbt1": "Azumaya Hai Ba Trung 1",
@@ -125,12 +130,6 @@
         ],
         "branch": [
             {
-                "branch_id": "hcm-select",
-                "city_id": "hotel-hcm",
-                "city_name": "Ho Chi Minh",
-                "branch_name": "Please select a branch"
-            },
-            {
                 "branch_id": "le-thanh-ton-detail",
                 "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
@@ -153,12 +152,6 @@
                 "city_id": "hotel-hcm",
                 "city_name": "Ho Chi Minh",
                 "branch_name": "Azumaya Annex"
-            },
-            {
-                "branch_id": "hn-select",
-                "city_id": "hotel-hn",
-                "city_name": "Ha Noi",
-                "branch_name": "Please select a branch"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
@@ -185,22 +178,10 @@
                 "branch_name": "Azumaya Linh Lang"
             },
             {
-                "branch_id": "da-nang-select",
-                "city_id": "hotel-dn",
-                "city_name": "Da Nang",
-                "branch_name": "Please select a branch"
-            },
-            {
                 "branch_id": "da-nang",
                 "city_id": "hotel-dn",
                 "city_name": "Da Nang",
                 "branch_name": "Azumaya Da Nang Hotel"
-            },
-            {
-                "branch_id": "hai-phong-select",
-                "city_id": "hotel-hp",
-                "city_name": "Hai Phong",
-                "branch_name": "Please select a branch"
             },
             {
                 "branch_id": "hai-phong",
@@ -1087,6 +1068,7 @@
         ]
     },
     "thank_you":{
+        "name":"Thank you",
         "title":"Your reservation has not yet completed.",
         "content":"Your reservation has not yet completed. Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception address"
     },
@@ -2881,14 +2863,14 @@
         "minibar_fee": "From 20.000 VND",
         "minibar_type": "Soft drink, beer, etc.",
         "laundry": "Laundry",
-        "laundry_fee1": "From 12.500 VND",
+        "laundry_fee1": "From 15.000 VND",
         "laundry_fee2": "Special price for long staying guest",
         "print": "Print & Copy",
         "print_fee1": "FREE for first 10 pages / day",
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",

@@ -84,7 +84,11 @@
                 "num": "+84.236.3743 888",
                 "mail": "reservationdanang@azumayavietnam.com"
             }
-        ]
+        ],
+        "name": "Azumaya PhnomPenh",
+                "add": "No. 302, St. 228., PhnomPenh., Campuchia",
+                "num": "+84.236.3743 888",
+                "mail": "reservationdanang@azumayavietnam.com"
     },
     "branch": {
         "hbt1": "東屋 ハイバーチュン店 1",
@@ -2938,14 +2942,14 @@
         "minibar_fee": "20.000 VND から",
         "minibar_type": "ソフトドリンク、ビールなど",
         "laundry": "クリーニング",
-        "laundry_fee1": "12.500 VND から",
+        "laundry_fee1": "15.000 VND から",
         "laundry_fee2": "長期滞在者のためのスペシャル価格あり",
         "print": "コピー機",
         "print_fee1": "1日10枚まで無料",
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",

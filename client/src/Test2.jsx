@@ -1,25 +1,59 @@
-import React from 'react';
-import SearchableSelect from './Test';
+import React, { useState } from 'react';
 
-const Test2 = () => {
-  const options = [
-    { id: 1, value: 'option1', label: 'Option 1' },
-    { id: 2, value: 'option2', label: 'Option 2' },
-    { id: 3, value: 'option3', label: 'Option 3' },
-    // Add more options as needed
-  ];
+const provinceCityMap = {
+  // Replace with your actual data
+  // Example: 'Tokyo': ['City A', 'City B', 'City C'],
+  'Tokyo': ['Shinjuku'],
+  'Osaka': ['Osaka City', 'Namba', 'Umeda'],
+  // Add more provinces and cities as needed
+};
 
-  const handleSelect = (selectedValue) => {
-    console.log('Selected Value:', selectedValue);
-    // Handle selected value here
+function InputExample() {
+  const [selectedProvince, setSelectedProvince] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+  console.log(selectedProvince, selectedCity);
+  // Handle changes in the province input
+  const handleProvinceChange = (e) => {
+    const province = e.target.value;
+    setSelectedProvince(province);
+
+    // Update the city input value based on the selected province
+    const cities = provinceCityMap[province] || [];
+    setSelectedCity(cities.length === 1 ? cities[0] : ''); // Set the first city if only one exists
   };
 
   return (
-    <div className="App">
-      <h1>Searchable Select Option</h1>
-      <SearchableSelect options={options} onSelect={handleSelect} />
+    <div>
+      <label htmlFor="provinceInput">Province:</label>
+      <select
+        id="provinceInput"
+        value={selectedProvince}
+        onChange={handleProvinceChange}
+      >
+        <option value="">Select a province</option>
+        {Object.keys(provinceCityMap).map((province) => (
+          <option key={province} value={province}>
+            {province}
+          </option>
+        ))}
+      </select>
+
+      <br />
+
+      <label htmlFor="cityInput">City:</label>
+      <select
+        id="cityInput"
+        value={selectedCity}
+        readOnly // Prevent user input in the city input
+      >
+        {provinceCityMap[selectedProvince]?.map((city) => (
+          <option key={city} value={city}>
+            {city}
+          </option>
+        ))}
+      </select>
     </div>
   );
-};
+}
 
-export default Test2;
+export default InputExample;

@@ -5,6 +5,7 @@ import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 import { findCompanyByRequest, sendReservationRequest } from "../../api/reservation";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet";
 function Reservation({token}) {
   const { t } = useTranslation();
   const location = useLocation();
@@ -17,18 +18,15 @@ function Reservation({token}) {
   const payMethod = t("reservation.method", { returnObjects: true });
   const earlyInNote =t("reservation.earlyIn_note", { returnObjects: true });
   const lateOutNote =t("reservation.lateOut_note", { returnObjects: true });
-  const [selectedCity, setSelectedCity] = useState(
-    receivedData ? receivedData.selectedCity : ""
-  );
-  const [selectedBranch, setSelectedBranch] = useState(
-    receivedData ? receivedData.selectedBranch : ""
-  );
-  const [selectedRoom, setSelectedRoom] = useState(
-    receivedData ? receivedData.selectedRoom : ""
-  );
-
-  const [saveCityValue, setSaveCityValue] = useState('')
-  const [saveBranchValue, setSaveBranchValue] = useState('')
+  // const [selectedCity, setSelectedCity] = useState(
+  //   receivedData ? receivedData.selectedCity : 'hotel-hcm'
+  // );
+  // const [selectedBranch, setSelectedBranch] = useState(
+  //   receivedData ? receivedData.selectedBranch : 'le-thanh-ton-detail'
+  // );
+  const [selectedCity, setSelectedCity] = useState('hotel-hcm');
+  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  
 
   const flatBranches = [].concat(...branch);
   const filteredBranches = flatBranches.filter(
@@ -75,9 +73,35 @@ function Reservation({token}) {
   const [dropOffNumber, setDropOffNumber] = useState('');
   const [earlyIn, setEarlyIn] = useState('');
   const [lateOut, setLateOut] = useState('');
+
   const [discount, setDiscount] = useState('');
   const [searchCompany, setSearchCompany] = useState([]);
-  console.log(searchCompany);
+
+  const handleBranchValue = (cityId) => {
+    switch(cityId) {
+       case 'hotel-hcm':
+        setSelectedBranch('le-thanh-ton-detail')
+        break;
+      case 'hotel-hn':
+        setSelectedBranch('hai-ba-trung-detail')
+        break;
+      case 'hotel-dn': 
+        setSelectedBranch('da-nang');
+        break;
+      case 'hotel-hp':
+        setSelectedBranch('hai-phong');
+        break;
+      default:
+        setSelectedBranch('');
+    }
+  };
+
+  const handleCityChange = (e) => {
+    const cityId = e.target.value;
+    setSelectedCity(cityId);
+    handleBranchValue(cityId);
+  };
+
   const handleStartTimeChange = (selectedDates) => {
     if (selectedDates.length > 0) {
       const selectedDate = new Date(selectedDates[0]);
@@ -140,6 +164,7 @@ function Reservation({token}) {
     setValue(value);
     setRoomAmount(value)
   };
+  
   const [show, setShow] = useState(false);
   const [status, setStatus] = useState(0);
   const [statusC, setStatusC] = useState(0);
@@ -154,7 +179,17 @@ function Reservation({token}) {
   const input4Ref = useRef(null);
   const input5Ref = useRef(null);
   const input6Ref = useRef(null);
-
+  useEffect(() => {
+    if (receivedData && receivedData.selectedCity) {
+      setSelectedCity(receivedData.selectedCity);
+    }
+    if (receivedData && receivedData.selectedBranch) {
+      setSelectedBranch(receivedData.selectedBranch);
+    }
+  }, [receivedData]);
+  const [selectedRoom, setSelectedRoom] = useState(
+    receivedData ? receivedData.selectedRoom : ""   
+  );
   useEffect(() => {
     if (show) {
       inputRef.current.focus();
@@ -241,6 +276,7 @@ function Reservation({token}) {
     return emailRegex.test(email);
   };
   const [errors, setErrors] = useState({})
+  
   const validateForm = () => {
     let errors = {}
     let isVaLid = true
@@ -382,6 +418,7 @@ function Reservation({token}) {
         roomType ,
         contract ,
         company ,
+        discount ,
         vat ,
         paymentMethod ,
         pickupTime ,
@@ -402,7 +439,6 @@ function Reservation({token}) {
                   if(validateError) {
                     validateError.scrollIntoView({behavior:'smooth', block:'center'})
                   }
-        console.error('Form data is invalid');
       }  
     };
   function DayPicker() {
@@ -585,6 +621,22 @@ function Reservation({token}) {
   }
   return (
     <div>
+      <Helmet>
+      <meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://azumayavietnam.com/reservation/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
+		<meta property="og:type" content="article" />
+    <meta  property="og:description" content="The Azumaya Hotel welcomes business travelers with comfortable accommodations and modern amenities tailored to their needs. Enjoy a relaxing stay with our spacious rooms, complimentary Wi-Fi, and convenient location near major business districts. Book your reservation today for a seamless travel experience." />
+		<meta property="og:title" content="Reservation - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+		<meta property="og:url" content="https://azumayavietnam.com/reservation/" />
+    <meta property="og:image" content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/rd2qg5wkfxdoarlvcuwl.jpg" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Reservation - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+    <script type="application/ld+json" class="aioseo-schema">
+			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/reservation\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/reservation\/#listItem"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/reservation\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/reservation\/","name":"Reservation","url":"https:\/\/azumayavietnam.com\/reservation\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/reservation\/#webpage","url":"https:\/\/azumayavietnam.com\/reservation\/","name":"Reservation - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/reservation\/#breadcrumblist"},"datePublished":"2020-07-15T07:43:27+07:00","dateModified":"2023-11-02T07:14:56+07:00"}]`}
+		</script>
+      </Helmet>
     <div className="reservation__content">
       <div className="container">
         <div className="row">
@@ -628,11 +680,8 @@ function Reservation({token}) {
                 className ={errors.selectedCity ? "col-md-2 form__content validate_failed" : "col-md-2 form__content " }
                 value={selectedCity}
                 id={selectedCity}
-                onChange={(e)=>setSelectedCity(e.target.value)}
+                onChange={handleCityChange}
                 >
-                <option value="" disabled selected hidden>
-                  {t("booking.placeHolder")}
-                </option>
                 {city.map((item) => (
                   <option key={item.id} value={item.id}>
                     {item.city_name}

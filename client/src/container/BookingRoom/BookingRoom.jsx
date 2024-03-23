@@ -23,12 +23,6 @@ export default function BookingRoom ({startDate, endDate, selectedCity, selected
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
 
-    // useEffect(() => {
-    //     if(selectedBranch == undefined) {
-    //         setSelectedBranch(selectedBranch)
-    //     }
-    // }, [selectedBranch])
-    // console.log(selectedBranch);
     return(
         <div>              
         <div className="content__booking">

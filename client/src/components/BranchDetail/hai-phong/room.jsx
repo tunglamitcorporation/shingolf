@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
+import { Helmet } from "react-helmet";
 
 export default function HPRoomDetail() {
   const { t } = useTranslation();
@@ -18,8 +19,8 @@ export default function HPRoomDetail() {
 
   const [startDate, setStartDate] = useState(receivedData ? receivedData.startDate : '');
   const [endDate, setEndDate] = useState(receivedData ? receivedData.endDate : '');
-  const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
-  const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
+  // const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
+  // const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
 
   const handleContinue = (selectedRoom) => {
     // Prepare data to pass to Receiver2Page
@@ -31,10 +32,43 @@ export default function HPRoomDetail() {
       selectedBranch,
       selectedRoom
     };
-  
+   
     // Navigate to Receiver2Page and pass data
     navigate('/reservation', { state: data });
   }
+   const [selectedCity, setSelectedCity] = useState('hotel-hcm');
+    const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+    const handleBranchValue = (cityId) => {
+      switch(cityId) {
+         case 'hotel-hcm':
+          setSelectedBranch('le-thanh-ton-detail')
+          break;
+        case 'hotel-hn':
+          setSelectedBranch('hai-phong')
+          break;
+        case 'hotel-dn': 
+          setSelectedBranch('da-nang');
+          break;
+        case 'hotel-hp':
+          setSelectedBranch('hai-phong');
+          break;
+        default:
+          setSelectedBranch('');
+      }
+    };
+    const handleCityChange = (e) => {
+      const cityId = e.target.value;
+      setSelectedCity(cityId);
+      handleBranchValue(cityId);
+    };
+    useEffect(() => {
+      if (receivedData && receivedData.selectedCity) {
+        setSelectedCity(receivedData.selectedCity);
+      }
+      if (receivedData && receivedData.selectedBranch) {
+        setSelectedBranch(receivedData.selectedBranch);
+      }
+    }, [receivedData]);
   const RoomCard = ({room_id, name, size, sizeTitle,  install, in1, in2, in3, in4, in5, priceTitle, price, images}) => {
     const { t } = useTranslation();
       return(
@@ -109,6 +143,26 @@ export default function HPRoomDetail() {
   }
   return (
     <>
+    <Helmet>
+    <meta name="description" content="Azumaya Hotel Hai Phong branch is located in the middle of city; just 10 minutes far from airport and 30 minutes far from Nomura Industrial Zone."   />
+    <meta name="robots" content="max-image-preview:large" />
+		<link rel="canonical" href="https://azumayavietnam.com/hai-phong/room" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="hai-phong - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+    <meta property="og:description" content="Located right behind Azumaya Hotel and far 1 minute on foot, Azumaya Hai Phong is considered as a quiet apartment suitable for long term customers. Azumaya hai-phong mainly affords to satisfy customers with not only wide rooms (27.2m2 ~ 30.2 m2), big windows (6/ 7 rooms), WIFI, bathtub & toilet with bidet function in all rooms.
+All additional services are served at Azumaya hotel and the same with hotel guests. Hope you to spend your business trip enjoyably and comfortably at Azumaya Hai pPong. If you have any questions, please feel free to contact to our reception" />
+		<meta property="og:url" content="https://azumayavietnam.com/hai-phong/room" />
+    <meta property="og:image"content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg" />
+		<meta property="article:published_time" content="2016-11-29T09:34:30+00:00" />
+		<meta property="article:modified_time" content="2016-11-29T09:34:30+00:00" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="hai-phong - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/hai-phong\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/hai-phong\/room"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/hai-phong\/room","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/hai-phong\/","name":"hai-phong","url":"https:\/\/azumayavietnam.com\/hai-phong\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/hai-phong\/#webpage","url":"https:\/\/azumayavietnam.com\/hai-phong\/","name":"hai-phong - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/hai-phong\/#breadcrumblist"},"datePublished":"2016-11-29T09:34:30+07:00","dateModified":"2016-11-29T09:34:30+07:00"}]`}
+		</script>
+    </Helmet>
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -126,7 +180,7 @@ export default function HPRoomDetail() {
       selectedBranch={selectedBranch}
       setStartDate={setStartDate}
       setEndDate={setEndDate}
-      setSelectedCity={setSelectedCity}
+      setSelectedCity={handleCityChange}
       setSelectedBranch={setSelectedBranch} />
       </div>
       <div className="container p-0">
@@ -382,12 +436,12 @@ export default function HPRoomDetail() {
                             {t("room_hp.breakfastContent")}
                           </td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                           <th>{t("room_hp.massage")}</th>
                           <td className="pre-line" colSpan={2}>
                             {t("room_hp.massageContent")}
                           </td>
-                        </tr>
+                        </tr> */}
                       </tbody>
                     </table>
                     <div className="col-md-12">
