@@ -27,13 +27,13 @@ export default function HotelHN({ news }) {
       <Helmet>
       <meta name="description" content="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease." />
       <meta name="robots" content="max-image-preview:large" />
-      <link rel="canonical" href="https://azumayavietnam.com/hotel-hn/" />
+      <link rel="canonical" href="http://tunglam.site/hotel-hn/" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
       <meta property="og:type" content="article" />
       <meta property="og:title" content="Hotel HN - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
       <meta property="og:description" content="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease." />
-      <meta property="og:url" content="https://azumayavietnam.com/hotel-hn/" />
+      <meta property="og:url" content="http://tunglam.site/hotel-hn/" />
       <meta property="og:image" content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735800/AzumayaWeb/hanoi1_yrqgvy.png" />
       <meta property="article:published_time" content="2016-11-22T03:28:09+00:00" />
       <meta property="article:modified_time" content="2020-07-06T03:29:20+00:00" />

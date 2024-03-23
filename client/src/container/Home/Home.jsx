@@ -65,15 +65,15 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
     <Helmet>
     <meta name="description" content="Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
 		<meta name="robots" content="max-image-preview:large" />
-		<link rel="canonical" href="https://azumayavietnam.com/" />
-		<link rel="next" href="https://azumayavietnam.com/" />
+		<link rel="canonical" href="http://tunglam.site/" />
+		<link rel="next" href="http://tunglam.site/" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
 		<meta property="og:type" content="website" />
     <meta property="og:image" content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/oskm2_iiija5.jpg" />
 		<meta property="og:title" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
 		<meta property="og:description" content="Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
-		<meta property="og:url" content="https://azumayavietnam.com/" />
+		<meta property="og:url" content="http://tunglam.site/" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
 		<meta name="twitter:description" content="Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />

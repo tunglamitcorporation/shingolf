@@ -49,20 +49,20 @@ function Reservation({token}) {
   const [givenName, setGivenName] = useState('');
   const [secondFamilyName, setSecondFamilyName] = useState('');
   const [secondGivenName, setSecondGivenName] = useState('');
-  const [secondGender, setSecondGender] = useState('');
-  const [selectedDay, setSelectedDay] = useState('');
-  const [selectedMonth, setSelectedMonth] = useState('');
-  const [selectedYear, setSelectedYear] = useState('');
-  const [SecondSelectedDay, setSecondSelectedDay] = useState('');
-  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('');
-  const [SecondSelectedYear, setSecondSelectedYear] = useState('');
-  const [gender, setGender] = useState('');
+  const [secondGender, setSecondGender] = useState('Mr.');
+  const [selectedDay, setSelectedDay] = useState('Day');
+  const [selectedMonth, setSelectedMonth] = useState('Month');
+  const [selectedYear, setSelectedYear] = useState('Year');
+  const [SecondSelectedDay, setSecondSelectedDay] = useState('Day');
+  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('Month');
+  const [SecondSelectedYear, setSecondSelectedYear] = useState('Year');
+  const [gender, setGender] = useState('Mr.');
   const [company, setCompany] = useState('');
   const [booker, setBooker] = useState(`${t('reservation.same-person')}`);
   const [bookerName, setBookerName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [roomType, setRoomType] = useState('');
+  const [roomType, setRoomType] = useState(`${t("reservation.non-smk")}`);
   const [contract, setContract] = useState("No Contract");
   const [vat, setVat] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
@@ -1095,7 +1095,8 @@ function Reservation({token}) {
                     type="radio"
                     name="roomType"
                     id="smk"
-                    value={t("reservation.smk")}
+                    value={t("reservation.smk")}                       
+                    checked =  {roomType === `${t("reservation.smk")}`}
                     onClick={(e) => setRoomType(e.target.value)}
                   />
                   <label htmlFor="smk">{t("reservation.smk")}</label>
@@ -1105,6 +1106,7 @@ function Reservation({token}) {
                     type="radio"
                     name="roomType"
                     id="no-smk"
+                    checked = {roomType === `${t("reservation.non-smk")}`}
                     value={t("reservation.non-smk")}
                     onClick={(e) => setRoomType(e.target.value)}
                   />
@@ -1181,7 +1183,7 @@ function Reservation({token}) {
                 name="discount"
                 className="special"
                 id="discount1"
-                value='5% off'
+                value='Company have contract 5% OFF'
                 onChange={(e) => setDiscount(e.target.value)}
               />
               <label  htmlFor="discount1">Company have contract 5% OFF</label>
@@ -1195,7 +1197,7 @@ function Reservation({token}) {
                 name="discount"
                 className="special"
                 id="discount2"
-                value="Free Laundry"
+                value="Company have contract free laundry 120.000vnd/day"
                 onChange={(e) => setDiscount(e.target.value)}
               />
                 <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
@@ -1209,7 +1211,7 @@ function Reservation({token}) {
                 name="discount"
                 className="special"
                 id="discount3"
-                value="Free Laundry"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
                 onChange={(e) => setDiscount(e.target.value)}
               />
                 <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>

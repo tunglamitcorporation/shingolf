@@ -20,13 +20,13 @@ export default function HotelHP({news}) {
       <Helmet>
     <meta name="description" content="A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us! Heartfelt hope you an unforgettable and enjoyable experience with us."   />
       <meta name="robots" content="max-image-preview:large" />
-      <link rel="canonical" href="https://azumayavietnam.com/hotel-hp/" />
+      <link rel="canonical" href="http://tunglam.site/hotel-hp/" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
       <meta property="og:type" content="article" />
       <meta property="og:title" content="Hotel HP - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
       <meta property="og:description" content="A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us! Heartfelt hope you an unforgettable and enjoyable experience with us."/>
-      <meta property="og:url" content="https://azumayavietnam.com/hotel-hp/" />
+      <meta property="og:url" content="http://tunglam.site/hotel-hp/" />
       <meta property="og:image" content = "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735806/AzumayaWeb/haiphong1_vr2jyt.png" />
       <meta property="article:published_time" content="2018-12-18T11:01:22+00:00" />
       <meta property="article:modified_time" content="2018-12-18T11:01:22+00:00" />

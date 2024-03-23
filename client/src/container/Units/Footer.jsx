@@ -45,7 +45,7 @@ export default function Footer() {
                             <div className="col-md-12">
                     <img className="footer__logo" src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png" alt="" />
                     <div className="footer__copyright">
-                        <p className="mb-0">Copyright © 2013 - Azumaya - All Right Reversed</p>
+                        <p className="mb-0 pt-3">Copyright © 2024 - Azumaya - All Right Reversed</p>
                     </div>
                 </div>
                 </div>
