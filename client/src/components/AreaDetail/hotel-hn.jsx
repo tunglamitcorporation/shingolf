@@ -87,7 +87,7 @@ export default function HotelHN({ news }) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div>                                                               
         </div>
       </div>
       <div className="branch__container">
