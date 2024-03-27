@@ -2,9 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import Booking from "../Units/Booking";
 import { useTranslation } from "react-i18next"; 
 import { useEffect} from 'react';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"
 export default function Feature() {
-
   const { t } = useTranslation();
   const featureItem = t("feature.feature_item", { returnObjects: true });
     const {featureID} = useParams()

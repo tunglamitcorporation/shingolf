@@ -23,6 +23,27 @@ export default function BookingRoom ({startDate, endDate, selectedCity, selected
     const flatBranches = [].concat(...branch)
     const filteredBranches = flatBranches.filter(b => b.city_id == selectedCity)
 
+    const handleBranchValue = (cityId) => {
+        switch(cityId) {
+          case 'hotel-hn':
+            setSelectedBranch('hai-ba-trung-detail')
+            break;
+          case 'hotel-dn': 
+            setSelectedBranch('da-nang');
+            break;
+          case 'hotel-hp':
+            setSelectedBranch('hai-phong');
+            break;
+          default:
+            setSelectedBranch('');
+        }
+      };
+
+      const handleCityChange = (e) => {
+        const cityId = e.target.value;
+        setSelectedCity(cityId);
+        handleBranchValue(cityId);
+      };
     return(
         <div>              
         <div className="content__booking">
@@ -73,7 +94,7 @@ export default function BookingRoom ({startDate, endDate, selectedCity, selected
                 <div className="col-md-2">
                 <div className="content__booking-hotel-select">
                     <select className="content__booking-hotel-name-select"
-                    disabled={!selectedCity}
+                    // disabled={!selectedCity}
                     value={selectedBranch}
                     onChange={(e)=> {setSelectedBranch(e.target.value)}}>
                         {filteredBranches.map((item, index) => (

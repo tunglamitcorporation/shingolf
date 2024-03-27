@@ -1,11 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import Flatpickr from "react-flatpickr";
-import "flatpickr/dist/themes/airbnb.css";
+import { useTranslation } from "react-i18next";
+// import "flatpickr/dist/themes/airbnb.css";
 import { findCompanyByRequest, sendReservationRequest } from "../../api/reservation";
 import { format } from "date-fns";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"
 function Reservation({token}) {
   const { t } = useTranslation();
   const location = useLocation();
@@ -16,6 +16,7 @@ function Reservation({token}) {
   const branch = t("booking.branch", { returnObjects: true });
   const room = t("booking.room", { returnObjects: true });
   const payMethod = t("reservation.method", { returnObjects: true });
+  const payMethod2 = t("reservation.method2", { returnObjects: true });
   const earlyInNote =t("reservation.earlyIn_note", { returnObjects: true });
   const lateOutNote =t("reservation.lateOut_note", { returnObjects: true });
   // const [selectedCity, setSelectedCity] = useState(
@@ -432,7 +433,8 @@ function Reservation({token}) {
     console.log(dataObject);
       e.preventDefault();
       if (validateForm()) {
-        const source = await sendReservationRequest(dataObject)
+        const token= "73344833-5b52-4403-9255-695907647688"
+        const source = await sendReservationRequest(dataObject, token)
         navigate(`/thank-you/${cityParam}`)
       } else {
         const validateError = document.querySelector('.validate_failed')
@@ -733,7 +735,7 @@ function Reservation({token}) {
             <Flatpickr
               value={endDate}
               options={{
-                minDate: new Date(startDate),
+                minDate: new Date(startDate) && 'today',
                 dateFormat: "Y-m-d",
               }}
               className={errors.endDate? "col-md-2 form__content webkit-appearance validate_failed" : "col-md-2 form__content webkit-appearance" }
@@ -757,7 +759,8 @@ function Reservation({token}) {
               options={{
                 enableTime: true,
                 noCalendar: true,
-                minTime: "15:00",
+                minTime: "01:00",
+                maxTime: "00:00",
                 time_24hr: true,
               }}
               placeholder={t("reservation.in-time")}
@@ -775,8 +778,8 @@ function Reservation({token}) {
               options={{
                 enableTime: true,
                 noCalendar: true,
-                minTime: "00:00",
-                maxTime: "12:00",
+                minTime: "12:00",
+                maxTime: "00:00",
                 time_24hr: true,
               }}
               placeholder={t("reservation.out-time")}
@@ -1263,12 +1266,18 @@ function Reservation({token}) {
                   onChange={(e) => {
                     setPaymentMethod(e.target.value);
                   }}
-                >
-                  {payMethod.map((item) => (
+                > {statusC === 0 &&
+                  payMethod.map((item) => (
+                  <option key={item.name} value={item.name}>
+                    {item.name}
+                  </option>
+                ))} 
+                {statusC === 1 && 
+                  payMethod2.map((item) => (
                     <option key={item.name} value={item.name}>
                       {item.name}
                     </option>
-                  ))}
+                  ))} 
                 </select>
               </div>
             </div>

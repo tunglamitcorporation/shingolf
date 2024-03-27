@@ -71,7 +71,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/news-list"
+              to="/news"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}
@@ -305,7 +305,7 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/news-list">
+                      <Link className="header__navbar-link-2" to="/news">
                         {t("header.news")}
                       </Link>
                     </Tab>

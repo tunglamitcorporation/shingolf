@@ -1,4 +1,4 @@
-html,body {
+html {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,6 +7,16 @@ html,body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   /* overflow-x: hidden;s */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -1880,27 +1890,27 @@ a:hover {
 
 
 .allbranch_home{
-  background-color: #F75A5A;
+  background-color: #F75A5A !important;
   width: 90px
 }
 .azumaya_home{
-  background: #482979;
+  background: #482979 !important;
   width: 90px
 }
 .danang_home{
-  background: #ff9d45;
+  background: #ff9d45 !important;
   width :90px
 }
 .hanoi_home{
-    background: #9cd53a;
+    background: #9cd53a !important;
     width :90px
 }
 .haiphong_home{
-  background: #6a51b3;
+  background: #6a51b3 !important;
   width :90px
 }
 .hochiminh_home{
-  background: #6498e7;
+  background: #6498e7 !important;
   width :90px
 }
 .news_time-home{
@@ -1973,7 +1983,7 @@ a:hover {
   width: 10% !important;
 }
 .news_title-container{
-  width: 80% !important;
+  width: 65% !important;
 }
 .carousel-img{
   height: 1200px;
@@ -2502,6 +2512,7 @@ filter: brightness(0.5);
 }
 .news_title-container{
   width: 45% !important;
+  margin-left: 0;
 }
 .content__news-list{
   list-style: none;
@@ -2640,6 +2651,7 @@ font-size: 1.2rem !important;
 }
 .news_title-container{
   width: 60% !important;
+  margin-left: 0;
 }
 .content__news-list{
   list-style: none;

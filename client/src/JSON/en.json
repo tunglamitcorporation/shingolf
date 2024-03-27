@@ -51,7 +51,7 @@
             {
                 "name": "Azumaya Hai Ba Trung 1",
                 "add": "16 Bui Thi Xuan St., Hai Ba Trung Dist., Ha Noi",
-                "num": "+84.24.6278 6688",
+                "num": "+84.24.6278 6688 & +84.24.6278 6689",
                 "mail": "reservationhanoi@azumayavietnam.com"
             },
             {
@@ -86,7 +86,7 @@
             }
             
         ],
-                "name": "Azumaya PhnomPenh",
+                "name": "Azumaya Phnom Penh",
                 "add": "No. 302, St. 228., PhnomPenh., Campuchia",
                 "num": "+84.236.3743 888",
                 "mail": "reservationdanang@azumayavietnam.com"
@@ -1137,8 +1137,8 @@
         "business": "Business Service",
         "businessContent": "For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
         "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "$25 (6am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 6am)",
+        "pickup_fee1": "625.000 VND (6am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 6am)",
         "pickup_car": "Car for 4-7 persons",
         "minibar": "Minibar",
         "minibar_fee": "From 20.000 VND",
@@ -1999,8 +1999,8 @@
         "business": "Business Service",
         "businessContent": "For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
         "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000 VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 7am)",
         "pickup_car": "Car for 4-7 persons",
         "minibar": "Minibar",
         "minibar_fee": "From 20.000 VND",
@@ -2340,8 +2340,8 @@
         "business": "Business Service",
         "businessContent": "For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
         "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000 VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 7am)",
         "pickup_car": "Car for 4-7 persons",
         "minibar": "Minibar",
         "minibar_fee": "From 20.000 VND",
@@ -2569,8 +2569,8 @@
         "business": "Business Service",
         "businessContent": "For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
         "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000 VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 7am)",
         "pickup_car": "Car for 4-7 persons",
         "minibar": "Minibar",
         "minibar_fee": "From 20.000 VND",
@@ -2856,8 +2856,8 @@
         "business": "Business Service",
         "businessContent": "For whom desire a comfortable business trip, Azumaya Hotel provides various services to support you. Our staff are Japanese available, so please do not hesitate to ask us about any problem.",
         "pickup": "Pick up & Drop off Service",
-        "pickup_fee1": "$25 (6am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 6am)",
+        "pickup_fee1": "625.000 VND (6am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 6am)",
         "pickup_car": "Car for 4-7 persons",
         "minibar": "Minibar",
         "minibar_fee": "From 20.000 VND",
@@ -3387,6 +3387,20 @@
                 "name": "Others"
             }
         ],
+        "method2": [
+            {
+                "name": "By cash at counter (VND/USD/JPY)"
+            },
+            {
+                "name": "By credit at counter (VND only)"
+            },
+            {
+                "name": "By company transfer after check out"
+            },
+            {
+                "name": "Others"
+            }
+        ],
         "requirement": "Any special requirement:",
         "requirement-note": "(late check-out, pick-up, etc,...)",
         "pickup":"Pick up",
@@ -3395,7 +3409,7 @@
         "dropOff":"Drop off",
         "dropOffTime":"Please mention the return flight time",
         "dropOffNumber":"Flight Number",
-        "DO_PU_note":"$25-30/one way (depends on the time)",
+        "DO_PU_note":"625.000 VND-30/one way (depends on the time)",
         "earlyIn":"Early check-in",
         "earlyInTime":"Please input time you want to check in",
         "earlyIn_note":[
@@ -3643,7 +3657,7 @@
         "table_hcm1": [
             {
                 "row1": "Weekday :",
-                "row2": "6:00 ~ 10:00"
+                "row2": "06:00 ~ 10:00"
             },
             {
                 "row1": "",
@@ -3651,7 +3665,7 @@
             },
             {
                 "row1": "Weekend :",
-                "row2": "7:00 ~ 24:00"
+                "row2": "07:00 ~ 24:00"
             }
         ],
         "table_hcm2": [
@@ -3675,9 +3689,9 @@
         "table_hn1": [
             {
                 "row1": "Weekday :",
-                "row2": "6:00 ~ 9:00",
+                "row2": "06:00 ~ 09:00",
                 "row3": "Weekday :",
-                "row4": "6:00 ~ 9:00"
+                "row4": "06:00 ~ 09:00"
             },
             {
                 "row1": "",
@@ -3687,9 +3701,9 @@
             },
             {
                 "row1": "Weekend :",
-                "row2": "7:00 ~ 23:00",
+                "row2": "07:00 ~ 23:00",
                 "row3": "Weekend :",
-                "row4": "7:00 ~ 23:00"
+                "row4": "07:00 ~ 23:00"
             }
         ],
         "table_hn2": [
@@ -3705,7 +3719,7 @@
         "table_dn1": [
             {
                 "row1": "Weekday :",
-                "row2": "6:00 ~ 9:00"
+                "row2": "06:00 ~ 09:00"
             },
             {
                 "row1": "",
@@ -3728,7 +3742,7 @@
         "table_hp1": [
             {
                 "row1": "Weekday :",
-                "row2": "6:00 ~ 9:00"
+                "row2": "06:00 ~ 09:00"
             },
             {
                 "row1": "",

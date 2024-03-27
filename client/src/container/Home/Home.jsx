@@ -1,4 +1,4 @@
-import "flatpickr/dist/themes/airbnb.css";
+// import "flatpickr/dist/themes/airbnb.css";
 import Booking from "../Units/Booking";
 import { useTranslation } from "react-i18next";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
@@ -9,9 +9,9 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import 'react-awesome-slider/dist/styles.css';
-import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
-import { Helmet } from 'react-helmet';
+// import '../../../node_modules/react-awesome-slider/dist/styles.css';
+// import '../../../node_modules/react-awesome-slider/dist/custom-animations/scale-out-animation.css';
+import { Helmet } from 'react-helmet-async';
 
 function LineModal(props) {
   return (
@@ -86,6 +86,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
       <div className="content">
       <div className="overlay"></div>
       <AutoPlaySlider
+      style={{height: "970px"}}
       animation = "scaleOutAnimation"
       mobileTouch
       infinite
@@ -175,7 +176,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
               if (article.allBranch == true)
                {
                 return (
-                  <div className="row">
+                  <div className="row justify-content-evenly">
                     <div className="col-md-2 mt-1 news_date-container">
                       <div className="news_box1">
                         <div className="news_time-home">
@@ -190,8 +191,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                           <div className="allbranch allbranch_home">{t("header.allbranch")}</div>
                     </div>
                     <div className="col-md-7 mt-2 news_title-container">
-                      <div key={article.id}>
+                      <div >
                         <Link
+                        key={article.id}
                           className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
@@ -203,7 +205,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 );
               } else if (article.hn == true) {
                 return (
-                  <div className="row">
+                  <div className="row justify-content-evenly">
                     <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
@@ -231,7 +233,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 );
               } else if (article.hp == true) {
                 return (
-                  <div className="row">
+                  <div className="row justify-content-evenly">
                     <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
@@ -259,7 +261,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 );
               } else if (article.dn == true) {
                 return (
-                  <div className="row">
+                  <div className="row justify-content-evenly">
                     <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
@@ -287,7 +289,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 );
               } else if (article.hcm == true) {
                 return (
-                  <div className="row">
+                  <div className="row justify-content-evenly">
                     <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">
@@ -315,7 +317,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 );
               } else if (article.az == true) {
                 return (
-                  <div className="row">
+                  <div className="row justify-content-evenly">
                     <div className="col-md-2 mt-1 news_date-container" >
                       <div className="news_box1">
                         <div className="news_time-home">

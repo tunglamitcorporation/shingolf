@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"
 
 
 export default function TVL1RoomDetail() {

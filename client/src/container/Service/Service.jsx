@@ -1,118 +1,324 @@
 import React from "react";
-import BookingRoom from "../BookingRoom/BookingRoom";
+import Booking from "../Units/Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { useLocation, useParams, Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
 import Flatpickr from "react-flatpickr";
-import "flatpickr/dist/themes/airbnb.css";
+// import "flatpickr/dist/themes/airbnb.css";
 import Button from "react-bootstrap/Button";
-import { Helmet } from "react-helmet";
-function MassageLinhLangModal(props) {
-  const [startDate, setStartDate] = useState(null);
-  const [startTime, setStartTime] = useState(null);
-  const [guestName, setGuestName] = useState();
-  const [option, setOption] = useState();
-  const [phone, setPhone] = useState();
-  const [specialRequest, setSpecialRequest] = useState();
+import { Helmet } from "react-helmet-async"
 
-  const validate = () => {
-    alert(
-      guestName + '' +
-      phone + '' +
-      startDate + '' +
-      startTime + '' +
-      option + '' +
-      specialRequest
-    )
-  }
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      backdrop="static"
-      keyboard={false}
-    >
-      <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Massage Ha Noi (Azumaya Linh Lang)
-        </Modal.Title>
-        <Button variant="light" onClick={props.onHide}>
-          <i class="fa-solid fa-xmark purple"></i>
-        </Button>
-      </Modal.Header>
-      <div className="row">
-        <div className="col-md-6 massage_reservation">
-          <Modal.Body>
-            <h2>Reservation by email</h2>
-            <div className="row pl-3 pr-3">
-              <input
-                placeholder="Guest Name"
-                type="text"
-                className="col-md-12 form__content mb-0"
-                onChange={(e) => {
-                  setGuestName(e.target.value);
-                }}
-              />
+
+
+export default function VietnamService() {
+  function MassageLinhLangModal(props) {
+    const [startDate, setStartDate] = useState(null);
+    const [startTime, setStartTime] = useState(null);
+    const [guestName, setGuestName] = useState();
+    const [option, setOption] = useState();
+    const [phone, setPhone] = useState();
+    const [email, setEmail] = useState();
+    const [specialRequest, setSpecialRequest] = useState();
+  
+    const validate = () => {
+      alert(
+        guestName + '' +
+        phone + '' +
+        email + '' +
+        startDate + '' +
+        startTime + '' +
+        option + '' +
+        specialRequest
+      )
+    }
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Massage Ha Noi (Azumaya Linh Lang)
+          </Modal.Title>
+          <Button variant="light" onClick={props.onHide}>
+            <i class="fa-solid fa-xmark purple"></i>
+          </Button>
+        </Modal.Header>
+        <div className="row">
+          <div className="col-md-6 massage_reservation">
+            <Modal.Body>
+              <h2>Reservation by email</h2>
+              <div className="row pl-3 pr-3">
+                <input
+                  placeholder="Guest Name"
+                  type="text"
+                  className="col-md-12 form__content mb-0"
+                  onChange={(e) => {
+                    setGuestName(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="row pl-3 pr-3">
+                <input
+                  type="text"
+                  className="booker-phone form__content col-md-12"
+                  id=""
+                  value={phone}
+                  placeholder="Phone Number"
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                  <input
+                  type="text"
+                  className="form__content col-md-12"
+                  id=""
+                  value={email}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Flatpickr
+                  value={startDate}
+                  options={{
+                    minDate: "today",
+                  }}
+                  className="col-md-6 form__content webkit-appearance mr-0"
+                  placeholder="Date"
+                  onChange={(startDate) => {
+                    setStartDate(startDate);
+                  }}
+                />
+                <Flatpickr
+                  value={startTime}
+                  options={{
+                    enableTime: true,
+                    noCalendar: true,
+                    minTime: "21:30",
+                    time_24hr: true,
+                  }}
+                  placeholder="Time"
+                  onChange={(startTime) => setStartTime(startTime)}
+                  className="col-md-6 form__content webkit-appearance mr-0"
+                />
+                <select
+                  value={option}
+                  className="col-md-12 form__content"
+                  onChange={(e) => {
+                    setOption(e.target.value);
+                  }}
+                >
+                  <option value="40 minutes">40 minutes</option>
+                  <option value="0 minutes">70 minutes</option>
+                  <option value="100 minutes">100 minutes</option>
+                </select>
+                <textarea
+                  className="text-note"
+                  cols="40"
+                  rows="6"
+                  placeholder="Special Note"
+                  onChange={(e) => setSpecialRequest(e.target.value)}
+                ></textarea>
+  
+                <div className="row justify-content-center">
+                  <button
+                    class="button-57 send-btn col-3 col-md-6"
+                    role="button"
+                    onClick={validate}
+                  >
+                    <span class="text" style={{ color: "#fff" }}>
+                      Send
+                    </span>
+                    <span className="d-flex align-item-center">
+                      <i
+                        class="fa-sharp fa-regular fa-paper-plane green"
+                        style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+                      ></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </Modal.Body>
+          </div>
+          <div className="col-md-6">
+            <div className="space-line">
+              <div className="row justify-content-center">
+                <div className="col-6 col-md-6">
+                  <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
+                </div>
+              </div>
             </div>
-            <div className="row pl-3 pr-3">
-              <input
-                type="text"
-                className="booker-phone form__content col-md-12"
-                id=""
-                placeholder="Phone Number"
-                onKeyPress={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
-                }}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <Flatpickr
-                value={startDate}
-                options={{
-                  minDate: "today",
-                }}
-                className="col-md-6 form__content webkit-appearance mr-0"
-                placeholder="Date"
-                onChange={(startDate) => {
-                  setStartDate(startDate);
-                }}
-              />
-              <Flatpickr
-                value={startTime}
-                options={{
-                  enableTime: true,
-                  noCalendar: true,
-                  minTime: "10:00",
-                  time_24hr: true,
-                }}
-                placeholder="Time"
-                onChange={(startTime) => setStartTime(startTime)}
-                className="col-md-6 form__content webkit-appearance mr-0"
-              />
-              <select
-                value={option}
-                className="col-md-12 form__content"
-                onChange={(e) => {
-                  setOption(e.target.value);
-                }}
-              >
-                <option value="40 minutes">40 minutes</option>
-                <option value="0 minutes">70 minutes</option>
-                <option value="100 minutes">100 minutes</option>
-              </select>
-              <textarea
-                className="text-note"
-                cols="40"
-                rows="6"
-                placeholder="Special Note"
-                onChange={(e) => setSpecialRequest(e.target.value)}
-              ></textarea>
-
+            <Modal.Body>
+              <h2>Call directly for Receptionist</h2>
+              <div className="btn_container mt-4">
+                <button className="button-57 call-btn p-0">
+                  <a className="d-block" href="tel:+84.24.3862 0620">
+                    <i
+                      class="fa-solid fa-phone purple"
+                      style={{ lineHeight: "3.8rem" }}
+                    ></i>
+                  </a>
+                  <span className="w-100">
+                    <a className="d-block call-after" href="tel:+84.24.3862 0620">
+                      +84.24.3862 0620
+                    </a>
+                  </span>
+                </button>
+              </div>
+              <div className="room__container mt-5">
+                <div className="gg-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59582.90076034504!2d105.74832752067798!3d21.03543478734608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab149718acdb%3A0xb77ce3d86ae19183!2sAzumaya%20Hotel%20Linh%20Lang!5e0!3m2!1sen!2s!4v1704439192351!5m2!1sen!2s"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </Modal.Body>
+          </div>
+        </div>
+        <Modal.Footer>
+          <button
+            class="button-57 close-btn"
+            role="button"
+            onClick={props.onHide}
+          >
+            <span class="text" style={{ color: "#fff" }}>
+              Close
+            </span>
+            <span>
+              <i
+                class="fa-solid fa-xmark red"
+                style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+              ></i>
+            </span>
+          </button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+  function MassageDaNangModal(props) {
+    const [startDate, setStartDate] = useState(null);
+    const [startTime, setStartTime] = useState(null);
+    const [guestName, setGuestName] = useState();
+    const [option, setOption] = useState();
+    const [phone, setPhone] = useState();
+    const [email, setEmail] = useState();
+    const [specialRequest, setSpecialRequest] = useState();
+  
+    const validate = () => {
+      alert(
+        guestName + '' +
+        phone + '' +
+        email + '' +
+        startDate + '' +
+        startTime + '' +
+        option + '' +
+        specialRequest
+      )
+    }
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Massage Da Nang (Azumaya Da Nang)
+          </Modal.Title>
+          <Button variant="light" onClick={props.onHide}>
+            <i class="fa-solid fa-xmark purple"></i>
+          </Button>
+        </Modal.Header>
+        <div className="row">
+          <div className="col-md-6 massage_reservation">
+            <Modal.Body>
+              <h2>Reservation by email</h2>
+              <div className="row pl-3 pr-3">
+                <input
+                  placeholder="Guest Name"
+                  type="text"
+                  className="col-md-12 form__content mb-0"
+                  onChange={(e) => {
+                    setGuestName(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="row pl-3 pr-3">
+                <input
+                  type="text"
+                  className="booker-phone form__content col-md-12"
+                  id=""
+                  placeholder="Phone Number"
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="form__content col-md-12"
+                  id=""
+                  value={email}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Flatpickr
+                  value={startDate}
+                  options={{
+                    minDate: "today",
+                  }}
+                  className="col-md-6 form__content webkit-appearance mr-0"
+                  placeholder="Date"
+                  onChange={(startDate) => {
+                    setStartDate(startDate);
+                  }}
+                />
+                <Flatpickr
+                  value={startTime}
+                  options={{
+                    enableTime: true,
+                    noCalendar: true,
+                    minTime: "10:00",
+                    time_24hr: true,
+                  }}
+                  placeholder="Time"
+                  onChange={(startTime) => setStartTime(startTime)}
+                  className="col-md-6 form__content webkit-appearance mr-0"
+                />
+                <select
+                  value={option}
+                  className="col-md-12 form__content"
+                  onChange={(e) => {
+                    setOption(e.target.value);
+                  }}
+                >
+                  <option value="40 minutes">40 minutes</option>
+                  <option value="70 minutes">70 minutes</option>
+                  <option value="100 minutes">100 minutes</option>
+                </select>
+                <textarea
+                  className="text-note"
+                  cols="40"
+                  rows="6"
+                  placeholder="Special Note"
+                  onChange={(e) => setSpecialRequest(e.target.value)}
+                ></textarea>
+              </div>
               <div className="row justify-content-center">
                 <button
                   class="button-57 send-btn col-3 col-md-6"
@@ -130,427 +336,254 @@ function MassageLinhLangModal(props) {
                   </span>
                 </button>
               </div>
-            </div>
-          </Modal.Body>
-        </div>
-        <div className="col-md-6">
-          <div className="space-line">
-            <div className="row justify-content-center">
-              <div className="col-6 col-md-6">
-                <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
-              </div>
-            </div>
+            </Modal.Body>
           </div>
-          <Modal.Body>
-            <h2>Call directly for Receptionist</h2>
-            <div className="btn_container mt-4">
-              <button className="button-57 call-btn p-0">
-                <a className="d-block" href="tel:+84.24.3862 0620">
-                  <i
-                    class="fa-solid fa-phone purple"
-                    style={{ lineHeight: "3.8rem" }}
-                  ></i>
-                </a>
-                <span className="w-100">
-                  <a className="d-block call-after" href="tel:+84.24.3862 0620">
-                    +84.24.3862 0620
-                  </a>
-                </span>
-              </button>
-            </div>
-            <div className="room__container mt-5">
-              <div className="gg-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59582.90076034504!2d105.74832752067798!3d21.03543478734608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab149718acdb%3A0xb77ce3d86ae19183!2sAzumaya%20Hotel%20Linh%20Lang!5e0!3m2!1sen!2s!4v1704439192351!5m2!1sen!2s"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                />
+          <div className="col-md-6">
+            <div className="space-line">
+              <div className="row justify-content-center">
+                <div className="col-6 col-md-6">
+                  <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
+                </div>
               </div>
             </div>
-          </Modal.Body>
+            <Modal.Body>
+              <h2>Call directly for Receptionist</h2>
+              <div className="btn_container mt-4">
+                <button className="button-57 call-btn p-0">
+                  <a className="d-block" href="tel:+84.236.3743 888">
+                    <i
+                      class="fa-solid fa-phone purple"
+                      style={{ lineHeight: "3.8rem" }}
+                    ></i>
+                  </a>
+                  <span className="w-100">
+                    <a className="d-block call-after" href="tel:+84.236.3743 888">
+                      +84.236.3743 888
+                    </a>
+                  </span>
+                </button>
+              </div>
+              <div className="room__container mt-5">
+                <div className="gg-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.607453222497!2d108.21247711425566!3d16.08584744326651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142181558c6ded1%3A0xd9b07e55bf351cab!2sAzumaya+Hotel+Da+Nang!5e0!3m2!1svi!2s!4v1480501419661"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </Modal.Body>
+          </div>
         </div>
-      </div>
-      <Modal.Footer>
-        <button
-          class="button-57 close-btn"
-          role="button"
-          onClick={props.onHide}
-        >
-          <span class="text" style={{ color: "#fff" }}>
-            Close
-          </span>
-          <span>
-            <i
-              class="fa-solid fa-xmark red"
-              style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-            ></i>
-          </span>
-        </button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
-function MassageDaNangModal(props) {
-  const [startDate, setStartDate] = useState(null);
-  const [startTime, setStartTime] = useState(null);
-  const [guestName, setGuestName] = useState();
-  const [option, setOption] = useState();
-  const [phone, setPhone] = useState();
-  const [specialRequest, setSpecialRequest] = useState();
-
-  const validate = () => {
-    alert(
-      guestName + '' +
-      phone + '' +
-      startDate + '' +
-      startTime + '' +
-      option + '' +
-      specialRequest
-    )
+        <Modal.Footer>
+          <button
+            class="button-57 close-btn"
+            role="button"
+            onClick={props.onHide}
+          >
+            <span class="text" style={{ color: "#fff" }}>
+              Close
+            </span>
+            <span>
+              <i
+                class="fa-solid fa-xmark red"
+                style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+              ></i>
+            </span>
+          </button>
+        </Modal.Footer>
+      </Modal>
+    );
   }
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      backdrop="static"
-      keyboard={false}
-    >
-      <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Massage Da Nang (Azumaya Da Nang)
-        </Modal.Title>
-        <Button variant="light" onClick={props.onHide}>
-          <i class="fa-solid fa-xmark purple"></i>
-        </Button>
-      </Modal.Header>
-      <div className="row">
-        <div className="col-md-6 massage_reservation">
-          <Modal.Body>
-            <h2>Reservation by email</h2>
-            <div className="row pl-3 pr-3">
-              <input
-                placeholder="Guest Name"
-                type="text"
-                className="col-md-12 form__content mb-0"
-                onChange={(e) => {
-                  setGuestName(e.target.value);
-                }}
-              />
-            </div>
-            <div className="row pl-3 pr-3">
-              <input
-                type="text"
-                className="booker-phone form__content col-md-12"
-                id=""
-                placeholder="Phone Number"
-                onKeyPress={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
-                }}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <Flatpickr
-                value={startDate}
-                options={{
-                  minDate: "today",
-                }}
-                className="col-md-6 form__content webkit-appearance mr-0"
-                placeholder="Date"
-                onChange={(startDate) => {
-                  setStartDate(startDate);
-                }}
-              />
-              <Flatpickr
-                value={startTime}
-                options={{
-                  enableTime: true,
-                  noCalendar: true,
-                  minTime: "10:00",
-                  time_24hr: true,
-                }}
-                placeholder="Time"
-                onChange={(startTime) => setStartTime(startTime)}
-                className="col-md-6 form__content webkit-appearance mr-0"
-              />
-              <select
-                value={option}
-                className="col-md-12 form__content"
-                onChange={(e) => {
-                  setOption(e.target.value);
-                }}
-              >
-                <option value="40 minutes">40 minutes</option>
-                <option value="70 minutes">70 minutes</option>
-                <option value="100 minutes">100 minutes</option>
-              </select>
-              <textarea
-                className="text-note"
-                cols="40"
-                rows="6"
-                placeholder="Special Note"
-                onChange={(e) => setSpecialRequest(e.target.value)}
-              ></textarea>
-            </div>
-            <div className="row justify-content-center">
-              <button
-                class="button-57 send-btn col-3 col-md-6"
-                role="button"
-                onClick={validate}
-              >
-                <span class="text" style={{ color: "#fff" }}>
-                  Send
-                </span>
-                <span className="d-flex align-item-center">
-                  <i
-                    class="fa-sharp fa-regular fa-paper-plane green"
-                    style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-                  ></i>
-                </span>
-              </button>
-            </div>
-          </Modal.Body>
-        </div>
-        <div className="col-md-6">
-          <div className="space-line">
-            <div className="row justify-content-center">
-              <div className="col-6 col-md-6">
-                <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
-              </div>
-            </div>
-          </div>
-          <Modal.Body>
-            <h2>Call directly for Receptionist</h2>
-            <div className="btn_container mt-4">
-              <button className="button-57 call-btn p-0">
-                <a className="d-block" href="tel:+84.236.3743 888">
-                  <i
-                    class="fa-solid fa-phone purple"
-                    style={{ lineHeight: "3.8rem" }}
-                  ></i>
-                </a>
-                <span className="w-100">
-                  <a className="d-block call-after" href="tel:+84.236.3743 888">
-                    +84.236.3743 888
-                  </a>
-                </span>
-              </button>
-            </div>
-            <div className="room__container mt-5">
-              <div className="gg-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.607453222497!2d108.21247711425566!3d16.08584744326651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142181558c6ded1%3A0xd9b07e55bf351cab!2sAzumaya+Hotel+Da+Nang!5e0!3m2!1svi!2s!4v1480501419661"
-                  style={{ border: 0 }}
-                  allowFullScreen
+  function MassageThaiVanLung1Modal(props) {
+    const [startDate, setStartDate] = useState(null);
+    const [startTime, setStartTime] = useState(null);
+    const [guestName, setGuestName] = useState();
+    const [option, setOption] = useState();
+    const [phone, setPhone] = useState();
+    const [email, setEmail] = useState();
+    const [specialRequest, setSpecialRequest] = useState();
+    const validate = () => {
+      alert(
+        guestName + '' +
+        phone + '' +
+        email + '' +
+        startDate + '' +
+        startTime + '' +
+        option + '' +
+        specialRequest
+      )
+    }
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Massage Thai Van Lung 1 (Azumaya Thai Van Lung 1)
+          </Modal.Title>
+          <Button variant="light" onClick={props.onHide}>
+            <i class="fa-solid fa-xmark purple"></i>
+          </Button>
+        </Modal.Header>
+        <div className="row">
+          <div className="col-md-6 massage_reservation">
+            <Modal.Body>
+              <h2>Reservation by email</h2>
+              <div className="row pl-3 pr-3">
+                <input
+                  placeholder="Guest Name"
+                  type="text"
+                  className="col-md-12 form__content mb-0"
+                  onChange={(e) => {
+                    setGuestName(e.target.value);
+                  }}
                 />
               </div>
+              <div className="row pl-3 pr-3">
+                <input
+                  type="text"
+                  className="booker-phone form__content col-md-12"
+                  id=""
+                  placeholder="Phone Number"
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                <input
+                  type="text"
+                  className="form__content col-md-12"
+                  id=""
+                  value={email}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Flatpickr
+                  value={startDate}
+                  options={{
+                    minDate: "today",
+                  }}
+                  className="col-md-6 form__content webkit-appearance mr-0"
+                  placeholder="Date"
+                  onChange={(startDate) => {
+                    setStartDate(startDate);
+                  }}
+                />
+                <Flatpickr
+                  value={startTime}
+                  options={{
+                    enableTime: true,
+                    noCalendar: true,
+                    minTime: "10:00",
+                    time_24hr: true,
+                  }}
+                  placeholder="Time"
+                  onChange={(startTime) => setStartTime(startTime)}
+                  className="col-md-6 form__content webkit-appearance mr-0"
+                />
+                <select
+                  value={option}
+                  className="col-md-12 form__content"
+                  onChange={(e) => {
+                    setOption(e.target.value);
+                  }}
+                >
+                  <option value="40 minutes">40 minutes</option>
+                  <option value="70 minutes">70 minutes</option>
+                  <option value="100 minutes">100 minutes</option>
+                </select>
+                <textarea
+                  className="text-note"
+                  cols="40"
+                  rows="6"
+                  placeholder="Special Note"
+                  onChange={(e) => setSpecialRequest(e.target.value)}
+                ></textarea>
+              </div>
+              <div className="row justify-content-center">
+                <button
+                  class="button-57 send-btn col-3 col-md-6"
+                  role="button"
+                  onClick={validate}
+                >
+                  <span class="text" style={{ color: "#fff" }}>
+                    Send
+                  </span>
+                  <span className="d-flex align-item-center">
+                    <i
+                      class="fa-sharp fa-regular fa-paper-plane green"
+                      style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+                    ></i>
+                  </span>
+                </button>
+              </div>
+            </Modal.Body>
+          </div>
+          <div className="col-md-6">
+            <div className="space-line">
+              <div className="row justify-content-center">
+                <div className="col-6 col-md-6">
+                  <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
+                </div>
+              </div>
             </div>
-          </Modal.Body>
+            <Modal.Body>
+              <h2>Call directly for Receptionist</h2>
+              <div className="btn_container mt-4">
+                <button className="button-57 call-btn p-0">
+                  <a className="d-block" href="tel:+84.236.3743 888">
+                    <i
+                      class="fa-solid fa-phone purple"
+                      style={{ lineHeight: "3.8rem" }}
+                    ></i>
+                  </a>
+                  <span className="w-100">
+                    <a className="d-block call-after" href="tel:+84.236.3743 888">
+                      +84.236.3743 888
+                    </a>
+                  </span>
+                </button>
+              </div>
+              <div className="room__container mt-5">
+                <div className="gg-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4155081221156!2d106.70226331420403!3d10.779454062086852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f48e8ac8da7%3A0xdf1add902008fcb9!2sAzumaya+Hotel!5e0!3m2!1svi!2s!4v1480500414644"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </Modal.Body>
+          </div>
         </div>
-      </div>
-      <Modal.Footer>
-        <button
-          class="button-57 close-btn"
-          role="button"
-          onClick={props.onHide}
-        >
-          <span class="text" style={{ color: "#fff" }}>
-            Close
-          </span>
-          <span>
-            <i
-              class="fa-solid fa-xmark red"
-              style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-            ></i>
-          </span>
-        </button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
-function MassageThaiVanLung1Modal(props) {
-  const [startDate, setStartDate] = useState(null);
-  const [startTime, setStartTime] = useState(null);
-  const [guestName, setGuestName] = useState();
-  const [option, setOption] = useState();
-  const [phone, setPhone] = useState();
-  const [specialRequest, setSpecialRequest] = useState();
-  const validate = () => {
-    alert(
-      guestName + '' +
-      phone + '' +
-      startDate + '' +
-      startTime + '' +
-      option + '' +
-      specialRequest
-    )
+        <Modal.Footer>
+          <button
+            class="button-57 close-btn"
+            role="button"
+            onClick={props.onHide}
+          >
+            <span class="text" style={{ color: "#fff" }}>
+              Close
+            </span>
+            <span>
+              <i
+                class="fa-solid fa-xmark red"
+                style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+              ></i>
+            </span>
+          </button>
+        </Modal.Footer>
+      </Modal>
+    );
   }
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      backdrop="static"
-      keyboard={false}
-    >
-      <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Massage Thai Van Lung 1 (Azumaya Thai Van Lung 1)
-        </Modal.Title>
-        <Button variant="light" onClick={props.onHide}>
-          <i class="fa-solid fa-xmark purple"></i>
-        </Button>
-      </Modal.Header>
-      <div className="row">
-        <div className="col-md-6 massage_reservation">
-          <Modal.Body>
-            <h2>Reservation by email</h2>
-            <div className="row pl-3 pr-3">
-              <input
-                placeholder="Guest Name"
-                type="text"
-                className="col-md-12 form__content mb-0"
-                onChange={(e) => {
-                  setGuestName(e.target.value);
-                }}
-              />
-            </div>
-            <div className="row pl-3 pr-3">
-              <input
-                type="text"
-                className="booker-phone form__content col-md-12"
-                id=""
-                placeholder="Phone Number"
-                onKeyPress={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
-                }}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <Flatpickr
-                value={startDate}
-                options={{
-                  minDate: "today",
-                }}
-                className="col-md-6 form__content webkit-appearance mr-0"
-                placeholder="Date"
-                onChange={(startDate) => {
-                  setStartDate(startDate);
-                }}
-              />
-              <Flatpickr
-                value={startTime}
-                options={{
-                  enableTime: true,
-                  noCalendar: true,
-                  minTime: "10:00",
-                  time_24hr: true,
-                }}
-                placeholder="Time"
-                onChange={(startTime) => setStartTime(startTime)}
-                className="col-md-6 form__content webkit-appearance mr-0"
-              />
-              <select
-                value={option}
-                className="col-md-12 form__content"
-                onChange={(e) => {
-                  setOption(e.target.value);
-                }}
-              >
-                <option value="40 minutes">40 minutes</option>
-                <option value="70 minutes">70 minutes</option>
-                <option value="100 minutes">100 minutes</option>
-              </select>
-              <textarea
-                className="text-note"
-                cols="40"
-                rows="6"
-                placeholder="Special Note"
-                onChange={(e) => setSpecialRequest(e.target.value)}
-              ></textarea>
-            </div>
-            <div className="row justify-content-center">
-              <button
-                class="button-57 send-btn col-3 col-md-6"
-                role="button"
-                onClick={validate}
-              >
-                <span class="text" style={{ color: "#fff" }}>
-                  Send
-                </span>
-                <span className="d-flex align-item-center">
-                  <i
-                    class="fa-sharp fa-regular fa-paper-plane green"
-                    style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-                  ></i>
-                </span>
-              </button>
-            </div>
-          </Modal.Body>
-        </div>
-        <div className="col-md-6">
-          <div className="space-line">
-            <div className="row justify-content-center">
-              <div className="col-6 col-md-6">
-                <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
-              </div>
-            </div>
-          </div>
-          <Modal.Body>
-            <h2>Call directly for Receptionist</h2>
-            <div className="btn_container mt-4">
-              <button className="button-57 call-btn p-0">
-                <a className="d-block" href="tel:+84.236.3743 888">
-                  <i
-                    class="fa-solid fa-phone purple"
-                    style={{ lineHeight: "3.8rem" }}
-                  ></i>
-                </a>
-                <span className="w-100">
-                  <a className="d-block call-after" href="tel:+84.236.3743 888">
-                    +84.236.3743 888
-                  </a>
-                </span>
-              </button>
-            </div>
-            <div className="room__container mt-5">
-              <div className="gg-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4155081221156!2d106.70226331420403!3d10.779454062086852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f48e8ac8da7%3A0xdf1add902008fcb9!2sAzumaya+Hotel!5e0!3m2!1svi!2s!4v1480500414644"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </Modal.Body>
-        </div>
-      </div>
-      <Modal.Footer>
-        <button
-          class="button-57 close-btn"
-          role="button"
-          onClick={props.onHide}
-        >
-          <span class="text" style={{ color: "#fff" }}>
-            Close
-          </span>
-          <span>
-            <i
-              class="fa-solid fa-xmark red"
-              style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-            ></i>
-          </span>
-        </button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
-
-export default function VietnamService() {
   const { t } = useTranslation();
   const location = useLocation();
   const [selectedTab, setSelectedTab] = useState(0)
@@ -597,6 +630,7 @@ export default function VietnamService() {
   const [modalShow, setModalShow] = useState(false);
   const [modalShow1, setModalShow1] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
+
   return (
     <>
     <Helmet>
@@ -627,7 +661,7 @@ export default function VietnamService() {
         </div>
       </div>
       <div className="is-sticky">
-        <BookingRoom />
+        <Booking />
       </div>
       <div className="container">
         <div className="row">

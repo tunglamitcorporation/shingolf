@@ -85,7 +85,7 @@
                 "mail": "reservationdanang@azumayavietnam.com"
             }
         ],
-        "name": "Azumaya PhnomPenh",
+        "name": "Azumaya Phnom Penh",
                 "add": "No. 302, St. 228., PhnomPenh., Campuchia",
                 "num": "+84.236.3743 888",
                 "mail": "reservationdanang@azumayavietnam.com"
@@ -130,12 +130,6 @@
         "branch": [
             [
                 {
-                    "branch_id": "hcm-select",
-                    "city_id": "hotel-hcm",
-                    "city_name": "ホーチミン",
-                    "branch_name": "支店を選択してください"
-                },
-                {
                     "branch_id": "le-thanh-ton-detail",
                     "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
@@ -158,12 +152,6 @@
                     "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
                     "branch_name": "東屋アネックス"
-                },
-                {
-                    "branch_id": "hn-select",
-                    "city_id": "hotel-hn",
-                    "city_name": "ハノイ",
-                    "branch_name": "支店を選択してください"
                 },
                 {
                     "branch_id": "hai-ba-trung-detail",
@@ -190,22 +178,10 @@
                     "branch_name": "東屋リンラン店にて"
                 },
                 {
-                    "branch_id": "da-nang-select",
-                    "city_id": "hotel-dn",
-                    "city_name": "ダナン",
-                    "branch_name": "支店を選択してください"
-                },
-                {
                     "branch_id": "da-nang",
                     "city_id": "hotel-dn",
                     "city_name": "ダナン",
                     "branch_name": "東屋ダナン"
-                },
-                {
-                    "branch_id": "hai-phong-select",
-                    "city_id": "hotel-hp",
-                    "city_name": "ハイフォン",
-                    "branch_name": "支店を選択してください"
                 },
                 {
                     "branch_id": "hai-phong",
@@ -1152,8 +1128,8 @@
         "business": "ビジネスサービス",
         "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
-        "pickup_fee1": "$25 (6am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 6am)",
+        "pickup_fee1": "625.000 VND (6am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 6am)",
         "pickup_car": "4-7 人乗り",
         "minibar": "ミニバー",
         "minibar_fee": "20.000 VND から",
@@ -1192,7 +1168,7 @@
         "rate": "客室料金",
         "desc": "説明",
         "size": "広さ",
-        "窓": "窓",
+        "window": "窓",
         "bath": "バスタブ",
         "reservation": "予約する",
         "features": [
@@ -2051,8 +2027,8 @@
         "business": "ビジネスサービス",
         "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000 VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 7am)",
         "pickup_car": "4-7 人乗り",
         "minibar": "ミニバー",
         "minibar_fee": "20.000 VND から",
@@ -2405,8 +2381,8 @@
         "business": "ビジネスサービス",
         "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000 VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 7am)",
         "pickup_car": "4-7 人乗り",
         "minibar": "ミニバー",
         "minibar_fee": "20.000 VND から",
@@ -2642,8 +2618,8 @@
         "business": "ビジネスサービス",
         "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております。日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000 VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 7am)",
         "pickup_car": "4-7 人乗り",
         "minibar": "ミニバー",
         "minibar_fee": "20.000 VND から",
@@ -2935,8 +2911,8 @@
         "business": "ビジネスサービス",
         "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております。日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
-        "pickup_fee1": "$25 (6am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 6am)",
+        "pickup_fee1": "625.000 VND (6am ~ 9pm)",
+        "pickup_fee2": "750.000 VND (9pm ~ 6am)",
         "pickup_car": "4-7 人乗り",
         "minibar": "ミニバー",
         "minibar_fee": "20.000 VND から",

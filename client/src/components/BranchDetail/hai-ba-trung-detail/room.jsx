@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"
 
 
 
@@ -224,22 +224,22 @@ useEffect(() => {
           className="row"
           style={{ justifyContent: "left", padding: "10px", textAlign:"justify" }}
         >
-          <li className="service__location service__active col-md-12 col-lg-2 col-xl-2 col-xxl-2">
+          <li className="service__location service__active col-md-12 col-lg-3 col-xl-3">
             <a href="/hai-ba-trung-detail/room" className="location_link">
               {t(branchName.hbt1)}
             </a>
           </li>
-          <li className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
+          <li className="service__location col-md-12 col-lg-3 col-xl-3">
             <a href="/kim-ma-2-detail/room" className="location_link">
               {t(branchName.km2)}
             </a>
           </li>
-          <li className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
+          <li className="service__location col-md-12 col-lg-3 col-xl-3">
             <a href="/kim-ma-3-detail/room" className="location_link">
               {t(branchName.km3)}
             </a>
           </li>
-          <li className="service__location col-md-12 col-lg-2 col-xl-2 col-xxl-2">
+          <li className="service__location col-md-12 col-lg-3 col-xl-3">
             <a href="/linh-lang-detail/room" className="location_link">
               {t(branchName.ll)}
             </a>
@@ -464,6 +464,7 @@ useEffect(() => {
                           <a className="ml-1" href={`tel:${t("room_hbt1.phone1")}`}>
                           {t("room_hbt1.phone1")}
                           </a> 
+                          <span> or </span>
                           <a className="ml-1" href={`tel:${t("room_hbt1.phone2")}`}>
                           {t("room_hbt1.phone2")}
                           </a>
@@ -511,6 +512,7 @@ useEffect(() => {
                               {t("room_hbt1.tel")} : <a className="ml-1 purple" href={`tel:${t("room_hbt1.phone1")}`}>
                               {t("room_hbt1.phone1")}
                               </a> 
+                              <span> or </span>
                               <a className="ml-1 purple" href={`tel:${t("room_hbt1.phone2")}`}>
                               {t("room_hbt1.phone2")}
                               </a>

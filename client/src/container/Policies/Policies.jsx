@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import {Link} from 'react-router-dom'
 import Collapsible from 'react-collapsible'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 export default function Policies(){
     const {t} = useTranslation()
     const data = t('policy.data',{returnObjects:true})

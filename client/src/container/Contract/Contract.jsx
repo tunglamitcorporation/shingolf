@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import Collapsible from "react-collapsible";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useRef} from 'react';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"
 export default function Contract() {
   const {t} = useTranslation();
   const contract  = t("contract", {returnObjects:true})

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { format, parse } from "date-fns";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"
 export default function NewsList({ news }) {
   const { t } = useTranslation();
   const branch = t("booking.city", { returnObjects: true });

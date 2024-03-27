@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import {format, parse} from "date-fns"
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
-import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
-import { Helmet } from "react-helmet";
+// import '../../../node_modules/react-awesome-slider/dist/styles.css';
+// import '../../../node_modules/react-awesome-slider/dist/custom-animations/scale-out-animation.css';
+import { Helmet } from "react-helmet-async"
 
 export default function HotelHP({news}) {
   const { t } = useTranslation();
