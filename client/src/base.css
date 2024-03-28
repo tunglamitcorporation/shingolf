@@ -174,6 +174,58 @@ textarea{
     color:#fff;
     animation: fadeIn 0.5s linear;
   }
+.btn_en-fixed {
+    position: fixed;
+    right : 20px;
+    bottom :  80px;
+    z-index: 999;
+    width:30px;
+    height:30px;
+    background: url("https://cdn-icons-png.flaticon.com/128/197/197374.png") center center / cover no-repeat;
+    border-radius:50px;
+    font-size:2.4rem;
+    color:#fff;
+    animation: fadeIn 0.5s linear;
+}
+.btn_ja-fixed {
+    position: fixed;
+    right : 20px;
+    bottom :  120px;
+    z-index: 999;
+    width:30px;
+    height:30px;
+    background: url("https://cdn-icons-png.flaticon.com/128/197/197604.png") center center / cover no-repeat;
+    border-radius:50px;
+    font-size:2.4rem;
+    color:#fff;
+    animation: fadeIn 0.5s linear;
+}
+.btn_vie-fixed {
+    position: fixed;
+    right : 20px;
+    bottom :  160px;
+    z-index: 999;
+    width:30px;
+    height:30px;
+    background: url("https://cdn-icons-png.flaticon.com/128/197/197473.png") center center / cover no-repeat;
+    border-radius:50px;
+    font-size:2.4rem;
+    color:#fff;
+    animation: fadeIn 0.5s linear;
+}
+.btn_kor-fixed {
+    position: fixed;
+    right : 20px;
+    bottom :  200px;
+    z-index: 999;
+    width:30px;
+    height:30px;
+    background: url("https://cdn-icons-png.flaticon.com/128/197/197582.png") center center / cover no-repeat;
+    border-radius:50px;
+    font-size:2.4rem;
+    color:#fff;
+    animation: fadeIn 0.5s linear;
+}
 .btn__top:hover{
     color: #ffffff;
     background-color: #482979;

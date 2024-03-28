@@ -1,7 +1,7 @@
 import { Link} from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList } from "react-tabs";
 import Cookies from "js-cookie";
 import Avatar from 'react-avatar';
 function Header() {
