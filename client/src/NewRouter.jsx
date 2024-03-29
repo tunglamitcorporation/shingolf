@@ -121,7 +121,7 @@ function NewRouter(props) {
                 <Route exact path="/" element={<Home news = {news} />} />
                 <Route path="/service" element={<VietnamService />} />
                 <Route path="/q&a" element={<Policies />} />
-                <Route path="/reservation" element={<Reservation />} />
+                {/* <Route path="/reservation" element={<Reservation />} /> */}
                 <Route path="/feature" element={<Feature/>} />
                 <Route path="/feature/:featureID" element={<Feature/>} />
                 <Route path = "/breakfast" element={<VietnamService />} />

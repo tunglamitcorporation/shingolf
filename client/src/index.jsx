@@ -14,7 +14,6 @@ import { HelmetProvider } from 'react-helmet-async';
 
 root.render(
   // <React.StrictMode>
-<HelmetProvider>
       <BrowserRouter>
         <I18nextProvider i18n={i18n}>
             <FontProvider>
@@ -22,10 +21,6 @@ root.render(
             </FontProvider>
         </I18nextProvider>
       </BrowserRouter>
-
-</HelmetProvider>
-   
-
   // </React.StrictMode>
   
 );
