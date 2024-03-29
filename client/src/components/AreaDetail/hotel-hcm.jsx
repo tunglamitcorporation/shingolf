@@ -57,7 +57,6 @@ export default function HotelHCM({news}){
             <div className="area_header" >
               <div className="overlay"></div>
               <AutoPlaySlider
-              style={{height: '600px'}}
               animation = "scaleOutAnimation"
               mobileTouch
               infinite

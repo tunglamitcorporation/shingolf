@@ -6,7 +6,6 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 // import '../../../node_modules/react-awesome-slider/dist/styles.css';
 // import '../../../node_modules/react-awesome-slider/dist/custom-animations/scale-out-animation.css';
-import { Helmet } from "react-helmet-async"
 import HelmetLayout from "../HelmetLayout/HelmetLayout";
 export default function HotelHN({ news }) {
   const { t } = useTranslation();
@@ -54,7 +53,6 @@ export default function HotelHN({ news }) {
       <div className="area_header" >
               <div className="overlay"></div>
               <AutoPlaySlider
-              style={{height: '600px'}}
               animation = "scaleOutAnimation"
               mobileTouch
               infinite

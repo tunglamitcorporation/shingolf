@@ -95,25 +95,27 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
       <div className="content">
       <div className="overlay"></div>
       <AutoPlaySlider
-      style={{height: "970px"}}
       animation = "scaleOutAnimation"
       mobileTouch
       infinite
       play
       interval = {5000}>
-         {caption.map((item) => (
+         {/* {caption.map((item) => (
               <div data-src={item.image}>
-                              <div className="container">
-                                <div className="row">
-                                  <div className="col-md-12">
-                                  <p className="carousel_name pre-line">{item.caption}</p>
+                                  <p className="carousel_name">{item.caption}</p>
                                   <div className="btn_container">
                                   <Link to = {item.link}><i class="fa-solid fa-angle-right"></i></Link>
                                   </div>
                                   </div>
+                                  
+                          ))} */}
+                          {caption.map((item) => (
+               <div data-src={item.image}>
+                                 <Link to = {item.link}>
+                                  {/* <img className="logo_az" style={{ filter: "brightness(1)" }} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1711688000/AzumayaWeb/AZLOGO_vbwjeu.png" /> */}
+                                  <p className="carousel_name">{item.name}<br />{item.caption}</p>
+                                  </Link>
                                   </div>
-                              </div>
-                              </div>
                           ))}
         </AutoPlaySlider>
       </div>

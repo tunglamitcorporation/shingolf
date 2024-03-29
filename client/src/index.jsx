@@ -7,17 +7,22 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import {BrowserRouter} from 'react-router-dom';
 import FontProvider from './FontProvider';
+import DisableArrowScroll from './DisableScroll';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 import i18n from'./i18n'
 import { I18nextProvider } from 'react-i18next';
-import { HelmetProvider } from 'react-helmet-async';
+import DisableTouchPadHorizontalScroll from './DisableTouchPadScroll';
 
 root.render(
   // <React.StrictMode>
       <BrowserRouter>
         <I18nextProvider i18n={i18n}>
             <FontProvider>
-           <App />
+              <DisableArrowScroll>
+                <DisableTouchPadHorizontalScroll>
+                <App />
+                </DisableTouchPadHorizontalScroll>
+              </DisableArrowScroll>
             </FontProvider>
         </I18nextProvider>
       </BrowserRouter>

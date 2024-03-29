@@ -88,8 +88,8 @@
         ],
                 "name": "Azumaya Phnom Penh",
                 "add": "No. 302, St. 228., PhnomPenh., Campuchia",
-                "num": "+84.236.3743 888",
-                "mail": "reservationdanang@azumayavietnam.com"
+                "num": "+855.23.218.9618",
+                "mail": "reservation@azumayacambodia.com"
     },
     "branch": {
         "hbt1": "Azumaya Hai Ba Trung 1",
@@ -3560,57 +3560,56 @@
     "caption": [
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
-            "caption": "Azumaya \nHotel \nHai \nBa \nTrung \n1",
+            "caption": "Azumaya Hotel Hai Ba Trung 1",
+            "name":"Ha Noi",
             "link": "/hai-ba-trung-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
-            "caption": "Azumaya \nHotel \nLe \nThanh \nTon",
+            "caption": "Azumaya Hotel Le Thanh Ton",
+            "name":"Ho Chi Minh",
             "link": "/le-thanh-ton-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
-            "caption": "Azumaya \nHotel \nKim \nMa \n2",
+            "caption": "Azumaya Hotel Kim Ma 2",
+            "name":"Ha Noi",
             "link": "/kim-ma-2-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
-            "caption": "Azumaya \nHotel \nPhnom\nPenh",
-            "link": ""
-        },
-        {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
-            "caption": "Azumaya \nHotel \nDa \nNang",
+            "caption": "Azumaya Hotel Da Nang",
+            "name":"Da Nang",
             "link": "/da-nang/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
-            "caption": "Azumaya \nHotel \nThai \nVan \nLung \n1",
+            "caption": "Azumaya Hotel Thai Van Lung 1",
+            "name":"Ho Chi Minh",
             "link": "/thai-van-lung-1-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
-            "caption": "Azumaya \nHotel \nHai \nPhong",
+            "caption": "Azumaya Hotel Hai Phong",
+            "name":"Hai Phong",
             "link": "/hai-phong/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
-            "caption": "Azumaya \nHotel \nLinh \nLang",
+            "caption": "Azumaya Hotel Linh Lang",
+            "name":"Ha Noi",
             "link": "/linh-lang-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
-            "caption": "Azumaya \nHotel \nThai \nVan \nLung \n2",
+            "caption": "Azumaya Hotel Thai Van Lung 2",
+            "name":"Ho Chi Minh",
             "link": "/thai-van-lung-2-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
-            "caption": "Azumaya \nHotel \nDa \nNang",
-            "link": "/da-nang/room"
-        },
-        {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
-            "caption": "Azumaya \nHotel \nKim \nMa \n3",
+            "caption": "Azumaya Hotel Kim Ma 3",
+            "name":"Ha Noi",
             "link": "/kim-ma-3-detail/room"
         }
     ],

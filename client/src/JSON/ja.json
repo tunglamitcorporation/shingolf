@@ -51,7 +51,7 @@
             {
                 "name": "Azumaya Hai Ba Trung 1",
                 "add": "16 Bui Thi Xuan St., Hai Ba Trung Dist., Ha Noi",
-                "num": "+84.24.6278 6688",
+                "num": "+84.24.6278 6688 & +84.246278.6689",
                 "mail": "reservationhanoi@azumayavietnam.com"
             },
             {
@@ -87,8 +87,8 @@
         ],
         "name": "Azumaya Phnom Penh",
                 "add": "No. 302, St. 228., PhnomPenh., Campuchia",
-                "num": "+84.236.3743 888",
-                "mail": "reservationdanang@azumayavietnam.com"
+                "num": "+855.23.218.961",
+                "mail": "reservation@azumayacambodia.com"
     },
     "branch": {
         "hbt1": "ハイバーチュン１号店",
@@ -97,7 +97,7 @@
         "ll": "リンラン店",
         "ltt": "レタントン店",
         "tvl1": "タイバンルン１号店",
-        "tvl2": "タイバンルン２号店 2",
+        "tvl2": "タイバンルン２号店",
         "annex": "アネックス店",
         "dn": "ダナン店",
         "hp": "ハイフォン",
@@ -145,7 +145,7 @@
                     "branch_id": "thai-van-lung-2-detail",
                     "city_id": "hotel-hcm",
                     "city_name": "ホーチミン",
-                    "branch_name": "タイバンルン２号店 2"
+                    "branch_name": "タイバンルン２号店"
                 },
                 {
                     "branch_id": "annex-detail",
@@ -810,7 +810,7 @@
             },
             {
                 "question": "Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
-                "answer": "A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
+                "answer": "A.遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
             },
             {
                 "question": "Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
@@ -818,7 +818,7 @@
             },
             {
                 "question": "Q.門限はありますか？",
-                "answer": "A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
+                "answer": "A.門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
             },
             {
                 "question": "Q.電子機器はそのまま利用できますか？",
@@ -872,7 +872,7 @@
             {
                 "title": "朝食に関するFAQ",
                 "question": "Q.朝食は、どんな内容ですか？",
-                "answer": "A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
+                "answer": "A.各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
             },
             {
                 "question": "Q.ブッフェを提供している店舗を教えてください。",
@@ -885,7 +885,7 @@
             {
                 "title": "アクセスに関するFAQ",
                 "question": "Q.空港～ホテル間の送迎サービスはありますか？",
-                "answer": "A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
+                "answer": "A.有料にてご利用頂くことができます。空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
             },
             {
                 "question": "Q.コンビニエンスストアはありますか？",
@@ -1126,7 +1126,7 @@
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
-        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
+        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテルベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
         "pickup_fee1": "625.000 VND (6am ~ 9pm)",
         "pickup_fee2": "750.000 VND (9pm ~ 6am)",
@@ -1148,7 +1148,7 @@
         "visa": "ビザ手続き",
         "food": "フードデリバリー",
         "roten": "露天風呂",
-        "rotenContent": "月～金：6:00 - 9:00/ 17:00 -23:00 土日： 7:00 - 23: 00\n**女性のご宿泊のお客様は平日 23:00 ~ 24:00 の間にご利用いただけます。\n当日 16時までに受付でご予約いただきますようにお願い致します。",
+        "rotenContent": "月～金：6:00 - 9:00/ 17:00 -23:00 土日： 7:00 - 23: 00\n*女性のご宿泊のお客様は平日 23:00 ~ 24:00 の間にご利用いただけます。\n当日 16時までに受付でご予約いただきますようにお願い致します。",
         "breakfast": "朝食",
         "breakfastContent": "月〜土：6:00-8:00 ビュッフェ8:00-10:00 セットメニュー 日：6:00-10:00　セットメニューのみ",
         "ask": "受付までお申し付けください。",
@@ -1159,7 +1159,7 @@
         "phone1": "(+84) 24 6278 6688",
         "phone2": "(+84) 24 6278 6689",
         "email": "reservationhanoi@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはハノイ市のハイバーチュンエリアという日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域の１つです。",
         "address": "住所 : 16 Bui Thi Xuan Street, Hai Ba Trung Dist, Hanoi. Vietnam.",
@@ -1320,7 +1320,7 @@
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
-        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
+        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテルベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
         "pickup_fee1": "625.000 VND (6:00 ~ 20:59)",
         "pickup_fee2": "750.000 VND (21:00 ~ 5:59)",
@@ -1346,7 +1346,7 @@
         "rotenContent": "営業時間：月～金：6:00～9:00／17:00～23:00、\n土日：7:00～23:00",
         "rotenFContent": "宿泊者様の営業時間：月～金：6:00～9:00／17:00～23:00、\n土日：7:00～23:00\nビジター様の営業時間：月～金： 17:00～23:00 、\n土日：7:00～23:00",
         "breakfast": "朝食",
-        "breakfastContent": "月〜土：6:00-8:00 ビュッフェ8:00-10:00 セットメニュー 日：6:00-10:00　セットメニューのみ",
+        "breakfastContent": "月〜土：6:00-8:00 ビュッフェ8:00-10:00 セットメニュー 日：6:00-10:00セットメニューのみ",
         "ask": "受付までお申し付けください。",
         "board": "お問い合わせ",
         "contact1": "ご予約はお電話：:",
@@ -1354,9 +1354,9 @@
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 24 3724 7570",
         "email": "reservationhanoi3@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
-        "locationContent": "We are situated in the Japanese town of Kim Ma area, the center of Ha Noi city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
+        "locationContent": "当ホテルはハノイ市の中心街であるキンマーエリアという日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域の１つです。",
         "address": "住所 ：18A Pham Huy Thong St, Ba Dinh Dist., Hanoi",
         "emailTitle": "Eメール",
         "type": "部屋タイプ",
@@ -1554,12 +1554,12 @@
         "breakfastContent": "月〜土：6:00-8:00 ビュッフェ8:00-10:00 セットメニュー 日：6:00-10:00　セットメニューのみ",
         "ask": "受付までお申し付けください。",
         "board": "お問い合わせ",
-        "contact1": "ご予約はお電話：:",
+        "contact1": "ご予約はお電話：",
         "contact2": "か Eメール:",
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 24 3734 9730 ",
         "email": "reservationhanoi6@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはハノイ市の中心街であるキンマーエリアという日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域の１つです。",
         "address": "住所 ：68 Pham Huy Thong St, Ba Dinh Dist., Hanoi",
@@ -1825,7 +1825,7 @@
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 24 3862 0620",
         "email": "reservationhanoi5@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはハノイ市中心最大のショッピングセンターの近隣の日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域の１つです。",
         "address": "住所 ：26 Linh Lang St, Ba Dinh Dist., Hanoi",
@@ -1985,7 +1985,7 @@
             {
                 "id": 1,
                 "name": "タイバンルン１号店",
-                "desc": "全51部屋、露天風呂、和朝食ビュッフェ、フットマッサージ、居酒屋「テン」、全室に洗浄機能付きトイレ、日本語放送を完備。館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:45がラストオーダー。また深夜２時までオープンしている日本食居酒屋「テン」では日本酒、焼酎、刺身を含む居酒屋メニューが満載。一人でもお気軽にどうぞ。露天風呂に浸かり、居酒屋テンで一杯、マッサージを受けて、部屋でスポーツニュースを観て一日の疲れを癒す、東屋が誇るワンストップサービスを提供しています。立地もタイバンルン２号店向かい、レタントン店へも徒歩３分ほどの抜群のロケーションです。",
+                "desc": "全51部屋、露天風呂、和朝食ビュッフェ、フットマッサージ、居酒屋「テン」、全室に洗浄機能付きトイレ、日本語放送を完備。館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。\"午後10:45がラストオーダー\"。また深夜２時までオープンしている日本食居酒屋「テン」では日本酒、焼酎、刺身を含む居酒屋メニューが満載。一人でもお気軽にどうぞ。露天風呂に浸かり、居酒屋テンで一杯、マッサージを受けて、部屋でスポーツニュースを観て一日の疲れを癒す、東屋が誇るワンストップサービスを提供しています。立地もタイバンルン２号店向かい、レタントン店へも徒歩３分ほどの抜群のロケーションです。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl1_wyk4hz.jpg",
                 "link": "/thai-van-lung-1-detail/room"
             },
@@ -2025,7 +2025,7 @@
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
-        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテル　ベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
+        "businessContent": "ご出張のお客様の快適な滞在のために、東屋ホテルベトナム店では様々なサービスをご用意しております日本語対応が可能な為、その他、お気軽に東屋スタッフまでにお問合せ、ご相談くださいませ。",
         "pickup": "空港送迎",
         "pickup_fee1": "625.000 VND (7am ~ 9pm)",
         "pickup_fee2": "750.000 VND (9pm ~ 7am)",
@@ -2049,7 +2049,7 @@
         "roten": "露天風呂",
         "rotenContent": "月〜金：6:00-10:00/17:00-24:00\n 土日：7:00-24:00",
         "breakfast": "朝食",
-        "breakfastContent": "月〜土：6:00-8:00 ビュッフェ8:00-10:00 セットメニュー 日：6:00-10:00　セットメニューのみ",
+        "breakfastContent": "月〜土：6:00-8:00 ビュッフェ8:00-10:00 セットメニュー 日：6:00-10:00セットメニューのみ",
         "massage": "フットマッサージ",
         "massageContent": "月～日: 10:00-23:00 (最終入場 22:45)",
         "ask": "受付までお申し付けください。",
@@ -2059,7 +2059,7 @@
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 28 3824 6835",
         "email": "reservation@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはホーチミン市の中心の日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域です。",
         "address": " 住所 ：8A/7D1-8D1-9D1, Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
@@ -2198,7 +2198,7 @@
             "in1": "窓",
             "in2": "バスタブなし",
             "in3": "50型ソニーテレビ",
-            "in4": "Terrace / No Terrace",
+            "in4": "テラス有り/ テラス無し",
             "in5": "洗浄機能付きトイレ",
             "priceTitle": "料金",
             "bed": "1.6m クイーン",
@@ -2411,7 +2411,7 @@
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 28 3827 1071",
         "email": "reservation3@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはホーチミン市の中心の日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域です。",
         "address": "住所 ：27-29 Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
@@ -2648,7 +2648,7 @@
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 28 3827 1110",
         "email": "reservation2@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはホーチミン市の中心の日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域です。",
         "address": "住所 ：15/3 Le Thanh Ton Street. Dist.1 HCM",
@@ -2784,10 +2784,11 @@
         "contact1": "ご予約はお電話：:",
         "contact2": "か Eメール:",
         "contact3": "もしくはホテルのウィブサイト:",
-        "phone": "(+84) 28 3824 6835",
+        "phone1": "(+84) 28 3824 6835",
+        "phone2": "(+84) 24 6278 6689",
         "tel": "電話サービス",
         "email": "reservation@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "アネックス店は東屋ホテルから歩いて１分の真裏に位置する静かな立地。アネックスの部屋は27.2m2～30.2m2、テラス付き（7部屋中6部屋）、 全室バスタブ、洗浄機能付きトイレ、WIFIをご用意しております。 朝食や、露天風呂、フットマッサージなどはホテル宿拍者と同様にご提供させていただきます。",
         "address": "住所 ：8A/8D2 Thai Van Lung St., Dist. 1, HCMC",
@@ -2945,7 +2946,7 @@
         "phone": "(+84) 23 6374 3888",
         "hotline": "039 408 7976",
         "email": "reservationdanang@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはダナン市街地からタクシーで10分の距離に位置し、車通りも少なく、目の前は海が広がる露天風呂は東屋全拠点の中でNo,1です。リゾートにもアクセスしやすく、旅の疲れを癒すに最適なロケーションでございます。",
         "address": " 住所 ： 31 Nguyen Tat Thanh St., Hai Chau Dist., Da Nang, Vietnam",
@@ -3160,7 +3161,7 @@
         "contact3": "もしくはホテルのウィブサイト:",
         "phone": "(+84) 22 5382 8969",
         "email": "reservationhaiphongg@azumayavietnam.com",
-        "website": "www.azumayavietnam.com",
+        "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "東屋ホテル・ハイフォン店では野村工業団地まで車で30分、ハイフォン空港まで10分という好立地で、朝の渋滞の中、遠方から通勤をする必要がございません。 また、ハイフォンの真ん中に位置するため、様々な場所へのアクセスも簡単でございます。",
         "address": "住所 ： 195 Vu Trong Khanh Str.,(195/420 Lach Tray Str.,) Ngo Quyen Dist., Hai Phong",
@@ -3609,57 +3610,56 @@
     "caption": [
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
-            "caption": "東\n屋\n ハ\nイ\nバ\nー\nュ\nン\n店 \n1",
+            "caption": "ハイバーチュン１号店",
+            "name":"ハノイ",
             "link": "/hai-ba-trung-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
-            "caption": "東\n屋 \nレ\nタ\nン\nト\nン",
+            "caption": "レタントン店",
+            "name":"ホーチミン",
             "link": "/le-thanh-ton-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
-            "caption": "東\n屋\n金\n馬 \n2",
+            "caption": "キンマー２号店",
+            "name":"ハノイ",
             "link": "kim-ma-2-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
-            "caption": "東\n屋 \nプ\nノ\nン\nペ\nン",
-            "link": ""
-        },
-        {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
-            "caption": "東\n屋\nダ\nナ\nン",
+            "caption": "ダナン店",
+            "name":"ダナン",
             "link": "/da-nang/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
-            "caption": "東\n屋 \nタ\nイ\nヴ\nァ\nン\nル\nン \n1",
+            "caption": "タイバンルン１号店",
+            "name":"ホーチミン",
             "link": "/thai-van-lung-1-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
-            "caption": "東\n屋 \nハ\nイ\nフ\nォ\nン",
+            "caption": "ハイフォン",
+            "name":"ハイフォン",
             "link": "/hai-phong/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
-            "caption": "東\n谷 \nリ\nン\n・\nラ\nン",
+            "caption": "リンラン店",
+            "name":"ハノイ",
             "link": "/linh-lang-detail/room"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
-            "caption": "東\n屋 \nタ\nイ\nヴ\nァ\nン\nル\nン \n2",
+            "caption": "タイバンルン２号店",
+            "name":"ホーチミン",
             "link": "/thai-van-lung-2-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
-            "caption": "東\n屋\nダ\nナ\nン",
-            "link": "/da-nang/room"
-        },
-        {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
-            "caption": "東\n屋\n金\n馬 \n3",
+            "caption": "キンマー 3号店",
+            "name":"ハノイ",
             "link": "kim-ma-3-detail/room"
         }
     ],

@@ -1,4 +1,3 @@
-import {useState, useEffect } from "react";
 import Flatpickr from "react-flatpickr";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate} from "react-router-dom";
@@ -81,13 +80,10 @@ export default function BookingRoom ({startDate, endDate, selectedCity, selected
                     <select className="content__booking-branch-select"
                     id={selectedCity}
                     value={selectedCity}
-                    onChange={(e)=>setSelectedCity(e.target.value)}>
+                    onChange={handleCityChange}>
                         {city.map(item => (
                             <option key={item.id} value={item.id}>{item.city_name}</option>
                         ))}
-                        <option value="" disabled selected hidden>
-                        {t('booking.placeHolder')}
-                        </option>
                     </select>
                 </div>
                 </div>
@@ -98,7 +94,7 @@ export default function BookingRoom ({startDate, endDate, selectedCity, selected
                     value={selectedBranch}
                     onChange={(e)=> {setSelectedBranch(e.target.value)}}>
                         {filteredBranches.map((item, index) => (
-                            <option key = {item.branch_id} value={item.branch_id} hidden = {index === 0}>{item.branch_name}</option>
+                            <option key = {item.branch_id} value={item.branch_id}>{item.branch_name}</option>
                         ))}
                     </select>
                 </div>

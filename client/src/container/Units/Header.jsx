@@ -187,7 +187,7 @@ function Header() {
                         <button className ='btn-en mr-3' onClick={()=>changeLanguage('en')}></button>                
                         <button className ='btn-ja mr-3' onClick={()=>changeLanguage('ja')}></button>  
                         <button className ='btn-vie mr-3' onClick={()=>changeLanguage('vie')}></button>  
-                        <button className ='btn-kor mr-3' onClick={()=>changeLanguage('kor')}></button>  
+                        {/* <button className ='btn-kor mr-3' onClick={()=>changeLanguage('kor')}></button>   */}
                         </div>
                     </div>
                 </div>
@@ -388,7 +388,7 @@ function Header() {
                       <Link className="header__navbar-link-2" to="/service">
                         {t("header.service")}
                       </Link>
-                      <ul className="header__navbar-item-list" style={{width: 100}}>
+                      <ul className="header__navbar-item-list" style={{width: 240}}>
                         {service.map((item)=>(
                           <li className = "header__navbar-sub-link" >
                           <Link 
