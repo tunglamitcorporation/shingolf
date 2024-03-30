@@ -1448,7 +1448,7 @@ code {
   display: flex;
   justify-content: flex-end;
 }
-.btn-holder{
+.ba-holder{
   position: absolute;
   right: 1%;
   bottom: 0; 
@@ -2263,10 +2263,7 @@ filter: brightness(0.5);
   font-weight: bold
 }
 .awssld__wrapper{
-  height: 970px !important;
-}
-.area_header {
-  height: 970px;
+  height: 800px !important;
 }
 .logo_az {
   position: absolute;
@@ -2274,6 +2271,14 @@ filter: brightness(0.5);
   height: 100px;
   bottom: 15px;
   right: 280px;
+}
+.btn-del {
+  height: 50px !important;
+  width: 50px !important;
+  margin-top: 18px !important;
+  margin-left: 96%;
+  font-size: 2rem !important;
+
 }
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{

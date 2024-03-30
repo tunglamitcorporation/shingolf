@@ -24,7 +24,9 @@ export default function AnnexRoomDetail() {
   // const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
 
   const handleContinue = (selectedRoom) => {
-    // Prepare data to pass to Receiver2Page
+    if(startDate = '' ){
+
+    }
     const data = {
       ...receivedData,
       startDate,
@@ -557,6 +559,7 @@ All additional services are served at Azumaya hotel and the same with hotel gues
                 </div>
               </div>
             </TabPanel>
+            
           </Tabs>
         </TabPanel>
       </Tabs>

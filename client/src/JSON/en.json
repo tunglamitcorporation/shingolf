@@ -1129,7 +1129,7 @@
         "tariff": "Room Tariff",
         "vat": "*Room price is excluded 8%",
         "service": "Serviced included :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nTV 19 Japanese Channel\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nTV 19 Channel\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
         "facility": "Amenities & Facilities :",
         "facilityContent": "Bathtub\nWorking desk\n50 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
@@ -1319,7 +1319,7 @@
         "service": "Serviced included :",
         "serviceContent": "Japanese breakfast\nOpen-air hot tub (for men only / for women only)\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
         "facility": "Amenities & Facilities :",
-        "facilityContent": "Bathtub\nWorking desk\n32/50 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bathtub\nWorking desk\n32/50 inch TV\n19 TV Channel\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
@@ -1522,7 +1522,7 @@
         "service": "Serviced included :",
         "serviceContent": "Japanese breakfast\nOpen-air hot tub (for men only / for women only)\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
         "facility": "Amenities & Facilities :",
-        "facilityContent": "Bathtub\nWorking desk\n40 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bathtub\nWorking desk\n40 inch TV\n19 TV Channel\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
@@ -1837,7 +1837,7 @@
             "id": 1,
             "branch_name": "Azumaya Linh Lang",
             "room_id": "sid",
-            "name": "STANDARD INSIDE WINDOW ( NO VIEW )",
+            "name": "STANDARD INSIDE WINDOW",
             "size": "16",
             "sizeTitle": "Size",
             "bedTitle": "Bed",
@@ -1847,7 +1847,7 @@
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
             "priceTitle": "Price",
-            "bed": "1.6m Queen size bed",
+            "bed": "Queen size",
             "bed_size": "QUEEN",
             "tick": true,
             "price": "1.260.000VND+",
@@ -1867,7 +1867,7 @@
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
             "priceTitle": "Price",
-            "bed": "1.8m King size bed",
+            "bed": "King size",
             "bed_size": "KING",
             "tick": true,
             "price": "1.440.000VND+",
@@ -1887,8 +1887,8 @@
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
             "priceTitle": "Price",
-            "bed": "1.8m King size bed",
-            "bed_size": "KING",
+            "bed": "Double/Twin",
+            "bed_size": "DOUBLE TWIN",
             "tick": false,
             "price": "1.440.000VND+",
             "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443081/AzumayaWeb/LL/Executive_NoWindow_1_sflrms.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443083/AzumayaWeb/LL/Executive_NoWindow_2_ccunrm.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443084/AzumayaWeb/LL/Executive_NoWindow_3_tuvebn.jpg"]
@@ -1907,7 +1907,7 @@
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
             "priceTitle": "Price",
-            "bed": "1.8m King size bed",
+            "bed": "King size bed",
             "bed_size": "KING",
             "tick": true,
             "price": "1.640.000VND+",
@@ -1927,8 +1927,8 @@
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
             "priceTitle": "Price",
-            "bed": "1.8m king size bed",
-            "bed_size": "QUEEN",
+            "bed": "King/Twin",
+            "bed_size": "KING / TWIN",
             "tick": true,
             "price": "1.840.000VND+",
             "images":["https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443101/AzumayaWeb/LL/Suite7F_1_jgqjhi.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443102/AzumayaWeb/LL/Suite7F_2_rqesx6.jpg", "https://res.cloudinary.com/dtdfsaaei/image/upload/v1704443104/AzumayaWeb/LL/Suite7F_3_sjik3m.jpg"]
@@ -3409,7 +3409,7 @@
         "dropOff":"Drop off",
         "dropOffTime":"Please mention the return flight time",
         "dropOffNumber":"Flight Number",
-        "DO_PU_note":"625.000 VND-30/one way (depends on the time)",
+        "DO_PU_note":"625.000VND - 750.000VND /one way (depends on the time)",
         "earlyIn":"Early check-in",
         "earlyInTime":"Please input time you want to check in",
         "earlyIn_note":[
@@ -3559,59 +3559,60 @@
     },
     "caption": [
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
-            "caption": "Azumaya Hotel Hai Ba Trung 1",
-            "name":"Ha Noi",
-            "link": "/hai-ba-trung-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
-            "caption": "Azumaya Hotel Le Thanh Ton",
-            "name":"Ho Chi Minh",
-            "link": "/le-thanh-ton-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787350/AzumayaWeb/Rotenburo/RTBR_KM2_f7f3j8.jpg",
             "caption": "Azumaya Hotel Kim Ma 2",
             "name":"Ha Noi",
             "link": "/kim-ma-2-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
-            "caption": "Azumaya Hotel Da Nang",
-            "name":"Da Nang",
-            "link": "/da-nang/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
-            "caption": "Azumaya Hotel Thai Van Lung 1",
-            "name":"Ho Chi Minh",
-            "link": "/thai-van-lung-1-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png",
             "caption": "Azumaya Hotel Hai Phong",
             "name":"Hai Phong",
             "link": "/hai-phong/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
+            "caption": "Azumaya Hotel Da Nang",
+            "name":"Da Nang",
+            "link": "/da-nang/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787352/AzumayaWeb/Rotenburo/RTBR_TVL1_fv00lo.jpg",
+            "caption": "Azumaya Hotel Thai Van Lung 1",
+            "name":"Ho Chi Minh",
+            "link": "/thai-van-lung-1-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787343/AzumayaWeb/Rotenburo/RTBR_HBT1_seeimp.jpg",
+            "caption": "Azumaya Hotel Hai Ba Trung 1",
+            "name":"Ha Noi",
+            "link": "/hai-ba-trung-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg",
             "caption": "Azumaya Hotel Linh Lang",
             "name":"Ha Noi",
             "link": "/linh-lang-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
-            "caption": "Azumaya Hotel Thai Van Lung 2",
-            "name":"Ho Chi Minh",
-            "link": "/thai-van-lung-2-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787356/AzumayaWeb/Rotenburo/RTBR_KM3_m9iq0n.png",
             "caption": "Azumaya Hotel Kim Ma 3",
             "name":"Ha Noi",
             "link": "/kim-ma-3-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787354/AzumayaWeb/Rotenburo/RTBR_LTT_t4rpue.jpg",
+            "caption": "Azumaya Hotel Le Thanh Ton",
+            "name":"Ho Chi Minh",
+            "link": "/le-thanh-ton-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg",
+            "caption": "Azumaya Hotel Thai Van Lung 2",
+            "name":"Ho Chi Minh",
+            "link": "/thai-van-lung-2-detail/room"
         }
+        
     ],
     "service_breakfast": {
         "openHour": "《Opening Hour》",
