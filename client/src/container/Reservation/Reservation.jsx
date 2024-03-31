@@ -7,7 +7,7 @@ import { findCompanyByRequest, sendReservationRequest } from "../../api/reservat
 import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import TabComponent from "../../Test";
+// import TabComponent from "../../Test";
 
 function Reservation({token}) {
   const { t } = useTranslation();
@@ -716,7 +716,7 @@ function Reservation({token}) {
         </div>
       </div>
     </div>
-    <TabComponent />
+    {/* <TabComponent /> */}
     <form onSubmit={handleSubmit}>
     <div className="container">
       <div className=" reservation__container">

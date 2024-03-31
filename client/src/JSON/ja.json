@@ -1067,19 +1067,15 @@
         "slider":[
             {
                 "desc":"ハノイ",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746791/AzumayaWeb/rtbrll_v24sdc.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850093/AzumayaWeb/LOBBY/LBHBT1_qz6n0g.jpg"
             },
             {
                 "desc":"ハノイ",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg"
             },
             {
                 "desc":"ハノイ",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/oskm2_iiija5.jpg"
-            },
-            {
-                "desc":"ハノイ",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710811874/AzumayaWeb/lbll_wkto57.webp"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850046/AzumayaWeb/BREAKFAST/BRFHBT1_kyx7ay.jpg"
             }
     ],
         "branch": [
@@ -1108,7 +1104,7 @@
                 "id": 4,
                 "name": "リンラン店",
                 "desc": "全46部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。立地はロッテセンターの徒歩圏内、近年日本食レストランが立ち並ぶリンラン通りに位置し、館内7階にはリピート率90％以上を誇る自慢の東屋マッサージを併設。(ラストオーダー午後9:30) 各マッサージチェアからは夜景を楽しむことができます。夕食や締めの一杯には、地階に併設する焼き鳥居酒屋「松木」をご利用いただけます。 広々とした露天風呂、サウナ、水風呂でごゆっくりお寛ぎいただき、翌朝は8階の見晴らしのいい朝食会場で気持ちのよい朝をお迎えいただけます。",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710306679/AzumayaWeb/AZ-LL-FRONT-FIX-2_b1tphv.jpg",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
                 "link": "/linh-lang-detail/room"
             }
         ],
@@ -1184,7 +1180,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"ハイバーチュン１号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746782/AzumayaWeb/lbhbt1_wdmtl0.jpg"
+            },
+            {
+                "desc":"ハイバーチュン１号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852866/AzumayaWeb/HBT1/INTRODUCTION/RTBRHBT1_2_qfyd7c.jpg"
+            },
+            {
+                "desc":"ハイバーチュン１号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852874/AzumayaWeb/HBT1/INTRODUCTION/BRFHBT1_2_lgc8vo.jpg"
+            }
+    ]   
     },
     "hbt1": [
         {
@@ -1381,7 +1391,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"キンマー２号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853093/AzumayaWeb/KM2/INTRODUCTION/LBKM2_2_qef4si.jpg"
+            },
+            {
+                "desc":"キンマー２号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853132/AzumayaWeb/KM2/INTRODUCTION/RTBRKM2_2_hqlvju.jpg"
+            },
+            {
+                "desc":"キンマー２号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+            }
+    ]
     },
     "km2": [
         {
@@ -1586,7 +1610,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"キンマー 3号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711855118/AzumayaWeb/KM3/INTRODUCTION/RTRKM3_2_s5xktc.jpg"
+            },
+            {
+                "desc":"キンマー 3号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853219/AzumayaWeb/KM3/INTRODUCTION/RTBRKM3_2_ys9jlg.jpg"
+            },
+            {
+                "desc":"キンマー 3号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853213/AzumayaWeb/KM3/INTRODUCTION/BRFKM3_2_zm5t9i.jpg"
+            }
+    ]
     },
     "km3": [
         {
@@ -1853,7 +1891,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"リンラン店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853348/AzumayaWeb/LL/INTRODUCTION/LBLL_2_vuredo.jpg"
+            },
+            {
+                "desc":"リンラン店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853363/AzumayaWeb/LL/INTRODUCTION/RTBRLL_2_cckumg.jpg"
+            },
+            {
+                "desc":"リンラン店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853338/AzumayaWeb/LL/INTRODUCTION/BRFLL_2_lb0z3n.jpg"
+            }
+    ]
     },
     "ll": [
         {
@@ -1966,19 +2018,15 @@
         "slider":[
             {
                 "desc":"ホーチミン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737801/AzumayaWeb/rtbrtvl1_omastk.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850103/AzumayaWeb/LOBBY/LBTVL1_u62wr3.jpg"
             },
             {
                 "desc":"ホーチミン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737800/AzumayaWeb/bftvl1_p5zw59.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg"
             },
             {
                 "desc":"ホーチミン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737784/AzumayaWeb/rltt_ztlqi6.jpg"
-            },
-            {
-                "desc":"ホーチミン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737787/AzumayaWeb/osltt_mgu5vd.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850054/AzumayaWeb/BREAKFAST/BRFLTT_zhmkyf.jpg"
             }
     ],
         "branch": [
@@ -2087,7 +2135,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"タイバンルン１号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/LBTVL1_2_xsbvaq.jpg"
+            },
+            {
+                "desc":"タイバンルン１号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/RTBRTVL1_2_adtqbm.jpg"
+            },
+            {
+                "desc":"タイバンルン１号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853588/AzumayaWeb/TVL1/INTRODUCTION/BRFTVL1_2_slvlxc.jpg"
+            }
+    ]
     },
     "tvl1": [
         {
@@ -2440,7 +2502,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"タイバンルン２号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853720/AzumayaWeb/TVL2/INTRODUCTION/LBTVL2_2_dhtayy.jpg"
+            },
+            {
+                "desc":"タイバンルン２号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853724/AzumayaWeb/TVL2/INTRODUCTION/RTBTTVL2_2_gfhfrk.jpg"
+            },
+            {
+                "desc":"タイバンルン２号店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853714/AzumayaWeb/TVL2/INTRODUCTION/BRFTVL2_2_y6xb7q.jpg"
+            }
+    ]
     },
     "tvl2": [
         {
@@ -2677,7 +2753,21 @@
             {
                 "name": "アクセス"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"レタントン店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853465/AzumayaWeb/LTT/INTRODUCTION/LBLTT2_lrft9j.jpg"
+            },
+            {
+                "desc":"レタントン店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853470/AzumayaWeb/LTT/INTRODUCTION/RTBRLTT_2_rrpwlk.jpg"
+            },
+            {
+                "desc":"レタントン店",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853463/AzumayaWeb/LTT/INTRODUCTION/BRFLTT2_i5esbi.jpg"
+            }
+    ]
     },
     "ltt": [
         {
@@ -2872,19 +2962,15 @@
         "slider":[
             {
                 "desc":"ダナン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750483/AzumayaWeb/trbrdn2_cm4gom.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850098/AzumayaWeb/LOBBY/LBDN_ygzyaj.jpg"
             },
             {
                 "desc":"ダナン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/bfdn_j8zx9t.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg"
             },
             {
                 "desc":"ダナン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/osdn_s2w5yt.jpg"
-            },
-            {
-                "desc":"ダナン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750482/AzumayaWeb/lbdn_fip42v.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850065/AzumayaWeb/BREAKFAST/BRFDN_s9yuua.jpg"
             }
     ],
         "branch": [
@@ -3088,19 +3174,15 @@
         "slider":[
             {
                 "desc":"ハイフォン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748998/AzumayaWeb/rtbrhp_i5vsby.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850098/AzumayaWeb/LOBBY/LBHP_ksd1fr.jpg"
             },
             {
                 "desc":"ハイフォン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748981/AzumayaWeb/rhp_khwvjz.webp"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png"
             },
             {
                 "desc":"ハイフォン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748976/AzumayaWeb/oshp1_syqj1u.jpg"
-            },
-            {
-                "desc":"ハイフォン",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748979/AzumayaWeb/hplb_mat7sr.webp"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850057/AzumayaWeb/BREAKFAST/BRFHP_lncn1d.jpg"
             }
     ],
         "branch": [
@@ -3511,7 +3593,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
             }
         ],
-        "additional": "その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております。",
+        "additional": "その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております)。",
         "contact": "お問い合わせはこちら",
         "benefit": "法人契約のメリット",
         "benefit_1": "豊富な拠点数と全店舗一括適用",
@@ -3552,7 +3634,7 @@
         ],
         "contractVN-title": "ベトナム法人でのご契約",
         "contractVN-content": "どのようなお支払い方法でもVATインボイスの発行可",
-        "about-content": "お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください",
+        "about-content": "お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください)",
         "FAQ-trigger": [
             {
                 "content": "Q. 日本の会社での契約です。税コード欄の記載はどうすれば良いでしょうか？",
@@ -3609,60 +3691,62 @@
     },
     "caption": [
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
-            "caption": "ハイバーチュン１号店",
-            "name":"ハノイ",
-            "link": "/hai-ba-trung-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
-            "caption": "レタントン店",
-            "name":"ホーチミン",
-            "link": "/le-thanh-ton-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787350/AzumayaWeb/Rotenburo/RTBR_KM2_f7f3j8.jpg",
             "caption": "キンマー２号店",
             "name":"ハノイ",
             "link": "kim-ma-2-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
-            "caption": "ダナン店",
-            "name":"ダナン",
-            "link": "/da-nang/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
-            "caption": "タイバンルン１号店",
-            "name":"ホーチミン",
-            "link": "/thai-van-lung-1-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png",
             "caption": "ハイフォン",
             "name":"ハイフォン",
             "link": "/hai-phong/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
+            "caption": "ダナン店",
+            "name":"ダナン",
+            "link": "/da-nang/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787352/AzumayaWeb/Rotenburo/RTBR_TVL1_fv00lo.jpg",
+           "caption": "タイバンルン１号店",
+            "name":"ホーチミン",
+            "link": "/thai-van-lung-1-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787343/AzumayaWeb/Rotenburo/RTBR_HBT1_seeimp.jpg",
+            "caption": "ハイバーチュン１号店",
+            "name":"ハノイ",
+            "link": "/hai-ba-trung-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg",
             "caption": "リンラン店",
             "name":"ハノイ",
             "link": "/linh-lang-detail/room"
         },
         {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
-            "caption": "タイバンルン２号店",
-            "name":"ホーチミン",
-            "link": "/thai-van-lung-2-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787356/AzumayaWeb/Rotenburo/RTBR_KM3_m9iq0n.png",
             "caption": "キンマー 3号店",
             "name":"ハノイ",
             "link": "kim-ma-3-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787354/AzumayaWeb/Rotenburo/RTBR_LTT_t4rpue.jpg",
+            "caption": "レタントン店",
+            "name":"ホーチミン",
+            "link": "/le-thanh-ton-detail/room"
+        },
+        {
+            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg",
+            "caption": "タイバンルン２号店",
+            "name":"ホーチミン",
+            "link": "/thai-van-lung-2-detail/room"
         }
+        
     ],
+    
     "service_breakfast": {
         "openHour": "《営業時間》",
         "price": "《料金》",

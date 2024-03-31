@@ -8,6 +8,9 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
 import HelmetLayout from "../../HelmetLayout/HelmetLayout";
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+
 export default function TVL2RoomDetail() {
   const { t } = useTranslation();
   const location = useLocation();
@@ -22,6 +25,8 @@ export default function TVL2RoomDetail() {
   // const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
   // const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
 
+  const tvl2Slider = t("room_tvl2.slider", {returnObjects: true})
+  const AutoPlaySlider =  withAutoplay(AwesomeSlider)
 
   const handleContinue = (selectedRoom) => {
     // Prepare data to pass to Receiver2Page
@@ -149,7 +154,7 @@ export default function TVL2RoomDetail() {
 			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/room","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/room"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/","name":"Thai Van Lung 2 Detail","url":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/#webpage","url":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/","name":"Thai Van Lung 2 Detail - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/thai-van-lung-2-detail\/#breadcrumblist"},"datePublished":"2016-11-22T03:23:19+07:00","dateModified":"2016-11-22T03:23:19+07:00"}]`}
 		</script>
     </Helmet> */}
-      <div className="service__header">
+      {/* <div className="service__header">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -157,7 +162,29 @@ export default function TVL2RoomDetail() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+       <div className="area_header" >
+      <div className="overlay"></div>
+      <AutoPlaySlider
+      animation = "scaleOutAnimation"
+      mobileTouch
+      infinite
+      play
+      interval = {5000}>
+  {tvl2Slider.map((item)=>(
+      <div data-src={item.image} style={{height:'100%'}}>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+          <h1>{item.desc}</h1>
+          </div>
+          </div>
+          </div>
+          </div>
+  ))}
+</AutoPlaySlider>
+</div>
+
       <div className="is-sticky">
       <BookingRoom 
       startDate={startDate} 

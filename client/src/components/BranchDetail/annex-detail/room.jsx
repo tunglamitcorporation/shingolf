@@ -25,7 +25,6 @@ export default function AnnexRoomDetail() {
 
   const handleContinue = (selectedRoom) => {
     if(startDate = '' ){
-
     }
     const data = {
       ...receivedData,
@@ -201,7 +200,7 @@ All additional services are served at Azumaya hotel and the same with hotel gues
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/HCMBranch">
+                <Link className="breadcrumb__title" to="/hotel-hcm">
                   {t("header.hcm")}
                 </Link>
               </li>

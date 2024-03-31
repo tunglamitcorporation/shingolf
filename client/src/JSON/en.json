@@ -894,123 +894,117 @@
         ]
     },
     "faq": {
-        "title2": "各種サービスに関するFAQ",
-        "title3": "朝食に関するFAQ",
-        "title4": "アクセスに関するFAQ",
-        "title5": "お支払いに関するFAQ",
         "data": [
             {
-                "title": "ご宿泊に関するFAQ",
-                "question": "Q. ホテル滞在中、急に体調が悪くなったら？",
-                "answer": "A. 24時間体制で日本語のできるスタッフがホテルに常勤し、お客様のサポートを行っております。お客様より体調不良のご連絡があれば、症状や状況などをお伺いした上でそれらに応じた最寄りの病院をご紹介し、手配いたします。"
+                "title": "Regarding accommodation FAQ",
+                "question": "Q. What if I suddenly become unwell during my stay at the hotel?",
+                "answer": "A. Staff who can speak Japanese are on duty at the hotel 24 hours a day to provide customer support. If a customer reports that they are not feeling well, we will ask about their symptoms and situation, and then introduce them to the nearest hospital and make arrangements."
             },
             {
-                "question": "Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
-                "answer": "A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
+                "question": "Q. Check-in is at 3:00?",
+                "answer": "A. If you are arriving before 3:00 p.m. due to transportation issues such as airplanes, please let us know your flight number and arrival time in advance. We will respond as soon as possible. However, if you need to guarantee your room upon arrival at the hotel, you will be required to pay an early check-in surcharge. 100% discount until 10:00 AM on the day, 50% discount from 10:00 AM to 3:00 PM"
             },
             {
-                "question": "Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
+                "question": "Q. Can I use the room before check-in time or after check-out time?",
                 "answer": "A. お部屋に空きがある場合は、承ることができます。(有料)\n・10:00 a.m.より前のアーリーチェックイン：一泊分の100%チャージ\n・10:00 a.m.より後のアーリーチェックイン：一泊分の50%チャージ\n・18:00 p.m.までのレイトチェックアウト：一泊分の50%チャージ\n・18:00 p.m.以降のレイトチェックアウト：一泊分の100%チャージ"
             },
             {
-                "question": "Q.門限はありますか？",
-                "answer": "A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
+                "question": "Q. Is there a curfew?",
+                "answer": "A.　If the room is available, we can accommodate you. (Charged)\n・Early check-in before 10:00 a.m.: 100% charge for one night.\n・Early check-in after 10:00 a.m.: 50% charge for one night.\n・18:00 p.m. Late check-out before: 50% charge for one night\n・Late check-out after 18:00 p.m.: 100% charge for one night."
             },
             {
-                "question": "Q.電子機器はそのまま利用できますか？",
-                "answer": "A.ご利用いただけます。コンセントの型は日本と同じA型ですがベトナム、カンボジアの電圧はほとんどが220Vですのでお気をつけてご使用くださいませ。日本の電気製品でも、100～240V対応の物であれば変圧器なしで使用できますが、念のため使用予定の電気製品の取り扱い説明書をお読み頂くことをお勧め致します。ただし100～240V対応製品でもプラグの変換アダプターは必要となる場合がございますのでご注意ください。"
+                "question": "Q. Can I use electronic devices as is?",
+                "answer": "A. Available. The outlet type is A type, the same as in Japan, but the voltage in Vietnam and Cambodia is mostly 220V, so please be careful when using it. Japanese electrical products can be used without a transformer if they are compatible with 100 to 240V, but we recommend that you read the instruction manual of the electrical product you plan to use just to be sure. However, please note that even products compatible with 100-240V may require a plug conversion adapter."
             },
             {
-                "question": "Q.レストランは全て禁煙ですか？ロビーに喫煙場所はありますか？",
-                "answer": "A.全支店、出口付近に灰皿がございます。"
+                "question": "Q. Are all restaurants non-smoking? Is there a smoking area in the lobby?",
+                "answer": "A. All branches have ashtrays near the exit doors."
             },
             {
-                "question": "Q.深夜のチェックイン、又は早朝のチェックアウトはできますか？",
-                "answer": "A.可能でございます。受付は２４時間対応しておりますので、ご安心くださいませ。ご精算はいつでも対応可能でございますので、お時間のある時に受付へお申し付けくださいませ。"
+                "question": "Q. Can I check in late at night or check out early in the morning?",
+                "answer": "A. It is possible. Please rest assured that the reception is open 24 hours a day. Payments can be made at any time, so please inquire at reception when you have time."
             },
             {
-                "question": "Q.チェックアウト後、荷物を預かってもらえますか？",
-                "answer": "A.お預かりいたします。大変恐れ入りますが、貴重品はご自身で管理頂きますようお願い致します。"
+                "question": "Q. Can you keep my luggage after check-out?",
+                "answer": "A. We will take care of it for you. We apologize for the inconvenience, but please take care of your valuables yourself."
             },
             {
-                "question": "Q.チェックアウト後、露天風呂を無料で利用できますか？",
-                "answer": "A.チェックイン・チェックアウトの当日に限り、ご宿泊者様には露天風呂を無料でご利用頂くことができます。深夜便の前に、是非ご利用くださいませ"
+                "question": "Q. Can I use the open-air bath for free after checking out?",
+                "answer": "A. Guests can use the open-air bath free of charge on the day of check-in and check-out. Please use it before your late night flight."
             },
             {
-                "question": "Q. 長期滞在の場合、途中退出は可能ですか？",
-                "answer": "A. 可能でございます。変更するチェックアウトの日の15時を起点としてそれより48時間前にご連絡をいただければ、キャンセル料金は発生致しません。"
+                "question": "Q. If I am staying for a long time, is it possible to leave midway?",
+                "answer": "A. It is possible. There will be no cancellation fee if you notify us at least 48 hours prior to 3:00 pm on the day you wish to change your check-out."
             },
             {
-                "question": "Q. シーズンや土日料金等はありますか？",
-                "answer": "A. 料金の変動はございません。"
+                "question": "Q. Are there seasonal or weekend charges?",
+                "answer": "A. There is no change in price"
             },
             {
-                "title": "各種サービスに関するFAQ",
-                "question": "Q.マッサージの事前予約はできますか？",
-                "answer": "A.可能でございます。夕方及び週末は大変混み合いますので、事前にご予約されることをお勧めいたします。"
+                "title": "Regarding various services FAQ",
+                "question": "Q. Can I reserve a massage in advance?",
+                "answer": "A.A. Yes, it is possible. We recommend that you should make a reservation in advance, as it can be very busy in the evenings and on weekends."
             },
             {
-                "question": "Q.両替サービスはありますか？",
-                "answer": "A.外貨（日本円・USドル）から、ベトナムドンへの両替のみ承っております。当ホテル独自の為替レートに則って両替させて頂きます。"
+                "question": "Q. Is there a currency exchange service?",
+                "answer": "A.A. We only accept exchanges from foreign currencies (Japan Yen/USD) to Vietnam Dong. We will exchange money according to our hotel's own exchange rate."
             },
             {
-                "question": "Q.コインランドリーはありますか？",
-                "answer": "A.　あいにくホテル館内にはございませんが、ホテルのランドリーサービスをご利用いただけます。目安：ワイシャツ１枚＝20.000ドン（約１００円）です。また、一部店舗にて洗濯乾燥機を無料でご利用いただけます。"
+                "question": "Q. Is there a coin laundry?",
+                "answer": "A. Unfortunately, it is not in the hotel, but you can use the hotel's laundry service. Estimated cost: 1 shirt = 20,000 dong (about 100 yen). You can also use washer/dryers for free at some branches."
             },
             {
-                "question": "Q.アイロンはありますか？",
-                "answer": "A.貸出用のアイロンはございません。スタッフがアイロンがけをさせて頂きますので、ご希望の際は受付へお申し付けくださいませ。"
+                "question": "Q. Do you have an iron?",
+                "answer": "A. We do not have irons for rent. Our staff will do the ironing for you, so please let the reception know if you request to do this."
             },
             {
-                "question": "Q.客室でのインターネット環境は？",
-                "answer": "A. 公共スペース・全客室・レストランにてWi-Fiを無料でご使用いただけます。"
+                "question": "Q. What is the internet environment in the guest rooms?",
+                "answer": "A. Wi-Fi is available free of charge in public spaces, all guest rooms, and restaurant." },
+            {
+                "title": "Breakfast FAQ",
+                "question": "Q. What kind of breakfast is included?",
+                "answer": "A. Although it different depending on each branch, we offer buffet style and set meal style. Both of style offer Japanese and Western cuisine. If you have any allergies, please let us know in advance."
             },
             {
-                "title": "朝食に関するFAQ",
-                "question": "Q.朝食は、どんな内容ですか？",
-                "answer": "A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
+                "question": "Q. Please tell me which stores offer buffet.",
+                "answer": "A. We offer buffet style breakfast at all branch. \n※Due to special case, we may change to a set menu."
             },
             {
-                "question": "Q.ブッフェを提供している店舗を教えてください。",
-                "answer": "A.全店舗にてビュッフェスタイルのご朝食をご提供しております。\n※特別な事情によりセットメニューに変更させていただくことがございます"
+                "question": "Q. Is there a plan without breakfast?",
+                "answer": "A. Breakfast is included in the accommodation fee, and there are no discounts if you do not wish to eat breakfast. If you are unable to enjoy breakfast due to an early departure, we will prepare rice balls or sandwiches. Please let us know at the reception by the day before. "
             },
             {
-                "question": "Q.朝食なしのプランはありますか？",
-                "answer": "A.宿泊代に朝食も含まれており、あいにく朝食をご利用にならない場合の割引等はございません。 早朝のご出発でご朝食をお召し上がりいただけない場合は、おにぎりもしくはサンドイッチをご用意いたします。前日までに受付にてお申し付けくださいませ。 "
+                "title": "Access FAQ",
+                "question": "Q. Is there a shuttle service between the airport and the hotel?",
+                "answer": "A. You can use it for a fee. There have been many cases of overcharging by regular taxi at the airport, so for your safety, please use these services. When using the shuttle service, the driver will be waiting at the exit holding with your name on it. Prices may different by each branch, so please refer to the business services page for each branch."
             },
             {
-                "title": "アクセスに関するFAQ",
-                "question": "Q.空港～ホテル間の送迎サービスはありますか？",
-                "answer": "A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
+                "question": "Q. Is there a convenience store?",
+                "answer": "A. Nó không nằm trong tòa nhà khách sạn nhưng nằm trong khoảng cách đi bộ đến từng chi nhánh. Nhân viên của chúng tôi sẽ sẵn lòng hỗ trợ bạn, vì vậy vui lòng cho chúng tôi biết. "
             },
             {
-                "question": "Q.コンビニエンスストアはありますか？",
-                "answer": "A.ホテル館内にはございませんが、各支店の徒歩圏内にございます。スタッフがご案内させて頂きますのでご遠慮なくお申し付けくださいませ。 "
+                "question": "Q. Is there a parking lot?",
+                "answer": "A. We're sorry, but we don't have parking. If you come by bike, we will direct you to a nearby parking lot."
             },
             {
-                "question": "Q.駐車場はありますか？",
-                "answer": "A.恐れ入りますが、ございません。バイクでお越しの場合は、近隣の駐輪場をご案内いたします。（※東屋プノンペンのみ建物周辺に駐車場所有）"
+                "title": "Payment FAQ",
+                "question": "Q. Can I pay online?",
+                "answer": "A. We are sorry, but we do not online payment service. If you want to pay by bank transfer before check-in, please let us know when making your reservation." },
+            {
+                "question": "Q. When should I pay?",
+                "answer": "A. We ask that you pay for your stay in advance when you check in. If you want to pay by bank transfer, payment must be made before check-in. (*Bank transfer after checkout is only possible for companies that have a corporate contract with us)."
             },
             {
-                "title": "お支払いに関するFAQ",
-                "question": "Q.オンライン決済はできますか？",
-                "answer": "A.恐れ入りますが、現在のところオンラインでの決済サービスはございません。チェックイン前の銀行お振込みをご希望の際は、ご予約時にお申し付けくださいませ。"
+                "question": "Q. Is it possible for the company to make a bank transfer from a Japanese account instead of paying on-site by the guest? If possible, in what currency will payment be made?",
+                "answer": "A. Yes, it is possible. We ask that you pay any foreign remittance transfer fees. The currencies that can be used for payment are Japanese yen, US dollar, and Vietnamese dong."
             },
             {
-                "question": "Q.精算はいつすればいいですか？",
-                "answer": "A.チェックインの際に宿泊費の前払いをお願いしております。銀行振り込みをご希望の場合、チェックインまでにお支払い頂く必要がございます。(※弊社との法人契約がある企業様のみチェックアウト後の銀行振り込みも可能でございます。)"
+                "question": "Q. Is it possible to pay by bank transfer even for a short stay of a few days to a few weeks?",
+                "answer": "A. Yes, it is possible."
             },
             {
-                "question": "Q. 宿泊者本人による現地払いではなく、会社より日本の口座からの銀行振込は可能ですか？可能な場合はどの通貨での支払いとなりますか？",
-                "answer": "A. 可能でございます。外国送金振込手数料はご負担いただきますようお願いをしております。お支払いいただける通貨は日本円・USドル・ベトナムドンです。"
-            },
-            {
-                "question": "Q. 数日～数週間の短期滞在でも銀行振込は可能ですか？",
-                "answer": "A. 可能でございます。"
-            },
-            {
-                "question": "Q. 長期滞在で会社による銀行振込の場合、支払いはどうすれば良いでしょうか？",
-                "answer": "A. 月に一度のご精算をお願いしております。\n領収書を月末に発行し貴社に送付致しますので、受取り次第7日以内にお支払いください。"
+                "question": "Q. If I am staying for a long time and my company uses bank transfer, how should I pay?",
+                "answer": "A. We ask that you pay once a month. \nWe will issue a receipt at the end of the month and send it to your company, so please pay within 7 days after receiving it."
             }
         ]
     },
@@ -1076,19 +1070,15 @@
         "slider":[
             {
                 "desc":"Azumaya Ha Noi",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746791/AzumayaWeb/rtbrll_v24sdc.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850093/AzumayaWeb/LOBBY/LBHBT1_qz6n0g.jpg"
             },
             {
                 "desc":"Azumaya Ha Noi",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg"
             },
             {
                 "desc":"Azumaya Ha Noi",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/oskm2_iiija5.jpg"
-            },
-            {
-                "desc":"Azumaya Ha Noi",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710811874/AzumayaWeb/lbll_wkto57.webp"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850046/AzumayaWeb/BREAKFAST/BRFHBT1_kyx7ay.jpg"
             }
     ],
         "branch": [
@@ -1117,7 +1107,7 @@
                 "id": 4,
                 "name": "Azumaya Linh Lang",
                 "desc": "Ling Lang branch has 46 rooms in total with open-air bath, Japanese breakfast , Japanese izakaya \"ISSUN Boushi\" . All the rooms are equipped with shower toilet, bathtub, and Japanese TV show. The hotel is within walking distance from Lotte Centre which is located along Linh Lang road where many Japanese restaurants have opened recently. At the hotel, high-tea massage is also available on the 7th floor. It records over 90% of repeat customer rate. Last order is 9:45 pm.. You can enjoy a night view from each massage chair. It features a spacious outdoor bath. You can have a pleasant morning at the breakfast venue on the 8th floor with a fine view.",
-                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710306679/AzumayaWeb/AZ-LL-FRONT-FIX-2_b1tphv.jpg",
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
                 "link": "/linh-lang-detail/room"
             }
         ],
@@ -1188,12 +1178,26 @@
                 "name": "Room Tariff"
             },
             {
-                "name": "Business Service"
+                "name": "Business Service"  
             },
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Hai Ba Trung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746782/AzumayaWeb/lbhbt1_wdmtl0.jpg"
+            },
+            {
+                "desc":"Azumaya Hai Ba Trung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852866/AzumayaWeb/HBT1/INTRODUCTION/RTBRHBT1_2_qfyd7c.jpg"
+            },
+            {
+                "desc":"Azumaya Hai Ba Trung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852874/AzumayaWeb/HBT1/INTRODUCTION/BRFHBT1_2_lgc8vo.jpg"
+            }
+    ]
     },
     "hbt1": [
         {
@@ -1384,7 +1388,21 @@
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Kim Ma 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853093/AzumayaWeb/KM2/INTRODUCTION/LBKM2_2_qef4si.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853132/AzumayaWeb/KM2/INTRODUCTION/RTBRKM2_2_hqlvju.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+            }
+    ]
     },
     "km2": [
         {
@@ -1560,7 +1578,21 @@
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Kim Ma 3",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711855118/AzumayaWeb/KM3/INTRODUCTION/RTRKM3_2_s5xktc.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 3",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853219/AzumayaWeb/KM3/INTRODUCTION/RTBRKM3_2_ys9jlg.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 3",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853213/AzumayaWeb/KM3/INTRODUCTION/BRFKM3_2_zm5t9i.jpg"
+            }
+    ]
     },
     "km3": [
         {
@@ -1830,7 +1862,21 @@
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Linh Lang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853348/AzumayaWeb/LL/INTRODUCTION/LBLL_2_vuredo.jpg"
+            },
+            {
+                "desc":"Azumaya Linh Lang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853363/AzumayaWeb/LL/INTRODUCTION/RTBRLL_2_cckumg.jpg"
+            },
+            {
+                "desc":"Azumaya Linh Lang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853338/AzumayaWeb/LL/INTRODUCTION/BRFLL_2_lb0z3n.jpg"
+            }
+    ]
     },
     "ll": [
         {
@@ -1938,19 +1984,15 @@
         "slider":[
                 {
                     "desc":"Azumaya Ho Chi Minh",
-                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737801/AzumayaWeb/rtbrtvl1_omastk.jpg"
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850103/AzumayaWeb/LOBBY/LBTVL1_u62wr3.jpg"
                 },
                 {
                     "desc":"Azumaya Ho Chi Minh",
-                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737800/AzumayaWeb/bftvl1_p5zw59.jpg"
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg"
                 },
                 {
                     "desc":"Azumaya Ho Chi Minh",
-                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737784/AzumayaWeb/rltt_ztlqi6.jpg"
-                },
-                {
-                    "desc":"Azumaya Ho Chi Minh",
-                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737787/AzumayaWeb/osltt_mgu5vd.jpg"
+                    "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850054/AzumayaWeb/BREAKFAST/BRFLTT_zhmkyf.jpg"
                 }
         ],
         "branch": [
@@ -2059,7 +2101,21 @@
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Thai Van Lung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/LBTVL1_2_xsbvaq.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/RTBRTVL1_2_adtqbm.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853588/AzumayaWeb/TVL1/INTRODUCTION/BRFTVL1_2_slvlxc.jpg"
+            }
+    ]
     },
     "tvl1": [
         {
@@ -2399,7 +2455,21 @@
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Thai Van Lung 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853720/AzumayaWeb/TVL2/INTRODUCTION/LBTVL2_2_dhtayy.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853724/AzumayaWeb/TVL2/INTRODUCTION/RTBTTVL2_2_gfhfrk.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853714/AzumayaWeb/TVL2/INTRODUCTION/BRFTVL2_2_y6xb7q.jpg"
+            }
+    ]
     },
     "tvl2": [
         {
@@ -2628,7 +2698,22 @@
             {
                 "name": "Location"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Le Thanh Ton",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853465/AzumayaWeb/LTT/INTRODUCTION/LBLTT2_lrft9j.jpg"
+            },
+            {
+                "desc":"Azumaya Le Thanh Ton",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853470/AzumayaWeb/LTT/INTRODUCTION/RTBRLTT_2_rrpwlk.jpg"
+            },
+            {
+                "desc":"Azumaya Le Thanh Ton",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853463/AzumayaWeb/LTT/INTRODUCTION/BRFLTT2_i5esbi.jpg"
+            }
+    ]
+
     },
     "ltt": [
         {
@@ -2816,19 +2901,15 @@
         "slider":[
             {
                 "desc":"Azumaya Da Nang",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750483/AzumayaWeb/trbrdn2_cm4gom.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850098/AzumayaWeb/LOBBY/LBDN_ygzyaj.jpg"
             },
             {
                 "desc":"Azumaya Da Nang",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/bfdn_j8zx9t.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg"
             },
             {
                 "desc":"Azumaya Da Nang",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/osdn_s2w5yt.jpg"
-            },
-            {
-                "desc":"Azumaya Da Nang",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750482/AzumayaWeb/lbdn_fip42v.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850065/AzumayaWeb/BREAKFAST/BRFDN_s9yuua.jpg"
             }
     ],
         "branch": [
@@ -3027,19 +3108,15 @@
         "slider":[
             {
                 "desc":"Azumaya Hai Phong",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748998/AzumayaWeb/rtbrhp_i5vsby.jpg"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850098/AzumayaWeb/LOBBY/LBHP_ksd1fr.jpg"
             },
             {
                 "desc":"Azumaya Hai Phong",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748981/AzumayaWeb/rhp_khwvjz.webp"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png"
             },
             {
                 "desc":"Azumaya Hai Phong",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748976/AzumayaWeb/oshp1_syqj1u.jpg"
-            },
-            {
-                "desc":"Azumaya Hai Phong",
-                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748979/AzumayaWeb/hplb_mat7sr.webp"
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850057/AzumayaWeb/BREAKFAST/BRFHP_lncn1d.jpg"
             }
     ],
         "branch": [
@@ -3437,33 +3514,33 @@
         "attention-note": "*Please Attention\nIt will take a little time to transition to the Reservation Completion Page after press \"Send\" button, please wait a moment."
     },
     "contract": {
-        "title": "東屋ホテルでは東南アジアへのご出張が多い企業様向けに特別価格でご宿泊いただける 法人契約を承っております。是非、この機会にご検討くださいませ。",
+        "title": "Azumaya Hotel applies corporate contracts with special rates for  companies which have frequently business travelers to Southeast Asia. Please consider this opportunity.",
         "feature": [
             {
-                "title": "和朝食",
-                "content": "1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。",
+                "title": "Japanese breakfast",
+                "content": "Azumaya Hotel is proud to bring an energized day with a delicious breakfast. We take care of the variety of dishes so that long-stay guests will not get bored.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg"
             },
             {
-                "title": "日本語のおもてなし",
-                "content": "日本語が話せるスタッフが常駐しておりますので、英語が苦手な方も安心してお過ごしいただけます。",
+                "title": "Japanese hospitality",
+                "content": "We serve you with your Japanese available staff who are not confident with English speaking but you can rest assured to using our service.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg"
             },
             {
-                "title": "サウナ付き露天風呂",
-                "content": "早朝の目覚め、仕事終わりのリラックスに是非ご利用くださいませ。 サウナ・水風呂も完備しております。(※一部店舗を除く)",
+                "title": "Japanese-style Open-air hot bath-tub with Sauna",
+                "content": " Before commuting and after coming back from a long day work, please feel free to soak and relax. Sauna room and cold pool available (※Some branches are not included))",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
             }
         ],
-        "additional": "その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております。",
-        "contact": "お問い合わせはこちら",
-        "benefit": "法人契約のメリット",
-        "benefit_1": "豊富な拠点数と全店舗一括適用",
-        "receipt": "領収書の発行に関する諸注意",
-        "about": "ご契約にあたって",
-        "FAQ": "ご契約に関するFAQ",
-        "cancel": "契約の取り消し",
-        "benefit-content": "ベトナム　カンボジア　ミャンマー3カ国に計10支店以上ある全店舗を一括で契約させていただくので各都市のホテルと個別に契約を結ぶ必要はありません。 東南アジアにご出張の機会の多い企業様に最適です。",
+        "additional": "In addition, we provide a comfortable environment such as free WIFI, International TV channels, yukata provided (Vietnamese store only), and laundry service.",
+        "contact": "Contact us",
+        "benefit": "Corporate contracts benefits",
+        "benefit_1": "Application to all Azumaya Branches",
+        "receipt": "Notes regarding issuance of receipts",
+        "about": "About corporate contract",
+        "FAQ": "About corporate contract FAQ",
+        "cancel": "Cancellation of corporate contract",
+        "benefit-content": "Your company will not need to sign a separate contract with each branch in each contract because we will update information and apply of all 10 Azumaya branches in Vietnam and Cambodia. This will be convenient for customers who often have business trips to South-East Asia",
         "contract-branch": [
             {
                 "link":"/hotel-hn",
@@ -3490,72 +3567,72 @@
                 "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735799/AzumayaWeb/coming_soon.jpg_nzxihy.png"
             }
         ],
-        "receipt-content": "日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",
-        "contractJP-title": "日本法人でのご契約",
+        "receipt-content": "Contracts are available not only to corporations in Japan but also to corporations in Vietnam. Please note that receipts will be issued depending on the payment method depending on the address where the contract is be noted.",
+        "contractJP-title": "Contract with corporations in Japan",
         "contractJP": [
             {
-                "content": "1.ホテル受付でクレジットカード( VISA, MASTER, JCB)/ 現金でお支払いの場合は VATインボイスの発行可（但し、事前にベトナム法人の情報をお伝えください）。"
+                "content": "1. VAT invoice can be issued If you pay by credit card (VISA, MASTER CARD, JCB, NAPAS) or cash at the hotel reception (however, please provide your Vietnamese company information in advance)."
             },
             {
-                "content": "2.銀行振込の場合は領収書のみを発行。"
+                "content": "2. For company transfer payment, we will issue Hotel Invoice only"
             }
         ],
-        "contractVN-title": "ベトナム法人でのご契約",
-        "contractVN-content": "どのようなお支払い方法でもVATインボイスの発行可",
-        "about-content": "お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください",
+        "contractVN-title": "Contract with corporations in Vietnam",
+        "contractVN-content": "VAT invoice can be issued with any payment method",
+        "about-content": "No need registration fees (joining fees, annual membership fees)\n\nAfter you filled the information in this form, we will send you a contract file sample, so please consider the terms of the contract. If you agree, we will send to you about the way to making contract. You can complete the signing and seal until latest on your check-in date to get contract benefits.\n(Please send scan version first, then please send newpost the original contract to our address or give it to reception when check in).",
         "FAQ-trigger": [
             {
-                "content": "Q. 日本の会社での契約です。税コード欄の記載はどうすれば良いでしょうか？",
-                "answer": "A. 税コードをお持ちでいない場合は空欄のままで問題ございません。"
+                "content": "Q. Contract with corporations in Japan, How should I enter the tax code field?",
+                "answer": "A. If we don't have Tax code, you can leaving it"
             },
             {
-                "content": "Q. 代表取締役ではなく担当役員の名前で契約できますか？",
-                "answer": "A. 貴社の代表者様のサインおよび押印にてご契約いただけます。"
+                "content": "Q. Can I sign a contract in the name of member in charge instead of the representative director?",
+                "answer": "A. You can make contract with the signature and seal of your company's representative."
             },
             {
-                "content": "Q. 法人契約を締結するとどのような特典が利用出来ますか？",
-                "answer": "A. 宿泊日数に応じて、宿泊料金の割引やランドリーサービスを無料でご利用いただくことが可能です。長期滞在のお客様にはマッサージ無料券もお渡ししています。\n\n-無料ランドリー特典を適用する場合の注意点\n100,000VND/ 日と設定しておりますが、1日の上限ではございません。\n宿泊日数に基づく合計金額をご宿泊期間中にご利用いただけます。\n例：5泊6日のご宿泊の場合 100,000VND×5泊 = 上限金額 500,000VND / 5泊\n万が一、上限金額を超えた場合はチェックアウトの際に超過分を別途請求させていただきます。\n金額の目安 ( エリアにより金額が異なります )\nYシャツ：20,000vnd ズボン：20,000vnd 下着：15,000vnd 靴下：15,000vnd"
+                "content": "Q. What are the benefit of signing corporate contract?",
+                "answer": "A. Depending on the length of stay, customer can get discount on roomrate or can use our free laundry service. We also give free massage voucher for long staying customer \nWhen applying the free laundry benefit noted points: \nAlthough it is set at 120,000VND/day, it is not a daily limited. \nThe total amount laundry based on the number of nights you stay can be used during your stay. \nExample: For a stay of 5 nights and 6 days, Total free laundry amount 120,000VND x 5 nights = maximum amount of 600,000VND / 5 nights \nIf your total laundry amount be over that, the excess amount will be charged when checkout. \n\nReference price (Maybe different with each area): \nY-shirt: 20.000VND, Pants: 20.000VND, Underwear: 15.000VND, sock: 15.000VND"
             }
         ],
         "cancel-content": [
             {
-                "content": "虚偽の申告をした場合"
+                "content": "If you updated wrong information?"
             },
             {
-                "content": "ご住所、お電話番号、メールアドレス等のご連絡先が不明となった場合。"
+                "content": "If you don't know about the contact information such as address, telephone number, email address, etc.。"
             },
             {
-                "content": "ホテルのお客様,　ホテル（施設、設備、備品等）及びホテルの従業員に危害及び損害を与えた場合"
+                "content": "In the case of harm or damage to hotel guests, hotel (facilities, equipment, supplies, etc.) or hotel employees."
             },
             {
-                "content": "宿泊約款及び規則を厳守されない場合"
+                "content": "In the cases non-observance of the booking regulations."
             },
             {
-                "content": "暴行、傷害、脅迫、恐喝、威圧的不当及びこれらに関する犯罪が認められた場合"
+                "content": "In the cases assault, injury, intimidation, blackmail, coercive injustice and related crimes "
             },
             {
-                "content": "暴力団、暴力団員、暴力団関係団体及びその関係者と判断された場合"
+                "content": "In the cases, determined to be an organized crime group, a member of an organized crime group, an organized crime group-related organization, or a person related to such organization"
             },
             {
-                "content": "暴力団または暴力団員が事業活動を支配する法人その他団体の関係者と判断された場合"
+                "content": "In the cases determined that an organized crime group or a member of an organized crime group is affiliated with a corporation or other organization that controls business activities."
             },
             {
-                "content": "反社会団体、反社会的団体及びその関係者と判断された場合"
+                "content": "In the cases where determined to be an anti-social organization or affiliated with it."
             },
             {
-                "content": "その他ホテルが不適当と判断した場合"
+                "content": "In other cases where the hotel deems it inappropriate."
             }
         ],
-        "form-title": "日本法人でのご契約をご希望のお客様は日本の情報を、\nベトナム法人でのご契約をご希望のお客様はベトナムの情報をご入力ください。",
-        "company-name": "貴社名(ローマ字)",
-        "address": "ご住所",
-        "company-URL": "企業ホームページURL",
-        "in-charge": "ご担当者氏名(ローマ字)",
+        "form-title": "If you requested to make contract with your company in Japan, Please enter the Japan information \nIf you requested to make contract with your company in Vietnam, Please enter the Vietnam information",
+        "company-name": "Company name (Romaji)",
+        "address": "Address",
+        "company-URL": "Company URL Website",
+        "in-charge": "Name of person in chage (Romaji)",
         "first-name": "First Name",
         "last-name": "Last Name",
-        "email": "メールアドレス",
-        "phone": "お電話番号",
-        "send": "送信"
+        "email": "Email Address",
+        "phone": "The phone number",
+        "send": "Send"
     },
     "caption": [
         {
