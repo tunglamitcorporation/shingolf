@@ -60,7 +60,7 @@ function App() {
             </button>
             <button className ='btn-en btn_en-fixed ' onClick={()=>changeLanguage('en')}></button>                
             <button className ='btn-ja btn_ja-fixed' onClick={()=>changeLanguage('ja')}></button>  
-            <button className ='btn-vie btn_vie-fixed' onClick={()=>changeLanguage('vie')}></button>  
+            {/* <button className ='btn-vie btn_vie-fixed' onClick={()=>changeLanguage('vie')}></button>   */}
             {/* <button className ='btn-kor btn_kor-fixed' onClick={()=>changeLanguage('kor')}></button>   */}
             </>        
                     )}
