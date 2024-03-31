@@ -3,7 +3,7 @@
         "top-header": "★ Khách sạn thương mại với bữa sáng kiểu Nhật và Bồn tắm nước nóng ngoài trời ★",
         "az": "Azumaya",
         "home": "Trang Chủ",
-        "news": "Tin Tức",
+        "news": "Thông Tin",
         "policies": "Q&A",
         "reservation": "Đặt Phòng",
         "feature": "Đặc Điểm",
@@ -130,222 +130,222 @@
             {
                 "branch_id": "le-thanh-ton-detail",
                 "city_id": "hotel-hcm",
-                "city_name": "Ho Chi Minh",
+                "city_name": "Hồ Chí Minh",
                 "branch_name": "Azumaya Lê Thánh Tôn"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
                 "city_id": "hotel-hcm",
-                "city_name": "Ho Chi Minh",
+                "city_name": "Hồ Chí Minh",
                 "branch_name": "Azumaya Thái Văn Lung 1"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
                 "city_id": "hotel-hcm",
-                "city_name": "Ho Chi Minh",
+                "city_name": "Hồ Chí Minh",
                 "branch_name": "Azumaya Thái Văn Lung 2"
             },
             {
                 "branch_id": "annex-detail",
                 "city_id": "hotel-hcm",
-                "city_name": "Ho Chi Minh",
+                "city_name": "Hồ Chí Minh",
                 "branch_name": "Azumaya Annex (Tòa phụ)"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
                 "city_id": "hotel-hn",
-                "city_name": "Ha Noi",
+                "city_name": "Hà Nội",
                 "branch_name": "Azumaya Hai Bà Trưng 1"
             },
             {
                 "branch_id": "kim-ma-2-detail",
                 "city_id": "hotel-hn",
-                "city_name": "Ha Noi",
+                "city_name": "Hà Nội",
                 "branch_name": "Azumaya Kim Mã 2"
             },
             {
                 "branch_id": "kim-ma-3-detail",
                 "city_id": "hotel-hn",
-                "city_name": "Ha Noi",
+                "city_name": "Hà Nội",
                 "branch_name": "Azumaya Kim Mã 3"
             },
             {
                 "branch_id": "linh-lang-detail",
                 "city_id": "hotel-hn",
-                "city_name": "Ha Noi",
+                "city_name": "Hà Nội",
                 "branch_name": "Azumaya Linh Lang"
             },
             {
                 "branch_id": "da-nang",
                 "city_id": "hotel-dn",
-                "city_name": "Da Nang",
+                "city_name": "Đà Nẵng",
                 "branch_name": "Azumaya Đà Năng Hotel"
             },
             {
                 "branch_id": "hai-phong",
                 "city_id": "hotel-hp",
-                "city_name": "Hai Phong",
+                "city_name": "Hải Phòng",
                 "branch_name": "Azumaya Hải Phòng Hotel"
             }
         ],
         "room": [
             {
                 "branch_id": "le-thanh-ton-detail",
-                "branch_name": "Azumaya Le Thanh Ton",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Lê Thánh Tôn",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "le-thanh-ton-detail",
-                "branch_name": "Azumaya Le Thanh Ton",
+                "branch_name": "Azumaya Lê Thánh Tôn",
                 "price": "1.390.000VNĐ+",
                 "room_name": "DELUXE GROUND"
             },
             {
                 "branch_id": "le-thanh-ton-detail",
-                "branch_name": "Azumaya Le Thanh Ton",
+                "branch_name": "Azumaya Lê Thánh Tôn",
                 "price": "1.520.000VNĐ+",
                 "room_name": "DELUXE"
             },
             {
                 "branch_id": "le-thanh-ton-detail",
-                "branch_name": "Azumaya Le Thanh Ton",
+                "branch_name": "Azumaya Lê Thánh Tôn",
                 "price": "1.790.000VNĐ+",
                 "room_name": "EXECUTIVE (FRONT SIDE)"
             },
             {
                 "branch_id": "le-thanh-ton-detail",
-                "branch_name": "Azumaya Le Thanh Ton",
+                "branch_name": "Azumaya Lê Thánh Tôn",
                 "price": "1.790.000VNĐ+",
                 "room_name": "EXECUTIVE (BACK SIDE)"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Thái Văn Lung 1",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.130.000VNĐ+",
                 "room_name": "ECONOMY/NO-WINDOW"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.180.000VNĐ+",
                 "room_name": "ECONOMY"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.310.000VNĐ+",
                 "room_name": "STANDARD"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.440.000VNĐ+",
                 "room_name": "DELUXE/NO-WINDOW"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.580.000VNĐ+",
                 "room_name": "DELUXE-M"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.710.000VNĐ+",
                 "room_name": "DELUXE-L"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.580.000VNĐ+",
                 "room_name": "TERRACE-M"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.710.000VNĐ+",
                 "room_name": "TERRACE-L"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.970.000VNĐ+",
                 "room_name": "SUITE"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "1.970.000VNĐ+",
                 "room_name": "SUITE - TWIN"
             },
             {
                 "branch_id": "thai-van-lung-1-detail",
-                "branch_name": "Azumaya Thai Van Lung 1",
+                "branch_name": "Azumaya Thái Văn Lung 1",
                 "price": "2.380.000VNĐ+",
                 "room_name": "VIP TATAMI"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Thái Văn Lung 2",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.390.000VNĐ+",
                 "room_name": "DELUXE M NO WINDOW"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.470.000VNĐ+",
                 "room_name": "DELUXE L NO WINDOW"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.650.000VNĐ+",
                 "room_name": "EXECUTIVE FRONTSIDE"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.650.000VNĐ+",
                 "room_name": "EXECUTIVE BACKSIDE"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.790.000VNĐ+",
                 "room_name": "EXECUTIVE TWIN NO WINDOW"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.860.000VNĐ+",
                 "room_name": "SEMI SUITE"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.920.000VNĐ+",
                 "room_name": "SUITE"
             },
             {
                 "branch_id": "thai-van-lung-2-detail",
-                "branch_name": "Azumaya Thai Van Lung 2",
+                "branch_name": "Azumaya Thái Văn Lung 2",
                 "price": "1.580.000VNĐ+",
                 "room_name": "DELUXE"
             },
             {
                 "branch_id": "annex-detail",
                 "branch_name": "Azumaya Annex",
-                "room_name": "Please select a kind of room"
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "annex-detail",
@@ -361,131 +361,131 @@
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
-                "room_name": "Please select a kind of room"
+                "branch_name": "AzumayaHai Bà Trưng 1",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
+                "branch_name": "AzumayaHai Bà Trưng 1",
                 "price": "1.310.000VNĐ+",
                 "room_name": "DELUXE 1F (NO VIEW)"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
+                "branch_name": "AzumayaHai Bà Trưng 1",
                 "price": "1.440.000VNĐ+",
                 "room_name": "DELUXE - INSIDE WINDOW"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
+                "branch_name": "AzumayaHai Bà Trưng 1",
                 "price": "1.580.000VNĐ+",
                 "room_name": "EXECUTIVE"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
+                "branch_name": "AzumayaHai Bà Trưng 1",
                 "price": "1.650.000VNĐ+",
                 "room_name": "EXECUTIVE WITH KITCHEN"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
+                "branch_name": "AzumayaHai Bà Trưng 1",
                 "price": "1.760.000VNĐ+",
                 "room_name": "SEMI SUITE WITH KITCHEN"
             },
             {
                 "branch_id": "hai-ba-trung-detail",
-                "branch_name": "Azumaya Hai Ba Trung 1",
+                "branch_name": "AzumayaHai Bà Trưng 1",
                 "price": "1.840.000VNĐ+",
                 "room_name": "SUITE"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Kim Mã 2",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
+                "branch_name": "Azumaya Kim Mã 2",
                 "price": "1.580.000VNĐ+",
                 "room_name": "DELUXE"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
+                "branch_name": "Azumaya Kim Mã 2",
                 "price": "1.700.000VNĐ+",
                 "room_name": "LAKE SIDE M"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
+                "branch_name": "Azumaya Kim Mã 2",
                 "price": "1.840.000VNĐ+",
                 "room_name": "LAKE SIDE L"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
+                "branch_name": "Azumaya Kim Mã 2",
                 "price": "1.840.000VNĐ+",
                 "room_name": "EXECUTIVE WITH KITCHEN"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
+                "branch_name": "Azumaya Kim Mã 2",
                 "price": "1.970.000VNĐ+",
                 "room_name": "SUITE WITH KITCHEN"
             },
             {
                 "branch_id": "kim-ma-2-detail",
-                "branch_name": "Azumaya Kim Ma 2",
+                "branch_name": "Azumaya Kim Mã 2",
                 "price": "1.180.000VNĐ+",
                 "room_name": "ANNEX WITH KITCHEN"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Kim Mã 3",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
+                "branch_name": "Azumaya Kim Mã 3",
                 "price": "1.260.000VNĐ+",
                 "room_name": "STANDARD NO WINDOW"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
+                "branch_name": "Azumaya Kim Mã 3",
                 "price": "1.370.000VNĐ+",
                 "room_name": "DELUXE M SMALL WINDOW"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
+                "branch_name": "Azumaya Kim Mã 3",
                 "price": "1.450.000VNĐ+",
                 "room_name": "DELUXE L NO WINDOW"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
+                "branch_name": "Azumaya Kim Mã 3",
                 "price": "1.450.000VNĐ+",
                 "room_name": "DELUXE L SMALL WINDOW IN BATH"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
+                "branch_name": "Azumaya Kim Mã 3",
                 "price": "1.580.000VNĐ+",
                 "room_name": "DELUXE L WINDOW"
             },
             {
                 "branch_id": "kim-ma-3-detail",
-                "branch_name": "Azumaya Kim Ma 3",
+                "branch_name": "Azumaya Kim Mã 3",
                 "price": "1.700.000VNĐ+",
                 "room_name": "LAKE SIDE"
             },
             {
                 "branch_id": "linh-lang-detail",
                 "branch_name": "Azumaya Linh Lang",
-                "room_name": "Please select a kind of room"
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "linh-lang-detail",
@@ -519,95 +519,95 @@
             },
             {
                 "branch_id": "da-nang",
-                "branch_name": "Azumaya Da Nang Hotel",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Đà Nẵng Hotel",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "da-nang",
-                "branch_name": "Azumaya Da Nang Hotel",
+                "branch_name": "Azumaya Đà Nẵng Hotel",
                 "price": "1.000.000VNĐ+",
                 "room_name": "DELUXE NO WINDOW DOUBLE"
             },
             {
                 "branch_id": "da-nang",
-                "branch_name": "Azumaya Da Nang Hotel",
+                "branch_name": "Azumaya Đà Nẵng Hotel",
                 "price": "1.000.000VNĐ+",
                 "room_name": "DELUXE NO WINDOW TWIN"
             },
             {
                 "branch_id": "da-nang",
-                "branch_name": "Azumaya Da Nang Hotel",
+                "branch_name": "Azumaya Đà Nẵng Hotel",
                 "price": "1.250.000VNĐ+",
                 "room_name": "EXECUTIVE DOULE"
             },
             {
                 "branch_id": "da-nang",
-                "branch_name": "Azumaya Da Nang Hotel",
+                "branch_name": "Azumaya Đà Nẵng Hotel",
                 "price": "1.250.000VNĐ+",
                 "room_name": "EXECUTIVE TWIN"
             },
             {
                 "branch_id": "da-nang",
-                "branch_name": "Azumaya Da Nang Hotel",
+                "branch_name": "Azumaya Đà Nẵng Hotel",
                 "price": "1.500.000VNĐ+",
                 "room_name": "SUITE"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
-                "room_name": "Please select a kind of room"
+                "branch_name": "Azumaya Hải Phòng Hotel",
+                "room_name": "Lựa chọn hạng phòng"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.200.000VNĐ+",
                 "room_name": "STANDARD NO WINDOW"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.325.000VNĐ+",
                 "room_name": "STANDARD"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.375.000VNĐ+",
                 "room_name": "DELUXE M"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.500.000VNĐ+",
                 "room_name": "DELUXE L"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.625.000VNĐ+",
                 "room_name": "EXECUTIVE CITY VIEW"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.625.000VNĐ+",
                 "room_name": "EXECUTIVE LAKE VIEW"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.750.000VNĐ+",
                 "room_name": "SUITE"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.750.000VNĐ+",
                 "room_name": "EXECUTIVE LAKE VIEW WITH KITCHEN"
             },
             {
                 "branch_id": "hai-phong",
-                "branch_name": "Azumaya Hai Phong Hotel",
+                "branch_name": "Azumaya Hải Phòng Hotel",
                 "price": "1.875.000VNĐ+",
                 "room_name": "SUITE WITH KITCHEN"
             }
@@ -616,62 +616,62 @@
         "branch_pp": "Azumaya Phnom Penh"
     },
     "feature": {
-        "name": "Feature",
-        "main_title": "Azumaya Hotel's 8 Characteristics",
-        "main_content": "Thank you always for your kind attention to Azumaya Hotel. Azumaya Hotel is a Japanese-style business hotel opened in Ho Chi Minh for whom are stressed out with their business trip and looking for comfortable place to be relieved. The first branch opened in Thai Van Lung St. in 2011 and now we have 5 branches in Ha Noi, one in Da Nang, 4 branches in Ho Chi Minh. We serve 8 characteristics of service with high-standard quality in all branches.",
-        "continue": "Continue Reading",
-        "detail": "Click here for details",
+        "name": "Đặc trưng",
+        "main_title": "8 Điểm đặc trưng của Khách sạn Azumaya",
+        "main_content": "Cảm ơn Quý khách hàng đã quan tâm đến dịch vụ Khách sạn Azumaya. Chúng tôi là thương hiệu khách sạn mang phong cách Nhật Bản dành cho các thương gia sang công tác tại Việt Nam và hoạt động với mục tiêu tạo cho khách hàng sự thoải mái và cảm giác an toàn như ở nhà, bằng những tiện nghi mang phong cách Nhật Bản. Chi nhánh đầu tiên của Azumaya được mở cửa tại con đường Thái Văn Lung, thành phố Hồ Chí Minh từ năm 2011 và hiện tại chúng tôi đã mở rộng với 4 chi nhánh tại Hà Nội, 1 tại Hải Phòng, 1 tại Đà Nẵng và 4 chi nhánh tại Hồ Chí Minh. Chúng tôi mang đến cho khách hàng 8 dịch vụ đặc trưng với chất lượng tiêu chuẩn cao ở tất cả các chi nhánh.",
+        "continue": "Xem tiếp",
+        "detail": "Nhấn để xem chi tiết",
         "feature_item": [
             {
                 "id": 1,
-                "title": "Reasonable price from $40 per night",
-                "content": "All rooms have shower toilet and amenity which are ordered from Japanese supplyer, 8 kinds of amenities including small head toothbrush, shaving and conditioner are prepared. You can stay with cheaper price with signing our contract. We would like offer more discounts for long term resident. Please feel free to contact to our receptionist.",
+                "title": "Giá cả hợp lý từ chỉ $40/ đêm",
+                "content": "Tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và đầy đủ đồ vệ sinh cá nhân được đặt hàng từ nhà cung cấp Nhật Bản như bàn chải đánh răng, dao cạo râu, dầu xả... Khách hàng có thể nhận giá ưu đãi khi ký hợp đồng với chúng tôi. Chúng tôi mong muốn có thể cung cấp nhiều ưu đãi hơn nữa cho các khách hàng lưu trú dài hạn. Xin vui lòng liên hệ với nhân viên lễ tân của chúng tôi để biết thêm chi tiết.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
-                "num": "No 1"
+                "num": "Thứ Nhất"
             },
             {
                 "id": 2,
-                "title": "Best location for Japanese businessmen",
-                "content": "Every branches are located in center of the area which has many Japanese restaurants and Japanese pubs. Therefore, even if it’s the first time visiting Vietnam, the customers can stay with safe and comfortable feeling. For the companies which send the business traveler from Japan, it is fully safe for their businessmen to walk around by themselves.",
+                "title": "Vị trí thuận lợi dành cho thương gia người Nhật",
+                "content": "Tất cả các chi nhánh đều nằm ở khu vực trung tâm với nhiều nhà hàng và quán rượu Nhật Bản. Vì vậy, ngay cả khi đây là lần đầu tiên đến thăm Việt Nam, khách hàng vẫn có thể lưu trú với cảm giác an toàn và thoải mái như ở nhà. Các công ty cử nhân viên công tác từ Nhật Bản sang có thể hoàn toàn yên tâm về tính an toàn khi tự đi lại xung quanh.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/y59yjf0ygam0ohxazsfm.jpg",
-                "num": "No 2"
+                "num": "Thứ Hai"
             },
             {
                 "id": 3,
-                "title": "Japanese-style open-air hot bath with Sauna",
-                "content": "Azumaya Hotel is the pioneer of providing Japanese style open air hot bath, an “oasis” for Japanese, in Ho Chi Minh. Before commuting and after coming back from a long day work, please feel free to soak into the “oasis” and relax. The business hour is from 6am to 10am in the morning and 5pm to 12am in the evening for weekdays. For weekends, we are open all day long from 7am to 12am. (*Each branch have different business hour, so please check the branch information.) It is also available for the visitors with 100.000VNĐ. (The time & price depends on each branches).",
+                "title": "Bể tắm nước nóng ngoài trời và Sauna",
+                "content": "Khách sạn Azumaya là đơn vị tiên phong cung cấp dịch vụ bể tắm nước nóng ngoài trời phong cách Nhật Bản, một “ốc đảo” riêng dành cho người Nhật tại Việt Nam. Trước khi đi làm và sau khi trở về sau một ngày làm việc dài, khách hàng có thể thoải mái đắm mình vào “ốc đảo” và thư giãn. Giờ hoạt động của bể tắm từ 6 giờ sáng đến 10 giờ sáng và 5 giờ chiều đến 12 giờ tối các ngày trong tuần. Vào cuối tuần, chúng tôi mở cửa cả ngày từ 7 giờ sáng đến 12 giờ tối. (*Mỗi chi nhánh có giờ hoạt động khác nhau, vui lòng kiểm tra thông tin tại từng chi nhánh.) Chúng tôi cũng phục vụ khách ngoài với mức phí từ 150.000VND (Thời gian và giá cả tùy từng chi nhánh).",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
-                "num": "No 3",
+                "num": "Thứ Ba",
                 "hasLink": true,
                 "link": "/Service/Test/Vietnam/Service?tab=rotenburo"
             },
             {
                 "id": 4,
-                "title": "Japanese breakfast",
-                "content": "For Japanese business travelers, high performance of working in foreign countries only can be produced by Japanese breakfast. Grilled fish, stewed meat, fried seafood, sauteed vegetables, and some other remarkable Japanese dishes can be enjoyed only in Azumaya Hotel. Both authentic Japanese breakfast set and continental set can be enjoyed, but there are also bowl dish, curry rice, gingered sautéed pork set, and other wide-range of Japanese set menu you can choose from. Buffet is served for limited time from 6am to 8am, and set menu is served after buffet time from 8am to 10am. We also serve the breakfast for visitors from 150.000VNĐ (The price depends on each branches).",
+                "title": "Bữa sáng kiểu Nhật",
+                "content": "Đối với những khách hàng Nhật đi công tác, hiệu suất làm việc cao ở nước ngoài chỉ có thể đạt được nhờ bữa sáng kiểu Nhật. Cá nướng, thịt hầm, hải sản chiên, rau xào và những món ăn Nhật Bản đặc sắc khác chỉ có thể được thưởng thức tại Khách sạn Azumaya. Khách hàng có thể thưởng thức cả set ăn sáng kiểu Nhật truyền thống và set kiểu lục địa, ngoài ra còn nhiều thực đơn lập sẵn kiểu Nhật hấp dẫn khác như cơm thịt bò, cơm cà ri, thịt lợn xào gừng. Buffet được phục vụ trong thời gian giới hạn từ 6 giờ sáng đến 8 giờ sáng và thực đơn cố định set menu được phục vụ sau thời gian buffet từ 8 giờ sáng đến 10 giờ sáng. Chúng tôi cũng phục vụ bữa sáng cho khách ngoài với mức phí từ 150.000VND (Giá cả tùy từng chi nhánh).",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
-                "num": "No 4",
+                "num": "Thứ Tư",
                 "link": "/Service/Test/Vietnam/Service?tab=breakfast"
             },
             {
                 "id": 5,
-                "title": "Japanese TV shows available",
-                "content": "You can watch the main local Japanese TV shows such as NHK, TBS, Fuji TV, Nihon TV in live same as you do in Japan. Please lean back and relax watching your favorite TV shows.",
+                "title": "Chương trình tivi Nhật Bản",
+                "content": "Khách hàng có thể xem trực tiếp các chương trình truyền hình địa phương chính của Nhật Bản như NHK, TBS, Fuji TV, Nihon TV như đang ở Nhật. Hãy ngả lưng và thư giãn xem chương trình truyền hình yêu thích của mình.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1702523980/AzumayaWeb/Tv_picture-1024x768_niecmc.jpg",
-                "num": "No 5"
+                "num": "Thứ Năm"
             },
             {
                 "id": 6,
-                "title": "Japanese hospitality",
-                "content": "We serve you with our Japanese available staff and manager for whom are not confident with English speaking. Japanese way of saying “Have a nice day” and “Welcome back” is taught well to the staff for our customers to feel safe staying in Vietnam. Moreover, we are kindly waiting for your stay with our smile and high spirit of hospitality.",
+                "title": "Chăm sóc khách hàng kiểu Nhật",
+                "content": "Chúng tôi phục vụ khách hàng với đội ngũ nhân viên và quản lý có thể giao tiếp tiếng Nhật, khách hàng không tự tin trong giao tiếp tiếng Anh có thể yên tâm khi lưu trú cùng chúng tôi. Nhân viên của chúng tôi cũng được dạy cách chào tiếng Nhật “Chúc một ngày tốt lành” và “Chào mừng trở lại” để khách hàng cảm thấy an tâm khi ở Việt Nam. Chúng tôi rất hy vọng sớm được phục vụ quý khách hàng tại hệ thống khách sạn của chúng tôi với với nụ cười và tinh thần hiếu khách.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1702523980/AzumayaWeb/Reception_picture-1024x798_dkwrqc.jpg",
-                "num": "No 6"
+                "num": "Thứ Sáu"
             },
             {
                 "id": 7,
-                "title": "Original style foot massage",
-                "content": "Our well-trained massage staffs will serve completely outstanding and memorable massage just for you to soothe your hard day of working. With over 90% are the repeat customers in Vietnam, we have absolute confident in our massage. Mainly we rub and push the point from head, shoulder, back, and finally to feet. To release the fatigue find yourself great pleasure at our massage. You can enjoy in Thai Van Lung 1 branch in Ho Chi Minh, Hai Ba Trung 1 branch, Kim Ma 2 branch and Linh Lang branch in Ha Noi, and Da Nang branch.",
+                "title": "Massage chân kiểu truyền thống",
+                "content": "Đội ngũ nhân viên massage đã được đào tạo của chúng tôi sẽ mang đến những liệu trình massage hoàn hảo và đáng nhớ, giúp khách hàng xoa dịu mệt mỏi sau ngày làm việc vất vả. Với tỷ lệ hơn 90% là khách hàng thường xuyên quay lại sử dụng tại Việt Nam, chúng tôi hoàn toàn tin tưởng vào dịch vụ massage của mình. Chúng tôi chủ yếu xoa bóp và ấn huyệt từ đầu, vai, lưng và bàn chân. Hãy thử trải nghiệm dịch vụ massage của chúng tôi để giải tỏa mệt mỏi và giúp cơ thể tìm cảm giác thoải mái. Khách hàng có thể sử dụng dịch vụ tại chi nhánh Thái Văn Lung 1 tại Hồ Chí Minh, chi nhánh Linh Lang tại Hà Nội và chi nhánh Đà Nẵng.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "No 7",
                 "hasLink": true,
@@ -679,77 +679,76 @@
             },
             {
                 "id": 8,
-                "title": "Japanese Restaurant",
-                "content": "We have Japanese restaurant combined together in hotel that is popular to both residents and travelers. Please enjoy and satisfy your appetite with your favorite Azumaya restaurant.",
+                "title": "Nhà hàng Nhật",
+                "content": "Chúng tôi có các nhà hàng Nhật Bản kết hợp hoạt động trong khuôn viên khách sạn được cả người dân địa phương và khách du lịch ưa chuộng. Hãy thưởng thức các món ăn tại nhà hàng mà quý khách yêu thích tại Azumaya.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027480/AzumayaWeb/rrpqdg6q72mdlduygwfa.jpg",
-                "num": "No 8"
+                "num": "Thứ 8"
             }
         ]
     },
     "home": {
-        "name": "Azumaya Hotel",
-        "news_title": "TIN TỨC",
-        "welcome_title": "Chào mừng bạn đến với Khách sạn Azumaya",
-        "welcome_sub-title": "Mang đến sự thoải mái dành cho doanh nhân quốc tế",
-        "welcome_content": "Ngày nay, ngày càng có nhiều doanh nhân từ các nước tiên tiến chuyển đến Việt Nam. Tuy nhiên, trong thời gian lưu trú, có nhiều lo lắng phải đối mặt như ngôn ngữ và thực phẩm. Để giảm bớt nỗi lo của họ, chúng tôi có một nhiệm vụ đã nảy ra trong tâm trí. “Tại sao chúng ta không cung cấp không gian thoải mái để giảm bớt căng thẳng của họ?” Câu trả lời rõ ràng: chúng tôi chuẩn bị Rotenburo (bể nước nóng ngoài trời) và massage chân để giảm mệt mỏi, và bữa sáng Nhật Bản chân thực & bữa sáng kiểu lục địa để duy trì sức khỏe hàng ngày. Tiếp theo là tiếp tân có thể nói tiếng Nhật, dịch vụ đưa đón từ/đến sân bay, dịch vụ giặt ủi miễn phí cho khách lưu trú lâu dài, dịch vụ Wi-Fi tốc độ cao miễn phí, chương trình TV Nhật Bản, dịch vụ sắp xếp thuê xe/đi tour, v.v. Hơn nữa, “Omotenashi” (lòng mến khách kiểu Nhật) luôn luôn trong trái tim chúng tôi để phục vụ bạn một cách hạnh phúc trong cuộc sống ở đất nước Việt Nam.",
+        "name": "Khách sạn Azumaya",
+        "news_title": "Thông Tin",
+        "welcome_title": "Chào mừng quý khách đến với Khách sạn Azumaya",
+        "welcome_sub-title": "Mang tới không gian an toàn và yên tâm cho doanh nhân đi công tác nước Ngoài",
+        "welcome_content": "Ngày nay, Số lượng doanh nhân từ các nước phát triển đến Việt Nam công tác ngày càng tăng theo từng năm.Trong lúc đó,lần đầu tiên đến Việt Nam chắc hẵn sẽ có rất nhiều lo lắng như là ẩm thực, ngôn ngữ.Ở khách sạn Azumaya chúng tôi nỗ lực hàng ngày để trở thành nơi dừng chân an toàn và yên tâm cho các doanh nhân Nhật Bản dựa trên khái niệm  Hòa” - Văn hóa Nhật Bản. Đối với những doanh nhân đi công tác nước ngoài, chúng tôi muốn cung cấp một không gian an toàn và yên tâm mà không có cảm giác như  ở một đất nước xa lạ.Với phương châm này, Chúng tôi phục vụ \"Tắm lộ thiên \" và \"Mát xa chân\" để giảm bớt những mệt mỏi của công việc cũng như tiếp thêm năng lượng cho một ngày làm việc bằng bữa ăn sáng kiểu Nhật.Để khách có thể yên tâm tận hưởng cuộc sống ở nước ngoài,Chúng tôi cung cấp dịch vụ hiếu khách nhất có thể: Nhân viên lễ tân  trực có thể đối ứng tiếng Nhật, Tất cả các phòng đều có thể xem các chương trình phát sóng tiếng Nhật như NHK,WOWOW  và các chương trình thương mại khác, dịch vụ đưa tiễn Sân Bay, dịch vụ giặt là,Internet miễn phí tốc độ cao, cho thuê xe, sắp xếp tham quan.",
         "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
-        "line_btn": "Nhấn để biết thêm thông tin chi tiết"
+        "line_btn": "Nhấn để xem chi tiết"
     },
     "policy": {
         "title": "Q&A",
         "data": [
             {
-                "name": "CHECK-IN",
-                "content": "After 15:00."
+                "name": "NHẬN PHÒNG",
+                "content": "Sau 15:00 chiều."
             },
             {
-                "name": "CHECK-OUT",
-                "content": "Until 12:00"
+                "name": "TRẢ PHÒNG",
+                "content": "Cho đến 12:00 trưa."
             },
             {
-                "name": "EARLY CHECK-IN",
-                "content": "Will be subject to the availability of hotel room status.\n- Check in early until 10:00 : 100% charged of one night room rate.\n- Check in early from 10:00 and before 15:00 : 50% charged of one night room rate."
+                "name": "NHẬN PHÒNG",
+                "content": "Sẽ tùy thuộc vào tình trạng phòng trống của khách sạn.\n- Nhận phòng sớm đến trước 10:00am: tính 100% giá phòng một đêm.\n- Nhận phòng sớm từ 10:00am và trước 3:00pm : tính 50% giá phòng một đêm"
             },
             {
-                "name": "CHECK-OUT LATE",
-                "content": "Will be subject to the availability of hotel room status.\n- Check out late until 18:00 : 50% charged of the one night.\n- Check out late from 18:00 : 100% charged of the one night."
+                "name": "TRẢ PHÒNG MUỘN",
+                "content": "Tùy thuộc vào tình trạng phòng trống của khách sạn.\n- Trả phòng muộn đến 18:00 : tính 50% tiền phòng. \n- Trả phòng muộn từ 18:00 : tính 100% tiền phòng."
             },
             {
-                "name": "NO SHOW",
-                "content": "100% charged one night."
+                "name": "ĐẶT PHÒNG NHƯNG KHÔNG ĐẾN",
+                "content": "Trường hợp không đến lưu trú theo lịch trình đã đặt sẽ bị tính phí 1 đêm đầu tiên."
             },
             {
-                "name": "LATE CANCELLATION",
-                "content": "- In 48 hours prior to 15:00 of check in date : 50% charged of overnight.\n- In 24 hours prior to 15:00 of check in date: 100% charged overnight."
+                "name": "HỦY ĐẶT PHÒNG MUỘN",
+                "content": "Trong vòng 48 giờ sau 3:00 chiều ngày nhận phòng: tính phí 50% một đêm. \nTrong vòng 24 giờ sau 3:00 chiều ngày nhận phòng: tính phí 100% một đêm."
             },
             {
-                "name": "EARLY CHECK-OUT",
-                "content": "- In 48 hours prior to 15:00 of new check out date: 50% charged of one last night.\n- In 24 hours prior to 15:00 of new check out date: 100% charged of one last night."
+                "name": "TRẢ PHÒNG SỚM",
+                "content": "Trường hợp thay đổi ngày check out: \n- Trong vòng 48 giờ kể từ 15h của ngày check out mới: tính phí 50% tiền phòng của đêm cuối cùng \n- Trong vòng 24 giờ kể từ 15h của ngày check out mới: tính phí 100% tiền phòng của đêm cuối cùng"
             },
             {
-                "name": "Exchange rate is based on",
-                "content": "The guest with Corporate Contract: the hotel rate on check in date is applied.\nThe guest without Corporate Contract: the selling rate from Vietcombank at 6pm on check in date is applied."
-            },
+                "name": "Tỷ giá đổi tiền",
+                "content": "Khách của công ty chưa ký hợp đồng với khách sạn: Áp dụng tỷ giá của khách sạn vào đúng ngày khách check in. Khách của công ty đã ký hợp đồng với khách sạn: Áp dụng tỷ giá mua vào của ngân hàng Vietcombank lúc 6h." },
             {
-                "name": "Please be noted ",
-                "content": "1.The Booking Confirmation (we will send you by e-mail) should be showed to Reception upon Check-in.\n2.The valid Passport ( non Vietnamese ) or ID ( Vietnamese ) is required for guest registration as Vietnamese laws."
+                "name": "Chú ý ",
+                "content": "1. Khi check in, vui lòng cung cấp bản xác nhận đặt phòng cho nhân viên lễ tân. (Chúng tôi sẽ gửi xác nhận đặt phòng qua email.) \n2. Theo quy định của pháp luật Việt Nam, khách lưu trú cần có hộ chiếu hợp lệ (ngoại trừ khách có quốc tịch Việt Nam) hoặc thẻ căn cước công dân (đối với khách có quốc tịch Việt Nam) "
             }
         ]
     },
     "service": {
-        "name": "Service",
+        "name": "Dịch Vụ",
         "location": [
             {
-                "name": "Ho Chi Minh"
+                "name": "Hồ Chí Minh"
             },
             {
-                "name": "Da Nang"
+                "name": "Đà Nẵng"
             },
             {
-                "name": "Ha Noi"
+                "name": "Hà Nội"
             },
             {
-                "name": "Hai Phong"
+                "name": "Hải Phòng"
             }
         ],
         "service_name": [
@@ -767,37 +766,37 @@
             }
         ],
         "hcm-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
-        "hcm-roten-female": "※Female can use Rotenburo at Azumaya Thai Van Lung 2, From Mon - Fri : 17:00 - 18:45, price is 150.000/pax \n※Private - Rotenburo is available from Mon To Fri: 11:00 to 17:00 (last order 16:00) \nPrice: 800.000VNĐ/hour for 1~4pax & 1.000.000VNĐ/hour for 5~8pax \nFemale customer also can use. Booking a day before is required.",
+        "hcm-roten-female": "※Female can use Rotenburo at Azumaya Thái Văn Lung 2, From Mon - Fri : 17:00 - 18:45, price is 150.000/pax \n※Private - Rotenburo is available from Mon To Fri: 11:00 to 17:00 (last order 16:00) \nPrice: 800.000VNĐ/hour for 1~4pax & 1.000.000VNĐ/hour for 5~8pax \nFemale customer also can use. Booking a day before is required.",
         "hcm-breakfast-title": "Azumaya Breakfast are open daily from 6am to 10am. Visitor are also welcoming. Price for visitor is as following",
-        "hcm-massage-title": "Foot Massage open daily at Azumaya Thai Van Lung 1, 1st floor, are also available for visitor.",
+        "hcm-massage-title": "Foot Massage open daily at Azumaya Thái Văn Lung 1, 1st floor, are also available for visitor.",
         "hcm-branch": [
             {
-                "branch": "Azumaya Thai Van Lung 1",
-                "rotenburo": "From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 \nWeekend & Holiday: 7:00 to 24:00. \nPrice (from Feb 2023) \nAzumaya Thai Van Lung 1: 250.000VNĐ/1pax",
+                "branch": "Azumaya Thái Văn Lung 1",
+                "rotenburo": "From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 \nCuối Tuần & Holiday: 7:00 to 24:00. \nPrice (from Feb 2023) \nAzumaya Thái Văn Lung 1: 250.000VNĐ/1pax",
                 "breakfast": "Buffet: 200.000VNĐ  \nSet menu: from 100.000VNĐ/set \nServing time: \nFrom Mon to Sat: \nBuffet (from 6: 00 to 8: 00) \nSet menu (from 8: 00 to 10: 00) \nSunday: only set menu (from 6: 00 to 10: 00)",
-                "massage": "Opening hours 10:00 - 23:00 (last entry 22: 45)\n\nThe course and fee are as follows.\n・40 minutes course 250,000 VNĐ\n・70 minutes course 300,000 VNĐ (Hotel guest: 270,000 VNĐ)\n・100 minutes course 400,000 VNĐ (Hotel guest: 360,000 VNĐ)\n\nRotenburo Set for Visitor\n・Set Rotenburo + Massage 40' ：400,000 VNĐ\n・Set Rotenburo + Massage 70' : 450,000 VNĐ\n・Set Rotenburo + Massage 100' : 550,000 VNĐ\n\n* 10% discount for Hotel guests\n* Tip is excluded, your satisfaction is our pleasure.\n* Advance reservation is highly recommended.\nPlease call for booking Azumaya Thai Van Lung 1 (028) 3824 6835"
+                "massage": "Giờ phục vụs 10:00 - 23:00 (last entry 22: 45)\n\nThe course and fee are as follows.\n・40 minutes course 250,000 VNĐ\n・70 minutes course 300,000 VNĐ (Hotel guest: 270,000 VNĐ)\n・100 minutes course 400,000 VNĐ (Hotel guest: 360,000 VNĐ)\n\nRotenburo Set for Visitor\n・Set Rotenburo + Massage 40' ：400,000 VNĐ\n・Set Rotenburo + Massage 70' : 450,000 VNĐ\n・Set Rotenburo + Massage 100' : 550,000 VNĐ\n\n* 10% discount for Hotel guests\n* Tip is excluded, your satisfaction is our pleasure.\n* Advance reservation is highly recommended.\nPlease call for booking Azumaya Thái Văn Lung 1 (028) 3824 6835"
             },
             {
-                "branch": "Azumaya Thai Van Lung 2",
-                "rotenburo": "From Mon - Fri : 6:00 to 10:00 - 19:00 to 24:00 \nWeekend & Holiday: 7:00 to 24:00 \nPrice (from Jan 2019) \nAzumaya Thai Van Lung 2: 200.000/pax",
+                "branch": "Azumaya Thái Văn Lung 2",
+                "rotenburo": "From Mon - Fri : 6:00 to 10:00 - 19:00 to 24:00 \nCuối Tuần & Holiday: 7:00 to 24:00 \nPrice (from Jan 2019) \nAzumaya Thái Văn Lung 2: 200.000/pax",
                 "breakfast": "Buffet: 200.000VNĐ  \nSet menu: from 100.000VNĐ/set \nServing time: \nFrom Mon to Sat: \nBuffet (from 6: 00 to 8: 00) \nSet menu (from 8: 00 to 10: 00) \nSunday: only set menu (from 6: 00 to 10: 00)"
             },
             {
-                "branch": "Azumaya Le Thanh Ton",
-                "rotenburo": "From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 \nWeekend & Holiday: 7:00 to 24:00 \nPrice (from Jan 2019) \nAzumaya Le Thanh Ton : 150.000/pax",
+                "branch": "Azumaya Lê Thánh Tôn",
+                "rotenburo": "From Mon - Fri : 6:00 to 10:00 - 17:00 to 24:00 \nCuối Tuần & Holiday: 7:00 to 24:00 \nPrice (from Jan 2019) \nAzumaya Lê Thánh Tôn : 150.000/pax",
                 "breakfast": "Buffet: 200.000VNĐ  \nSet menu: from 100.000VNĐ/set \nServing time: \nFrom Mon to Sat: \nBuffet (from 6: 00 to 8: 00) \nSet menu (from 8: 00 to 10: 00) \nSunday: only set menu (from 6: 00 to 10: 00)"
             }
         ],
         "dn-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
-        "dn-roten-female": "※Female can use Rotenburo if there is any reservation booked at reception counter before:\nAM: Mon ~ Fri: 9:15am - 10:15am / Sat - Sun: 10:15pm - 11:15pm\nPM: Sun ~ Fri: 22:30 ~23:30\n\n※Private - Rotenburo is available at Weekday from 9:15am to 4pm and Weekend from 10:15am~4pm(last order 3pm)\nPrice: 800.000 VNĐ/ hour for 1~4pax\n1.000.000 VNĐ/hour for 5~8pax\nFemale customer also can use. Booking a day before is required.",
+        "dn-roten-female": "※Female can use Rotenburo if there is any reservation booked at reception counter before:\nAM: Mon ~ Fri: 9:15am - 10:15am / Sat - Sun: 10:15pm - 11:15pm\nPM: Sun ~ Fri: 22:30 ~23:30\n\n※Private - Rotenburo is available at Ngày Trong Tuần from 9:15am to 4pm and Cuối Tuần from 10:15am~4pm(last order 3pm)\nPrice: 800.000 VNĐ/ hour for 1~4pax\n1.000.000 VNĐ/hour for 5~8pax\nFemale customer also can use. Booking a day before is required.",
         "dn-breakfast-title": "Azumaya Breakfast are open daily from 6am to 10am",
-        "dn-massage-title": "Foot massage is open daily at Azumaya Da Nang, are also available for visitor",
+        "dn-massage-title": "Foot massage is open daily at Azumaya Đà Nẵng, are also available for visitor",
         "dn-branch": [
             {
-                "branch": "Azumaya Da Nang",
+                "branch": "Azumaya Đà Nẵng",
                 "roten": "AM: Mon - Fri: 6am - 9am (last entry 8:30am) / Sat - Sun : 7am - 10am (last entry 9:30am)\nPM Mon- Sun: 5pm - 10:15pm (last entry 10pm)\nPrice: 150.000/pax",
                 "breakfast": "Buffet: 200.000VNĐ\nSet menu: 150.000VNĐ/set\nServing time: 6:00~10:00",
-                "massage": "Opening hours:\n\nMon ~ Fri: 14:00 - 22:30 (last entry: 22:15)\nWeekend: 12:00 - 22:30 (last entry: 22:15)\nThe course and fee are as follows.\n* 40 minutes course: 200,000 VNĐ\n* 70 minutes course: 250,000 VNĐ (Hotel guest: 225,000 VNĐ)\n* 100 minutes course: 350,000 VNĐ (Hotel guest: 315,000 VNĐ)\n\n* There is a 10% discount for Hotel guests.\n* The tip is excluded, your satisfaction is our pleasure.\n\nAdvance reservation is highly recommend.\nPlease call for booking: Azumaya Da Nang: (0236) 3743 888"
+                "massage": "Giờ phục vụs:\n\nMon ~ Fri: 14:00 - 22:30 (last entry: 22:15)\nCuối Tuần: 12:00 - 22:30 (last entry: 22:15)\nThe course and fee are as follows.\n* 40 minutes course: 200,000 VNĐ\n* 70 minutes course: 250,000 VNĐ (Hotel guest: 225,000 VNĐ)\n* 100 minutes course: 350,000 VNĐ (Hotel guest: 315,000 VNĐ)\n\n* There is a 10% discount for Hotel guests.\n* The tip is excluded, your satisfaction is our pleasure.\n\nAdvance reservation is highly recommend.\nPlease call for booking: Azumaya Đà Nẵng: (0236) 3743 888"
             }
         ],
         "hn-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
@@ -808,11 +807,11 @@
             {
                 "roten": "Mon - Fri: 6:00 - 9:00 & 17:00 - 23:00\nSat & Sun: 7:00 - 23:00\nPrice: 150.000/pax",
                 "breakfast": "Buffet: 220.000VNĐ\nSet menu: 180.000VNĐ\n\nServing time:\nFrom Mon to Sat: Buffet (from 6:00 to 8:00)\nSet menu (from 8:00 to 10:00)\nSunday: only set menu (from 6:00 to 10:00)",
-                "massage": "Opening hour\nMonday ~ Friday 13:00 - 22:00 (last entry 21: 30)\nSun & Sat 10:00 – 22:00(last entry 21: 30)\n\nThe course and fee are as follows.\n・40 minutes course 200,000 VNĐ\n・70 minutes course 250,000 VNĐ (Hotel guest: 225,000 VNĐ)\n・100 minutes course 350,000 VNĐ (Hotel guest: 315,000 VNĐ)\n\nRotenburo Set for Visitor\n・Set Rotenburo + Massage 40' ：330,000 VNĐ\n・Set Rotenburo + Massage 70' : 370,000 VNĐ\n・Set Rotenburo + Massage 100' : 470,000 VNĐ\n\n* 10% discount for Hotel guests\n* Tip is excluded, your satisfaction is our pleasure.\n* Advance reservation is highly recommended.\nPlease call for booking Azumaya Linh Lang (024) 38620620"
+                "massage": "Giờ phục vụ\nMonday ~ Friday 13:00 - 22:00 (last entry 21: 30)\nSun & Sat 10:00 – 22:00(last entry 21: 30)\n\nThe course and fee are as follows.\n・40 minutes course 200,000 VNĐ\n・70 minutes course 250,000 VNĐ (Hotel guest: 225,000 VNĐ)\n・100 minutes course 350,000 VNĐ (Hotel guest: 315,000 VNĐ)\n\nRotenburo Set for Visitor\n・Set Rotenburo + Massage 40' ：330,000 VNĐ\n・Set Rotenburo + Massage 70' : 370,000 VNĐ\n・Set Rotenburo + Massage 100' : 470,000 VNĐ\n\n* 10% discount for Hotel guests\n* Tip is excluded, your satisfaction is our pleasure.\n* Advance reservation is highly recommended.\nPlease call for booking Azumaya Linh Lang (024) 38620620"
             }
         ],
         "hp-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
-        "hp-roten-female": "※Female can use Rotenburo if there is any reservation booked at reception counter before:\nAM: Mon - Fri: 9:15am - 10:15am / Sat - Sun: 12:15pm - 13:15pm\nPM: Sun ~ Fri: 11:15pm - 12:15am\n\n※Private - Rotenburo is available at Weekday from 9:15am to 4:30pm and Weekend from 12:15pm to 4:30pm (last order 3:30pm)\nPrice: 800.000 VNĐ/ hour for 1~4pax\n1.000.000 VNĐ/ hour for 5~8pax\nFemale customer also can use. Booking a day before is required.",
+        "hp-roten-female": "※Female can use Rotenburo if there is any reservation booked at reception counter before:\nAM: Mon - Fri: 9:15am - 10:15am / Sat - Sun: 12:15pm - 13:15pm\nPM: Sun ~ Fri: 11:15pm - 12:15am\n\n※Private - Rotenburo is available at Ngày Trong Tuần from 9:15am to 4:30pm and Cuối Tuần from 12:15pm to 4:30pm (last order 3:30pm)\nPrice: 800.000 VNĐ/ hour for 1~4pax\n1.000.000 VNĐ/ hour for 5~8pax\nFemale customer also can use. Booking a day before is required.",
         "hp-breakfast-title": "Azumaya Breakfast are open daily from 6am to 10am.\nVisitor are also welcoming. Price for visitor is as following",
         "hp-massage-title": "Foot Massage service is temporarily not available",
         "hp-branch": [
@@ -824,150 +823,145 @@
         ]
     },
     "faq": {
-        "title2": "各種サービスに関するFAQ",
-        "title3": "朝食に関するFAQ",
-        "title4": "アクセスに関するFAQ",
-        "title5": "お支払いに関するFAQ",
         "data": [
             {
-                "title": "ご宿泊に関するFAQ",
-                "question": "Q. ホテル滞在中、急に体調が悪くなったら？",
-                "answer": "A. 24時間体制で日本語のできるスタッフがホテルに常勤し、お客様のサポートを行っております。お客様より体調不良のご連絡があれば、症状や状況などをお伺いした上でそれらに応じた最寄りの病院をご紹介し、手配いたします。"
+                "title": "Câu hỏi liên quan đến việc lưu trú",
+                "question": "Q. Nếu đột nhiên không khỏe trong thời gian lưu trú tại khách sạn thì sao?",
+                "answer": "A. Nhân viên có thể nói tiếng Nhật luôn túc trực tại khách sạn 24/24 để hỗ trợ khách hàng. Nếu quý khách nói rằng cảm thấy không khỏe, chúng tôi sẽ hỏi về các triệu chứng và tình trạng của quý khách, sau đó giới thiệu quý khách đến bệnh viện gần nhất."
             },
             {
-                "question": "Q.チェックインは、3:00 p.m.からですが、それより前にホテルに到着したら？",
-                "answer": "A.　遠方からお越しの際の飛行機などの交通機関の関係で、3:00 p.m.よりも前にご到着の場合は、フライト番号やご到着時間などを事前にお知らせくださいませ。出来る限り対応させていただきます。 ただし、ホテルご到着時にお部屋の確約が必要な場合は、早朝チェックイン追加料金をお支払いいただくことになります。当日の10:00 a.m.まで100％、10:00 a.m.から3:00 p.m.まで 50％となっております。"
+                "question": "Q. Nhận phòng lúc 3:00 chiều ?",
+                "answer": "A.　Nếu quý khách đến từ xa và đến trước 3 giờ chiều do vấn đề vận chuyển như máy bay, vui lòng cho chúng tôi biết trước số hiệu chuyến bay và thời gian đến của quý khách. Chúng tôi sẽ hồi đáp sớm nhất có thể. Tuy nhiên, nếu cần đảm bảo phòng khi đến khách sạn, quý khách sẽ phải trả phụ phí nhận phòng sớm. Giảm giá 100% đến 10 giờ sáng trong ngày, giảm 50% từ 10 giờ sáng đến 3 giờ chiều."
             },
             {
-                "question": "Q.チェックイン時間前、チェックアウト時間後にお部屋を利用することはできますか？",
-                "answer": "A. お部屋に空きがある場合は、承ることができます。(有料)\n・10:00 a.m.より前のアーリーチェックイン：一泊分の100%チャージ\n・10:00 a.m.より後のアーリーチェックイン：一泊分の50%チャージ\n・18:00 p.m.までのレイトチェックアウト：一泊分の50%チャージ\n・18:00 p.m.以降のレイトチェックアウト：一泊分の100%チャージ"
+                "question": "Q.Có thể sử dụng phòng trước giờ nhận phòng hoặc sau giờ trả phòng không?",
+                "answer": "A. Nếu còn phòng, chúng tôi có thể sắp xếp cho quý khách. (Có tính phí)\n・Nhận phòng sớm trước 10:00 sáng: tính phí 100% một đêm.\n・Nhận phòng sớm sau 10:00 sáng: tính phí 50% một đêm.\n・18:00 tối. Trả phòng muộn trước: tính phí 50% một đêm\n・Trả phòng muộn sau 18:00: tính phí 100% một đêm."
             },
             {
-                "question": "Q.門限はありますか？",
-                "answer": "A.　門限はございませんが、深夜の時間帯はセキュリティー上、正面玄関を施錠いたします。　お客様がお帰りになりましたらセキュリティスタッフが開錠いたしますのでご安心くださいませ。"
+                "question": "Q.Có giới hạn giờ không?",
+                "answer": "A.　Không có giờ giới nghiêm nhưng lối vào phía trước sẽ bị khóa vào đêm khuya vì lý do an ninh. Hãy yên tâm rằng nhân viên an ninh của chúng tôi sẽ mở khóa cửa khi quý khách quay trở lại."
             },
             {
-                "question": "Q.電子機器はそのまま利用できますか？",
-                "answer": "A.ご利用いただけます。コンセントの型は日本と同じA型ですがベトナム、カンボジアの電圧はほとんどが220Vですのでお気をつけてご使用くださいませ。日本の電気製品でも、100～240V対応の物であれば変圧器なしで使用できますが、念のため使用予定の電気製品の取り扱い説明書をお読み頂くことをお勧め致します。ただし100～240V対応製品でもプラグの変換アダプターは必要となる場合がございますのでご注意ください。"
+                "question": "Q.Có thể sử dụng các thiết bị điện tử như hiện tại không?",
+                "answer": "A. Có sẵn. Ổ cắm loại A giống như ở Nhật nhưng điện áp ở Việt Nam và Campuchia chủ yếu là 220V nên các quý khách hãy cẩn thận khi sử dụng. quý khách có thể sử dụng các sản phẩm điện của Nhật Bản mà không cần máy biến áp nếu chúng tương thích với điện áp 100 đến 240V, nhưng chúng tôi khuyên quý khách nên đọc hướng dẫn sử dụng của sản phẩm điện mà quý khách định sử dụng để đảm bảo. Tuy nhiên, xin lưu ý rằng ngay cả những sản phẩm tương thích với điện áp 100-240V cũng có thể yêu cầu bộ chuyển đổi phích cắm."
             },
             {
-                "question": "Q.レストランは全て禁煙ですか？ロビーに喫煙場所はありますか？",
-                "answer": "A.全支店、出口付近に灰皿がございます。"
+                "question": "Q. Có phải tất cả các nhà hàng đều cấm hút thuốc không? Có được hút thuốc ở sảnh không?",
+                "answer": "A. Tất cả các chi nhánh đều có gạt tàn gần lối thoát hiểm."
             },
             {
-                "question": "Q.深夜のチェックイン、又は早朝のチェックアウトはできますか？",
-                "answer": "A.可能でございます。受付は２４時間対応しておりますので、ご安心くださいませ。ご精算はいつでも対応可能でございますので、お時間のある時に受付へお申し付けくださいませ。"
+                "question": "Q.Có thể nhận phòng vào đêm khuya hoặc trả phòng vào sáng sớm không?",
+                "answer": "A. Điều đó là có thể. Hãy yên tâm rằng lễ tân mở cửa 24 giờ một ngày. Việc thanh toán có thể được thực hiện bất cứ lúc nào, vì vậy vui lòng hỏi lễ tân khi quý khách có thời gian."
             },
             {
-                "question": "Q.チェックアウト後、荷物を預かってもらえますか？",
-                "answer": "A.お預かりいたします。大変恐れ入りますが、貴重品はご自身で管理頂きますようお願い致します。"
+                "question": "Q.Có thể gửi hành lý sau khi trả phòng không?",
+                "answer": "A. Chúng tôi sẽ giữ hành lý cho quý khách. Chúng tôi xin lỗi vì sự bất tiện này nhưng vui lòng tự bảo quản những vật có giá trị của mình."
             },
             {
-                "question": "Q.チェックアウト後、露天風呂を無料で利用できますか？",
-                "answer": "A.チェックイン・チェックアウトの当日に限り、ご宿泊者様には露天風呂を無料でご利用頂くことができます。深夜便の前に、是非ご利用くださいませ"
+                "question": "Q.Có thể sử dụng bồn tắm ngoài trời miễn phí sau khi trả phòng không?",
+                "answer": "A. Quý khách có thể sử dụng bồn tắm ngoài trời miễn phí vào ngày nhận phòng và trả phòng. Vui lòng sử dụng nó trước chuyến bay đêm muộn của quý khách."
             },
             {
-                "question": "Q. 長期滞在の場合、途中退出は可能ですか？",
-                "answer": "A. 可能でございます。変更するチェックアウトの日の15時を起点としてそれより48時間前にご連絡をいただければ、キャンセル料金は発生致しません。"
+                "question": "Q. Nếu lưu trú dài ngày thì có thể rời đi giữa chừng được không?",
+                "answer": "A. Vâng, được ạ. Sẽ không có phí hủy nếu quý khách thông báo cho chúng tôi ít nhất 48 giờ trước 3 giờ chiều vào ngày quý khách muốn thay đổi giờ trả phòng."
             },
             {
-                "question": "Q. シーズンや土日料金等はありますか？",
-                "answer": "A. 料金の変動はございません。"
+                "question": "Q. Có tính phí theo mùa hoặc cuối tuần không?",
+                "answer": "A. Không có thay đổi về giá cả."
             },
             {
-                "title": "各種サービスに関するFAQ",
-                "question": "Q.マッサージの事前予約はできますか？",
-                "answer": "A.可能でございます。夕方及び週末は大変混み合いますので、事前にご予約されることをお勧めいたします。"
+                "title": "Câu hỏi liên quan các dịch vụ",
+                "question": "Q. Có thể đặt trước dịch vụ mát-xa được không?",
+                "answer": "A. A. Vâng, được ạ. Quý khách nên đặt chỗ trước vì buổi tối và cuối tuần có thể sẽ rất đông."
             },
             {
-                "question": "Q.両替サービスはありますか？",
-                "answer": "A.外貨（日本円・USドル）から、ベトナムドンへの両替のみ承っております。当ホテル独自の為替レートに則って両替させて頂きます。"
+                "question": "Q. Có dịch vụ đổi tiền không?",
+                "answer": "A. A. Chúng tôi cung cấp dịch vụ đổi tiền ngoại tệ sang tiền Việt Nam Đồng đối với tiền Yên Nhật và tiền Đô la Mỹ. Tỷ giá tiền đổi được áp dụng theo tỷ giá riêng của khách sạn."
             },
             {
-                "question": "Q.コインランドリーはありますか？",
-                "answer": "A.　あいにくホテル館内にはございませんが、ホテルのランドリーサービスをご利用いただけます。目安：ワイシャツ１枚＝20.000ドン（約１００円）です。また、一部店舗にて洗濯乾燥機を無料でご利用いただけます。"
+                "question": "Q. Có cửa hàng giặt là tự động không?",
+                "answer": "A.　A. Chúng tôi rất xin lỗi, hiện tại khách sạn vẫn chưa có nhưng quý khách có thể sử dụng dịch vụ giặt là của khách sạn. Chi phí ước tính: 1 chiếc áo = 20.000 đồng (khoảng 100 yên). Quý khách cũng có thể sử dụng máy giặt/máy sấy miễn phí tại một số chi nhánh."
             },
             {
-                "question": "Q.アイロンはありますか？",
-                "answer": "A.貸出用のアイロンはございません。スタッフがアイロンがけをさせて頂きますので、ご希望の際は受付へお申し付けくださいませ。"
+                "question": "Q. Có bàn ủi không?",
+                "answer": "A. Chúng tôi không cho thuê bàn ủi. Trường hợp quý khách có yêu cầu là ủi đồ, vui lòng liên hệ cho nhân viên, chúng tôi sẽ mang đồ đi ủi."
             },
             {
-                "question": "Q.客室でのインターネット環境は？",
-                "answer": "A. 公共スペース・全客室・レストランにてWi-Fiを無料でご使用いただけます。"
+                "question": "Q. Mạng internet từng phòng có ảnh hưởng gì không?",
+                "answer": "A. Wi-Fi được cung cấp miễn phí ở nơi công cộng, tất cả các phòng nghỉ và nhà hàng."
             },
             {
-                "title": "朝食に関するFAQ",
-                "question": "Q.朝食は、どんな内容ですか？",
-                "answer": "A.　各店舗によって異なりますが、ブッフェスタイルと定食スタイルで提供致しております。どちらも和食と洋食をご用意しております。アレルギーをお持ちの方は、事前にお知らせくださいませ。"
+                "title": "Câu hỏi liên quan đến bữa sáng",
+                "question": "Q. Bữa sáng thì như thế nào?",
+                "answer": "A. Mặc dù nó khác nhau tùy theo từng chi nhánh, chúng tôi cung cấp bữa sáng tự chọn và thực đơn cố định. Cả hai phong cách đều cung cấp ẩm thực Nhật Bản và phương Tây. Nếu bị dị ứng, vui lòng cho chúng tôi biết trước"
             },
             {
-                "question": "Q.ブッフェを提供している店舗を教えてください。",
-                "answer": "A.全店舗にてビュッフェスタイルのご朝食をご提供しております。\n※特別な事情によりセットメニューに変更させていただくことがございます"
+                "question": "Q. Vui lòng cho tôi biết chi nhánh nào phục vụ buffet?",
+                "answer": "A. Chúng tôi phục vụ bữa sáng tự chọn tại tất cả các chi nhánh. \n※Trong trường hợp đặc biệt, chúng tôi có thể thay đổi sang thực đơn set kiểu Nhật."
             },
             {
-                "question": "Q.朝食なしのプランはありますか？",
-                "answer": "A.宿泊代に朝食も含まれており、あいにく朝食をご利用にならない場合の割引等はございません。 早朝のご出発でご朝食をお召し上がりいただけない場合は、おにぎりもしくはサンドイッチをご用意いたします。前日までに受付にてお申し付けくださいませ。 "
+                "question": "Q. Có thể đặt phòng không bao gồm dịch vụ bữa sáng không?",
+                "answer": "A. Bữa sáng được bao gồm trong phí lưu trú và không có giảm giá nếu không muốn ăn sáng. Nếu không thể thưởng thức bữa sáng do đến sớm khởi hành, chúng tôi có thể chuẩn bị cơm nắm hoặc bánh mì sanwich Vui lòng cho chúng tôi biết tại quầy lễ tân vào ngày hôm trước."
             },
             {
-                "title": "アクセスに関するFAQ",
-                "question": "Q.空港～ホテル間の送迎サービスはありますか？",
-                "answer": "A.有料にてご利用頂くことができます。　空港の一般タクシーによる過剰請求が多発しておりますので、安全のためぜひご利用ください。送迎サービスをご利用の際は、お客様のお名前を記載したプラカードを持って運転手が出口にてお待ちいたします。料金に関しましては支店ごとに異なることがございますので、各支店のビジネスサービスのページをご参照くださいませ。"
+                "title": "Câu hỏi liên quan đến việc di chuyển",
+                "question": "Q. Có dịch vụ đưa đón giữa sân bay và khách sạn không?",
+                "answer": "A. quý khách có thể sử dụng nó với một khoản phí. Đã có nhiều trường hợp về việc tính phí quá cao bằng taxi thông thường tại sân bay, vì vậy đối với sự an toàn của quý khách, hãy sử dụng dịch vụ này. Khi sử dụng dịch vụ đưa đón, tài xế sẽ đợi sẵn tại lối ra có tên của quý khách trên đó. Giá cả có thể khác nhau tùy từng chi nhánh, vui lòng tham khảo trang dịch vụ cho từng chi nhánh."
             },
             {
-                "question": "Q.コンビニエンスストアはありますか？",
-                "answer": "A.ホテル館内にはございませんが、各支店の徒歩圏内にございます。スタッフがご案内させて頂きますのでご遠慮なくお申し付けくださいませ。 "
+                "question": "Q. Có cửa hàng tiện lợi không?",
+                "answer": "A. Cửa hàng tiện lợi không nằm trong tòa nhà khách sạn nhưng nằm trong khoảng cách đi bộ đến từng chi nhánh. Nhân viên của chúng tôi sẽ sẵn lòng hỗ trợ quý khách, vì vậy vui lòng cho chúng tôi biết."
             },
             {
-                "question": "Q.駐車場はありますか？",
-                "answer": "A.恐れ入りますが、ございません。バイクでお越しの場合は、近隣の駐輪場をご案内いたします。（※東屋プノンペンのみ建物周辺に駐車場所有）"
+                "question": "Q. Có bãi đậu xe không?",
+                "answer": "A. Xin lỗi, chúng tôi không có bãi đỗ xe. Nếu quý khách đến bằng xe máy, chúng tôi sẽ hướng dẫn quý khách gửi xe ở bãi đỗ gần đây."
             },
             {
-                "title": "お支払いに関するFAQ",
-                "question": "Q.オンライン決済はできますか？",
-                "answer": "A.恐れ入りますが、現在のところオンラインでの決済サービスはございません。チェックイン前の銀行お振込みをご希望の際は、ご予約時にお申し付けくださいませ。"
+                "title": "Câu hỏi liên quan đến thanh toán",
+                "question": "Q. Có thể thanh toán trực tuyến không?",
+                "answer": "A. Chúng tôi rất xin lỗi, nhưng chúng tôi không có dịch vụ thanh toán trực tuyến. Nếu quý khách muốn thanh toán bằng chuyển khoản trước khi check in, vui lòng cho chúng tôi biết khi quý khách đặt phòng."
             },
             {
-                "question": "Q.精算はいつすればいいですか？",
-                "answer": "A.チェックインの際に宿泊費の前払いをお願いしております。銀行振り込みをご希望の場合、チェックインまでにお支払い頂く必要がございます。(※弊社との法人契約がある企業様のみチェックアウト後の銀行振り込みも可能でございます。)"
+                "question": "Q. Nên thanh toán khi nào?",
+                "answer": "A.Chúng tôi yêu cầu quý khách thanh toán trước cho kỳ nghỉ của mình khi nhận phòng. Nếu muốn thanh toán bằng chuyển khoản ngân hàng, quý khách phải thanh toán trước khi nhận phòng. (*Chuyển khoản ngân hàng sau khi thanh toán chỉ có thể thực hiện được đối với các công ty có hợp đồng doanh nghiệp với chúng tôi.)"
             },
             {
-                "question": "Q. 宿泊者本人による現地払いではなく、会社より日本の口座からの銀行振込は可能ですか？可能な場合はどの通貨での支払いとなりますか？",
-                "answer": "A. 可能でございます。外国送金振込手数料はご負担いただきますようお願いをしております。お支払いいただける通貨は日本円・USドル・ベトナムドンです。"
+                "question": "Q. Có thể thực hiện chuyển khoản ngân hàng từ tài khoản Nhật Bản thay vì khách thanh toán tại quầy không? Nếu có thể, thanh toán sẽ được thực hiện bằng loại tiền tệ nào?",
+                "answer": "A. Có, điều đó là có thể. Chúng tôi yêu cầu quý khách thanh toán mọi khoản phí chuyển tiền nước ngoài. Các loại tiền tệ có thể sử dụng để thanh toán là Yên Nhật, Đô la Mỹ và Đồng Việt Nam." },
+            {
+                "question": "Q. Có thể thanh toán bằng chuyển khoản ngay cả khi lưu trú ngắn hạn từ vài ngày đến vài tuần không?",
+                "answer": "A. Vâng, được ạ"
             },
             {
-                "question": "Q. 数日～数週間の短期滞在でも銀行振込は可能ですか？",
-                "answer": "A. 可能でございます。"
-            },
-            {
-                "question": "Q. 長期滞在で会社による銀行振込の場合、支払いはどうすれば良いでしょうか？",
-                "answer": "A. 月に一度のご精算をお願いしております。\n領収書を月末に発行し貴社に送付致しますので、受取り次第7日以内にお支払いください。"
+                "question": "Q. Trường hợp lưu trú lâu ngày, công ty chuyển khoản ngân hàng thì nên thanh toán như thế nào?",
+                "answer": "Chúng tôi yêu cầu quý khách thanh toán mỗi tháng một lần. \nChúng tôi sẽ xuất biên lai vào cuối tháng và gửi cho công ty của quý khách, vì vậy vui lòng thanh toán trong vòng 7 ngày sau khi nhận được."
             }
         ]
     },
     "news": {
-        "news": "News",
+        "news": "Thông Tin",
         "source": [
             {
                 "title": "2024 Tet (Lunar New Year) Information",
-                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
+                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thái Văn Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thái Văn Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Lê Thánh Tôn : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Mã 3 open normally –\nKim Mã 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Đà Nẵng 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hải Phòng 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
                 "date": "2024-01-01",
                 "allBranch": true
             },
             {
-                "title": "Open Air Hot Bath Renewal Open @ Azumaya Thai Van Lung 1",
-                "content": "Azumaya Thai Van Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thai Van Lung 2 (30 seconds on foot from Azumaya Thai Van Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on weekdays only at Le Thanh Ton branch.",
+                "title": "Open Air Hot Bath Renewal Open @ Azumaya Thái Văn Lung 1",
+                "content": "Azumaya Thái Văn Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thái Văn Lung 2 (30 seconds on foot from Azumaya Thái Văn Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on Ngày Trong Tuầns only at Lê Thánh Tôn branch.",
                 "date": "2023-12-29",
                 "hcm": true
             },
             {
                 "title": "Azumaya Ho Chi Minh 2024 New Year Day Limited Breakfast Set Menu",
-                "content": "Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nOpening hour: 6am~10am\nPlace: Azumaya Thai Van Lung 1, Azumaya Thai Van Lung 2, Azumaya Le Than Ton",
+                "content": "Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nGiờ phục vụ: 6am~10am\nPlace: Azumaya Thái Văn Lung 1, Azumaya Thái Văn Lung 2, Azumaya Le Than Ton",
                 "date": "2023-07-07",
                 "hcm": true
             },
             {
-                "title": "Open women Rotenburo in Azumaya Kim Ma 2 Branch",
-                "content": "From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VNĐ 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
+                "title": "Open women Rotenburo in Azumaya Kim Mã 2 Branch",
+                "content": "From 1 July 2023, Women rotenburo will open in Azumaya Kim Mã 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VNĐ 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Mã 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
                 "date": "2023-12-29",
                 "hn": true
             },
@@ -979,95 +973,95 @@
             },
             {
                 "title": "2023 Tet (Lunar New Year) Information",
-                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Le Thanh Ton & Thai Van Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Ma 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Da Nang 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hai Phong 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
+                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thái Văn Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Lê Thánh Tôn & Thái Văn Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Mã 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Đà Nẵng 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hải Phòng 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
                 "date": "2023-01-17",
                 "allBranch": true
             },
             {
                 "title": "Reopen Massage service from Apr 2022",
-                "content": "Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Da Nang‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Da Nang government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
+                "content": "Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Đà Nẵng‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Đà Nẵng government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
                 "date": "2023-04-15",
                 "dn": true
             },
             {
-                "title": "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hai Phong",
-                "content": "Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hai Phong \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hai Phong \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hai Phong City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
+                "title": "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hải Phòng",
+                "content": "Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hải Phòng \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hải Phòng \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hải Phòng City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
                 "date": "2023-04-15",
                 "hp": true
             }
         ]
     },
     "thank_you": {
-        "title": "Your reservation has not yet completed.",
-        "content": "Your reservation has not yet completed. Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception address"
+        "title": "Việc đặt phòng của quý khách vẫn chưa hoàn tất.",
+        "content": "Việc đặt phòng của quý khách vẫn chưa hoàn tất. Đội ngũ lễ tân của chúng tôi sẽ sớm gửi cho quý khách xác nhận đặt phòng.\n Nếu quý khách không thể nhận được bất kỳ thư hoặc cuộc gọi nào, vui lòng liên hệ với địa chỉ lễ tân của chúng tôi"
     },
     "hn-branch": {
         "slider": [
             {
-                "desc": "Azumaya Ha Noi",
+                "desc": "Azumaya Hà Nội",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746791/AzumayaWeb/rtbrll_v24sdc.jpg"
             },
             {
-                "desc": "Azumaya Ha Noi",
+                "desc": "Azumaya Hà Nội",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
             },
             {
-                "desc": "Azumaya Ha Noi",
+                "desc": "Azumaya Hà Nội",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/oskm2_iiija5.jpg"
             },
             {
-                "desc": "Azumaya Ha Noi",
+                "desc": "Azumaya Hà Nội",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710811874/AzumayaWeb/lbll_wkto57.webp"
             }
         ],
         "branch": [
             {
                 "id": 1,
-                "name": "Azumaya Hai Ba Trung 1",
-                "desc": "Azumaya Hotel Hai Ba Trung 1 is a 31 room hotel located in the middle of Hai Ba Trung district with shower toilet, bathtub, and Japanese TV shows supplied for each room. We have a giant open-air hot bath, Japanese breakfast buffet, Japanese restaurant “Mangetsu” (6pm-2am)original style foot massage which 90% of the customers are repeating. (The last order for massage is 9:45pm.) of all branches, only Hai Ba Trung 1 branch uses the natural stone for open-air hot baths. After relaxing in the open-air hot bath, have our soothing massage, and come satisfy your appetite in “Mangetsu”; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
+                "name": "AzumayaHai Bà Trưng 1",
+                "desc": "Khách sạn Azumaya Hai Bà Trưng 1 có 31 phòng tọa lạc ngay giữa quận Hai Bà Trưng với vòi sen, toilet, bồn tắm và các chương trình truyền hình Nhật Bản được cung cấp cho mỗi phòng. Nhà hàng “Mangetsu” (6 giờ chiều - 2 giờ sáng).Massage chân theo phong cách nguyên bản được 90% khách hàng quay lại (thời gian đặt massage cuối cùng là 9:45 tối). Ở tất cả các chi nhánh, chỉ có chi nhánh Hai Bà Trưng 1 sử dụng đá tự nhiên cho bồn tắm lộ thiên. Sau khi thư giãn trong bồn tắm nước nóng ngoài trời, hãy massage nhẹ nhàng và thỏa mãn bằng bữa ăn ngon tại nhà hàng Mangetsu, chúng tôi hứa hẹn bạn sẽ quên đi mệt mỏi hôm nay và có giấc ngủ sâu để làm việc cho ngày hôm sau.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg",
                 "link": "/hai-ba-trung-detail/room"
             },
             {
                 "id": 2,
-                "name": "Azumaya Kim Ma 2",
-                "desc": "Azumaya Hotel Kim Ma 2 branch, standing at the location 3 minutes far by walk from Kim Ma Street, has 38 rooms supplied with shower toilet, bathtub, and Japanese TV shows. In addition, we provide 2 annex rooms with separate entry from the main front entrance. For the long stay customers, 11 rooms with a kitchen are available. Both hotel guests and visitors can enjoy our open-air hot bath, Japanese breakfast , original style foot massage which 90% of users are repeat customers, and Japanese restaurant “Suzunoya”. (5pm-1am) After relaxing at our open-air hot bath, soothe your fatigue at foot massage, and satisfy your appetite at “Suzunoya” ; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
+                "name": "Azumaya Kim Mã 2",
+                "desc": "Khách sạn Azumaya Kim Mã 2 nằm ngay gần phố Kim Mã chỉ cách 3 phút đi bộ, có tổng 37 phòng, với các tiện ích như vòi sen, toilet, bồn tắm, ti vi truyền hình Nhật. Thêm vào đó, còn có 1 phòng Annex ở khu riêng biệt. Có 9 phòng có bếp rất phù hợp với khách ở dài. Quý khách có thể tận hưởng bể tắm nước nóng lộ thiên kiểu Nhật, bữa sáng kiểu nhật, massage truyền thống với tỷ lệ khách quay lại hơn 90%, và nhà hàng kiểu Nhật \"Suzunoya\" ( 5pm-1am). Sau khi trải nghiệm ngâm mình ở bồn tắm, thư giãn với massage chân, hài lòng với bữa ăn tại \"Suzunoya\", chúng tôi đảm bảo rằng bạn sẽ quên đi mệt mỏi hôm nay và có giấc ngủ ngon để bắt đầu một ngày mới.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
                 "link": "/kim-ma-2-detail/room"
             },
             {
                 "id": 3,
-                "name": "Azumaya Kim Ma 3",
-                "desc": "Azumaya Hotel Kim Ma 3 branch has 42 rooms in total with shower toilet and Japanese TV shows for each room. Moreover, there are open-air hot bath and Japanese breakfast buffet. The Kin Ma 1 branch strands 10 seconds away by feet and Japanese restaurant street at Kim Ma Street is also near enough to walk (about 4 minutes). Its location is much convenient at dinner time. Moreover, far from the main street and nearby the silent pond in front, you can find it peaceful to be here.",
+                "name": "Azumaya Kim Mã 3",
+                "desc": "Khách sạn Azumaya chi nhánh Kim Mã 3 có 42 phòng, mỗi phòng đều có bồn cầu tự động, truyền hình Nhật Bản. Ngoài ra còn có bồn tắm nước nóng ngoài trời và buffet sáng kiểu Nhật. Chi nhánh Kim Mã 2 cách đó khoảng 3 phút đi bộ và cũng rất gần có thể đi bộ đến phố Kim Mã với rất nhiều nhà hàng Nhật Bản (khoảng 4 phút). Vị trí này rất thuận tiện cho những bữa ăn tối. Hơn nữa, khách sạn ở cách xa đường chính và ở ven hồ yên ả nên có thể tìm được cảm giác yên bình ở đây.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
                 "link": "/kim-ma-3-detail/room"
             },
             {
                 "id": 4,
                 "name": "Azumaya Linh Lang",
-                "desc": "Ling Lang branch has 46 rooms in total with open-air bath, Japanese breakfast , Japanese izakaya \"ISSUN Boushi\" . All the rooms are equipped with shower toilet, bathtub, and Japanese TV show. The hotel is within walking distance from Lotte Centre which is located along Linh Lang road where many Japanese restaurants have opened recently. At the hotel, high-tea massage is also available on the 7th floor. It records over 90% of repeat customer rate. Last order is 9:45 pm.. You can enjoy a night view from each massage chair. It features a spacious outdoor bath. You can have a pleasant morning at the breakfast venue on the 8th floor with a fine view.",
+                "desc": "Chi nhánh Ling Lang có tổng cộng 46 phòng với bồn tắm lộ thiên ngoài trời, bữa sáng kiểu Nhật, nhà hàng izakaya Matsuki. Tất cả các phòng đều được trang bị nhà vệ sinh có vòi sen, bồn tắm và chương trình truyền hình Nhật Bản. Khách sạn nằm trên đường Linh Lang, nơi tập trung nhiều nhà hàng, quán bar. Và chỉ mất vài phút đi bộ đến Trung tâm Thương mại Lotte hay Đại sứ quán Nhật Bản. Tại khách sạn có dịch vụ massage chân ở tầng 7 -  với tỷ lệ khách quay lại trên 90%. Chúng tôi phục vụ các món ăn hương vị Nhật Bản với nguyên liệu tươi ngon của địa phương mỗi ngày tại không gian ăn sáng trên tầng 8 với tầm nhìn tuyệt đẹp.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710306679/AzumayaWeb/AZ-LL-FRONT-FIX-2_b1tphv.jpg",
                 "link": "/linh-lang-detail/room"
             }
         ],
-        "btn-detail": "Click here for detail"
+        "btn-detail": "Nhấn để xem chi tiết"
     },
     "room_hbt1": {
-        "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, 2 bottles of water every day.",
+        "room": "Giới thiệu phòng",
+        "roomContent": "Bữa sáng kiểu Nhật, bồn tắm lộ thiên ( chỉ dành cho nam) 24 kênh truyền hình, Internet có dây và không dây tốc độ cao, dọn phòng hàng ngày, 2 chai nước suối + 3 chai minibar mỗi ngày, tất cả đã bao gồm trong giá phòng.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nTV 19 Japanese Channel\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nTV 19 kênh Nhật\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + 3 đồ uống miễn phí",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bathtub\nWorking desk\n50 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bồn tắm\nBàn làm việc\nTV 50 inch\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
         "pickup": "Dịch vụ đưa đón sân bay",
-        "pickup_fee1": "$25 (6am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 6am)",
+        "pickup_fee1": "625.000VND (6am ~ 9pm)",
+        "pickup_fee2": "750.000VND (9pm ~ 6am)",
         "pickup_car": "Xe 4-7 chỗ ngồi",
         "minibar": "Nước ngọt, bia...",
         "minibar_fee": "Giá chỉ từ 20.000VND",
@@ -1086,9 +1080,9 @@
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
-        "rotenContent": "Opening time: Mon ~ Fri : 7:00 ~ 9:00/ 17:00 ~ 23:00,\nSat & Sun : 7:00 ~ 23:00 (Only Men)\n* We open for ladies at 23:00 to 24:00 Weekday Please reserve at reception until 16:00 in day.",
+        "rotenContent": "Thời gian mở cửa: Thứ Hai ~ Thứ Sáu : 7:00 ~ 9:00/ 17:00 ~ 23:00,\nThứ Bảy & Chủ Nhật : 7:00 ~ 23:00 (Chỉ dành cho Nam)\n* Chúng tôi mở cửa cho nữ lúc 23:00 đến 24:00 Các ngày trong tuần Vui lòng đặt trước tại quầy lễ tân đến 16:00 trong ngày.",
         "breakfast": "Bữa sáng",
-        "breakfastContent": " Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+        "breakfastContent": "Thứ 2 ~ Thứ 7: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nChủ nhật: 6:00 ~ 10:00 Set menu",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -1099,8 +1093,8 @@
         "email": "reservationhanoi@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "We are located in the Japanese town of Hai Ba Trung area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
-        "address": "Address : 16 Bui Thi Xuan Street, Hai Ba Trung Dist, Hanoi. Vietnam.",
+        "locationContent": "Khách sạn  tọa lạc tại khu phố Nhật Bản, trung tâm thành phố Hà nội và có nhiều nhà hàng Nhật Bản, Karaoke Lounge, Bar. Vì có thể tiếp cận và thuận tiện đi bất cứ đâu nên đây là khu vực rất được nhiều doanh nhân Nhật Bản và người Nhật yêu thích.",
+        "address": "Địa chỉ: 16 Bùi Thị Xuân, Hai Bà Trưng, Hà Nội.",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -1122,12 +1116,26 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Hai Ba Trung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746782/AzumayaWeb/lbhbt1_wdmtl0.jpg"
+            },
+            {
+                "desc":"Azumaya Hai Ba Trung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852866/AzumayaWeb/HBT1/INTRODUCTION/RTBRHBT1_2_qfyd7c.jpg"
+            },
+            {
+                "desc":"Azumaya Hai Ba Trung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852874/AzumayaWeb/HBT1/INTRODUCTION/BRFHBT1_2_lgc8vo.jpg"
+            }
+    ]
     },
     "hbt1": [
         {
             "id": 1,
-            "branch_name": "Azumaya Hai Ba Trung 1",
+            "branch_name": "AzumayaHai Bà Trưng 1",
             "room_id": "d1f",
             "name": "DELUXE 1F (NO VIEW)",
             "size": "24",
@@ -1150,7 +1158,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Hai Ba Trung 1",
+            "branch_name": "AzumayaHai Bà Trưng 1",
             "room_id": "diwnv",
             "name": "DELUXE - INSIDE WINDOW",
             "size": "24",
@@ -1173,7 +1181,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Hai Ba Trung 1",
+            "branch_name": "AzumayaHai Bà Trưng 1",
             "room_id": "e",
             "name": "EXECUTIVE",
             "size": "26",
@@ -1196,7 +1204,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Hai Ba Trung 1",
+            "branch_name": "AzumayaHai Bà Trưng 1",
             "room_id": "ewk",
             "name": "EXECUTIVE WITH KITCHEN",
             "size": "26",
@@ -1219,7 +1227,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Hai Ba Trung 1",
+            "branch_name": "AzumayaHai Bà Trưng 1",
             "room_id": "sswk",
             "name": "SEMI SUITE WITH KITCHEN",
             "size": "35",
@@ -1242,7 +1250,7 @@
         },
         {
             "id": 6,
-            "branch_name": "Azumaya Hai Ba Trung 1",
+            "branch_name": "AzumayaHai Bà Trưng 1",
             "room_id": "s",
             "name": "SUITE",
             "size": "48",
@@ -1266,19 +1274,19 @@
     ],
     "room_km2": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, 2 bottles of water every day.",
+        "roomContent": "Bữa sáng kiểu Nhật, bồn tắm lộ thiên ( chỉ dành cho nam) 24 kênh truyền hình, Internet có dây và không dây tốc độ cao, dọn phòng hàng ngày, 2 chai nước suối + 3 chai minibar mỗi ngày, tất cả đã bao gồm trong giá phòng.",
         "tariff": "Danh sách giá phòng",
         "vat": "*Giá phòng chưa bao gồm 8%(VAT)",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub (for men only / for women only)\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời (chỉ dành cho nam/chỉ dành cho nữ)\nKết nối Internet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + 3 đồ uống miễn phí",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bathtub\nWorking desk\n32/50 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bồn tắm\nBàn làm việc\nTV 32/50 inch\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
         "pickup": "Dịch vụ đưa đón sân bay",
-        "pickup_fee1": "625.000 VNĐ (6:00 ~ 20:59)",
+        "pickup_fee1": "625.000 VNĐ (06:00 ~ 20:59)",
         "pickup_fee2": "750.000 VNĐ (21:00 ~ 5:59)",
         "pickup_car": "Xe 4-7 chỗ ngồi",
         "minibar": "Nước ngọt, bia...",
@@ -1297,12 +1305,12 @@
         "tour": "Dịch vụ du lịch, tham quan",
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
-        "rotenM": "Male Rotenburo",
-        "rotenF": "Female Rotenburo",
-        "rotenContent": "Opening time: Mon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00,\nSat & Sun : 7:00 ~ 23:00",
-        "rotenFContent": "Staying Guest Opening time: Mon ~ Fri: 6:00 ~ 9:00/ 17:00 ~ 23:00\nVisitor Opening time: Mon ~ Fri: 17:00 ~ 23:00\nSat & Sun : 7:00 ~ 23:00",
+        "rotenM": "Bể tắm nước nóng lộ thiên cho nam ",
+        "rotenF": "Bể tắm nước nóng lộ thiên  cho nữ ",
+        "rotenContent": "Thời gian mở cửa: Thứ 2 ~ Thứ 6 : 6:00 ~ 9:00/ 17:00 ~ 23:00,\nThứ 7 & Chủ nhật : 7:00 ~ 23:00",
+        "rotenFContent": "Khách lưu trú Thời gian mở cửa: Thứ Hai ~ Thứ Sáu: 6:00 ~ 9:00/ 17:00 ~ 23:00\nThời gian mở cửa cho khách: Thứ Hai ~ Thứ Sáu: 17:00 ~ 23:00\nThứ Bảy & Chủ Nhật: 7:00 ~ 23 :00",
         "breakfast": "Bữa sáng",
-        "breakfastContent": " Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+        "breakfastContent": " Thứ 2 ~ Thứ 7: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nChủ nhật: 6:00 ~ 10:00 Set menu",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -1312,8 +1320,8 @@
         "email": "reservationhanoi3@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "We are situated in the Japanese town of Kim Ma area, the center of Ha Noi city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
-        "address": "Address ：18A Pham Huy Thong St, Ba Dinh Dist., Hanoi",
+        "locationContent": "Khách sạn tọa lạc trên con phố Nhật Bản tại khu Kim Mã - trung tâm thành phố Hà Nội., nơi có nhiều nhà hàng Nhật Bản, Karaoke Lounge, Bar. Đây là một khu vực được rất nhiều doanh nhân, người dân Nhật Bản yêu thích vì có thể dễ dàng thuận tiện di chuyển đến bất cứ đâu. ",
+        "address": "Địa chỉ: 18A Phạm Huy Thông, Ngọc Khánh, Ba Đình, Hà Nội  ",
         "emailTitle": "Thư điện tử",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -1337,12 +1345,26 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Kim Ma 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853093/AzumayaWeb/KM2/INTRODUCTION/LBKM2_2_qef4si.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853132/AzumayaWeb/KM2/INTRODUCTION/RTBRKM2_2_hqlvju.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
+            }
+    ]
     },
     "km2": [
         {
             "id": 1,
-            "branch_name": "Azumaya Kim Ma 2",
+            "branch_name": "Azumaya Kim Mã 2",
             "room_id": "d",
             "name": "DELUXE",
             "size": "19",
@@ -1367,7 +1389,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Kim Ma 2",
+            "branch_name": "Azumaya Kim Mã 2",
             "room_id": "lsm",
             "name": "LAKE SIDE M",
             "size": "19",
@@ -1392,7 +1414,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Kim Ma 2",
+            "branch_name": "Azumaya Kim Mã 2",
             "room_id": "lsl",
             "name": "LAKE SIDE L",
             "size": "22",
@@ -1417,7 +1439,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Kim Ma 2",
+            "branch_name": "Azumaya Kim Mã 2",
             "room_id": "ewk",
             "name": "EXECUTIVE WITH KITCHEN",
             "size": "28",
@@ -1442,7 +1464,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Kim Ma 2",
+            "branch_name": "Azumaya Kim Mã 2",
             "room_id": "swk",
             "name": "SUITE WITH KITCHEN",
             "size": "30",
@@ -1466,7 +1488,7 @@
         },
         {
             "id": 6,
-            "branch_name": "Azumaya Kim Ma 2",
+            "branch_name": "Azumaya Kim Mã 2",
             "room_id": "awk",
             "name": "ANNEX WITH KITCHEN",
             "size": "17.5",
@@ -1492,17 +1514,17 @@
     ],
     "room_km3": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, 2 bottles of water every day.",
+        "roomContent": "Bữa sáng kiểu Nhật, bồn tắm lộ thiên ( chỉ dành cho nam) 24 kênh truyền hình, Internet có dây và không dây tốc độ cao, dọn phòng hàng ngày, 2 chai nước suối + 3 chai minibar mỗi ngày, tất cả đã bao gồm trong giá phòng.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub (for men only / for women only)\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời (chỉ dành cho nam/chỉ dành cho nữ)\nKết nối Internet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + 3 đồ uống miễn phí",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bathtub\nWorking desk\n40 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bồn tắm\nBàn làm việc\nTV 40 inch\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
         "contact2": "hoặc Thư điện tử:",
@@ -1511,8 +1533,8 @@
         "email": "reservationhanoi6@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "We are situated in the Japanese town of Kim Ma area, the center of Ha Noi city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
-        "address": "Address ：68 Pham Huy Thong St, Ba Dinh Dist., Hanoi",
+        "locationContent": "Khách sạn tọa lạc trên con phố Nhật Bản tại khu Kim Mã - trung tâm thành phố Hà Nội., nơi có nhiều nhà hàng Nhật Bản, Karaoke Lounge, Bar. Đây là một khu vực được rất nhiều doanh nhân, người dân Nhật Bản yêu thích vì có thể dễ dàng thuận tiện di chuyển đến bất cứ đâu. ",
+        "address": "Địa chỉ : Số 68 phố Phạm Huy Thông, Ngọc Khánh, Ba Đình, Hà Nội.        ",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -1520,8 +1542,8 @@
         "size": "Kích thước",
         "window": "Cửa sổ nhìn ra ngoài",
         "bath": "Bồn tắm",
-        "mattress": "Bed (Massage Mattress)",
-        "washlet": "Auto Washlet",
+        "mattress": "Giường (Đệm Massage)",
+        "washlet": "Bồn cầu tự động",
         "reservation": "Đặt phòng",
         "features": [
             {
@@ -1536,12 +1558,26 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Kim Ma 3",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711855118/AzumayaWeb/KM3/INTRODUCTION/RTRKM3_2_s5xktc.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 3",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853219/AzumayaWeb/KM3/INTRODUCTION/RTBRKM3_2_ys9jlg.jpg"
+            },
+            {
+                "desc":"Azumaya Kim Ma 3",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853213/AzumayaWeb/KM3/INTRODUCTION/BRFKM3_2_zm5t9i.jpg"
+            }
+    ]
     },
     "km3": [
         {
             "id": 1,
-            "branch_name": "Azumaya Kim Ma 3",
+            "branch_name": "Azumaya Kim Mã 3",
             "room_id": "snw",
             "name": "STANDARD NO WINDOW",
             "size": "15",
@@ -1565,7 +1601,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Kim Ma 3",
+            "branch_name": "Azumaya Kim Mã 3",
             "room_id": "dmnw",
             "name": "DELUXE M SMALL WINDOW",
             "size": "17",
@@ -1590,7 +1626,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Kim Ma 3",
+            "branch_name": "Azumaya Kim Mã 3",
             "room_id": "dlnw",
             "name": "DELUXE L NO WINDOW",
             "size": "18.5",
@@ -1614,7 +1650,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Kim Ma 3",
+            "branch_name": "Azumaya Kim Mã 3",
             "room_id": "dlnw",
             "name": "DELUXE L SMALL WINDOW IN BATH",
             "size": "17",
@@ -1639,7 +1675,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Kim Ma 3",
+            "branch_name": "Azumaya Kim Mã 3",
             "room_id": "dlw",
             "name": "DELUXE L WINDOW",
             "size": "17",
@@ -1663,7 +1699,7 @@
         },
         {
             "id": 6,
-            "branch_name": "Azumaya Kim Ma 3",
+            "branch_name": "Azumaya Kim Mã 3",
             "room_id": "ls",
             "name": "LAKE SIDE",
             "size": "18.5",
@@ -1745,29 +1781,29 @@
         {
             "id": 10,
             "title": "Male Rotenburo",
-            "content": "* Opening time: \nMon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* We open for ladies everyday at Kim Ma 2 Branch \n*Opening time: \nMon ~ Fri : 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* If you want to use this service, please contact reception in advance.",
+            "content": "* Opening time: \nMon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* We open for ladies everyday at Kim Mã 2 Branch \n*Opening time: \nMon ~ Fri : 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* If you want to use this service, please contact reception in advance.",
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
         },
         {
             "id": 11,
             "title": "Bữa sáng",
-            "content": "Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+            "content": "Thứ 2 ~ Thứ 7: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nChủ nhật: 6:00 ~ 10:00 Set menu",
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664685/AzumayaWeb/breakfast_vpnvhg.jpg"
         }
     ],
     "room_ll": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, 2 bottles of water every day.",
+        "roomContent": "Bữa sáng kiểu Nhật, bồn tắm lộ thiên ( chỉ dành cho nam) 24 kênh truyền hình, Internet có dây và không dây tốc độ cao, dọn phòng hàng ngày, 2 chai nước suối + 3 chai minibar mỗi ngày, tất cả đã bao gồm trong giá phòng.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub (for men only / for women only)\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời (chỉ dành cho nam/chỉ dành cho nữ)\nKết nối Internet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + 3 đồ uống miễn phí",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bathtub\nWorking desk\n40 inch TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bồn tắm\nBàn làm việc\nTV 40 inch\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
         "pickup": "Dịch vụ đưa đón sân bay",
         "pickup_fee1": "625.000 VNĐ (6:00 ~ 20:59)",
         "pickup_fee2": "750.000 VNĐ (21:00 ~ 5:59)",
@@ -1788,10 +1824,10 @@
         "tour": "Dịch vụ du lịch, tham quan",
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
-        "roten": "Male Rotenburo",
-        "rotenContent": "Opening time: Mon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00, Sat & Sun : 7:00 ~ 23:00 (Only Men),\n* We open for ladies at 23:00 to 24:00 Weekday\nPlease reserve at reception until 16:00 in day.",
+        "roten": "Bồn tắm lộ thiên dành cho nam",
+        "rotenContent": "Thời gian mở cửa: Thứ Hai ~ Thứ Sáu : 6:00 ~ 9:00/ 17:00 ~ 23:00, Thứ Bảy & Chủ Nhật : 7:00 ~ 23:00 (Chỉ dành cho Nam),\n* Chúng tôi mở cửa cho nữ lúc 23:00 đến 24:00 Các ngày trong tuần\nVui lòng đặt trước tại quầy lễ tân đến 16:00 trong ngày.",
         "breakfast": "Bữa sáng",
-        "breakfastContent": " Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
+        "breakfastContent": " Thứ 2 ~ Thứ 7: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nChủ nhật: 6:00 ~ 10:00 Set menu",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -1801,8 +1837,8 @@
         "email": "reservationhanoi5@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "The hotel is located in the Japanese town near the biggest shopping center in Hanoi city center, and there are many Japanese restaurants, karaoke lounges and bars in the vicinity. Because it is easy to access anywhere you go, it is one of the popular areas for many Japanese business travelers and resident.",
-        "address": "Address ：26 Linh Lang St, Ba Dinh Dist., Hanoi",
+        "locationContent": "Khách sạn  tọa lạc tại khu phố Linh Lang, trung tâm thành phố Hà Nội và có nhiều nhà hàng Nhật Bản, Karaoke , quán Bar. Đây là khu vực được rất nhiều doanh nhân, người dân Nhật Bản yêu thích vì có thể dễ dàng thuận tiện di chuyển đến bất cứ đâu. ",
+        "address": "Địa chỉ ：26 phố Linh Lang, Ba Đình, Hà Nội   ",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -1810,9 +1846,9 @@
         "size": "Kích thước",
         "window": "Cửa sổ nhìn ra ngoài",
         "bath": "Bồn tắm",
-        "mattress": "Bed (Massage Mattress)",
+        "mattress": "Giường (Đệm Massage)",
         "bed": "Kích thước giường",
-        "washlet": "Auto Washlet",
+        "washlet": "Bồn cầu tự động",
         "reservation": "Đặt phòng",
         "features": [
             {
@@ -1827,7 +1863,21 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Linh Lang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853348/AzumayaWeb/LL/INTRODUCTION/LBLL_2_vuredo.jpg"
+            },
+            {
+                "desc":"Azumaya Linh Lang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853363/AzumayaWeb/LL/INTRODUCTION/RTBRLL_2_cckumg.jpg"
+            },
+            {
+                "desc":"Azumaya Linh Lang",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853338/AzumayaWeb/LL/INTRODUCTION/BRFLL_2_lb0z3n.jpg"
+            }
+    ]
     },
     "ll": [
         {
@@ -1953,66 +2003,70 @@
     "hcm-branch": {
         "slider": [
             {
-                "desc": "Azumaya Ho Chi Minh",
+                "desc": "Azumaya Hồ Chi Minh",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737801/AzumayaWeb/rtbrtvl1_omastk.jpg"
             },
             {
-                "desc": "Azumaya Ho Chi Minh",
+                "desc": "Azumaya Hồ Chi Minh",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737800/AzumayaWeb/bftvl1_p5zw59.jpg"
             },
             {
-                "desc": "Azumaya Ho Chi Minh",
+                "desc": "Azumaya Hồ Chi Minh",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737784/AzumayaWeb/rltt_ztlqi6.jpg"
             },
             {
-                "desc": "Azumaya Ho Chi Minh",
+                "desc": "Azumaya Hồ Chi Minh",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710737787/AzumayaWeb/osltt_mgu5vd.jpg"
             }
         ],
         "branch": [
             {
                 "id": 1,
-                "name": "Azumaya Thai Van Lung 1",
-                "desc": "Azumaya Hotel Thai Van Lung 1 branch is located in a perfect location for Japanese businessmen to stay. It is supplied with 51 rooms in total with facilities of toilet with bidet function and Japanese TV shows for each room. In addition, we serve open-air hot bath, Japanese breakfast buffet, and Japanese restaurant “Thien”. Inside our hotel, you can take Azumaya-style massage, which 90% of the repeat customers come back (10:45pm is our last order for massage). In the basement floor, Japanese restaurant “Thien” serves you with various menu of Japanese sake, Sho-chu, and sashimi. Please visit and enjoy our food, we are open until 2:00am. For the hotel guests, you can soothe out your tiredness just by being in our hotel: take a bath at our unique open-air hot bath, satisfy your appetite in Thien, take our massage, watch TV at room and relax. Our Thai Van Lung 2 branch stands across the street and Le Thanh Ton branch is 3 minutes away by walking.",
+                "name": "Azumaya Thái Văn Lung 1",
+                "desc": "Chi nhánh Khách sạn Azumaya Thái Văn Lung 1 nằm ở vị trí thuận lợi, là sự lựa chọn hoàn hảo của khách hàng Nhật khi đến công tác và lưu trú. Khách sạn có tổng cộng 51 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Bên trong khách sạn, chúng tôi còn phục vụ bể tắm nước nóng ngoài trời và buffet sáng kiểu Nhật. Đặc biệt, khách hàng có thể tận hưởng dịch vụ mát-xa mang phong cách riêng của khách sạn Azumaya với tỷ lệ 90% khách hàng thường xuyên quay lại (10:45 tối là thời gian nhận yêu cầu mát-xa cuối cùng). Tại khu vực tầng hầm, khách hàng có thể ghé thăm và thưởng thức món ăn truyền thống Nhật Bản tại nhà hàng “Thiên” với thực đơn đa dạng bao gồm rượu sake, Sho-chu, sashimi và thời gian mở cửa đến 2 giờ sáng. Quý khách hàng có thể xoa dịu mệt mỏi chỉ bằng cách ở trong khách sạn của chúng tôi: tắm bể tắm nước nóng ngoài trời độc đáo, thưởng thưởng món ăn tại \"Thiên\", sử dụng dịch vụ mát-xa, xem các chương trình tivi tại phòng và thư giãn. Chi nhánh Thái Văn Lung 2 của chúng tôi nằm đối diện và chi nhánh Lê Thánh Tôn cách đó chỉ 3 phút đi bộ.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl1_wyk4hz.jpg",
                 "link": "/thai-van-lung-1-detail/room"
             },
             {
                 "id": 2,
-                "name": "Azumaya Thai Van Lung 2",
-                "desc": "Azumaya Hotel Thai Van Lung 2 branch is a newly opened branch in 2016, located in front of the Thai Van Lung 1 branch across the street. There are 58 rooms in total with toilet with bidet functions, bathtubs, and Japanese TV shows in each room. We also serve open-air hot baths, Japanese breakfast, and Japanese food restaurant \"Suizan\" and \"mangetsu\". Female guests can also enjoy our open air hot bath on weekdays. (Only from 17:00 to 18:45) For breakfast, we also have a lot of set manu like continental set other than authentic Japanese sets, Udon noodles. With Thai Van Lung 1 branch located in front and Le Thanh Ton branch standing along Le Thanh Ton street 3 minutes far from here, it is the perfect location for businessmen to stay comfortably.",
+                "name": "Azumaya Thái Văn Lung 2",
+                "desc": "Chi nhánh Khách sạn Azumaya Thái Văn Lung 2 được mở cửa vào năm 2016, nằm đối diện chi nhánh Thái Văn Lung 1 ở bên kia đường. Khách sạn có tổng cộng 58 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn tắm, bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Chúng tôi cũng phục vụ bể tắm nước nóng ngoài trời, bữa sáng kiểu Nhật và ở tầng hầm khách hàng có thể thưởng thức các món ăn truyền thống Nhật Bản tại nhà hàng Nhật \"Suizan\" và \"Mangetsu\". Đặc biệt, khách hàng nữ cũng có thể tận hưởng bể tắm nước nóng ngoài trời của chúng tôi vào các ngày trong tuần (chỉ từ 17:00 đến 18:45). Đối với bữa sáng, chúng tôi còn phục vụ rất nhiều bữa ăn sáng kiểu lục địa bên cạnh các món kiểu Nhật, mì Udon. Với chi nhánh Thái Văn Lung 1 nằm ở đối diện và chi nhánh Lê Thánh Tôn cách đây chỉ 3 phút đi bộ, khách sạn Azumaya Thái Văn Lung 2 là sự lựa chọn hoàn hảo của khách hàng Nhật khi đến công tác và lưu trú.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
                 "link": "/thai-van-lung-2-detail/room"
             },
             {
                 "id": 3,
-                "name": "Azumaya Le Thanh Ton",
-                "desc": "Azumaya Hotel Le Thanh Ton branch has 37 rooms in total with toilet with bidet function and Japanese TV shows in each room. We serve open-air hot bath, Japanese breakfast and sho-chu bar “Mangetsu”. For breakfast, we also have a lot of food like continental set other than authentic Japanese sets, Udon noodle. The open-air hot bath in the middle of this city-side will definitely be an oasis soothing your fatigue from daily hard work. Another oasis for the guests who wants to end their day with a nice drink, the sho-chu bar “Mangetsu” in the basement floor is open for you until 2:00am. It stands in the middle of Le Thanh Ton street, there is no such inconvenience for going to a restaurant or a bar. A perfect location for the guests who come to Vietnam for the first time. all these values are prepared only for you to make your business trip comfortable.",
+                "name": "Azumaya Lê Thánh Tôn",
+                "desc": "Chi nhánh Khách sạn Azumaya Lê Thánh Tôn có tổng cộng 37 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Chúng tôi cũng phục vụ bể tắm nước nóng ngoài trời, bữa sáng kiểu Nhật và ở tầng hầm khách hàng có thể ghé thăm quán nhậu kiểu nhật \"Mangetsu\". Đối với bữa sáng, chúng tôi cũng phục vụ nhiều loại bữa ăn sáng kiểu lục địa bên cạnh các món kiểu Nhật, mì Udon. Bể tắm nước nóng ngoài trời giữa lòng thành phố chắc chắn sẽ xoa dịu những mệt mỏi của khách hàng sau ngày dài làm việc vất vả. Đặc biệt, những khách hàng muốn kết thúc một ngày bằng đồ uống ngon, quán nhậu kiểu nhật “Mangetsu” ở tầng hầm sẽ mở cửa đón tiếp quý khách đến 2 giờ sáng. Khách sạn Azumaya Lê Thánh Tôn tọa lạc tại giữa con đường Lê Thánh Tôn, nơi quy tụ rất nhiều nhà hàng và quán bar. Đây là sự lựa chọn hoàn hảo cho những khách hàng lần đầu đến Việt Nam. Với tất cả những giá trị kể trên, chúng tôi đảm bảo mang đến cho Quý khách một chuyến công tác thoải mái khi lưu trú tại đây.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
                 "link": "/le-thanh-ton-detail/room"
             },
             {
                 "id": 4,
                 "name": "Azumaya HCM ANNEX",
-                "desc": "Azumaya Hotel HCM Annex is an apartment type hotel with 7 rooms for long stay guests. It is well-supplied with bathtub, toilet with bidet function, and Japanese TV shows for all rooms. located in the back alley of Thai Van Lung 1 branch. The building itself does not have an elevator, but because only 2 rooms for each floor, there is no chance to bump into the other staying customer. Same as the staying guests in Thai Van Lung 1 branch, it is available to enjoy our Japanese breakfast, open-air hot bath, and special discount of using foot massage. the convenient auto door lock makes the accessing way easy & safe. We promise you a comfortable and reasonable stay in the unfamiliar surroundings of Vietnam.",
+                "desc": "Azumaya Annex là căn hộ khách sạn với 7 phòng dành cho khách lưu trú dài ngày. Tất cả các phòng đều được trang bị đầy đủ bồn tắm, bồn cầu tự động và các kênh tivi truyền hình Nhật Bản với vị trí nằm ngay hẻm sau chi nhánh khách sạn Thái Văn Lung 1. Azumaya Annex không có thang máy nhưng vì mỗi tầng chỉ có 2 phòng nên sẽ không xảy ra vấn đề va chạm với khách hàng lưu trú ở phòng khác. Giống như khách lưu trú tại chi nhánh khách sạn Thái Văn Lung 1, khách hàng lưu trú tại Azumaya Annex có thể thưởng thức bữa sáng kiểu Nhật, sử dụng bể tắm nước nóng ngoài trời và được giảm giá đặc biệt khi sử dụng dịch vụ mát-xa chân. Hệ thống cửa ra vào khóa tự động vô cùng tiện lợi giúp khách hàng ra vào dễ dàng và an toàn. Chúng tôi cam kết mang đến cho Quý khách một kỳ nghỉ thoải mái và giá cả hợp lý tại Việt Nam.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg",
                 "link": "/annex-detail/room"
             }
         ],
-        "btn-detail": "Click here for detail"
+        "btn-detail": "Nhấn để xem chi tiết"
     },
     "room_tvl1": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, Free 2 water + 3 drinks/ day.",
+        "roomContent": "Bao gồm các dịch vụ sau: Bữa sáng kiểu Nhật, Bể tắm nước nóng ngoài trời (chỉ dành cho nam), Kênh truyền hình quốc tế, Wi-Fi tốc độ cao miễn phí (dịch vụ internet không dây), Dọn phòng hàng ngày, 2 chai nước suối và 3 loại nước minibar hàng ngày.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nS========================================================================================================================================================================================================================================= chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịc=Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "facilityContent": "Bàn làm việc\n19 kênh TV\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
+        "rental": "Cho thuê miễn phí : ",
+        "rentalContent": "Bộ chuyển đổi nguồn điện (220V-> 110V) Ổ cắm điện rời",
+        "business": "Dịch vụ kinh doanh",
+        "businessContent": "Khách sạn Azumaya cung cấp nhiều dịch vụ đa dạng để đảm bảo chuyến công tác của Quý khách hàng thoải mái và tiện lợi nhất. Nhân viên của chúng tôi có thể giao tiếp bằng tiếng nhật, xin vui lòng liên hệ nếu có bất kỳ thắc mắc nào.",
         "pickup": "Dịch vụ đưa đón sân bay",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000VND (9pm ~ 7am)",
         "pickup_car": "Xe 4-7 chỗ ngồi",
         "minibar": "Nước ngọt, bia...",
         "minibar_fee": "Giá chỉ từ 20.000VND",
@@ -2031,9 +2085,9 @@
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
-        "rotenContent": "Weekday：6:00-10:00/17:00-24:00\n Weekend：7:00-24:00",
+        "rotenContent": "Ngày trong tuần: 6:00-10:00/17:00-24:00\nCuối tuần: 7:00-24:00",
         "breakfast": "Bữa sáng",
-        "breakfastContent": "From Monday to Saturday： 6:00-8:00 Buffet 8:00-10:00 Set menu \nSunday：6:00-10:00　Only set menu",
+        "breakfastContent": "Từ thứ Hai đến thứ Bảy: 6:00-8:00 Buffet 8:00-10:00 Set menu \nChủ Nhật: 6:00-10:00　Chỉ set menu",
         "massage": "Massage Chân",
         "massageContent": "Every day: 10:00-23:00 (Last enter 22:45)",
         "ask": "Liên hệ Lễ Tân",
@@ -2045,8 +2099,8 @@
         "email": "reservation@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
-        "address": " Address ：8A/7D1-8D1-9D1, Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
+        "locationContent": "Khách sạn của chúng tôi tọa lạc tại khu phố Nhật ở trung tâm thành phố Hồ Chí Minh với rất nhiều nhà hàng, tiệm Karaoke, quán bar mang phong cách Nhật Bản. Đây là khu vực được rất nhiều doanh nhân và người lao động Nhật Bản yêu thích vì sự tiện lợi và vị trí thuận tiện di chuyển qua các quận khác trong thành phố.",
+        "address": " Địa chỉ: 8A/7D1-8D1-9D1 Thái Văn Lung, Quận 1, TPHCM",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -2071,12 +2125,26 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Thai Van Lung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/LBTVL1_2_xsbvaq.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/RTBRTVL1_2_adtqbm.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 1",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853588/AzumayaWeb/TVL1/INTRODUCTION/BRFTVL1_2_slvlxc.jpg"
+            }
+    ]
     },
     "tvl1": [
         {
             "id": 1,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "ecnw",
             "name": "ECONOMY/NO-WINDOW",
             "size": "10.4",
@@ -2103,7 +2171,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "ec",
             "name": "ECONOMY",
             "size": "10.2",
@@ -2130,7 +2198,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "s",
             "name": "STANDARD",
             "size": "13.2",
@@ -2157,7 +2225,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "dnw",
             "name": "DELUXE/NO-WINDOW",
             "size": "18.5",
@@ -2183,7 +2251,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "dm",
             "name": "DELUXE-M",
             "size": "18.6",
@@ -2214,7 +2282,7 @@
         },
         {
             "id": 6,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "dl",
             "name": "DELUXE-L",
             "size": "21.5/ 21.7",
@@ -2245,7 +2313,7 @@
         },
         {
             "id": 7,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "tm",
             "name": "TERRACE-M",
             "size": "18.6",
@@ -2272,7 +2340,7 @@
         },
         {
             "id": 8,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "tl",
             "name": "TERRACE-L",
             "size": "21.5",
@@ -2299,7 +2367,7 @@
         },
         {
             "id": 9,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "s",
             "name": "SUITE",
             "size": "30",
@@ -2326,7 +2394,7 @@
         },
         {
             "id": 10,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "st",
             "name": "SUITE - TWIN",
             "size": "30",
@@ -2353,7 +2421,7 @@
         },
         {
             "id": 11,
-            "branch_name": "Azumaya Thai Van Lung 1",
+            "branch_name": "Azumaya Thái Văn Lung 1",
             "room_id": "v",
             "name": "VIP TATAMI",
             "size": "30",
@@ -2381,20 +2449,20 @@
     ],
     "room_tvl2": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, Free 2 water + 3 drinks/ day.",
+        "roomContent": "Bao gồm các dịch vụ sau: Bữa sáng kiểu Nhật, Bể tắm nước nóng ngoài trời (chỉ dành cho nam), Kênh truyền hình quốc tế, Wi-Fi tốc độ cao miễn phí (dịch vụ internet không dây), Dọn phòng hàng ngày, 2 chai nước suối và 3 loại nước minibar hàng ngày.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bàn làm việc\n19 kênh TV\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn.Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách.Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
         "pickup": "Dịch vụ đưa đón sân bay",
-        "pickup_fee1": "$25 (7am ~ 9pm)",
-        "pickup_fee2": "$30 (9pm ~ 7am)",
+        "pickup_fee1": "625.000VND (7am ~ 9pm)",
+        "pickup_fee2": "750.000VND (9pm ~ 7am)",
         "pickup_car": "Xe 4-7 chỗ ngồi",
         "minibar": "Nước ngọt, bia...",
         "minibar_fee": "Giá chỉ từ 20.000VND",
@@ -2413,9 +2481,9 @@
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
-        "rotenContent": "Weekday：6:00-10:00/19:00-24:00 \nFemale time：17:00-18:45 Weekend：7:00-24:00",
+        "rotenContent": "Ngày trong tuần: 6:00-10:00/19:00-24:00 \nGiờ nữ: 17:00-18:45 Cuối tuần: 7:00-24:00",
         "breakfast": "Bữa sáng",
-        "breakfastContent": "From Monday to Saturday： 6:00-8:00 Buffet 8:00-10:00 Set menu \nSunday： 6:00-10:00 Only set menu",
+        "breakfastContent": "Từ thứ Hai đến thứ Bảy: 6:00-8:00 Buffet 8:00-10:00 Set menu \nChủ Nhật: 6:00-10:00 Chỉ set menu",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -2425,8 +2493,8 @@
         "email": "reservation3@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
-        "address": "Address ：27-29 Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
+        "locationContent": "Khách sạn của chúng tôi tọa lạc tại khu phố Nhật ở trung tâm thành phố Hồ Chí Minh với rất nhiều nhà hàng, tiệm Karaoke, quán bar mang phong cách Nhật Bản. Đây là khu vực được rất nhiều doanh nhân và người lao động Nhật Bản yêu thích vì sự tiện lợi và vị trí thuận tiện di chuyển qua các quận khác trong thành phố.",
+        "address": "Địa chỉ: 27-29 Thái Văn Lung, Quận 1, TPHCM",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -2452,12 +2520,26 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Thai Van Lung 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853720/AzumayaWeb/TVL2/INTRODUCTION/LBTVL2_2_dhtayy.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853724/AzumayaWeb/TVL2/INTRODUCTION/RTBTTVL2_2_gfhfrk.jpg"
+            },
+            {
+                "desc":"Azumaya Thai Van Lung 2",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853714/AzumayaWeb/TVL2/INTRODUCTION/BRFTVL2_2_y6xb7q.jpg"
+            }
+    ]
     },
     "tvl2": [
         {
             "id": 1,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "dnw",
             "name": "DELUXE M NO WINDOW",
             "size": "15",
@@ -2480,7 +2562,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "dlnw",
             "name": "DELUXE L NO WINDOW",
             "size": "17",
@@ -2503,7 +2585,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "ef",
             "name": "EXECUTIVE FRONTSIDE",
             "size": "21",
@@ -2526,7 +2608,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "eb",
             "name": "EXECUTIVE BACKSIDE",
             "size": "21",
@@ -2549,7 +2631,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "etnw",
             "name": "EXECUTIVE TWIN NO WINDOW",
             "size": "23",
@@ -2572,7 +2654,7 @@
         },
         {
             "id": 6,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "ss",
             "name": "SEMI SUITE",
             "size": "28",
@@ -2595,7 +2677,7 @@
         },
         {
             "id": 7,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "s",
             "name": "SUITE",
             "size": "32",
@@ -2618,7 +2700,7 @@
         },
         {
             "id": 8,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "tl",
             "name": "DELUXE ",
             "size": "18",
@@ -2641,20 +2723,20 @@
     ],
     "room_ltt": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, Free 2 water + 3 drinks/ day.",
+        "roomContent": "Bao gồm các dịch vụ sau: Bữa sáng kiểu Nhật, Bể tắm nước nóng ngoài trời (chỉ dành cho nam), Kênh truyền hình quốc tế, Wi-Fi tốc độ cao miễn phí (dịch vụ internet không dây), Dọn phòng hàng ngày, 2 chai nước suối và 3 loại nước minibar hàng ngày.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bàn làm việc\n19 kênh TV\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nHộp bảo mật\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn.  Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách.  Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào",
         "pickup": "Dịch vụ đưa đón sân bay",
-        "pickup_fee1": "$25 (07:00 ~ 21:00)",
-        "pickup_fee2": "$30 (21:00 ~ 07:00)",
+        "pickup_fee1": "625.000VND (07:00 ~ 21:00)",
+        "pickup_fee2": "750.000VND (21:00 ~ 07:00)",
         "pickup_car": "Xe 4-7 chỗ ngồi",
         "minibar": "Nước ngọt, bia...",
         "minibar_fee": "Giá chỉ từ 20.000VND",
@@ -2673,9 +2755,9 @@
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
-        "rotenContent": "Weekday：6:00-10:00/17:00-24:00 \nWeekend：7:00-24:00",
+        "rotenContent": "Ngày trong tuần: 6:00-10:00/17:00-24:00 \nCuối tuần: 7:00-24:00",
         "breakfast": "Bữa sáng",
-        "breakfastContent": "From Monday to Friday：6:00-8:00 Buffet 8:00-10:00 Set menu \nSaturday and Sunday：6:00-10:00 Only set menu",
+        "breakfastContent": "Từ thứ Hai đến thứ Sáu: 6:00-8:00 Buffet 8:00-10:00 Set menu \nThứ Bảy và Chủ nhật: 6:00-10:00 Chỉ set menu",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -2685,8 +2767,8 @@
         "email": "reservation2@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.",
-        "address": "Address ：15/3 Le Thanh Ton Street. Dist.1 HCM",
+        "locationContent": "Khách sạn của chúng tôi tọa lạc tại khu phố Nhật ở trung tâm thành phố Hồ Chí Minh với rất nhiều nhà hàng, tiệm Karaoke, quán bar mang phong cách Nhật Bản. Đây là khu vực được rất nhiều doanh nhân và người lao động Nhật Bản yêu thích vì sự tiện lợi và vị trí thuận tiện di chuyển qua các quận khác trong thành phố.",
+        "address": "Địa chỉ: 15/3 Lê Thánh Tôn, Quận 1, TPHCM",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -2712,12 +2794,26 @@
             {
                 "name": "Địa chỉ"
             }
-        ]
+        ],
+        "slider":[
+            {
+                "desc":"Azumaya Le Thanh Ton",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853465/AzumayaWeb/LTT/INTRODUCTION/LBLTT2_lrft9j.jpg"
+            },
+            {
+                "desc":"Azumaya Le Thanh Ton",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853470/AzumayaWeb/LTT/INTRODUCTION/RTBRLTT_2_rrpwlk.jpg"
+            },
+            {
+                "desc":"Azumaya Le Thanh Ton",
+                "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853463/AzumayaWeb/LTT/INTRODUCTION/BRFLTT2_i5esbi.jpg"
+            }
+    ]
     },
     "ltt": [
         {
             "id": 1,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "dg",
             "name": "DELUXE GROUND",
             "size": "14.5",
@@ -2740,7 +2836,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "d",
             "name": "DELUXE",
             "size": "14.5",
@@ -2763,7 +2859,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "efs",
             "name": "EXECUTIVE (FRONT SIDE)",
             "size": "21",
@@ -2786,7 +2882,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "ef",
             "name": "EXECUTIVE (BACK SIDE)",
             "size": "21",
@@ -2810,18 +2906,18 @@
     ],
     "room_annex": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "Special apartment for customers staying for 2 weeks & more \n\nLocated right behind Azumaya Hotel and far 1 minute on foot, Azumaya Annex is considered as a quiet apartment suitable for long term customers. Azumaya Annex mainly affords to satisfy customers with not only wide rooms (27.2m2 ~ 30.2m2), big Cửa sổ nhìn ra ngoài (6/ 7 rooms), WIFI, bathtub & toilet with bidet function in all rooms.\nAll additional services are served at Azumaya hotel and the same with hotel guests. Hope you to spend your business trip enjoyably and comfortably at Azumaya Annex. If you have any questions, please feel free to contact to our reception.",
+        "roomContent": "Căn hộ đặc biệt dành cho khách hàng lưu trú dài hạn từ 2 tuần trở lên. \n\nTọa lạc ngay phía sau Khách sạn Azumaya chỉ một phút đi bộ, Azumaya Annex được đánh giá là căn hộ yên tĩnh phù hợp cho những khách hàng có kế hoạch lưu trú dài ngày. Azumaya Annex chắc chắn sẽ làm hài lòng khách hàng với diện tích phòng rộng (từ 27,2m2 ~ 30,2 m2), cửa sổ lớn (6/7 phòng), WIFI miễn phí, bồn tắm & bồn cầu tự động trong tất cả các phòng. \n\nKhách hàng lưu trú tại Annex có thể sử dụng tất cả các dịch vụ kèm theo tại khách sạn Azumaya, giống với các khách hàng lưu trú tại khách sạn. Chúng tôi rất hy vọng được phục vụ và đem đến cho khách hàng sự thoải mái và vui vẻ trong thời gian tại Azumaya Annex. Xin vui lòng liên hệ với bộ phận lễ tân của chúng tôi nếu có bất kỳ câu hỏi nào.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*Room price is excluded 10%",
+        "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Bàn làm việc\n19 kênh TV\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nHộp bảo mật\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nNhà vệ sinh có chức năng chậu vệ sinh",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "For customer staying for 2 weeks & more:",
-        "business_annex": "\nANNEX L (30.2m2) 45USD/ night\nANNEX M (27.2m2) 40USD/ night\nNet price, included:\n\n. 5% service charge\n. Breakfast\n. Open-air bath (male only)\n. Foot Massage 10% off\n. High speed Internet 35M (Wifi& LAN cable)\n. 1 laundry set/ day \n. 19 TV channels\n\n Free Laundry 100,000VNĐ / day",
+        "businessContent": "Dành cho Quý khách hàng lưu trú dài hạn từ 2 tuần trở lên:",
+        "business_annex": "\nANNEX L (30.2m2) 45USD/ đêm \nANNEX M (27.2m2) 40USD/ đêm \n\nGiá tổng cộng đã bao gồm: \n. 5% phí dịch vụ \n. Bữa sáng kiểu Nhật \n. Bể tắm nước nóng ngoài trời (chỉ dành cho nam) \n. Giảm giá 10% dịch vụ mát xa chân \n. Internet tốc độ cao 35M (có dây và không dây) \n. 1 set giặt là/ngày \n. 24 kênh tivi \n\nMiễn phí giặt là 120,000VND / ngày",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -2832,8 +2928,8 @@
         "email": "reservation@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "Located at the place only 1 minutes from AZUMAYA Thai Van Lung 1 branch by foot. Azumaya Annex mainly affords to satisfy customers with not only wide rooms (27.2m2 ~ 30.2 m2), big Cửa sổ nhìn ra ngoài (6/ 7 rooms), WIFI, bathtub & toilet with bidet function in all rooms. The guests can use other remarkable Azumaya service, such as open-air hot bath and Japanese breakfast, at Thai Van Lung 1 branch.",
-        "address": "Address ：8A/8D2 Thai Van Lung St., Dist. 1, HCMC",
+        "locationContent": "Cách chi nhánh AZUMAYA Thái Văn Lung 1 chỉ 1 phút đi bộ,  Azumaya Annex sẽ làm hài lòng Quý khách trong suốt thời gian lưu trú tại đây với diện tích phòng rộng (từ 27,2m2 ~ 30,2 m2), cửa sổ lớn (6/7 phòng),  WIFI miễn phí, bồn tắm & bồn cầu tự động trong tất cả các phòng. Ngoài ra, Quý khách có thể sử dụng các dịch vụ nổi bật khác của Azumaya như bể tắm nước nóng ngoài trời và bữa sáng kiểu Nhật tại chi nhánh Thái Văn Lung 1.",
+        "address": "Địa chỉ: 8A/8B2 Thái Văn Lung, Quận 1, TPHCM",
         "emailTitle": "Email",
         "type": "Hạng phòng",
         "rate": "Giá",
@@ -2843,7 +2939,7 @@
         "bath": "Bồn tắm",
         "kitchen": "Bếp",
         "terrace": "Ban công",
-        "elevator": "Elevator",
+        "elevator": "Thang máy",
         "bed": "Kích thước giường",
         "tv": "TV màn hình 32 inches",
         "reservation": "Đặt phòng",
@@ -2865,7 +2961,7 @@
     "annex": [
         {
             "id": 1,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "am",
             "name": "ANNEX M",
             "size": "28",
@@ -2890,7 +2986,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Thai Van Lung 2",
+            "branch_name": "Azumaya Thái Văn Lung 2",
             "room_id": "al",
             "name": "ANNEX L",
             "size": "30",
@@ -2917,19 +3013,19 @@
     "dn-branch": {
         "slider": [
             {
-                "desc": "Azumaya Da Nang",
+                "desc": "Azumaya Đà Nẵng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750483/AzumayaWeb/trbrdn2_cm4gom.jpg"
             },
             {
-                "desc": "Azumaya Da Nang",
+                "desc": "Azumaya Đà Nẵng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/bfdn_j8zx9t.jpg"
             },
             {
-                "desc": "Azumaya Da Nang",
+                "desc": "Azumaya Đà Nẵng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750481/AzumayaWeb/osdn_s2w5yt.jpg"
             },
             {
-                "desc": "Azumaya Da Nang",
+                "desc": "Azumaya Đà Nẵng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710750482/AzumayaWeb/lbdn_fip42v.jpg"
             }
         ],
@@ -2937,7 +3033,7 @@
             {
                 "id": 1,
                 "name": "Azumaya Đà Nẵng",
-                "desc": "Chi nhánh Khách sạn Azumaya Đà Nẵng tọa lạc ngay giữa thành phố; chỉ cách sân bay 10 phút và có tổng cộng 32 phòng, có vòi tắm hoa sen và các chương trình truyền hình Nhật Bản cho mỗi phòng. Điều khiến chúng tôi khác biệt so với các khách sạn khác là chúng tôi có bồn tắm nước nóng ngoài trời, bữa sáng kiểu Nhật, massage chân theo phong cách nguyên bản. Mát-xa chân theo phong cách nguyên bản của chúng tôi là dịch vụ phổ biến đối với du khách Nhật Bản và có khoảng 90% khách hàng quay lại. Nếu đặt trước, bạn không phải lo xếp hàng dài chờ đợi. (Giờ đặt massage cuối cùng là 10:45 tối các ngày trong tuần và 9:45 tối các ngày cuối tuần.) Vì bồn tắm nước nóng ngoài trời hướng ra biển nên bạn có thể tận hưởng khung cảnh tuyệt đẹp của đại dương trải rộng trước mắt và ngắm hoàng hôn trên những ngọn núi. Hãy tận hưởng thoải mái các dịch vụ lý tưởng của chúng tôi tại Đà Nẵng.",
+                "desc": "Chi nhánh Khách sạn Azumaya Đà Nẵng tọa lạc ngay giữa thành phố; chỉ cách sân bay 10 phút và có tổng cộng 32 phòng, có vòi tắm hoa sen và các chương trình truyền hình Nhật Bản cho mỗi phòng. Điều khiến chúng tôi khác biệt so với các khách sạn khác là chúng tôi có bồn tắm nước nóng ngoài trời, bữa sáng kiểu Nhật, massage chân theo phong cách nguyên bản. Mát-xa chân theo phong cách nguyên bản của chúng tôi là dịch vụ phổ biến đối với du khách Nhật Bản và có khoảng 90% khách hàng quay lại. Nếu đặt trước, quý khách không phải lo xếp hàng dài chờ đợi. (Giờ đặt massage cuối cùng là 10:45 tối các ngày trong tuần và 9:45 tối các ngày cuối tuần.) Vì bồn tắm nước nóng ngoài trời hướng ra biển nên quý khách có thể tận hưởng khung cảnh tuyệt đẹp của đại dương trải rộng trước mắt và ngắm hoàng hôn trên những ngọn núi. Hãy tận hưởng thoải mái các dịch vụ lý tưởng của chúng tôi tại Đà Nẵng.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
                 "link": "/da-nang/room"
             }
@@ -2956,10 +3052,10 @@
         "rental": "Cho thuê miễn phí: : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào.",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách. Nhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào.",
         "pickup": "Dịch vụ đưa đón sân bay",
-        "pickup_fee1": "$25 (06:00 ~ 21:00)",
-        "pickup_fee2": "$30 (21:00 ~ 06:00)",
+        "pickup_fee1": "625.000VND (06:00 ~ 21:00)",
+        "pickup_fee2": "750.000VND (21:00 ~ 06:00)",
         "pickup_car": "Xe 4-7 chỗ ngồi",
         "minibar": "Nước uống",
         "minibar_fee": "Giá chỉ từ 20.000VNĐ",
@@ -2994,7 +3090,7 @@
         "email": "reservationdanang@azumayavietnam.com",
         "website": "www.azumayavietnam.com",
         "location": "Địa chỉ",
-        "locationContent": "Our hotel is situated 10 minutes by taxi from the center of Da Nang city and the traffic is not so crowded. Among all of the branches, Da Nang branch has the most beautiful view from the hotel and you can it from our open-air hot bath. Since it is easily accessible to resort area, it is best location to relax tiredness of both working and traveling.",
+        "locationContent": "Khách sạn của chúng tôi nằm cách trung tâm thành phố Đà Nẵng 10 phút đi taxi, ít xe cộ qua lại và bể nước nóng ngoài trời nhìn ra biển là  địa điểm số 1 trong số tất cả các địa điểm của Azumaya. Với vị trí dễ dàng tiếp cận các khu nghỉ dưỡng, đây là địa điểm hoàn hảo để bạn xua tan những mệt mỏi trong chuyến du lịch.",
         "address": " Địa chỉ ： 31 Đường Nguyễn Tất Thành, Quận Hải Châu, Thành phố Đà Nẵng",
         "emailTitle": "Thư điện tử",
         "type": "Loại Phòng",
@@ -3026,7 +3122,7 @@
     "dn": [
         {
             "id": 1,
-            "branch_name": "Azumaya Da Nang Hotel",
+            "branch_name": "Azumaya Đà Nẵng Hotel",
             "room_id": "dnwd",
             "name": "DELUXE NO WINDOW DOUBLE",
             "size": "20",
@@ -3050,7 +3146,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Da Nang Hotel",
+            "branch_name": "Azumaya Đà Nẵng Hotel",
             "room_id": "dnwt",
             "name": "DELUXE NO WINDOW TWIN",
             "size": "20",
@@ -3074,7 +3170,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Da Nang Hotel",
+            "branch_name": "Azumaya Đà Nẵng Hotel",
             "room_id": "ed",
             "name": "EXECUTIVE DOULE",
             "size": "20",
@@ -3097,7 +3193,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Da Nang Hotel",
+            "branch_name": "Azumaya Đà Nẵng Hotel",
             "room_id": "et",
             "name": "EXECUTIVE TWIN",
             "size": "20",
@@ -3121,7 +3217,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Da Nang Hotel",
+            "branch_name": "Azumaya Đà Nẵng Hotel",
             "room_id": "eb",
             "name": "SUITE",
             "size": "28",
@@ -3146,19 +3242,19 @@
     "hp-branch": {
         "slider": [
             {
-                "desc": "Azumaya Hai Phong",
+                "desc": "Azumaya Hải Phòng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748998/AzumayaWeb/rtbrhp_i5vsby.jpg"
             },
             {
-                "desc": "Azumaya Hai Phong",
+                "desc": "Azumaya Hải Phòng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748981/AzumayaWeb/rhp_khwvjz.webp"
             },
             {
-                "desc": "Azumaya Hai Phong",
+                "desc": "Azumaya Hải Phòng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748976/AzumayaWeb/oshp1_syqj1u.jpg"
             },
             {
-                "desc": "Azumaya Hai Phong",
+                "desc": "Azumaya Hải Phòng",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710748979/AzumayaWeb/hplb_mat7sr.webp"
             }
         ],
@@ -3166,26 +3262,26 @@
             {
                 "id": 1,
                 "name": "Azumaya Hải Phòng",
-                "desc": "Chào mừng đến với khách sạn Azumaya Hải Phòng !\nRất hân hạnh được phục vụ quý khách tại Azumaya. Khách sạn chúng tôi nằm ở vị trí thuận tiện gần khu vực có nhiều nhà hàng Nhật Bản tại Hải Phòng, trên đường đến các khu công nghiệp và cách sân bay Cát Bi 10 phút. Tại khách sạn Azumaya, đội ngũ nhân viên thân thiện của chúng tôi sẽ luôn sẵn lòng hỗ trợ bạn bất cứ lúc nào bằng cả tiếng Nhật và tiếng Anh. Chúng tôi hy vọng mang đến cho bạn những dịch vụ tốt nhất mà bạn xứng đáng có thể tận hưởng lưu trú mỗi ngày. Vì vậy, chúng tôi cố gắng mang đến cho bạn không chỉ thoải mái như ở khách sạn mà còn là môi trường thư giãn với những cảm giác thú vị như “Bồn tắm nước nóng & xông hơi ngoài trời” trên tầng 7 của tòa nhà (chỉ dành cho nam) và “Bữa sáng kiểu Nhật” mang lại sức sống cho một ngày. Hy vọng bạn sẽ có những trải nghiệm đáng nhớ và thú vị cùng chúng tôi.",
+                "desc": "Chào mừng đến với khách sạn Azumaya Hải Phòng !\nRất hân hạnh được phục vụ quý khách tại Azumaya. Khách sạn chúng tôi nằm ở vị trí thuận tiện gần khu vực có nhiều nhà hàng Nhật Bản tại Hải Phòng, trên đường đến các khu công nghiệp và cách sân bay Cát Bi 10 phút. Tại khách sạn Azumaya, đội ngũ nhân viên thân thiện của chúng tôi sẽ luôn sẵn lòng hỗ trợ quý khách bất cứ lúc nào bằng cả tiếng Nhật và tiếng Anh. Chúng tôi hy vọng mang đến cho quý khách những dịch vụ tốt nhất mà quý khách xứng đáng có thể tận hưởng lưu trú mỗi ngày. Vì vậy, chúng tôi cố gắng mang đến cho quý khách không chỉ thoải mái như ở khách sạn mà còn là môi trường thư giãn với những cảm giác thú vị như “Bồn tắm nước nóng & xông hơi ngoài trời” trên tầng 7 của tòa nhà (chỉ dành cho nam) và “Bữa sáng kiểu Nhật” mang lại sức sống cho một ngày. Hy vọng quý khách sẽ có những trải nghiệm đáng nhớ và thú vị cùng chúng tôi.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
                 "link": "/hai-phong/room"
             }
         ],
-        "btn-detail": "Nhấp vào đây để xem chi tiết"
+        "btn-detail": "Nhấp để xem chi tiết"
     },
     "room_hp": {
         "room": "Giới thiệu phòng",
-        "roomContent": "The following services are included: Japanese breakfast, Open-air hot tub (for men only), International TV channels, Free high speed Wi-Fi (no wired internet service), daily room making, Free 2 water + 3 drinks/ day.",
+        "roomContent": "Bao gồm các dịch vụ sau: Bữa sáng kiểu Nhật, Bể tắm nước nóng ngoài trời (chỉ dành cho nam), Kênh truyền hình quốc tế, Wi-Fi tốc độ cao miễn phí (dịch vụ internet không dây), Dọn phòng hàng ngày, 2 chai nước suối và 3 loại nước minibar hàng ngày.",
         "tariff": "Danh sách giá phòng",
-        "vat": "*All rooms included eco-washlet\n*Room price is excluded 10%",
+        "vat": "*Tất cả các phòng đều trang bị bồn cầu tự độngt\n*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nJapanese TV channels (19 channel)\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks",
+        "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nKênh truyền hình Nhật Bản (19 kênh)\nKết nối Internet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + 3 đồ uống miễn phí",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Working desk\nTV 32 inches\nFree Wi-Fi\nSecurity box\nHair drier\nShavor, tooth brush, comb, ear bumbs\nSlippers\nShampoo, conditioner, and body soap\nMinibar",
+        "facilityContent": "Bàn làm việc\nTV 32 inch\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nSavor, bàn chải đánh răng, lược, đệm tai\nDép xỏ ngón\nDầu gội, dầu xả và xà phòng tắm\nMinibar",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
-        "businessContent": "Dành cho những người mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ bạn. \nNhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào.",
+        "businessContent": "Dành cho những du khách mong muốn có một chuyến công tác thoải mái, Azumaya Hotel cung cấp nhiều dịch vụ khác nhau để hỗ trợ quý khách. \nNhân viên của chúng tôi có thể giao tiếp tiếng Nhật vì vậy vui lòng hỏi chúng tôi nếu có bất kỳ thắc mắc nào.",
         "pickup": "Dịch vụ đưa đón sân bay",
         "pickup_fee1": "625,000 VNĐ (6:00 ~ 20:59)",
         "pickup_fee2": "750,000 VNĐ (21:00 ~ 5:59)",
@@ -3254,7 +3350,7 @@
     "hp": [
         {
             "id": 1,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "snw",
             "name": "STANDARD NO WINDOW",
             "size": "17",
@@ -3278,7 +3374,7 @@
         },
         {
             "id": 2,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "s",
             "name": "STANDARD",
             "size": "17",
@@ -3302,7 +3398,7 @@
         },
         {
             "id": 3,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "dm",
             "name": "DELUXE M",
             "size": "20",
@@ -3326,7 +3422,7 @@
         },
         {
             "id": 4,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "dl",
             "name": "DELUXE L",
             "size": "22",
@@ -3350,7 +3446,7 @@
         },
         {
             "id": 5,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "ecv",
             "name": "EXECUTIVE CITY VIEW",
             "size": "28",
@@ -3374,7 +3470,7 @@
         },
         {
             "id": 6,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "elv",
             "name": "EXECUTIVE LAKE VIEW",
             "size": "32",
@@ -3398,7 +3494,7 @@
         },
         {
             "id": 7,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "s",
             "name": "SUITE",
             "size": "32",
@@ -3421,7 +3517,7 @@
         },
         {
             "id": 8,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "elvwk",
             "name": "EXECUTIVE LAKE VIEW WITH KITCHEN",
             "size": "22",
@@ -3445,7 +3541,7 @@
         },
         {
             "id": 9,
-            "branch_name": "Azumaya Hai Phong Hotel",
+            "branch_name": "Azumaya Hải Phòng Hotel",
             "room_id": "swk",
             "name": "SUITE WITH KITCHEN",
             "size": "32",
@@ -3472,10 +3568,10 @@
         "title": "Massage Service",
         "branch": [
             {
-                "name": "Azumaya Thai Van Lung 1"
+                "name": "Azumaya Thái Văn Lung 1"
             },
             {
-                "name": "Azumaya Da Nang"
+                "name": "Azumaya Đà Nẵng"
             },
             {
                 "name": "Azumaya Linh Lang"
@@ -3483,128 +3579,142 @@
         ]
     },
     "reservation": {
-        "title": "Reservation",
-        "choice": "Choice of Branch: ",
-        "check-in": "Check-in date: ",
-        "check-out": "Check-out date: ",
-        "in-time": "Check-in time:",
-        "in-note": "(Normal check-in: 3:00 PM)",
-        "out-time": "Check-out time:",
-        "out-note": "(Normal check-out: before 12:00 PM)",
-        "out-timeNote": "Please mention if the check out time is prior to 6:00 AM",
-        "room-kind": "Kind of Room:",
-        "room-amount": "Number of Rooms:",
-        "guest-amount": "Number of Guest per Room:",
-        "guest-info": "Guest Information",
-        "name": "Name:",
-        "name-note": "(Please fill in the name of all the members stay)",
-        "family-name": "Family Name",
-        "given-name": "Given Name",
-        "name-required": "Please write in Alphabet",
-        "gender": "Gender:",
-        "mr": "Mr.",
-        "ms": "Ms.",
-        "birth-date": "Birth Date:",
-        "day": "Day",
-        "month": "Month",
-        "year": "Year",
-        "booker": "Name of person who makes reservation:",
-        "same-person": "Same as person who will stay",
-        "diff-person": "Different with who will stay",
-        "email": "E-mail Address",
-        "email-note": "Please leave your exact email address for our soon confirmation or contact",
-        "phone": "Phone Number",
-        "phone-note": " Please input country code if it's not Vietnamese or Japanese telephone's number",
-        "room-type": "Room Type:",
-        "smk": "Smoking",
-        "non-smk": "Non-smoking",
-        "contract": "Contract:",
-        "h-cont": "Have Contract",
-        "n-cont": "No Contract",
-        "company": "Company Name",
-        "company-note": "※The contracting company's name",
-        "vat-invoice": "VAT Invoice:",
-        "need": "Necessarily",
-        "n-need": "No Necessarily",
-        "vat-note": "VAT is Value Added tax. It is a tax on the sale of most goods and services. VAT revenues are collected through businesses who are registered for VAT",
-        "pay-method": "Payment Method:",
+        "title": "Đặt Phòng",
+        "choice": "Lựa chọn chi nhánh: ",
+        "check-in": "Ngày nhận phòng: ",
+        "check-out": "Ngày trả phòng: ",
+        "in-time": "Thời gian nhận phòng:",
+        "in-note": "(Thời gian check in bình thường: 3 giờ chiều)",
+        "out-time": "Thời gian trả phòng:",
+        "out-note": "(Thời gian check out bình thường: 12 giờ trưa)",
+        "out-timeNote": "Vui lòng thông báo nếu thời gian check out trước 6 giờ sáng",
+        "room-kind": "Hạng phòng:",
+        "room-amount": "Số lượng phòng:",
+        "guest-amount": "Số lượng khách lưu trú trong phòng:",
+        "guest-info": "Thông tin khách",
+        "name": "Tên khách:",
+        "name-note": "(Xin vui lòng điền tên tất cả các khách lưu trú)",
+        "family-name": "Họ",
+        "given-name": "Tên riêng",
+        "name-required": "Vui lòng viết tên theo bảng chữ cái",
+        "gender": "Giới Tính:",
+        "mr": "Nam",
+        "ms": "Nữ",
+        "birth-date": "Ngày sinh:",
+        "day": "Ngày",
+        "month": "Tháng",
+        "year": "Năm",
+        "booker": "Tên người đặt phòng:",
+        "same-person": "Khách sẽ lưu trú",
+        "diff-person": "Không phải khách lưu trú",
+        "email": "Địa chỉ E-mail",
+        "email-note": "Vui lòng để lại địa chỉ email chính xác của bạn để chúng tôi liên hệ và xác nhận",
+        "phone": "Số điện thoại:",
+        "phone-note": "Vui lòng nhập mã quốc gia nếu không phải số điện thoại của Việt Nam hoặc Nhật Bản",
+        "room-type": "Loại phòng:",
+        "smk": "Hút thuốc",
+        "non-smk": "Không hút thuốc",
+        "contract": "Hợp đồng:",
+        "h-cont": "Có hợp đồng",
+        "n-cont": "Không hợp đồng",
+        "company": "Tên Công ty",
+        "company-note": "※Tên công ty ký hợp đồng",
+        "vat-invoice": "Hóa đơn thuế (hóa đơn VAT):",
+        "need": "Cần thiết",
+        "n-need": "Không cần thiết",
+        "vat-note": "VAT là thuế giá trị gia tăng. Đó là thuế đánh vào việc bán hầu hết hàng hóa và dịch vụ. Nguồn thu thuế GTGT được thu thông qua doanh nghiệp đăng ký nộp thuế GTGT",
+        "pay-method": "Hình thức thanh toán:",
         "method": [
             {
-                "name": "By cash at counter (VNĐ/USD/JPY)"
+                "name": "Thanh toán bằng tiền mặt tại quầy (VND/USD/JPY)"
             },
             {
-                "name": "By credit at counter (VNĐ only)"
+                "name": "Thanh toán bằng thẻ tại quầy (chỉ tiền Việt)"
             },
             {
-                "name": "By company transfer before check in"
+                "name": "Thanh toán công ty chuyển khoản trước ngày nhận phòng"
             },
             {
-                "name": "Others"
+                "name": "Khác"
             }
         ],
-        "requirement": "Any special requirement:",
-        "requirement-note": "(late check-out, pick-up, etc,...)",
-        "pickup": "Pick up",
-        "pickupTime": "Please tell me the arrival time at the airport",
-        "pickupNumber": "Flight Number",
-        "dropOff": "Drop off",
-        "dropOffTime": "Please mention the return flight time",
-        "dropOffNumber": "Flight Number",
-        "DO_PU_note": "$25-30/one way (depends on the time)",
-        "earlyIn": "Early check-in",
-        "earlyInTime": "Please input time you want to check in",
+        "method2": [
+            {
+                "name": "Thanh toán bằng tiền mặt tại quầy (VND/USD/JPY)"
+            },
+            {
+                "name": "Thanh toán bằng thẻ tại quầy (chỉ tiền Việt)"
+            },
+            {
+                "name": "Thanh toán công ty chuyển khoản sau ngày trả phòng"
+            },
+            {
+                "name": "Khác"
+            }
+        ],
+        "requirement": "Yêu cầu đặc biệt khác:",
+        "requirement-note": "(Trả phòng muộn, đón sân bay,...)",
+        "pickup": "Đón tại sân bay",
+        "pickupTime": "Vui lòng cho tôi biết thời gian máy bay đến sân bay",
+        "pickupNumber": "Số hiệu chuyến bay",
+        "dropOff": "Tiễn ra sân bay",
+        "dropOffTime": "Vui lòng thông tin về thời gian chuyến bay khởi hành",
+        "dropOffNumber": "Số hiệu chuyến bay",
+        "DO_PU_note": "625.000VNĐ - 750.000VNĐ/chiều (tùy thời gian đặt xe)",
+        "earlyIn": "Nhận phòng sớm",
+        "earlyInTime": "Vui lòng điền thời gian bạn muốn nhận phòng",
         "earlyIn_note": [
             {
-                "note": "Check in early until 10:00 : 100% charged of one night room rate"
+                "note": "Nhận phòng sớm trước 10 giờ sáng: tính 100% giá phòng một đêm"
             },
             {
-                "note": "Check in early from 10:00 and before 15:00 : 50% charged of one night room rate"
+                "note": "Nhận phòng sớm từ 10 giờ sáng đến trước 15 giờ chiều : tính 50% giá phòng 1 đêm"
             }
         ],
-        "lateOut": "Late check-out",
-        "lateOutTime": "Please input time you want to check out",
+        "lateOut": "Trả phòng muộn",
+        "lateOutTime": "Vui lòng điền thời gian bạn muốn trả phòng",
         "lateOut_note": [
             {
-                "note": "Check out late until 18:00 : 50% charged of the one night"
+                "note": "Trả phòng muộn trước 18 giờ chiều: tính 50% tiền phòng một đêm"
             },
             {
-                "note": "Check out late from 18:00 : 100% charged of the one night"
+                "note": "Trả phòng muộn sau 18 giờ chiều: tính 100% tiền phòng một đêmt"
             }
         ],
-        "request": "Please let us know if you have any requests",
-        "send": "Send",
-        "more": "More +",
-        "remove": "Remove",
-        "attention-note": "*Please Attention\nIt will take a little time to transition to the Reservation Completion Page after press \"Send\" button, please wait a moment."
+        "request": "Vui lòng cho chúng tôi biết nếu bạn có bất kỳ yêu cầu nào",
+        "send": "Gửi",
+        "more": "Thêm",
+        "remove": "Xóa",
+        "attention-note": "Chú ý \nSẽ mất một ít thời gian để chuyển sang trạng thái hoàn tất đặt phòng sau khi ấn nút \"Gửi\" Vui lòng chờ trong giây lát"
     },
     "contract": {
-        "title": "東屋ホテルでは東南アジアへのご出張が多い企業様向けに特別価格でご宿泊いただける 法人契約を承っております。是非、この機会にご検討くださいませ。",
+        "title": "Khách sạn Azumaya áp dụng ưu đãi hợp đồng đối với những doanh nghiệp có  các doanh nhân đến Đông Nam Á công tác. Xin hãy xem xét cơ hội này",
         "feature": [
             {
-                "title": "和朝食",
-                "content": "1日の活力は美味しい朝食から、東屋が誇る自慢の朝食です。長期滞在の方でも飽きることのないようメニュー構成に気をつけております。",
+                "title": "Bữa sáng kiểu Nhật",
+                "content": "Azumaya tự hào mang tới 1 ngày đầy năng lượng bằng bữa sáng ngon miệng.Chúng tôi chăm chút tới sự thay đổi của món ăn để các khách ở dài không thấy nhàm chán.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr4_lgseiu.jpg"
             },
             {
-                "title": "日本語のおもてなし",
-                "content": "日本語が話せるスタッフが常駐しておりますので、英語が苦手な方も安心してお過ごしいただけます。",
+                "title": "Lòng hiếu khách của Văn hóa Nhật",
+                "content": "Với đội ngũ nhân viên tuy chưa tự tin với khả năng tiếng Anh nhưng lại có thể nói lưu loát tiếng Nhật, Quý khách có thể hoàn toàn yên tâm khi sử dụng dịch vụ của chúng tôi",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg"
             },
             {
-                "title": "サウナ付き露天風呂",
-                "content": "早朝の目覚め、仕事終わりのリラックスに是非ご利用くださいませ。 サウナ・水風呂も完備しております。(※一部店舗を除く)",
+                "title": "Tắm lộ thiên kiểu Nhật có phòng xông hơi",
+                "content": "Hãy sử dụng dịch vụ Rotenburo của chúng tôi sau mỗi sáng thức dậy hoặc thư giãn mình sau một ngày dài làm việc mệt mỏi. Chúng tôi trang bị sẵn phòng xông hơi cùng với bể nước lạnh ",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
             }
         ],
-        "additional": "その他にも無料WIFI－日本語のテレビ視聴可能－浴衣のご用意（ベトナム店のみ） ランドリーサービスなど快適にお過ごしいただける環境を提供しております。",
-        "contact": "お問い合わせはこちら",
-        "benefit": "法人契約のメリット",
-        "benefit_1": "豊富な拠点数と全店舗一括適用",
-        "receipt": "領収書の発行に関する諸注意",
-        "about": "ご契約にあたって",
-        "FAQ": "ご契約に関するFAQ",
-        "cancel": "契約の取り消し",
-        "benefit-content": "ベトナム　カンボジア　ミャンマー3カ国に計10支店以上ある全店舗を一括で契約させていただくので各都市のホテルと個別に契約を結ぶ必要はありません。 東南アジアにご出張の機会の多い企業様に最適です。",
+        "additional": "Ngoài ra, nhằm mang đến sự thoải mái trong thời gian lưu trú, chúng tôi cũng trang bị sẵn trong phòng Wifi tốc độ cao miễn phí, Tivi được cài đặt các kênh truyền hình quốc tế, Yukata kiểu Nhật (Chỉ tại các chi nhánh Việt Nam), dịch vụ giặt là, ...",
+        "contact": "Liên hệ",
+        "benefit": "Lợi ích khi ký hợp đồng",
+        "benefit_1": "Được áp dụng tại tất cả các chi nhánh của khách sạn",
+        "receipt": "Được lưu ý khi xuất hóa đơn ",
+        "about": "Về hợp đồng",
+        "FAQ": "Câu hỏi thường gặp về hợp đồng",
+        "cancel": "Hủy hợp đồng",
+        "benefit-content": "Quý công ty sẽ không cần phải ký hợp đồng riêng biệt với từng chi nhánh ở từng khu vực vì chúng tôi sẽ cập nhật thông tin và áp dụng toàn bộ hệ thống 10 chi nhánh của Azumaya ở Việt Nam và Campuchia. Điều này sẽ thuận tiện cho các khách hàng thường xuyên có những chuyến công tác tới khu vực Đông Nam Á",
         "contract-branch": [
             {
                 "link": "/hotel-hn",
@@ -3631,72 +3741,72 @@
                 "url": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710317764/AzumayaWeb/coming_soon_auhag4.jpg"
             }
         ],
-        "receipt-content": "日本国内の法人様に限らず、ベトナムの法人様にもご契約いただけます。 ご契約いただく場所によって、お支払い方法による領収書の発行が異なりますのでご確認くださいませ。",
-        "contractJP-title": "日本法人でのご契約",
+        "receipt-content": "Không chỉ những công ty có trụ sở tại Nhật mà các công ty có trụ sở tại Việt Nam cũng hoàn toàn có thể ký hợp đồng với chúng tôi. Tùy thuộc vào địa chỉ công ty được viết trong hợp đồng cũng như hình thức thanh toán của Quý công ty mà việc xuất hóa đơn có thể sẽ có sự khác nhau",
+        "contractJP-title": "Hợp đồng với Quý công ty tại Nhật",
         "contractJP": [
             {
-                "content": "1.ホテル受付でクレジットカード( VISA, MASTER, JCB)/ 現金でお支払いの場合は VATインボイスの発行可（但し、事前にベトナム法人の情報をお伝えください）。"
+                "content": "1. Quý công ty có thể yêu cầu xuất hóa đơn VAT nếu thanh toán thẻ (VISA, MASTER CARD, JCB, NAPAS) hoặc thanh toán tiền mặt. (Vui lòng cung cấp trước thông tin công ty tại Việt Nam)"
             },
             {
-                "content": "2.銀行振込の場合は領収書のみを発行。"
+                "content": "2. Xin lưu ý rằng, chúng tôi sẽ chỉ có thể xuất hóa đơn khách sạn đối với hình thức thanh toán chuyển khoản 銀行振込の場合は領収書のみを発行。"
             }
         ],
-        "contractVN-title": "ベトナム法人でのご契約",
-        "contractVN-content": "どのようなお支払い方法でもVATインボイスの発行可",
-        "about-content": "お申し込みに関する諸経費（入会金、年会費）はー切不要でございます。\n\nこちらのフォームよりお問い合わせいただいた後、契約書をファイルにて送付致しますので契約の条件をご検討くださいませ。\n締結していただける場合は契約についてのご案内をさせていただきます。\n\nチェックイン日までに契約書に記入と押印をしていただいたことを確認できれば適用可能となります。\n（契約書をスキャンしてメールで送付していただきチェックイン時に直接渡していただくか郵送にてお送りください",
+        "contractVN-title": "Hợp đồng với Quý công ty tại Việt Nam",
+        "contractVN-content": "Mọi hình thức thanh toán đều có thể xuất được hóa đơn VAT",
+        "about-content": "Không cần phí đăng ký (phí gia nhập, phí thành viên hàng năm). \n\nSau khi quý khách  điền vào mẫu thông tin như dưới, chúng tôi sẽ gửi bảng mẫu hợp đồng khách sạn để quý khách tham khảo \nNếu quý khách đồng ý ký hợp đồng, chúng tôi sẽ gửi hướng dẫn các bước thực hiện ký hợp đồng khách sạn \nQuý khách có thể hoàn tất thủ tục ký và đóng dấu muộn nhất vào ngày nhận phòng của khách hàng để có thể hưởng ưu đãi hợp đồng (Quý khách có thể gửi trước bản Scan hợp đồng đã ký trước, sau đó gửi bản cứng qua đường bưu điện hoặc giao trực tiếp cho nhân viên lễ tân khi nhận phòng)",
         "FAQ-trigger": [
             {
-                "content": "Q. 日本の会社での契約です。税コード欄の記載はどうすれば良いでしょうか？",
-                "answer": "A. 税コードをお持ちでいない場合は空欄のままで問題ございません。"
+                "content": "Q. Với hợp đồng với công ty tại Nhật, chúng tôi nên nhập thông tin mã số thuế như nào?",
+                "answer": "A. Nếu chưa có mã số thuế có thể để trống."
             },
             {
-                "content": "Q. 代表取締役ではなく担当役員の名前で契約できますか？",
-                "answer": "A. 貴社の代表者様のサインおよび押印にてご契約いただけます。"
+                "content": "Q. Tôi có thể nhận được những lợi ích gì khi ký hợp đồng?",
+                "answer": "A. Quý khách có thể ký hợp đồng với chữ ký và con dấu của người đại diện "
             },
             {
-                "content": "Q. 法人契約を締結するとどのような特典が利用出来ますか？",
-                "answer": "A. 宿泊日数に応じて、宿泊料金の割引やランドリーサービスを無料でご利用いただくことが可能です。長期滞在のお客様にはマッサージ無料券もお渡ししています。\n\n-無料ランドリー特典を適用する場合の注意点\n100,000VNĐ/ 日と設定しておりますが、1日の上限ではございません。\n宿泊日数に基づく合計金額をご宿泊期間中にご利用いただけます。\n例：5泊6日のご宿泊の場合 100,000VNĐ×5泊 = 上限金額 500,000VNĐ / 5泊\n万が一、上限金額を超えた場合はチェックアウトの際に超過分を別途請求させていただきます。\n金額の目安 ( エリアにより金額が異なります )\nYシャツ：20,000VNĐ ズボン：20,000VNĐ 下着：15,000VNĐ 靴下：15,000VNĐ"
+                "content": "Q. Nếu không có mã số thuế thì Quý khách có thể để trống",
+                "answer": "A. Tùy thuộc vào thời gian lưu trú mà khách hàng sẽ được giảm giá tiền phòng hoặc có thể sử dụng miễn phí dịch vụ giặt là của chúng tôi. chúng tôi cũng có tặng các vé sử dụng miễn phí dịch vụ massage dành cho các khách hàng lưu trú dài hạn \n- Những điểm cần lưu ý khi áp dụng ưu đãi sử dụng miễn phí dịch vụ giặt là: \n+ Quy định miễn phí sử dụng giặt là 120.000VND/ngày không phải là chỉ giới hạn cố định 1 ngày như thế mà tổng số tiền giặt là sẽ được cộng dồn dựa trên tổng số đêm lưu trú. Ví dụ: Khách hàng lưu trú 6 ngày 5 đêm thì tổng số tiền giặt là khách hàng có thể được sử dụng miễn phí = 120.000VND x 5 đêm = 600.000VND/5 đêm. Trường hợp tổng tiền giặt là sử dụng của khách hàng vượt quá tổng số trên thì khách hàng sẽ phải thanh toán số tiền vượt quá đó khi check out Giá tham khảo (Có thể sẽ có sự khác nhau giữa các khu vực) Áo sơ mi: 20,000VND, Quần dài: 20.000VND, Đồ lót: 15.000VND, Tất: 15.000VND"
             }
         ],
         "cancel-content": [
             {
-                "content": "虚偽の申告をした場合"
+                "content": "Trường hợp khai báo sai thông tin."
             },
             {
-                "content": "ご住所、お電話番号、メールアドレス等のご連絡先が不明となった場合。"
+                "content": "Trường hợp không biết các thông tin liên lạc như địa chỉ, số điện thoại, địa chỉ email "
             },
             {
-                "content": "ホテルのお客様,　ホテル（施設、設備、備品等）及びホテルの従業員に危害及び損害を与えた場合"
+                "content": "Trường hợp làm tổn hại đến khách hàng của khách sạn hoặc cơ sở vật chất, thiết bị, vật tư của khách sạn cũng như nhân viên của khách sạn"
             },
             {
-                "content": "宿泊約款及び規則を厳守されない場合"
+                "content": "Trường hợp không tuân thủ các quy định về đặt phòng"
             },
             {
-                "content": "暴行、傷害、脅迫、恐喝、威圧的不当及びこれらに関する犯罪が認められた場合"
+                "content": "Trường hợp xác nhận phạm tôi liên quan như hành hung, gây thương tích, đe dọa, tống tiền, cưỡng bức."
             },
             {
-                "content": "暴力団、暴力団員、暴力団関係団体及びその関係者と判断された場合"
+                "content": "Trường hợp được xác định có liên quan đến nhóm tội phạm có tổ chức hoặc là thành viên của nhóm tội phạm có tổ chức"
             },
             {
-                "content": "暴力団または暴力団員が事業活動を支配する法人その他団体の関係者と判断された場合"
+                "content": "Trường hợp được xác định là nhóm tội phạm có tổ chức hoặc thành viên của nhóm tội phạm có tổ chức có liên kết với một tập đoàn hoặc tổ chức khác kiểm soát hoạt động kinh doanh."
             },
             {
-                "content": "反社会団体、反社会的団体及びその関係者と判断された場合"
+                "content": "Trường hợp được xác định là tổ chức chống đối xã hội hoặc có liên quan đến tổ chức chống đối xã hội "
             },
             {
-                "content": "その他ホテルが不適当と判断した場合"
+                "content": "Trường hợp khác mà khách sạn cho là không phù hợp"
             }
         ],
-        "form-title": "日本法人でのご契約をご希望のお客様は日本の情報を、\nベトナム法人でのご契約をご希望のお客様はベトナムの情報をご入力ください。",
-        "company-name": "貴社名(ローマ字)",
-        "address": "ご住所",
-        "company-URL": "企業ホームページURL",
-        "in-charge": "ご担当者氏名(ローマ字)",
-        "first-name": "First Name",
-        "last-name": "Last Name",
-        "email": "メールアドレス",
-        "phone": "お電話番号",
-        "send": "送信"
+        "form-title": "Vui lòng điền thông tin tại Nhật nếu Quý công ty có yêu cầu ký hợp đồng với trụ sở công ty tại Nhật hoặc thông tin tại Việt Nam nếu Quý công ty có yêu cầu ký hợp đồng với với trụ sở công ty tại Việt Nam ",
+        "company-name": "Tên công ty (Alphabet)",
+        "address": "Địa chỉ",
+        "company-URL": "URL Trang chủ công ty",
+        "in-charge": "Tên người phụ trách (Alphabet)",
+        "first-name": "Họ",
+        "last-name": "Tên",
+        "email": "Địa chỉ email",
+        "phone": "Số điện thoại",
+        "send": "Gửi"
     },
     "caption": [
         {
@@ -3756,12 +3866,12 @@
         }
     ],
     "service_breakfast": {
-        "openHour": "《Opening Hour》",
-        "price": "《Visitor Price》",
+        "openHour": "《Giờ phục vụ》",
+        "price": "《Giá khách ngoài》",
         "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281232/AzumayaWeb/Az_website_service_page_EN_page-0001_v7ukjt.jpg",
         "table1": [
             {
-                "row1": "Mon ~ Sat",
+                "row1": "Thứ Hai ~ Thứ Bảy",
                 "row2": "Buffet :",
                 "row4": "6:00 ~ 8:00"
             },
@@ -3771,7 +3881,7 @@
                 "row4": "6:00 ~ 10:00"
             },
             {
-                "row1": "Sun",
+                "row1": "Chủ Nhật",
                 "row2": "Set menu :",
                 "row4": "6:00 ~ 10:00"
             }
@@ -3788,16 +3898,16 @@
         ]
     },
     "service_roten": {
-        "openHour": "《Opening Hour》",
-        "price": "《Visitor Price》",
+        "openHour": "《Giờ phục vụ》",
+        "price": "《Giá khách ngoài》",
         "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281235/AzumayaWeb/Az_website_service_page_EN_page-0002_hhm1jy.jpg",
-        "hcm_note": "※Thai Van Lung 2 is open only for female from 17:00-18:45 on weekend",
-        "hn_note1": "[Male]",
-        "hn_note2": "[Female : (Only Kim Ma 2)]",
-        "hn_note4": "※Female visitors can use during weekday afternoon & weekends.",
+        "hcm_note": "※Chi nhánh Thái Văn Lung 2 vào cuối tuần mở cửa phục vụ khách nữ từ 17:00~18:45 ",
+        "hn_note1": "[Khách Nam]",
+        "hn_note2": "[Khách Nữ: (Chỉ Kim Mã 2)]",
+        "hn_note4": "※Khách ngoài nữ có thể dùng vào các buổi chiều của ngày thường và cuối tuần",
         "table_hcm1": [
             {
-                "row1": "Weekday :",
+                "row1": "Ngày Trong Tuần :",
                 "row2": "6:00 ~ 10:00"
             },
             {
@@ -3805,33 +3915,33 @@
                 "row2": "17:00 ~ 24:00"
             },
             {
-                "row1": "Weekend :",
+                "row1": "Cuối Tuần :",
                 "row2": "7:00 ~ 24:00"
             }
         ],
         "table_hcm2": [
             {
-                "row1": "Thai Van Lung 1 : ",
+                "row1": "Thái Văn Lung 1 : ",
                 "row2": "250.000 VNĐ"
             },
             {
-                "row1": "Thai Van Lung 2 (Male) : ",
+                "row1": "Thái Văn Lung 2 (Khách Nam) : ",
                 "row2": "200.000 VNĐ"
             },
             {
-                "row1": "Thai Van Lung 2 (Female) : ",
+                "row1": "Thái Văn Lung 2 (Khách Nữ) : ",
                 "row2": "150.000 VNĐ"
             },
             {
-                "row1": "Le Thanh Ton : ",
+                "row1": "Lê Thánh Tôn : ",
                 "row2": "150.000VNĐ"
             }
         ],
         "table_hn1": [
             {
-                "row1": "Weekday :",
+                "row1": "Ngày Trong Tuần :",
                 "row2": "6:00 ~ 9:00",
-                "row3": "Weekday :",
+                "row3": "Ngày Trong Tuần :",
                 "row4": "6:00 ~ 9:00"
             },
             {
@@ -3841,25 +3951,25 @@
                 "row4": "17:00 ~ 23:00"
             },
             {
-                "row1": "Weekend :",
+                "row1": "Cuối Tuần :",
                 "row2": "7:00 ~ 23:00",
-                "row3": "Weekend :",
+                "row3": "Cuối Tuần :",
                 "row4": "7:00 ~ 23:00"
             }
         ],
         "table_hn2": [
             {
-                "row1": "Male: ",
+                "row1": "Khách Nam: ",
                 "row2": "150.000 VNĐ"
             },
             {
-                "row1": "Female : ",
+                "row1": "Khách Nữ: ",
                 "row2": "100.000 VNĐ"
             }
         ],
         "table_dn1": [
             {
-                "row1": "Weekday :",
+                "row1": "Ngày Trong Tuần :",
                 "row2": "6:00 ~ 9:00"
             },
             {
@@ -3867,7 +3977,7 @@
                 "row2": "17:00 ~ 22:15"
             },
             {
-                "row1": "Weekend :",
+                "row1": "Cuối Tuần :",
                 "row2": "07:00 ~ 10:00"
             },
             {
@@ -3882,7 +3992,7 @@
         ],
         "table_hp1": [
             {
-                "row1": "Weekday :",
+                "row1": "Ngày Trong Tuần :",
                 "row2": "6:00 ~ 9:00"
             },
             {
@@ -3890,7 +4000,7 @@
                 "row2": "17:30 ~ 23:00"
             },
             {
-                "row1": "Weekend :",
+                "row1": "Cuối Tuần :",
                 "row2": "07:00 ~ 12:00"
             },
             {
@@ -3905,127 +4015,127 @@
         ],
         "special_note": [
             {
-                "content": "※ Combo with Massage or Breakfast are available"
+                "content": "※ Có gói dịch vụ Matxa và Ăn sáng"
             },
             {
-                "content": "※ Please receive bath towel at reception desk"
+                "content": "※ Hãy lấy khăn tắm ở khu vực Quầy Lễ Tân"
             },
             {
-                "content": "※ Shampoo, conditioner, body soap, hair dryer and cottton are available"
+                "content": "※ Có dầu gội, dầu xã, sữa tắm, tăm bông và máy sấy tốc"
             },
             {
-                "content": "※ On check in & check out date, guests can use Open air hot bath for free"
+                "content": "※ Khách có thể dùng miễn phí vào ngày NHẬN PHÒNG /TRẢ PHÒNG"
             },
             {
-                "content": "※ Please contact us for more information of only female time"
+                "content": "※ Hãy liên lạc với chúng tôi để biết thông tin chi tiết về giờ hoạt động của khách nữ"
             },
             {
-                "fe_content": "※ Private open air hot bath is available"
+                "fe_content": "※ Dịch vụ tắm Lộ Thiên riêng"
             },
             {
-                "fe_content": "1 ~ 4 people / 1 hour : 800.000VNĐ"
+                "fe_content": "1 ~ 4 khách /1 tiếng : 800.000VNĐ"
             },
             {
-                "fe_content": "5 ~ 8 people / 1 hour : 1.000.000VNĐ"
+                "fe_content": "5 ~ 8 khách /1 tiếng :   1.000.000VNĐ"
             }
         ]
     },
     "service_massage": {
-        "openHour": "《Opening Hour》",
-        "price": "《Price》",
-        "reservation": "Reservation ",
-        "contact": "Contact Us",
-        "contact_title": "Kindly select a preferred method of contact with us",
+        "openHour": "《Giờ phục vụ》",
+        "price": "《Giá》",
+        "reservation": "Đặt chỗ",
+        "contact": "Liên hệ",
+        "contact_title": "Vui lòng chọn một phương thức để liên lạc với chúng tôi",
         "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1709281239/AzumayaWeb/Az_website_service_page_EN_page-0003_oa9abr.jpg",
         "table_ll1": [
             {
-                "row1": "Weekday",
+                "row1": "Ngày Trong Tuần",
                 "row2": "13:00 ~ 22:00"
             },
             {
-                "row1": "Weekend",
+                "row1": "Cuối Tuần",
                 "row2": "10:00 ~ 22:00"
             }
         ],
         "table_ll2": [
             {
-                "row1": "40 minutes",
+                "row1": "40 phút",
                 "row2": "200.000VNĐ"
             },
             {
-                "row1": "70 minutes",
+                "row1": "70 phút",
                 "row2": "250.000VNĐ"
             },
             {
-                "row1": "100 minutes",
+                "row1": "100 phút",
                 "row2": "350.000VNĐ"
             }
         ],
         "table_dn1": [
             {
-                "row1": "Weekday",
+                "row1": "Ngày Trong Tuần",
                 "row2": "14:00 ~ 22:30"
             },
             {
-                "row1": "Weekend",
+                "row1": "Cuối Tuần",
                 "row2": "12:00 ~ 22:30"
             }
         ],
         "table_dn2": [
             {
-                "row1": "40 minutes",
+                "row1": "40 phút",
                 "row2": "200.000VNĐ"
             },
             {
-                "row1": "70 minutes",
+                "row1": "70 phút",
                 "row2": "250.000VNĐ"
             },
             {
-                "row1": "100 minutes",
+                "row1": "100 phút",
                 "row2": "350.000VNĐ"
             }
         ],
         "table_tvl1": [
             {
-                "row1": "Weekday",
+                "row1": "Ngày Trong Tuần",
                 "row2": "10:00 ~ 23:00"
             },
             {
-                "row1": "Weekend",
+                "row1": "Cuối Tuần",
                 "row2": "10:00 ~ 23:00"
             }
         ],
         "table_tvl2": [
             {
-                "row1": "40 minutes",
+                "row1": "40 phút",
                 "row2": "250.000VNĐ"
             },
             {
-                "row1": "70 minutes",
+                "row1": "70 phút",
                 "row2": "300.000VNĐ"
             },
             {
-                "row1": "100 minutes",
+                "row1": "100 phút",
                 "row2": "400.000VNĐ"
             }
         ],
         "special_note": [
             {
-                "content": "※ 10% discount for Hotel guests"
+                "content": "※ 10% giảm giá cho khách trong khách sạn"
             },
             {
-                "content": "※ We appreciate tip if you like our massage service"
+                "content": "※ Chúng tôi khuyến khích tips nếu bạn hài lòng về dịch vụ "
             },
             {
-                "content": "※ Reservation in advance is recommended"
+                "content": "※ Nên đặt chỗ trước"
             },
             {
-                "content": "※ Combo with Open air hot bath is available"
+                "content": "※ Dịch vụ matxa và tắm lộ thiên"
             }
         ]
     },
     "error": {
-        "title": "The page you are looking for does not exist",
-        "content": "Return to"
+        "title": "Trang bạn đang tìm kiếm không tồn tại",
+        "content": "Trờ lại"
     }
 }

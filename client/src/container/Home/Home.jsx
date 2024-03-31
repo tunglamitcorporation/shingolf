@@ -387,9 +387,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
               <div className="col-md-12 p-3">
                 <h1 className="content__welcome-text">
                   {t("home.welcome_title")}
-                  <small>{t("home.welcome_sub-title")}</small>
+                  <small className="welcome_text-small">{t("home.welcome_sub-title")}</small>
                 </h1>
-                <p>{t("home.welcome_content")}</p>
+                <p className="welcome-content">{t("home.welcome_content")}</p>
               </div>
             </div>
           </div>
