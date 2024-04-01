@@ -181,7 +181,7 @@ function Header() {
                 <div className='container'>
                     <div className='row align-items-center'>
                         <div className='col-md-10'>
-                        <p style={{marginLeft:'110px'}}>{t('header.top-header')}</p>
+                        <p style={{marginLeft:'220px'}}>{t('header.top-header')}</p>
                         </div>
                         <div className='btn-lang col-md-2'>
                         <button className ='btn-en mr-3' onClick={()=>changeLanguage('en')}></button>                

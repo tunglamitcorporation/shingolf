@@ -708,14 +708,14 @@ export default function VietnamService() {
                 {item.name}
               </Tab>
               ))}
-              <Tab className="service">
+              {/* <Tab className="service">
                 <a
                   href="http://localhost:3000/service"
                   className="location_link"
                 >
                   {t('header.cambodia')}
                 </a>
-              </Tab>
+              </Tab> */}
             </TabList>
             <TabPanel>
               <div className="service__content pt-0">

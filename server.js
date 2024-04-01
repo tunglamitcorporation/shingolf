@@ -4,6 +4,13 @@ const mongoose = require('mongoose');
 module.exports = exports = mongoose;
 const fs = require('fs');
 const cheerio = require('cheerio');
+const route = require('./router/index')
+
+const { renderToNodeStream } = require('react-dom/server');
+const { StaticRouter } = require('react-router-dom');
+const { matchRoutes } = require('react-router-config');
+const { SitemapStream, streamToPromise } = require('sitemap');
+const routes = require('./router/routes.js');
 
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -12,7 +19,6 @@ const path = require('path');
 //var cron = require('node-cron');
 const app = express();
 //const axios = require('axios');
-const route = require('./router/index')
 var bodyParser = require('body-parser');
 const { head } = require('./router/contentRouter');
 const { log } = require('console');
@@ -56,7 +62,19 @@ mongoose.connect(URI, {
     if(err) throw err;
     console.log("Connected to mongodb...")
 })
+app.get('/sitemap.xml', (req, res) => {
+    const sitemap = new SitemapStream({ hostname: 'https://www.yourwebsite.com' });
 
+    matchRoutes(routes, req.path).map(({ route }) => {
+      sitemap.write({ url: route.path, changefreq: 'monthly', priority: 0.7 });
+    });
+  
+    sitemap.end();
+    streamToPromise(sitemap).then((sm) => {
+      res.header('Content-Type', 'application/xml');
+      res.send(sm);
+    });
+});
 
 app.use(express.static(path.join(__dirname,"./client/build")))
 
@@ -293,12 +311,12 @@ app.get('*', function(req, res) {
         ogSiteName 
         ogType = "website"
         keywords = "Azumaya News 東屋"
-        ogTitle = 'Azumaya Annex - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        ogTitle = 'News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'Explore the world of Azumaya Hotel through the latest news and unique articles about travel, cuisine, and outstanding experiences at top destinations. Share captivating stories about lifestyle, local culture, and the amazing things awaiting you at Azumaya Hotel.'
         ogUrl = 'http://home.azumayareport/news/'
         ogImage = 'https://res.cloudinary.com/dtdfsaaei/image/upload/v1701655335/AzumayaWeb/welcome-bg_z5dr6z.jpg'
         xCard = "summary"
-        xTitle = 'Azumaya Annex - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        xTitle = 'News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Explore the world of Azumaya Hotel through the latest news and unique articles about travel, cuisine, and outstanding experiences at top destinations. Share captivating stories about lifestyle, local culture, and the amazing things awaiting you at Azumaya Hotel.'
     }
     else if(req.url === '/service'){
@@ -327,7 +345,7 @@ app.get('*', function(req, res) {
         ogSiteName 
         ogType = "website"
         keywords = "Azumaya Feature 東屋"
-        ogTitle = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        ogTitle = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No chips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease. We would like to introduce you to the greatest charm of Azumaya.'
         ogUrl = 'http://home.azumayareport/feature/'
         ogImage = 'https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/m3weovuhk4pgmsh2xgud.jpg'

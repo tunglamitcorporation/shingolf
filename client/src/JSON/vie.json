@@ -643,7 +643,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "Thứ Ba",
                 "hasLink": true,
-                "link": "/Service/Test/Vietnam/Service?tab=rotenburo"
+                "link": "/rotenburo"
             },
             {
                 "id": 4,
@@ -652,7 +652,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
                 "num": "Thứ Tư",
-                "link": "/Service/Test/Vietnam/Service?tab=breakfast"
+                "link": "/breakfast"
             },
             {
                 "id": 5,
@@ -675,7 +675,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "No 7",
                 "hasLink": true,
-                "link": "/Service/Test/Vietnam/Service?tab=massage"
+                "link": "/massage"
             },
             {
                 "id": 8,
@@ -1119,15 +1119,15 @@
         ],
         "slider":[
             {
-                "desc":"Azumaya Hai Ba Trung 1",
+                "desc":"Azumaya Hai Bà Trưng 1",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746782/AzumayaWeb/lbhbt1_wdmtl0.jpg"
             },
             {
-                "desc":"Azumaya Hai Ba Trung 1",
+                "desc":"Azumaya Hai Bà Trưng 1",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852866/AzumayaWeb/HBT1/INTRODUCTION/RTBRHBT1_2_qfyd7c.jpg"
             },
             {
-                "desc":"Azumaya Hai Ba Trung 1",
+                "desc":"Azumaya Hai Bà Trưng 1",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711852874/AzumayaWeb/HBT1/INTRODUCTION/BRFHBT1_2_lgc8vo.jpg"
             }
     ]
@@ -1348,15 +1348,15 @@
         ],
         "slider":[
             {
-                "desc":"Azumaya Kim Ma 2",
+                "desc":"Azumaya Kim Mã 2",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853093/AzumayaWeb/KM2/INTRODUCTION/LBKM2_2_qef4si.jpg"
             },
             {
-                "desc":"Azumaya Kim Ma 2",
+                "desc":"Azumaya Kim Mã 2",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853132/AzumayaWeb/KM2/INTRODUCTION/RTBRKM2_2_hqlvju.jpg"
             },
             {
-                "desc":"Azumaya Kim Ma 2",
+                "desc":"Azumaya Kim Mã 2",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1710746773/AzumayaWeb/bfkm2_k0itow.jpg"
             }
     ]
@@ -1561,15 +1561,15 @@
         ],
         "slider":[
             {
-                "desc":"Azumaya Kim Ma 3",
+                "desc":"Azumaya Kim Mã 3",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711855118/AzumayaWeb/KM3/INTRODUCTION/RTRKM3_2_s5xktc.jpg"
             },
             {
-                "desc":"Azumaya Kim Ma 3",
+                "desc":"Azumaya Kim Mã 3",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853219/AzumayaWeb/KM3/INTRODUCTION/RTBRKM3_2_ys9jlg.jpg"
             },
             {
-                "desc":"Azumaya Kim Ma 3",
+                "desc":"Azumaya Kim Mã 3",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853213/AzumayaWeb/KM3/INTRODUCTION/BRFKM3_2_zm5t9i.jpg"
             }
     ]
@@ -1889,7 +1889,7 @@
             "sizeTitle": "Kích thước",
             "bedTitle": "Giường",
             "install": "Trang thiết bị",
-            "in1": "Cửa sổ không nhìn ra ngoài",
+            "in1": "Cửa sổ",
             "in2": "Bồn tắm",
             "in3": "TV màn hình 32 inches",
             "in4": "Bồn cầu tự động",
@@ -2128,15 +2128,15 @@
         ],
         "slider":[
             {
-                "desc":"Azumaya Thai Van Lung 1",
+                "desc":"Azumaya Thái Văn Lung 1",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/LBTVL1_2_xsbvaq.jpg"
             },
             {
-                "desc":"Azumaya Thai Van Lung 1",
+                "desc":"Azumaya Thái Văn Lung 1",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853597/AzumayaWeb/TVL1/INTRODUCTION/RTBRTVL1_2_adtqbm.jpg"
             },
             {
-                "desc":"Azumaya Thai Van Lung 1",
+                "desc":"Azumaya Thái Văn Lung 1",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853588/AzumayaWeb/TVL1/INTRODUCTION/BRFTVL1_2_slvlxc.jpg"
             }
     ]
@@ -2523,15 +2523,15 @@
         ],
         "slider":[
             {
-                "desc":"Azumaya Thai Van Lung 2",
+                "desc":"Azumaya Thái Văn Lung 2",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853720/AzumayaWeb/TVL2/INTRODUCTION/LBTVL2_2_dhtayy.jpg"
             },
             {
-                "desc":"Azumaya Thai Van Lung 2",
+                "desc":"Azumaya Thái Văn Lung 2",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853724/AzumayaWeb/TVL2/INTRODUCTION/RTBTTVL2_2_gfhfrk.jpg"
             },
             {
-                "desc":"Azumaya Thai Van Lung 2",
+                "desc":"Azumaya Thái Văn Lung 2",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853714/AzumayaWeb/TVL2/INTRODUCTION/BRFTVL2_2_y6xb7q.jpg"
             }
     ]
@@ -2797,15 +2797,15 @@
         ],
         "slider":[
             {
-                "desc":"Azumaya Le Thanh Ton",
+                "desc":"Azumaya Lê Thánh Tôn",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853465/AzumayaWeb/LTT/INTRODUCTION/LBLTT2_lrft9j.jpg"
             },
             {
-                "desc":"Azumaya Le Thanh Ton",
+                "desc":"Azumaya Lê Thánh Tôn",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853470/AzumayaWeb/LTT/INTRODUCTION/RTBRLTT_2_rrpwlk.jpg"
             },
             {
-                "desc":"Azumaya Le Thanh Ton",
+                "desc":"Azumaya Lê Thánh Tôn",
                 "image":"https://res.cloudinary.com/dtdfsaaei/image/upload/v1711853463/AzumayaWeb/LTT/INTRODUCTION/BRFLTT2_i5esbi.jpg"
             }
     ]

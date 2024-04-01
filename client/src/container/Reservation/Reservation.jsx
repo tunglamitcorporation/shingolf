@@ -43,25 +43,33 @@ function Reservation({token}) {
   const [endTime, setEndTime] = useState("12:00");
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
+  const [guestInformation, setGuestInformation] = useState({
+    guest1: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest2: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest3: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest4: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest5: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+
+  })
   const [familyName, setFamilyName] = useState('');
   const [givenName, setGivenName] = useState('');
   const [secondFamilyName, setSecondFamilyName] = useState('');
   const [secondGivenName, setSecondGivenName] = useState('');
-  const [secondGender, setSecondGender] = useState('Mr.');
-  const [selectedDay, setSelectedDay] = useState('Day');
-  const [selectedMonth, setSelectedMonth] = useState('Month');
-  const [selectedYear, setSelectedYear] = useState('Year');
-  const [SecondSelectedDay, setSecondSelectedDay] = useState('Day');
-  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('Month');
-  const [SecondSelectedYear, setSecondSelectedYear] = useState('Year');
-  const [gender, setGender] = useState('Mr.');
+  const [secondGender, setSecondGender] = useState('');
+  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
+  const [SecondSelectedDay, setSecondSelectedDay] = useState('');
+  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('');
+  const [SecondSelectedYear, setSecondSelectedYear] = useState('');
+  const [gender, setGender] = useState('');
   const [company, setCompany] = useState('');
   const [booker, setBooker] = useState(`${t('reservation.same-person')}`);
   const [bookerName, setBookerName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [roomType, setRoomType] = useState(`${t("reservation.non-smk")}`);
-  const [contract, setContract] = useState("No Contract");
+  const [roomType, setRoomType] = useState('');
+  const [contract, setContract] = useState('');
   const [vat, setVat] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [specialRequest, setSpecialRequest] = useState('');
@@ -76,7 +84,25 @@ function Reservation({token}) {
 
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
-
+console.log(searchCompany);
+  const handleInputChange = (tabId, inputName, value) => {
+    setGuestInformation((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
+  };
+  const handleRadioChange = (tabId, inputName, value) => {
+    setGuestInformation((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
+  };
   useEffect(() => {
     updateTabs();
   }, [roomAmount]);
@@ -91,25 +117,15 @@ function Reservation({token}) {
     setActiveTab(0); // Set active tab to the first tab
   };
 
-  const deleteTab = (index) => {
-    const updatedTabs = tabs.filter((_, i) => i !== index);
-    setTabs(updatedTabs);
-
-    // Update active tab based on current active tab index and deleted tab index
-    let nextActiveTab = activeTab;
-    if (activeTab > index) {
-      nextActiveTab--; // Adjust active tab index if deleted tab was before it
-    } else if (activeTab === tabs.length - 1) {
-      nextActiveTab = tabs.length - 2; // Activate the previous tab if the last tab is deleted
-    }
-
-    setActiveTab(nextActiveTab >= 0 ? nextActiveTab : 0); // Ensure a valid active tab index
-  };
-
   const handleSelectChange = (e) => {
     setRoomAmount(e.target.value);
   };
+  const handleSave = () => {
+    // Log specific content from the state object
+    console.log("Tab 1:", guestInformation.guest1);
+  }
 
+  handleSave()
   const [familyNameRoom2, setFamilyNameRoom2] = useState('');
   const [givenNameRoom2, setGivenNameRoom2] = useState('');
   const [selectedDayRoom2, setSelectedDayRoom2] = useState('Day');
@@ -247,18 +263,18 @@ function Reservation({token}) {
   const handleChangeBookerName = (e) => {
     setBookerName(e.target.value);
   };
-  const handleChangeCompanyName = () => {
-    setSearchCompany(searchCompany);
+  const handleChangeCompanyName = (e) => {
+    handleInputChange('guest1', 'company', e.target.value);
 
-    if(searchCompany) {
+    if(guestInformation.guest1.company) {
    const timer = setTimeout(() => {
-        findCompanyByRequest(searchCompany, token)
+        findCompanyByRequest(guestInformation.guest1.company, token)
         .then(response => {
           setSearchCompany(response.data.company)
         })
         .catch(error => {
             console.log(error);
-        }, 4000)
+        }, 3000)
       })
       return () => clearTimeout(timer)
     }else{
@@ -292,7 +308,7 @@ function Reservation({token}) {
     setStatusC(statusC);
   };
   const handleChooseCompany = (value) => {
-    setCompany(value)
+    handleInputChange('guest1', 'company', value)
     setSearchCompany('')
   }
   const handlePickupNumber = (e) => {
@@ -481,12 +497,12 @@ function Reservation({token}) {
                   }
       }  
     };
-  function DayPicker() {
+  function DayPicker({guest}) {
     const minDay = 1;
     const maxDay = 31;
     const birthDay = 0;
     const onHandleChange = (e) => {
-      setSelectedDay(e.target.value);
+      handleInputChange('guest1', 'day', e.target.value);
     };
     const options = [];
     for (let i = minDay; i <= maxDay; i++) {
@@ -500,7 +516,7 @@ function Reservation({token}) {
     return (
       <select
         className={errors.selectedDay? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedDay}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -510,13 +526,13 @@ function Reservation({token}) {
       </select>
     );
   }
-  function MonthPicker() {
+  function MonthPicker({guest}) {
     const minMonth = 0;
     const maxMonth = 11;
     const birthMonth = 1;
 
     const onHandleChange = (e) => {
-      setSelectedMonth(e.target.value);
+      handleInputChange('guest1', 'month', e.target.value);
     };
     const options = [];
     for (let i = minMonth; i <= maxMonth; i++) {
@@ -530,7 +546,7 @@ function Reservation({token}) {
     return (
       <select
         className={errors.selectedMonth? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedMonth}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -540,13 +556,13 @@ function Reservation({token}) {
       </select>
     );
   }
-  function YearPicker() {
+  function YearPicker({guest}) {
     const minYear = 1925;
     const maxYear = 2005;
     const birthYear = 0;
 
     const onHandleChange = (e) => {
-      setSelectedYear(e.target.value);
+      handleInputChange('guest1', 'year', e.target.value);
     };
     const options = [];
     for (let i = minYear; i <= maxYear; i++) {
@@ -560,7 +576,7 @@ function Reservation({token}) {
     return (
       <select
         className={errors.selectedYear? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedYear}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -659,7 +675,7 @@ function Reservation({token}) {
       </select>
     );
   }
-  return (
+  return ( 
     <div>
       <HelmetLayout 
         title= "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
@@ -716,7 +732,6 @@ function Reservation({token}) {
         </div>
       </div>
     </div>
-    {/* <TabComponent /> */}
     <form onSubmit={handleSubmit}>
     <div className="container">
       <div className=" reservation__container">
@@ -896,6 +911,10 @@ function Reservation({token}) {
                 <p className="col-md-2 error-message">{errors.guestAmount}</p>}
           </div>
         </div>
+        {/* <h3 className="red">*Notice</h3>
+        <p style={{width: "500px", fontSize: '1.2rem'}}>Currently, the 'Reserve from 2 rooms' function is undergoing maintenance. Please reserve only 1 room at this time. If you need to reserve more than 1 room, kindly contact the reception directly <span className="red">(email or hotel hot-line) </span>at the branch you wish to stay at. <br/> We apologize for any inconvenience this may cause.</p>
+        <p style={{fontSize: '1.2rem'}}>Best regards, <br/>
+        Azumaya IT Team</p> */}
         <Tabs className="container p-0">
           <TabPanel>
             <Tabs 
@@ -909,6 +928,7 @@ function Reservation({token}) {
                   </Tab>
                 ))}
               </TabList>
+              {/* GUEST INFORMATION 1 */}
                 <TabPanel>
                 <div className="guest-container">
          <div className="row">
@@ -926,9 +946,7 @@ function Reservation({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest1','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -937,7 +955,7 @@ function Reservation({token}) {
                  type="text"
                  name="gName"
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -956,8 +974,8 @@ function Reservation({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest1.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest1', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -968,8 +986,8 @@ function Reservation({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest1.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest1', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -981,13 +999,13 @@ function Reservation({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest1.day} />
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest1.month} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest1.year} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1082,7 +1100,7 @@ function Reservation({token}) {
                      handleSelected(0);
                     
                    }}
-                   onChange={(e) => setBooker(e.target.value)}
+                   onChange={(e) => handleInputChange('guest1', 'booker',e.target.value)}
                  />
                  <label htmlFor="booker">
                    {t("reservation.same-person")}
@@ -1098,7 +1116,7 @@ function Reservation({token}) {
                      handleSelected(1);
                      
                    }}
-                   onChange={(e) => setBooker(e.target.value)}
+                   onChange={(e) => handleInputChange('guest1', 'booker', e.target.value)}
                  />
                  <label htmlFor="booker">
                    {t("reservation.diff-person")}
@@ -1112,9 +1130,9 @@ function Reservation({token}) {
                 ref={input3Ref}
                 type="text"
                 className="booker-name form__content col-md-2"
-                value={bookerName}
+                value={guestInformation.guest1.bookerName}
                 placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
+                onChange={(e) => handleInputChange('guest1', 'bookerName', e.target.value)}
               />
             </div>}
              <div className="row">
@@ -1126,7 +1144,7 @@ function Reservation({token}) {
                  type="text"
                  className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1', 'email', e.target.value)}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.email-note")}
@@ -1149,7 +1167,7 @@ function Reservation({token}) {
                      event.preventDefault();
                    }
                  }}
-                 onChange={(e) => setPhone(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1', 'phone', e.target.value)}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.phone-note")}
@@ -1167,8 +1185,8 @@ function Reservation({token}) {
                    name="roomType"
                    id="smk"
                    value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   checked =  {guestInformation.guest1.roomType === 'Smoking'}
+                   onClick={(e) => handleInputChange('guest1', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1177,9 +1195,9 @@ function Reservation({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
+                   checked = {guestInformation.guest1.roomType === 'Non Smoking'}
                    value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   onClick={(e) => handleInputChange('guest1', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1196,7 +1214,7 @@ function Reservation({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1211,7 +1229,7 @@ function Reservation({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1219,78 +1237,78 @@ function Reservation({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest1.company}
+                 onChange={handleChangeCompanyName}
+               />
+               {searchCompany && guestInformation.guest1.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest1.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => setDiscount(e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => setDiscount(e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => setDiscount(e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1352,6 +1370,7 @@ function Reservation({token}) {
          </div>
        </div>
                 </TabPanel>
+                 {/* GUEST INFORMATION 2 */}
               {tabs.length > 1 && (
                 <TabPanel>
                 <div className="guest-container">
@@ -1579,7 +1598,7 @@ function Reservation({token}) {
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
-                ref={input4Ref}
+                // ref={}
                 type="text"
                 className="form__content col-md-4"
                 placeholder={t("reservation.company")}
@@ -1711,6 +1730,7 @@ function Reservation({token}) {
                 </TabPanel>
               )
               }
+               {/* GUEST INFORMATION 3 */}
               {tabs.length > 2 && (
                 <TabPanel>
                 <div className="guest-container">
@@ -1938,7 +1958,7 @@ function Reservation({token}) {
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
-                ref={input4Ref}
+                // ref={}
                 type="text"
                 className="form__content col-md-4"
                 placeholder={t("reservation.company")}
@@ -2071,6 +2091,7 @@ function Reservation({token}) {
                   
               )
               }
+               {/* GUEST INFORMATION 4 */}
               {tabs.length > 3 && (
                 <TabPanel>
                 <div className="guest-container">
@@ -2298,7 +2319,7 @@ function Reservation({token}) {
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
-                ref={input4Ref}
+                // ref={}
                 type="text"
                 className="form__content col-md-4"
                 placeholder={t("reservation.company")}
@@ -2430,6 +2451,7 @@ function Reservation({token}) {
                 </TabPanel>
               )
               }
+               {/* GUEST INFORMATION 5 */}
               {tabs.length > 4 &&  (
                 <TabPanel>
                 <div className="guest-container">
@@ -2657,7 +2679,7 @@ function Reservation({token}) {
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
-                ref={input4Ref}
+                // ref={}
                 type="text"
                 className="form__content col-md-4"
                 placeholder={t("reservation.company")}

@@ -1,90 +1,95 @@
-import React, { useState, useEffect } from 'react';
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import React, { useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
 
-const TabComponent = () => {
-  const [tabs, setTabs] = useState(['Tab 1']);
-  const [activeTab, setActiveTab] = useState(0);
-  const [selectedOption, setSelectedOption] = useState('1'); // Default to option 1
+const TabsInput = () => {
+  const [tabInputs, setTabInputs] = useState({
+    tab1: { input1: '', input2: '', input3: '', input4: '', input5: '' },
+    tab2: { input1: '', input2: '', input3: '', input4: '' },
+    tab3: { input1: '', input2: '', input3: '', input4: '', input5: '' },
+    tab4: { input1: '', input2: '', input3: '', input4: '', input5: '' },
+    tab5: { input1: '', input2: '', input3: '', input4: '', input5: '' },
+  });
 
-  useEffect(() => {
-    updateTabs();
-  }, [selectedOption]); // Trigger updateTabs when selectedOption changes
-
-  const updateTabs = () => {
-    let numTabsToShow = tabs.length;
-    setSelectedOption(numTabsToShow.toString()); // Update selectedOption based on number of tabs
+  const handleInputChange = (tabId, inputName, value) => {
+    setTabInputs((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
   };
 
-  const addTab = () => {
-    if (tabs.length + 1 <= 5) {
-      const newTab = `Tab ${tabs.length + 1}`;
-      setTabs([...tabs, newTab]);
-    } else {
-      alert('Maximum of 5 tabs allowed!');
-    }
+  const handleRadioChange = (tabId, inputName, value) => {
+    setTabInputs((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
   };
 
-  const deleteTab = (index) => {
-    const updatedTabs = tabs.filter((_, i) => i !== index);
-    setTabs(updatedTabs);
-    // Update active tab based on current active tab index and deleted tab index
-    let nextActiveTab = activeTab;
-    if (activeTab > index) {
-      nextActiveTab--; // Adjust active tab index if deleted tab was before it
-    } else if (activeTab === tabs.length - 1) {
-      nextActiveTab = tabs.length - 2; // Activate the previous tab if the last tab is deleted
-    }
-
-    setActiveTab(nextActiveTab >= 0 ? nextActiveTab : 0); // Ensure a valid active tab index
-  };
-
-  const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
-    let numTabsToAdd = parseInt(event.target.value, 10);
-
-    if (numTabsToAdd > tabs.length) {
-      // Add additional tabs if selected option is greater than current tabs
-      let newTabs = [];
-      for (let i = tabs.length + 1; i <= numTabsToAdd; i++) {
-        newTabs.push(`Tab ${i}`);
-      }
-      setTabs([...tabs, ...newTabs]);
-    } else if (numTabsToAdd < tabs.length) {
-      // Remove tabs if selected option is less than current tabs
-      const updatedTabs = tabs.slice(0, numTabsToAdd);
-      setTabs(updatedTabs);
-    }
+  const handleSave = () => {
+    // Log specific content from the state object
+    console.log("Tab 1:", tabInputs.tab1);
+    console.log("Tab 2:", tabInputs.tab2);
+    console.log("Tab 3:", tabInputs.tab3);
+    console.log("Tab 4:", tabInputs.tab4);
+    console.log("Tab 5:", tabInputs.tab5);
+    // You can log other specific content as needed
   };
 
   return (
-    <div>
-      <label htmlFor="numTabs">Select Tabs to Show:</label>
-      <select id="numTabs" value={selectedOption} onChange={handleSelectChange}>
-        <option value="1">Show 1 Tab</option>
-        <option value="2">Show 2 Tabs</option>
-        <option value="3">Show 3 Tabs</option>
-        <option value="4">Show 4 Tabs</option>
-        <option value="5">Show 5 Tabs</option>
-      </select>
-      <button onClick={addTab}>Add Tab</button>
-      <Tabs selectedIndex={activeTab} onSelect={(index) => setActiveTab(index)}>
-        <TabList>
-          {tabs.map((tab, index) => (
-            <Tab key={index}>{tab}</Tab>
-          ))}
-        </TabList>
-        {tabs.map((tab, index) => (
-          <TabPanel key={index}>
-            <div>
-              <h2>{tab} Content</h2>
-              <button onClick={() => deleteTab(index)}>Delete</button>
-            </div>
-          </TabPanel>
-        ))}
-      </Tabs>
-    </div>
+    <Tabs>
+      <TabList>
+        <Tab>Tab 1</Tab>
+        <Tab>Tab 2</Tab>
+        <Tab>Tab 3</Tab>
+        <Tab>Tab 4</Tab>
+        <Tab>Tab 5</Tab>
+      </TabList>
+
+      <TabPanel>
+        <input
+          type="text"
+          value={tabInputs.tab1.input1}
+          onChange={(e) => handleInputChange('tab1', 'input1', e.target.value)}
+        />
+        {/* Add more input fields for tab1 */}
+      </TabPanel>
+      
+      <TabPanel>
+        <label>
+          <input
+            type="radio"
+            value="option1"
+            checked={tabInputs.tab2.input1 === 'option1'}
+            onChange={(e) => handleRadioChange('tab2', 'input1', e.target.value)}
+          /> Option 1
+        </label>
+        {/* Add more radio buttons for tab2 */}
+      </TabPanel>
+
+      <TabPanel>
+        <select
+          value={tabInputs.tab3.input1}
+          onChange={(e) => handleInputChange('tab3', 'input1', e.target.value)}
+        >
+          <option value="">Select an option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          {/* Add more options for tab3 */}
+        </select>
+        {/* Add more select dropdowns for tab3 */}
+      </TabPanel>
+
+      {/* Repeat TabPanel for other tabs */}
+      
+      <button onClick={handleSave}>Save</button> {/* Log specific content on button click */}
+    </Tabs>
   );
 };
 
-export default TabComponent;
+export default TabsInput;

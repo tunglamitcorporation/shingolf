@@ -12,6 +12,7 @@ import Button from "react-bootstrap/Button";
 // import '../../../node_modules/react-awesome-slider/dist/styles.css';
 // import '../../../node_modules/react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
+import TabsInput from "../../Test";
 
 function LineModal(props) {
   return (
@@ -394,6 +395,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
             </div>
           </div>
         </div>
+        {/* <TabsInput /> */}
       </AnimatedOnScroll>
       <AnimatedOnScroll>
         <div className="content__feature">

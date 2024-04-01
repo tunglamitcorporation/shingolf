@@ -713,7 +713,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "No 3",
                 "hasLink": true,
-                "link": "/Service/Test/Vietnam/Service?tab=rotenburo"
+                "link": "/rotenburo"
             },
             {
                 "id": 4,
@@ -722,7 +722,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
                 "num": "No 4",
-                "link": "/Service/Test/Vietnam/Service?tab=breakfast"
+                "link": "/breakfast"
             },
             {
                 "id": 5,
@@ -745,7 +745,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "No 7",
                 "hasLink": true,
-                "link": "/Service/Test/Vietnam/Service?tab=massage"
+                "link": "/massage"
             },
             {
                 "id": 8,
@@ -1011,6 +1011,12 @@
     "news": {
         "news": "News",
         "source": [
+            {
+                "title": "[URGENT] Technical Issue Impacting Email Server with Our Hotel in Vietnam",  
+                "content": "Dear Valued Guests, \n\nWe would like to inform you about a temporary technical issue affecting email communication specifically for our Vietnam hotel. \nDue to a recent error in our mail server, guests are currently unable to send emails to our Vietnam hotel email address. We understand the importance of seamless communication, especially when planning your stay with us or seeking assistance during your visit. \nOur technical team is working diligently to resolve this issue as quickly as possible. In the meantime, if you need to contact us or have any inquiries, please use the following alternative methods: \n1. Sending emails to the following email addresses: \n\n+ Hai Ba Trung 1: azumayahaibatrungreservation@gmail.com \n+ Kim Ma 2:reservationhanoi32019@gmail.com \n + Kim Ma 3: reservationhanoi6@gmail.com \n+ Linh Lang: reservationlinhlang@gmail.com \n+ Hai Phong: reservationhaiphong2024@gmail.com \n+ Da Nang: danangazumaya@gmail.com \n+ Thai Van Lung 1: reservation.az@gmail.com \n+ Thai Van Lung 2: reservation4.aztvl2@gmail.com \n+ Le Thanh Ton: azltt.reservation@gmail.com \n+ Annex: reservation.az@gmail.com \n\n2. Calling to hotel hotline: \n+ Hai Ba Trung 1: +84.24.6278 6688 & +84.24.6278 6689 \n+ Kim Ma 2: +84.24.3724 7570 \n+ Kim Ma 3: +84.24.3862 0620 \n+ Linh Lang: +84.24.3862 0620 \n+ Hai Phong: +84.225.3828 969 \n+ Da Nang: +84.24.3862 0620 \n+ Thai Van Lung 1: +84.28.3824 6835 \n+ Thai Van Lung 2: +84.28.3827 1071 & +84.28.3827.1072 \n + Le Thanh Ton: +84.28.3827 1110 \n+ Annex: +84.28.3824 6835 \n\nThank you for choosing Azumaya Hotel. We look forward to serving you and providing an exceptional experience during your stay in Vietnam.",
+                "date": "2024-04-01",
+                "allBranch": true
+            },
             {
                 "title": "2024 Tet (Lunar New Year) Information",
                 "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
@@ -1903,12 +1909,12 @@
             "id": 2,
             "branch_name": "Azumaya Linh Lang",
             "room_id": "d",
-            "name": "DELUXE",
+            "name": "DELUXE ( NO VIEW )",
             "size": "19",
             "sizeTitle": "Size",
             "bedTitle": "Bed",
             "install": "Installation",
-            "in1": "Windows: no view",
+            "in1": "Windows",
             "in2": "Bathtub",
             "in3": "LED TV 32 inches",
             "in4": "Toilet with bidet function",
