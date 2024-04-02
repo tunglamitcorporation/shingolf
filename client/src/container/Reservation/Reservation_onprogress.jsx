@@ -9,7 +9,7 @@ import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import TabComponent from "../../Test";
 
-function Reservation_onprogress({token}) {
+function Reservation({token}) {
   const { t } = useTranslation();
   const location = useLocation();
   const receivedData = location.state || {};
@@ -43,25 +43,34 @@ function Reservation_onprogress({token}) {
   const [endTime, setEndTime] = useState("12:00");
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
+  const [guestInformation, setGuestInformation] = useState({
+    guest1: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest2: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest3: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest4: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest5: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    
+
+  })
   const [familyName, setFamilyName] = useState('');
   const [givenName, setGivenName] = useState('');
   const [secondFamilyName, setSecondFamilyName] = useState('');
   const [secondGivenName, setSecondGivenName] = useState('');
-  const [secondGender, setSecondGender] = useState('Mr.');
-  const [selectedDay, setSelectedDay] = useState('Day');
-  const [selectedMonth, setSelectedMonth] = useState('Month');
-  const [selectedYear, setSelectedYear] = useState('Year');
-  const [SecondSelectedDay, setSecondSelectedDay] = useState('Day');
-  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('Month');
-  const [SecondSelectedYear, setSecondSelectedYear] = useState('Year');
-  const [gender, setGender] = useState('Mr.');
+  const [secondGender, setSecondGender] = useState('');
+  const [selectedDay, setSelectedDay] = useState('');
+  const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedYear, setSelectedYear] = useState('');
+  const [SecondSelectedDay, setSecondSelectedDay] = useState('');
+  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('');
+  const [SecondSelectedYear, setSecondSelectedYear] = useState('');
+  const [gender, setGender] = useState('');
   const [company, setCompany] = useState('');
   const [booker, setBooker] = useState(`${t('reservation.same-person')}`);
   const [bookerName, setBookerName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [roomType, setRoomType] = useState(`${t("reservation.non-smk")}`);
-  const [contract, setContract] = useState("No Contract");
+  const [roomType, setRoomType] = useState('');
+  const [contract, setContract] = useState('');
   const [vat, setVat] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [specialRequest, setSpecialRequest] = useState('');
@@ -76,7 +85,25 @@ function Reservation_onprogress({token}) {
 
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
-
+console.log(searchCompany);
+  const handleInputChange = (tabId, inputName, value) => {
+    setGuestInformation((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
+  };
+  const handleRadioChange = (tabId, inputName, value) => {
+    setGuestInformation((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
+  };
   useEffect(() => {
     updateTabs();
   }, [roomAmount]);
@@ -91,39 +118,13 @@ function Reservation_onprogress({token}) {
     setActiveTab(0); // Set active tab to the first tab
   };
 
-  const deleteTab = (index) => {
-    const updatedTabs = tabs.filter((_, i) => i !== index);
-    setTabs(updatedTabs);
-
-    // Update active tab based on current active tab index and deleted tab index
-    let nextActiveTab = activeTab;
-    if (activeTab > index) {
-      nextActiveTab--; // Adjust active tab index if deleted tab was before it
-    } else if (activeTab === tabs.length - 1) {
-      nextActiveTab = tabs.length - 2; // Activate the previous tab if the last tab is deleted
-    }
-
-    setActiveTab(nextActiveTab >= 0 ? nextActiveTab : 0); // Ensure a valid active tab index
-  };
-
   const handleSelectChange = (e) => {
     setRoomAmount(e.target.value);
   };
-
-  const [familyNameRoom2, setFamilyNameRoom2] = useState('');
-  const [givenNameRoom2, setGivenNameRoom2] = useState('');
-  const [selectedDayRoom2, setSelectedDayRoom2] = useState('Day');
-  const [selectedMonthRoom2, setSelectedMonthRoom2] = useState('Month');
-  const [selectedYearRoom2, setSelectedYearRoom2] = useState('Year');
-  const [genderRoom2, setGenderRoom2] = useState('Mr.');
-  const [bookerRoom2, setBookerRoom2] = useState(`${t('reservation.same-person')}`);
-  const [bookerNameRoom2, setBookerNameRoom2] = useState('');
-  const [emailRoom2, setEmailRoom2] = useState('');
-  const [phoneRoom2, setPhoneRoom2] = useState('');
-  const [roomTypeRoom2, setRoomTypeRoom2] = useState(`${t("reservation.non-smk")}`);
-  const [contractRoom2, setContractRoom2] = useState("No Contract");
-  const [vatRoom2, setVatRoom2] = useState('');
-  const [paymentMethodRoom2, setPaymentMethodRoom2] = useState('');
+  const handleSave = () => {
+    // Log specific content from the state object
+    console.log(guestInformation.guest1, guestInformation.guest2);
+  }
 
   const handleBranchValue = (cityId) => {
     switch(cityId) {
@@ -247,31 +248,59 @@ function Reservation_onprogress({token}) {
   const handleChangeBookerName = (e) => {
     setBookerName(e.target.value);
   };
-  const handleChangeCompanyName = () => {
-    setSearchCompany(searchCompany);
+  const handleChangeCompanyName1 = (e) => {
+    handleInputChange('guest1', 'company', e.target.value);
 
-    if(searchCompany) {
+    if(guestInformation.guest1.company) {
    const timer = setTimeout(() => {
-        findCompanyByRequest(searchCompany, token)
+        findCompanyByRequest(guestInformation.guest1.company, token)
         .then(response => {
           setSearchCompany(response.data.company)
         })
         .catch(error => {
             console.log(error);
-        }, 4000)
+        }, 3000)
       })
       return () => clearTimeout(timer)
     }else{
       setSearchCompany('')
     }
   };
-  const handleSecondFamilyName = (e) => {
-    const newValue = e.target.value;
-    setSecondFamilyName(newValue);
+  const handleChangeCompanyName2 = (e) => {
+    handleInputChange('guest2', 'company', e.target.value);
+
+    if(guestInformation.guest2.company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(guestInformation.guest2.company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 3000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
   };
-  const handleSecondGivenName = (e) => {
-    const newValue = e.target.value;
-    setSecondGivenName(newValue);
+  const handleChangeCompanyName3 = (e) => {
+    handleInputChange('guest3', 'company', e.target.value);
+
+    if(guestInformation.guest3.company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(guestInformation.guest3.company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 3000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
   };
   const handleSecondFamilyNameClick = () => {
     inputRef.current.focus();
@@ -291,8 +320,16 @@ function Reservation_onprogress({token}) {
   const handleSelectedCompany = (statusC) => {
     setStatusC(statusC);
   };
-  const handleChooseCompany = (value) => {
-    setCompany(value)
+  const handleChooseCompany1 = (value) => {
+    handleInputChange('guest1', 'company', value)
+    setSearchCompany('')
+  }
+  const handleChooseCompany2 = (value) => {
+    handleInputChange('guest2', 'company', value)
+    setSearchCompany('')
+  }
+  const handleChooseCompany3 = (value) => {
+    handleInputChange('guest3', 'company', value)
     setSearchCompany('')
   }
   const handlePickupNumber = (e) => {
@@ -439,6 +476,7 @@ function Reservation_onprogress({token}) {
         roomAmount ,
         guestAmount ,
         familyName ,
+        guestInformation: guestInformation.guest1.familyName,
         givenName ,
         gender ,
         selectedDay ,
@@ -481,12 +519,12 @@ function Reservation_onprogress({token}) {
                   }
       }  
     };
-  function DayPicker() {
+  function DayPicker({guest,id}) {
     const minDay = 1;
     const maxDay = 31;
     const birthDay = 0;
     const onHandleChange = (e) => {
-      setSelectedDay(e.target.value);
+      handleInputChange(`guest${id}`, 'day', e.target.value);
     };
     const options = [];
     for (let i = minDay; i <= maxDay; i++) {
@@ -500,7 +538,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className={errors.selectedDay? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedDay}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -510,13 +548,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function MonthPicker() {
+  function MonthPicker({guest, id}) {
     const minMonth = 0;
     const maxMonth = 11;
     const birthMonth = 1;
 
     const onHandleChange = (e) => {
-      setSelectedMonth(e.target.value);
+      handleInputChange(`guest${id}`, 'month', e.target.value);
     };
     const options = [];
     for (let i = minMonth; i <= maxMonth; i++) {
@@ -530,7 +568,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className={errors.selectedMonth? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedMonth}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -540,13 +578,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function YearPicker() {
+  function YearPicker({guest,id}) {
     const minYear = 1925;
     const maxYear = 2005;
     const birthYear = 0;
 
     const onHandleChange = (e) => {
-      setSelectedYear(e.target.value);
+      handleInputChange(`guest${id}`, 'year', e.target.value);
     };
     const options = [];
     for (let i = minYear; i <= maxYear; i++) {
@@ -560,7 +598,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className={errors.selectedYear? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedYear}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -570,12 +608,12 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function SecondDayPicker() {
+  function SecondDayPicker({guest,id}) {
     const minDay = 1;
     const maxDay = 31;
     const birthDay = 0;
     const onHandleChange = (e) => {
-      setSecondSelectedDay(e.target.value);
+      handleInputChange(`guest${id}`,'secondDay',e.target.value);
     };
     const options = [];
     for (let i = minDay; i <= maxDay; i++) {
@@ -589,7 +627,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className="col-md-2 form__content"
-        value={SecondSelectedDay}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -599,13 +637,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function SecondMonthPicker() {
+  function SecondMonthPicker({guest, id}) {
     const minMonth = 0;
     const maxMonth = 11;
     const birthMonth = 1;
 
     const onHandleChange = (e) => {
-      setSecondSelectedMonth(e.target.value);
+      handleInputChange(`guest${id}`,'secondMonth',e.target.value);
     };
     const options = [];
     for (let i = minMonth; i <= maxMonth; i++) {
@@ -619,7 +657,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className="col-md-2 form__content"
-        value={SecondSelectedMonth}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -629,13 +667,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function SecondYearPicker() {
+  function SecondYearPicker({guest, id}) {
     const minYear = 1925;
     const maxYear = 2005;
     const birthYear = 0;
 
     const onHandleChange = (e) => {
-      setSecondSelectedYear(e.target.value);
+      handleInputChange(`guest${id}`,'secondYear',e.target.value);
     };
     const options = [];
     for (let i = minYear; i <= maxYear; i++) {
@@ -649,7 +687,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className="col-md-2 form__content"
-        value={SecondSelectedYear}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -659,7 +697,7 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  return (
+  return ( 
     <div>
       <HelmetLayout 
         title= "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
@@ -716,7 +754,6 @@ function Reservation_onprogress({token}) {
         </div>
       </div>
     </div>
-    {/* <TabComponent /> */}
     <form onSubmit={handleSubmit}>
     <div className="container">
       <div className=" reservation__container">
@@ -896,6 +933,10 @@ function Reservation_onprogress({token}) {
                 <p className="col-md-2 error-message">{errors.guestAmount}</p>}
           </div>
         </div>
+        {/* <h3 className="red">*Notice</h3>
+        <p style={{width: "500px", fontSize: '1.2rem'}}>Currently, the 'Reserve from 2 rooms' function is undergoing maintenance. Please reserve only 1 room at this time. If you need to reserve more than 1 room, kindly contact the reception directly <span className="red">(email or hotel hot-line) </span>at the branch you wish to stay at. <br/> We apologize for any inconvenience this may cause.</p>
+        <p style={{fontSize: '1.2rem'}}>Best regards, <br/>
+        Azumaya IT Team</p> */}
         <Tabs className="container p-0">
           <TabPanel>
             <Tabs 
@@ -909,6 +950,7 @@ function Reservation_onprogress({token}) {
                   </Tab>
                 ))}
               </TabList>
+              {/* GUEST INFORMATION 1 */}
                 <TabPanel>
                 <div className="guest-container">
          <div className="row">
@@ -926,9 +968,7 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest1','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -937,7 +977,7 @@ function Reservation_onprogress({token}) {
                  type="text"
                  name="gName"
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -956,8 +996,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest1.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest1', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -968,8 +1008,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest1.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest1', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -981,13 +1021,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest1.day} id={1}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest1.month} id={1} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest1.year}  id={1} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1013,9 +1053,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest1.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest1','secondFamilyName', e.target.value)}
                        />
 
                        <input
@@ -1023,9 +1063,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest1.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest1','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -1033,24 +1073,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest1.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest1', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest1.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest1', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -1059,9 +1102,9 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest1.secondDay} id={1} />
+                       <SecondMonthPicker guest={guestInformation.guest1.secondMonth} id={1} />
+                       <SecondYearPicker guest={guestInformation.guest1.secondYear} id={1}/>
                      </div>
                    </div>
                  )}
@@ -1082,7 +1125,7 @@ function Reservation_onprogress({token}) {
                      handleSelected(0);
                     
                    }}
-                   onChange={(e) => setBooker(e.target.value)}
+                   onChange={(e) => handleInputChange('guest1', 'booker',e.target.value)}
                  />
                  <label htmlFor="booker">
                    {t("reservation.same-person")}
@@ -1098,7 +1141,7 @@ function Reservation_onprogress({token}) {
                      handleSelected(1);
                      
                    }}
-                   onChange={(e) => setBooker(e.target.value)}
+                   onChange={(e) => handleInputChange('guest1', 'booker', e.target.value)}
                  />
                  <label htmlFor="booker">
                    {t("reservation.diff-person")}
@@ -1112,9 +1155,9 @@ function Reservation_onprogress({token}) {
                 ref={input3Ref}
                 type="text"
                 className="booker-name form__content col-md-2"
-                value={bookerName}
+                value={guestInformation.guest1.bookerName}
                 placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
+                onChange={(e) => handleInputChange('guest1', 'bookerName', e.target.value)}
               />
             </div>}
              <div className="row">
@@ -1126,7 +1169,7 @@ function Reservation_onprogress({token}) {
                  type="text"
                  className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1', 'email', e.target.value)}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.email-note")}
@@ -1149,7 +1192,7 @@ function Reservation_onprogress({token}) {
                      event.preventDefault();
                    }
                  }}
-                 onChange={(e) => setPhone(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1', 'phone', e.target.value)}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.phone-note")}
@@ -1166,9 +1209,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest1.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest1', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1177,9 +1220,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Non Smoking"
+                   checked = {guestInformation.guest1.roomType === 'Non Smoking'}
+                   onClick={(e) => handleRadioChange('guest1', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1196,7 +1239,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1211,7 +1254,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1219,78 +1262,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest1.company}
+                 onChange={handleChangeCompanyName1}
+               />
+               {searchCompany && guestInformation.guest1.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany1(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest1.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest1', 'company', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest1', 'company', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest1', 'company', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1303,7 +1346,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest1', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -1314,7 +1357,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest1', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -1328,11 +1371,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest1.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest1', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -1352,13 +1394,10 @@ function Reservation_onprogress({token}) {
          </div>
        </div>
                 </TabPanel>
+                 {/* GUEST INFORMATION 2 */}
               {tabs.length > 1 && (
                 <TabPanel>
                 <div className="guest-container">
-                {/* <button 
-                type="button" 
-                className="base__btn btn-del"
-                onClick={() => deleteTab(1)}><i class="fa-sharp fa-solid fa-xmark"></i></button> */}
          <div className="row">
            <div className="guest__information">
              <div className="col-md-12 guest__name-title">
@@ -1374,9 +1413,7 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest2','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -1385,7 +1422,7 @@ function Reservation_onprogress({token}) {
                  type="text"
                  name="gName"
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest2','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -1404,8 +1441,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest2.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest2', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -1416,8 +1453,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest2.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest2', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -1429,13 +1466,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest2.day} id={1}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest2.month} id={1} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest2.year}  id={1} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1443,6 +1480,7 @@ function Reservation_onprogress({token}) {
                <div className="row">
                  <div className="col-md-12 offset-4">
                    <button
+                    type="button"
                      className="base__btn btn__send"
                      onClick={handleClick}
                    >
@@ -1460,9 +1498,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest2.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest2','secondFamilyName', e.target.value)}
                        />
 
                        <input
@@ -1470,9 +1508,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest2.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest2','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -1480,24 +1518,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest2.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest2', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest2.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest2', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -1506,9 +1547,9 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest2.secondDay} id={1} />
+                       <SecondMonthPicker guest={guestInformation.guest2.secondMonth} id={1} />
+                       <SecondYearPicker guest={guestInformation.guest2.secondYear} id={1}/>
                      </div>
                    </div>
                  )}
@@ -1523,9 +1564,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest2.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest2', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1534,9 +1575,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   checked = {guestInformation.guest2.roomType === 'Non Smoking'}
+                   value="Non Smoking"
+                   onClick={(e) => handleRadioChange('guest2', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1553,7 +1594,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest2', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1568,7 +1609,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest2', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1576,78 +1617,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest2.company}
+                 onChange={handleChangeCompanyName2}
+               />
+               {searchCompany && guestInformation.guest2.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany2(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest2.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest2', 'company', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest2', 'company', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest2', 'company', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1660,7 +1701,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest2', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -1671,7 +1712,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest2', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -1685,11 +1726,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest2.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest2', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -1711,17 +1751,14 @@ function Reservation_onprogress({token}) {
                 </TabPanel>
               )
               }
+               {/* GUEST INFORMATION 3 */}
               {tabs.length > 2 && (
                 <TabPanel>
                 <div className="guest-container">
-                {/* <button 
-                type="button" 
-                className="base__btn btn-del"
-                onClick={() => deleteTab(2)}>X</button> */}
          <div className="row">
            <div className="guest__information">
              <div className="col-md-12 guest__name-title">
-               {t("reservation.guest-info")} 3
+               {t("reservation.guest-info")} 2
              </div>
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1733,9 +1770,7 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest3','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -1744,7 +1779,7 @@ function Reservation_onprogress({token}) {
                  type="text"
                  name="gName"
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest3','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -1763,8 +1798,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest3.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest3', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -1775,8 +1810,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest3.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest3', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -1788,13 +1823,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest3.day} id={1}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest3.month} id={1} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest3.year}  id={1} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1802,6 +1837,7 @@ function Reservation_onprogress({token}) {
                <div className="row">
                  <div className="col-md-12 offset-4">
                    <button
+                    type="button"
                      className="base__btn btn__send"
                      onClick={handleClick}
                    >
@@ -1819,9 +1855,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest3.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest3','secondFamilyName', e.target.value)}
                        />
 
                        <input
@@ -1829,9 +1865,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest3.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest3','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -1839,24 +1875,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest3.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest3', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest3.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest3', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -1865,9 +1904,9 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest3.secondDay} id={1} />
+                       <SecondMonthPicker guest={guestInformation.guest3.secondMonth} id={1} />
+                       <SecondYearPicker guest={guestInformation.guest3.secondYear} id={1}/>
                      </div>
                    </div>
                  )}
@@ -1882,9 +1921,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest3.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest3', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1893,9 +1932,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   checked = {guestInformation.guest3.roomType === 'Non Smoking'}
+                   value="Non Smoking"
+                   onClick={(e) => handleRadioChange('guest3', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1912,7 +1951,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest3', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1927,7 +1966,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest3', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1935,78 +1974,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest3.company}
+                 onChange={handleChangeCompanyName3}
+               />
+               {searchCompany && guestInformation.guest3.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany3(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest3.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest3', 'company', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest3', 'company', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest3', 'company', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -2019,7 +2058,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest3', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -2030,7 +2069,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest3', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -2044,11 +2083,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest3.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest3', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -2071,6 +2109,7 @@ function Reservation_onprogress({token}) {
                   
               )
               }
+               {/* GUEST INFORMATION 4 */}
               {tabs.length > 3 && (
                 <TabPanel>
                 <div className="guest-container">
@@ -2298,7 +2337,7 @@ function Reservation_onprogress({token}) {
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
-                ref={input4Ref}
+                // ref={}
                 type="text"
                 className="form__content col-md-4"
                 placeholder={t("reservation.company")}
@@ -2430,6 +2469,7 @@ function Reservation_onprogress({token}) {
                 </TabPanel>
               )
               }
+               {/* GUEST INFORMATION 5 */}
               {tabs.length > 4 &&  (
                 <TabPanel>
                 <div className="guest-container">
@@ -2657,7 +2697,7 @@ function Reservation_onprogress({token}) {
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
-                ref={input4Ref}
+                // ref={}
                 type="text"
                 className="form__content col-md-4"
                 placeholder={t("reservation.company")}
@@ -5184,4 +5224,4 @@ function Reservation_onprogress({token}) {
   </div>
   );
 }
-export default Reservation_onprogress;
+export default Reservation;
