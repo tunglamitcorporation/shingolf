@@ -166,7 +166,7 @@ export default function HotelHN({ news }) {
                           </div>
                           <div className="col-md-2 news_branch-container">
                             <div className="allbranch allbranch_home">
-                              {t("header.allbranch")}
+                              {t("header.vietnam")}
                             </div>
                           </div>
                           <div className="col-md-7 mt-2 news_title-container">

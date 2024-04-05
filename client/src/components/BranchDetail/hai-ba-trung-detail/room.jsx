@@ -42,8 +42,8 @@ const handleContinue = (selectedRoom) => {
  
   navigate('/reservation', { state: data });
 };
-const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+const [selectedCity, setSelectedCity] = useState('hotel-hn');
+const [selectedBranch, setSelectedBranch] = useState('hai-ba-trung-detail');
 useEffect(() => {
   if (receivedData && receivedData.selectedCity) {
     setSelectedCity(receivedData.selectedCity);
@@ -207,7 +207,7 @@ useEffect(() => {
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
-                <Link to="/Home">
+                <Link to="/">
                   <i className="fa-solid fa-house" />
                 </Link>
               </li>

@@ -43,8 +43,8 @@ export default function KM3RoomDetail() {
     // Navigate to Receiver2Page and pass data
     navigate('/reservation', { state: data })
   };
-const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+const [selectedCity, setSelectedCity] = useState('hotel-hn');
+  const [selectedBranch, setSelectedBranch] = useState('kim-ma-3-detail');
  
   useEffect(() => {
     if (receivedData && receivedData.selectedCity) {
@@ -226,7 +226,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hcm');
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/HNBranch">
+                <Link className="breadcrumb__title" to="/hotel-hn">
                   {t("header.hn")}
                 </Link>
               </li>

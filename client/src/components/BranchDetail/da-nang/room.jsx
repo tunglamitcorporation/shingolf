@@ -38,8 +38,8 @@ export default function DNRoomDetail() {
     };
     navigate('/reservation', { state: data });
   };
-  const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  const [selectedCity, setSelectedCity] = useState('hotel-dn');
+  const [selectedBranch, setSelectedBranch] = useState('da-nang');
 
   useEffect(() => {
     if (receivedData && receivedData.selectedCity) {

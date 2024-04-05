@@ -162,7 +162,7 @@ export default function HotelHP({news}) {
                       </div>
                     </div>
                     <div className="col-md-2 news_branch-container">
-                          <div className="allbranch allbranch_home">{t("header.allbranch")}</div>
+                          <div className="allbranch allbranch_home">{t("header.vietnam")}</div>
                     </div>
                     <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>

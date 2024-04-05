@@ -50,8 +50,8 @@ const handleContinue = (selectedRoom) => {
   navigate('/reservation', { state: data });
 };
 
-const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+const [selectedCity, setSelectedCity] = useState('hotel-hn');
+  const [selectedBranch, setSelectedBranch] = useState('kim-ma-2-detail');
   const handleBranchValue = (cityId) => {
     switch(cityId) {
        case 'hotel-hcm':
@@ -251,7 +251,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hcm');
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/HNBranch">
+                <Link className="breadcrumb__title" to="/hotel-hn">
                   {t("header.hn")}
                 </Link>
               </li>

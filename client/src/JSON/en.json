@@ -13,13 +13,14 @@
         "hcm": "Ho Chi Minh",
         "hp": "Hai Phong",
         "dn": "Da Nang",
-        "allbranch": "All Branch",
+        "allbranch": "All branch",
         "vietnam": "Vietnam",
         "cambodia": "Cambodia",
         "item12": "Branch",
         "massage": "Massage Service",
         "room": "Room",
         "contact": "Contact",
+        "feedback": "Feedback",
         "itemTest": "Test"
     },
     "footer": {
@@ -688,7 +689,7 @@
     "feature": {
         "name": "Feature",
         "main_title": "Azumaya Hotel's 8 Characteristics",
-        "main_content": "Thank you always for your kind attention to Azumaya Hotel. Azumaya Hotel is a Japanese-style business hotel opened in Ho Chi Minh for whom are stressed out with their business trip and looking for comfortable place to be relieved. The first branch opened in Thai Van Lung St. in 2011 and now we have 5 branches in Ha Noi, one in Da Nang, 4 branches in Ho Chi Minh. We serve 8 characteristics of service with high-standard quality in all branches.",
+        "main_content": "Thank you always for your kind attention to Azumaya Hotel. Azumaya Hotel is a Japanese-style business hotel opened in Ho Chi Minh for whom are stressed out with their business trip and looking for comfortable place to be relieved. The first branch opened in Thai Van Lung St. in 2011 and now we have 5 branches in Ha Noi, one in Da Nang, one in Hai Phong, 4 branches in Ho Chi Minh. We serve 8 characteristics of service with high-standard quality in all branches.",
         "continue": "Continue Reading",
         "detail": "Click here for details",
         "feature_item": [
@@ -2922,7 +2923,7 @@
             {
                 "id": 1,
                 "name": "Azumaya Da Nang",
-                "desc": "Azumaya Hotel Da Nang branch is located in the middle of city; just 10 minutes far from the airport, and has 32 rooms in total with shower toilet and Japanese TV shows for each room. What makes us unique from other hotels is that we serve open-air hot bath, Japanese breakfast, original style foot massage. Our original style foot massage is our popular service among Japanese visitors and guests which 90% of the repeat customers come back again. If you reserve, you do not have to concern about waiting in the long queue.(The last order for massage is 10:45pm for weekdays and 9:45pm for weekends.) Since the open-air hot bath is facing to the ocean you can enjoy the beautiful view of the ocean spread out before your eyes and sunset over the mountains. Please make yourself comfortable with our first one-stop service in Da Nang.",
+                "desc": "Azumaya Hotel Da Nang branch is located in the middle of city; just 10 minutes far from the airport, and has 32 rooms in total with shower toilet and Japanese TV shows for each room. What makes us unique from other hotels is that we serve Open-air hot bath, Sauna & Cold bath, Japanese breakfast, original style foot massage. Our original style foot massage is our popular service among Japanese visitors and guests which 90% of the repeat customers come back again. If you reserve, you do not have to concern about waiting in the long queue(The last order for massage is 10:15pm). Since the Open-air hot bath, Sauna & Cold bath is facing to the ocean you can enjoy the beautiful view of the ocean spread out before your eyes and sunset over the mountains. Please enjoy the Open-air bath, Sauna and Cold bath with an ocean view.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
                 "link": "/da-nang/room"
             }
@@ -3968,7 +3969,19 @@
     },
     "error":{
         "title":"The page you are looking for does not exist",
-        "content":"Return to"
+        "content":"Return to",
+        "feedback_title":"Feedback Form: Website Error Reporting",
+        "feedback_content":"Thank you for visiting our new website! We strive to provide you with the best experience possible, and your feedback is invaluable in helping us achieve that goal. \nIf you have encountered any errors, bugs, or issues while using our website, please take a moment to fill out this form. \nYour input will assist our team in identifying and resolving these issues promptly.",
+        "feedback_instruction":"Instructions:",
+        "feedback_instruction1":"+ Please provide as much detail as possible about the error or issue you encountered.",
+        "feedback_instruction2":"+ Include information such as the page URL, steps to reproduce the error, browser/device used, and any error messages displayed.",
+        "feedback_instruction3":"+ Your feedback will remain confidential and will only be used for improving our website.",
+        "feedback_1":"Describe the error or issue encountered:",
+        "feedback_2":"URL of the page where the error occurred:",
+        "feedback_3":"Steps to reproduce the error (if known):",
+        "feedback_4":"Browser and device used (e.g., Chrome on Windows, Safari on iPhone):",
+        "feedback_5":"Additional comments or screenshots (if available):",
+        "feedback_6":"Choose Image:"
     }
     
 

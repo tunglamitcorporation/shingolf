@@ -20,6 +20,7 @@
         "massage": "マッサージサービス",
         "room": "お部屋のご案内",
         "contact": "アクセス",
+        "feedback":"フィードバック",
         "itemTest": "Test"
     },
     "footer": {
@@ -928,56 +929,56 @@
         "news": "News",
         "source": [
             {
-                "title": "[URGENT] Technical Issue Impacting Email Server with Our Hotel in Vietnam",  
-                "content": "Dear Valued Guests, \n\nWe would like to inform you about a temporary technical issue affecting email communication specifically for our Vietnam hotel. \nDue to a recent error in our mail server, guests are currently unable to send emails to our Vietnam hotel email address. We understand the importance of seamless communication, especially when planning your stay with us or seeking assistance during your visit. \nOur technical team is working diligently to resolve this issue as quickly as possible. In the meantime, if you need to contact us or have any inquiries, please use the following alternative methods: \n1. Sending emails to the following email addresses: \n\n+ Hai Ba Trung 1: azumayahaibatrungreservation@gmail.com \n+ Kim Ma 2: reservationhanoi32019@gmail.com \n + Kim Ma 3: reservationhanoi6@gmail.com \n+ Linh Lang: reservationlinhlang@gmail.com \n+ Hai Phong: reservationhaiphong2024@gmail.com \n+ Da Nang: danangazumaya@gmail.com \n+ Thai Van Lung 1: reservation.az@gmail.com \n+ Thai Van Lung 2: reservation4.aztvl2@gmail.com \n+ Le Thanh Ton: azltt.reservation@gmail.com \n+ Annex: reservation.az@gmail.com \n\n2. Calling to hotel hotline: \n+ Hai Ba Trung 1: +84.24.6278 6688 & +84.24.6278 6689 \n+ Kim Ma 2: +84.24.3724 7570 \n+ Kim Ma 3: +84.24.3862 0620 \n+ Linh Lang: +84.24.3862 0620 \n+ Hai Phong: +84.225.3828 969 \n+ Da Nang: +84.24.3862 0620 \n+ Thai Van Lung 1: +84.28.3824 6835 \n+ Thai Van Lung 2: +84.28.3827 1071 & +84.28.3827.1072 \n + Le Thanh Ton: +84.28.3827 1110 \n+ Annex: +84.28.3824 6835 \n\nThank you for choosing Azumaya Hotel. We look forward to serving you and providing an exceptional experience during your stay in Vietnam.",
+                "title": "【緊急】ベトナムにある当ホテルのメールサーバーに影響する技術的な問題について",  
+                "content": "大切なお客様、\n\n特にベトナムのホテルでの電子メール通信に影響を与える一時的な技術的問題についてお知らせいたします。 \n最近メール サーバーでエラーが発生したため、現在ゲストはベトナムのホテルのメール アドレスにメールを送信できません。 私たちは、特に滞在を計画するとき、または滞在中にサポートを求めるとき、シームレスなコミュニケーションの重要性を理解しています。 \n当社の技術チームは、この問題をできるだけ早く解決できるよう熱心に取り組んでいます。 それまでの間、当社にご連絡いただく必要がある場合や、お問い合わせがある場合は、次の代替方法をご利用ください: \n1. 次のメール アドレスにメールを送信します: \n\n+ Hai Ba Trung 1: azumayahaibatrungreservation@gmail.com \n+ Kim Ma 2:reservationhanoi32019@gmail.com \n + Kim Ma 3: reservationhanoi6@gmail.com \n+ Linh Lang: reservationlinhlang@gmail.com \n+ Hai Phong: reservationhaiphong2024@gmail.com \n+ Da Nang: danangazumaya@gmail.com \n+ Thai Van Lung 1: reservation.az@gmail.com \n+ Thai Van Lung 2: reservation4.aztvl2@gmail.com \n+ Le Thanh Ton: azltt.reservation@gmail.com \n+ Annex: reservation.az@gmail.com \n\n2. Calling to hotel hotline: \n+ Hai Ba Trung 1: +84.24.6278 6688 & +84.24.6278 6689 \n+ Kim Ma 2: +84.24.3724 7570 \n+ Kim Ma 3: +84.24.3862 0620 \n+ Linh Lang: +84.24.3862 0620 \n+ Hai Phong: +84.225.3828 969 \n+ Da Nang: +84.24.3862 0620 \n+ Thai Van Lung 1: +84.28.3824 6835 \n+ Thai Van Lung 2: +84.28.3827 1071 & +84.28.3827.1072 \n + Le Thanh Ton: +84.28.3827 1110 \n+ Annex: +84.28.3824 6835 \n\nこの度は東屋ホテルをお選びいただき誠にありがとうございます。 ベトナムでの滞在中に素晴らしい経験を提供できることを楽しみにしています。",
                 "date": "2024-04-01",
                 "allBranch": true
             },
             {
-                "title": "2024 Tet (Lunar New Year) Information",
-                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
+                "title": "2024 年のテト（旧正月）情報",
+                "content": "あけましておめでとう。 いつも東屋ホテルをご愛顧いただき誠にありがとうございます。\n2024 年のテト（旧正月）期間中の営業時間とサービスについてお知らせいたします。\n\n【 ホーチミン 】\n– Thai Van Lung 1 通常営業 –\n・マッサージ ：2月9日～12日休業（2月13日より再開）\n– タイヴァンルン2 ：2月3日～18日休業（2月19日より再開）\n– レタントン ：2月5日～18日休業 (2月19日より再開)\n\n【 ハノイ 】 \n– キムマー3 : 通常営業 –\nキムマー2 : 2月7日～14日休業 (2月15日より再開)\nハイバーチュン1 : 2月8日～16日休業 (2月17日より再開)\nリンラン : 2月7日～16日休業(2月17日より再開)\n\n【ダナン】\n2月3日～14日休業(2月15日より再開)\n\n【ハイフォン】\n2月4日～10日 休業（2月11日より再開）\n\nテト期間中は、あづまやホテルでお寛ぎいただければ幸いです。\n2024年もどうぞよろしくお願いいたします。",
                 "date": "2024-01-01",
                 "allBranch": true
             },
             {
-                "title": "Open Air Hot Bath Renewal Open @ Azumaya Thai Van Lung 1",
-                "content": "Azumaya Thai Van Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thai Van Lung 2 (30 seconds on foot from Azumaya Thai Van Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on weekdays only at Le Thanh Ton branch.",
+                "title": "露天風呂リニューアルオープン＠あづまやタイヴァンルン１",
+                "content": " 東屋タイヴァンルン１露天風呂は、2024年1月17日にリニューアルオープンいたします。 露天風呂をより快適にご利用いただけるよう、サウナ・水風呂の増設とタイルの交換を行います。 東屋タイヴァンルン２号店（東屋タイヴァンルン１号店より徒歩30秒）の露天風呂は、再開までご利用いただけます。\n新しくなった露天風呂、水風呂、サウナをぜひお楽しみください。\n\n ※リニューアル工事に伴い、レタントン店のみ女性専用露天風呂を平日17:00～18:45までご利用いただけます。",
                 "date": "2023-12-29",
                 "hcm": true
             },
             {
-                "title": "Azumaya Ho Chi Minh 2024 New Year Day Limited Breakfast Set Menu",
-                "content": "Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nOpening hour: 6am~10am\nPlace: Azumaya Thai Van Lung 1, Azumaya Thai Van Lung 2, Azumaya Le Than Ton",
+                "title": "東屋 ホーチミン 2024年元旦限定 朝食セットメニュー",
+                "content": "東屋ホーチミン店では、2024年1月1日より新年特別セットメニューをご提供いたします。\nスタッフが心を込めて作る新年限定メニューをぜひご賞味ください。\n営業時間：午前6時～午前10時\n場所：東屋タイバンルン1店 東屋ル・タントン肺2",
                 "date": "2023-07-07",
                 "hcm": true
             },
             {
-                "title": "Open women Rotenburo in Azumaya Kim Ma 2 Branch",
-                "content": "From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
+                "title": "東屋金馬2号店に女性専用露天風呂オープン",
+                "content": "2023 年 7 月 1 日より、東屋金馬 2 号店に女性用露天風呂がオープンします。\n\nご宿泊のお客様だけでなく、観光客も大歓迎です。 (入場料はお一人様VND 100.000となります。) \n営業時間は以下の通りです。 \n\nゲスト あづまやキムマ2ホテルご宿泊のお客様 \n月~金 : 7:00~9:00 / 17:00~23:00\n日・土 : 7:00~23:00 \n\nその他のあづまやにご宿泊のお客様 ハノイ支店および訪問者\n月～金: 17:00～23:00\n日&土: 7:00～23:00",
                 "date": "2023-12-29",
                 "hn": true
             },
             {
-                "title": "★ Notice of Vietnam Value Added Tax (VAT) change ★",
-                "content": "From July 1st 2023 to December 31st 2023, Vietnam Value Added Tax (VAT) will be applied at 8%. We appreciate your understanding.",
+                "title": "★ベトナム付加価値税（VAT）変更のお知らせ★",
+                "content": "2023 年 7 月 1 日から 2023 年 12 月 31 日まで、ベトナム付加価値税 (VAT) は 8% で適用されます。 ご理解のほどよろしくお願いいたします。",
                 "date": "2023-07-03",
                 "allBranch": true
             },
             {
-                "title": "2023 Tet (Lunar New Year) Information",
-                "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Le Thanh Ton & Thai Van Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Ma 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Da Nang 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hai Phong 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
+                "title": "2023 年テト（旧正月）のご案内",
+                "content": "あけましておめでとう。 いつも東屋ホテルをご愛顧いただき誠にありがとうございます。\n2023 年のテト（旧正月）期間中の営業時間とサービスについてお知らせいたします。\n\n【 ホーチミン 】\n– Thai Van Lung 1 通常営業 –\n・露天風呂 ：1月21日～25日 営業時間 7:00～23:00（1月26日より再開）\n・マッサージ ：1月21日～24日 休業（1月25日より再開）\n – 東屋 ル タントン＆タイヴァンルン2 –\n 1月16日～31日休業（2月1日より再開） \n\n【ハノイ】\n– リンラン通常営業 –\nキムマー2 : 1月19日～27日休業（2月1日より再開） 28日）\nハイバーチュン1：1月21日～28日休業（29日より再開）\n\n【ダナン】\n1月17日～29日休業（1月30日より再開）\n\n【ハイフォン】\n1月19日～ 29日休業（1月30日より再開） \n\n テト期間中はあづまやホテルでおくつろぎいただければ幸いです。 \n2023 年も引き続きのご支援をよろしくお願いいたします。",
                 "date": "2023-01-17",
                 "allBranch": true
             },
             {
-                "title": "Reopen Massage service from Apr 2022",
-                "content": "Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Da Nang‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Da Nang government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
+                "title": "2022年4月よりマッサージサービスを再開",
+                "content": "大切なお客様、\n\n東屋ホテル ダナンのフット マッサージ サービスにご興味をお持ちいただき、誠にありがとうございます。 \n4月1日(金)よりフットマッサージサービスを以下の日程で再開させていただきます: \n\n+ 月～金: 午後2時～午後10時30分 (最終入場: 10:15) 午後) \n+ 土～日: 午後 12 時～午後 10 時 30 分 (最終入場: 午後 10 時 15 分) \n\n新型コロナウイルス感染症の流行状況に関するダナン政府の要請により、QR をご提示ください。 ダナン スマート シティ アプリのコード、またはフロントの PC-Covid、Khaibaoytedanang、tokhaiyte にコードを入力してください。 \n皆様のお越しをお待ちしております。 \nぜひお越しください！",
                 "date": "2023-04-15",
                 "dn": true
             },
             {
-                "title": "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hai Phong",
-                "content": "Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hai Phong \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hai Phong \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hai Phong City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
+                "title": "ハノイ空港からの送迎プロモーション <--> 東屋ハイフォン",
+                "content": "ハノイ空港 <–> 東屋ハイフォン間の送迎プロモーション \n\n+ 4 – 座席車: 70$+ \n\n+ 7 – 座席車: 75$+ \n\n+ 16 – 座席車: 100 ,0$+ \n\n *価格には 8% 付加価値税が含まれていません \n\n ———-***———- \n東屋ホテル ハイフォン \n住所: 32-33-34/420 Lach Tray Path, Ngo Quyen ベトナム、ハイフォン市区 \n電子メール:reservationhaiphong@azumayavietnam.com \n電話番号: +84 225 3828 969",
                 "date": "2023-04-15",
                 "hp": true
             }
@@ -2989,7 +2990,7 @@
             {
                 "id": 1,
                 "name": "ダナン",
-                "desc": "全32部屋、展望露天風呂、和朝食、フットマッサージ、全室にシャワートイレ、日本語放送を完備。空港から10分と中心に位置し、館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:45(休日午後9:45) がラストオーダー。 そしてダナン店自慢の展望露天風呂をぜひご堪能ください。ダナン店は湾に面しているためホテルの目の前に広がる海、山に沈みゆく夕日を観ながら堪能する露天風呂は格別。日本でもそうそうお目にかかることがない景色を楽しめます。ダナン初の東屋ワンストップサービスで癒されてください。",
+                "desc": "全32部屋、展望露天風呂、サウナと水風呂、和朝食、フットマッサージ、全室にシャワートイレ、日本語放送を完備。空港から10分と中心に位置し、館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:30(午後10:15) がラストエントリー。 そしてダナン店自慢の展望露天風呂と水風呂、サウナをぜひご堪能ください。ダナン店は湾に面しているためホテルの目の前に広がる海、山に沈みゆく夕日を観ながら堪能する露天風呂は格別。日本でもそうそうお目にかかることがない景色を楽しめます。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
                 "link": "/da-nang/room"
             }

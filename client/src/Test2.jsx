@@ -1,59 +1,53 @@
 import React, { useState } from 'react';
 
-const provinceCityMap = {
-  // Replace with your actual data
-  // Example: 'Tokyo': ['City A', 'City B', 'City C'],
-  'Tokyo': ['Shinjuku'],
-  'Osaka': ['Osaka City', 'Namba', 'Umeda'],
-  // Add more provinces and cities as needed
-};
+const ImageUploadForm = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
 
-function InputExample() {
-  const [selectedProvince, setSelectedProvince] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
-  console.log(selectedProvince, selectedCity);
-  // Handle changes in the province input
-  const handleProvinceChange = (e) => {
-    const province = e.target.value;
-    setSelectedProvince(province);
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
 
-    // Update the city input value based on the selected province
-    const cities = provinceCityMap[province] || [];
-    setSelectedCity(cities.length === 1 ? cities[0] : ''); // Set the first city if only one exists
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission here, e.g., send file to server
+    if (selectedFile) {
+      console.log('Selected File:', selectedFile);
+      // You can send the file to the server using APIs like fetch or Axios
+      // Example: sendFileToServer(selectedFile);
+    } else {
+      console.log('No file selected');
+    }
   };
 
   return (
     <div>
-      <label htmlFor="provinceInput">Province:</label>
-      <select
-        id="provinceInput"
-        value={selectedProvince}
-        onChange={handleProvinceChange}
-      >
-        <option value="">Select a province</option>
-        {Object.keys(provinceCityMap).map((province) => (
-          <option key={province} value={province}>
-            {province}
-          </option>
-        ))}
-      </select>
-
-      <br />
-
-      <label htmlFor="cityInput">City:</label>
-      <select
-        id="cityInput"
-        value={selectedCity}
-        readOnly // Prevent user input in the city input
-      >
-        {provinceCityMap[selectedProvince]?.map((city) => (
-          <option key={city} value={city}>
-            {city}
-          </option>
-        ))}
-      </select>
+      <h1>Image Upload Form</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="imageUpload">Choose Image:</label>
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+        </div>
+        <div>
+          <button type="submit">Upload</button>
+        </div>
+      </form>
+      {selectedFile && (
+        <div>
+          <h2>Selected Image Preview:</h2>
+          <img
+            src={URL.createObjectURL(selectedFile)}
+            alt="Selected"
+            style={{ maxWidth: '100%', maxHeight: '200px' }}
+          />
+        </div>
+      )}
     </div>
   );
-}
+};
 
-export default InputExample;
+export default ImageUploadForm;

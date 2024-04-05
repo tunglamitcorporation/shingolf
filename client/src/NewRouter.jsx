@@ -29,6 +29,7 @@ import HPRoomDetail from "./components/BranchDetail/hai-phong/room";
 import ThankYou from './container/Reservation/ThankYou';
 import VietnamService from "./container/Service/Service"
 import ErrorPage from './container/Units/ErrorPage';
+import Feedback from './container/Units/Feedback';
 
 
 function NewRouter(props) {
@@ -97,6 +98,9 @@ function NewRouter(props) {
         case '/hai-phong/room':
         document.title = 'Azumaya Hai Phong - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル';
         break;
+        case '/feedback':
+        document.title = 'Feedback - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル';
+        break;
       default:
         if (location.pathname.startsWith('/thank-you')) {
             document.title = 'Thank You - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル';
@@ -148,6 +152,8 @@ function NewRouter(props) {
                 <Route path="/da-nang/room" element={<DNRoomDetail />} />
                 <Route path="/hai-phong/room" element={<HPRoomDetail />} />
                 <Route path='*' element={<ErrorPage />} />
+                <Route path='/feedback' element={ <Feedback /> } />                
+                {/* <Route path="/reservation-test" element={<Reservation_onprogress />} /> */}
             </Routes>
         </section>
     );

@@ -7,9 +7,8 @@ import { findCompanyByRequest, sendReservationRequest } from "../../api/reservat
 import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import TabComponent from "../../Test";
 
-function Reservation_onprogress({token}) {
+function Reservation({token}) {
   const { t } = useTranslation();
   const location = useLocation();
   const receivedData = location.state || {};
@@ -22,7 +21,6 @@ function Reservation_onprogress({token}) {
   const payMethod2 = t("reservation.method2", { returnObjects: true });
   const earlyInNote =t("reservation.earlyIn_note", { returnObjects: true });
   const lateOutNote =t("reservation.lateOut_note", { returnObjects: true });
-
   const [selectedCity, setSelectedCity] = useState('hotel-hcm');
   const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
   
@@ -43,27 +41,16 @@ function Reservation_onprogress({token}) {
   const [endTime, setEndTime] = useState("12:00");
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
-  const [familyName, setFamilyName] = useState('');
-  const [givenName, setGivenName] = useState('');
-  const [secondFamilyName, setSecondFamilyName] = useState('');
-  const [secondGivenName, setSecondGivenName] = useState('');
-  const [secondGender, setSecondGender] = useState('Mr.');
-  const [selectedDay, setSelectedDay] = useState('Day');
-  const [selectedMonth, setSelectedMonth] = useState('Month');
-  const [selectedYear, setSelectedYear] = useState('Year');
-  const [SecondSelectedDay, setSecondSelectedDay] = useState('Day');
-  const [SecondSelectedMonth, setSecondSelectedMonth] = useState('Month');
-  const [SecondSelectedYear, setSecondSelectedYear] = useState('Year');
-  const [gender, setGender] = useState('Mr.');
-  const [company, setCompany] = useState('');
-  const [booker, setBooker] = useState(`${t('reservation.same-person')}`);
-  const [bookerName, setBookerName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [roomType, setRoomType] = useState(`${t("reservation.non-smk")}`);
-  const [contract, setContract] = useState("No Contract");
-  const [vat, setVat] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const [guestInformation, setGuestInformation] = useState({
+    guest1: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', booker:'',bookerName:'', email:'', phone:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest2: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest3: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest4: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    guest5: {familyName:'', givenName: '', gender: '', day: '', month: '', year: '', secondFamilyName:'', secondGivenName:'',secondGender:'', secondDay:'', secondMonth:'', secondYear:'', roomType:'',contract:'',company:'',discount:'', vat:'', payMethod:''},
+    
+
+  })
+  console.log(guestInformation);
   const [specialRequest, setSpecialRequest] = useState('');
   const [pickupTime, setPickupTime] = useState('');
   const [pickupNumber, setPickupNumber] = useState('');
@@ -71,12 +58,28 @@ function Reservation_onprogress({token}) {
   const [dropOffNumber, setDropOffNumber] = useState('');
   const [earlyIn, setEarlyIn] = useState('');
   const [lateOut, setLateOut] = useState('');
-  const [discount, setDiscount] = useState('');
   const [searchCompany, setSearchCompany] = useState([]); 
 
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
-
+  const handleInputChange = (tabId, inputName, value) => {
+    setGuestInformation((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
+  };
+  const handleRadioChange = (tabId, inputName, value) => {
+    setGuestInformation((prevState) => ({
+      ...prevState,
+      [tabId]: {
+        ...prevState[tabId],
+        [inputName]: value,
+      },
+    }));
+  };
   useEffect(() => {
     updateTabs();
   }, [roomAmount]);
@@ -90,41 +93,9 @@ function Reservation_onprogress({token}) {
     setTabs(newTabs);
     setActiveTab(0); // Set active tab to the first tab
   };
-
-  const deleteTab = (index) => {
-    const updatedTabs = tabs.filter((_, i) => i !== index);
-    setTabs(updatedTabs);
-
-    // Update active tab based on current active tab index and deleted tab index
-    let nextActiveTab = activeTab;
-    if (activeTab > index) {
-      nextActiveTab--; // Adjust active tab index if deleted tab was before it
-    } else if (activeTab === tabs.length - 1) {
-      nextActiveTab = tabs.length - 2; // Activate the previous tab if the last tab is deleted
-    }
-
-    setActiveTab(nextActiveTab >= 0 ? nextActiveTab : 0); // Ensure a valid active tab index
-  };
-
   const handleSelectChange = (e) => {
     setRoomAmount(e.target.value);
   };
-
-  const [familyNameRoom2, setFamilyNameRoom2] = useState('');
-  const [givenNameRoom2, setGivenNameRoom2] = useState('');
-  const [selectedDayRoom2, setSelectedDayRoom2] = useState('Day');
-  const [selectedMonthRoom2, setSelectedMonthRoom2] = useState('Month');
-  const [selectedYearRoom2, setSelectedYearRoom2] = useState('Year');
-  const [genderRoom2, setGenderRoom2] = useState('Mr.');
-  const [bookerRoom2, setBookerRoom2] = useState(`${t('reservation.same-person')}`);
-  const [bookerNameRoom2, setBookerNameRoom2] = useState('');
-  const [emailRoom2, setEmailRoom2] = useState('');
-  const [phoneRoom2, setPhoneRoom2] = useState('');
-  const [roomTypeRoom2, setRoomTypeRoom2] = useState(`${t("reservation.non-smk")}`);
-  const [contractRoom2, setContractRoom2] = useState("No Contract");
-  const [vatRoom2, setVatRoom2] = useState('');
-  const [paymentMethodRoom2, setPaymentMethodRoom2] = useState('');
-
   const handleBranchValue = (cityId) => {
     switch(cityId) {
        case 'hotel-hcm':
@@ -148,7 +119,6 @@ function Reservation_onprogress({token}) {
     setSelectedCity(cityId);
     handleBranchValue(cityId);
   };
-
   const handleStartTimeChange = (selectedDates) => {
     if (selectedDates.length > 0) {
       const selectedDate = new Date(selectedDates[0]);
@@ -247,31 +217,95 @@ function Reservation_onprogress({token}) {
   const handleChangeBookerName = (e) => {
     setBookerName(e.target.value);
   };
-  const handleChangeCompanyName = () => {
-    setSearchCompany(searchCompany);
+  const handleChangeCompanyName1 = (e) => {
+    handleInputChange('guest1', 'company', e.target.value);
 
-    if(searchCompany) {
+    if(guestInformation.guest1.company) {
    const timer = setTimeout(() => {
-        findCompanyByRequest(searchCompany, token)
+        findCompanyByRequest(guestInformation.guest1.company, token)
         .then(response => {
           setSearchCompany(response.data.company)
         })
         .catch(error => {
             console.log(error);
-        }, 4000)
+        }, 3000)
       })
       return () => clearTimeout(timer)
     }else{
       setSearchCompany('')
     }
   };
-  const handleSecondFamilyName = (e) => {
-    const newValue = e.target.value;
-    setSecondFamilyName(newValue);
+  const handleChangeCompanyName2 = (e) => {
+    handleInputChange('guest2', 'company', e.target.value);
+
+    if(guestInformation.guest2.company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(guestInformation.guest2.company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 3000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
   };
-  const handleSecondGivenName = (e) => {
-    const newValue = e.target.value;
-    setSecondGivenName(newValue);
+  const handleChangeCompanyName3 = (e) => {
+    handleInputChange('guest3', 'company', e.target.value);
+
+    if(guestInformation.guest3.company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(guestInformation.guest3.company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 3000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
+  };
+  const handleChangeCompanyName4 = (e) => {
+    handleInputChange('guest4', 'company', e.target.value);
+
+    if(guestInformation.guest3.company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(guestInformation.guest4.company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 3000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
+  };
+  const handleChangeCompanyName5 = (e) => {
+    handleInputChange('guest5', 'company', e.target.value);
+
+    if(guestInformation.guest5.company) {
+   const timer = setTimeout(() => {
+        findCompanyByRequest(guestInformation.guest5.company, token)
+        .then(response => {
+          setSearchCompany(response.data.company)
+        })
+        .catch(error => {
+            console.log(error);
+        }, 3000)
+      })
+      return () => clearTimeout(timer)
+    }else{
+      setSearchCompany('')
+    }
   };
   const handleSecondFamilyNameClick = () => {
     inputRef.current.focus();
@@ -291,8 +325,24 @@ function Reservation_onprogress({token}) {
   const handleSelectedCompany = (statusC) => {
     setStatusC(statusC);
   };
-  const handleChooseCompany = (value) => {
-    setCompany(value)
+  const handleChooseCompany1 = (value) => {
+    handleInputChange('guest1', 'company', value)
+    setSearchCompany('')
+  }
+  const handleChooseCompany2 = (value) => {
+    handleInputChange('guest2', 'company', value)
+    setSearchCompany('')
+  }
+  const handleChooseCompany3 = (value) => {
+    handleInputChange('guest3', 'company', value)
+    setSearchCompany('')
+  }
+  const handleChooseCompany4 = (value) => {
+    handleInputChange('guest4', 'company', value)
+    setSearchCompany('')
+  }
+  const handleChooseCompany5 = (value) => {
+    handleInputChange('guest5', 'company', value)
     setSearchCompany('')
   }
   const handlePickupNumber = (e) => {
@@ -358,46 +408,46 @@ function Reservation_onprogress({token}) {
       isVaLid = false
 
     } 
-    if (!familyName) {
+    if (!guestInformation.guest1.familyName) {
       errors.familyName = 'required';
       isVaLid = false
 
     } 
-    if (!givenName ) {
+    if (!guestInformation.guest1.givenName ) {
       errors.givenName = 'required';
       isVaLid = false
 
     } 
-    if (!gender) {
+    if (!guestInformation.guest1.gender) {
       errors.gender = 'required';
       isVaLid = false
 
     } 
-    if (!selectedDay) {
+    if (!guestInformation.guest1.day) {
       errors.selectedDay = 'required';
       isVaLid = false
 
     } 
-    if (!selectedMonth) {
+    if (!guestInformation.guest1.month) {
       errors.selectedMonth = 'required';
       isVaLid = false
 
     } 
-    if (!selectedYear) {
+    if (!guestInformation.guest1.year) {
       errors.selectedYear = 'required';
       isVaLid = false
 
     } 
-    if (!email) {
+    if (!guestInformation.guest1.email) {
       errors.email = 'required';
       isVaLid = false
 
-    }  else if (!validateEmail(email)) {
+    }  else if (!validateEmail(guestInformation.guest1.email)) {
       errors.email = 'Invalid email format';
       isVaLid = false
 
     }
-    if (!phone) {
+    if (!guestInformation.guest1.phone) {
       errors.phone = 'required';
       isVaLid = false
 
@@ -438,28 +488,7 @@ function Reservation_onprogress({token}) {
         selectedRoom ,
         roomAmount ,
         guestAmount ,
-        familyName ,
-        givenName ,
-        gender ,
-        selectedDay ,
-        selectedMonth ,
-        selectedYear ,
-        secondFamilyName ,
-        secondGivenName ,
-        SecondSelectedDay ,
-        SecondSelectedMonth ,
-        SecondSelectedYear ,
-        secondGender ,
-        bookerName ,
-        booker ,
-        email ,
-        phone ,
-        roomType ,
-        contract ,
-        company ,
-        discount ,
-        vat ,
-        paymentMethod ,
+        guestInformation,
         pickupTime ,
         pickupNumber ,
         dropOffTime ,
@@ -481,12 +510,12 @@ function Reservation_onprogress({token}) {
                   }
       }  
     };
-  function DayPicker() {
+  function DayPicker({guest,id}) {
     const minDay = 1;
     const maxDay = 31;
     const birthDay = 0;
     const onHandleChange = (e) => {
-      setSelectedDay(e.target.value);
+      handleInputChange(`guest${id}`, 'day', e.target.value);
     };
     const options = [];
     for (let i = minDay; i <= maxDay; i++) {
@@ -500,7 +529,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className={errors.selectedDay? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedDay}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -510,13 +539,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function MonthPicker() {
+  function MonthPicker({guest, id}) {
     const minMonth = 0;
     const maxMonth = 11;
     const birthMonth = 1;
 
     const onHandleChange = (e) => {
-      setSelectedMonth(e.target.value);
+      handleInputChange(`guest${id}`, 'month', e.target.value);
     };
     const options = [];
     for (let i = minMonth; i <= maxMonth; i++) {
@@ -530,7 +559,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className={errors.selectedMonth? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedMonth}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -540,13 +569,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function YearPicker() {
+  function YearPicker({guest,id}) {
     const minYear = 1925;
     const maxYear = 2005;
     const birthYear = 0;
 
     const onHandleChange = (e) => {
-      setSelectedYear(e.target.value);
+      handleInputChange(`guest${id}`, 'year', e.target.value);
     };
     const options = [];
     for (let i = minYear; i <= maxYear; i++) {
@@ -560,7 +589,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className={errors.selectedYear? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-        value={selectedYear}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -570,12 +599,12 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function SecondDayPicker() {
+  function SecondDayPicker({guest,id}) {
     const minDay = 1;
     const maxDay = 31;
     const birthDay = 0;
     const onHandleChange = (e) => {
-      setSecondSelectedDay(e.target.value);
+      handleInputChange(`guest${id}`,'secondDay',e.target.value);
     };
     const options = [];
     for (let i = minDay; i <= maxDay; i++) {
@@ -589,7 +618,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className="col-md-2 form__content"
-        value={SecondSelectedDay}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -599,13 +628,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function SecondMonthPicker() {
+  function SecondMonthPicker({guest, id}) {
     const minMonth = 0;
     const maxMonth = 11;
     const birthMonth = 1;
 
     const onHandleChange = (e) => {
-      setSecondSelectedMonth(e.target.value);
+      handleInputChange(`guest${id}`,'secondMonth',e.target.value);
     };
     const options = [];
     for (let i = minMonth; i <= maxMonth; i++) {
@@ -619,7 +648,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className="col-md-2 form__content"
-        value={SecondSelectedMonth}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -629,13 +658,13 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  function SecondYearPicker() {
+  function SecondYearPicker({guest, id}) {
     const minYear = 1925;
     const maxYear = 2005;
     const birthYear = 0;
 
     const onHandleChange = (e) => {
-      setSecondSelectedYear(e.target.value);
+      handleInputChange(`guest${id}`,'secondYear',e.target.value);
     };
     const options = [];
     for (let i = minYear; i <= maxYear; i++) {
@@ -649,7 +678,7 @@ function Reservation_onprogress({token}) {
     return (
       <select
         className="col-md-2 form__content"
-        value={SecondSelectedYear}
+        value={guest}
         onChange={onHandleChange}
       >
         <option className="first-opt" disabled selected>
@@ -659,7 +688,7 @@ function Reservation_onprogress({token}) {
       </select>
     );
   }
-  return (
+  return ( 
     <div>
       <HelmetLayout 
         title= "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
@@ -707,7 +736,7 @@ function Reservation_onprogress({token}) {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">
+                <Link to = '/reservation' className="breadcrumb__title">
                   {t("reservation.title")}
                 </Link>
               </li>
@@ -716,7 +745,6 @@ function Reservation_onprogress({token}) {
         </div>
       </div>
     </div>
-    {/* <TabComponent /> */}
     <form onSubmit={handleSubmit}>
     <div className="container">
       <div className=" reservation__container">
@@ -896,6 +924,10 @@ function Reservation_onprogress({token}) {
                 <p className="col-md-2 error-message">{errors.guestAmount}</p>}
           </div>
         </div>
+        {/* <h3 className="red">*Notice</h3>
+        <p style={{width: "500px", fontSize: '1.2rem'}}>Currently, the 'Reserve from 2 rooms' function is undergoing maintenance. Please reserve only 1 room at this time. If you need to reserve more than 1 room, kindly contact the reception directly <span className="red">(email or hotel hot-line) </span>at the branch you wish to stay at. <br/> We apologize for any inconvenience this may cause.</p>
+        <p style={{fontSize: '1.2rem'}}>Best regards, <br/>
+        Azumaya IT Team</p> */}
         <Tabs className="container p-0">
           <TabPanel>
             <Tabs 
@@ -909,6 +941,7 @@ function Reservation_onprogress({token}) {
                   </Tab>
                 ))}
               </TabList>
+              {/* GUEST INFORMATION 1 */}
                 <TabPanel>
                 <div className="guest-container">
          <div className="row">
@@ -925,10 +958,9 @@ function Reservation_onprogress({token}) {
                <input
                  placeholder={t("reservation.family-name")}
                  type="text"
+                 value={guestInformation.guest1.familyName}
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest1','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -936,8 +968,9 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
+                 value={guestInformation.guest1.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -956,8 +989,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest1.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest1', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -968,8 +1001,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest1.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest1', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -981,13 +1014,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest1.day} id={1}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest1.month} id={1} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest1.year}  id={1} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1013,9 +1046,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest1.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest1','secondFamilyName', e.target.value)}
                        />
 
                        <input
@@ -1023,9 +1056,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest1.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest1','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -1033,24 +1066,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest1.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest1', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest1.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest1', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -1059,9 +1095,9 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest1.secondDay} id={1} />
+                       <SecondMonthPicker guest={guestInformation.guest1.secondMonth} id={1} />
+                       <SecondYearPicker guest={guestInformation.guest1.secondYear} id={1}/>
                      </div>
                    </div>
                  )}
@@ -1082,7 +1118,7 @@ function Reservation_onprogress({token}) {
                      handleSelected(0);
                     
                    }}
-                   onChange={(e) => setBooker(e.target.value)}
+                   onChange={(e) => handleInputChange('guest1', 'booker',e.target.value)}
                  />
                  <label htmlFor="booker">
                    {t("reservation.same-person")}
@@ -1098,7 +1134,7 @@ function Reservation_onprogress({token}) {
                      handleSelected(1);
                      
                    }}
-                   onChange={(e) => setBooker(e.target.value)}
+                   onChange={(e) => handleInputChange('guest1', 'booker', e.target.value)}
                  />
                  <label htmlFor="booker">
                    {t("reservation.diff-person")}
@@ -1112,9 +1148,9 @@ function Reservation_onprogress({token}) {
                 ref={input3Ref}
                 type="text"
                 className="booker-name form__content col-md-2"
-                value={bookerName}
+                value={guestInformation.guest1.bookerName}
                 placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
+                onChange={(e) => handleInputChange('guest1', 'bookerName', e.target.value)}
               />
             </div>}
              <div className="row">
@@ -1126,7 +1162,7 @@ function Reservation_onprogress({token}) {
                  type="text"
                  className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1', 'email', e.target.value)}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.email-note")}
@@ -1149,7 +1185,7 @@ function Reservation_onprogress({token}) {
                      event.preventDefault();
                    }
                  }}
-                 onChange={(e) => setPhone(e.target.value)}
+                 onChange={(e) => handleInputChange('guest1', 'phone', e.target.value)}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.phone-note")}
@@ -1166,9 +1202,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest1.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest1', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1177,9 +1213,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Non Smoking"
+                   checked = {guestInformation.guest1.roomType === 'Non Smoking'}
+                   onClick={(e) => handleRadioChange('guest1', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1196,7 +1232,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1211,7 +1247,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1219,78 +1255,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest1.company}
+                 onChange={handleChangeCompanyName1}
+               />
+               {searchCompany && guestInformation.guest1.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany1(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest1.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest1', 'discount', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest1', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest1', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1303,7 +1339,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest1', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -1314,7 +1350,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest1', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -1328,11 +1364,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest1.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest1', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -1352,13 +1387,10 @@ function Reservation_onprogress({token}) {
          </div>
        </div>
                 </TabPanel>
+                 {/* GUEST INFORMATION 2 */}
               {tabs.length > 1 && (
                 <TabPanel>
                 <div className="guest-container">
-                {/* <button 
-                type="button" 
-                className="base__btn btn-del"
-                onClick={() => deleteTab(1)}><i class="fa-sharp fa-solid fa-xmark"></i></button> */}
          <div className="row">
            <div className="guest__information">
              <div className="col-md-12 guest__name-title">
@@ -1373,10 +1405,9 @@ function Reservation_onprogress({token}) {
                <input
                  placeholder={t("reservation.family-name")}
                  type="text"
+                 value={guestInformation.guest2.familyName}
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest2','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -1384,8 +1415,9 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
+                 value={guestInformation.guest2.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest2','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -1404,8 +1436,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest2.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest2', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -1416,8 +1448,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest2.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest2', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -1429,13 +1461,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest2.day} id={2}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest2.month} id={2} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest2.year}  id={2} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1443,6 +1475,7 @@ function Reservation_onprogress({token}) {
                <div className="row">
                  <div className="col-md-12 offset-4">
                    <button
+                    type="button"
                      className="base__btn btn__send"
                      onClick={handleClick}
                    >
@@ -1460,9 +1493,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest2.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest2','secondFamilyName', e.target.value)}
                        />
 
                        <input
@@ -1470,9 +1503,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest2.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest2','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -1480,24 +1513,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest2.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest2', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest2.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest2', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -1506,9 +1542,9 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest2.secondDay} id={2} />
+                       <SecondMonthPicker guest={guestInformation.guest2.secondMonth} id={2} />
+                       <SecondYearPicker guest={guestInformation.guest2.secondYear} id={2}/>
                      </div>
                    </div>
                  )}
@@ -1523,9 +1559,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest2.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest2', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1534,9 +1570,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   checked = {guestInformation.guest2.roomType === 'Non Smoking'}
+                   value="Non Smoking"
+                   onClick={(e) => handleRadioChange('guest2', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1553,7 +1589,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest2', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1568,7 +1604,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest2', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1576,78 +1612,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest2.company}
+                 onChange={handleChangeCompanyName2}
+               />
+               {searchCompany && guestInformation.guest2.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany2(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest2.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest2', 'discount', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest2', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest2', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1660,7 +1696,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest2', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -1671,7 +1707,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest2', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -1685,11 +1721,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest2.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest2', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -1711,13 +1746,10 @@ function Reservation_onprogress({token}) {
                 </TabPanel>
               )
               }
+               {/* GUEST INFORMATION 3 */}
               {tabs.length > 2 && (
                 <TabPanel>
                 <div className="guest-container">
-                {/* <button 
-                type="button" 
-                className="base__btn btn-del"
-                onClick={() => deleteTab(2)}>X</button> */}
          <div className="row">
            <div className="guest__information">
              <div className="col-md-12 guest__name-title">
@@ -1732,10 +1764,9 @@ function Reservation_onprogress({token}) {
                <input
                  placeholder={t("reservation.family-name")}
                  type="text"
+                 value={guestInformation.guest3.familyName}
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest3','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -1743,8 +1774,9 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
+                 value={guestInformation.guest3.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest3','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -1763,8 +1795,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest3.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest3', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -1775,8 +1807,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest3.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest3', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -1788,13 +1820,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest3.day} id={3}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest3.month} id={3} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest3.year}  id={3} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -1802,6 +1834,7 @@ function Reservation_onprogress({token}) {
                <div className="row">
                  <div className="col-md-12 offset-4">
                    <button
+                    type="button"
                      className="base__btn btn__send"
                      onClick={handleClick}
                    >
@@ -1819,9 +1852,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest3.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest3','secondFamilyName', e.target.value)}
                        />
 
                        <input
@@ -1829,9 +1862,9 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest3.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest3','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -1839,24 +1872,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest3.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest3', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest3.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest3', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -1865,9 +1901,9 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest3.secondDay} id={3} />
+                       <SecondMonthPicker guest={guestInformation.guest3.secondMonth} id={3} />
+                       <SecondYearPicker guest={guestInformation.guest3.secondYear} id={3}/>
                      </div>
                    </div>
                  )}
@@ -1882,9 +1918,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest3.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest3', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -1893,9 +1929,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   checked = {guestInformation.guest3.roomType === 'Non Smoking'}
+                   value="Non Smoking"
+                   onClick={(e) => handleRadioChange('guest3', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -1912,7 +1948,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest3', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -1927,7 +1963,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest3', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -1935,78 +1971,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest3.company}
+                 onChange={handleChangeCompanyName3}
+               />
+               {searchCompany && guestInformation.guest3.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany3(`${item.name}`)} className="company_list" value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest3.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest3', 'discount', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest3', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest3', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -2019,7 +2055,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest3', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -2030,7 +2066,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest3', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -2044,11 +2080,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest3.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest3', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -2071,254 +2106,255 @@ function Reservation_onprogress({token}) {
                   
               )
               }
+               {/* GUEST INFORMATION 4 */}
               {tabs.length > 3 && (
-                <TabPanel>
-                <div className="guest-container">
-                {/* <button 
-                type="button" 
-                className="base__btn btn-del"
-                onClick={() => deleteTab(3)}>X</button> */}
-         <div className="row">
-           <div className="guest__information">
-             <div className="col-md-12 guest__name-title">
-               {t("reservation.guest-info")} 4
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.name")}
-                 <span className="required__note">*</span>
-                 <small>{t("reservation.name-note")}</small>
-               </div>
-               <input
-                 placeholder={t("reservation.family-name")}
-                 type="text"
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
-               />
-                {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
-               <input
-                 placeholder={t("reservation.given-name")}
-                 type="text"
-                 name="gName"
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
-               />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
-               <span className="col-md-4 required__note">
-                 {t("reservation.name-required")}
-               </span>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.gender")}
-                 <span className="required__note">*</span>
-               </div>
-               <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gMale"
-                   value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
-                   
-                 />
-                 <label htmlFor="gMale">{t("reservation.mr")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gFemale"
-                   value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
-                 />
-                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
-               </div>
-               {errors.gender && 
-               <p className="col-md-2 error-message">{errors.gender}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.birth-date")}
-                 <span className="required__note">*</span>
-               </div>
-               <DayPicker />
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
-             </div>
-             {showButton >= 2 && (
-               <div className="row">
-                 <div className="col-md-12 offset-4">
-                   <button
-                     className="base__btn btn__send"
-                     onClick={handleClick}
-                   >
-                     {text}
-                   </button>
-                 </div>
-                 {show && (
-                   <div className="container">
-                     <div className="row guest-information">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.name")}
-                       </div>
-                       <input
-                         ref={inputRef}
-                         placeholder={t("reservation.family-name")}
-                         type="text"
-                         className="col-md-2 form__content"
-                         value={secondFamilyName}
-                         onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
-                       />
+               <TabPanel>
+               <div className="guest-container">
+        <div className="row">
+          <div className="guest__information">
+            <div className="col-md-12 guest__name-title">
+              {t("reservation.guest-info")} 4
+            </div>
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.name")}
+                <span className="required__note">*</span>
+                <small>{t("reservation.name-note")}</small>
+              </div>
+              <input
+                placeholder={t("reservation.family-name")}
+                type="text"
+                value={guestInformation.guest4.familyName}
+                className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                onChange={(e) => handleInputChange('guest4','familyName', e.target.value)}
+              />
+               {errors.familyName && 
+              <p className="col-md-1 error-message">{errors.familyName}</p>}
+              <input
+                placeholder={t("reservation.given-name")}
+                type="text"
+                name="gName"
+                value={guestInformation.guest4.givenName}
+                className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                onChange={(e) => handleInputChange('guest4','givenName', e.target.value)}
+              />
+               {errors.givenName && 
+              <p className="col-md-1 error-message">{errors.givenName}</p>}
+              <span className="col-md-4 required__note">
+                {t("reservation.name-required")}
+              </span>
+            </div>
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.gender")}
+                <span className="required__note">*</span>
+              </div>
+              <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
+                <input
+                  type="radio"
+                  name="gender"
+                  id="gMale"
+                  value="Mr."
+                  checked={guestInformation.guest4.gender === "Mr."}
+                  onChange={(e) => handleRadioChange('guest4', 'gender',e.target.value)}
+                  
+                />
+                <label htmlFor="gMale">{t("reservation.mr")}</label>
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  name="gender"
+                  id="gFemale"
+                  value="Ms."
+                  checked = {guestInformation.guest4.gender === "Ms."}
+                  onChange={(e) => handleRadioChange('guest4', 'gender',e.target.value)}
+                />
+                <label htmlFor="gFemale">{t("reservation.ms")}</label>
+              </div>
+              {errors.gender && 
+              <p className="col-md-2 error-message">{errors.gender}</p>}
+            </div>
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.birth-date")}
+                <span className="required__note">*</span>
+              </div>
+              <DayPicker guest={guestInformation.guest4.day} id={4}/>
+              {errors.selectedDay && 
+              <p className="col-md-1 error-message">{errors.selectedDay}</p>}
+              <MonthPicker guest={guestInformation.guest4.month} id={4} />
+              {errors.selectedMonth&& 
+              <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
+              <YearPicker guest={guestInformation.guest4.year}  id={4} />
+              {errors.selectedYear && 
+              <p className="col-md-1 error-message">{errors.selectedYear}</p>}
+            </div>
+            {showButton >= 2 && (
+              <div className="row">
+                <div className="col-md-12 offset-4">
+                  <button
+                   type="button"
+                    className="base__btn btn__send"
+                    onClick={handleClick}
+                  >
+                    {text}
+                  </button>
+                </div>
+                {show && (
+                  <div className="container">
+                    <div className="row guest-information">
+                      <div className="col-md-2 name__title">
+                        {t("reservation.name")}
+                      </div>
+                      <input
+                        ref={inputRef}
+                        placeholder={t("reservation.family-name")}
+                        type="text"
+                        className="col-md-2 form__content"
+                        value={guestInformation.guest4.secondFamilyName}
+                        onClick={handleSecondFamilyNameClick}
+                        onChange={(e) => handleInputChange('guest4','secondFamilyName', e.target.value)}
+                      />
 
-                       <input
-                         ref={input2Ref}
-                         placeholder={t("reservation.given-name")}
-                         type="text"
-                         className=" col-md-2 form__content"
-                         value={secondGivenName}
-                         onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
-                       />
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.gender")}
+                      <input
+                        ref={input2Ref}
+                        placeholder={t("reservation.given-name")}
+                        type="text"
+                        className=" col-md-2 form__content"
+                        value={guestInformation.guest4.secondGivenName}
+                        onClick={handleSecondGivenNameClick}
+                        onChange={(e) => handleInputChange('guest4','secondGivenName', e.target.value)}
+                      />
+                    </div>
+                    <div className="row">
+                      <div className="col-md-2 name__title">
+                        {t("reservation.gender")}
+                      </div>
+                      <div className="col-md-2">
+                      <input
+                           type="radio"
+                           name="gender2"
+                           id="gMale2"
+                           value="Mr."
+                           checked={guestInformation.guest4.secondGender === "Mr."}
+                           onChange={(e) => handleRadioChange('guest4', 'secondGender', e.target.value)}
+                           
+                         />
+                         <label htmlFor="gMale2">{t("reservation.mr")}</label>
                        </div>
                        <div className="col-md-2">
                          <input
                            type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
+                           name="gender2"
+                           id="gFemale2"
+                           value="Ms."
+                           checked = {guestInformation.guest4.secondGender === "Ms."}
+                           onChange={(e) => handleRadioChange('guest4', 'secondGender', e.target.value)}
                          />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
-                           {t("reservation.ms")}
-                         </label>
-                       </div>
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.birth-date")}
-                       </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
-                     </div>
-                   </div>
-                 )}
-               </div>
-             )}      
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.room-type")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="smk">{t("reservation.smk")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
-               </div>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
+                        <label htmlFor="gFemale2">
+                          {t("reservation.ms")}
+                        </label>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-md-2 name__title">
+                        {t("reservation.birth-date")}
+                      </div>
+                      <SecondDayPicker guest={guestInformation.guest4.secondDay} id={4} />
+                      <SecondMonthPicker guest={guestInformation.guest4.secondMonth} id={4} />
+                      <SecondYearPicker guest={guestInformation.guest4.secondYear} id={4}/>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.room-type")}
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  name="roomType"
+                  id="smk"
+                  value="Smoking"                       
+                  checked =  {guestInformation.guest4.roomType === 'Smoking'}
+                  onClick={(e) => handleRadioChange('guest4', 'roomType', e.target.value)}
+                />
+                <label htmlFor="smk">{t("reservation.smk")}</label>
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  name="roomType"
+                  id="no-smk"
+                  checked = {guestInformation.guest4.roomType === 'Non Smoking'}
+                  value="Non Smoking"
+                  onClick={(e) => handleRadioChange('guest4', 'roomType', e.target.value)}
+                />
+                <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.contract")}
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  id="hContract"
+                  className="Contract"
+                  value={t("reservation.n-cont")}
+                  checked={statusC == 0}
+                  onClick={(e) => {
+                    handleInputChange('guest4', 'contract', e.target.value)
+                    handleSelectedCompany(0);
+                  }}
+                />
+                <label htmlFor="hContract">{t("reservation.n-cont")}</label>
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  name="contract"
+                  id="hContract"
+                  className="Contract"
+                  value={t("reservation.h-cont")}
+                  checked={statusC == 1}
+                  onClick={(e) => {
+                    handleInputChange('guest4', 'contract', e.target.value)
+                    handleSelectedCompany(1);
+                  }}
+                />
+                <label htmlFor="hContract">{t("reservation.h-cont")}</label>
+              </div>
+            </div>
+            {statusC == 1 && 
               <div className="row">
               <div className="col-md-2 name__title">{t("reservation.company")}</div>
               <input
                 ref={input4Ref}
                 type="text"
-                className="form__content col-md-4"
+                className="booker-name form__content col-md-4"
                 placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+                value={guestInformation.guest4.company}
+                onChange={handleChangeCompanyName4}
               />
-              {searchCompany && company ?
+              {searchCompany && guestInformation.guest4.company ?
              //  <div className="row">
              //  <div className="col-md-2 name__title"></div>
               <ul
               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
               className="form__content col-md-4">
                {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
+                 <li onClick={() => handleChooseCompany4(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
                ))}
               </ul>
              //  </div>
               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
             }
-              {company  ?
+              {guestInformation.guest4.company  ?
               <>
               <div className="row">
               <div className="col-md-2 name__title">Choice of Discount: </div>
@@ -2331,7 +2367,7 @@ function Reservation_onprogress({token}) {
                className="special"
                id="discount1"
                value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
+               onChange={(e) => handleRadioChange('guest4', 'discount', e.target.value)}
              />
              <label  htmlFor="discount1">Company have contract 5% OFF</label>
                </div>
@@ -2345,7 +2381,7 @@ function Reservation_onprogress({token}) {
                className="special"
                id="discount2"
                value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
+               onChange={(e) => handleRadioChange('guest4', 'discount', e.target.value)}
              />
                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
                </div>
@@ -2359,7 +2395,7 @@ function Reservation_onprogress({token}) {
                className="special"
                id="discount3"
                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
+               onChange={(e) => handleRadioChange('guest4', 'discount', e.target.value)}
              />
                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
                </div>
@@ -2367,76 +2403,72 @@ function Reservation_onprogress({token}) {
              </div>
              </> : ""
            } 
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.vat-invoice")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="no-need"
-                   className="VATInvoice"
-                   value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="no-need">{t("reservation.n-need")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="need"
-                   className="VATInvoice"
-                   value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="need">{t("reservation.need")}</label>
-               </div>
-             </div>
-               <span className="col-md-6 p-0 required__note">
-                 {t("reservation.vat-note")}
-               </span>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.pay-method")}
-               </div>
-               <select
-                 style={{ width: "350px" }}
-                 value={paymentMethod}
-                 className="col-md-2 form__content"
-                 id={paymentMethod}
-                 onChange={(e) => {
-                   setPaymentMethod(e.target.value);
-                 }}
-               > {statusC === 0 &&
-                 payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
-                   {item.name}
-                 </option>
-               ))} 
-               {statusC === 1 && 
-                 payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
-                     {item.name}
-                   </option>
-                 ))} 
-               </select>
-             </div>
-           </div>
-         </div>
-       </div>
-                </TabPanel>
+           </div>}
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.vat-invoice")}
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  name="vatInvoice"
+                  id="no-need"
+                  className="VATInvoice"
+                  value={t("reservation.n-need")}
+                  onClick={(e)=> handleRadioChange('guest4', 'vat', e.target.value)}
+                />
+                <label htmlFor="no-need">{t("reservation.n-need")}</label>
+              </div>
+              <div className="col-md-2">
+                <input
+                  type="radio"
+                  name="vatInvoice"
+                  id="need"
+                  className="VATInvoice"
+                  value={t("reservation.need")}
+                  onClick={(e)=> handleRadioChange('guest4', 'vat', e.target.value)}
+                />
+                <label htmlFor="need">{t("reservation.need")}</label>
+              </div>
+            </div>
+              <span className="col-md-6 p-0 required__note">
+                {t("reservation.vat-note")}
+              </span>
+            <div className="row">
+              <div className="col-md-2 name__title">
+                {t("reservation.pay-method")}
+              </div>
+              <select
+                style={{ width: "350px" }}
+                value={guestInformation.guest4.payMethod}
+                className="col-md-2 form__content"
+                onChange={(e) => {
+                  handleInputChange('guest4', 'payMethod', e.target.value)
+                }}
+              > {statusC === 0 &&
+                payMethod.map((item) => (
+                <option key={item.name} value={item.name}>
+                  {item.name}
+                </option>
+              ))} 
+              {statusC === 1 && 
+                payMethod2.map((item) => (
+                  <option key={item.name} value={item.name}>
+                    {item.name}
+                  </option>
+                ))} 
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+               </TabPanel>
               )
               }
+               {/* GUEST INFORMATION 5 */}
               {tabs.length > 4 &&  (
                 <TabPanel>
                 <div className="guest-container">
-                {/* <button 
-                type="button" 
-                className="base__btn btn-del"
-                onClick={() => deleteTab(4)}>X</button> */}
          <div className="row">
            <div className="guest__information">
              <div className="col-md-12 guest__name-title">
@@ -2451,10 +2483,9 @@ function Reservation_onprogress({token}) {
                <input
                  placeholder={t("reservation.family-name")}
                  type="text"
+                 value={guestInformation.guest5.familyName}
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
+                 onChange={(e) => handleInputChange('guest5','familyName', e.target.value)}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -2462,8 +2493,9 @@ function Reservation_onprogress({token}) {
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
+                 value={guestInformation.guest5.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
+                 onChange={(e) => handleInputChange('guest5','givenName', e.target.value)}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -2482,8 +2514,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gMale"
                    value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked={guestInformation.guest5.gender === "Mr."}
+                   onChange={(e) => handleRadioChange('guest5', 'gender',e.target.value)}
                    
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
@@ -2494,8 +2526,8 @@ function Reservation_onprogress({token}) {
                    name="gender"
                    id="gFemale"
                    value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
+                   checked = {guestInformation.guest5.gender === "Ms."}
+                   onChange={(e) => handleRadioChange('guest5', 'gender',e.target.value)}
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
@@ -2507,13 +2539,13 @@ function Reservation_onprogress({token}) {
                  {t("reservation.birth-date")}
                  <span className="required__note">*</span>
                </div>
-               <DayPicker />
+               <DayPicker guest={guestInformation.guest5.day} id={5}/>
                {errors.selectedDay && 
                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
+               <MonthPicker guest={guestInformation.guest5.month} id={5} />
                {errors.selectedMonth&& 
                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
+               <YearPicker guest={guestInformation.guest5.year}  id={5} />
                {errors.selectedYear && 
                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
              </div>
@@ -2521,6 +2553,7 @@ function Reservation_onprogress({token}) {
                <div className="row">
                  <div className="col-md-12 offset-4">
                    <button
+                    type="button"
                      className="base__btn btn__send"
                      onClick={handleClick}
                    >
@@ -2538,19 +2571,19 @@ function Reservation_onprogress({token}) {
                          placeholder={t("reservation.family-name")}
                          type="text"
                          className="col-md-2 form__content"
-                         value={secondFamilyName}
+                         value={guestInformation.guest5.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
+                         onChange={(e) => handleInputChange('guest5','secondFamilyName', e.target.value)}
                        />
-
+ 
                        <input
                          ref={input2Ref}
                          placeholder={t("reservation.given-name")}
                          type="text"
                          className=" col-md-2 form__content"
-                         value={secondGivenName}
+                         value={guestInformation.guest5.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
+                         onChange={(e) => handleInputChange('guest5','secondGivenName', e.target.value)}
                        />
                      </div>
                      <div className="row">
@@ -2558,24 +2591,27 @@ function Reservation_onprogress({token}) {
                          {t("reservation.gender")}
                        </div>
                        <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
+                       <input
+                            type="radio"
+                            name="gender2"
+                            id="gMale2"
+                            value="Mr."
+                            checked={guestInformation.guest5.secondGender === "Mr."}
+                            onChange={(e) => handleRadioChange('guest5', 'secondGender', e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale2">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-2">
+                          <input
+                            type="radio"
+                            name="gender2"
+                            id="gFemale2"
+                            value="Ms."
+                            checked = {guestInformation.guest5.secondGender === "Ms."}
+                            onChange={(e) => handleRadioChange('guest5', 'secondGender', e.target.value)}
+                          />
+                         <label htmlFor="gFemale2">
                            {t("reservation.ms")}
                          </label>
                        </div>
@@ -2584,14 +2620,14 @@ function Reservation_onprogress({token}) {
                        <div className="col-md-2 name__title">
                          {t("reservation.birth-date")}
                        </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
+                       <SecondDayPicker guest={guestInformation.guest5.secondDay} id={5} />
+                       <SecondMonthPicker guest={guestInformation.guest5.secondMonth} id={5} />
+                       <SecondYearPicker guest={guestInformation.guest5.secondYear} id={5}/>
                      </div>
                    </div>
                  )}
                </div>
-             )} 
+             )}
              <div className="row">
                <div className="col-md-2 name__title">
                  {t("reservation.room-type")}
@@ -2601,9 +2637,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   value="Smoking"                       
+                   checked =  {guestInformation.guest5.roomType === 'Smoking'}
+                   onClick={(e) => handleRadioChange('guest5', 'roomType', e.target.value)}
                  />
                  <label htmlFor="smk">{t("reservation.smk")}</label>
                </div>
@@ -2612,9 +2648,9 @@ function Reservation_onprogress({token}) {
                    type="radio"
                    name="roomType"
                    id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
+                   checked = {guestInformation.guest5.roomType === 'Non Smoking'}
+                   value="Non Smoking"
+                   onClick={(e) => handleRadioChange('guest5', 'roomType', e.target.value)}
                  />
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
@@ -2631,7 +2667,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.n-cont")}
                    checked={statusC == 0}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest5', 'contract', e.target.value)
                      handleSelectedCompany(0);
                    }}
                  />
@@ -2646,7 +2682,7 @@ function Reservation_onprogress({token}) {
                    value={t("reservation.h-cont")}
                    checked={statusC == 1}
                    onClick={(e) => {
-                     setContract(e.target.value);
+                     handleInputChange('guest5', 'contract', e.target.value)
                      handleSelectedCompany(1);
                    }}
                  />
@@ -2654,78 +2690,78 @@ function Reservation_onprogress({token}) {
                </div>
              </div>
              {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
+               <div className="row">
+               <div className="col-md-2 name__title">{t("reservation.company")}</div>
+               <input
+                 ref={input4Ref}
+                 type="text"
+                 className="booker-name form__content col-md-4"
+                 placeholder={t("reservation.company")}
+                 value={guestInformation.guest5.company}
+                 onChange={handleChangeCompanyName5}
+               />
+               {searchCompany && guestInformation.guest5.company ?
+              //  <div className="row">
+              //  <div className="col-md-2 name__title"></div>
+               <ul
+               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
+               className="form__content col-md-4">
+                {searchCompany.map((item)=> (
+                  <li onClick={() => handleChooseCompany5(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
+                ))}
+               </ul>
+              //  </div>
+               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
+             }
+               {guestInformation.guest5.company  ?
+               <>
+               <div className="row">
+               <div className="col-md-2 name__title">Choice of Discount: </div>
+               <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+               <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount1"
+                value='Company have contract 5% OFF'
+                onChange={(e) => handleRadioChange('guest5', 'discount', e.target.value)}
               />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
+              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+                </div>
+              </div>
               <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
               <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount2"
+                value="Company have contract free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest5', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              <div className="row">
+              <div className="col-md-2 name__title"></div>
+                <div className="col-md-6 ml-2">
+              <input
+                type="radio"
+                name="discount"
+                className="special"
+                id="discount3"
+                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
+                onChange={(e) => handleRadioChange('guest5', 'discount', e.target.value)}
+              />
+                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                </div>
+              </div>
+              </div>
+              </> : ""
+            } 
             </div>}
              <div className="row">
                <div className="col-md-2 name__title">
@@ -2738,7 +2774,7 @@ function Reservation_onprogress({token}) {
                    id="no-need"
                    className="VATInvoice"
                    value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest5', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
                </div>
@@ -2749,7 +2785,7 @@ function Reservation_onprogress({token}) {
                    id="need"
                    className="VATInvoice"
                    value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
+                   onClick={(e)=> handleRadioChange('guest5', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
                </div>
@@ -2763,11 +2799,10 @@ function Reservation_onprogress({token}) {
                </div>
                <select
                  style={{ width: "350px" }}
-                 value={paymentMethod}
+                 value={guestInformation.guest5.payMethod}
                  className="col-md-2 form__content"
-                 id={paymentMethod}
                  onChange={(e) => {
-                   setPaymentMethod(e.target.value);
+                   handleInputChange('guest5', 'payMethod', e.target.value)
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
@@ -2792,2218 +2827,6 @@ function Reservation_onprogress({token}) {
             </Tabs>
           </TabPanel>
         </Tabs>
-
-        {/* <div className="guest-container">
-          <div className="row">
-            <div className="guest__information">
-              <div className="col-md-12 guest__name-title">
-                {t("reservation.guest-info")}
-              </div>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.name")}
-                  <span className="required__note">*</span>
-                  <small>{t("reservation.name-note")}</small>
-                </div>
-                <input
-                  placeholder={t("reservation.family-name")}
-                  type="text"
-                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                  onChange={(e) => {
-                    setFamilyName([...e.target.value],'');
-                  }}
-                />
-                 {errors.familyName && 
-                <p className="col-md-1 error-message">{errors.familyName}</p>}
-                <input
-                  placeholder={t("reservation.given-name")}
-                  type="text"
-                  name="gName"
-                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                  onChange={(e) => setGivenName(e.target.value)}
-                />
-                 {errors.givenName && 
-                <p className="col-md-1 error-message">{errors.givenName}</p>}
-                <span className="col-md-4 required__note">
-                  {t("reservation.name-required")}
-                </span>
-              </div>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.gender")}
-                  <span className="required__note">*</span>
-                </div>
-                <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gMale"
-                    value="Mr."
-                    checked={gender === "Mr."}
-                    onChange={(e) => setGender(e.target.value)}
-                    
-                  />
-                  <label htmlFor="gMale">{t("reservation.mr")}</label>
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gFemale"
-                    value="Ms."
-                    checked = {gender === "Ms."}
-                    onChange={(e) => setGender(e.target.value)}
-                  />
-                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
-                </div>
-                {errors.gender && 
-                <p className="col-md-2 error-message">{errors.gender}</p>}
-              </div>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.birth-date")}
-                  <span className="required__note">*</span>
-                </div>
-                <DayPicker />
-                {errors.selectedDay && 
-                <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-                <MonthPicker />
-                {errors.selectedMonth&& 
-                <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-                <YearPicker />
-                {errors.selectedYear && 
-                <p className="col-md-1 error-message">{errors.selectedYear}</p>}
-              </div>
-              {showButton >= 2 && (
-                <div className="row">
-                  <div className="col-md-12 offset-4">
-                    <button
-                      className="base__btn btn__send"
-                      onClick={handleClick}
-                    >
-                      {text}
-                    </button>
-                  </div>
-                  {show && (
-                    <div className="container">
-                      <div className="row guest-information">
-                        <div className="col-md-2 name__title">
-                          {t("reservation.name")}
-                        </div>
-                        <input
-                          ref={inputRef}
-                          placeholder={t("reservation.family-name")}
-                          type="text"
-                          className="col-md-2 form__content"
-                          value={secondFamilyName}
-                          onClick={handleSecondFamilyNameClick}
-                          onChange={handleSecondFamilyName}
-                        />
-
-                        <input
-                          ref={input2Ref}
-                          placeholder={t("reservation.given-name")}
-                          type="text"
-                          className=" col-md-2 form__content"
-                          value={secondGivenName}
-                          onClick={handleSecondGivenNameClick}
-                          onChange={handleSecondGivenName}
-                        />
-                      </div>
-                      <div className="row">
-                        <div className="col-md-2 name__title">
-                          {t("reservation.gender")}
-                        </div>
-                        <div className="col-md-2">
-                          <input
-                            type="radio"
-                            name="2ndgender"
-                            id="2ndgMale"
-                            value="male"
-                            onChange={(e) => setSecondGender(e.target.value)}
-                          />
-                          <label htmlFor="gMale">{t("reservation.mr")}</label>
-                        </div>
-                        <div className="col-md-2">
-                          <input
-                            type="radio"
-                            name="2ndgender"
-                            id="2ndgFemale"
-                            value="female"
-                            onChange={(e) => setSecondGender(e.target.value)}
-                          />
-                          <label htmlFor="2ndgFemale">
-                            {t("reservation.ms")}
-                          </label>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-md-2 name__title">
-                          {t("reservation.birth-date")}
-                        </div>
-                        <SecondDayPicker />
-                        <SecondMonthPicker />
-                        <SecondYearPicker />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.booker")}
-                </div>
-                <div className="col-md-6">
-                  <input
-                    type="radio"
-                    name="Booker"
-                    id="booker"
-                    value={`${t('reservation.same-person')}`}
-                    checked={status === 0}
-                    onClick={(e) => {
-                      handleSelected(0);
-                     
-                    }}
-                    onChange={(e) => setBooker(e.target.value)}
-                  />
-                  <label htmlFor="booker">
-                    {t("reservation.same-person")}
-                  </label>
-                  <br />
-                  <input
-                    type="radio"
-                    name="Booker"
-                    id="booker"
-                    value={`${t('reservation.diff-person')}`}
-                    checked={status === 1}
-                    onClick={(e) => {
-                      handleSelected(1);
-                      
-                    }}
-                    onChange={(e) => setBooker(e.target.value)}
-                  />
-                  <label htmlFor="booker">
-                    {t("reservation.diff-person")}
-                  </label>
-                </div>
-              </div>
-              {status === 1 && 
-               <div className="row">
-               <div className="col-md-2 name__title">{t("reservation.name")}</div>
-               <input
-                 ref={input3Ref}
-                 type="text"
-                 className="booker-name form__content col-md-2"
-                 value={bookerName}
-                 placeholder={t("reservation.name")}
-                 onChange={handleChangeBookerName}
-               />
-             </div>}
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.email")}
-                  <span className="col-md-2 required__note">*</span>
-                </div>
-                <input
-                  type="text"
-                  className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                  placeholder={t("reservation.email")}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <span className="col-md-6 required__note">
-                  {t("reservation.email-note")}
-                </span>
-                {errors.email && 
-                <p className="col-md-1 error-message">{errors.email}</p>}
-              </div>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.phone")}
-                  <span className="col-md-2 required__note">*</span>
-                </div>
-                <input
-                  type="text"
-                  className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                  id=""
-                  placeholder={t("reservation.phone")}
-                  onKeyPress={(event) => {
-                    if (!/[0-9]/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-                <span className="col-md-6 required__note">
-                  {t("reservation.phone-note")}
-                </span>
-                {errors.phone && 
-                <p className="col-md-1 error-message">{errors.phone}</p>}
-              </div>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.room-type")}
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    name="roomType"
-                    id="smk"
-                    value={t("reservation.smk")}                       
-                    checked =  {roomType === `${t("reservation.smk")}`}
-                    onClick={(e) => setRoomType(e.target.value)}
-                  />
-                  <label htmlFor="smk">{t("reservation.smk")}</label>
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    name="roomType"
-                    id="no-smk"
-                    checked = {roomType === `${t("reservation.non-smk")}`}
-                    value={t("reservation.non-smk")}
-                    onClick={(e) => setRoomType(e.target.value)}
-                  />
-                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.contract")}
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    id="hContract"
-                    className="Contract"
-                    value={t("reservation.n-cont")}
-                    checked={statusC == 0}
-                    onClick={(e) => {
-                      setContract(e.target.value);
-                      handleSelectedCompany(0);
-                    }}
-                  />
-                  <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    name="contract"
-                    id="hContract"
-                    className="Contract"
-                    value={t("reservation.h-cont")}
-                    checked={statusC == 1}
-                    onClick={(e) => {
-                      setContract(e.target.value);
-                      handleSelectedCompany(1);
-                    }}
-                  />
-                  <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-                </div>
-              </div>
-              {statusC == 1 && 
-               <div className="row">
-               <div className="col-md-2 name__title">{t("reservation.company")}</div>
-               <input
-                 ref={input4Ref}
-                 type="text"
-                 className="form__content col-md-4"
-                 placeholder={t("reservation.company")}
-                 value={searchCompany}
-                 onChange={handleChangeCompanyName}
-               />
-               {searchCompany && company ?
-              //  <div className="row">
-              //  <div className="col-md-2 name__title"></div>
-               <ul
-               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-               className="form__content col-md-4">
-                {searchCompany.map((item)=> (
-                  <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-                ))}
-               </ul>
-              //  </div>
-               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-             }
-               {company  ?
-               <>
-               <div className="row">
-               <div className="col-md-2 name__title">Choice of Discount: </div>
-               <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-               <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount1"
-                value='Company have contract 5% OFF'
-                onChange={(e) => setDiscount(e.target.value)}
-              />
-              <label  htmlFor="discount1">Company have contract 5% OFF</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount2"
-                value="Company have contract free laundry 120.000vnd/day"
-                onChange={(e) => setDiscount(e.target.value)}
-              />
-                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount3"
-                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-                onChange={(e) => setDiscount(e.target.value)}
-              />
-                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              </div>
-              </> : ""
-            } 
-             </div>}
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.vat-invoice")}
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    name="vatInvoice"
-                    id="no-need"
-                    className="VATInvoice"
-                    value={t("reservation.n-need")}
-                    onClick={(e) => setVat(e.target.value)}
-                  />
-                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
-                </div>
-                <div className="col-md-2">
-                  <input
-                    type="radio"
-                    name="vatInvoice"
-                    id="need"
-                    className="VATInvoice"
-                    value={t("reservation.need")}
-                    onClick={(e) => setVat(e.target.value)}
-                  />
-                  <label htmlFor="need">{t("reservation.need")}</label>
-                </div>
-              </div>
-                <span className="col-md-6 p-0 required__note">
-                  {t("reservation.vat-note")}
-                </span>
-              <div className="row">
-                <div className="col-md-2 name__title">
-                  {t("reservation.pay-method")}
-                </div>
-                <select
-                  style={{ width: "350px" }}
-                  value={paymentMethod}
-                  className="col-md-2 form__content"
-                  id={paymentMethod}
-                  onChange={(e) => {
-                    setPaymentMethod(e.target.value);
-                  }}
-                > {statusC === 0 &&
-                  payMethod.map((item) => (
-                  <option key={item.name} value={item.name}>
-                    {item.name}
-                  </option>
-                ))} 
-                {statusC === 1 && 
-                  payMethod2.map((item) => (
-                    <option key={item.name} value={item.name}>
-                      {item.name}
-                    </option>
-                  ))} 
-                </select>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        {/* {roomAmount >= 2 && 
-         <div className="guest-container">
-         <div className="row">
-           <div className="guest__information">
-             <div className="col-md-12 guest__name-title">
-               {t("reservation.guest-info")}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.name")}
-                 <span className="required__note">*</span>
-                 <small>{t("reservation.name-note")}</small>
-               </div>
-               <input
-                 placeholder={t("reservation.family-name")}
-                 type="text"
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
-               />
-                {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
-               <input
-                 placeholder={t("reservation.given-name")}
-                 type="text"
-                 name="gName"
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
-               />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
-               <span className="col-md-4 required__note">
-                 {t("reservation.name-required")}
-               </span>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.gender")}
-                 <span className="required__note">*</span>
-               </div>
-               <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gMale"
-                   value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
-                   
-                 />
-                 <label htmlFor="gMale">{t("reservation.mr")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gFemale"
-                   value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
-                 />
-                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
-               </div>
-               {errors.gender && 
-               <p className="col-md-2 error-message">{errors.gender}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.birth-date")}
-                 <span className="required__note">*</span>
-               </div>
-               <DayPicker />
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
-             </div>
-             {showButton >= 2 && (
-               <div className="row">
-                 <div className="col-md-12 offset-4">
-                   <button
-                    type="button"
-                     className="base__btn btn__send"
-                     onClick={handleClick}
-                   >
-                     {text}
-                   </button>
-                 </div>
-                 {show && (
-                   <div className="container">
-                     <div className="row guest-information">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.name")}
-                       </div>
-                       <input
-                         ref={inputRef}
-                         placeholder={t("reservation.family-name")}
-                         type="text"
-                         className="col-md-2 form__content"
-                         value={secondFamilyName}
-                         onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
-                       />
-
-                       <input
-                         ref={input2Ref}
-                         placeholder={t("reservation.given-name")}
-                         type="text"
-                         className=" col-md-2 form__content"
-                         value={secondGivenName}
-                         onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
-                       />
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.gender")}
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
-                           {t("reservation.ms")}
-                         </label>
-                       </div>
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.birth-date")}
-                       </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
-                     </div>
-                   </div>
-                 )}
-               </div>
-             )}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.booker")}
-               </div>
-               <div className="col-md-6">
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.same-person')}`}
-                   checked={status === 0}
-                   onClick={(e) => {
-                     handleSelected(0);
-                    
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.same-person")}
-                 </label>
-                 <br />
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.diff-person')}`}
-                   checked={status === 1}
-                   onClick={(e) => {
-                     handleSelected(1);
-                     
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.diff-person")}
-                 </label>
-               </div>
-             </div>
-             {status === 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.name")}</div>
-              <input
-                ref={input3Ref}
-                type="text"
-                className="booker-name form__content col-md-2"
-                value={bookerName}
-                placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
-              />
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.email")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.email-note")}
-               </span>
-               {errors.email && 
-               <p className="col-md-1 error-message">{errors.email}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.phone")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 id=""
-                 placeholder={t("reservation.phone")}
-                 onKeyPress={(event) => {
-                   if (!/[0-9]/.test(event.key)) {
-                     event.preventDefault();
-                   }
-                 }}
-                 onChange={(e) => setPhone(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.phone-note")}
-               </span>
-               {errors.phone && 
-               <p className="col-md-1 error-message">{errors.phone}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.room-type")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="smk">{t("reservation.smk")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
-               </div>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
-              />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
-              <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-              <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.vat-invoice")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="no-need"
-                   className="VATInvoice"
-                   value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="no-need">{t("reservation.n-need")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="need"
-                   className="VATInvoice"
-                   value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="need">{t("reservation.need")}</label>
-               </div>
-             </div>
-               <span className="col-md-6 p-0 required__note">
-                 {t("reservation.vat-note")}
-               </span>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.pay-method")}
-               </div>
-               <select
-                 style={{ width: "350px" }}
-                 value={paymentMethod}
-                 className="col-md-2 form__content"
-                 id={paymentMethod}
-                 onChange={(e) => {
-                   setPaymentMethod(e.target.value);
-                 }}
-               > {statusC === 0 &&
-                 payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
-                   {item.name}
-                 </option>
-               ))} 
-               {statusC === 1 && 
-                 payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
-                     {item.name}
-                   </option>
-                 ))} 
-               </select>
-             </div>
-           </div>
-         </div>
-       </div>
-        } 
-        {roomAmount >= 3 && 
-         <div className="guest-container">
-         <div className="row">
-           <div className="guest__information">
-             <div className="col-md-12 guest__name-title">
-               {t("reservation.guest-info")}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.name")}
-                 <span className="required__note">*</span>
-                 <small>{t("reservation.name-note")}</small>
-               </div>
-               <input
-                 placeholder={t("reservation.family-name")}
-                 type="text"
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
-               />
-                {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
-               <input
-                 placeholder={t("reservation.given-name")}
-                 type="text"
-                 name="gName"
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
-               />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
-               <span className="col-md-4 required__note">
-                 {t("reservation.name-required")}
-               </span>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.gender")}
-                 <span className="required__note">*</span>
-               </div>
-               <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gMale"
-                   value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
-                   
-                 />
-                 <label htmlFor="gMale">{t("reservation.mr")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gFemale"
-                   value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
-                 />
-                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
-               </div>
-               {errors.gender && 
-               <p className="col-md-2 error-message">{errors.gender}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.birth-date")}
-                 <span className="required__note">*</span>
-               </div>
-               <DayPicker />
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
-             </div>
-             {showButton >= 2 && (
-               <div className="row">
-                 <div className="col-md-12 offset-4">
-                   <button
-                     className="base__btn btn__send"
-                     onClick={handleClick}
-                   >
-                     {text}
-                   </button>
-                 </div>
-                 {show && (
-                   <div className="container">
-                     <div className="row guest-information">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.name")}
-                       </div>
-                       <input
-                         ref={inputRef}
-                         placeholder={t("reservation.family-name")}
-                         type="text"
-                         className="col-md-2 form__content"
-                         value={secondFamilyName}
-                         onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
-                       />
-
-                       <input
-                         ref={input2Ref}
-                         placeholder={t("reservation.given-name")}
-                         type="text"
-                         className=" col-md-2 form__content"
-                         value={secondGivenName}
-                         onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
-                       />
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.gender")}
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
-                           {t("reservation.ms")}
-                         </label>
-                       </div>
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.birth-date")}
-                       </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
-                     </div>
-                   </div>
-                 )}
-               </div>
-             )}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.booker")}
-               </div>
-               <div className="col-md-6">
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.same-person')}`}
-                   checked={status === 0}
-                   onClick={(e) => {
-                     handleSelected(0);
-                    
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.same-person")}
-                 </label>
-                 <br />
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.diff-person')}`}
-                   checked={status === 1}
-                   onClick={(e) => {
-                     handleSelected(1);
-                     
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.diff-person")}
-                 </label>
-               </div>
-             </div>
-             {status === 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.name")}</div>
-              <input
-                ref={input3Ref}
-                type="text"
-                className="booker-name form__content col-md-2"
-                value={bookerName}
-                placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
-              />
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.email")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.email-note")}
-               </span>
-               {errors.email && 
-               <p className="col-md-1 error-message">{errors.email}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.phone")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 id=""
-                 placeholder={t("reservation.phone")}
-                 onKeyPress={(event) => {
-                   if (!/[0-9]/.test(event.key)) {
-                     event.preventDefault();
-                   }
-                 }}
-                 onChange={(e) => setPhone(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.phone-note")}
-               </span>
-               {errors.phone && 
-               <p className="col-md-1 error-message">{errors.phone}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.room-type")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="smk">{t("reservation.smk")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
-               </div>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
-              />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
-              <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-              <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.vat-invoice")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="no-need"
-                   className="VATInvoice"
-                   value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="no-need">{t("reservation.n-need")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="need"
-                   className="VATInvoice"
-                   value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="need">{t("reservation.need")}</label>
-               </div>
-             </div>
-               <span className="col-md-6 p-0 required__note">
-                 {t("reservation.vat-note")}
-               </span>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.pay-method")}
-               </div>
-               <select
-                 style={{ width: "350px" }}
-                 value={paymentMethod}
-                 className="col-md-2 form__content"
-                 id={paymentMethod}
-                 onChange={(e) => {
-                   setPaymentMethod(e.target.value);
-                 }}
-               > {statusC === 0 &&
-                 payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
-                   {item.name}
-                 </option>
-               ))} 
-               {statusC === 1 && 
-                 payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
-                     {item.name}
-                   </option>
-                 ))} 
-               </select>
-             </div>
-           </div>
-         </div>
-       </div>
-        }
-         {roomAmount >= 4 && 
-         <div className="guest-container">
-         <div className="row">
-           <div className="guest__information">
-             <div className="col-md-12 guest__name-title">
-               {t("reservation.guest-info")}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.name")}
-                 <span className="required__note">*</span>
-                 <small>{t("reservation.name-note")}</small>
-               </div>
-               <input
-                 placeholder={t("reservation.family-name")}
-                 type="text"
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
-               />
-                {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
-               <input
-                 placeholder={t("reservation.given-name")}
-                 type="text"
-                 name="gName"
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
-               />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
-               <span className="col-md-4 required__note">
-                 {t("reservation.name-required")}
-               </span>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.gender")}
-                 <span className="required__note">*</span>
-               </div>
-               <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gMale"
-                   value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
-                   
-                 />
-                 <label htmlFor="gMale">{t("reservation.mr")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gFemale"
-                   value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
-                 />
-                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
-               </div>
-               {errors.gender && 
-               <p className="col-md-2 error-message">{errors.gender}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.birth-date")}
-                 <span className="required__note">*</span>
-               </div>
-               <DayPicker />
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
-             </div>
-             {showButton >= 2 && (
-               <div className="row">
-                 <div className="col-md-12 offset-4">
-                   <button
-                     className="base__btn btn__send"
-                     onClick={handleClick}
-                   >
-                     {text}
-                   </button>
-                 </div>
-                 {show && (
-                   <div className="container">
-                     <div className="row guest-information">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.name")}
-                       </div>
-                       <input
-                         ref={inputRef}
-                         placeholder={t("reservation.family-name")}
-                         type="text"
-                         className="col-md-2 form__content"
-                         value={secondFamilyName}
-                         onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
-                       />
-
-                       <input
-                         ref={input2Ref}
-                         placeholder={t("reservation.given-name")}
-                         type="text"
-                         className=" col-md-2 form__content"
-                         value={secondGivenName}
-                         onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
-                       />
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.gender")}
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
-                           {t("reservation.ms")}
-                         </label>
-                       </div>
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.birth-date")}
-                       </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
-                     </div>
-                   </div>
-                 )}
-               </div>
-             )}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.booker")}
-               </div>
-               <div className="col-md-6">
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.same-person')}`}
-                   checked={status === 0}
-                   onClick={(e) => {
-                     handleSelected(0);
-                    
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.same-person")}
-                 </label>
-                 <br />
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.diff-person')}`}
-                   checked={status === 1}
-                   onClick={(e) => {
-                     handleSelected(1);
-                     
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.diff-person")}
-                 </label>
-               </div>
-             </div>
-             {status === 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.name")}</div>
-              <input
-                ref={input3Ref}
-                type="text"
-                className="booker-name form__content col-md-2"
-                value={bookerName}
-                placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
-              />
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.email")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.email-note")}
-               </span>
-               {errors.email && 
-               <p className="col-md-1 error-message">{errors.email}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.phone")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 id=""
-                 placeholder={t("reservation.phone")}
-                 onKeyPress={(event) => {
-                   if (!/[0-9]/.test(event.key)) {
-                     event.preventDefault();
-                   }
-                 }}
-                 onChange={(e) => setPhone(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.phone-note")}
-               </span>
-               {errors.phone && 
-               <p className="col-md-1 error-message">{errors.phone}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.room-type")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="smk">{t("reservation.smk")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
-               </div>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
-              />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
-              <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-              <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.vat-invoice")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="no-need"
-                   className="VATInvoice"
-                   value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="no-need">{t("reservation.n-need")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="need"
-                   className="VATInvoice"
-                   value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="need">{t("reservation.need")}</label>
-               </div>
-             </div>
-               <span className="col-md-6 p-0 required__note">
-                 {t("reservation.vat-note")}
-               </span>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.pay-method")}
-               </div>
-               <select
-                 style={{ width: "350px" }}
-                 value={paymentMethod}
-                 className="col-md-2 form__content"
-                 id={paymentMethod}
-                 onChange={(e) => {
-                   setPaymentMethod(e.target.value);
-                 }}
-               > {statusC === 0 &&
-                 payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
-                   {item.name}
-                 </option>
-               ))} 
-               {statusC === 1 && 
-                 payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
-                     {item.name}
-                   </option>
-                 ))} 
-               </select>
-             </div>
-           </div>
-         </div>
-       </div>
-        } 
-        {roomAmount >= 5 && 
-         <div className="guest-container">
-         <div className="row">
-           <div className="guest__information">
-             <div className="col-md-12 guest__name-title">
-               {t("reservation.guest-info")}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.name")}
-                 <span className="required__note">*</span>
-                 <small>{t("reservation.name-note")}</small>
-               </div>
-               <input
-                 placeholder={t("reservation.family-name")}
-                 type="text"
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => {
-                   setFamilyName(e.target.value);
-                 }}
-               />
-                {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
-               <input
-                 placeholder={t("reservation.given-name")}
-                 type="text"
-                 name="gName"
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => setGivenName(e.target.value)}
-               />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
-               <span className="col-md-4 required__note">
-                 {t("reservation.name-required")}
-               </span>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.gender")}
-                 <span className="required__note">*</span>
-               </div>
-               <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gMale"
-                   value="Mr."
-                   checked={gender === "Mr."}
-                   onChange={(e) => setGender(e.target.value)}
-                   
-                 />
-                 <label htmlFor="gMale">{t("reservation.mr")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="gender"
-                   id="gFemale"
-                   value="Ms."
-                   checked = {gender === "Ms."}
-                   onChange={(e) => setGender(e.target.value)}
-                 />
-                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
-               </div>
-               {errors.gender && 
-               <p className="col-md-2 error-message">{errors.gender}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.birth-date")}
-                 <span className="required__note">*</span>
-               </div>
-               <DayPicker />
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
-               <MonthPicker />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
-               <YearPicker />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
-             </div>
-             {showButton >= 2 && (
-               <div className="row">
-                 <div className="col-md-12 offset-4">
-                   <button
-                     className="base__btn btn__send"
-                     onClick={handleClick}
-                   >
-                     {text}
-                   </button>
-                 </div>
-                 {show && (
-                   <div className="container">
-                     <div className="row guest-information">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.name")}
-                       </div>
-                       <input
-                         ref={inputRef}
-                         placeholder={t("reservation.family-name")}
-                         type="text"
-                         className="col-md-2 form__content"
-                         value={secondFamilyName}
-                         onClick={handleSecondFamilyNameClick}
-                         onChange={handleSecondFamilyName}
-                       />
-
-                       <input
-                         ref={input2Ref}
-                         placeholder={t("reservation.given-name")}
-                         type="text"
-                         className=" col-md-2 form__content"
-                         value={secondGivenName}
-                         onClick={handleSecondGivenNameClick}
-                         onChange={handleSecondGivenName}
-                       />
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.gender")}
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgMale"
-                           value="male"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="gMale">{t("reservation.mr")}</label>
-                       </div>
-                       <div className="col-md-2">
-                         <input
-                           type="radio"
-                           name="2ndgender"
-                           id="2ndgFemale"
-                           value="female"
-                           onChange={(e) => setSecondGender(e.target.value)}
-                         />
-                         <label htmlFor="2ndgFemale">
-                           {t("reservation.ms")}
-                         </label>
-                       </div>
-                     </div>
-                     <div className="row">
-                       <div className="col-md-2 name__title">
-                         {t("reservation.birth-date")}
-                       </div>
-                       <SecondDayPicker />
-                       <SecondMonthPicker />
-                       <SecondYearPicker />
-                     </div>
-                   </div>
-                 )}
-               </div>
-             )}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.booker")}
-               </div>
-               <div className="col-md-6">
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.same-person')}`}
-                   checked={status === 0}
-                   onClick={(e) => {
-                     handleSelected(0);
-                    
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.same-person")}
-                 </label>
-                 <br />
-                 <input
-                   type="radio"
-                   name="Booker"
-                   id="booker"
-                   value={`${t('reservation.diff-person')}`}
-                   checked={status === 1}
-                   onClick={(e) => {
-                     handleSelected(1);
-                     
-                   }}
-                   onChange={(e) => setBooker(e.target.value)}
-                 />
-                 <label htmlFor="booker">
-                   {t("reservation.diff-person")}
-                 </label>
-               </div>
-             </div>
-             {status === 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.name")}</div>
-              <input
-                ref={input3Ref}
-                type="text"
-                className="booker-name form__content col-md-2"
-                value={bookerName}
-                placeholder={t("reservation.name")}
-                onChange={handleChangeBookerName}
-              />
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.email")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 placeholder={t("reservation.email")}
-                 onChange={(e) => setEmail(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.email-note")}
-               </span>
-               {errors.email && 
-               <p className="col-md-1 error-message">{errors.email}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.phone")}
-                 <span className="col-md-2 required__note">*</span>
-               </div>
-               <input
-                 type="text"
-                 className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 id=""
-                 placeholder={t("reservation.phone")}
-                 onKeyPress={(event) => {
-                   if (!/[0-9]/.test(event.key)) {
-                     event.preventDefault();
-                   }
-                 }}
-                 onChange={(e) => setPhone(e.target.value)}
-               />
-               <span className="col-md-6 required__note">
-                 {t("reservation.phone-note")}
-               </span>
-               {errors.phone && 
-               <p className="col-md-1 error-message">{errors.phone}</p>}
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.room-type")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="smk"
-                   value={t("reservation.smk")}                       
-                   checked =  {roomType === `${t("reservation.smk")}`}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="smk">{t("reservation.smk")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="roomType"
-                   id="no-smk"
-                   checked = {roomType === `${t("reservation.non-smk")}`}
-                   value={t("reservation.non-smk")}
-                   onClick={(e) => setRoomType(e.target.value)}
-                 />
-                 <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
-               </div>
-             </div>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     setContract(e.target.value);
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={searchCompany}
-                onChange={handleChangeCompanyName}
-              />
-              {searchCompany && company ?
-             //  <div className="row">
-             //  <div className="col-md-2 name__title"></div>
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany(`${item.name}`)} style={{borderBottom:"1px solid #000", padding:'10px', cursor: "pointer", display:"inline-block"}} key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-             //  </div>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {company  ?
-              <>
-              <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-              <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => setDiscount(e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
-            </div>}
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.vat-invoice")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="no-need"
-                   className="VATInvoice"
-                   value={t("reservation.n-need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="no-need">{t("reservation.n-need")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="vatInvoice"
-                   id="need"
-                   className="VATInvoice"
-                   value={t("reservation.need")}
-                   onClick={(e) => setVat(e.target.value)}
-                 />
-                 <label htmlFor="need">{t("reservation.need")}</label>
-               </div>
-             </div>
-               <span className="col-md-6 p-0 required__note">
-                 {t("reservation.vat-note")}
-               </span>
-             <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.pay-method")}
-               </div>
-               <select
-                 style={{ width: "350px" }}
-                 value={paymentMethod}
-                 className="col-md-2 form__content"
-                 id={paymentMethod}
-                 onChange={(e) => {
-                   setPaymentMethod(e.target.value);
-                 }}
-               > {statusC === 0 &&
-                 payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
-                   {item.name}
-                 </option>
-               ))} 
-               {statusC === 1 && 
-                 payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
-                     {item.name}
-                   </option>
-                 ))} 
-               </select>
-             </div>
-           </div>
-         </div>
-       </div>
-        }           */}
-
         <div className="other-container">
           <div className="row">
             <div className="col-md-2 name__title">
@@ -5184,4 +3007,4 @@ function Reservation_onprogress({token}) {
   </div>
   );
 }
-export default Reservation_onprogress;
+export default Reservation;

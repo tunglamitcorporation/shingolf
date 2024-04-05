@@ -4,91 +4,62 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const TabsInput = () => {
   const [tabInputs, setTabInputs] = useState({
-    tab1: { input1: '', input2: '', input3: '', input4: '', input5: '' },
-    tab2: { input1: '', input2: '', input3: '', input4: '' },
-    tab3: { input1: '', input2: '', input3: '', input4: '', input5: '' },
-    tab4: { input1: '', input2: '', input3: '', input4: '', input5: '' },
-    tab5: { input1: '', input2: '', input3: '', input4: '', input5: '' },
+    tab1: '',
+    tab2: '',
+    tab3: '',
+    tab4: '',
+    tab5: '',
   });
 
-  const handleInputChange = (tabId, inputName, value) => {
-    setTabInputs((prevState) => ({
-      ...prevState,
-      [tabId]: {
-        ...prevState[tabId],
-        [inputName]: value,
-      },
-    }));
-  };
+  const [numTabs, setNumTabs] = useState(1); // Initial number of tabs
 
-  const handleRadioChange = (tabId, inputName, value) => {
+  const handleInputChange = (tabId, value) => {
     setTabInputs((prevState) => ({
       ...prevState,
-      [tabId]: {
-        ...prevState[tabId],
-        [inputName]: value,
-      },
+      [tabId]: value,
     }));
   };
 
   const handleSave = () => {
     // Log specific content from the state object
-    console.log("Tab 1:", tabInputs.tab1);
-    console.log("Tab 2:", tabInputs.tab2);
-    console.log("Tab 3:", tabInputs.tab3);
-    console.log("Tab 4:", tabInputs.tab4);
-    console.log("Tab 5:", tabInputs.tab5);
+    console.log("Content of tab1:", tabInputs.tab1);
+    console.log("Content of tab3:", tabInputs.tab3);
     // You can log other specific content as needed
   };
 
+  const addNewTab = () => {
+    const newNumTabs = numTabs + 1;
+    const newTabId = `tab${newNumTabs}`;
+    setTabInputs((prevState) => ({
+      ...prevState,
+      [newTabId]: '',
+    }));
+    setNumTabs(newNumTabs);
+  };
+
   return (
-    <Tabs>
-      <TabList>
-        <Tab>Tab 1</Tab>
-        <Tab>Tab 2</Tab>
-        <Tab>Tab 3</Tab>
-        <Tab>Tab 4</Tab>
-        <Tab>Tab 5</Tab>
-      </TabList>
+    <div>
+      <Tabs>
+        <TabList>
+          {Object.keys(tabInputs).map((tabId) => (
+            <Tab key={tabId}>{tabId}</Tab>
+          ))}
+        </TabList>
 
-      <TabPanel>
-        <input
-          type="text"
-          value={tabInputs.tab1.input1}
-          onChange={(e) => handleInputChange('tab1', 'input1', e.target.value)}
-        />
-        {/* Add more input fields for tab1 */}
-      </TabPanel>
-      
-      <TabPanel>
-        <label>
-          <input
-            type="radio"
-            value="option1"
-            checked={tabInputs.tab2.input1 === 'option1'}
-            onChange={(e) => handleRadioChange('tab2', 'input1', e.target.value)}
-          /> Option 1
-        </label>
-        {/* Add more radio buttons for tab2 */}
-      </TabPanel>
+        {Object.keys(tabInputs).map((tabId) => (
+          <TabPanel key={tabId}>
+            <input
+              type="text"
+              value={tabInputs[tabId]}
+              onChange={(e) => handleInputChange(tabId, e.target.value)}
+            />
+          </TabPanel>
+        ))}
+      </Tabs>
 
-      <TabPanel>
-        <select
-          value={tabInputs.tab3.input1}
-          onChange={(e) => handleInputChange('tab3', 'input1', e.target.value)}
-        >
-          <option value="">Select an option</option>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          {/* Add more options for tab3 */}
-        </select>
-        {/* Add more select dropdowns for tab3 */}
-      </TabPanel>
-
-      {/* Repeat TabPanel for other tabs */}
-      
+      <button onClick={addNewTab}>Add Tab</button>
       <button onClick={handleSave}>Save</button> {/* Log specific content on button click */}
-    </Tabs>
+    </div>
   );
 };
 

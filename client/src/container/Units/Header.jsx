@@ -10,6 +10,8 @@ function Header() {
     i18n.changeLanguage(lng);
     Cookies.set('selectedLanguage', lng, {expires: 365})
   };
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedBranch, setSelectedBranch] = useState('s');
 
   const feature = t("feature.feature_item", { returnObjects: true });
   const hcm = t("hcm-branch.branch", {returnObjects:true})
@@ -330,7 +332,7 @@ function Header() {
                       <ul className="header__navbar-item-list" style={{width:200}}>
                         {hn.map((item)=>(
                           <li className = "header__navbar-sub-link" >
-                          <Link 
+                          <Link
                           to ={item.link}>{item.name}
                           </Link>
                             </li>
@@ -398,11 +400,6 @@ function Header() {
                         ))}
                         </ul>
                     </Tab>
-                    {/* <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Massage">
-                        {t("header.massage")}
-                      </Link>
-                    </Tab> */}
                     <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" style={{width:140}} to="/contract">
                         {t("header.contract")}
@@ -413,20 +410,20 @@ function Header() {
                         {t("header.reservation")}
                       </Link>
                     </Tab>
-                    {/* <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/Login">
-                        Sign In
-                      </Link>
-                    </Tab> */}
                     <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/q&a">
                         {t("header.policies")}
                       </Link>
                     </Tab>
+                    <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/feedback">
+                        {t("header.feedback")}
+                      </Link>
+                    </Tab>
                   </TabList>
                   </Tabs>
             </div>
-            </div>
+          </div>
      </div>
     </>
   );

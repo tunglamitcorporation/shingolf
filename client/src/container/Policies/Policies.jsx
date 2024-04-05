@@ -53,7 +53,7 @@ export default function Policies(){
                         <div className="re__breadcrumb">
                         <ul className="breadcrumb__list">
                                    <li className = "breadcrumb__item">
-                                       <Link  to="/Home">
+                                       <Link  to="/">
                                            <i className="fa-solid fa-house"></i>
                                        </Link>
                                    </li>
@@ -61,7 +61,7 @@ export default function Policies(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                       <Link className ="breadcrumb__title" to = '/Policies'>Hotel Policies</Link>
+                                       <Link className ="breadcrumb__title" to = '/q&a'>{t('header.policies')}</Link>
                                 </li>
                        </ul>
                        </div>

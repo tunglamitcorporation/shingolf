@@ -91,7 +91,6 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
 			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/azumayavietnam.com\/?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"}}]},{"@type":"CollectionPage","@id":"https:\/\/azumayavietnam.com\/#collectionpage","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb - Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/#breadcrumblist"},"about":{"@id":"https:\/\/azumayavietnam.com\/#organization"}}]`}
 		</script>
     </Helmet> */}
-
     <div className="homepage">
       <div className="content">
       <div className="overlay"></div>
@@ -101,19 +100,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
       infinite
       play
       interval = {5000}>
-         {/* {caption.map((item) => (
-              <div data-src={item.image}>
-                                  <p className="carousel_name">{item.caption}</p>
-                                  <div className="btn_container">
-                                  <Link to = {item.link}><i class="fa-solid fa-angle-right"></i></Link>
-                                  </div>
-                                  </div>
-                                  
-                          ))} */}
-                          {caption.map((item) => (
+            {caption.map((item) => (
                <div data-src={item.image}>
                                  <Link to = {item.link}>
-                                  {/* <img className="logo_az" style={{ filter: "brightness(1)" }} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1711688000/AzumayaWeb/AZLOGO_vbwjeu.png" /> */}
                                   <p className="carousel_name">{item.name}<br />{item.caption}</p>
                                   </Link>
                                   </div>
@@ -200,7 +189,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       </div>
                     </div>
                     <div className="col-md-2 news_branch-container">
-                          <div className="allbranch allbranch_home">{t("header.allbranch")}</div>
+                          <div className="allbranch allbranch_home">{t("header.vietnam")}</div>
                     </div>
                     <div className="col-md-7 mt-2 news_title-container">
                       <div >
@@ -415,7 +404,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <a href="">{item.title}</a>
                     </div>
                     <div className="content__feature-text">
-                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 55)}...
+                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 75)}...
                       <Link 
                       className="continue_link" 
                       to = {`/Feature/${item.id}`}

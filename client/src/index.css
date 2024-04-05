@@ -7,6 +7,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   /* overflow-x: hidden;s */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  padding-right: calc(90vw - 100%);
 }
 
 body {
@@ -657,7 +659,7 @@ code {
   left: 0px;
   right: 0;
   height: 10px;
-  width: 1920px;
+  width: 1000px;
   background-color: var(--primary--color);
   pointer-events: none;
 }
@@ -815,7 +817,6 @@ code {
   font-size: 34px;
   font-weight: bold;
   color: #ffffff;
-  width: 100%;
   text-align: center;
   position: relative;
 }
@@ -831,16 +832,23 @@ code {
 
 }
 .content__welcome-text small{
-  font-size: 34px;
+  font-size: 28px;
   color: #ffffff;
   display: block;
   font-weight: bold;
   text-align: center;
+  margin-top: 10px;
 }
 .content__welcome p {
   text-align: justify;
   color: #ffffff;
+  font-style: italic;
   position: relative;
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+
 }
 .content__welcome p::after {
   content: '';
@@ -959,7 +967,7 @@ code {
 /* Reservation */
 .reservation__content{
   width: 100%;
-  padding: 150px 0;
+  padding: 250px 0;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/rd2qg5wkfxdoarlvcuwl.jpg) center center / cover no-repeat fixed;
   background-attachment: fixed;
   position: relative;
@@ -1071,8 +1079,8 @@ code {
 /* Hotel Policies */
 .policies__header {
   width: 100%;
-  padding: 150px 0;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/jlrespa749hwpa3n7zxw.jpg) center center / cover no-repeat;
+  padding: 250px 0;
+  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1712223871/AzumayaWeb/feature_haxcw8.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   position: relative;
   text-align: center;
@@ -1182,7 +1190,7 @@ code {
   font-size: 1.4rem;
 }
 .service__header {
-  padding: 150px 0;
+  padding: 250px 0;
   position: relative;
   background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/wnyhgvfrdrrbyjkbb501.jpg) center center / cover no-repeat;
   height: 280px;
@@ -2017,13 +2025,13 @@ filter: brightness(0.5);
   width: 240px!important;
   height: 60px !important;
   z-index: 3;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-style: italic;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: left;
-  background-color: #482979 !important; 
   font-weight: bolder;
 }
 .awssld {
@@ -2280,6 +2288,14 @@ filter: brightness(0.5);
   font-size: 2rem !important;
 
 }
+.company_list{
+  border-bottom: 1px solid #482979;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{
     color: white;
@@ -2589,7 +2605,6 @@ font-size: 1.2rem !important;
   justify-content: center;
   align-items: center;
   text-align: left;
-  background-color: #482979 !important; 
   font-weight: bolder;
 }
 .welcome-content{

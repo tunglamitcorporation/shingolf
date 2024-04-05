@@ -40,8 +40,8 @@ export default function HPRoomDetail() {
     // Navigate to Receiver2Page and pass data
     navigate('/reservation', { state: data });
   }
-   const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-    const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+   const [selectedCity, setSelectedCity] = useState('hotel-hp');
+    const [selectedBranch, setSelectedBranch] = useState('hai-phong');
     useEffect(() => {
       if (receivedData && receivedData.selectedCity) {
         setSelectedCity(receivedData.selectedCity);

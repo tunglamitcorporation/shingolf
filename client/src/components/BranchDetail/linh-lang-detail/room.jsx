@@ -43,8 +43,8 @@ export default function LLRoomDetail() {
     // Navigate to Receiver2Page and pass data
     navigate('/reservation', { state: data });
   };
-  const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  const [selectedCity, setSelectedCity] = useState('hotel-hn');
+  const [selectedBranch, setSelectedBranch] = useState('linh-lang-detail');
   
   useEffect(() => {
     if (receivedData && receivedData.selectedCity) {
@@ -222,7 +222,7 @@ export default function LLRoomDetail() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/BrandDetail">
+                <Link className="breadcrumb__title" to="/hotel-hn">
                   {t("header.hn")}
                 </Link>
               </li>

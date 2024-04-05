@@ -20,6 +20,7 @@
         "massage": "Massage Service",
         "room": "Hạng Phòng",
         "contact": "Liên Hệ",
+        "feedback":"Báo Lỗi",
         "itemTest": "Test"
     },
     "footer": {
@@ -179,7 +180,7 @@
                 "branch_id": "da-nang",
                 "city_id": "hotel-dn",
                 "city_name": "Đà Nẵng",
-                "branch_name": "Azumaya Đà Năng Hotel"
+                "branch_name": "Azumaya Đà Nẵng Hotel"
             },
             {
                 "branch_id": "hai-phong",
@@ -691,7 +692,7 @@
         "news_title": "Thông Tin",
         "welcome_title": "Chào mừng quý khách đến với Khách sạn Azumaya",
         "welcome_sub-title": "Mang tới không gian an toàn và yên tâm cho doanh nhân đi công tác nước Ngoài",
-        "welcome_content": "Ngày nay, Số lượng doanh nhân từ các nước phát triển đến Việt Nam công tác ngày càng tăng theo từng năm.Trong lúc đó,lần đầu tiên đến Việt Nam chắc hẵn sẽ có rất nhiều lo lắng như là ẩm thực, ngôn ngữ.Ở khách sạn Azumaya chúng tôi nỗ lực hàng ngày để trở thành nơi dừng chân an toàn và yên tâm cho các doanh nhân Nhật Bản dựa trên khái niệm  Hòa” - Văn hóa Nhật Bản. Đối với những doanh nhân đi công tác nước ngoài, chúng tôi muốn cung cấp một không gian an toàn và yên tâm mà không có cảm giác như  ở một đất nước xa lạ.Với phương châm này, Chúng tôi phục vụ \"Tắm lộ thiên \" và \"Mát xa chân\" để giảm bớt những mệt mỏi của công việc cũng như tiếp thêm năng lượng cho một ngày làm việc bằng bữa ăn sáng kiểu Nhật.Để khách có thể yên tâm tận hưởng cuộc sống ở nước ngoài,Chúng tôi cung cấp dịch vụ hiếu khách nhất có thể: Nhân viên lễ tân  trực có thể đối ứng tiếng Nhật, Tất cả các phòng đều có thể xem các chương trình phát sóng tiếng Nhật như NHK,WOWOW  và các chương trình thương mại khác, dịch vụ đưa tiễn Sân Bay, dịch vụ giặt là,Internet miễn phí tốc độ cao, cho thuê xe, sắp xếp tham quan.",
+        "welcome_content": "Ngày nay, số lượng doanh nhân từ các nước phát triển đến Việt Nam công tác ngày càng tăng theo từng năm.Trong lúc đó, lần đầu tiên đến Việt Nam chắc chẵn sẽ có rất nhiều lo lắng như là ẩm thực, ngôn ngữ. Ở khách sạn Azumaya chúng tôi nỗ lực hàng ngày để trở thành nơi dừng chân an toàn và yên tâm cho các doanh nhân Nhật Bản dựa trên khái niệm \"Wa\" trong Văn hóa Nhật Bản. Đối với những doanh nhân đi công tác nước ngoài, chúng tôi muốn cung cấp một không gian an toàn và yên tâm mà không có cảm giác như ở một đất nước xa lạ. Với phương châm này, Chúng tôi phục vụ \"Tắm lộ thiên\" và \"Mát xa chân\" để giảm bớt những mệt mỏi của công việc cũng như tiếp thêm năng lượng cho một ngày làm việc bằng bữa ăn sáng kiểu Nhật.Để khách có thể yên tâm tận hưởng cuộc sống ở nước ngoài, Chúng tôi cung cấp dịch vụ hiếu khách nhất có thể: Nhân viên lễ tân có thể đối ứng tiếng Nhật. Tất cả các phòng đều có thể xem các chương trình truyền hình Nhật Bản như NHK, WOWOW và các chương trình thương mại khác, dịch vụ đưa tiễn sân bay, dịch vụ giặt là, Internet miễn phí tốc độ cao, cho thuê xe, sắp xếp tham quan.",
         "line_link": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/osinqzr0vyumuje789dn.jpg",
         "line_btn": "Nhấn để xem chi tiết"
     },
@@ -1023,7 +1024,7 @@
         "branch": [
             {
                 "id": 1,
-                "name": "AzumayaHai Bà Trưng 1",
+                "name": "Azumaya Hai Bà Trưng 1",
                 "desc": "Khách sạn Azumaya Hai Bà Trưng 1 có 31 phòng tọa lạc ngay giữa quận Hai Bà Trưng với vòi sen, toilet, bồn tắm và các chương trình truyền hình Nhật Bản được cung cấp cho mỗi phòng. Nhà hàng “Mangetsu” (6 giờ chiều - 2 giờ sáng).Massage chân theo phong cách nguyên bản được 90% khách hàng quay lại (thời gian đặt massage cuối cùng là 9:45 tối). Ở tất cả các chi nhánh, chỉ có chi nhánh Hai Bà Trưng 1 sử dụng đá tự nhiên cho bồn tắm lộ thiên. Sau khi thư giãn trong bồn tắm nước nóng ngoài trời, hãy massage nhẹ nhàng và thỏa mãn bằng bữa ăn ngon tại nhà hàng Mangetsu, chúng tôi hứa hẹn bạn sẽ quên đi mệt mỏi hôm nay và có giấc ngủ sâu để làm việc cho ngày hôm sau.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg",
                 "link": "/hai-ba-trung-detail/room"
@@ -3815,62 +3816,61 @@
         "send": "Gửi"
     },
     "caption": [
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923655/AzumayaWeb/Rotenburo/rtbrdn5_lrb6bk.jpg",
-            "caption": "Khách \nsạn\n Azumaya \nHai \nBà \nTrưng \n1",
-            "link": "/hai-ba-trung-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923665/AzumayaWeb/Rotenburo/rtbrdn1_qrc16u.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nLê \nThánh \nTôn",
-            "link": "/le-thanh-ton-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923685/AzumayaWeb/Rotenburo/rtbrltt_pnxi9a.webp",
-            "caption": "Khách \nsạn \nAzumaya \nKim \nMã \n2",
-            "link": "/kim-ma-2-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923767/AzumayaWeb/Rotenburo/rtbrdn4_oinxsy.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nPhnôm\nPênh",
-            "link": ""
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923653/AzumayaWeb/Rotenburo/rtbrpp_n1am6e.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nĐà \nNẵng",
-            "link": "/da-nang/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nThái \nVăn \nLung \n1",
-            "link": "/thai-van-lung-1-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923689/AzumayaWeb/Rotenburo/rtbrtvl_ykcmsa.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nHải \nPhòng",
-            "link": "/hai-phong/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923693/AzumayaWeb/Rotenburo/rtbrhp_ljniql.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nLinh \nLang",
-            "link": "/linh-lang-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/rtbrll_mhfusl.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nThái \nVăn \nLung \n2",
-            "link": "/thai-van-lung-2-detail/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923696/AzumayaWeb/Rotenburo/trbrdn2_zmahum.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nĐà \nNẵng",
-            "link": "/da-nang/room"
-        },
-        {
-            "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923674/AzumayaWeb/Rotenburo/rtbrdn_alnu9t.jpg",
-            "caption": "Khách \nsạn \nAzumaya \nKim \nMã \n3",
-            "link": "/kim-ma-3-detail/room"
-        }
-    ],
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787350/AzumayaWeb/Rotenburo/RTBR_KM2_f7f3j8.jpg",
+                "caption": "Azumaya Hotel Kim Mã 2",
+                "name":"Hà Nội",
+                "link": "/kim-ma-2-detail/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png",
+                "caption": "Azumaya Hotel Hải Phòng",
+                "name":"Hải Phòng",
+                "link": "/hai-phong/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
+                "caption": "Azumaya Hotel Đà Nẵng",
+                "name":"Đà Nẵng",
+                "link": "/da-nang/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787352/AzumayaWeb/Rotenburo/RTBR_TVL1_fv00lo.jpg",
+                "caption": "Azumaya Hotel Thái Văn Lung 1",
+                "name":"Hồ Chí Minh",
+                "link": "/thai-van-lung-1-detail/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787343/AzumayaWeb/Rotenburo/RTBR_HBT1_seeimp.jpg",
+                "caption": "Azumaya Hotel Hai Bà Trưng 1",
+                "name":"Hà Nội",
+                "link": "/hai-ba-trung-detail/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg",
+                "caption": "Azumaya Hotel Linh Lang",
+                "name":"Hà Nội",
+                "link": "/linh-lang-detail/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787356/AzumayaWeb/Rotenburo/RTBR_KM3_m9iq0n.png",
+                "caption": "Azumaya Hotel Kim Mã 3",
+                "name":"Hà Nội",
+                "link": "/kim-ma-3-detail/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787354/AzumayaWeb/Rotenburo/RTBR_LTT_t4rpue.jpg",
+                "caption": "Azumaya Hotel Lê Thánh Tôn",
+                "name":"Hồ Chí Minh",
+                "link": "/le-thanh-ton-detail/room"
+            },
+            {
+                "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg",
+                "caption": "Azumaya Hotel Thái Văn Lung 2",
+                "name":"Hồ Chí Minh",
+                "link": "/thai-van-lung-2-detail/room"
+            }
+        ],
     "service_breakfast": {
         "openHour": "《Giờ phục vụ》",
         "price": "《Giá khách ngoài》",

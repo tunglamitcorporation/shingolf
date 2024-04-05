@@ -215,7 +215,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hcm');
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/HCMBranch">
+                <Link className="breadcrumb__title" to="/hotel-hcm">
                   {t("header.hcm")}
                 </Link>
               </li>

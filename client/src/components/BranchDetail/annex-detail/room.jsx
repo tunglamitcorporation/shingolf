@@ -39,7 +39,7 @@ export default function AnnexRoomDetail() {
     navigate('/reservation', { state: data });
   };
   const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  const [selectedBranch, setSelectedBranch] = useState('annex-detail');
   useEffect(() => {
     if (receivedData && receivedData.selectedCity) {
       setSelectedCity(receivedData.selectedCity);

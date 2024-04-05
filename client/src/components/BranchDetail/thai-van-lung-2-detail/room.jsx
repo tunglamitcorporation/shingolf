@@ -43,7 +43,7 @@ export default function TVL2RoomDetail() {
     navigate('/reservation', { state: data });
   };
   const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  const [selectedBranch, setSelectedBranch] = useState('thai-van-lung-2-detail');
   useEffect(() => {
     if (receivedData && receivedData.selectedCity) {
       setSelectedCity(receivedData.selectedCity);
@@ -208,7 +208,7 @@ export default function TVL2RoomDetail() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/HCMBranch">
+                <Link className="breadcrumb__title" to="/hotel-hcm">
                   {t("header.hcm")}
                 </Link>
               </li>
