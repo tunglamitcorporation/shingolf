@@ -4,6 +4,7 @@ import Collapsible from "react-collapsible";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useRef, useState} from 'react';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
+import FormComponent from "../../Test2";
 
 export default function Contract() {
   const {t} = useTranslation();
@@ -24,7 +25,7 @@ export default function Contract() {
   const handleClick = () => {
     ref.current?.scrollIntoView({behavior: 'smooth'});
   };
- const handleSubmit = () => {
+ const handleSubmit = (e) => {
   const dataObject = {
         companyName,
         address,
@@ -35,6 +36,7 @@ export default function Contract() {
         phoneNumber
   }
   console.log(dataObject)
+  e.preventDefault();
  }
   return (
     <div>
@@ -241,12 +243,14 @@ export default function Contract() {
                     /> */}
                     </div>
                     <button 
+                    id='send'
                     type="submit"
                     className="base__btn btn__send">{t('contract.send')}</button>
                   </form>
           </div>
         </div>
       </div>
+      <FormComponent />
         </div>
       </div>
     </div>

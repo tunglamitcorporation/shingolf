@@ -3965,7 +3965,20 @@
             {
                 "content": "※ Combo with Open air hot bath is available"
             }
-        ]
+        ],
+        "modal_titleHN":"Massage Ha Noi (Azumaya Linh Lang)",
+        "modal_titleDN":"Massage Da Nang (Azumaya Da Nang)",
+        "modal_titleHCM":"Massage Ho Chi Minh (Azumaya Ho Chi Minh",
+        "reservation1":"Reservation by Email",
+        "reservation2":"Call directly for Receptionist",
+        "guest_name":"Guest Name",
+        "phone_number":"Phone Number",
+        "email":"Email",
+        "date":"Date",
+        "time":"Time",
+        "minutes": "minutes",
+        "special":"Special note"
+        
     },
     "error":{
         "title":"The page you are looking for does not exist",

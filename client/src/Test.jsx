@@ -19,7 +19,6 @@ const TabsInput = () => {
       [tabId]: value,
     }));
   };
-
   const handleSave = () => {
     // Log specific content from the state object
     console.log("Content of tab1:", tabInputs.tab1);

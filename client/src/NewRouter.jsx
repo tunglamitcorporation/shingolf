@@ -6,7 +6,7 @@ import Home from "./container/Home/Home";
 import Feature from "./container/Feature/Feature";
 import Policies from "./container/Policies/Policies";
 import Contract from "./container/Contract/Contract";
-import Reservation from "./container/Reservation/Reservation";
+import Reservation from './container/Reservation/Reservation';
 import NewsList from "./components/Home/NewsList";
 import News from "./components/Home/News";
 import NewsByDate from "./components/Home/NewsByDate";
@@ -30,15 +30,11 @@ import ThankYou from './container/Reservation/ThankYou';
 import VietnamService from "./container/Service/Service"
 import ErrorPage from './container/Units/ErrorPage';
 import Feedback from './container/Units/Feedback';
+import Reservation_backup from './container/Reservation/Reservation_backup'
 
 
 function NewRouter(props) {
     const location = useLocation() 
-    useEffect(() => {
-        if (location.pathname.startsWith('/news-list')) {
-          document.title = "News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル ";
-        }
-      }, [location.pathname]);
   useEffect(() => {
     switch (location.pathname) {
       case '/':
@@ -112,6 +108,9 @@ function NewRouter(props) {
           else if (location.pathname.startsWith('/feature')) {
               document.title = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル '
             }
+            else if(location.pathname.startsWith('/news-list')) {
+              document.title = "News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル ";
+            }
           else {
             document.title = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル ';
           }
@@ -153,7 +152,7 @@ function NewRouter(props) {
                 <Route path="/hai-phong/room" element={<HPRoomDetail />} />
                 <Route path='*' element={<ErrorPage />} />
                 <Route path='/feedback' element={ <Feedback /> } />                
-                {/* <Route path="/reservation-test" element={<Reservation_onprogress />} /> */}
+                <Route path="/backup" element={<Reservation_backup />} />
             </Routes>
         </section>
     );

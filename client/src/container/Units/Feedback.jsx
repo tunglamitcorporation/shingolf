@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import { useState } from 'react'
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import ImageUploadForm from '../../Test2'
 export default function Feedback() {
 function LineModal(props) {
     return (
@@ -45,7 +44,7 @@ function LineModal(props) {
     const handleFileChange = (event) => {
       setSelectedFile(event.target.files[0]);
     };
-    const handleSubmit = (event) => {
+    const handleSubmit = (e) => {
         const dataObject = {
             selectedFile,
             issue,
@@ -54,8 +53,8 @@ function LineModal(props) {
             browser,
             additional
         }
-        console.log(dataObject);
-        event.preventDefault();
+        console.log(dataObject);    
+        e.preventDefault();
     }
     return(
         <>
@@ -100,7 +99,7 @@ function LineModal(props) {
                     </ul>
                 </div>
             </div>
-                    <form onSubmit={handleSubmit}>
+         <form onSubmit={handleSubmit}>
             <div className="container">
                 <div className="row">
                     <div className="col-md-8">

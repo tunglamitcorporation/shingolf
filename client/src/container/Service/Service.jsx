@@ -1,18 +1,17 @@
 import React from "react";
 import Booking from "../Units/Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
 import Flatpickr from "react-flatpickr";
-// import "flatpickr/dist/themes/airbnb.css";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
-
-
+import { format } from "date-fns";
 
 export default function VietnamService() {
+
   function MassageLinhLangModal(props) {
     const [startDate, setStartDate] = useState(null);
     const [startTime, setStartTime] = useState(null);
@@ -21,17 +20,27 @@ export default function VietnamService() {
     const [phone, setPhone] = useState();
     const [email, setEmail] = useState();
     const [specialRequest, setSpecialRequest] = useState();
-  
-    const validate = () => {
-      alert(
-        guestName + '' +
-        phone + '' +
-        email + '' +
-        startDate + '' +
-        startTime + '' +
-        option + '' +
+    const handleStartTimeChange = (selectedDates) => {
+      if (selectedDates.length > 0) {
+        const selectedDate = new Date(selectedDates[0]);
+        const timeString = selectedDate.toTimeString().split(" ")[0];
+        setStartTime(timeString);
+      } else {
+        setStartTime(null);
+      }
+    };
+    const handleSubmit = (e) => {
+      const dataObject = {
+        startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
+        startTime,
+        guestName,
+        option,
+        phone,
+        email,
         specialRequest
-      )
+      }
+      console.log(dataObject);
+      e.preventDefault()
     }
     return (
       <Modal
@@ -44,7 +53,7 @@ export default function VietnamService() {
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Massage Ha Noi (Azumaya Linh Lang)
+            {t("service_massage.modal_titleHN")}
           </Modal.Title>
           <Button variant="light" onClick={props.onHide}>
             <i class="fa-solid fa-xmark purple"></i>
@@ -53,12 +62,14 @@ export default function VietnamService() {
         <div className="row">
           <div className="col-md-6 massage_reservation">
             <Modal.Body>
-              <h2>Reservation by email</h2>
+        <form onSubmit={handleSubmit}>
+              <h2>{t("service_massage.reservation1")}</h2>
               <div className="row pl-3 pr-3">
                 <input
-                  placeholder="Guest Name"
+                  placeholder={t("service_massage.guest_name")}
                   type="text"
                   className="col-md-12 form__content mb-0"
+                  value={guestName}
                   onChange={(e) => {
                     setGuestName(e.target.value);
                   }}
@@ -70,7 +81,7 @@ export default function VietnamService() {
                   className="booker-phone form__content col-md-12"
                   id=""
                   value={phone}
-                  placeholder="Phone Number"
+                  placeholder={t("service_massage.phone_number")}
                   onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {
                       event.preventDefault();
@@ -83,30 +94,32 @@ export default function VietnamService() {
                   className="form__content col-md-12"
                   id=""
                   value={email}
-                  placeholder="Email"
+                  placeholder={t("service_massage.email")}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                
                 <Flatpickr
-                  value={startDate}
-                  options={{
-                    minDate: "today",
-                  }}
-                  className="col-md-6 form__content webkit-appearance mr-0"
-                  placeholder="Date"
-                  onChange={(startDate) => {
-                    setStartDate(startDate);
-                  }}
-                />
+              value={startDate}
+              options={{
+                minDate: 'today',
+                dateFormat: "Y-m-d",
+              }}
+              className="col-md-6 form__content webkit-appearance mr-0"
+              placeholder={t("service_massage.date")}
+              onChange={(dates) => {
+                setStartDate(dates[0]);
+              }}
+            />
                 <Flatpickr
                   value={startTime}
                   options={{
                     enableTime: true,
                     noCalendar: true,
-                    minTime: "21:30",
+                    maxTime: "21:30",
                     time_24hr: true,
                   }}
-                  placeholder="Time"
-                  onChange={(startTime) => setStartTime(startTime)}
+                  placeholder={t("service_massage.time")}
+                  onChange={handleStartTimeChange}
                   className="col-md-6 form__content webkit-appearance mr-0"
                 />
                 <select
@@ -116,23 +129,24 @@ export default function VietnamService() {
                     setOption(e.target.value);
                   }}
                 >
-                  <option value="40 minutes">40 minutes</option>
-                  <option value="0 minutes">70 minutes</option>
-                  <option value="100 minutes">100 minutes</option>
+                  <option value="40 minutes">40 {t("service_massage.minutes")}</option>
+                  <option value="70 minutes">70 {t("service_massage.minutes")}</option>
+                  <option value="100 minutes">100 {t("service_massage.minutes")}</option>
                 </select>
                 <textarea
                   className="text-note"
                   cols="40"
                   rows="6"
-                  placeholder="Special Note"
+                  placeholder={t("service_massage.special")}
+                  value={specialRequest}
                   onChange={(e) => setSpecialRequest(e.target.value)}
                 ></textarea>
   
                 <div className="row justify-content-center">
                   <button
+                    id="send"
                     class="button-57 send-btn col-3 col-md-6"
-                    role="button"
-                    onClick={validate}
+                    type="submit"
                   >
                     <span class="text" style={{ color: "#fff" }}>
                       Send
@@ -146,6 +160,7 @@ export default function VietnamService() {
                   </button>
                 </div>
               </div>
+              </form>
             </Modal.Body>
           </div>
           <div className="col-md-6">
@@ -157,7 +172,7 @@ export default function VietnamService() {
               </div>
             </div>
             <Modal.Body>
-              <h2>Call directly for Receptionist</h2>
+              <h2>{t("service_massage.reservation2")}</h2>
               <div className="btn_container mt-4">
                 <button className="button-57 call-btn p-0">
                   <a className="d-block" href="tel:+84.24.3862 0620">
@@ -213,17 +228,27 @@ export default function VietnamService() {
     const [phone, setPhone] = useState();
     const [email, setEmail] = useState();
     const [specialRequest, setSpecialRequest] = useState();
-  
-    const validate = () => {
-      alert(
-        guestName + '' +
-        phone + '' +
-        email + '' +
-        startDate + '' +
-        startTime + '' +
-        option + '' +
+    const handleStartTimeChange = (selectedDates) => {
+      if (selectedDates.length > 0) {
+        const selectedDate = new Date(selectedDates[0]);
+        const timeString = selectedDate.toTimeString().split(" ")[0];
+        setStartTime(timeString);
+      } else {
+        setStartTime(null);
+      }
+    };
+    const handleSubmit = (e) => {
+      const dataObject = {
+        startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
+        startTime,
+        guestName,
+        option,
+        phone,
+        email,
         specialRequest
-      )
+      }
+      console.log(dataObject);
+      e.preventDefault()
     }
     return (
       <Modal
@@ -236,7 +261,7 @@ export default function VietnamService() {
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Massage Da Nang (Azumaya Da Nang)
+            {t("service_massage.modal_titleDN")}
           </Modal.Title>
           <Button variant="light" onClick={props.onHide}>
             <i class="fa-solid fa-xmark purple"></i>
@@ -245,12 +270,14 @@ export default function VietnamService() {
         <div className="row">
           <div className="col-md-6 massage_reservation">
             <Modal.Body>
-              <h2>Reservation by email</h2>
+            <form onSubmit={handleSubmit}>
+              <h2>{t("service_massage.guest_name")}</h2>
               <div className="row pl-3 pr-3">
                 <input
-                  placeholder="Guest Name"
+                  placeholder={t("service_massage.guest_name")}
                   type="text"
                   className="col-md-12 form__content mb-0"
+                  value={guestName}
                   onChange={(e) => {
                     setGuestName(e.target.value);
                   }}
@@ -261,7 +288,8 @@ export default function VietnamService() {
                   type="text"
                   className="booker-phone form__content col-md-12"
                   id=""
-                  placeholder="Phone Number"
+                  value={phone}
+                  placeholder={t("service_massage.phone_number")}
                   onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {
                       event.preventDefault();
@@ -269,35 +297,37 @@ export default function VietnamService() {
                   }}
                   onChange={(e) => setPhone(e.target.value)}
                 />
-                <input
+                  <input
                   type="text"
                   className="form__content col-md-12"
                   id=""
                   value={email}
-                  placeholder="Email"
+                  placeholder={t("service_massage.email")}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                
                 <Flatpickr
-                  value={startDate}
-                  options={{
-                    minDate: "today",
-                  }}
-                  className="col-md-6 form__content webkit-appearance mr-0"
-                  placeholder="Date"
-                  onChange={(startDate) => {
-                    setStartDate(startDate);
-                  }}
-                />
+              value={startDate}
+              options={{
+                minDate: 'today',
+                dateFormat: "Y-m-d",
+              }}
+              className="col-md-6 form__content webkit-appearance mr-0"
+              placeholder={t("service_massage.date")}
+              onChange={(dates) => {
+                setStartDate(dates[0]);
+              }}
+            />
                 <Flatpickr
                   value={startTime}
                   options={{
                     enableTime: true,
                     noCalendar: true,
-                    minTime: "10:00",
+                    maxTime: "21:30",
                     time_24hr: true,
                   }}
-                  placeholder="Time"
-                  onChange={(startTime) => setStartTime(startTime)}
+                  placeholder={t("service_massage.time")}
+                  onChange={handleStartTimeChange}
                   className="col-md-6 form__content webkit-appearance mr-0"
                 />
                 <select
@@ -307,35 +337,38 @@ export default function VietnamService() {
                     setOption(e.target.value);
                   }}
                 >
-                  <option value="40 minutes">40 minutes</option>
-                  <option value="70 minutes">70 minutes</option>
-                  <option value="100 minutes">100 minutes</option>
+                  <option value="40 minutes">40 {t("service_massage.minutes")}</option>
+                  <option value="70 minutes">70 {t("service_massage.minutes")}</option>
+                  <option value="100 minutes">100 {t("service_massage.minutes")}</option>
                 </select>
                 <textarea
                   className="text-note"
                   cols="40"
                   rows="6"
-                  placeholder="Special Note"
+                  placeholder={t("service_massage.special")}
+                  value={specialRequest}
                   onChange={(e) => setSpecialRequest(e.target.value)}
                 ></textarea>
+  
+                <div className="row justify-content-center">
+                  <button
+                    id="send"
+                    class="button-57 send-btn col-3 col-md-6"
+                    type="submit"
+                  >
+                    <span class="text" style={{ color: "#fff" }}>
+                      Send
+                    </span>
+                    <span className="d-flex align-item-center">
+                      <i
+                        class="fa-sharp fa-regular fa-paper-plane green"
+                        style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+                      ></i>
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div className="row justify-content-center">
-                <button
-                  class="button-57 send-btn col-3 col-md-6"
-                  role="button"
-                  onClick={validate}
-                >
-                  <span class="text" style={{ color: "#fff" }}>
-                    Send
-                  </span>
-                  <span className="d-flex align-item-center">
-                    <i
-                      class="fa-sharp fa-regular fa-paper-plane green"
-                      style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-                    ></i>
-                  </span>
-                </button>
-              </div>
+              </form>
             </Modal.Body>
           </div>
           <div className="col-md-6">
@@ -347,7 +380,7 @@ export default function VietnamService() {
               </div>
             </div>
             <Modal.Body>
-              <h2>Call directly for Receptionist</h2>
+              <h2>{t("service_massage.reservation2")}</h2>
               <div className="btn_container mt-4">
                 <button className="button-57 call-btn p-0">
                   <a className="d-block" href="tel:+84.236.3743 888">
@@ -403,16 +436,27 @@ export default function VietnamService() {
     const [phone, setPhone] = useState();
     const [email, setEmail] = useState();
     const [specialRequest, setSpecialRequest] = useState();
-    const validate = () => {
-      alert(
-        guestName + '' +
-        phone + '' +
-        email + '' +
-        startDate + '' +
-        startTime + '' +
-        option + '' +
+    const handleStartTimeChange = (selectedDates) => {
+      if (selectedDates.length > 0) {
+        const selectedDate = new Date(selectedDates[0]);
+        const timeString = selectedDate.toTimeString().split(" ")[0];
+        setStartTime(timeString);
+      } else {
+        setStartTime(null);
+      }
+    };
+    const handleSubmit = (e) => {
+      const dataObject = {
+        startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
+        startTime,
+        guestName,
+        option,
+        phone,
+        email,
         specialRequest
-      )
+      }
+      console.log(dataObject);
+      e.preventDefault()
     }
     return (
       <Modal
@@ -425,7 +469,7 @@ export default function VietnamService() {
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Massage Thai Van Lung 1 (Azumaya Thai Van Lung 1)
+            {t("service_massage.modal_titleHCM")}
           </Modal.Title>
           <Button variant="light" onClick={props.onHide}>
             <i class="fa-solid fa-xmark purple"></i>
@@ -434,12 +478,14 @@ export default function VietnamService() {
         <div className="row">
           <div className="col-md-6 massage_reservation">
             <Modal.Body>
-              <h2>Reservation by email</h2>
+            <form onSubmit={handleSubmit}>
+              <h2>{t("service_massage.reservation1")}</h2>
               <div className="row pl-3 pr-3">
                 <input
-                  placeholder="Guest Name"
+                  placeholder={t("service_massage.guest_name")}
                   type="text"
                   className="col-md-12 form__content mb-0"
+                  value={guestName}
                   onChange={(e) => {
                     setGuestName(e.target.value);
                   }}
@@ -450,7 +496,8 @@ export default function VietnamService() {
                   type="text"
                   className="booker-phone form__content col-md-12"
                   id=""
-                  placeholder="Phone Number"
+                  value={phone}
+                  placeholder={t("service_massage.phone_number")}
                   onKeyPress={(event) => {
                     if (!/[0-9]/.test(event.key)) {
                       event.preventDefault();
@@ -458,7 +505,7 @@ export default function VietnamService() {
                   }}
                   onChange={(e) => setPhone(e.target.value)}
                 />
-                <input
+                  <input
                   type="text"
                   className="form__content col-md-12"
                   id=""
@@ -466,27 +513,29 @@ export default function VietnamService() {
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                
                 <Flatpickr
-                  value={startDate}
-                  options={{
-                    minDate: "today",
-                  }}
-                  className="col-md-6 form__content webkit-appearance mr-0"
-                  placeholder="Date"
-                  onChange={(startDate) => {
-                    setStartDate(startDate);
-                  }}
-                />
+              value={startDate}
+              options={{
+                minDate: 'today',
+                dateFormat: "Y-m-d",
+              }}
+              className="col-md-6 form__content webkit-appearance mr-0"
+              placeholder={t("service_massage.date")}
+              onChange={(dates) => {
+                setStartDate(dates[0]);
+              }}
+            />
                 <Flatpickr
                   value={startTime}
                   options={{
                     enableTime: true,
                     noCalendar: true,
-                    minTime: "10:00",
+                    maxTime: "21:30",
                     time_24hr: true,
                   }}
-                  placeholder="Time"
-                  onChange={(startTime) => setStartTime(startTime)}
+                  placeholder={t("service_massage.time")}
+                  onChange={handleStartTimeChange}
                   className="col-md-6 form__content webkit-appearance mr-0"
                 />
                 <select
@@ -504,27 +553,30 @@ export default function VietnamService() {
                   className="text-note"
                   cols="40"
                   rows="6"
-                  placeholder="Special Note"
+                  placeholder={t("service_massage.special")}
+                  value={specialRequest}
                   onChange={(e) => setSpecialRequest(e.target.value)}
                 ></textarea>
+  
+                <div className="row justify-content-center">
+                  <button
+                    id="send"
+                    class="button-57 send-btn col-3 col-md-6"
+                    type="submit"
+                  >
+                    <span class="text" style={{ color: "#fff" }}>
+                      Send
+                    </span>
+                    <span className="d-flex align-item-center">
+                      <i
+                        class="fa-sharp fa-regular fa-paper-plane green"
+                        style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+                      ></i>
+                    </span>
+                  </button>
+                </div>
               </div>
-              <div className="row justify-content-center">
-                <button
-                  class="button-57 send-btn col-3 col-md-6"
-                  role="button"
-                  onClick={validate}
-                >
-                  <span class="text" style={{ color: "#fff" }}>
-                    Send
-                  </span>
-                  <span className="d-flex align-item-center">
-                    <i
-                      class="fa-sharp fa-regular fa-paper-plane green"
-                      style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
-                    ></i>
-                  </span>
-                </button>
-              </div>
+              </form>
             </Modal.Body>
           </div>
           <div className="col-md-6">
@@ -536,7 +588,7 @@ export default function VietnamService() {
               </div>
             </div>
             <Modal.Body>
-              <h2>Call directly for Receptionist</h2>
+              <h2>{t("service_massage.reservation2")}</h2>
               <div className="btn_container mt-4">
                 <button className="button-57 call-btn p-0">
                   <a className="d-block" href="tel:+84.236.3743 888">
@@ -584,7 +636,7 @@ export default function VietnamService() {
       </Modal>
     );
   }
-  const { t } = useTranslation();
+  const { t } = useTranslation();      
   const location = useLocation();
   const [selectedTab, setSelectedTab] = useState(0)
   const serviceTitle = t('service.service_name', {returnObjects: true})
@@ -642,24 +694,6 @@ export default function VietnamService() {
         og_type="website"
         
     />
-    {/* <Helmet>
-    <meta name="description" content="It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath." />
-		<meta name="robots" content="max-image-preview:large" />
-		<link rel="canonical" href="https://azumayavietnam.com/service/" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
-		<meta property="og:description" content="It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath." />
-		<meta property="og:url" content="https://azumayavietnam.com/service/" />
-    <meta property="og:image" content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1709172401/AzumayaWeb/Az_website_service_page_photos-2_ximtqy.jpg" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content="Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
-		<meta name="twitter:description" content="It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath." />
-    <script type="application/ld+json" class="aioseo-schema">
-			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/service\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/service\/#listItem"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/service\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/service\/","name":"Service","description":"It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath.","url":"https:\/\/azumayavietnam.com\/service\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/service\/#webpage","url":"https:\/\/azumayavietnam.com\/service\/","name":"Service - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath.","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/service\/#breadcrumblist"},"datePublished":"2019-01-11T02:40:44+07:00","dateModified":"2020-07-06T03:48:50+07:00"}]`}
-		</script>
-    </Helmet> */}
       <div className="service__header">
         <div className="container">
           <div className="row">
