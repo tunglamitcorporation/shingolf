@@ -17,11 +17,14 @@
         "vietnam": "Vietnam",
         "cambodia": "Cambodia",
         "item12": "Branch",
-        "massage": "Massage Service",
         "room": "Room",
         "contact": "Contact",
         "feedback": "Feedback",
-        "itemTest": "Test"
+        "itemTest": "Test",
+        "breakfast": "Breakfast",
+        "roten":"Rotenburo",
+        "massage": "Massage",
+        "title":"Azumaya, a business hotel in Hanoi, Ho Chi Minh and Da Nang - Azumaya, a hotel for business people with a special Japanese breakfast and open-air bath in Hanoi, Da Nang and Ho Chi Minh"
     },
     "footer": {
         "branch": [
@@ -1070,6 +1073,7 @@
     },
     "thank_you":{
         "name":"Thank you",
+        "thank_content":"Thank you for choosing our hotel !",
         "title":"Your reservation has not yet completed.",
         "content":"Your reservation has not yet completed. Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception address"
     },
@@ -3706,17 +3710,17 @@
             {
                 "row1": "Mon ~ Sat",
                 "row2": "Buffet :",
-                "row4": "6:00 ~ 8:00"
+                "row4": "06:00 ~ 08:00"
             },
             {
                 "row1": "",
                 "row2": "Set menu :",
-                "row4": "6:00 ~ 10:00"
+                "row4": "06:00 ~ 10:00"
             },
             {
                 "row1": "Sun",
                 "row2": "Set menu :",
-                "row4": "6:00 ~ 10:00"
+                "row4": "06:00 ~ 10:00"
             }
         ],
         "table2": [
@@ -3911,7 +3915,7 @@
             },
             {
                 "row1": "Weekend",
-                "row2": "12:00 ~ 22:30"
+                "row2": "12:00 ~ 22:30 "
             }
         ],
         "table_dn2": [

@@ -17,11 +17,14 @@
         "vietnam": "Việt Nam",
         "cambodia": "Campuchia",
         "item12": "Branch",
-        "massage": "Massage Service",
         "room": "Hạng Phòng",
         "contact": "Liên Hệ",
         "feedback":"Báo Lỗi",
-        "itemTest": "Test"
+        "itemTest": "Test",
+        "breakfast": "Bữa Sáng",
+        "roten":"Dịch vụ tắm nước nóng ngoài trời",
+        "massage": "Massage",
+        "title":"Azumaya, khách sạn thương gia tại Hà Nội, Hồ Chí Minh và Đà Nẵng - Azumaya, khách sạn dành cho doanh nhân với bữa sáng đặc biệt kiểu Nhật và bồn tắm lộ thiên tại Hà Nội, Đà Nẵng và Hồ Chí Minh"
     },
     "footer": {
         "branch": [
@@ -628,21 +631,21 @@
                 "title": "Giá cả hợp lý từ chỉ $40/ đêm",
                 "content": "Tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và đầy đủ đồ vệ sinh cá nhân được đặt hàng từ nhà cung cấp Nhật Bản như bàn chải đánh răng, dao cạo râu, dầu xả... Khách hàng có thể nhận giá ưu đãi khi ký hợp đồng với chúng tôi. Chúng tôi mong muốn có thể cung cấp nhiều ưu đãi hơn nữa cho các khách hàng lưu trú dài hạn. Xin vui lòng liên hệ với nhân viên lễ tân của chúng tôi để biết thêm chi tiết.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/gfphcji3cfcq61hynkot.jpg",
-                "num": "Thứ Nhất"
+                "num": "Số 1"
             },
             {
                 "id": 2,
                 "title": "Vị trí thuận lợi dành cho thương gia người Nhật",
                 "content": "Tất cả các chi nhánh đều nằm ở khu vực trung tâm với nhiều nhà hàng và quán rượu Nhật Bản. Vì vậy, ngay cả khi đây là lần đầu tiên đến thăm Việt Nam, khách hàng vẫn có thể lưu trú với cảm giác an toàn và thoải mái như ở nhà. Các công ty cử nhân viên công tác từ Nhật Bản sang có thể hoàn toàn yên tâm về tính an toàn khi tự đi lại xung quanh.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/y59yjf0ygam0ohxazsfm.jpg",
-                "num": "Thứ Hai"
+                "num": "Số 2"
             },
             {
                 "id": 3,
                 "title": "Bể tắm nước nóng ngoài trời và Sauna",
                 "content": "Khách sạn Azumaya là đơn vị tiên phong cung cấp dịch vụ bể tắm nước nóng ngoài trời phong cách Nhật Bản, một “ốc đảo” riêng dành cho người Nhật tại Việt Nam. Trước khi đi làm và sau khi trở về sau một ngày làm việc dài, khách hàng có thể thoải mái đắm mình vào “ốc đảo” và thư giãn. Giờ hoạt động của bể tắm từ 6 giờ sáng đến 10 giờ sáng và 5 giờ chiều đến 12 giờ tối các ngày trong tuần. Vào cuối tuần, chúng tôi mở cửa cả ngày từ 7 giờ sáng đến 12 giờ tối. (*Mỗi chi nhánh có giờ hoạt động khác nhau, vui lòng kiểm tra thông tin tại từng chi nhánh.) Chúng tôi cũng phục vụ khách ngoài với mức phí từ 150.000VND (Thời gian và giá cả tùy từng chi nhánh).",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
-                "num": "Thứ Ba",
+                "num": "Số 3",
                 "hasLink": true,
                 "link": "/rotenburo"
             },
@@ -652,7 +655,7 @@
                 "content": "Đối với những khách hàng Nhật đi công tác, hiệu suất làm việc cao ở nước ngoài chỉ có thể đạt được nhờ bữa sáng kiểu Nhật. Cá nướng, thịt hầm, hải sản chiên, rau xào và những món ăn Nhật Bản đặc sắc khác chỉ có thể được thưởng thức tại Khách sạn Azumaya. Khách hàng có thể thưởng thức cả set ăn sáng kiểu Nhật truyền thống và set kiểu lục địa, ngoài ra còn nhiều thực đơn lập sẵn kiểu Nhật hấp dẫn khác như cơm thịt bò, cơm cà ri, thịt lợn xào gừng. Buffet được phục vụ trong thời gian giới hạn từ 6 giờ sáng đến 8 giờ sáng và thực đơn cố định set menu được phục vụ sau thời gian buffet từ 8 giờ sáng đến 10 giờ sáng. Chúng tôi cũng phục vụ bữa sáng cho khách ngoài với mức phí từ 150.000VND (Giá cả tùy từng chi nhánh).",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
-                "num": "Thứ Tư",
+                "num": "Số 4",
                 "link": "/breakfast"
             },
             {
@@ -660,21 +663,21 @@
                 "title": "Chương trình tivi Nhật Bản",
                 "content": "Khách hàng có thể xem trực tiếp các chương trình truyền hình địa phương chính của Nhật Bản như NHK, TBS, Fuji TV, Nihon TV như đang ở Nhật. Hãy ngả lưng và thư giãn xem chương trình truyền hình yêu thích của mình.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1702523980/AzumayaWeb/Tv_picture-1024x768_niecmc.jpg",
-                "num": "Thứ Năm"
+                "num": "Số 5"
             },
             {
                 "id": 6,
                 "title": "Chăm sóc khách hàng kiểu Nhật",
                 "content": "Chúng tôi phục vụ khách hàng với đội ngũ nhân viên và quản lý có thể giao tiếp tiếng Nhật, khách hàng không tự tin trong giao tiếp tiếng Anh có thể yên tâm khi lưu trú cùng chúng tôi. Nhân viên của chúng tôi cũng được dạy cách chào tiếng Nhật “Chúc một ngày tốt lành” và “Chào mừng trở lại” để khách hàng cảm thấy an tâm khi ở Việt Nam. Chúng tôi rất hy vọng sớm được phục vụ quý khách hàng tại hệ thống khách sạn của chúng tôi với với nụ cười và tinh thần hiếu khách.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1702523980/AzumayaWeb/Reception_picture-1024x798_dkwrqc.jpg",
-                "num": "Thứ Sáu"
+                "num": "Số 6"
             },
             {
                 "id": 7,
                 "title": "Massage chân kiểu truyền thống",
                 "content": "Đội ngũ nhân viên massage đã được đào tạo của chúng tôi sẽ mang đến những liệu trình massage hoàn hảo và đáng nhớ, giúp khách hàng xoa dịu mệt mỏi sau ngày làm việc vất vả. Với tỷ lệ hơn 90% là khách hàng thường xuyên quay lại sử dụng tại Việt Nam, chúng tôi hoàn toàn tin tưởng vào dịch vụ massage của mình. Chúng tôi chủ yếu xoa bóp và ấn huyệt từ đầu, vai, lưng và bàn chân. Hãy thử trải nghiệm dịch vụ massage của chúng tôi để giải tỏa mệt mỏi và giúp cơ thể tìm cảm giác thoải mái. Khách hàng có thể sử dụng dịch vụ tại chi nhánh Thái Văn Lung 1 tại Hồ Chí Minh, chi nhánh Linh Lang tại Hà Nội và chi nhánh Đà Nẵng.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
-                "num": "No 7",
+                "num": "Số 7",
                 "hasLink": true,
                 "link": "/massage"
             },
@@ -683,7 +686,7 @@
                 "title": "Nhà hàng Nhật",
                 "content": "Chúng tôi có các nhà hàng Nhật Bản kết hợp hoạt động trong khuôn viên khách sạn được cả người dân địa phương và khách du lịch ưa chuộng. Hãy thưởng thức các món ăn tại nhà hàng mà quý khách yêu thích tại Azumaya.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027480/AzumayaWeb/rrpqdg6q72mdlduygwfa.jpg",
-                "num": "Thứ 8"
+                "num": "Số 8"
             }
         ]
     },
@@ -999,6 +1002,8 @@
         ]
     },
     "thank_you": {
+        "name": "Xin cảm ơn quý khách",
+        "thank_content":"Cảm ơn vì quý khách đã chọn khách sạn của chúng tôi !",
         "title": "Việc đặt phòng của quý khách vẫn chưa hoàn tất.",
         "content": "Việc đặt phòng của quý khách vẫn chưa hoàn tất. Đội ngũ lễ tân của chúng tôi sẽ sớm gửi cho quý khách xác nhận đặt phòng.\n Nếu quý khách không thể nhận được bất kỳ thư hoặc cuộc gọi nào, vui lòng liên hệ với địa chỉ lễ tân của chúng tôi"
     },
@@ -3040,7 +3045,7 @@
             {
                 "id": 1,
                 "name": "Azumaya Đà Nẵng",
-                "desc": "Chi nhánh Khách sạn Azumaya Đà Nẵng tọa lạc ngay giữa thành phố; chỉ cách sân bay 10 phút, có tổng cộng 32 phòng với nhà vệ sinh có phòng tắm hoa sen và các chương trình truyền hình Nhật Bản cho mỗi phòng. Điều khiến chúng tôi khác biệt so với các khách sạn khác là chúng tôi có dịch vụ tắm nước nóng ngoài trời, phòng xông hơi & bể tắm lạnh, bữa sáng kiểu Nhật, massage chân theo phong cách nguyên bản. Massage chân theo phong cách nguyên bản của chúng tôi là dịch vụ phổ biến đối với du khách Nhật Bản và có tới 90% khách hàng quay lại. Nếu đặt trước, bạn không cần phải xếp hàng dài (Giờ đặt massage cuối cùng là 10h15 tối). Vì phòng tắm nước nóng ngoài trời, phòng xông hơi & bể tắm lạnh đều hướng ra biển nên bạn có thể ngắm nhìn khung cảnh tuyệt đẹp của đại dương trải rộng trước mắt và cảnh hoàng hôn trên đỉnh núi. Hãy tận hưởng các dịch vụ tuyệt vời của chúng tôi để xua tan những mệt mỏi.",
+                "desc": "Chi nhánh Khách sạn Azumaya Đà Nẵng tọa lạc ngay giữa thành phố; chỉ cách sân bay 10 phút, có tổng cộng 32 phòng với nhà vệ sinh có bồn cầu tự động và các chương trình truyền hình Nhật Bản cho mỗi phòng. Điều khiến chúng tôi khác biệt so với các khách sạn khác là chúng tôi có dịch vụ tắm nước nóng ngoài trời, phòng xông hơi khô & bể tắm lạnh, bữa sáng kiểu Nhật, massage chân theo phong cách nguyên bản. Massage chân theo phong cách nguyên bản của chúng tôi là dịch vụ phổ biến đối với du khách Nhật Bản và có tới 90% khách hàng quay lại. Nếu đặt trước, bạn không cần phải xếp hàng dài (Giờ đặt massage cuối cùng là 10h15 tối). Vì phòng tắm nước nóng ngoài trời, phòng xông hơi khô & bể tắm lạnh đều hướng ra biển nên bạn có thể ngắm nhìn khung cảnh tuyệt đẹp của đại dương trải rộng trước mắt và cảnh hoàng hôn trên đỉnh núi. Hãy tận hưởng các dịch vụ tuyệt vời của chúng tôi để xua tan những mệt mỏi.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
                 "link": "/da-nang/room"
             }
@@ -3914,7 +3919,7 @@
         "table_hcm1": [
             {
                 "row1": "Ngày Trong Tuần :",
-                "row2": "6:00 ~ 10:00"
+                "row2": "06:00 ~ 10:00"
             },
             {
                 "row1": "",
@@ -3946,9 +3951,9 @@
         "table_hn1": [
             {
                 "row1": "Ngày Trong Tuần :",
-                "row2": "6:00 ~ 9:00",
+                "row2": "06:00 ~ 09:00",
                 "row3": "Ngày Trong Tuần :",
-                "row4": "6:00 ~ 9:00"
+                "row4": "06:00 ~ 09:00"
             },
             {
                 "row1": "",
@@ -3976,7 +3981,7 @@
         "table_dn1": [
             {
                 "row1": "Ngày Trong Tuần :",
-                "row2": "6:00 ~ 9:00"
+                "row2": "06:00 ~ 09:00"
             },
             {
                 "row1": "",
@@ -3999,7 +4004,7 @@
         "table_hp1": [
             {
                 "row1": "Ngày Trong Tuần :",
-                "row2": "6:00 ~ 9:00"
+                "row2": "06:00 ~ 09:00"
             },
             {
                 "row1": "",

@@ -6,7 +6,9 @@ import HelmetLayout from "../HelmetLayout/HelmetLayout";
 
 export default function News ({ news })  {
   const { t } = useTranslation();
-  const branch = t("booking.city", { returnObjects: true });
+  const a = t("header.news")
+  const b = t("header.title")
+  const c = a + " | "+ b
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
   const article = news.find((article) => article.title === decodedTitle);
@@ -18,15 +20,7 @@ export default function News ({ news })  {
   }
   return (
     <div>
-      <HelmetLayout 
-        title= "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
-        description="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease."
-        pagelink="http://tunglam.site/"
-        og_description="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease."
-        og_sitename="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
-        og_type="website"
-        
-    />
+      <HelmetLayout title= {c}/>
       <div className="policies__header">
         <div classNameName="container">
           <div className="row">
@@ -294,7 +288,7 @@ export default function News ({ news })  {
                     <li className="recent_news-item">
                       <Link
                         className="recent_news-link"
-                        to={`/News/${encodeURIComponent(article.title)}`}
+                        to={`/news/${encodeURIComponent(article.title)}`}
                       >
                         <div>{article.title}</div>
                       </Link>

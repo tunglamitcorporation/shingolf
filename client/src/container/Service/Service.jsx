@@ -640,20 +640,37 @@ export default function VietnamService() {
   const location = useLocation();
   const [selectedTab, setSelectedTab] = useState(0)
   const serviceTitle = t('service.service_name', {returnObjects: true})
+  const a = t("header.service")
+  const b = t("header.title")
+  const c = a + " | " + b
+  const d = t("header.breakfast")
+  const e = t("header.title")
+  const f = d + " | " + e
+  const g = t("header.roten")
+  const h = t("header.title")
+  const i = g + " | " + h
+  const j = t("header.massage")
+  const k = t("header.title")
+  const l = j + " | " + k
+  const [title, setTitle] = useState('')
   useEffect(() => {
-    // Parse URL and set initial tab based on the pathname
     switch (location.pathname) {
       case '/breakfast':
         setSelectedTab(0);
+        setTitle(f)
         break;
       case '/rotenburo':
         setSelectedTab(1);
+        setTitle(i)
         break;
         case '/massage':
+        setTitle(l)
         setSelectedTab(2);
         break;
       default:
-        setSelectedTab(0); // Default to Home tab
+        setSelectedTab(0);
+        setTitle(c)
+         
     }
   }, [location]);
 
@@ -685,15 +702,7 @@ export default function VietnamService() {
 
   return (
     <>
-    <HelmetLayout 
-        title= "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
-        description="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease."
-        pagelink="http://tunglam.site/"
-        og_description="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease."
-        og_sitename="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
-        og_type="website"
-        
-    />
+    <HelmetLayout title = {title}/>
       <div className="service__header">
         <div className="container">
           <div className="row">
@@ -1254,10 +1263,12 @@ export default function VietnamService() {
                   <div className="row justify-content-center">
                     <div
                       className="service_table-note"
-                      style={{ width: "360px" }}
+                      style={{ width: "360px", borderTop: "3px solid #482979"}}
                     >
+                     <br /> 
                       {specialNoteMassage.map((item) => (
                         <div className="left">{item.content}</div>
+                       
                       ))}
                     </div>
                   </div>

@@ -20,11 +20,12 @@ export default function HPRoomDetail() {
   const roomFeature = t("room_hp.features", { returnObjects: true });
   const hp = t("hp", { returnObjects: true });
   const hpArea = t('hp-branch.slider', {returnObjects: true})
+  const a = t("branch.hp")
+  const b = t("header.title")
+  const c = a + " | "+ b
   const AutoPlaySlider =  withAutoplay(AwesomeSlider)
-  const [startDate, setStartDate] = useState(receivedData ? receivedData.startDate : '');
+  const [startDate, setStartDate] = useState(receivedData ? receivedData.startDate : '')
   const [endDate, setEndDate] = useState(receivedData ? receivedData.endDate : '');
-  // const [selectedCity, setSelectedCity] = useState(receivedData ? receivedData.selectedCity : '');
-  // const [selectedBranch, setSelectedBranch] = useState(receivedData ? receivedData.selectedBranch : '');
 
   const handleContinue = (selectedRoom) => {
     // Prepare data to pass to Receiver2Page
@@ -124,44 +125,7 @@ export default function HPRoomDetail() {
   }
   return (
     <>
-    <HelmetLayout 
-        title= "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
-        description="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease."
-        pagelink="http://tunglam.site/"
-        og_description="Information on the Ha noi Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease."
-        og_sitename="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
-        og_type="website"
-        
-    />
-    {/* <Helmet>
-    <meta name="description" content="Azumaya Hotel Hai Phong branch is located in the middle of city; just 10 minutes far from airport and 30 minutes far from Nomura Industrial Zone."   />
-    <meta name="robots" content="max-image-preview:large" />
-		<link rel="canonical" href="https://azumayavietnam.com/hai-phong/room" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:site_name" content="東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル" />
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="hai-phong - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
-    <meta property="og:description" content="Located right behind Azumaya Hotel and far 1 minute on foot, Azumaya Hai Phong is considered as a quiet apartment suitable for long term customers. Azumaya hai-phong mainly affords to satisfy customers with not only wide rooms (27.2m2 ~ 30.2 m2), big windows (6/ 7 rooms), WIFI, bathtub & toilet with bidet function in all rooms.
-All additional services are served at Azumaya hotel and the same with hotel guests. Hope you to spend your business trip enjoyably and comfortably at Azumaya Hai pPong. If you have any questions, please feel free to contact to our reception" />
-		<meta property="og:url" content="https://azumayavietnam.com/hai-phong/room" />
-    <meta property="og:image"content="https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg" />
-		<meta property="article:published_time" content="2016-11-29T09:34:30+00:00" />
-		<meta property="article:modified_time" content="2016-11-29T09:34:30+00:00" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content="hai-phong - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル" />
-		<script type="application/ld+json" class="aioseo-schema">
-			{`"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/azumayavietnam.com\/#website","url":"https:\/\/azumayavietnam.com\/","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","inLanguage":"en-US","publisher":{"@id":"https:\/\/azumayavietnam.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/azumayavietnam.com\/#organization","name":"\u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/azumayavietnam.com\/hai-phong\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/","name":"Home","description":"Azumaya,\u30cf\u30ce\u30a4\u3068\u30c0\u30ca\u30f3\u3001\u30db\u30fc\u30c1\u30df\u30f3\u306b\u3042\u308b\u3053\u3060\u308f\u308a\u306e\u548c\u671d\u98df\u3068\u9732\u5929\u98a8\u5442\u3001\u30d3\u30b8\u30cd\u30b9\u30d1\u30fc\u30bd\u30f3\u5411\u3051\u30db\u30c6\u30eb\u306e\u6771\u5c4b\u30d9\u30c8\u30ca\u30e0\u30db\u30c6\u30eb","url":"https:\/\/azumayavietnam.com\/"},"nextItem":"https:\/\/azumayavietnam.com\/hai-phong\/room"},{"@type":"ListItem","@id":"https:\/\/azumayavietnam.com\/hai-phong\/room","position":2,"item":{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/hai-phong\/","name":"hai-phong","url":"https:\/\/azumayavietnam.com\/hai-phong\/"},"previousItem":"https:\/\/azumayavietnam.com\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/azumayavietnam.com\/hai-phong\/#webpage","url":"https:\/\/azumayavietnam.com\/hai-phong\/","name":"hai-phong - \u6771\u5c4b\u30db\u30c6\u30eb\u30d9\u30c8\u30ca\u30e0\uff5c\u30cf\u30ce\u30a4\u30db\u30fc\u30c1\u30df\u30f3\u30c0\u30ca\u30f3\u306e\u30d3\u30b8\u30cd\u30b9\u30db\u30c6\u30eb","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/azumayavietnam.com\/#website"},"breadcrumb":{"@id":"https:\/\/azumayavietnam.com\/hai-phong\/#breadcrumblist"},"datePublished":"2016-11-29T09:34:30+07:00","dateModified":"2016-11-29T09:34:30+07:00"}]`}
-		</script>
-    </Helmet> */}
-      {/* <div className="service__header">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1>{t("branch.hp")}</h1>
-            </div>
-          </div>
-        </div>
-      </div> */}
+    <HelmetLayout title= {c} />
       <div className="area_header" >
               <div className="overlay"></div>
               <AutoPlaySlider
