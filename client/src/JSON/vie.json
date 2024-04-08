@@ -3604,6 +3604,7 @@
         "room-amount": "Số lượng phòng:",
         "guest-amount": "Số lượng khách lưu trú trong phòng:",
         "guest-info": "Thông tin khách",
+        "room":"Phòng",
         "name": "Tên khách:",
         "name-note": "(Xin vui lòng điền tên tất cả các khách lưu trú)",
         "family-name": "Họ",

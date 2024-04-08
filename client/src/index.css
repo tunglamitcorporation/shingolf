@@ -2294,7 +2294,11 @@ filter: brightness(0.5);
   cursor: pointer;
   width: 100%;
 }
-
+.disabled-number-input {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+  width: auto; /* Adjust width as needed */
+}
 
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{

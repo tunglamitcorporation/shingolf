@@ -3510,6 +3510,7 @@
         "room-kind": "お部屋の種類:",
         "room-amount": "お部屋の数:",
         "guest-amount": "一室あたりの人数:",
+        "room":"ルーム",
         "guest-info": "ご宿泊者様情報",
         "name": "お名前:",
         "name-note": "（お泊りの方全員の名前を記入してください。）",

@@ -3428,6 +3428,7 @@
         "room-kind": "Kind of Room:",
         "room-amount": "Number of Rooms:",
         "guest-amount": "Number of Guest per Room:",
+        "room":"Room",
         "guest-info": "Guest Information",
         "name": "Name:",
         "name-note": "(Please fill in the name of all the members stay)",

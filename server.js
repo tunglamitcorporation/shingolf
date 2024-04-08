@@ -6,12 +6,6 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const route = require('./router/index')
 
-const { renderToNodeStream } = require('react-dom/server');
-const { StaticRouter } = require('react-router-dom');
-const { matchRoutes } = require('react-router-config');
-const { SitemapStream, streamToPromise } = require('sitemap');
-const routes = require('./router/routes.js');
-
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
@@ -20,8 +14,6 @@ const path = require('path');
 const app = express();
 //const axios = require('axios');
 var bodyParser = require('body-parser');
-const { head } = require('./router/contentRouter');
-const { log } = require('console');
 
 var jsonParser = bodyParser.json({ limit: 1024 * 1024 * 20, type: 'application/json' });
 var urlencodedParser = bodyParser.urlencoded({
@@ -62,19 +54,6 @@ mongoose.connect(URI, {
     if(err) throw err;
     console.log("Connected to mongodb...")
 })
-app.get('/sitemap.xml', (req, res) => {
-    const sitemap = new SitemapStream({ hostname: 'https://www.yourwebsite.com' });
-
-    matchRoutes(routes, req.path).map(({ route }) => {
-      sitemap.write({ url: route.path, changefreq: 'monthly', priority: 0.7 });
-    });
-  
-    sitemap.end();
-    streamToPromise(sitemap).then((sm) => {
-      res.header('Content-Type', 'application/xml');
-      res.send(sm);
-    });
-});
 
 app.use(express.static(path.join(__dirname,"./client/build")))
 
@@ -133,7 +112,7 @@ app.get('*', function(req, res) {
         xDescription = 'Information on the Ho Chi Minh Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
     }
     else if(req.url === '/hotel-dn'){
-        title = 'Hotel HCM - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        title = 'Hotel DN - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Information on the Ho Chi Minh Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
         canonical = 'http://home.azumayareport/hotel-dn/',
         next = 'http://home.azumayareport/hotel-dn/'
@@ -158,7 +137,7 @@ app.get('*', function(req, res) {
         ogSiteName 
         ogType = "website"
         keywords = "Azumaya Hotel 東屋 Hai Phong"
-        ogTitle = 'Hotel HCM - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        ogTitle = 'Hotel HP - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'Information on the Hai Phong Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
         ogUrl = 'http://home.azumayareport/hotel-hp/'
         ogImage = 'https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735806/AzumayaWeb/haiphong1_vr2jyt.png'
@@ -433,78 +412,6 @@ const modifiedHtml = $.html();
 // Send the modified HTML as response
 res.send(modifiedHtml);
 })
-
-
-
-
-// htmlContent = htmlContent.replace(/<link\s+rel="canonical".*\/>/, "")
-// htmlContent = htmlContent.replace(
-//     /<head>/,
-//     `<head><link rel="canonical" href="${canonical}" data-rh ="true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<title>.*<\/title>/,
-//     `<title>${title}</title>`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta name="description".*\/>/,
-//     `<meta name="description" content="${description}" data-rh = "true" data-react-helmet = "true" />` 
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta name="keywords".*\/>/,
-//     `<meta name="keywords" content="${keywords}" data-rh = "true" data-react-helmet = "true" />` 
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:locale".*\/>/,
-//     `<meta property="og:locale" content="${ogLocale}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:site_name".*\/>/,
-//     `<meta property="og:site_name" content="${description}" data-rh="true" data-react-helmet="true" />`
-// ) 
-// console.log(htmlContent)
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:type".*\/>/,
-//     `<meta property="og:type" content="${ogType}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:title".*\/>/,
-//     `<meta property="og:title" content="${ogTitle}" data-rh = "true" data-react-helmet = "true" />`
-// )   
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:description".*\/>/,
-//     `<meta property="og:description" content="${ogDescription}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:url".*\/>/,
-//     `<meta property="og:url" content="${ogUrl}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta property="og:image".*\/>/,
-//     `<meta property="og:image" content="${ogImage}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta name="twitter:card".*\/>/,
-//     `<meta name="twitter:card" content="${xCard}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta name="twitter:title".*\/>/,
-//     `<meta name="twitter:title" content="${xTitle}" data-rh = "true" data-react-helmet = "true" />`
-// )
-// htmlContent = htmlContent.replace(
-//     /<meta name="twitter:description".*\/>/,
-//     `<meta name="twitter:description" content="${xDescription}" data-rh = "true" data-react-helmet = "true" />`
-// )
-
-
-
-// res.send(htmlContent)
-// })
-// app.use(express.static(path.join(__dirname, '/filereport/')));
-
-
-//app.use(express.static(path.join(__dirname, '/filereport/')));
-// app.use("/static", express.static('./client/build/static/'));
 
 // note 123
 const PORT = process.env.PORT || 5100;
