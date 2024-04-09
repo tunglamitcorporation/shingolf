@@ -293,6 +293,9 @@ textarea{
     background-color: var(--primary--color);
     transition: width 0.3s;
   }
+.row{
+    padding: 10px 0 !important;
+}
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em) {
     .is-sticky{
         position: relative;

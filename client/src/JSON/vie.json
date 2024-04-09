@@ -3819,6 +3819,8 @@
         "last-name": "Tên",
         "email": "Địa chỉ email",
         "phone": "Số điện thoại",
+        "area": "Hãy chọn một khu vực",
+        "note": "Yêu cầu chi tiết",
         "send": "Gửi"
     },
     "caption": [

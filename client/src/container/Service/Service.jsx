@@ -699,7 +699,15 @@ export default function VietnamService() {
   const [modalShow, setModalShow] = useState(false);
   const [modalShow1, setModalShow1] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
+  const [pageTitle, setPageTitle] = useState('');
 
+  switch(title) {
+    case '/breakfast':
+    setPageTitle(t('header.breakfast'))
+    break;
+    case '/rotenburo':
+    setPageTitle(t('header.rotenburo'))
+  }
   return (
     <>
     <HelmetLayout title = {title}/>

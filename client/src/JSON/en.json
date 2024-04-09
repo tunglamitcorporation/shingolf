@@ -3635,7 +3635,7 @@
                 "content": "In other cases where the hotel deems it inappropriate."
             }
         ],
-        "form-title": "If you requested to make contract with your company in Japan, Please enter the Japan information \nIf you requested to make contract with your company in Vietnam, Please enter the Vietnam information",
+        "form-title": "If you requested to make contract with your company in Japan, Please enter the Japan information \n\nIf you requested to make contract with your company in Vietnam, Please enter the Vietnam information",
         "company-name": "Company name (Romaji)",
         "address": "Address",
         "company-URL": "Company URL Website",
@@ -3644,6 +3644,8 @@
         "last-name": "Last Name",
         "email": "Email Address",
         "phone": "The phone number",
+        "area": "Please choose an area",
+        "note": "Inquiry details",
         "send": "Send"
     },
     "caption": [

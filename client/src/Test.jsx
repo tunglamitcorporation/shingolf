@@ -1,65 +1,46 @@
 import React, { useState } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/themes/material_green.css';
 
-const TabsInput = () => {
-  const [tabInputs, setTabInputs] = useState({
-    tab1: '',
-    tab2: '',
-    tab3: '',
-    tab4: '',
-    tab5: '',
-  });
+const DateDifferenceCalculator = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [difference, setDifference] = useState(null);
 
-  const [numTabs, setNumTabs] = useState(1); // Initial number of tabs
-
-  const handleInputChange = (tabId, value) => {
-    setTabInputs((prevState) => ({
-      ...prevState,
-      [tabId]: value,
-    }));
-  };
-  const handleSave = () => {
-    // Log specific content from the state object
-    console.log("Content of tab1:", tabInputs.tab1);
-    console.log("Content of tab3:", tabInputs.tab3);
-    // You can log other specific content as needed
-  };
-
-  const addNewTab = () => {
-    const newNumTabs = numTabs + 1;
-    const newTabId = `tab${newNumTabs}`;
-    setTabInputs((prevState) => ({
-      ...prevState,
-      [newTabId]: '',
-    }));
-    setNumTabs(newNumTabs);
+  const calculateDifference = () => {
+    if (startDate && endDate) {
+      const differenceInMilliseconds = Math.abs(endDate - startDate);
+      const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+      setDifference(differenceInDays);
+    }
   };
 
   return (
     <div>
-      <Tabs>
-        <TabList>
-          {Object.keys(tabInputs).map((tabId) => (
-            <Tab key={tabId}>{tabId}</Tab>
-          ))}
-        </TabList>
-
-        {Object.keys(tabInputs).map((tabId) => (
-          <TabPanel key={tabId}>
-            <input
-              type="text"
-              value={tabInputs[tabId]}
-              onChange={(e) => handleInputChange(tabId, e.target.value)}
-            />
-          </TabPanel>
-        ))}
-      </Tabs>
-
-      <button onClick={addNewTab}>Add Tab</button>
-      <button onClick={handleSave}>Save</button> {/* Log specific content on button click */}
+      <div>
+        <h3>Select Start Date:</h3>
+        <Flatpickr
+          value={startDate}
+          onChange={(selectedDates) => setStartDate(selectedDates[0])}
+        />
+      </div>
+      <div>
+        <h3>Select End Date:</h3>
+        <Flatpickr
+          value={endDate}
+          onChange={(selectedDates) => setEndDate(selectedDates[0])}
+        />
+      </div>
+      <div>
+        <button onClick={calculateDifference}>Calculate Difference</button>
+      </div>
+      <div>
+        {difference !== null && (
+          <p>The difference between the two dates is {difference} days.</p>
+        )}
+      </div>
     </div>
   );
 };
 
-export default TabsInput;
+export default DateDifferenceCalculator;

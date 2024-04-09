@@ -7,6 +7,7 @@ import { findCompanyByRequest, sendReservationRequest } from "../../api/reservat
 import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import DateDifferenceCalculator from "../../Test";
 
 function Reservation({token}) {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ function Reservation({token}) {
   const a = t("header.reservation")
   const b = t("header.title")
   const c = a + " | "+ b
-  
+
   const flatBranches = [].concat(...branch);
   const filteredBranches = flatBranches.filter(
     (b) => b.city_id == selectedCity
@@ -45,11 +46,11 @@ function Reservation({token}) {
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
   const [guestInformation, setGuestInformation] = useState({
-    guest1: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', booker:'',bookerName:'', email:'', phone:'', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'', payMethod:''},
-    guest2: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'', payMethod:''},
-    guest3: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'', payMethod:''},
-    guest4: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'', payMethod:''},
-    guest5: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'', payMethod:''},
+    guest1: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', booker:'Same as person who will stay',bookerName:'', email:'', phone:'', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
+    guest2: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
+    guest3: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
+    guest4: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
+    guest5: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
   })
   console.log(guestInformation);
   const [specialRequest, setSpecialRequest] = useState('');
@@ -60,7 +61,16 @@ function Reservation({token}) {
   const [earlyIn, setEarlyIn] = useState('');
   const [lateOut, setLateOut] = useState('');
   const [searchCompany, setSearchCompany] = useState([]); 
+  const [difference, setDifference] = useState(null);
 
+  const calculateDifference = () => {
+    if (startDate && endDate) {
+      const differenceInMilliseconds = Math.abs(endDate - startDate);
+      const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+      setDifference(differenceInDays);
+    }
+  };
+  console.log(difference);
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
   const handleInputChange = (tabId, inputName, value) => {
@@ -189,6 +199,13 @@ function Reservation({token}) {
   const input4Ref = useRef(null);
   const input5Ref = useRef(null);
   const input6Ref = useRef(null);
+
+  // const inDate = format(startDate, 'yyyy-MM-dd')
+  // const outDate = format(endDate, 'yyyy-MM-dd')
+
+  // console.log(inDate, outDate);
+  // const calculator  = outDate - inDate
+  // console.log(calculator);
   useEffect(() => {
     if (receivedData && receivedData.selectedCity) {
       setSelectedCity(receivedData.selectedCity);
@@ -430,17 +447,17 @@ function Reservation({token}) {
       isVaLid = false
 
     } 
-    if (!guestInformation.guest1.day) {
+    if (guestInformation.guest1.day === "Day") {
       errors.selectedDay = 'required';
       isVaLid = false
 
     } 
-    if (!guestInformation.guest1.month) {
+    if (guestInformation.guest1.month === "Month") {
       errors.selectedMonth = 'required';
       isVaLid = false
 
     } 
-    if (!guestInformation.guest1.year) {
+    if (guestInformation.guest1.year === "Year") {
       errors.selectedYear = 'required';
       isVaLid = false
 
@@ -512,7 +529,7 @@ function Reservation({token}) {
         const source = await sendReservationRequest(dataObject, token)
         navigate(`/thank-you/${cityParam}`)
       } else {
-       alert(`Please fill the blank in ${errors}`)
+       alert(`Please ensure that all required fields are completed`)
          }
       }  
   function DayPicker({guest,id}) {
@@ -781,6 +798,7 @@ function Reservation({token}) {
               placeholder={t("booking.date_in")}
               onChange={(dates) => {
                 setStartDate(dates[0]);
+                errors.startDate = ''
               }}
             />
             {errors.startDate && 
@@ -799,6 +817,7 @@ function Reservation({token}) {
               placeholder={t("booking.date_out")}
               onChange={(dates) => {
                 setEndDate(dates[0]);
+                errors.endDate = ''
               }}
             />
              {errors.endDate && 
@@ -857,6 +876,7 @@ function Reservation({token}) {
               className={errors.selectedRoom? "col-md-4 form__content validate_failed" : "col-md-4 form__content" }
               onChange={(e) => {
                 setSelectedRoom(e.target.value);
+                errors.selectedRoom = ''
               }}
             >
               {filteredRoom.map((item) => (
@@ -938,7 +958,10 @@ function Reservation({token}) {
                  type="text"
                  value={guestInformation.guest1.familyName}
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest1','familyName', e.target.value)}
+                 onChange={(e) => {
+                   handleInputChange('guest1','familyName', e.target.value)
+                   errors.familyName = ''
+                 }}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -948,7 +971,10 @@ function Reservation({token}) {
                  name="gName"
                  value={guestInformation.guest1.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest1','givenName', e.target.value)}
+                 onChange={(e) => {
+                  handleInputChange('guest1','givenName', e.target.value)
+                  errors.givenName = ''
+                 }}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName}</p>}
@@ -1094,7 +1120,6 @@ function Reservation({token}) {
                    checked={status === 0}
                    onClick={(e) => {
                      handleSelected(0);
-                    
                    }}
                    onChange={(e) => handleInputChange('guest1', 'booker',e.target.value)}
                  />
@@ -1209,7 +1234,7 @@ function Reservation({token}) {
                    type="radio"
                    id="hContract"
                    className="Contract"
-                   value={t("reservation.n-cont")}
+                   value="No Contract"
                    checked={statusC == 0}
                    onClick={(e) => {
                      handleInputChange('guest1', 'contract', e.target.value)
@@ -1224,7 +1249,7 @@ function Reservation({token}) {
                    name="contract"
                    id="hContract"
                    className="Contract"
-                   value={t("reservation.h-cont")}
+                   value="Have Contract"
                    checked={statusC == 1}
                    onClick={(e) => {
                      handleInputChange('guest1', 'contract', e.target.value)
@@ -1290,7 +1315,8 @@ function Reservation({token}) {
                 <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
                 </div>
               </div>
-              <div className="row">
+              {difference >= 10 && (
+                <div className="row">
               <div className="col-md-2 name__title"></div>
                 <div className="col-md-6 ml-2">
               <input
@@ -1304,6 +1330,7 @@ function Reservation({token}) {
                 <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
                 </div>
               </div>
+              )}
               </div>
               </> : ""
             } 
@@ -1318,7 +1345,7 @@ function Reservation({token}) {
                    name="vatInvoice"
                    id="no-need"
                    className="VATInvoice"
-                   value={t("reservation.n-need")}
+                   value="No Necessary"
                    onClick={(e)=> handleRadioChange('guest1', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
@@ -1329,7 +1356,7 @@ function Reservation({token}) {
                    name="vatInvoice"
                    id="need"
                    className="VATInvoice"
-                   value={t("reservation.need")}
+                   value="Necessary"
                    onClick={(e)=> handleRadioChange('guest1', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
@@ -1349,13 +1376,13 @@ function Reservation({token}) {
                  onChange={(e) => {
                    handleInputChange('guest1', 'payMethod', e.target.value)
                  }}
-               > {statusC === 0 &&
+               > {statusC == 0 &&
                  payMethod.map((item) => (
                  <option key={item.name} value={item.name}>
                    {item.name}
                  </option>
                ))} 
-               {statusC === 1 && 
+               {statusC == 1 && 
                  payMethod2.map((item) => (
                    <option key={item.name} value={item.name}>
                      {item.name}
@@ -2394,7 +2421,7 @@ function Reservation({token}) {
                   name="vatInvoice"
                   id="no-need"
                   className="VATInvoice"
-                  value={t("reservation.n-need")}
+                  value="No Necessary"
                   onClick={(e)=> handleRadioChange('guest4', 'vat', e.target.value)}
                 />
                 <label htmlFor="no-need">{t("reservation.n-need")}</label>
@@ -2405,7 +2432,7 @@ function Reservation({token}) {
                   name="vatInvoice"
                   id="need"
                   className="VATInvoice"
-                  value={t("reservation.need")}
+                  value="Necessary"
                   onClick={(e)=> handleRadioChange('guest4', 'vat', e.target.value)}
                 />
                 <label htmlFor="need">{t("reservation.need")}</label>
@@ -2644,7 +2671,7 @@ function Reservation({token}) {
                    type="radio"
                    id="hContract"
                    className="Contract"
-                   value={t("reservation.n-cont")}
+                   value="No Contract"
                    checked={statusC == 0}
                    onClick={(e) => {
                      handleInputChange('guest5', 'contract', e.target.value)
@@ -2659,7 +2686,7 @@ function Reservation({token}) {
                    name="contract"
                    id="hContract"
                    className="Contract"
-                   value={t("reservation.h-cont")}
+                   value="Have Contract"
                    checked={statusC == 1}
                    onClick={(e) => {
                      handleInputChange('guest5', 'contract', e.target.value)
