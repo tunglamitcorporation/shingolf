@@ -47,7 +47,7 @@
                 "mail": "reservation2@azumayavietnam.com"
             },
             {
-                "name": "Azumaya TháiVăn Lung 2",
+                "name": "Azumaya Thái Văn Lung 2",
                 "add": "29 Đường Thái Văn Lung, Quận 1, Thành phố HCM",
                 "num": "+84.28.3827 1071 & +84.28.3827.1072",
                 "mail": "reservation3@azumayavietnam.com"
@@ -112,6 +112,7 @@
         "date_in": "Ngày nhận phòng",
         "date_out": "Ngày trả phòng",
         "reserve": "Đặt phòng",
+        "room_placeholder": "Lựa chọn hạng phòng",
         "city": [
             {
                 "id": "hotel-hcm",

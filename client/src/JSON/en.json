@@ -114,6 +114,7 @@
         "date_out": "Check out date",
         "reserve": "Reserve",
         "placeHolder": "Please choose a city",
+        "room_placeholder": "Please choose a kind of room",
         "city": [
             {
                 "id": "hotel-hcm",

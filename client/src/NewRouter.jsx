@@ -1,7 +1,7 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import { Routes, Route, Redirect} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import i18n from './i18n'
 import Home from "./container/Home/Home";
 import Feature from "./container/Feature/Feature";
 import Policies from "./container/Policies/Policies";
@@ -34,10 +34,27 @@ import Reservation_backup from './container/Reservation/Reservation_backup'
 
 function NewRouter(props) {
     const {news} = props;
+    const { i18n } = useTranslation();
+
+    const language = window.location.pathname.split('/')[1];
+    React.useEffect(() => {
+        switch(language){
+            case 'en':
+                i18n.changeLanguage('en')
+                break;
+            case 'ja':
+                i18n.changeLanguage('ja')
+                break;
+            case 'vie':
+                i18n.changeLanguage('vie')
+                break;
+        }
+      }, [language, i18n]);
+    
     return (
         <section>
             <Routes>
-                <Route exact path="/" element={<Home news = {news} />} />
+                <Route exact path='/' element={<Home news = {news} />} />
                 <Route path="/service" element={<VietnamService />} />
                 <Route path="/q&a" element={<Policies />} />
                 <Route path="/reservation" element={<Reservation />} />
@@ -48,7 +65,11 @@ function NewRouter(props) {
                 <Route path = "/massage" element={<VietnamService />} />
                 {/* <Route path="/Service" element={<Service />} /> */}
                 <Route path="/contract" element={<Contract />} />
-                <Route path="/thank-you/:selectedCity" element={<ThankYou />} />
+                
+                <Route path="/en/thank-you/:selectedCity" element={<ThankYou />} />
+                <Route path="/ja/thank-you/:selectedCity" element={<ThankYou />} />
+                <Route path="/vie/thank-you/:selectedCity" element={<ThankYou />} />
+
                 <Route path="/news/:title" element={<News news={news} />} />
                 <Route path="/news" element={<NewsList news={news} />} />
                 <Route path="/news-by-date/:date" element={<NewsByDate news={news} />} />

@@ -11,7 +11,7 @@ import HelmetLayout from "../HelmetLayout/HelmetLayout";
 export default function HotelDN({news}){
     const { t } = useTranslation();
     const DNDetail = t("dn-branch.branch", { returnObjects: true });
-    const homeNews = news
+    const homeNews = news.slice(0,7)
     const dnArea = t('dn-branch.slider', {returnObjects: true})
     const AutoPlaySlider =  withAutoplay(AwesomeSlider)
     const a = t("header.dn")

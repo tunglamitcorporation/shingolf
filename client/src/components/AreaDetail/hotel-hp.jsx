@@ -12,7 +12,7 @@ import HelmetLayout from "../HelmetLayout/HelmetLayout";
 export default function HotelHP({news}) {
   const { t } = useTranslation();
   const HPDetail = t("hp-branch.branch", { returnObjects: true });
-  const homeNews = news
+  const homeNews = news.slice(0,7)
   const hpArea = t('hp-branch.slider', {returnObjects: true})
   const a = t("header.hp")
   const b = t("header.title")

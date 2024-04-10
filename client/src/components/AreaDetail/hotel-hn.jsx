@@ -9,7 +9,7 @@ import 'react-awesome-slider/dist/custom-animations/scale-out-animation.css';
 import HelmetLayout from "../HelmetLayout/HelmetLayout";
 export default function HotelHN({ news }) {
   const { t } = useTranslation();
-  const homeNews = news;
+  const homeNews = news.slice(0,6);
   const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
   const hnArea = t('hn-branch.slider', {returnObjects: true})
   const a = t("header.hn")

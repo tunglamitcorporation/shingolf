@@ -113,6 +113,7 @@
         "date_out": "チェックアウト日",
         "reserve": "予約する",
         "placeHolder": "都市を選択してください",
+        "room_placeholder": "お部屋の種類を選択してください",
         "city": [
             {
                 "id": "hotel-hcm",

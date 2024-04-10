@@ -9,10 +9,8 @@ function Header() {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     Cookies.set('selectedLanguage', lng, {expires: 365})
+    
   };
-  const [selectedCity, setSelectedCity] = useState('');
-  const [selectedBranch, setSelectedBranch] = useState('s');
-
   const feature = t("feature.feature_item", { returnObjects: true });
   const hcm = t("hcm-branch.branch", {returnObjects:true})
   const hn = t("hn-branch.branch", {returnObjects:true})
@@ -59,6 +57,7 @@ function Header() {
       document.body.style.position = "";
     }
   })
+;
  
   const HeaderMobile = () => {
     return(
@@ -416,7 +415,7 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/feedback">
+                      <Link className="header__navbar-link-2" style={{width:130}} to="/feedback">
                         {t("header.feedback")}
                       </Link>
                     </Tab>

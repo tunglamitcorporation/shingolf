@@ -249,7 +249,7 @@ const validate = () => {
                       className={errors.companyName ? 'col-md-2 validate_failed' : 'col-md-2'} /> 
                     </div>
                     {errors.companyName && 
-                    <p className="col-md-1 error-message">{errors.companyName}</p>}
+                    <p className="col-md-1 error_message-contract">{errors.companyName}</p>}
                     <div className="row pl-3 pr-3">
                       <div className="col-md-12">
                       <label >{t('contract.address')}</label>
@@ -264,7 +264,7 @@ const validate = () => {
                       className={errors.address ? 'col-md-2 validate_failed' : 'col-md-2'} /> 
                     </div>
                     {errors.address && 
-                    <p className="col-md-1 error-message">{errors.address}</p>}
+                    <p className="col-md-1 error_message-contract">{errors.address}</p>}
                     <div className="row pl-3 pr-3">
                       <div className="col-md-12">
                       <label >{t('contract.company-URL')}</label>
@@ -279,7 +279,7 @@ const validate = () => {
                       className={errors.companyURL ? 'col-md-2 validate_failed' : 'col-md-2'} /> 
                     </div>
                     {errors.companyURL && 
-                    <p className="col-md-1 error-message">{errors.companyURL}</p>}
+                    <p className="col-md-1 error_message-contract">{errors.companyURL}</p>}
                     <div className="row">
                       <div className="col-md-12">
                       <label style={{marginLeft: '10px'}}>{t('contract.in-charge')}</label>
@@ -296,7 +296,7 @@ const validate = () => {
                       className={errors.firstName ? 'validate_failed' : ''}
                       /> 
                       {errors.firstName && 
-                    <p className="col-md-2 error-message" style={{width:'120px'}}>{errors.firstName}</p>}
+                    <p className="col-md-2 error_message-contract" style={{width:'120px'}}>{errors.firstName}</p>}
                       </div>
                       <div className="col-md-6 pl-3 pr-0">
                       <input 
@@ -310,7 +310,7 @@ const validate = () => {
                       className = {errors.lastName ? 'validate_failed' : ''}
                       /> 
                       {errors.lastName && 
-                    <p className="col-md-2 error-message">{errors.lastName}</p>}
+                    <p className="col-md-2 error_message-contract">{errors.lastName}</p>}
                       </div>
                     </div>
                     <div className="row">
@@ -327,7 +327,7 @@ const validate = () => {
                       className={errors.email ? 'validate_failed' : ''}
                       /> 
                       {errors.email && 
-                    <p className="col-md-2 error-message">{errors.email}</p>}
+                    <p className="col-md-2 error_message-contract">{errors.email}</p>}
                       </div>
                       <div className="col-md-6 pl-3 pr-0">
                       <label style={{marginLeft: '20px'}} >{t('contract.phone')}</label>
@@ -346,7 +346,7 @@ const validate = () => {
                       className={errors.phoneNumber ? 'validate_failed' : ''}
                       /> 
                       {errors.phoneNumber && 
-                    <p className="col-md-2 error-message">{errors.phoneNumber}</p>}
+                    <p className="col-md-2 error_message-contract">{errors.phoneNumber}</p>}
                       </div>
                     </div>
                     <div className="row pl-3 pr-3">
@@ -365,7 +365,7 @@ const validate = () => {
                         </select>
                     </div>
                     {errors.selectedCity && 
-                    <p className="col-md-1 error-message">{errors.selectedCity}</p>}
+                    <p className="col-md-1 error_message-contract">{errors.selectedCity}</p>}
                     <div className="row pl-3 pr-3 justify-content-center">
                         <div className="col-md-12 p-0">
                         <label style={{marginLeft: '20px'}}>{t("contract.note")}</label>
@@ -384,7 +384,7 @@ const validate = () => {
                         </div>
                     </div>
                     {errors.note && 
-                    <p className="col-md-1 error-message">{errors.note}</p>}
+                    <p className="col-md-1 error_message-contract">{errors.note}</p>}
                     <div className="d-flex justify-content-center p-2">
                     <ReCAPTCHA
                     sitekey={key}
