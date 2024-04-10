@@ -1,7 +1,7 @@
 import React from "react";
 import Booking from "../Units/Booking";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
@@ -11,6 +11,9 @@ import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { format } from "date-fns";
 
 export default function VietnamService() {
+  const [branch, setBranch] = useState('')
+  const [city, setCity] = useState('')
+  const navigate = useNavigate()
 
   function MassageLinhLangModal(props) {
     const [startDate, setStartDate] = useState(null);
@@ -29,7 +32,7 @@ export default function VietnamService() {
         setStartTime(null);
       }
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       const dataObject = {
         startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
         startTime,
@@ -37,10 +40,14 @@ export default function VietnamService() {
         option,
         phone,
         email,
+        branch,
         specialRequest
       }
       console.log(dataObject);
       e.preventDefault()
+      const token = ""
+      const source = ""
+      navigate (`/massage/thank-you/${city}`)
     }
     return (
       <Modal
@@ -149,7 +156,7 @@ export default function VietnamService() {
                     type="submit"
                   >
                     <span class="text" style={{ color: "#fff" }}>
-                      Send
+                      {t('reservation.send')}
                     </span>
                     <span className="d-flex align-item-center">
                       <i
@@ -245,10 +252,14 @@ export default function VietnamService() {
         option,
         phone,
         email,
+        branch,
         specialRequest
       }
       console.log(dataObject);
       e.preventDefault()
+      const token = ""
+      const source = ""
+      navigate (`/massage/thank-you/${city}`)
     }
     return (
       <Modal
@@ -357,7 +368,7 @@ export default function VietnamService() {
                     type="submit"
                   >
                     <span class="text" style={{ color: "#fff" }}>
-                      Send
+                    {t('reservation.send')}
                     </span>
                     <span className="d-flex align-item-center">
                       <i
@@ -453,10 +464,14 @@ export default function VietnamService() {
         option,
         phone,
         email,
+        branch,
         specialRequest
       }
       console.log(dataObject);
       e.preventDefault()
+      const token = ""
+      const source = ""
+      navigate (`/massage/thank-you/${city}`)
     }
     return (
       <Modal
@@ -565,7 +580,7 @@ export default function VietnamService() {
                     type="submit"
                   >
                     <span class="text" style={{ color: "#fff" }}>
-                      Send
+                    {t('reservation.send')}
                     </span>
                     <span className="d-flex align-item-center">
                       <i
@@ -1141,7 +1156,11 @@ export default function VietnamService() {
                         <button
                           class="button-57 call-btn"
                           role="button"
-                          onClick={() => setModalShow(true)}
+                          onClick={() => {
+                            setModalShow(true)
+                            setBranch('Linh Lang')
+                            setCity('hotel-hn')
+                          }}
                         >
                           <span class="text">
                             {t("service_massage.reservation")}
@@ -1199,7 +1218,11 @@ export default function VietnamService() {
                         <button
                           class="button-57 call-btn"
                           role="button"
-                          onClick={() => setModalShow1(true)}
+                          onClick={() => {
+                            setModalShow1(true)
+                            setBranch('Da Nang')
+                            setCity('hotel-dn')
+                          }}
                         >
                           <span class="text">
                             {t("service_massage.reservation")}
@@ -1254,7 +1277,11 @@ export default function VietnamService() {
                         <button
                           class="button-57 call-btn"
                           role="button"
-                          onClick={() => setModalShow2(true)}
+                          onClick={() => {
+                            setModalShow2(true)
+                            setBranch('Thai Van Lung 1')
+                            setCity('hotel-hcm')
+                          }}
                         >
                           <span class="text">
                             {t("service_massage.reservation")}

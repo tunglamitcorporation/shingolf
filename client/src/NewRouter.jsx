@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route, Redirect} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import i18n from './i18n'
 import Home from "./container/Home/Home";
 import Feature from "./container/Feature/Feature";
 import Policies from "./container/Policies/Policies";
@@ -31,7 +30,7 @@ import VietnamService from "./container/Service/Service"
 import ErrorPage from './container/Units/ErrorPage';
 import Feedback from './container/Units/Feedback';
 import Reservation_backup from './container/Reservation/Reservation_backup'
-
+import ThankYouService from './container/Service/ThankYou';
 function NewRouter(props) {
     const {news} = props;
     const { i18n } = useTranslation();
@@ -66,9 +65,11 @@ function NewRouter(props) {
                 {/* <Route path="/Service" element={<Service />} /> */}
                 <Route path="/contract" element={<Contract />} />
                 
-                <Route path="/en/thank-you/:selectedCity" element={<ThankYou />} />
+                <Route path="/thank-you/:selectedCity" element={<ThankYou />} />
+                <Route path="/massage/thank-you/:selectedCity" element={<ThankYouService />} />
+                {/* <Route path="/en/thank-you/:selectedCity" element={<ThankYou />} />
                 <Route path="/ja/thank-you/:selectedCity" element={<ThankYou />} />
-                <Route path="/vie/thank-you/:selectedCity" element={<ThankYou />} />
+                <Route path="/vie/thank-you/:selectedCity" element={<ThankYou />} /> */}
 
                 <Route path="/news/:title" element={<News news={news} />} />
                 <Route path="/news" element={<NewsList news={news} />} />

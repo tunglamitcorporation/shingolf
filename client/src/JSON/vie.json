@@ -1003,10 +1003,10 @@
         ]
     },
     "thank_you": {
-        "name": "Xin cảm ơn quý khách",
-        "thank_content":"Cảm ơn vì quý khách đã chọn khách sạn của chúng tôi !",
+        "name": "Cảm ơn",
+        "thank_content":"Cảm ơn quý khách đã chọn khách sạn của chúng tôi !",
         "title": "Việc đặt phòng của quý khách vẫn chưa hoàn tất.",
-        "content": "Việc đặt phòng của quý khách vẫn chưa hoàn tất. Đội ngũ lễ tân của chúng tôi sẽ sớm gửi cho quý khách xác nhận đặt phòng.\n Nếu quý khách không thể nhận được bất kỳ thư hoặc cuộc gọi nào, vui lòng liên hệ với địa chỉ lễ tân của chúng tôi"
+        "content": "Việc đặt phòng của quý khách vẫn chưa hoàn tất. Đội ngũ lễ tân của chúng tôi sẽ sớm gửi cho quý khách xác nhận đặt phòng.\n Nếu quý khách không nhận được bất kỳ thư hoặc cuộc gọi nào, vui lòng liên hệ với địa chỉ email lễ tân của chúng tôi"
     },
     "hn-branch": {
         "slider": [
