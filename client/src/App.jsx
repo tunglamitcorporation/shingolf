@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useTranslation } from 'react-i18next'
 import Header from "./container/Units/Header.jsx";
 import Footer from "./container/Units/Footer.jsx";
@@ -16,6 +16,7 @@ function App() {
   const display = !['/Login','/SignUp'].some(substring =>location.pathname.includes(substring))
   const [showTop, setShowTop] = useState(false)
   const { t, i18n } = useTranslation();
+  const newsData = useMemo(() => t('news.source', {returnObjects:true}), [t]);
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     Cookies.set('selectedLanguage', lng, {expires: 365})
@@ -27,6 +28,7 @@ function App() {
     }
   })
   const [news, setNews] = useState([])
+
   useEffect(() =>{
               const handleScroll = () => {
                   setShowTop(window.scrollY >= 1000)
@@ -41,11 +43,9 @@ function App() {
   function scrollToTop() {
              window.scrollTo({top:0, behavior: 'smooth'})
           }
-
           useEffect(() => {
-            const newsData = t('news.source', {returnObjects:true})
             setNews(newsData)
-          },[])
+          },[newsData])
   return (
     <div>
 

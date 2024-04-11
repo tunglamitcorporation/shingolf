@@ -947,6 +947,12 @@
         "news": "Thông Tin",
         "source": [
             {
+                "title": "Bể tắm lạnh mở tại khách sạn Azumaya Đà Nẵng",  
+                "content": "\nĐể đáp ứng yêu cầu của khách hàng, chúng tôi đã mở bể tắm lạnh tại chi nhánh Đà Nẵng. Tận hưởng bồn tắm nước nóng ngoài trời, phòng xông hơi khô, ngâm mình trong bể nước lạnh và chiêm ngưỡng khung cảnh tuyệt đẹp trước mặt. Nó chắc chắn sẽ làm tâm trí và cơ thể của bạn trở nên thoải mái. \n\nGiờ mở cửa: \nThứ Hai-Thứ Sáu: 6:00-9:00 & 17:00-22:15 \nThứ bảy và chủ nhật: 7:00-10:00 & 17:00-22:15 \nKhách ngoài khách sạn: 150.000 VNĐ (chỉ dành cho nam) \n\n②Bạn cũng có thể đặt trước để sử dụng riêng. \nThứ Hai đến Thứ Sáu, từ 9:15 sáng ~ 4 giờ chiều (đặt trước lần cuối và vào cửa lúc 3 giờ chiều). \nGiá: \n1-4 người: 800.000đ/1 giờ \n5-8 người: 1.000.000đ/1 giờ. \nNếu bạn muốn đặt phòng riêng, vui lòng cho chúng tôi biết trước thời gian và số lượng người. \n\n*Dịch vụ mát-xa đặc trưng của Azumaya cũng được cung cấp tại tầng 1 của khách sạn. Hãy đến với chúng tôi để có giá tốt nhất. \n\nGói 40 phút: 200.000 VNĐ \nGói 70 phút: 250.000 VNĐ \nGói 100 phút: 350.000 VNĐ \n\n*Giảm giá 10% cho khách lưu trú tại khách sạn. \n*Khách có thể gửi tiền Tip cho nhân viên massage tùy ý. \n\n*Giờ mở cửa: \nCác ngày trong tuần: 14:00-22:30 (Giờ đặt lần cuối: 22:15) \nCuối tuần: 12:00-22:30 (Giờ đặt lần cuối: 22:15) \n\nVui lòng liên hệ để đặt phòng trước theo thông tin dưới đây: \nKhách sạn Azumaya Đà Nẵng: 0236.3 743 888",
+                "date": "2024-04-07",
+                "dn": true
+            },
+            {
                 "title": "[URGENT] Technical Issue Impacting Email Server with Our Hotel in Vietnam",  
                 "content": "Dear Valued Guests, \n\nWe would like to inform you about a temporary technical issue affecting email communication specifically for our Vietnam hotel. \nDue to a recent error in our mail server, guests are currently unable to send emails to our Vietnam hotel email address. We understand the importance of seamless communication, especially when planning your stay with us or seeking assistance during your visit. \nOur technical team is working diligently to resolve this issue as quickly as possible. In the meantime, if you need to contact us or have any inquiries, please use the following alternative methods: \n1. Sending emails to the following email addresses: \n\n+ Hai Ba Trung 1: azumayahaibatrungreservation@gmail.com \n+ Kim Ma 2:reservationhanoi32019@gmail.com \n + Kim Ma 3: reservationhanoi6@gmail.com \n+ Linh Lang: reservationlinhlang@gmail.com \n+ Hai Phong: reservationhaiphong2024@gmail.com \n+ Da Nang: danangazumaya@gmail.com \n+ Thai Van Lung 1: reservation.az@gmail.com \n+ Thai Van Lung 2: reservation4.aztvl2@gmail.com \n+ Le Thanh Ton: azltt.reservation@gmail.com \n+ Annex: reservation.az@gmail.com \n\n2. Calling to hotel hotline: \n+ Hai Ba Trung 1: +84.24.6278 6688 & +84.24.6278 6689 \n+ Kim Ma 2: +84.24.3724 7570 \n+ Kim Ma 3: +84.24.3862 0620 \n+ Linh Lang: +84.24.3862 0620 \n+ Hai Phong: +84.225.3828 969 \n+ Da Nang: +84.24.3862 0620 \n+ Thai Van Lung 1: +84.28.3824 6835 \n+ Thai Van Lung 2: +84.28.3827 1071 & +84.28.3827.1072 \n + Le Thanh Ton: +84.28.3827 1110 \n+ Annex: +84.28.3824 6835 \n\nThank you for choosing Azumaya Hotel. We look forward to serving you and providing an exceptional experience during your stay in Vietnam.",
                 "date": "2024-04-01",
@@ -2100,7 +2106,7 @@
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
         "rotenContent": "Ngày trong tuần: 6:00-10:00/17:00-24:00\nCuối tuần: 7:00-24:00",
         "breakfast": "Bữa sáng",
-        "breakfastContent": "Từ thứ Hai đến thứ Bảy: 6:00-8:00 Buffet 8:00-10:00 Set menu \nChủ Nhật: 6:00-10:00　Chỉ set menu",
+        "breakfastContent": "Từ thứ Hai đến thứ Bảy: 6:00-8:00 Buffet 8:00-10:00 Set menu \nChủ Nhật: 6:00-10:00　Chỉ set menu\n※Trong một số trường hợp đặc biệt (công trình sửa chữa, ngày lễ/tết), set menu sẽ được phục vụ để phục vụ khách hàng được tốt hơn. ",
         "massage": "Massage Chân",
         "massageContent": "Every day: 10:00-23:00 (Last enter 22:45)",
         "ask": "Liên hệ Lễ Tân",
@@ -2494,7 +2500,7 @@
         "visa": "Gia hạn Visa",
         "food": "Dịch vụ giao đồ ăn",
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
-        "rotenContent": "Ngày trong tuần: 6:00-10:00/19:00-24:00 \nGiờ nữ: 17:00-18:45 Cuối tuần: 7:00-24:00",
+        "rotenContent": "Ngày trong tuần: 6:00-10:00/19:00-24:00 \nGiờ nữ: 17:00-18:45 Cuối tuần: 7:00-24:00\n※Trong một số trường hợp đặc biệt (công trình sửa chữa, ngày lễ/tết), set menu sẽ được phục vụ để phục vụ khách hàng được tốt hơn. ",
         "breakfast": "Bữa sáng",
         "breakfastContent": "Từ thứ Hai đến thứ Bảy: 6:00-8:00 Buffet 8:00-10:00 Set menu \nChủ Nhật: 6:00-10:00 Chỉ set menu",
         "ask": "Liên hệ Lễ Tân",
@@ -2770,7 +2776,7 @@
         "roten": "Dịch vụ tắm nước nóng ngoài trời",
         "rotenContent": "Ngày trong tuần: 6:00-10:00/17:00-24:00 \nCuối tuần: 7:00-24:00",
         "breakfast": "Bữa sáng",
-        "breakfastContent": "Từ thứ Hai đến thứ Sáu: 6:00-8:00 Buffet 8:00-10:00 Set menu \nThứ Bảy và Chủ nhật: 6:00-10:00 Chỉ set menu",
+        "breakfastContent": "Từ thứ Hai đến thứ Sáu: 6:00-8:00 Buffet 8:00-10:00 Set menu \nThứ Bảy và Chủ nhật: 6:00-10:00 Chỉ set menu\n※Trong một số trường hợp đặc biệt (công trình sửa chữa, ngày lễ/tết), set menu sẽ được phục vụ để phục vụ khách hàng được tốt hơn. ",
         "ask": "Liên hệ Lễ Tân",
         "board": "Ban Quản lý Khách sạn Azumaya",
         "contact1": "Đặt phòng có thể thực hiện qua điện thoại:",
@@ -4147,7 +4153,20 @@
             {
                 "content": "※ Dịch vụ matxa và tắm lộ thiên"
             }
-        ]
+        ],
+        "modal_titleHN":"Massage Hà Nội (Azumaya Linh Lang)",
+        "modal_titleDN":"Massage Đà Nẵng (Azumaya Đà Nẵng)",
+        "modal_titleHCM":"Massage Hồ Chí Minh (Azumaya Hồ Chí Minh)",
+        "reservation1":"Đặt chỗ qua email",
+        "reservation2":"Liên hệ trực tiếp với lễ tân",
+        "guest_name":"Tên",
+        "phone_number":"Số điện thoại",
+        "email":"Email",
+        "date":"Ngày đặt",
+        "time":"Giờ đặt",
+        "minutes": "phút",
+        "special":"Ghi chú",
+        "close":"Đóng"
     },
     "error": {
         "title": "Trang bạn đang tìm kiếm không tồn tại",

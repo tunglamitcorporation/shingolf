@@ -4,6 +4,7 @@ import Collapsible from "react-collapsible";
 import ReCAPTCHA from "react-google-recaptcha";
 import {useRef, useState, useEffect} from 'react';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
+import { sendContractRequest } from "../../api/reservation";
 
 export default function Contract() {
   const {t} = useTranslation();
@@ -21,6 +22,7 @@ export default function Contract() {
   const [companyURL, setCompanyURL] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [gender, setGender] = useState('Mr.')
   const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [selectedCity, setSelectedCity] = useState('')
@@ -31,8 +33,6 @@ export default function Contract() {
   const a = t("header.contract")
   const b = t("header.title")
   const c = a + " | "+ b
-  console.log(c);
-
   const [errors, setErrors] = useState({});
   const validateEmail = (email) => {
     // Regular expression for email validation
@@ -90,28 +90,38 @@ const validate = () => {
   setErrors(errors);
   return isVaLid
 }
- const handleSubmit = async (e) => {
+ const handleSubmit = async(e) => {
+  function getCityValue(value){
+    switch(value){
+      case 'hotel-hn': return "Ha Noi"
+      case 'hotel-hcm': return "Ho Chi Minh"
+      case 'hotel-dn': return "Da Nang"
+      case 'hotel-hp': return "Hai Phong"
+    }
+  }
+  e.preventDefault();
   const dataObject = {
         companyName,
         address,
         companyURL,
         firstName,
         lastName,
+        gender,
         email,
         phoneNumber,
-        selectedCity,
+        selectedCity: getCityValue(selectedCity),
         note
   }
+  console.log(dataObject)
   if(validate()){
-    const token = ''
-    const source = ''
-    navigate(`/thank-you/${selectedCity}`)
-    
-    console.log(dataObject)
+    const token = '73344833-5b52-4403-9255-695907647688'
+    const source = await sendContractRequest(dataObject, token)
+    console.log(source);
+    navigate(`/contract/thank-you/${selectedCity}`)
   }else{
     alert(`Please ensure that all required fields are completed`)
   }
-  e.preventDefault();
+ 
  }
   return (
     <div>
@@ -314,6 +324,34 @@ const validate = () => {
                       </div>
                     </div>
                     <div className="row">
+                    <label style={{marginLeft: '10px'}}>{t("reservation.gender")}</label>
+                        <div className="col-md-4 pl-3 pr-0">
+                          <input
+                            type="radio"
+                            name="gender"
+                            id="gMale"
+                            value="Mr."
+                            checked={gender === "Mr."}
+                            onChange={(e) => setGender(e.target.value)}
+                            
+                          />
+                          <label htmlFor="gMale">{t("reservation.mr")}</label>
+                        </div>
+                        <div className="col-md-4 pl-3 pr-0">
+                          <input
+                            type="radio"
+                            name="gender"
+                            id="gFemale"
+                            value="Ms."
+                            checked = {gender === "Ms."}
+                            onChange={(e) => setGender(e.target.value)}
+                          />
+                          <label htmlFor="gFemale">{t("reservation.ms")}</label>
+                        </div>
+                        {errors.gender && 
+                        <p className="col-md-2 error-message">{errors.gender}</p>}
+                      </div>
+                    <div className="row">
                       <div className="col-md-6 pl-0 pr-3">
                       <label style={{marginLeft: '20px'}} >{t('contract.email')}</label>
                       <input 
@@ -392,7 +430,7 @@ const validate = () => {
                     </div>
                     <div className="d-flex justify-content-center p-2">
                     <button 
-                    id='send'
+                    id="send"
                     type="submit" 
                     className="base__btn btn__send">{t('contract.send')}</button>
                     </div>

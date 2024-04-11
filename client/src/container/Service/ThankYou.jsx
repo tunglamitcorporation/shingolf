@@ -5,7 +5,7 @@ import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 export default function ThankYouService() {
     const { selectedCity } = useParams()
     const {t} = useTranslation()
-    const a = t("thank_you.name")
+    const a = t("_service.name")
     const b = t("header.title")
     const c = a + " | "+ b
     
@@ -14,11 +14,11 @@ export default function ThankYouService() {
             <div>
               <HelmetLayout title= {c}
     />
-      <div className="reservation__content">
+      <div className="reservation__content" style={{background:'url("https://res.cloudinary.com/dtdfsaaei/image/upload/v1712810123/AzumayaWeb/massage-title_vjftlg.jpg") center center / cover no-repeat'}}>
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>{t('thank_you.thank_content')}</h1>
+              <h1>{t('thankyou_service.thank_content')}</h1>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function ThankYouService() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">{t('thank_you.name')}</Link>
+                <Link className="breadcrumb__title">{t('thankyou_service.name')}</Link>
               </li>
             </ul>
             </div>
@@ -45,9 +45,9 @@ export default function ThankYouService() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 pre-line">
-                <h1>{t("thank_you.title")}</h1>
+                <h1>{t("thankyou_service.title")}</h1>
                 <br />
-                <h4>{t("thank_you.content")}</h4>
+                <h4>{t("thankyou_service.content")}</h4>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@ export default function ThankYouService() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-            <h1>{t('thank_you.thank_content')}</h1>
+            <h1>{t('thankyou_service.thank_content')}</h1>
             </div>
           </div>
         </div>
@@ -87,9 +87,9 @@ export default function ThankYouService() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 pre-line">
-                <h1>{t("thank_you.title")}</h1>
+                <h1>{t("thankyou_service.title")}</h1>
                 <br />
-                <h4>{t("thank_you.content")}</h4>
+                <h4>{t("thankyou_service.content")}</h4>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@ export default function ThankYouService() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-            <h1>{t('thank_you.thank_content')}</h1>
+            <h1>{t('thankyou_service.thank_content')}</h1>
             </div>
           </div>
         </div>
@@ -129,9 +129,9 @@ export default function ThankYouService() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 pre-line">
-                <h1>{t("thank_you.title")}</h1>
+                <h1>{t("thankyou_service.title")}</h1>
                 <br />
-                <h4>{t("thank_you.content")}</h4>
+                <h4>{t("thankyou_service.content")}</h4>
                 </div>
             </div>
         </div>
@@ -144,7 +144,7 @@ export default function ThankYouService() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>{t('thank_you.thank_content')}</h1>
+              <h1>{t('thankyou_service.thank_content')}</h1>
             </div>
           </div>
         </div>
@@ -171,9 +171,9 @@ export default function ThankYouService() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 pre-line">
-                <h1>{t("thank_you.title")}</h1>
+                <h1>{t("thankyou_service.title")}</h1>
                 <br />
-                <h4>{t("thank_you.content")}</h4>
+                <h4>{t("thankyou_service.content")}</h4>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@ export default function ThankYouService() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-            <h1>{t('thank_you.thank_content')}</h1>
+            <h1>{t('thankyou_service.thank_content')}</h1>
             </div>
           </div>
         </div>
@@ -212,9 +212,9 @@ export default function ThankYouService() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 pre-line">
-                <h1>{t("thank_you.title")}</h1>
+                <h1>{t("thankyou_service.title")}</h1>
                 <br />
-                <h4>{t("thank_you.content")}</h4>
+                <h4>{t("thankyou_service.content")}</h4>
                 </div>
             </div>
         </div>

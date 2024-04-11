@@ -35,7 +35,7 @@
                 "mail": "reservation@azumayavietnam.com"
             },
             {
-                "name": "Azumaya HCM ANNEX",
+                "name": "Azumaya Annex",
                 "add": "8A/8D2 Thai Van Lung St., Dist. 1, HCMC",
                 "num": "+84.28.3824 6835",
                 "mail": "reservation@azumayavietnam.com"
@@ -1017,55 +1017,71 @@
         "news": "News",
         "source": [
             {
-                "title": "[URGENT] Technical Issue Impacting Email Server with Our Hotel in Vietnam",  
+                "title": "Open cold bath at Azumaya Hotel DaNang",
+                "news_title": "Open cold bath at Azumaya Hotel DaNang",
+                "content": "In response to customer requests, we have opened a cold bath at our Da Nang branch. Enjoy the open-air bath, sauna, and cold water bath while admiring the spectacular view in front of you. It is sure to refresh your mind and body. \n\nBusiness hours: \nMon-Fri: 6:00-9:00 & 17:00-22:15 \nSaturday and Sunday: 7:00-10:00 & 17:00-22:15 \nVisitors: 150,000VND(men only) \n\n②It is also possible to reserve for private use. \nMonday to Friday from 9:15am~ 4pm (last reservation and entry at 3pm.). \nPrice: \n1-4 people: 800,000 VND/1 hour \n5-8 people: 1,000,000 VND/1 hour. \nIf you would like to reserve a private room, please let us know the time and number of people in advance. \n\n*Azumaya's signature massage is also available in the lobby. Please join us for a great set price. \n40 minute course:200,000VND \n70 minute course:250,000VND \n100 minute course:350,000VND \n\n*10% discount for hotel guests. \n*Tip for treatment staff is kindly provided by customers. \n*Business hours \nWeekdays: 14:00-22:30 (last entry: 22:15) \nWeekends: 12:00-22:30 (last entry: 22:15) \n\nWe recommend that you make a reservation in advance when visiting. Please call us below. \nAzumaya Hotel Danang: 0236.3 743 888",
+                "date": "2024-04-07",
+                "dn": true
+            },
+            {
+                "title": "[URGENT] Technical Issue Impacting Email Server with Our Hotel in Vietnam",
+                "news_title": "[URGENT] Technical Issue Impacting Email Server with Our Hotel in Vietnam",  
                 "content": "Dear Valued Guests, \n\nWe would like to inform you about a temporary technical issue affecting email communication specifically for our Vietnam hotel. \nDue to a recent error in our mail server, guests are currently unable to send emails to our Vietnam hotel email address. We understand the importance of seamless communication, especially when planning your stay with us or seeking assistance during your visit. \nOur technical team is working diligently to resolve this issue as quickly as possible. In the meantime, if you need to contact us or have any inquiries, please use the following alternative methods: \n1. Sending emails to the following email addresses: \n\n+ Hai Ba Trung 1: azumayahaibatrungreservation@gmail.com \n+ Kim Ma 2:reservationhanoi32019@gmail.com \n + Kim Ma 3: reservationhanoi6@gmail.com \n+ Linh Lang: reservationlinhlang@gmail.com \n+ Hai Phong: reservationhaiphong2024@gmail.com \n+ Da Nang: danangazumaya@gmail.com \n+ Thai Van Lung 1: reservation.az@gmail.com \n+ Thai Van Lung 2: reservation4.aztvl2@gmail.com \n+ Le Thanh Ton: azltt.reservation@gmail.com \n+ Annex: reservation.az@gmail.com \n\n2. Calling to hotel hotline: \n+ Hai Ba Trung 1: +84.24.6278 6688 & +84.24.6278 6689 \n+ Kim Ma 2: +84.24.3724 7570 \n+ Kim Ma 3: +84.24.3862 0620 \n+ Linh Lang: +84.24.3862 0620 \n+ Hai Phong: +84.225.3828 969 \n+ Da Nang: +84.24.3862 0620 \n+ Thai Van Lung 1: +84.28.3824 6835 \n+ Thai Van Lung 2: +84.28.3827 1071 & +84.28.3827.1072 \n + Le Thanh Ton: +84.28.3827 1110 \n+ Annex: +84.28.3824 6835 \n\nThank you for choosing Azumaya Hotel. We look forward to serving you and providing an exceptional experience during your stay in Vietnam.",
                 "date": "2024-04-01",
                 "allBranch": true
             },
             {
                 "title": "2024 Tet (Lunar New Year) Information",
+                "news_title": "2024 Tet (Lunar New Year) Information",
                 "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2024 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Massage ：February 9th to 12th close ( resumed from February 13th )\n– Thai Van Lung 2 : February 3rd to 18th close ( resumed from February 19th )\n– Le Thanh Ton : February 5th to 18th close ( resumed from February 19th )\n\n【 Ha Noi 】 \n– Kim Ma 3 open normally –\nKim Ma 2 : February 7th to 14th close ( resumed from February 15th )\nHai Ba Trung 1 : February 8th to 16th close ( resumed from February 17th )\nLinh Lang : February 7th to 16th close ( resumed from February 17th )\n\n【 Da Nang 】\nFebruary 3rd to 14th close ( resumed from February 15th )\n\n【 Hai Phong 】 \nFebruary 4th to 10th close ( resumed from February 11th )\n\nWe hope you can relax at Azumaya Hotel during the Tet period.\nWe look forward to your continued support in 2024.",
                 "date": "2024-01-01",
                 "allBranch": true
             },
             {
                 "title": "Open Air Hot Bath Renewal Open @ Azumaya Thai Van Lung 1",
+                "news_title": "Open Air Hot Bath Renewal Open @ Azumaya Thai Van Lung 1",
                 "content": "Azumaya Thai Van Lung 1 open air hot bath will reopen on 17th Jan 2024 after renovation. We will expand the Sauna and Cold water bathtub and exchange tiles so that guests can use our open air hot bath more comfortably. Guests can use the Open Air Hot Bath in Azumaya Thai Van Lung 2 (30 seconds on foot from Azumaya Thai Van Lung 1) until reopening.\nPlease come and enjoy our new open air hot bath, cold bath and sauna.\n\n*Along with this renewal construction, our open air hot bath for female guests is open from 17:00~18:45 on weekdays only at Le Thanh Ton branch.",
                 "date": "2023-12-29",
                 "hcm": true
             },
             {
                 "title": "Azumaya Ho Chi Minh 2024 New Year Day Limited Breakfast Set Menu",
+                "news_title":  "Azumaya Ho Chi Minh 2024 New Year Day Limited Breakfast Set Menu",
                 "content": "Azumaya Ho Chi Minh will serve New Year Special Set Menu on 1st Jan 2024.\nPlease enjoy the New Year limited menu cooked by our staff with love.\nOpening hour: 6am~10am\nPlace: Azumaya Thai Van Lung 1, Azumaya Thai Van Lung 2, Azumaya Le Than Ton",
                 "date": "2023-07-07",
                 "hcm": true
             },
             {
                 "title": "Open women Rotenburo in Azumaya Kim Ma 2 Branch",
+                "news_title":  "Open women Rotenburo in Azumaya Kim Ma 2 Branch",
                 "content": "From 1 July 2023, Women rotenburo will open in Azumaya Kim Ma 2 Branch.\n\nNot only staying guests but also visitors are welcome. (Visitors will be charged VND 100.000 per person.) \nOpenning hours are as follows. \n\nGuests Staying guest at Azumaya Kim Ma 2 hotel \nMon~Fri : 7:00~9:00 / 17:00~23:00\nSun&Sat: 7:00~23:00 \n\nStaying guest in Other Azumaya Hanoi Branch and visitors\nMon~Fri: 17:00~23:00\nSun&Sat: 7:00~23:00",
                 "date": "2023-12-29",
                 "hn": true
             },
             {
                 "title": "★ Notice of Vietnam Value Added Tax (VAT) change ★",
+                "news_title":  "★ Notice of Vietnam Value Added Tax (VAT) change ★",
                 "content": "From July 1st 2023 to December 31st 2023, Vietnam Value Added Tax (VAT) will be applied at 8%. We appreciate your understanding.",
                 "date": "2023-07-03",
                 "allBranch": true
             },
             {
                 "title": "2023 Tet (Lunar New Year) Information",
+                "news_title":  "2023 Tet (Lunar New Year) Information",
                 "content": "Happy new year. Thank you for your continued support of Azumaya Hotel.\nWe would like to inform you of the business hours and services during the 2023 Tet (Lunar New Year) period.\n\n【 Ho Chi Minh 】\n– Thai Van Lung 1 open normally –\n・Open-air bath ：January 21th to 25th open 7:00 to 23:00 ( resumed from January 26th )\n・Massage ：January 21th to 24th close ( resumed from January 25th )\n – Azumaya Le Thanh Ton & Thai Van Lung 2 –\n January 16th to 31st close ( resumed from February 1st ) \n\n【 Ha Noi 】\n– Linh Lang open normally –\nKim Ma 2 : January 19th to 27th close ( resumed from 28th )\nHai Ba Trung 1 : January 21th to 28th close ( resumed from 29th )\n\n【 Da Nang 】 \nJanuary 17th to 29th close ( resumed from January 30th ) \n\n【 Hai Phong 】 \nJanuary 19th to 29th close ( resumed from January 30th ) \n\n We hope you can relax at Azumaya Hotel during the Tet period. \nWe look forward to your continued support in 2023.",
                 "date": "2023-01-17",
                 "allBranch": true
             },
             {
                 "title": "Reopen Massage service from Apr 2022",
+                "news_title":  "Reopen Massage service from Apr 2022",
                 "content": "Dear Valued guest, \n\nThank you so much for interesting in Azumaya Hotel Da Nang‘s Foot Massage service. \nWe are very happy to inform you that, the Foot Massage service will reopen time from Apr 01(Fri) with schedule as below: \n\n+ Mon ~ Fri: 2 pm-10:30 pm (last entry: 10:15 pm) \n+ Sat ~ Sun: 12 pm-10:30 pm (last entry: 10:15 pm) \n\nDue to the request of the Da Nang government regarding the situation of the Covid-19 epidemic, please Present the QR code on the Danang Smart City app or PC-Covid, Khaibaoytedanang, tokhaiyte at the Reception. \nWe look forward to welcoming you. \nPlease come by all means!",
                 "date": "2023-04-15",
                 "dn": true
             },
             {
                 "title": "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hai Phong",
+                "news_title":  "Pickup and drop-off promotion from Ha Noi airport <--> Azumaya Hai Phong",
                 "content": "Pickup and drop-off promotion from Ha Noi airport <–> Azumaya Hai Phong \n\n+ 4 – seat car: 70$+ \n\n+ 7 – seat car: 75$+ \n\n+ 16 – seat car: 100,0$+ \n\n *Prices exclude 8% VAT \n\n ———-***———- \nAzumaya Hotel Hai Phong \nAddress: 32-33-34/420 Lach Tray Path, Ngo Quyen Dist., Hai Phong City, Viet Nam \nEmail:  reservationhaiphong@azumayavietnam.com \nTel    :  +84 225 3828 969",
                 "date": "2023-04-15",
                 "hp": true
@@ -1076,7 +1092,19 @@
         "name":"Thank you",
         "thank_content":"Thank you for choosing our hotel !",
         "title":"Your reservation has not yet completed.",
-        "content":"Your reservation has not yet completed. Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception address"
+        "content":"Our reception team will send you booking confirmation soon.\n If you can not receive any mail or call, please contact our reception email address"
+    },
+    "thankyou_service":{
+        "name":"Thank you",
+        "thank_content":"Thank you for choosing our massage service !",
+        "title":"Your reservation is currently being processed.",
+        "content":"Our reception team will send you a confirmation shortly. \nIf you haven't received any communication from us, please contact our reception email address"
+    },
+    "thankyou_contract":{
+        "name":"Thank you",
+        "thank_content":"Thank you for co-operation!",
+        "title":"Your request is currently being processed.",
+        "content":"We'd like to express our gratitude for promptly providing the necessary company information for our upcoming contract signing. \nWe'll review the details and get back to you as soon as possible."
     },
     "hn-branch": {
         "slider":[
@@ -1355,7 +1383,7 @@
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",
@@ -1762,7 +1790,7 @@
         {
             "id": 5,
             "title": "Tel",
-            "content": "FREE for local number / day\n20.000VND charged for international number",
+            "content": "FREE for local number / day\n25.000VND charged for international number",
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/tel_jjorhm.jpg"
         },
         {
@@ -1830,7 +1858,7 @@
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",
@@ -2018,21 +2046,21 @@
             {
                 "id": 2,
                 "name": "Azumaya Thai Van Lung 2",
-                "desc": "Azumaya Hotel Thai Van Lung 2 branch is a newly opened branch in 2016, located in front of the Thai Van Lung 1 branch across the street. There are 58 rooms in total with toilet with bidet functions, bathtubs, and Japanese TV shows in each room. We also serve open-air hot baths, Japanese breakfast, and Japanese food restaurant \"Suizan\" and \"mangetsu\". Female guests can also enjoy our open air hot bath on weekdays. (Only from 17:00 to 18:45) For breakfast, we also have a lot of set manu like continental set other than authentic Japanese sets, Udon noodles. With Thai Van Lung 1 branch located in front and Le Thanh Ton branch standing along Le Thanh Ton street 3 minutes far from here, it is the perfect location for businessmen to stay comfortably.",
+                "desc": "Azumaya Hotel Thai Van Lung 2 branch is a newly opened branch in 2016, located in front of the Thai Van Lung 1 branch across the street. There are 58 rooms in total with toilet with bidet functions, bathtubs, and Japanese TV shows in each room. We also serve open-air hot baths, Japanese breakfast, and Japanese food restaurant \"Suizan\" and \"Mangetsu\". Female guests can also enjoy our open air hot bath on weekdays. (Only from 17:00 to 18:45). For breakfast, we also have a lot of set manu like continental set other than authentic Japanese sets, Udon noodles. With Thai Van Lung 1 branch located in front and Le Thanh Ton branch standing along Le Thanh Ton street 3 minutes far from here, it is the perfect location for businessmen to stay comfortably.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
                 "link": "/thai-van-lung-2-detail/room"
             },
             {
                 "id": 3,
                 "name": "Azumaya Le Thanh Ton",
-                "desc": "Azumaya Hotel Le Thanh Ton branch has 37 rooms in total with toilet with bidet function and Japanese TV shows in each room. We serve open-air hot bath, Japanese breakfast and sho-chu bar “Mangetsu”. For breakfast, we also have a lot of food like continental set other than authentic Japanese sets, Udon noodle. The open-air hot bath in the middle of this city-side will definitely be an oasis soothing your fatigue from daily hard work. Another oasis for the guests who wants to end their day with a nice drink, the sho-chu bar “Mangetsu” in the basement floor is open for you until 2:00am. It stands in the middle of Le Thanh Ton street, there is no such inconvenience for going to a restaurant or a bar. A perfect location for the guests who come to Vietnam for the first time. all these values are prepared only for you to make your business trip comfortable.",
+                "desc": "Azumaya Hotel Le Thanh Ton branch has 37 rooms in total with toilet with bidet function and Japanese TV shows in each room. We serve open-air hot bath, Japanese breakfast and sho-chu bar “Mangetsu”. For breakfast, we also have a lot of food like continental set other than authentic Japanese sets, Udon noodle. The open-air hot bath in the middle of this city-side will definitely be an oasis soothing your fatigue from daily hard work. Another oasis for the guests who wants to end their day with a nice drink, the sho-chu bar “Mangetsu” in the basement floor is open for you until 2:00am. It stands in the middle of Le Thanh Ton street, there is no such inconvenience for going to a restaurant or a bar. A perfect location for the guests who come to Vietnam for the first time. All these values are prepared only for you to make your business trip comfortable.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
                 "link": "/le-thanh-ton-detail/room"
             },
             {
                 "id": 4,
-                "name": "Azumaya HCM ANNEX",
-                "desc": "Azumaya Hotel HCM Annex is an apartment type hotel with 7 rooms for long stay guests. It is well-supplied with bathtub, toilet with bidet function, and Japanese TV shows for all rooms. located in the back alley of Thai Van Lung 1 branch. The building itself does not have an elevator, but because only 2 rooms for each floor, there is no chance to bump into the other staying customer. Same as the staying guests in Thai Van Lung 1 branch, it is available to enjoy our Japanese breakfast, open-air hot bath, and special discount of using foot massage. the convenient auto door lock makes the accessing way easy & safe. We promise you a comfortable and reasonable stay in the unfamiliar surroundings of Vietnam.",
+                "name": "Azumaya Annex",
+                "desc": "Azumaya Hotel Annex is an apartment type hotel with 7 rooms for long stay guests. It is well-supplied with bathtub, toilet with bidet function, and Japanese TV shows for all rooms, located in the back alley of Thai Van Lung 1 branch. The building itself does not have an elevator, but because only 2 rooms for each floor, there is no chance to bump into the other staying customer. Same as the staying guests in Thai Van Lung 1 branch, it is available to enjoy our Japanese breakfast, open-air hot bath, and special discount of using foot massage. The convenient auto door lock makes the accessing way easy & safe. We promise you a comfortable and reasonable stay in the unfamiliar surroundings of Vietnam.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg",
                 "link": "/annex-detail/room"
             }
@@ -2045,9 +2073,9 @@
         "tariff": "Room Tariff",
         "vat": "*Room price is excluded 8%",
         "service": "Serviced included :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\nTV channels (JP, EN, VN, KR)\nReceptionist Speaking Japanese 24/24\n5% service charge",
         "facility": "Amenities & Facilities :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Working desk\nLED TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
@@ -2067,7 +2095,7 @@
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",
@@ -2075,7 +2103,7 @@
         "roten": "Rotenburo",
         "rotenContent": "Weekday：6:00-10:00/17:00-24:00\n Weekend：7:00-24:00",
         "breakfast": "Breakfast",
-        "breakfastContent": "From Monday to Saturday： 6:00-8:00 Buffet 8:00-10:00 Set menu \nSunday：6:00-10:00　Only set menu",
+        "breakfastContent": "From Monday to Saturday： 6:00-8:00 Buffet 8:00-10:00 Set menu \nSunday：6:00-10:00　Only set menu\n※Set menu will be served some sepcial days (construction, holidays, etc) for the better customer service. ",
         "massage": "Foot Massage",
         "massageContent": "Every day: 10:00-23:00 (Last enter 22:45)",
         "ask": "Ask receptionist",
@@ -2400,9 +2428,9 @@
         "tariff": "Room Tariff",
         "vat": "*Room price is excluded 8%",
         "service": "Serviced included :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\nDaily complimentary water + Free 3 drinks\nTV channels (JP, EN, VN, KR)\nReceptionist Speaking Japanese 24/24\n5% service charge",
         "facility": "Amenities & Facilities :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Working desk\nLED TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
@@ -2422,7 +2450,7 @@
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",
@@ -2430,7 +2458,7 @@
         "roten": "Rotenburo",
         "rotenContent": "Weekday：6:00-10:00/19:00-24:00 \nFemale time：17:00-18:45 Weekend：7:00-24:00",
         "breakfast": "Breakfast",
-        "breakfastContent": "From Monday to Saturday： 6:00-8:00 Buffet 8:00-10:00 Set menu \nSunday： 6:00-10:00 Only set menu",
+        "breakfastContent": "From Monday to Saturday： 6:00-8:00 Buffet 8:00-10:00 Set menu \nSunday： 6:00-10:00 Only set menu\n※Set menu will be served some sepcial days (construction, holidays, etc) for the better customer service. ",
         "ask": "Ask receptionist",
         "board": "Azumaya Hotel Management Board",
         "contact1": "Reservation can be made via phone:",
@@ -2643,9 +2671,9 @@
         "tariff": "Room Tariff",
         "vat": "*Room price is excluded 8%",
         "service": "Serviced included :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\nTV channels (JP, EN, VN, KR)\nReceptionist Speaking Japanese 24/24\n5% service charge",
         "facility": "Amenities & Facilities :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Working desk\nLED TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
@@ -2665,7 +2693,7 @@
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",
@@ -2673,7 +2701,7 @@
         "roten": "Rotenburo",
         "rotenContent": "Weekday：6:00-10:00/17:00-24:00 \nWeekend：7:00-24:00",
         "breakfast": "Breakfast",
-        "breakfastContent": "From Monday to Friday：6:00-8:00 Buffet 8:00-10:00 Set menu \nSaturday and Sunday：6:00-10:00 Only set menu",
+        "breakfastContent": "From Monday to Friday：6:00-8:00 Buffet 8:00-10:00 Set menu \nSaturday and Sunday：6:00-10:00 Only set menu\n※Set menu will be served some sepcial days (construction, holidays, etc) for the better customer service. ",
         "ask": "Ask receptionist",
         "board": "Azumaya Hotel Management Board",
         "contact1": "Reservation can be made via phone:",
@@ -2815,9 +2843,9 @@
         "tariff": "Room Tariff",
         "vat": "*Room price is excluded 8%",
         "service": "Serviced included :",
-        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\n5% service charge",
+        "serviceContent": "Japanese breakfast\nOpen-air hot tub\nHigh-speed internet connection\nDaily room making\nDaily complimentary water + Free 3 drinks\nTV channels (JP, EN, VN, KR)\nReceptionist Speaking Japanese 24/24\n5% service charge",
         "facility": "Amenities & Facilities :",
-        "facilityContent": "Working desk\n19 TV channels\nLED TV (inches 50 & 32 )\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
+        "facilityContent": "Working desk\nLED TV\nFree Wi-Fi\nSecurity box\nHair drier\nShaving razor & tooth brush\nShampoo, conditioner, and body soap\nToilet with bidet function",
         "rental": "Free Rental : ",
         "rentalContent": "Transformer (220V → 110V)\nAdditional socket hub",
         "business": "Business Service",
@@ -3171,7 +3199,7 @@
         "print_fee2": "From 11th page, 2.000VND charged per page",
         "tel": "Tel",
         "tel_fee1": "FREE for local number",
-        "tel_fee2": "20.000VND charged for international number",
+        "tel_fee2": "25.000VND charged for international number",
         "rental_car": "Rental Car",
         "tour": "Tour",
         "visa": "Extend Visa",
@@ -3985,7 +4013,8 @@
         "date":"Date",
         "time":"Time",
         "minutes": "minutes",
-        "special":"Special note"
+        "special":"Special note",
+        "close":"Close"
         
     },
     "error":{

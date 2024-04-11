@@ -9,16 +9,21 @@ import Flatpickr from "react-flatpickr";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { format } from "date-fns";
+import { sendMassageRequest } from "../../api/reservation";
 
 export default function VietnamService() {
   const [branch, setBranch] = useState('')
   const [city, setCity] = useState('')
   const navigate = useNavigate()
+  const {t, i18n} = useTranslation()
+  const location = useLocation();
+  const language = i18n.language
 
   function MassageLinhLangModal(props) {
     const [startDate, setStartDate] = useState(null);
     const [startTime, setStartTime] = useState(null);
     const [guestName, setGuestName] = useState();
+    const [gender, setGender] = useState('Mr.')
     const [option, setOption] = useState();
     const [phone, setPhone] = useState();
     const [email, setEmail] = useState();
@@ -37,16 +42,18 @@ export default function VietnamService() {
         startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
         startTime,
         guestName,
+        gender,
         option,
         phone,
         email,
         branch,
-        specialRequest
+        specialRequest,
+        language
       }
       console.log(dataObject);
       e.preventDefault()
-      const token = ""
-      const source = ""
+      const token = "73344833-5b52-4403-9255-695907647688"
+      const source = await sendMassageRequest(dataObject, token)
       navigate (`/massage/thank-you/${city}`)
     }
     return (
@@ -66,7 +73,7 @@ export default function VietnamService() {
             <i class="fa-solid fa-xmark purple"></i>
           </Button>
         </Modal.Header>
-        <div className="row">
+        <div className="row p-5">
           <div className="col-md-6 massage_reservation">
             <Modal.Body>
         <form onSubmit={handleSubmit}>
@@ -81,6 +88,31 @@ export default function VietnamService() {
                     setGuestName(e.target.value);
                   }}
                 />
+              </div>
+              <div className="row pl-3 pr-3">
+              <div className="col-md-4">
+              <input
+                   type="radio"
+                   name="gender"
+                   id="gMale"
+                   value="Mr."
+                   checked={gender === "Mr."}
+                   onChange={(e) => setGender(e.target.value)}
+                   
+                 />
+                 <label htmlFor="gMale">{t("reservation.mr")}</label>
+                   </div>
+              <div className="col-md-4">
+                 <input
+                   type="radio"
+                   name="gender"
+                   id="gFemale"
+                   value="Ms."
+                   checked = {gender === "Ms."}
+                   onChange={(e) => setGender(e.target.value)}
+                 />
+                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
+              </div>
               </div>
               <div className="row pl-3 pr-3">
                 <input
@@ -214,7 +246,7 @@ export default function VietnamService() {
             onClick={props.onHide}
           >
             <span class="text" style={{ color: "#fff" }}>
-              Close
+              {t('service_massage.close')}
             </span>
             <span>
               <i
@@ -235,6 +267,7 @@ export default function VietnamService() {
     const [phone, setPhone] = useState();
     const [email, setEmail] = useState();
     const [specialRequest, setSpecialRequest] = useState();
+    const [gender, setGender] = useState('Mr.');
     const handleStartTimeChange = (selectedDates) => {
       if (selectedDates.length > 0) {
         const selectedDate = new Date(selectedDates[0]);
@@ -244,21 +277,23 @@ export default function VietnamService() {
         setStartTime(null);
       }
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       const dataObject = {
         startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
         startTime,
         guestName,
+        gender,
         option,
         phone,
         email,
         branch,
-        specialRequest
+        specialRequest,
+        language
       }
       console.log(dataObject);
       e.preventDefault()
-      const token = ""
-      const source = ""
+      const token = "73344833-5b52-4403-9255-695907647688"
+      const source = await sendMassageRequest(dataObject, token)
       navigate (`/massage/thank-you/${city}`)
     }
     return (
@@ -278,11 +313,11 @@ export default function VietnamService() {
             <i class="fa-solid fa-xmark purple"></i>
           </Button>
         </Modal.Header>
-        <div className="row">
+        <div className="row p-5">
           <div className="col-md-6 massage_reservation">
             <Modal.Body>
             <form onSubmit={handleSubmit}>
-              <h2>{t("service_massage.guest_name")}</h2>
+              <h2>{t("service_massage.reservation1")}</h2>
               <div className="row pl-3 pr-3">
                 <input
                   placeholder={t("service_massage.guest_name")}
@@ -293,6 +328,31 @@ export default function VietnamService() {
                     setGuestName(e.target.value);
                   }}
                 />
+              </div>
+              <div className="row pl-3 pr-3">
+              <div className="col-md-4">
+              <input
+                   type="radio"
+                   name="gender"
+                   id="gMale"
+                   value="Mr."
+                   checked={gender === "Mr."}
+                   onChange={(e) => setGender(e.target.value)}
+                   
+                 />
+                 <label htmlFor="gMale">{t("reservation.mr")}</label>
+                   </div>
+              <div className="col-md-4">
+                 <input
+                   type="radio"
+                   name="gender"
+                   id="gFemale"
+                   value="Ms."
+                   checked = {gender === "Ms."}
+                   onChange={(e) => setGender(e.target.value)}
+                 />
+                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
+              </div>
               </div>
               <div className="row pl-3 pr-3">
                 <input
@@ -426,7 +486,7 @@ export default function VietnamService() {
             onClick={props.onHide}
           >
             <span class="text" style={{ color: "#fff" }}>
-              Close
+              {t('service_massage.close')}
             </span>
             <span>
               <i
@@ -447,6 +507,7 @@ export default function VietnamService() {
     const [phone, setPhone] = useState();
     const [email, setEmail] = useState();
     const [specialRequest, setSpecialRequest] = useState();
+    const [gender, setGender] = useState('Mr.');
     const handleStartTimeChange = (selectedDates) => {
       if (selectedDates.length > 0) {
         const selectedDate = new Date(selectedDates[0]);
@@ -456,21 +517,23 @@ export default function VietnamService() {
         setStartTime(null);
       }
     };
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       const dataObject = {
         startDate: startDate ? format(startDate, 'yyyy-MM-dd') : '',
         startTime,
         guestName,
         option,
+        gender,
         phone,
         email,
         branch,
-        specialRequest
+        specialRequest,
+        language
       }
       console.log(dataObject);
       e.preventDefault()
-      const token = ""
-      const source = ""
+      const token = "73344833-5b52-4403-9255-695907647688"
+      const source = await sendMassageRequest(dataObject, token)
       navigate (`/massage/thank-you/${city}`)
     }
     return (
@@ -490,7 +553,7 @@ export default function VietnamService() {
             <i class="fa-solid fa-xmark purple"></i>
           </Button>
         </Modal.Header>
-        <div className="row">
+        <div className="row p-5">
           <div className="col-md-6 massage_reservation">
             <Modal.Body>
             <form onSubmit={handleSubmit}>
@@ -505,6 +568,31 @@ export default function VietnamService() {
                     setGuestName(e.target.value);
                   }}
                 />
+              </div>
+              <div className="row pl-3 pr-3">
+              <div className="col-md-4">
+              <input
+                   type="radio"
+                   name="gender"
+                   id="gMale"
+                   value="Mr."
+                   checked={gender === "Mr."}
+                   onChange={(e) => setGender(e.target.value)}
+                   
+                 />
+                 <label htmlFor="gMale">{t("reservation.mr")}</label>
+                   </div>
+              <div className="col-md-4">
+                 <input
+                   type="radio"
+                   name="gender"
+                   id="gFemale"
+                   value="Ms."
+                   checked = {gender === "Ms."}
+                   onChange={(e) => setGender(e.target.value)}
+                 />
+                 <label htmlFor="gFemale">{t("reservation.ms")}</label>
+              </div>
               </div>
               <div className="row pl-3 pr-3">
                 <input
@@ -638,7 +726,7 @@ export default function VietnamService() {
             onClick={props.onHide}
           >
             <span class="text" style={{ color: "#fff" }}>
-              Close
+              {t('service_massage.close')}
             </span>
             <span>
               <i
@@ -650,9 +738,7 @@ export default function VietnamService() {
         </Modal.Footer>
       </Modal>
     );
-  }
-  const { t } = useTranslation();      
-  const location = useLocation();
+  }   
   const [selectedTab, setSelectedTab] = useState(0)
   const serviceTitle = t('service.service_name', {returnObjects: true})
   const a = t("header.service")
@@ -1158,7 +1244,8 @@ export default function VietnamService() {
                           role="button"
                           onClick={() => {
                             setModalShow(true)
-                            setBranch('Linh Lang')
+                            // setBranch('Linh Lang')
+                            setBranch('Test')
                             setCity('hotel-hn')
                           }}
                         >

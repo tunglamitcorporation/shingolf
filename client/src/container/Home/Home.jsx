@@ -10,7 +10,6 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
-import TabsInput from "../../Test";
 
 function LineModal(props) {
   return (
@@ -144,7 +143,6 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
                const formattedDate = format(parsedDate, 'MMM do yyyy')
                const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
-               console.log(formattedDate);
               if (article.allBranch == true)
                {
                 return (
@@ -222,7 +220,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                     <div className="col-md-7 mt-2 news_title-container">
                       <div key={article.id}>
                         <Link
-                          className="news_title"
+                          className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
                           <div className="article_title">{article.title}</div>
@@ -250,7 +248,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                     <div className="col-md-7 mt-2 news_title-container"> 
                       <div key={article.id}>
                         <Link
-                          className="news_title"
+                          className="news_title news_homeTitle"
                           to={`/News/${encodeURIComponent(article.title)}`}
                         >
                           <div className="article_title">{article.title}</div>

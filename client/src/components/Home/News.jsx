@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import { format, parse } from "date-fns";
@@ -9,12 +9,14 @@ export default function News ({ news })  {
   const a = t("header.news")
   const b = t("header.title")
   const c = a + " | "+ b
+  
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
-  const article = news.find((article) => article.title === decodedTitle);
+  const article = news.find((article) => {return article.title === decodedTitle})
   const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date());
   const formattedDate = format(parsedDate, 'MMM do yyyy')
   const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
+
   if (!article) {
     return <div>Article not found</div>;
   }

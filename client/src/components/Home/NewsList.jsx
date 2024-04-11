@@ -48,9 +48,10 @@ export default function NewsList({ news }) {
                const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
                const formattedDate = format(parsedDate, 'MMM do yyyy')
                const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
-               console.log(formattedDate);
               if (article.allBranch == true)
                {
+                const url = encodeURIComponent(article.title)
+                const formatUrl = url.replace(/%20/g, "-")
                 return (
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">

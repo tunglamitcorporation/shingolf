@@ -31,6 +31,7 @@ import ErrorPage from './container/Units/ErrorPage';
 import Feedback from './container/Units/Feedback';
 import Reservation_backup from './container/Reservation/Reservation_backup'
 import ThankYouService from './container/Service/ThankYou';
+import ThankYouContract from './container/Contract/ThankYou';
 function NewRouter(props) {
     const {news} = props;
     const { i18n } = useTranslation();
@@ -67,6 +68,7 @@ function NewRouter(props) {
                 
                 <Route path="/thank-you/:selectedCity" element={<ThankYou />} />
                 <Route path="/massage/thank-you/:selectedCity" element={<ThankYouService />} />
+                <Route path="/contract/thank-you/:selectedCity" element={<ThankYouContract />} />
                 {/* <Route path="/en/thank-you/:selectedCity" element={<ThankYou />} />
                 <Route path="/ja/thank-you/:selectedCity" element={<ThankYou />} />
                 <Route path="/vie/thank-you/:selectedCity" element={<ThankYou />} /> */}

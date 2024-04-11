@@ -414,11 +414,11 @@ function Header() {
                         {t("header.policies")}
                       </Link>
                     </Tab>
-                    <Tab className="header__navbar-item">
+                    {/* <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" style={{width:130}} to="/feedback">
                         {t("header.feedback")}
                       </Link>
-                    </Tab>
+                    </Tab> */}
                   </TabList>
                   </Tabs>
             </div>
