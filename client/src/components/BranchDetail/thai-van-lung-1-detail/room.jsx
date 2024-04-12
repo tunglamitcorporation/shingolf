@@ -205,22 +205,22 @@ export default function TVL1RoomDetail() {
           className="row"
           style={{ justifyContent: "left", padding: "10px", textAlign:"justify" }}
         >
-          <div className="service__location service__active col-lg-2 col-xl-2 col-xxl-2">
+          <div className="service__location service__active col-md-12 col-lg-3 col-xl-3">
             <a href="/thai-van-lung-1-detail/room" className="location_link">
               {t(branchName.tvl1)}
             </a>
           </div>
-          <div className="service__location col-lg-2 col-xl-2 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-3 col-xl-3">
             <a href="/thai-van-lung-2-detail/room" className="location_link">
               {t(branchName.tvl2)}
             </a>
           </div>
-          <div className="service__location col-lg-2 col-xl-2 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-3 col-xl-3">
             <a href="/le-thanh-ton-detail/room" className="location_link">
               {t(branchName.ltt)}
             </a>
           </div>
-          <div className="service__location col-lg-2 col-xl-2 col-xxl-2">
+          <div className="service__location col-md-12 col-lg-3 col-xl-3">
             <a href="/annex-detail/room" className="location_link">
               {t(branchName.annex)}
             </a>

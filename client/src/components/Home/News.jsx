@@ -79,7 +79,7 @@ export default function News ({ news })  {
             </div>
             <div className="col-md-8 pre-line">
               <div key={article.id}>
-                <div className="news_title">{article.title}</div>
+                <div className="news_title">{article.news_title}</div>
                 <div className="news_content">{article.content}</div>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function News ({ news })  {
             </div>
             <div className="col-md-8 pre-line">
               <div key={article.id}>
-                <div className="news_title">{article.title}</div>
+                <div className="news_title">{article.news_title}</div>
                 <div className="news_content">{article.content}</div>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function News ({ news })  {
             </div>
             <div className="col-md-8 pre-line">
               <div key={article.id}>
-                <div className="news_title">{article.title}</div>
+                <div className="news_title">{article.news_title}</div>
                 <div className="news_content">{article.content}</div>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function News ({ news })  {
             </div>
             <div className="col-md-8 pre-line">
               <div key={article.id}>
-                <div className="news_title">{article.title}</div>
+                <div className="news_title">{article.news_title}</div>
                 <div className="news_content">{article.content}</div>
               </div>
             </div>

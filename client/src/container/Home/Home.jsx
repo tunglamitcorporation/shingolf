@@ -392,10 +392,16 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <div
                         className="content__feature-img"
                         style={{ backgroundImage: `url(${item.image})` }}
-                      ></div>
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = {`/Feature/${item.id}`}
+                      ></Link>
+                      </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">{item.title}</a>
+                      <a href={`/Feature/${item.id}`}>{item.title}</a>
                     </div>
                     <div className="content__feature-text">
                       <p style={{ textAlign: "justify" }}>{item.content.slice(0, 75)}...
