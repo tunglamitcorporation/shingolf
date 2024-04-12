@@ -14,7 +14,7 @@ export default function Contract() {
   const faqQ = t("contract.FAQ-trigger", {returnObjects:true})
   const cancel = t("contract.cancel-content", {returnObjects:true})
   const city = t("booking.city", {returnObjects:true})
-  const key = '6Lc1pbgpAAAAAJ-Bx8ykx-T7yacEg1NNyHZmM2CY'
+  const key = '6LeYp7gpAAAAAJMoMXZ7XjYAzL0pebtJM52WdidZ'
   const ref = useRef(null);
   const navigate = useNavigate()
   const [companyName, setCompanyName] = useState('')
