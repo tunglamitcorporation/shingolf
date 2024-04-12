@@ -110,11 +110,9 @@ export default function HotelHN({ news }) {
                 </h2>
                 <ul className="content__news-list">
                   {homeNews.map((article) => {
-                    const parsedDate = parse(
-                      article.date,
-                      "yyyy-MM-dd",
-                      new Date()
-                    );
+                    const encodedTitle = encodeURIComponent(article.title)
+                    const modifiedTitle = encodedTitle.replace(/%20/g, '-');
+                    const parsedDate = parse(article.date,"yyyy-MM-dd",new Date());
                     const formattedDate = format(parsedDate, "MMM do yyyy");
                     const [all, month, day, suffix, year] = formattedDate.match(
                       /(\w+) (\d+)(\w+) (\d+)/
@@ -142,9 +140,7 @@ export default function HotelHN({ news }) {
                             <div key={article.id}>
                               <Link
                                 className="news_title news_homeTitle"
-                                to={`/News/${encodeURIComponent(
-                                  article.title
-                                )}`}
+                                to={`/News/${modifiedTitle}`}
                               >
                                 <div className="article_title">
                                   {article.title}
@@ -177,9 +173,7 @@ export default function HotelHN({ news }) {
                             <div key={article.id}>
                               <Link
                                 className="news_title news_homeTitle"
-                                to={`/News/${encodeURIComponent(
-                                  article.title
-                                )}`}
+                                to={`/News/${modifiedTitle}`}
                               >
                                 <div className="article_title">
                                   {article.title}

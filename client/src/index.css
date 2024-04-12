@@ -2318,7 +2318,13 @@ filter: brightness(0.5);
   appearance: textfield;
   width: auto; /* Adjust width as needed */
 }
-
+.promo-text{
+  font-size: 1.4rem;
+}
+.promo-title{
+  font-size: 1.8rem;
+  font-weight: bold;
+}
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{
     color: white;

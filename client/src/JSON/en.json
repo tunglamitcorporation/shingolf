@@ -4014,7 +4014,10 @@
         "time":"Time",
         "minutes": "minutes",
         "special":"Special note",
-        "close":"Close"
+        "close":"Close",
+        "reserve":"Reserve Now",
+        "promo_title":"Update: Online Massage Booking Now Available at Azumaya Hotel!",
+        "promo_content":"We're thrilled to introduce our latest enhancement: the ability to reserve your massage therapy sessions directly through our website! No more hassle of waiting in queues or navigating phone calls. With just a few clicks, you can secure your spot for a rejuvenating massage experience. \n\nAzumaya Hotel is dedicated to providing you with the utmost comfort and relaxation. \n\nDon't miss out on this opportunity to pamper yourself. Take advantage of our convenient online booking system today at Azumaya Hotel!"
         
     },
     "error":{

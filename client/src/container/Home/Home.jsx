@@ -132,6 +132,29 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
       <div className="is-sticky">
         <Booking />
       </div>
+        <div className="container mt-5">
+          <div className="row justify-content-center align-item-center">
+              <div className="col-md-6 d-flex align-items-center justify-content-center">
+                <img style={{width: '70%', height:'100%'}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1712893321/promo-massage_gab00y.jpg" alt="massage" />
+              </div>
+              <div className="col-md-6 pre-line">
+                <div className="promo-title">{t('service_massage.promo_title')}</div>
+                <p className="promo-text mt-5">{t('service_massage.promo_content')}</p>
+              <button
+              style={{width:'200px'}}
+                          class="button-57 call-btn mt-5"
+                          role="button"
+                        >
+                          <Link to = "/massage">
+                          <span style={{color:'#482979'}} class="text">
+                            {t("service_massage.reserve")}
+                          </span>
+                          <span><i class="fa-solid fa-circle-chevron-right"></i></span>
+                          </Link>
+                        </button>
+              </div>
+          </div>
+        </div>
       <AnimatedOnScroll>
         <div className="content__news">
           <div className="container">
@@ -143,6 +166,8 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
                const formattedDate = format(parsedDate, 'MMM do yyyy')
                const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
+               const encodedTitle = encodeURIComponent(article.title);
+               const modifiedTitle = encodedTitle.replace(/%20/g, '-');
               if (article.allBranch == true)
                {
                 return (
@@ -165,9 +190,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                         <Link
                         key={article.id}
                           className="news_title news_homeTitle"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
-                          <div className="article_title">{article.title}</div>
+                          <div className="article_title">{article.news_title}</div>
                         </Link>
                       </div>
                     </div>
@@ -193,9 +218,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
-                          <div className="article_title">{article.title}</div>
+                          <div className="article_title">{article.news_title}</div>
                         </Link>
                       </div>
                     </div>
@@ -221,9 +246,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
-                          <div className="article_title">{article.title}</div>
+                          <div className="article_title">{article.news_title}</div>
                         </Link>
                       </div>
                     </div>
@@ -249,9 +274,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
-                          <div className="article_title">{article.title}</div>
+                          <div className="article_title">{article.news_title}</div>
                         </Link>
                       </div>
                     </div>
@@ -277,9 +302,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
-                          <div className="article_title">{article.title}</div>
+                          <div className="article_title">{article.news_title}</div>
                         </Link>
                       </div>
                     </div>
@@ -305,9 +330,9 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                       <div key={article.id}>
                         <Link
                           className="news_title news_homeTitle"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
-                          <div className="article_title">{article.title}</div>
+                          <div className="article_title">{article.news_title}</div>
                         </Link>
                       </div>
                     </div>

@@ -12,7 +12,8 @@ export default function News ({ news })  {
   
   const { title } = useParams();
   const decodedTitle = decodeURIComponent(title);
-  const article = news.find((article) => {return article.title === decodedTitle})
+  const modifiedTitle = decodedTitle.replace(/-/g, ' ')
+  const article = news.find((article) => {return article.title === modifiedTitle})
   const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date());
   const formattedDate = format(parsedDate, 'MMM do yyyy')
   const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);

@@ -45,13 +45,13 @@ export default function NewsList({ news }) {
         <div className="row">
           <div className="new_container col-md-10">
             {news.map((article) => {
+               const encodedTitle = encodeURIComponent(article.title)
+               const modifiedTitle = encodedTitle.replace(/%20/g, '-');
                const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
                const formattedDate = format(parsedDate, 'MMM do yyyy')
                const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
               if (article.allBranch == true)
                {
-                const url = encodeURIComponent(article.title)
-                const formatUrl = url.replace(/%20/g, "-")
                 return (
                   <div className="row news_block">
                     <div className="col-md-2 mt-1">
@@ -72,7 +72,7 @@ export default function NewsList({ news }) {
                       <div key={article.id}>
                         <Link
                           className="news_title"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           <div>{article.title}</div>
                         </Link>
@@ -83,7 +83,7 @@ export default function NewsList({ news }) {
                       <div className="continue_read">
                         <Link
                           className="continue_link"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           {t("feature.continue")}{" "}
                           <i class="fa-solid fa-arrow-right"></i>
@@ -110,7 +110,7 @@ export default function NewsList({ news }) {
                       <div key={article.id}>
                         <Link
                           className="news_title"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           <div>{article.title}</div>
                         </Link>
@@ -121,7 +121,7 @@ export default function NewsList({ news }) {
                       <div className="continue_read">
                         <Link
                           className="continue_link"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           {t("feature.continue")}{" "}
                           <i class="fa-solid fa-arrow-right"></i>
@@ -148,7 +148,7 @@ export default function NewsList({ news }) {
                       <div key={article.id}>
                         <Link
                           className="news_title"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           <div>{article.title}</div>
                         </Link>
@@ -159,7 +159,7 @@ export default function NewsList({ news }) {
                       <div className="continue_read">
                         <Link
                           className="continue_link"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           {t("feature.continue")}{" "}
                           <i class="fa-solid fa-arrow-right"></i>
@@ -186,7 +186,7 @@ export default function NewsList({ news }) {
                       <div key={article.id}>
                         <Link
                           className="news_title"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           <div>{article.title}</div>
                         </Link>
@@ -197,7 +197,7 @@ export default function NewsList({ news }) {
                       <div className="continue_read">
                         <Link
                           className="continue_link"
-                          to={`/News/${encodeURIComponent(article.title)}`}
+                          to={`/News/${modifiedTitle}`}
                         >
                           {t("feature.continue")}{" "}
                           <i class="fa-solid fa-arrow-right"></i>

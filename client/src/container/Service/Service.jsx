@@ -759,18 +759,22 @@ export default function VietnamService() {
       case '/breakfast':
         setSelectedTab(0);
         setTitle(f)
+        setPageTitle(d)
         break;
       case '/rotenburo':
         setSelectedTab(1);
         setTitle(i)
+        setPageTitle(g)
         break;
         case '/massage':
         setTitle(l)
         setSelectedTab(2);
+        setPageTitle(j)
         break;
       default:
         setSelectedTab(0);
         setTitle(c)
+        setPageTitle(a)
          
     }
   }, [location]);
@@ -802,13 +806,6 @@ export default function VietnamService() {
   const [modalShow2, setModalShow2] = useState(false);
   const [pageTitle, setPageTitle] = useState('');
 
-  switch(title) {
-    case '/breakfast':
-    setPageTitle(t('header.breakfast'))
-    break;
-    case '/rotenburo':
-    setPageTitle(t('header.rotenburo'))
-  }
   return (
     <>
     <HelmetLayout title = {title}/>
@@ -816,7 +813,7 @@ export default function VietnamService() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>{t('header.service')}</h1>
+              <h1>{pageTitle}</h1>
             </div>
           </div>
         </div>
@@ -1244,15 +1241,15 @@ export default function VietnamService() {
                           role="button"
                           onClick={() => {
                             setModalShow(true)
-                            // setBranch('Linh Lang')
-                            setBranch('Test')
+                            setBranch('Linh Lang')
+                            // setBranch('Test')
                             setCity('hotel-hn')
                           }}
                         >
                           <span class="text">
-                            {t("service_massage.reservation")}
+                            {t("service_massage.reserve")}
                           </span>
-                          <span>{t("service_massage.contact")}</span>
+                          <span><i class="fa-solid fa-circle-chevron-right"></i></span>
                         </button>
                         <MassageLinhLangModal
                           show={modalShow}
@@ -1312,9 +1309,9 @@ export default function VietnamService() {
                           }}
                         >
                           <span class="text">
-                            {t("service_massage.reservation")}
+                            {t("service_massage.reserve")}
                           </span>
-                          <span>{t("service_massage.contact")}</span>
+                          <span><i class="fa-solid fa-circle-chevron-right"></i></span>
                         </button>
                         <MassageDaNangModal
                           show={modalShow1}
@@ -1371,9 +1368,9 @@ export default function VietnamService() {
                           }}
                         >
                           <span class="text">
-                            {t("service_massage.reservation")}
+                            {t("service_massage.reserve")}
                           </span>
-                          <span>{t("service_massage.contact")}</span>
+                          <span><i class="fa-solid fa-circle-chevron-right"></i></span>
                         </button>
                         <MassageThaiVanLung1Modal
                           show={modalShow2}

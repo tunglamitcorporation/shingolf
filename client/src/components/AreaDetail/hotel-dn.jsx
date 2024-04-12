@@ -100,9 +100,11 @@ export default function HotelDN({news}){
                 <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
                 <ul className="content__news-list">
                 {homeNews.map((article) => {
-               const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
-               const formattedDate = format(parsedDate, 'MMM do yyyy')
-               const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
+                  const encodedTitle = encodeURIComponent(article.title)
+                  const modifiedTitle = encodedTitle.replace(/%20/g, '-');
+                  const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
+                  const formattedDate = format(parsedDate, 'MMM do yyyy')
+                  const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
                console.log(formattedDate);
                if (article.allBranch == true)
                {
