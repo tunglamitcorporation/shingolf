@@ -5,7 +5,7 @@ import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 export default function ThankYouService() {
     const { selectedCity } = useParams()
     const {t} = useTranslation()
-    const a = t("_service.name")
+    const a = t("thankyou_service.name")
     const b = t("header.title")
     const c = a + " | "+ b
     

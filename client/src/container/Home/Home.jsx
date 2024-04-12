@@ -132,7 +132,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
       <div className="is-sticky">
         <Booking />
       </div>
-        <div className="container mt-5">
+        {/* <div className="container mt-5">
           <div className="row justify-content-center align-item-center">
               <div className="col-md-6 d-flex align-items-center justify-content-center">
                 <img style={{width: '70%', height:'100%'}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1712893321/promo-massage_gab00y.jpg" alt="massage" />
@@ -154,7 +154,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                         </button>
               </div>
           </div>
-        </div>
+        </div> */}
       <AnimatedOnScroll>
         <div className="content__news">
           <div className="container">

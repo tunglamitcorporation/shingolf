@@ -18,21 +18,73 @@ export default function VietnamService() {
   const {t, i18n} = useTranslation()
   const location = useLocation();
   const language = i18n.language
-
+ 
   function MassageLinhLangModal(props) {
     const [startDate, setStartDate] = useState(null);
     const [startTime, setStartTime] = useState(null);
-    const [guestName, setGuestName] = useState();
+    const [guestName, setGuestName] = useState('');
     const [gender, setGender] = useState('Mr.')
-    const [option, setOption] = useState();
-    const [phone, setPhone] = useState();
-    const [email, setEmail] = useState();
-    const [specialRequest, setSpecialRequest] = useState();
+    const [option, setOption] = useState('40 minutes');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [specialRequest, setSpecialRequest] = useState('');
+
+    const [errors, setErrors] = useState('')
+    const validateEmail = (email) => {
+      // Regular expression for email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+    const validate = () => {
+      let errors = {}
+      let isVaLid = true
+    
+      if (!startDate) {
+        errors.startDate = 'required';
+        isVaLid = false
+      }
+      if (!startTime) {
+        errors.startTime = 'required';
+        isVaLid = false
+      } 
+      if (!guestName) {
+        errors.guestName = 'required';
+        isVaLid = false
+      } 
+      if (!gender) {
+        errors.gender = 'required';
+        isVaLid = false
+    
+      } 
+      if (!option) {
+        errors.option = 'required';
+        isVaLid = false
+    
+      } 
+      else if (!validateEmail(email)) {
+        errors.email = 'Invalid email format';
+        isVaLid = false
+    
+      }
+      if (!phone) {
+        errors.phone = 'required';
+        isVaLid = false
+    
+      } 
+      if (!branch) {
+        errors.branch = 'required';
+        isVaLid = false
+    
+      }
+      setErrors(errors);
+      return isVaLid
+    }
     const handleStartTimeChange = (selectedDates) => {
       if (selectedDates.length > 0) {
         const selectedDate = new Date(selectedDates[0]);
         const timeString = selectedDate.toTimeString().split(" ")[0];
         setStartTime(timeString);
+        errors.startTime = ''
       } else {
         setStartTime(null);
       }
@@ -52,9 +104,13 @@ export default function VietnamService() {
       }
       console.log(dataObject);
       e.preventDefault()
-      const token = "73344833-5b52-4403-9255-695907647688"
+      if(validate()) {
+        const token = "73344833-5b52-4403-9255-695907647688"
       const source = await sendMassageRequest(dataObject, token)
       navigate (`/massage/thank-you/${city}`)
+      }else{
+        alert(`Please ensure that all required fields are completed`)
+      }
     }
     return (
       <Modal
@@ -82,12 +138,14 @@ export default function VietnamService() {
                 <input
                   placeholder={t("service_massage.guest_name")}
                   type="text"
-                  className="col-md-12 form__content mb-0"
+                  className={errors.guestName ? 'col-md-12 form__content mb-0 validate_failed' : 'col-md-12 form__content mb-0'}
                   value={guestName}
                   onChange={(e) => {
                     setGuestName(e.target.value);
+                    errors.guestName = ''
                   }}
                 />
+                
               </div>
               <div className="row pl-3 pr-3">
               <div className="col-md-4">
@@ -117,7 +175,7 @@ export default function VietnamService() {
               <div className="row pl-3 pr-3">
                 <input
                   type="text"
-                  className="booker-phone form__content col-md-12"
+                  className={errors.phone ? 'booker-phone form__content col-md-12 validate_failed' : 'booker-phone form__content col-md-12'}
                   id=""
                   value={phone}
                   placeholder={t("service_massage.phone_number")}
@@ -126,29 +184,40 @@ export default function VietnamService() {
                       event.preventDefault();
                     }
                   }}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                    errors.phone = ''
+                  }
+
+                  }
                 />
+                
                   <input
                   type="text"
-                  className="form__content col-md-12"
+                  className={errors.email ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
                   id=""
                   value={email}
                   placeholder={t("service_massage.email")}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                    errors.email = ''
+                  }}
                 />
-                
+               
                 <Flatpickr
               value={startDate}
               options={{
                 minDate: 'today',
                 dateFormat: "Y-m-d",
               }}
-              className="col-md-6 form__content webkit-appearance mr-0"
+              className= {errors.startDate ? 'col-md-6 form__content webkit-appearance mr-0 validate_failed' : 'col-md-6 form__content webkit-appearance mr-0'}
               placeholder={t("service_massage.date")}
               onChange={(dates) => {
                 setStartDate(dates[0]);
+                errors.startDate = ''
               }}
             />
+            
                 <Flatpickr
                   value={startTime}
                   options={{
@@ -159,11 +228,12 @@ export default function VietnamService() {
                   }}
                   placeholder={t("service_massage.time")}
                   onChange={handleStartTimeChange}
-                  className="col-md-6 form__content webkit-appearance mr-0"
+                  className={errors.startTime ? 'col-md-6 form__content webkit-appearance mr-0 validate_failed' : 'col-md-6 form__content webkit-appearance mr-0'}
                 />
+               
                 <select
                   value={option}
-                  className="col-md-12 form__content"
+                  className={errors.option ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
                   onChange={(e) => {
                     setOption(e.target.value);
                   }}
@@ -262,12 +332,62 @@ export default function VietnamService() {
   function MassageDaNangModal(props) {
     const [startDate, setStartDate] = useState(null);
     const [startTime, setStartTime] = useState(null);
-    const [guestName, setGuestName] = useState();
-    const [option, setOption] = useState();
-    const [phone, setPhone] = useState();
-    const [email, setEmail] = useState();
-    const [specialRequest, setSpecialRequest] = useState();
+    const [guestName, setGuestName] = useState('');
+    const [option, setOption] = useState('40 minutes');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [specialRequest, setSpecialRequest] = useState('');
     const [gender, setGender] = useState('Mr.');
+    const [errors, setErrors] = useState('')
+    const validateEmail = (email) => {
+      // Regular expression for email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+    const validate = () => {
+      let errors = {}
+      let isVaLid = true
+    
+      if (!startDate) {
+        errors.startDate = 'required';
+        isVaLid = false
+      }
+      if (!startTime) {
+        errors.startTime = 'required';
+        isVaLid = false
+      } 
+      if (!guestName) {
+        errors.guestName = 'required';
+        isVaLid = false
+      } 
+      if (!gender) {
+        errors.gender = 'required';
+        isVaLid = false
+    
+      } 
+      if (!option) {
+        errors.option = 'required';
+        isVaLid = false
+    
+      } 
+      else if (!validateEmail(email)) {
+        errors.email = 'Invalid email format';
+        isVaLid = false
+    
+      }
+      if (!phone) {
+        errors.phone = 'required';
+        isVaLid = false
+    
+      } 
+      if (!branch) {
+        errors.branch = 'required';
+        isVaLid = false
+    
+      }
+      setErrors(errors);
+      return isVaLid
+    }
     const handleStartTimeChange = (selectedDates) => {
       if (selectedDates.length > 0) {
         const selectedDate = new Date(selectedDates[0]);
@@ -292,9 +412,14 @@ export default function VietnamService() {
       }
       console.log(dataObject);
       e.preventDefault()
-      const token = "73344833-5b52-4403-9255-695907647688"
-      const source = await sendMassageRequest(dataObject, token)
-      navigate (`/massage/thank-you/${city}`)
+      if(validate()){
+        const token = "73344833-5b52-4403-9255-695907647688"
+        const source = await sendMassageRequest(dataObject, token)
+        navigate (`/massage/thank-you/${city}`)
+      }else{
+        alert(`Please ensure that all required fields are completed`)
+      }
+      
     }
     return (
       <Modal
@@ -319,15 +444,17 @@ export default function VietnamService() {
             <form onSubmit={handleSubmit}>
               <h2>{t("service_massage.reservation1")}</h2>
               <div className="row pl-3 pr-3">
-                <input
+              <input
                   placeholder={t("service_massage.guest_name")}
                   type="text"
-                  className="col-md-12 form__content mb-0"
+                  className={errors.guestName ? 'col-md-12 form__content mb-0 validate_failed' : 'col-md-12 form__content mb-0'}
                   value={guestName}
                   onChange={(e) => {
                     setGuestName(e.target.value);
+                    errors.guestName = ''
                   }}
                 />
+                
               </div>
               <div className="row pl-3 pr-3">
               <div className="col-md-4">
@@ -357,7 +484,7 @@ export default function VietnamService() {
               <div className="row pl-3 pr-3">
                 <input
                   type="text"
-                  className="booker-phone form__content col-md-12"
+                  className={errors.phone ? 'booker-phone form__content col-md-12 validate_failed' : 'booker-phone form__content col-md-12'}
                   id=""
                   value={phone}
                   placeholder={t("service_massage.phone_number")}
@@ -366,29 +493,40 @@ export default function VietnamService() {
                       event.preventDefault();
                     }
                   }}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                    errors.phone = ''
+                  }
+
+                  }
                 />
+                
                   <input
                   type="text"
-                  className="form__content col-md-12"
+                  className={errors.email ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
                   id=""
                   value={email}
                   placeholder={t("service_massage.email")}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                    errors.email = ''
+                  }}
                 />
-                
+               
                 <Flatpickr
               value={startDate}
               options={{
                 minDate: 'today',
                 dateFormat: "Y-m-d",
               }}
-              className="col-md-6 form__content webkit-appearance mr-0"
+              className= {errors.startDate ? 'col-md-6 form__content webkit-appearance mr-0 validate_failed' : 'col-md-6 form__content webkit-appearance mr-0'}
               placeholder={t("service_massage.date")}
               onChange={(dates) => {
                 setStartDate(dates[0]);
+                errors.startDate = ''
               }}
             />
+            
                 <Flatpickr
                   value={startTime}
                   options={{
@@ -399,11 +537,12 @@ export default function VietnamService() {
                   }}
                   placeholder={t("service_massage.time")}
                   onChange={handleStartTimeChange}
-                  className="col-md-6 form__content webkit-appearance mr-0"
+                  className={errors.startTime ? 'col-md-6 form__content webkit-appearance mr-0 validate_failed' : 'col-md-6 form__content webkit-appearance mr-0'}
                 />
+               
                 <select
                   value={option}
-                  className="col-md-12 form__content"
+                  className={errors.option ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
                   onChange={(e) => {
                     setOption(e.target.value);
                   }}
@@ -502,12 +641,62 @@ export default function VietnamService() {
   function MassageThaiVanLung1Modal(props) {
     const [startDate, setStartDate] = useState(null);
     const [startTime, setStartTime] = useState(null);
-    const [guestName, setGuestName] = useState();
-    const [option, setOption] = useState();
-    const [phone, setPhone] = useState();
-    const [email, setEmail] = useState();
-    const [specialRequest, setSpecialRequest] = useState();
+    const [guestName, setGuestName] = useState('');
+    const [option, setOption] = useState('40 minutes');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+    const [specialRequest, setSpecialRequest] = useState('');
     const [gender, setGender] = useState('Mr.');
+    const [errors, setErrors] = useState('')
+    const validateEmail = (email) => {
+      // Regular expression for email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    };
+    const validate = () => {
+      let errors = {}
+      let isVaLid = true
+    
+      if (!startDate) {
+        errors.startDate = 'required';
+        isVaLid = false
+      }
+      if (!startTime) {
+        errors.startTime = 'required';
+        isVaLid = false
+      } 
+      if (!guestName) {
+        errors.guestName = 'required';
+        isVaLid = false
+      } 
+      if (!gender) {
+        errors.gender = 'required';
+        isVaLid = false
+    
+      } 
+      if (!option) {
+        errors.option = 'required';
+        isVaLid = false
+    
+      } 
+      else if (!validateEmail(email)) {
+        errors.email = 'Invalid email format';
+        isVaLid = false
+    
+      }
+      if (!phone) {
+        errors.phone = 'required';
+        isVaLid = false
+    
+      } 
+      if (!branch) {
+        errors.branch = 'required';
+        isVaLid = false
+    
+      }
+      setErrors(errors);
+      return isVaLid
+    }
     const handleStartTimeChange = (selectedDates) => {
       if (selectedDates.length > 0) {
         const selectedDate = new Date(selectedDates[0]);
@@ -532,9 +721,13 @@ export default function VietnamService() {
       }
       console.log(dataObject);
       e.preventDefault()
-      const token = "73344833-5b52-4403-9255-695907647688"
-      const source = await sendMassageRequest(dataObject, token)
-      navigate (`/massage/thank-you/${city}`)
+      if(validate()){
+        const token = "73344833-5b52-4403-9255-695907647688"
+        const source = await sendMassageRequest(dataObject, token)
+        navigate (`/massage/thank-you/${city}`)
+      }else{
+        alert(`Please ensure that all required fields are completed`)
+      }
     }
     return (
       <Modal
@@ -559,15 +752,17 @@ export default function VietnamService() {
             <form onSubmit={handleSubmit}>
               <h2>{t("service_massage.reservation1")}</h2>
               <div className="row pl-3 pr-3">
-                <input
+              <input
                   placeholder={t("service_massage.guest_name")}
                   type="text"
-                  className="col-md-12 form__content mb-0"
+                  className={errors.guestName ? 'col-md-12 form__content mb-0 validate_failed' : 'col-md-12 form__content mb-0'}
                   value={guestName}
                   onChange={(e) => {
                     setGuestName(e.target.value);
+                    errors.guestName = ''
                   }}
                 />
+                
               </div>
               <div className="row pl-3 pr-3">
               <div className="col-md-4">
@@ -597,7 +792,7 @@ export default function VietnamService() {
               <div className="row pl-3 pr-3">
                 <input
                   type="text"
-                  className="booker-phone form__content col-md-12"
+                  className={errors.phone ? 'booker-phone form__content col-md-12 validate_failed' : 'booker-phone form__content col-md-12'}
                   id=""
                   value={phone}
                   placeholder={t("service_massage.phone_number")}
@@ -606,29 +801,40 @@ export default function VietnamService() {
                       event.preventDefault();
                     }
                   }}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-                  <input
-                  type="text"
-                  className="form__content col-md-12"
-                  id=""
-                  value={email}
-                  placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                    errors.phone = ''
+                  }
+
+                  }
                 />
                 
+                  <input
+                  type="text"
+                  className={errors.email ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
+                  id=""
+                  value={email}
+                  placeholder={t("service_massage.email")}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                    errors.email = ''
+                  }}
+                />
+               
                 <Flatpickr
               value={startDate}
               options={{
                 minDate: 'today',
                 dateFormat: "Y-m-d",
               }}
-              className="col-md-6 form__content webkit-appearance mr-0"
+              className= {errors.startDate ? 'col-md-6 form__content webkit-appearance mr-0 validate_failed' : 'col-md-6 form__content webkit-appearance mr-0'}
               placeholder={t("service_massage.date")}
               onChange={(dates) => {
                 setStartDate(dates[0]);
+                errors.startDate = ''
               }}
             />
+            
                 <Flatpickr
                   value={startTime}
                   options={{
@@ -639,18 +845,19 @@ export default function VietnamService() {
                   }}
                   placeholder={t("service_massage.time")}
                   onChange={handleStartTimeChange}
-                  className="col-md-6 form__content webkit-appearance mr-0"
+                  className={errors.startTime ? 'col-md-6 form__content webkit-appearance mr-0 validate_failed' : 'col-md-6 form__content webkit-appearance mr-0'}
                 />
+               
                 <select
                   value={option}
-                  className="col-md-12 form__content"
+                  className={errors.option ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
                   onChange={(e) => {
                     setOption(e.target.value);
                   }}
                 >
-                  <option value="40 minutes">40 minutes</option>
-                  <option value="70 minutes">70 minutes</option>
-                  <option value="100 minutes">100 minutes</option>
+                  <option value="40 minutes">40 {t("service_massage.minutes")}</option>
+                  <option value="70 minutes">70 {t("service_massage.minutes")}</option>
+                  <option value="100 minutes">100 {t("service_massage.minutes")}</option>
                 </select>
                 <textarea
                   className="text-note"
