@@ -47,7 +47,7 @@ export default function Feature() {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/feature">
+                  <Link className="breadcrumb__title" to="/feature/">
                     {t('header.feature')}
                   </Link>
                 </li>

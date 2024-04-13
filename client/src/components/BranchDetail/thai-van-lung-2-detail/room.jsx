@@ -167,19 +167,19 @@ export default function TVL2RoomDetail() {
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
-                <Link to="/Home">
+                <Link to="/">
                   <i className="fa-solid fa-house" />
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/hotel-hcm">
+                <Link className="breadcrumb__title" to="/hotel-hcm/">
                   {t("header.hcm")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" href="">
+                <Link to ='thai-van-lung-2-detail/room/' className="breadcrumb__title">
                   {t("branch.tvl2")}
                 </Link>
               </li>
@@ -194,22 +194,22 @@ export default function TVL2RoomDetail() {
           style={{ justifyContent: "left", padding: "10px", textAlign:"justify" }}
         >
           <div className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/thai-van-lung-1-detail/room" className="location_link">
+            <a href="/thai-van-lung-1-detail/room/" className="location_link">
               {t(branchName.tvl1)}
             </a>
           </div>
           <div className="service__location service__active col-md-12 col-lg-3 col-xl-3">
-            <a href="/thai-van-lung-2-detail/room" className="location_link">
+            <a href="/thai-van-lung-2-detail/room/" className="location_link">
               {t(branchName.tvl2)}
             </a>
           </div>
           <div className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/le-thanh-ton-detail/room" className="location_link">
+            <a href="/le-thanh-ton-detail/room/" className="location_link">
               {t(branchName.ltt)}
             </a>
           </div>
           <div className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/annex-detail/room" className="location_link">
+            <a href="/annex-detail/room/" className="location_link">
               {t(branchName.annex)}
             </a>
           </div>

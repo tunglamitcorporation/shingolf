@@ -170,13 +170,13 @@ export default function HPRoomDetail() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/hotel-dn">
+                <Link className="breadcrumb__title" to="/hotel-dn/">
                   {t("header.hp")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" href="">
+                <Link to = 'hai-phong/room/' className="breadcrumb__title">
                   {t("branch.hp")}
                 </Link>
               </li>

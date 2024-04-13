@@ -55,9 +55,9 @@ export default function HotelHN({ news }) {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <a className="breadcrumb__title" href="">
+                  <Link to ='/hotel-hn/' className="breadcrumb__title">
                     {t("header.hn")}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

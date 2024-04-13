@@ -202,19 +202,19 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
-                <Link to="/Home">
+                <Link to="/">
                   <i className="fa-solid fa-house" />
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/hotel-hn">
+                <Link className="breadcrumb__title" to="/hotel-hn/">
                   {t("header.hn")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" href="">
+                <Link to ='kim-ma-2-detail/room/' className="breadcrumb__title">
                   {t("branch.km2")}
                 </Link>
               </li>
@@ -229,22 +229,22 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
           style={{ justifyContent: "left", padding: "10px", textAlign:"justify" }}
         >
           <div className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/hai-ba-trung-detail/room" className="location_link">
+            <a href="/hai-ba-trung-detail/room/" className="location_link">
               {t(branchName.hbt1)}
             </a>
           </div>
           <div className="service__location service__active col-md-12 col-lg-3 col-xl-3">
-            <a href="/kim-ma-2-detail/room" className="location_link">
+            <a href="/kim-ma-2-detail/room/" className="location_link">
               {t(branchName.km2)}
             </a>
           </div>
           <div className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/kim-ma-3-detail/room" className="location_link">
+            <a href="/kim-ma-3-detail/room/" className="location_link">
               {t(branchName.km3)}
             </a>
           </div>
           <div className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/linh-lang-detail/room" className="location_link">
+            <a href="/linh-lang-detail/room/" className="location_link">
               {t(branchName.ll)}
             </a>
           </div>

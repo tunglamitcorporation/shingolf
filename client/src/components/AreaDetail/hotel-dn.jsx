@@ -57,7 +57,7 @@ export default function HotelDN({news}){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/hotel-dn">{t("header.dn")}</a>
+                                        <a className ="breadcrumb__title" href="/hotel-dn/">{t("header.dn")}</a>
                                    </li>
                        </ul>
                     </div>

@@ -648,7 +648,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "Số 3",
                 "hasLink": true,
-                "link": "/rotenburo"
+                "link": "/rotenburo/"
             },
             {
                 "id": 4,
@@ -657,7 +657,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
                 "num": "Số 4",
-                "link": "/breakfast"
+                "link": "/breakfast/"
             },
             {
                 "id": 5,
@@ -680,7 +680,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "Số 7",
                 "hasLink": true,
-                "link": "/massage"
+                "link": "/massage/"
             },
             {
                 "id": 8,
@@ -759,15 +759,15 @@
         "service_name": [
             {
                 "name": "Bữa sáng",
-                "link": "/breakfast"
+                "link": "/breakfast/"
             },
             {
                 "name": "Dịch vụ tắm nước nóng ngoài trời",
-                "link": "/rotenburo"
+                "link": "/rotenburo/"
             },
             {
                 "name": "Massage",
-                "link": "/massage"
+                "link": "/massage/"
             }
         ],
         "hcm-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
@@ -1024,6 +1024,18 @@
         "title": "Việc đặt phòng của quý khách vẫn chưa hoàn tất.",
         "content": "Việc đặt phòng của quý khách vẫn chưa hoàn tất. Đội ngũ lễ tân của chúng tôi sẽ sớm gửi cho quý khách xác nhận đặt phòng.\n Nếu quý khách không nhận được bất kỳ thư hoặc cuộc gọi nào, vui lòng liên hệ với địa chỉ email lễ tân của chúng tôi"
     },
+    "thankyou_service":{
+        "name":"Cảm ơn",
+        "thank_content":"Cảm ơn quý khách đã chọn dịch vụ massage của chúng tôi!",
+        "title":"Yêu cầu của quý khách hiện đang được xử lý.",
+        "content":"Lễ tân của chúng tôi sẽ sớm gửi cho quý khách xác nhận. \nNếu quý khách chưa nhận được bất kỳ thông tin liên lạc nào từ chúng tôi, vui lòng liên hệ với địa chỉ email lễ tân của chúng tôi"
+    },
+    "thankyou_contract":{
+        "name":"Cảm ơn",
+        "thank_content":"Cảm ơn bạn đã hợp tác!",
+        "title":"Yêu cầu của quý khách hiện đang được xử lý.",
+        "content":"Chúng tôi muốn bày tỏ lòng biết ơn vì đã nhanh chóng cung cấp thông tin cần thiết của công ty cho việc ký kết hợp đồng sắp tới của chúng tôi. \nChúng tôi sẽ xem xét thông tin chi tiết và liên hệ lại với bạn sớm nhất có thể."
+    },
     "hn-branch": {
         "slider": [
             {
@@ -1049,28 +1061,28 @@
                 "name": "Azumaya Hai Bà Trưng 1",
                 "desc": "Khách sạn Azumaya Hai Bà Trưng 1 có 31 phòng tọa lạc ngay giữa quận Hai Bà Trưng với vòi sen, toilet, bồn tắm và các chương trình truyền hình Nhật Bản được cung cấp cho mỗi phòng. Nhà hàng “Mangetsu” (6 giờ chiều - 2 giờ sáng).Massage chân theo phong cách nguyên bản được 90% khách hàng quay lại (thời gian đặt massage cuối cùng là 9:45 tối). Ở tất cả các chi nhánh, chỉ có chi nhánh Hai Bà Trưng 1 sử dụng đá tự nhiên cho bồn tắm lộ thiên. Sau khi thư giãn trong bồn tắm nước nóng ngoài trời, hãy massage nhẹ nhàng và thỏa mãn bằng bữa ăn ngon tại nhà hàng Mangetsu, chúng tôi hứa hẹn bạn sẽ quên đi mệt mỏi hôm nay và có giấc ngủ sâu để làm việc cho ngày hôm sau.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg",
-                "link": "/hai-ba-trung-detail/room"
+                "link": "/hai-ba-trung-detail/room/"
             },
             {
                 "id": 2,
                 "name": "Azumaya Kim Mã 2",
                 "desc": "Khách sạn Azumaya Kim Mã 2 nằm ngay gần phố Kim Mã chỉ cách 3 phút đi bộ, có tổng 37 phòng, với các tiện ích như vòi sen, toilet, bồn tắm, ti vi truyền hình Nhật. Thêm vào đó, còn có 1 phòng Annex ở khu riêng biệt. Có 9 phòng có bếp rất phù hợp với khách ở dài. Quý khách có thể tận hưởng bể tắm nước nóng lộ thiên kiểu Nhật, bữa sáng kiểu nhật, massage truyền thống với tỷ lệ khách quay lại hơn 90%, và nhà hàng kiểu Nhật \"Suzunoya\" ( 5pm-1am). Sau khi trải nghiệm ngâm mình ở bồn tắm, thư giãn với massage chân, hài lòng với bữa ăn tại \"Suzunoya\", chúng tôi đảm bảo rằng bạn sẽ quên đi mệt mỏi hôm nay và có giấc ngủ ngon để bắt đầu một ngày mới.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
-                "link": "/kim-ma-2-detail/room"
+                "link": "/kim-ma-2-detail/room/"
             },
             {
                 "id": 3,
                 "name": "Azumaya Kim Mã 3",
                 "desc": "Khách sạn Azumaya chi nhánh Kim Mã 3 có 42 phòng, mỗi phòng đều có bồn cầu tự động, truyền hình Nhật Bản. Ngoài ra còn có bồn tắm nước nóng ngoài trời và buffet sáng kiểu Nhật. Chi nhánh Kim Mã 2 cách đó khoảng 3 phút đi bộ và cũng rất gần có thể đi bộ đến phố Kim Mã với rất nhiều nhà hàng Nhật Bản (khoảng 4 phút). Vị trí này rất thuận tiện cho những bữa ăn tối. Hơn nữa, khách sạn ở cách xa đường chính và ở ven hồ yên ả nên có thể tìm được cảm giác yên bình ở đây.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
-                "link": "/kim-ma-3-detail/room"
+                "link": "/kim-ma-3-detail/room/"
             },
             {
                 "id": 4,
                 "name": "Azumaya Linh Lang",
                 "desc": "Chi nhánh Ling Lang có tổng cộng 46 phòng với bồn tắm lộ thiên ngoài trời, bữa sáng kiểu Nhật, nhà hàng izakaya Matsuki. Tất cả các phòng đều được trang bị nhà vệ sinh có vòi sen, bồn tắm và chương trình truyền hình Nhật Bản. Khách sạn nằm trên đường Linh Lang, nơi tập trung nhiều nhà hàng, quán bar. Và chỉ mất vài phút đi bộ đến Trung tâm Thương mại Lotte hay Đại sứ quán Nhật Bản. Tại khách sạn có dịch vụ massage chân ở tầng 7 -  với tỷ lệ khách quay lại trên 90%. Chúng tôi phục vụ các món ăn hương vị Nhật Bản với nguyên liệu tươi ngon của địa phương mỗi ngày tại không gian ăn sáng trên tầng 8 với tầm nhìn tuyệt đẹp.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1710306679/AzumayaWeb/AZ-LL-FRONT-FIX-2_b1tphv.jpg",
-                "link": "/linh-lang-detail/room"
+                "link": "/linh-lang-detail/room/"
             }
         ],
         "btn-detail": "Nhấn để xem chi tiết"
@@ -2054,28 +2066,28 @@
                 "name": "Azumaya Thái Văn Lung 1",
                 "desc": "Chi nhánh Khách sạn Azumaya Thái Văn Lung 1 nằm ở vị trí thuận lợi, là sự lựa chọn hoàn hảo của khách hàng Nhật khi đến công tác và lưu trú. Khách sạn có tổng cộng 51 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Bên trong khách sạn, chúng tôi còn phục vụ bể tắm nước nóng ngoài trời và buffet sáng kiểu Nhật. Đặc biệt, khách hàng có thể tận hưởng dịch vụ mát-xa mang phong cách riêng của khách sạn Azumaya với tỷ lệ 90% khách hàng thường xuyên quay lại (10:45 tối là thời gian nhận yêu cầu mát-xa cuối cùng). Tại khu vực tầng hầm, khách hàng có thể ghé thăm và thưởng thức món ăn truyền thống Nhật Bản tại nhà hàng “Thiên” với thực đơn đa dạng bao gồm rượu sake, Sho-chu, sashimi và thời gian mở cửa đến 2 giờ sáng. Quý khách hàng có thể xoa dịu mệt mỏi chỉ bằng cách ở trong khách sạn của chúng tôi: tắm bể tắm nước nóng ngoài trời độc đáo, thưởng thưởng món ăn tại \"Thiên\", sử dụng dịch vụ mát-xa, xem các chương trình tivi tại phòng và thư giãn. Chi nhánh Thái Văn Lung 2 của chúng tôi nằm đối diện và chi nhánh Lê Thánh Tôn cách đó chỉ 3 phút đi bộ.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1712970236/AzumayaWeb/LOBBY/TVL1.1_av46vr.jpg",
-                "link": "/thai-van-lung-1-detail/room"
+                "link": "/thai-van-lung-1-detail/room/"
             },
             {
                 "id": 2,
                 "name": "Azumaya Thái Văn Lung 2",
                 "desc": "Chi nhánh Khách sạn Azumaya Thái Văn Lung 2 được mở cửa vào năm 2016, nằm đối diện chi nhánh Thái Văn Lung 1 ở bên kia đường. Khách sạn có tổng cộng 58 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn tắm, bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Chúng tôi cũng phục vụ bể tắm nước nóng ngoài trời, bữa sáng kiểu Nhật và ở tầng hầm khách hàng có thể thưởng thức các món ăn truyền thống Nhật Bản tại nhà hàng Nhật \"Suizan\" và \"Mangetsu\". Đặc biệt, khách hàng nữ cũng có thể tận hưởng bể tắm nước nóng ngoài trời của chúng tôi vào các ngày trong tuần (chỉ từ 17:00 đến 18:45). Đối với bữa sáng, chúng tôi còn phục vụ rất nhiều bữa ăn sáng kiểu lục địa bên cạnh các món kiểu Nhật, mì Udon. Với chi nhánh Thái Văn Lung 1 nằm ở đối diện và chi nhánh Lê Thánh Tôn cách đây chỉ 3 phút đi bộ, khách sạn Azumaya Thái Văn Lung 2 là sự lựa chọn hoàn hảo của khách hàng Nhật khi đến công tác và lưu trú.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
-                "link": "/thai-van-lung-2-detail/room"
+                "link": "/thai-van-lung-2-detail/room/"
             },
             {
                 "id": 3,
                 "name": "Azumaya Lê Thánh Tôn",
                 "desc": "Chi nhánh Khách sạn Azumaya Lê Thánh Tôn có tổng cộng 37 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Chúng tôi cũng phục vụ bể tắm nước nóng ngoài trời, bữa sáng kiểu Nhật và ở tầng hầm khách hàng có thể ghé thăm quán nhậu kiểu nhật \"Mangetsu\". Đối với bữa sáng, chúng tôi cũng phục vụ nhiều loại bữa ăn sáng kiểu lục địa bên cạnh các món kiểu Nhật, mì Udon. Bể tắm nước nóng ngoài trời giữa lòng thành phố chắc chắn sẽ xoa dịu những mệt mỏi của khách hàng sau ngày dài làm việc vất vả. Đặc biệt, những khách hàng muốn kết thúc một ngày bằng đồ uống ngon, quán nhậu kiểu nhật “Mangetsu” ở tầng hầm sẽ mở cửa đón tiếp quý khách đến 2 giờ sáng. Khách sạn Azumaya Lê Thánh Tôn tọa lạc tại giữa con đường Lê Thánh Tôn, nơi quy tụ rất nhiều nhà hàng và quán bar. Đây là sự lựa chọn hoàn hảo cho những khách hàng lần đầu đến Việt Nam. Với tất cả những giá trị kể trên, chúng tôi đảm bảo mang đến cho Quý khách một chuyến công tác thoải mái khi lưu trú tại đây.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
-                "link": "/le-thanh-ton-detail/room"
+                "link": "/le-thanh-ton-detail/room/"
             },
             {
                 "id": 4,
                 "name": "Azumaya HCM ANNEX",
                 "desc": "Azumaya Annex là căn hộ khách sạn với 7 phòng dành cho khách lưu trú dài ngày. Tất cả các phòng đều được trang bị đầy đủ bồn tắm, bồn cầu tự động và các kênh tivi truyền hình Nhật Bản với vị trí nằm ngay hẻm sau chi nhánh khách sạn Thái Văn Lung 1. Azumaya Annex không có thang máy nhưng vì mỗi tầng chỉ có 2 phòng nên sẽ không xảy ra vấn đề va chạm với khách hàng lưu trú ở phòng khác. Giống như khách lưu trú tại chi nhánh khách sạn Thái Văn Lung 1, khách hàng lưu trú tại Azumaya Annex có thể thưởng thức bữa sáng kiểu Nhật, sử dụng bể tắm nước nóng ngoài trời và được giảm giá đặc biệt khi sử dụng dịch vụ mát-xa chân. Hệ thống cửa ra vào khóa tự động vô cùng tiện lợi giúp khách hàng ra vào dễ dàng và an toàn. Chúng tôi cam kết mang đến cho Quý khách một kỳ nghỉ thoải mái và giá cả hợp lý tại Việt Nam.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg",
-                "link": "/annex-detail/room"
+                "link": "/annex-detail/room/"
             }
         ],
         "btn-detail": "Nhấn để xem chi tiết"
@@ -3064,7 +3076,7 @@
                 "name": "Azumaya Đà Nẵng",
                 "desc": "Chi nhánh Khách sạn Azumaya Đà Nẵng tọa lạc ngay giữa thành phố; chỉ cách sân bay 10 phút, có tổng cộng 32 phòng với nhà vệ sinh có bồn cầu tự động và các chương trình truyền hình Nhật Bản cho mỗi phòng. Điều khiến chúng tôi khác biệt so với các khách sạn khác là chúng tôi có dịch vụ tắm nước nóng ngoài trời, phòng xông hơi khô & bể tắm lạnh, bữa sáng kiểu Nhật, massage chân theo phong cách nguyên bản. Massage chân theo phong cách nguyên bản của chúng tôi là dịch vụ phổ biến đối với du khách Nhật Bản và có tới 90% khách hàng quay lại. Nếu đặt trước, bạn không cần phải xếp hàng dài (Giờ đặt massage cuối cùng là 10h15 tối). Vì phòng tắm nước nóng ngoài trời, phòng xông hơi khô & bể tắm lạnh đều hướng ra biển nên bạn có thể ngắm nhìn khung cảnh tuyệt đẹp của đại dương trải rộng trước mắt và cảnh hoàng hôn trên đỉnh núi. Hãy tận hưởng các dịch vụ tuyệt vời của chúng tôi để xua tan những mệt mỏi.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
-                "link": "/da-nang/room"
+                "link": "/da-nang/room/"
             }
         ],
         "btn-detail": "Nhấp vào đây để xem chi tiết"
@@ -3293,7 +3305,7 @@
                 "name": "Azumaya Hải Phòng",
                 "desc": "Chào mừng đến với khách sạn Azumaya Hải Phòng !\nRất hân hạnh được phục vụ quý khách tại Azumaya. Khách sạn chúng tôi nằm ở vị trí thuận tiện gần khu vực có nhiều nhà hàng Nhật Bản tại Hải Phòng, trên đường đến các khu công nghiệp và cách sân bay Cát Bi 10 phút. Tại khách sạn Azumaya, đội ngũ nhân viên thân thiện của chúng tôi sẽ luôn sẵn lòng hỗ trợ quý khách bất cứ lúc nào bằng cả tiếng Nhật và tiếng Anh. Chúng tôi hy vọng mang đến cho quý khách những dịch vụ tốt nhất mà quý khách xứng đáng có thể tận hưởng lưu trú mỗi ngày. Vì vậy, chúng tôi cố gắng mang đến cho quý khách không chỉ thoải mái như ở khách sạn mà còn là môi trường thư giãn với những cảm giác thú vị như “Bồn tắm nước nóng & xông hơi ngoài trời” trên tầng 7 của tòa nhà (chỉ dành cho nam) và “Bữa sáng kiểu Nhật” mang lại sức sống cho một ngày. Hy vọng quý khách sẽ có những trải nghiệm đáng nhớ và thú vị cùng chúng tôi.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
-                "link": "/hai-phong/room"
+                "link": "/hai-phong/room/"
             }
         ],
         "btn-detail": "Nhấp để xem chi tiết"
@@ -3845,55 +3857,55 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787350/AzumayaWeb/Rotenburo/RTBR_KM2_f7f3j8.jpg",
                 "caption": "Azumaya Hotel Kim Mã 2",
                 "name":"Hà Nội",
-                "link": "/kim-ma-2-detail/room"
+                "link": "/kim-ma-2-detail/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png",
                 "caption": "Azumaya Hotel Hải Phòng",
                 "name":"Hải Phòng",
-                "link": "/hai-phong/room"
+                "link": "/hai-phong/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
                 "caption": "Azumaya Hotel Đà Nẵng",
                 "name":"Đà Nẵng",
-                "link": "/da-nang/room"
+                "link": "/da-nang/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787352/AzumayaWeb/Rotenburo/RTBR_TVL1_fv00lo.jpg",
                 "caption": "Azumaya Hotel Thái Văn Lung 1",
                 "name":"Hồ Chí Minh",
-                "link": "/thai-van-lung-1-detail/room"
+                "link": "/thai-van-lung-1-detail/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787343/AzumayaWeb/Rotenburo/RTBR_HBT1_seeimp.jpg",
                 "caption": "Azumaya Hotel Hai Bà Trưng 1",
                 "name":"Hà Nội",
-                "link": "/hai-ba-trung-detail/room"
+                "link": "/hai-ba-trung-detail/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg",
                 "caption": "Azumaya Hotel Linh Lang",
                 "name":"Hà Nội",
-                "link": "/linh-lang-detail/room"
+                "link": "/linh-lang-detail/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787356/AzumayaWeb/Rotenburo/RTBR_KM3_m9iq0n.png",
                 "caption": "Azumaya Hotel Kim Mã 3",
                 "name":"Hà Nội",
-                "link": "/kim-ma-3-detail/room"
+                "link": "/kim-ma-3-detail/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787354/AzumayaWeb/Rotenburo/RTBR_LTT_t4rpue.jpg",
                 "caption": "Azumaya Hotel Lê Thánh Tôn",
                 "name":"Hồ Chí Minh",
-                "link": "/le-thanh-ton-detail/room"
+                "link": "/le-thanh-ton-detail/room/"
             },
             {
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg",
                 "caption": "Azumaya Hotel Thái Văn Lung 2",
                 "name":"Hồ Chí Minh",
-                "link": "/thai-van-lung-2-detail/room"
+                "link": "/thai-van-lung-2-detail/room/"
             }
         ],
     "service_breakfast": {

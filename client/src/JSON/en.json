@@ -718,7 +718,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "No 3",
                 "hasLink": true,
-                "link": "/rotenburo"
+                "link": "/rotenburo/"
             },
             {
                 "id": 4,
@@ -727,7 +727,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "hasLink": true,
                 "num": "No 4",
-                "link": "/breakfast"
+                "link": "/breakfast/"
             },
             {
                 "id": 5,
@@ -750,7 +750,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "No 7",
                 "hasLink": true,
-                "link": "/massage"
+                "link": "/massage/"
             },
             {
                 "id": 8,
@@ -1127,28 +1127,28 @@
                 "name": "Azumaya Hai Ba Trung 1",
                 "desc": "Azumaya Hotel Hai Ba Trung 1 is a 31 room hotel located in the middle of Hai Ba Trung district with shower toilet, bathtub, and Japanese TV shows supplied for each room. We have a giant open-air hot bath, Japanese breakfast buffet, Japanese restaurant “Mangetsu” (6pm-2am)original style foot massage which 90% of the customers are repeating. (The last order for massage is 9:45pm.) of all branches, only Hai Ba Trung 1 branch uses the natural stone for open-air hot baths. After relaxing in the open-air hot bath, have our soothing massage, and come satisfy your appetite in “Mangetsu”; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711886265/AzumayaWeb/HBT1/INTRODUCTION/113644920_tph75p.jpg",
-                "link": "/hai-ba-trung-detail/room"
+                "link": "/hai-ba-trung-detail/room/"
             },
             {
                 "id": 2,
                 "name": "Azumaya Kim Ma 2",
                 "desc": "Azumaya Hotel Kim Ma 2 branch, standing at the location 3 minutes far by walk from Kim Ma Street, has 38 rooms supplied with shower toilet, bathtub, and Japanese TV shows. In addition, we provide 2 annex rooms with separate entry from the main front entrance. For the long stay customers, 11 rooms with a kitchen are available. Both hotel guests and visitors can enjoy our open-air hot bath, Japanese breakfast , original style foot massage which 90% of users are repeat customers, and Japanese restaurant “Suzunoya”. (5pm-1am) After relaxing at our open-air hot bath, soothe your fatigue at foot massage, and satisfy your appetite at “Suzunoya” ; we promise you will surely forget today’s fatigue and have a nice deep sleep for next day’s work.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
-                "link": "/kim-ma-2-detail/room"
+                "link": "/kim-ma-2-detail/room/"
             },
             {
                 "id": 3,
                 "name": "Azumaya Kim Ma 3",
                 "desc": "Azumaya Hotel Kim Ma 3 branch has 42 rooms in total with shower toilet and Japanese TV shows for each room. Moreover, there are open-air hot bath and Japanese breakfast buffet. The Kin Ma 1 branch strands 10 seconds away by feet and Japanese restaurant street at Kim Ma Street is also near enough to walk (about 4 minutes). Its location is much convenient at dinner time. Moreover, far from the main street and nearby the silent pond in front, you can find it peaceful to be here.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
-                "link": "/kim-ma-3-detail/room"
+                "link": "/kim-ma-3-detail/room/"
             },
             {
                 "id": 4,
                 "name": "Azumaya Linh Lang",
                 "desc": "Ling Lang branch has 46 rooms in total with open-air bath, Japanese breakfast , Japanese izakaya \"ISSUN Boushi\" . All the rooms are equipped with shower toilet, bathtub, and Japanese TV show. The hotel is within walking distance from Lotte Centre which is located along Linh Lang road where many Japanese restaurants have opened recently. At the hotel, high-tea massage is also available on the 7th floor. It records over 90% of repeat customer rate. Last order is 9:45 pm.. You can enjoy a night view from each massage chair. It features a spacious outdoor bath. You can have a pleasant morning at the breakfast venue on the 8th floor with a fine view.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711886349/AzumayaWeb/LL/INTRODUCTION/AZ-LL-FRONT-FIX-3_eqmmf8.jpg",
-                "link": "/linh-lang-detail/room"
+                "link": "/linh-lang-detail/room/"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2041,28 +2041,28 @@
                 "name": "Azumaya Thai Van Lung 1",
                 "desc": "Azumaya Hotel Thai Van Lung 1 branch is located in a perfect location for Japanese businessmen to stay. It is supplied with 51 rooms in total with facilities of toilet with bidet function and Japanese TV shows for each room. In addition, we serve open-air hot bath, Japanese breakfast buffet, and Japanese restaurant “Thien”. Inside our hotel, you can take Azumaya-style massage, which 90% of the repeat customers come back (10:45pm is our last order for massage). In the basement floor, Japanese restaurant “Thien” serves you with various menu of Japanese sake, Sho-chu, and sashimi. Please visit and enjoy our food, we are open until 2:00am. For the hotel guests, you can soothe out your tiredness just by being in our hotel: take a bath at our unique open-air hot bath, satisfy your appetite in Thien, take our massage, watch TV at room and relax. Our Thai Van Lung 2 branch stands across the street and Le Thanh Ton branch is 3 minutes away by walking.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1712970236/AzumayaWeb/LOBBY/TVL1.1_av46vr.jpg",
-                "link": "/thai-van-lung-1-detail/room"
+                "link": "/thai-van-lung-1-detail/room/"
             },
             {
                 "id": 2,
                 "name": "Azumaya Thai Van Lung 2",
                 "desc": "Azumaya Hotel Thai Van Lung 2 branch is a newly opened branch in 2016, located in front of the Thai Van Lung 1 branch across the street. There are 58 rooms in total with toilet with bidet functions, bathtubs, and Japanese TV shows in each room. We also serve open-air hot baths, Japanese breakfast, and Japanese food restaurant \"Suizan\" and \"Mangetsu\". Female guests can also enjoy our open air hot bath on weekdays. (Only from 17:00 to 18:45). For breakfast, we also have a lot of set manu like continental set other than authentic Japanese sets, Udon noodles. With Thai Van Lung 1 branch located in front and Le Thanh Ton branch standing along Le Thanh Ton street 3 minutes far from here, it is the perfect location for businessmen to stay comfortably.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
-                "link": "/thai-van-lung-2-detail/room"
+                "link": "/thai-van-lung-2-detail/room/"
             },
             {
                 "id": 3,
                 "name": "Azumaya Le Thanh Ton",
                 "desc": "Azumaya Hotel Le Thanh Ton branch has 37 rooms in total with toilet with bidet function and Japanese TV shows in each room. We serve open-air hot bath, Japanese breakfast and sho-chu bar “Mangetsu”. For breakfast, we also have a lot of food like continental set other than authentic Japanese sets, Udon noodle. The open-air hot bath in the middle of this city-side will definitely be an oasis soothing your fatigue from daily hard work. Another oasis for the guests who wants to end their day with a nice drink, the sho-chu bar “Mangetsu” in the basement floor is open for you until 2:00am. It stands in the middle of Le Thanh Ton street, there is no such inconvenience for going to a restaurant or a bar. A perfect location for the guests who come to Vietnam for the first time. All these values are prepared only for you to make your business trip comfortable.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
-                "link": "/le-thanh-ton-detail/room"
+                "link": "/le-thanh-ton-detail/room/"
             },
             {
                 "id": 4,
                 "name": "Azumaya Annex",
                 "desc": "Azumaya Hotel Annex is an apartment type hotel with 7 rooms for long stay guests. It is well-supplied with bathtub, toilet with bidet function, and Japanese TV shows for all rooms, located in the back alley of Thai Van Lung 1 branch. The building itself does not have an elevator, but because only 2 rooms for each floor, there is no chance to bump into the other staying customer. Same as the staying guests in Thai Van Lung 1 branch, it is available to enjoy our Japanese breakfast, open-air hot bath, and special discount of using foot massage. The convenient auto door lock makes the accessing way easy & safe. We promise you a comfortable and reasonable stay in the unfamiliar surroundings of Vietnam.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg",
-                "link": "/annex-detail/room"
+                "link": "/annex-detail/room/"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -2958,7 +2958,7 @@
                 "name": "Azumaya Da Nang",
                 "desc": "Azumaya Hotel Da Nang branch is located in the middle of city; just 10 minutes far from the airport, and has 32 rooms in total with shower toilet and Japanese TV shows for each room. What makes us unique from other hotels is that we serve Open-air hot bath, Sauna & Cold bath, Japanese breakfast, original style foot massage. Our original style foot massage is our popular service among Japanese visitors and guests which 90% of the repeat customers come back again. If you reserve, you do not have to concern about waiting in the long queue(The last order for massage is 10:15pm). Since the Open-air hot bath, Sauna & Cold bath is facing to the ocean you can enjoy the beautiful view of the ocean spread out before your eyes and sunset over the mountains. Please enjoy the Open-air bath, Sauna and Cold bath with an ocean view.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
-                "link": "/da-nang/room"
+                "link": "/da-nang/room/"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -3165,7 +3165,7 @@
                 "name": "Azumaya Hai Phong",
                 "desc": "A very warm welcome from Azumaya Hotel Hai Phong! It is indeed our pleasure to serve you at Azumaya. Out hotel is conveniently located near Japanese restaurants area in Hai Phong, on the way to industrial zones and far 10 minutes from airport. At Azumaya Hotel, our friendly staffs will always be happy to assist you anytime in both Japanese and English. We hope to bring you the best services as you deserve so that you can enjoy every day of your staying. Therefore, we strive to provide you not only comfortable guest rooms but also a relax environment with enjoyable feelings like “Open-air Hot Bath-tub & Sauna” on 7F of the building (men only), and “Japanese Breakfast” which is the vitality of a day. Thank you for choosing us!  Heartfelt hope you an unforgettable and enjoyable experience with us.",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
-                "link": "/hai-phong/room"
+                "link": "/hai-phong/room/"
             }
         ],
         "btn-detail": "Click here for detail"
@@ -3682,55 +3682,55 @@
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787350/AzumayaWeb/Rotenburo/RTBR_KM2_f7f3j8.jpg",
             "caption": "Azumaya Hotel Kim Ma 2",
             "name":"Ha Noi",
-            "link": "/kim-ma-2-detail/room"
+            "link": "/kim-ma-2-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png",
             "caption": "Azumaya Hotel Hai Phong",
             "name":"Hai Phong",
-            "link": "/hai-phong/room"
+            "link": "/hai-phong/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
             "caption": "Azumaya Hotel Da Nang",
             "name":"Da Nang",
-            "link": "/da-nang/room"
+            "link": "/da-nang/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787352/AzumayaWeb/Rotenburo/RTBR_TVL1_fv00lo.jpg",
             "caption": "Azumaya Hotel Thai Van Lung 1",
             "name":"Ho Chi Minh",
-            "link": "/thai-van-lung-1-detail/room"
+            "link": "/thai-van-lung-1-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787343/AzumayaWeb/Rotenburo/RTBR_HBT1_seeimp.jpg",
             "caption": "Azumaya Hotel Hai Ba Trung 1",
             "name":"Ha Noi",
-            "link": "/hai-ba-trung-detail/room"
+            "link": "/hai-ba-trung-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg",
             "caption": "Azumaya Hotel Linh Lang",
             "name":"Ha Noi",
-            "link": "/linh-lang-detail/room"
+            "link": "/linh-lang-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787356/AzumayaWeb/Rotenburo/RTBR_KM3_m9iq0n.png",
             "caption": "Azumaya Hotel Kim Ma 3",
             "name":"Ha Noi",
-            "link": "/kim-ma-3-detail/room"
+            "link": "/kim-ma-3-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787354/AzumayaWeb/Rotenburo/RTBR_LTT_t4rpue.jpg",
             "caption": "Azumaya Hotel Le Thanh Ton",
             "name":"Ho Chi Minh",
-            "link": "/le-thanh-ton-detail/room"
+            "link": "/le-thanh-ton-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg",
             "caption": "Azumaya Hotel Thai Van Lung 2",
             "name":"Ho Chi Minh",
-            "link": "/thai-van-lung-2-detail/room"
+            "link": "/thai-van-lung-2-detail/room/"
         }
         
     ],

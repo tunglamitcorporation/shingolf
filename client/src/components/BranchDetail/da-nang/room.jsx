@@ -176,13 +176,13 @@ export default function DNRoomDetail() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/hotel-dn">
+                <Link className="breadcrumb__title" to="/hotel-dn/">
                   {t("header.dn")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to ="/da-nang/room">
+                <Link className="breadcrumb__title" to ="/da-nang/room/">
                   {t("branch.dn")}
                 </Link>
               </li>

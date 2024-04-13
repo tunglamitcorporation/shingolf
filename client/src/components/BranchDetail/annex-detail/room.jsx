@@ -166,19 +166,19 @@ export default function AnnexRoomDetail() {
           <div className="re__breadcrumb">
             <ul className="breadcrumb__list">
               <li className="breadcrumb__item">
-                <Link to="/Home">
+                <Link to="/">
                   <i className="fa-solid fa-house" />
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/hotel-hcm">
+                <Link className="breadcrumb__title" to="/hotel-hcm/">
                   {t("header.hcm")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" href="">
+                <Link to = '/annex-detail/room/' className="breadcrumb__title">
                   {t("branch.annex")}
                 </Link>
               </li>

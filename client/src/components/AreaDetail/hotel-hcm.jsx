@@ -57,7 +57,7 @@ export default function HotelHCM({news}){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                        <a className ="breadcrumb__title" href="/hotel-hcm">{t("header.hcm")}</a>
+                                        <Link to = '/hotel-hcm/' className ="breadcrumb__title">{t("header.hcm")}</Link>
                                    </li>
                        </ul>
                     </div>

@@ -1034,13 +1034,13 @@ export default function VietnamService() {
             <div className="re__breadcrumb">
               <ul className="breadcrumb__list">
                 <li className="breadcrumb__item">
-                  <Link to="/Home">
+                  <Link to="/">
                     <i className="fa-solid fa-house" />
                   </Link>
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/service">
+                  <Link className="breadcrumb__title" to="/service/">
                     {t('header.service')}
                   </Link>
                 </li>

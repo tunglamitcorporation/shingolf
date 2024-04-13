@@ -719,7 +719,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/h027ndrvhudkswop9bee.jpg",
                 "num": "その 3",
                 "hasLink": true,
-                "link":"/rotenburo"
+                "link":"/rotenburo/"
             },
             {
                 "id": 4,
@@ -728,7 +728,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/errq8cemducbxlsk56nd.jpg",
                 "num": "その 4",
                 "hasLink": true,
-                "link":"/breakfast"
+                "link":"/breakfast/"
             },
             {
                 "id": 5,
@@ -751,7 +751,7 @@
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/lmfoarojredf2s6aojoy.jpg",
                 "num": "その 7",
                 "hasLink": true,
-                "link":"/massage"
+                "link":"/massage/"
             },
             {
                 "id": 8,
@@ -1010,6 +1010,18 @@
         "title":"まだ予約は完了しておりません。",
         "content":"ご予約ありがとうございます。\n受付による確認後、予約確認書がメールで届きます。n万が一、当ホテルよりメールが届かない場合はお手数ですが下記までご連絡ください。"
     },
+    "thankyou_service":{
+        "name":"ありがとうございます",
+        "thank_content":"弊社のマッサージ サービスをお選びいただきありがとうございます!",
+        "title":"ご予約は現在処理中です。",
+        "content":"弊社の受付チームからすぐに確認メールをお送りします。 \n弊社からの連絡が届かない場合は、弊社の受付メール アドレスまでご連絡ください。"
+    },
+    "thankyou_contract":{
+        "name":"ありがとうございます",
+        "thank_content":"Tご協力ありがとうございます!",
+        "title":"リクエストは現在処理中です。",
+        "content":"今後の契約締結に必要な企業情報を迅速にご提供いただき、感謝の意を表します。\n詳細を確認し、できるだけ早くご連絡いたします。"
+    },
     "service": {
         "name": "提供サービス",
         "location": [
@@ -1029,15 +1041,15 @@
         "service_name": [
             {
                 "name": "朝食",
-                "link": "/breakfast"
+                "link": "/breakfast/"
             },
             {
                 "name": "露天風呂",
-                "link": "/rotenburo"
+                "link": "/rotenburo/"
             },
             {
                 "name": "マッサージ",
-                "link": "/massage"
+                "link": "/massage/"
             }
         ],
         
@@ -1119,28 +1131,28 @@
                 "name": "ハイバーチュン１号店",
                 "desc": "全31部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。立地もハイバーチュン区中心に位置。ホーチミンで有名な日本食居酒屋「満月」は午後6時〜深夜２時まで営業、夕食や締めの一杯に焼き鳥とラーメンでお待ちしております。サウナと水風呂で体を整え、露天風呂で体を温め、「満月」で美味しいものを食べて気分が良くなれば快眠間違いなし。朝は和朝食で一日の活力を提供します。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027483/AzumayaWeb/o8dg6xz425tf0blhj1hz.jpg",
-                "link": "/hai-ba-trung-detail/room"
+                "link": "/hai-ba-trung-detail/room/"
             },
             {
                 "id": 2,
                 "name": "キンマー２号店",
                 "desc": "全37部屋、露天風呂、女性専用露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。ホテルとは独立した入り口を持つアネックスも1部屋完備。長期滞在者向けにキッチン付きのお部屋も10部屋ご用意。立地もキンマー通りまで徒歩３分。 館内１階のもつ鍋居酒屋「鈴の屋」は午後5時〜深夜1時まで営業、夕食や締めの一杯に合うおつまみも充実のご用意でお待ちしております。 男性専用・女性専用露天風呂、サウナ、水風呂で体を整え、「鈴の屋」で美味しいものを食べて気分が良くなれば快眠間違いなし。朝は和朝食で一日の活力を提供します。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/fersjcyqml9gtjpit7pk.jpg",
-                "link": "/kim-ma-2-detail/room"
+                "link": "/kim-ma-2-detail/room/"
             },
             {
                 "id": 3,
                 "name": "キンマー 3号店",
                 "desc": "全42部屋。2023年オープン、最上階の広々とした露天風呂＆サウナ＆水風呂、和朝食ビュッフェ、全室にシャワートイレ、バスタブ、日本語放送を完備。キンマー2号店から徒歩2分、同じく湖のほとりに位置する3号店も、人気のレイクサイドのお部屋やリーズナブルな内窓のお部屋を多数ご用意しております。和朝食ビュッフェはロビーに併設する朝食会場で、一日の活力を提供します。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027488/AzumayaWeb/pdgz4cpsqdu7lmxznh1x.jpg",
-                "link": "/kim-ma-3-detail/room"
+                "link": "/kim-ma-3-detail/room/"
             },
             {
                 "id": 4,
                 "name": "リンラン店",
                 "desc": "全46部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。立地はロッテセンターの徒歩圏内、近年日本食レストランが立ち並ぶリンラン通りに位置し、館内7階にはリピート率90％以上を誇る自慢の東屋マッサージを併設。(ラストオーダー午後9:30) 各マッサージチェアからは夜景を楽しむことができます。夕食や締めの一杯には、地階に併設する焼き鳥居酒屋「松木」をご利用いただけます。 広々とした露天風呂、サウナ、水風呂でごゆっくりお寛ぎいただき、翌朝は8階の見晴らしのいい朝食会場で気持ちのよい朝をお迎えいただけます。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027481/AzumayaWeb/lqhzc2ytlokliy0rtgta.png",
-                "link": "/linh-lang-detail/room"
+                "link": "/linh-lang-detail/room/"
             }
         ],
         "btn-detail": "詳細はこちら"
@@ -2070,28 +2082,28 @@
                 "name": "タイバンルン１号店",
                 "desc": "全51部屋、露天風呂、和朝食ビュッフェ、フットマッサージ、居酒屋「テン」、全室に洗浄機能付きトイレ、日本語放送を完備。館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。\"午後10:45がラストオーダー\"。また深夜２時までオープンしている日本食居酒屋「テン」では日本酒、焼酎、刺身を含む居酒屋メニューが満載。一人でもお気軽にどうぞ。露天風呂に浸かり、居酒屋テンで一杯、マッサージを受けて、部屋でスポーツニュースを観て一日の疲れを癒す、東屋が誇るワンストップサービスを提供しています。立地もタイバンルン２号店向かい、レタントン店へも徒歩３分ほどの抜群のロケーションです。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1712970236/AzumayaWeb/LOBBY/TVL1.1_av46vr.jpg",
-                "link": "/thai-van-lung-1-detail/room"
+                "link": "/thai-van-lung-1-detail/room/"
             },
             {
                 "id": 2,
                 "name": "タイバンルン２号店",
                 "desc": "全58部屋、露天風呂、和朝食セット、日本食店『スイザン』、 焼酎バー『満月』、全室に洗浄機能付きトイレとバスタブ、 日本語放送を完備。露天風呂は平日の夕方限定で女性の お客様にもお楽しみいただけます。朝食は和朝食以外にも 明太子定食、卵かけご飯定食、コンチネンタルセット、 うどんなどをご用意しています。立地もタイバンルン1号店 向かいレタントン店へも徒歩3分ほどの抜群のロケーション です。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/tvl2_bnqiwo.jpg",
-                "link": "/thai-van-lung-2-detail/room"
+                "link": "/thai-van-lung-2-detail/room/"
             },
             {
                 "id": 3,
                 "name": "レタントン店",
                 "desc": "全37部屋、露天風呂、和朝食セット、焼酎バー「満月」、全室に洗浄機能付きトイレ、日本語放送を完備。レタントン通りのど真ん中という抜群の立地で初めてベトナムの来られる方でも食べに行くのも飲みに行くのも困りません。都会の真ん中にある露天風呂はまさに都会のオアシス。地階にある焼酎バー「満月」は深夜２時まで営業しているため締めの一杯にも最適です。朝食は和朝食以外にも明太子定食、卵かけご飯定食、コンチネンタルセット、うどんなどをご用意しています。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/le-thanh-ton_pc2rlg.jpg",
-                "link": "/le-thanh-ton-detail/room"
+                "link": "/le-thanh-ton-detail/room/"
             },
             {
                 "id": 4,
                 "name": "アネックス店",
                 "desc": "全７部屋の長期滞在者向けアパート型ホテル。全部屋バスタブ、洗浄機能付きトイレ、日本語放送完備。タイバンルン１号店の真裏、路地裏に位置する。エレベーターなしの４階建て、各階に２部屋ずつありホテル滞在に比べ出入りの際にお客様同士はち合うこともありません。ホテルゲスト同様にタイバンルン１号店の東屋サービス（和朝食、露天風呂、マッサージ宿泊者割引）をご利用できます。便利なオートロックドア、慣れないベトナムでの安全かつ快適かつリーズナブルな滞在をお約束します。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703217951/AzumayaWeb/Annex_trh5ka.jpg  ",
-                "link": "/annex-detail/room"
+                "link": "/annex-detail/room/"
             }
         ],
         "btn-detail": "詳細はこちら"
@@ -3014,7 +3026,7 @@
                 "name": "ダナン店",
                 "desc": "全32部屋、展望露天風呂、サウナと水風呂、和朝食、フットマッサージ、全室にシャワートイレ、日本語放送を完備。空港から10分と中心に位置し、館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。午後10:30(午後10:15) がラストエントリー。 そしてダナン店自慢の展望露天風呂と水風呂、サウナをぜひご堪能ください。ダナン店は湾に面しているためホテルの目の前に広がる海、山に沈みゆく夕日を観ながら堪能する露天風呂は格別。日本でもそうそうお目にかかることがない景色を楽しめます。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703221743/AzumayaWeb/da-nang_v1v7t2.jpg",
-                "link": "/da-nang/room"
+                "link": "/da-nang/room/"
             }
         ],
         "btn-detail": "詳細はこちら"
@@ -3226,7 +3238,7 @@
                 "name": "ハイフォン店",
                 "desc": "全46部屋、露天風呂、和朝食、全室にシャワートイレ、バスタブ、日本語放送を完備。長期滞在者向けにキッチン付きのお部屋もご用意。工業団地まで車で30分、ハイフォン空港まで10分という好立地に位置しております。当館1階に併設されている日本居酒屋「炭ぼうず」はランチタイム (午前11時～午後1時)、ディナータイム（午後5時半～午後10時）にて営業しております。炭ぼうず自慢の焼き鳥とおつまみでお腹を満たした後は、露天風呂・サウナ・水風呂で一日の疲れを癒していただけます。翌朝は9階にある朝食会場でハイフォンの眺望とともに東屋自慢の和朝食をお楽しみください。",
                 "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1703305024/AzumayaWeb/Azumay-HP_jvyoeh.jpg",
-                "link": "/hai-phong/room"
+                "link": "/hai-phong/room/"
             }
         ],
         "btn-detail": "詳細はこちら"
@@ -3746,55 +3758,55 @@
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787350/AzumayaWeb/Rotenburo/RTBR_KM2_f7f3j8.jpg",
             "caption": "キンマー２号店",
             "name":"ハノイ",
-            "link": "kim-ma-2-detail/room"
+            "link": "kim-ma-2-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787616/AzumayaWeb/Rotenburo/RTBR_HP_rqdjyc.png",
             "caption": "ハイフォン",
             "name":"ハイフォン店",
-            "link": "/hai-phong/room"
+            "link": "/hai-phong/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg",
             "caption": "ダナン店",
             "name":"ダナン",
-            "link": "/da-nang/room"
+            "link": "/da-nang/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787352/AzumayaWeb/Rotenburo/RTBR_TVL1_fv00lo.jpg",
            "caption": "タイバンルン１号店",
             "name":"ホーチミン",
-            "link": "/thai-van-lung-1-detail/room"
+            "link": "/thai-van-lung-1-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787343/AzumayaWeb/Rotenburo/RTBR_HBT1_seeimp.jpg",
             "caption": "ハイバーチュン１号店",
             "name":"ハノイ",
-            "link": "/hai-ba-trung-detail/room"
+            "link": "/hai-ba-trung-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787359/AzumayaWeb/Rotenburo/RTBR_LL_gk9ute.jpg",
             "caption": "リンラン店",
             "name":"ハノイ",
-            "link": "/linh-lang-detail/room"
+            "link": "/linh-lang-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787356/AzumayaWeb/Rotenburo/RTBR_KM3_m9iq0n.png",
             "caption": "キンマー 3号店",
             "name":"ハノイ",
-            "link": "kim-ma-3-detail/room"
+            "link": "kim-ma-3-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787354/AzumayaWeb/Rotenburo/RTBR_LTT_t4rpue.jpg",
             "caption": "レタントン店",
             "name":"ホーチミン",
-            "link": "/le-thanh-ton-detail/room"
+            "link": "/le-thanh-ton-detail/room/"
         },
         {
             "image": "https://res.cloudinary.com/dtdfsaaei/image/upload/v1711787353/AzumayaWeb/Rotenburo/RTBR_TVL2_zmyz4b.jpg",
             "caption": "タイバンルン２号店",
             "name":"ホーチミン",
-            "link": "/thai-van-lung-2-detail/room"
+            "link": "/thai-van-lung-2-detail/room/"
         }
         
     ],

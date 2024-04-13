@@ -176,13 +176,13 @@ useEffect(() => {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to="/hotel-hn">
+                <Link className="breadcrumb__title" to="/hotel-hn/">
                   {t("header.hn")}
                 </Link>
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title" to = "/hotel-hn/room">
+                <Link className="breadcrumb__title" to = "/hotel-hn/room/">
                   {t("branch.hbt1")}
                 </Link>
               </li>
@@ -197,22 +197,22 @@ useEffect(() => {
           style={{ justifyContent: "left", padding: "10px", textAlign:"justify" }}
         >
           <li className="service__location service__active col-md-12 col-lg-3 col-xl-3">
-            <a href="/hai-ba-trung-detail/room" className="location_link">
+            <a href="/hai-ba-trung-detail/room/" className="location_link">
               {t(branchName.hbt1)}
             </a>
           </li>
           <li className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/kim-ma-2-detail/room" className="location_link">
+            <a href="/kim-ma-2-detail/room/" className="location_link">
               {t(branchName.km2)}
             </a>
           </li>
           <li className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/kim-ma-3-detail/room" className="location_link">
+            <a href="/kim-ma-3-detail/room/" className="location_link">
               {t(branchName.km3)}
             </a>
           </li>
           <li className="service__location col-md-12 col-lg-3 col-xl-3">
-            <a href="/linh-lang-detail/room" className="location_link">
+            <a href="/linh-lang-detail/room/" className="location_link">
               {t(branchName.ll)}
             </a>
           </li>

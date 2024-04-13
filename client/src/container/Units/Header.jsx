@@ -306,12 +306,12 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/news">
+                      <Link className="header__navbar-link-2" to="/news/">
                         {t("header.news")}
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-hcm">
+                      <Link className="header__navbar-link-2" to="/hotel-hcm/">
                         {t("header.hcm")}
                       </Link>
                       <ul className="header__navbar-item-list" style={{width:200}}>
@@ -325,7 +325,7 @@ function Header() {
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-hn">
+                      <Link className="header__navbar-link-2" to="/hotel-hn/">
                         {t("header.hn")}
                       </Link>
                       <ul className="header__navbar-item-list" style={{width:200}}>
@@ -339,7 +339,7 @@ function Header() {
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-dn">
+                      <Link className="header__navbar-link-2" to="/hotel-dn/">
                         {t("header.dn")}
                       </Link>
                       <ul className="header__navbar-item-list" style={{width:200}}>
@@ -353,7 +353,7 @@ function Header() {
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-hp">
+                      <Link className="header__navbar-link-2" to="/hotel-hp/">
                         {t("header.hp")}
                       </Link>
                       <ul className="header__navbar-item-list" style={{width:200}}>
@@ -370,7 +370,7 @@ function Header() {
                     {/* <Tab className="header__navbar-item">
                             <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></Tab> */}
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/feature">
+                      <Link className="header__navbar-link-2" to="/feature/">
                         {t("header.feature")}
                       </Link>
                       <ul className="header__navbar-item-list">
@@ -386,7 +386,7 @@ function Header() {
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/service">
+                      <Link className="header__navbar-link-2" to="/service/">
                         {t("header.service")}
                       </Link>
                       <ul className="header__navbar-item-list" style={{width: 240}}>
@@ -400,17 +400,17 @@ function Header() {
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" style={{width:140}} to="/contract">
+                      <Link className="header__navbar-link-2" style={{width:140}} to="/contract/">
                         {t("header.contract")}
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/reservation">
+                      <Link className="header__navbar-link-2" to="/reservation/">
                         {t("header.reservation")}
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/q&a">
+                      <Link className="header__navbar-link-2" to="/q&a/">
                         {t("header.policies")}
                       </Link>
                     </Tab>

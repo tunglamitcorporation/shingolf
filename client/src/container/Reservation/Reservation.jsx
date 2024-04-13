@@ -737,7 +737,7 @@ function Reservation({token}) {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link to = '/reservation' className="breadcrumb__title">
+                <Link to = '/reservation/' className="breadcrumb__title">
                   {t("reservation.title")}
                 </Link>
               </li>

@@ -37,7 +37,7 @@ export default function Policies(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                       <Link className ="breadcrumb__title" to = '/q&a'>{t('header.policies')}</Link>
+                                       <Link className ="breadcrumb__title" to = '/q&a/'>{t('header.policies')}</Link>
                                 </li>
                        </ul>
                        </div>
