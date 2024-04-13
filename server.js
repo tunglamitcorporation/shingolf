@@ -77,7 +77,7 @@ app.get('*', function(req, res) {
     xTitle, 
     xDescription,
     keywords
-    if(req.url === '/hotel-hn'){
+    if(req.url === '/hotel-hn/'){
         title = 'Hotel HN - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Information on the Ha noi Branch of Azumaya Hotel Vietnam. We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
         canonical = 'http://azumayavietnam/hotel-hn/'
@@ -94,7 +94,7 @@ app.get('*', function(req, res) {
         xTitle = 'Hotel HN - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Information on the Ha noi Branch of Azumaya Hotel Vietnam. We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
 
-    }else if(req.url === '/hotel-hcm'){
+    }else if(req.url === '/hotel-hcm/'){
         title = 'Hotel HCM - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Information on the Ho Chi Minh Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
         canonical = 'http://azumayavietnam/hotel-hcm/',
@@ -111,7 +111,7 @@ app.get('*', function(req, res) {
         xTitle = 'Hotel HCM - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Information on the Ho Chi Minh Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
     }
-    else if(req.url === '/hotel-dn'){
+    else if(req.url === '/hotel-dn/'){
         title = 'Hotel DN - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Information on the Ho Chi Minh Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
         canonical = 'http://azumayavietnam/hotel-dn/',
@@ -128,7 +128,7 @@ app.get('*', function(req, res) {
         xTitle = 'Hotel DN - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Information on the Da Nang Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
     }
-    else if(req.url === '/hotel-hp'){
+    else if(req.url === '/hotel-hp/'){
         title = 'Hotel HP - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Information on the Hai Phong Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
         canonical = 'http://azumayavietnam/hotel-hp/',
@@ -145,7 +145,7 @@ app.get('*', function(req, res) {
         xTitle = 'Hotel HP - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Information on the Hai Phong Branch of Azumaya Hotel Vietnam.We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No tips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease.'
     }
-    else if(req.url === '/hai-ba-trung-detail/room'){
+    else if(req.url === '/hai-ba-trung-detail/room/'){
         title = 'Hai Ba Trung Detail - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town of Hai Ba Trung area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/hai-ba-trung-detail/room/',
@@ -162,7 +162,7 @@ app.get('*', function(req, res) {
         xTitle = 'Hai Ba Trung Detail - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town of Hai Ba Trung area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/kim-ma-2-detail/room'){
+    else if(req.url === '/kim-ma-2-detail/room/'){
         title = 'Kim Ma 2 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town of Hai Ba Trung area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/kim-ma-2-detail/room/',
@@ -179,7 +179,7 @@ app.get('*', function(req, res) {
         xTitle = 'Kim Ma 2 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town Ba Dinh area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/kim-ma-3-detail/room'){
+    else if(req.url === '/kim-ma-3-detail/room/'){
         title = 'Kim Ma 3 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town Ba Dinh area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/kim-ma-3-detail/room/',
@@ -196,7 +196,7 @@ app.get('*', function(req, res) {
         xTitle = 'Kim Ma 3 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town Ba Dinh area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/linh-lang-detail/room'){
+    else if(req.url === '/linh-lang-detail/room/'){
         title = 'Linh Lang - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town Ba Dinh area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/linh-lang-detail/room/',
@@ -213,7 +213,7 @@ app.get('*', function(req, res) {
         xTitle = 'Linh Lang - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town Ba Dinh area and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/le-thanh-ton-detail/room'){
+    else if(req.url === '/le-thanh-ton-detail/room/'){
         title = 'Le Thanh Ton - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/le-thanh-ton-detail/room/',
@@ -230,7 +230,7 @@ app.get('*', function(req, res) {
         xTitle = 'Le Thanh Ton - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/thai-van-lung-1-detail/room'){
+    else if(req.url === '/thai-van-lung-1-detail/room/'){
         title = 'Thai Van Lung 1 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/thai-van-lung-1-detail/room/',
@@ -247,7 +247,7 @@ app.get('*', function(req, res) {
         xTitle = 'Thai Van Lung 1 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/thai-van-lung-2-detail/room'){
+    else if(req.url === '/thai-van-lung-2-detail/room/'){
         title = 'Thai Van Lung 2 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/thai-van-lung-2-detail/room/',
@@ -264,7 +264,7 @@ app.get('*', function(req, res) {
         xTitle = 'Thai Van Lung 2 - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/annex-detail/room'){
+    else if(req.url === '/annex-detail/room/'){
         title = 'Azumaya Annex - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
         canonical = 'http://azumayavietnam/annex-detail/room/',
@@ -281,7 +281,7 @@ app.get('*', function(req, res) {
         xTitle = 'Azumaya Annex - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We are located in the Japanese town, in the center of Ho Chi Minh city and there are many Japanese restaurant, Karaoke Lounge, Bar. Since it is accessible and convenient to go anyplace, it is very popular area for many Japanese business travelers and Japanese workers.'
     }
-    else if(req.url === '/news'){
+    else if(req.url === '/news/'){
         title = 'News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Explore the world of Azumaya Hotel through the latest news and unique articles about travel, cuisine, and outstanding experiences at top destinations. Share captivating stories about lifestyle, local culture, and the amazing things awaiting you at Azumaya Hotel.'
         canonical = 'http://azumayavietnam/news/',
@@ -298,7 +298,7 @@ app.get('*', function(req, res) {
         xTitle = 'News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Explore the world of Azumaya Hotel through the latest news and unique articles about travel, cuisine, and outstanding experiences at top destinations. Share captivating stories about lifestyle, local culture, and the amazing things awaiting you at Azumaya Hotel.'
     }
-    else if(req.url === '/service'){
+    else if(req.url === '/service/'){
         title = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath'
         canonical = 'http://azumayavietnam/service/',
@@ -315,7 +315,7 @@ app.get('*', function(req, res) {
         xTitle = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath'
     }
-    else if(req.url === '/feature'){
+    else if(req.url === '/feature/'){
         title = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No chips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease. We would like to introduce you to the greatest charm of Azumaya.'
         canonical = 'http://azumayavietnam/feature/',
@@ -332,7 +332,7 @@ app.get('*', function(req, res) {
         xTitle = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No chips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease. We would like to introduce you to the greatest charm of Azumaya.'
     }
-    else if(req.url === '/reservation'){
+    else if(req.url === '/reservation/'){
         title = 'Reservation - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'The Azumaya Hotel welcomes business travelers with comfortable accommodations and modern amenities tailored to their needs. Enjoy a relaxing stay with our spacious rooms, complimentary Wi-Fi, and convenient location near major business districts. Book your reservation today for a seamless travel experience.'
         canonical = 'http://azumayavietnam/reservation/',
@@ -349,7 +349,7 @@ app.get('*', function(req, res) {
         xTitle = 'Reservation - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'The Azumaya Hotel welcomes business travelers with comfortable accommodations and modern amenities tailored to their needs. Enjoy a relaxing stay with our spacious rooms, complimentary Wi-Fi, and convenient location near major business districts. Book your reservation today for a seamless travel experience.'
     }
-    else if(req.url === '/contract'){
+    else if(req.url === '/contract/'){
         title = 'Contract - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Azumaya Hotel accepts a corporate contract for staying at a special price for companies that frequently make business trips to Southeast Asia. Please consider this opportunity.'
         canonical = 'http://azumayavietnam/contract/',
@@ -366,7 +366,7 @@ app.get('*', function(req, res) {
         xTitle = 'Contract - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Azumaya Hotel accepts a corporate contract for staying at a special price for companies that frequently make business trips to Southeast Asia. Please consider this opportunity.'
     }
-    else if(req.url === '/q&a'){
+    else if(req.url === '/q&a/'){
         title = 'Q&A - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         description = 'Azumaya Hotel accepts a corporate Q&A for staying at a special price for companies that frequently make business trips to Southeast Asia. Please consider this opportunity.'
         canonical = 'http://azumayavietnam/q&a/',
