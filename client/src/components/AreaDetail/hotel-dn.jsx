@@ -1,4 +1,6 @@
 import Booking from "../../container/Units/Booking"
+import BookingRoom from "../../container/BookingRoom/BookingRoom";
+import { useState } from "react";
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next";
 import {format, parse} from "date-fns"
@@ -14,6 +16,8 @@ export default function HotelDN({news}){
     const homeNews = news.slice(0,7)
     const dnArea = t('dn-branch.slider', {returnObjects: true})
     const AutoPlaySlider =  withAutoplay(AwesomeSlider)
+    const [selectedCity, setSelectedCity] = useState('hotel-dn');
+    const [selectedBranch, setSelectedBranch] = useState('da-nang');
     const a = t("header.dn")
     const b = t("header.title")
     const c = a + " | "+ b
@@ -41,7 +45,12 @@ export default function HotelDN({news}){
       </AutoPlaySlider>
       </div>
             <div className = 'is-sticky'>
-                <Booking />
+            <BookingRoom 
+                selectedCity={selectedCity}
+                selectedBranch={selectedBranch}
+                setSelectedCity={setSelectedCity}
+                setSelectedBranch={setSelectedBranch}
+                />
             </div>
                 <div className="container">
                     <div className="row">
@@ -105,7 +114,7 @@ export default function HotelDN({news}){
                   const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
                   const formattedDate = format(parsedDate, 'MMM do yyyy')
                   const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
-               console.log(formattedDate);
+              //  console.log(formattedDate);
                if (article.allBranch == true)
                {
                 return (

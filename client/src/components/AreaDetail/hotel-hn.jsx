@@ -1,5 +1,8 @@
 import Booking from "../../container/Units/Booking";
+import BookingRoom from "../../container/BookingRoom/BookingRoom";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import { useTranslation } from "react-i18next";
 import { format, parse } from "date-fns";
 import AwesomeSlider from 'react-awesome-slider';
@@ -12,6 +15,8 @@ export default function HotelHN({ news }) {
   const homeNews = news.slice(0,6);
   const HanoiDetail = t("hn-branch.branch", { returnObjects: true });
   const hnArea = t('hn-branch.slider', {returnObjects: true})
+  const [selectedCity, setSelectedCity] = useState('hotel-hn');
+  const [selectedBranch, setSelectedBranch] = useState('hai-ba-trung-detail');
   const a = t("header.hn")
     const b = t("header.title")
     const c = a + " | "+ b
@@ -41,7 +46,12 @@ export default function HotelHN({ news }) {
       </AutoPlaySlider>
       </div>
       <div className="is-sticky">
-        <Booking />
+      <BookingRoom 
+                selectedCity={selectedCity}
+                selectedBranch={selectedBranch}
+                setSelectedCity={setSelectedCity}
+                setSelectedBranch={setSelectedBranch}
+                />
       </div>
       <div className="container">
         <div className="row">

@@ -1,4 +1,6 @@
 import Booking from "../../container/Units/Booking";
+import BookingRoom from "../../container/BookingRoom/BookingRoom";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {format, parse} from "date-fns"
@@ -18,6 +20,8 @@ export default function HotelHP({news}) {
   const b = t("header.title")
   const c = a + " | "+ b
   const AutoPlaySlider =  withAutoplay(AwesomeSlider)
+  const [selectedCity, setSelectedCity] = useState('hotel-hp');
+  const [selectedBranch, setSelectedBranch] = useState('hai-phong');
 
   return (
     <div>
@@ -44,7 +48,12 @@ export default function HotelHP({news}) {
       </AutoPlaySlider>
       </div>
       <div className="is-sticky">
-        <Booking />
+      <BookingRoom 
+                selectedCity={selectedCity}
+                selectedBranch={selectedBranch}
+                setSelectedCity={setSelectedCity}
+                setSelectedBranch={setSelectedBranch}
+                />
       </div>
       <div className="container">
         <div className="row">
