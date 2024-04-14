@@ -117,7 +117,7 @@ export default function HotelHN({ news }) {
                     const [all, month, day, suffix, year] = formattedDate.match(
                       /(\w+) (\d+)(\w+) (\d+)/
                     );
-                    console.log(formattedDate);
+                    // console.log(formattedDate);
                     if (article.allBranch == true) {
                       return (
                         <div className="row">

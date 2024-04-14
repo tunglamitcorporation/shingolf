@@ -72,7 +72,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/news"
+              to="/news/"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}
@@ -80,7 +80,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/q&a"
+              to="/q&a/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -89,7 +89,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/hotel-hn"
+              to="/hotel-hn/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -98,7 +98,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/hotel-hcm"
+              to="/hotel-hcm/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -116,7 +116,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/hotel-hp"
+              to="/hotel-hp/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -125,7 +125,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/reservation"
+              to="/reservation/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -134,7 +134,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/feature"
+              to="/feature/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -143,7 +143,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/service"
+              to="/service/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -161,7 +161,7 @@ function Header() {
           </li> */}
           <li className="header__mobile-navbar-item">
             <Link
-              to="/contract"
+              to="/contract/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >

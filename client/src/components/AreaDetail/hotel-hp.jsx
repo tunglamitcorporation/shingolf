@@ -114,7 +114,7 @@ export default function HotelHP({news}) {
                   const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
                   const formattedDate = format(parsedDate, 'MMM do yyyy')
                   const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
-               console.log(formattedDate);
+              //  console.log(formattedDate);
                if (article.allBranch == true)
                {
                 return (

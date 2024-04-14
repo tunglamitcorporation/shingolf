@@ -39,14 +39,14 @@ import translationVIE from './JSON/vie.json'
 function NewRouter(props) {
     const {news} = props;
     const { i18n } = useTranslation();
-    const language = window.location.pathname.split('/')[1];
+    // const language = window.location.pathname.split('/')[1];
     
-    useEffect(() => {
-        console.log("Language:", language); // Check if language is correctly extracted
-        i18n.changeLanguage(language)
-          .then(() => console.log("Language changed successfully:", i18n.language))
-          .catch(error => console.error("Error changing language:", error));
-      }, [language, i18n]);
+    // useEffect(() => {
+    //     console.log("Language:", language); // Check if language is correctly extracted
+    //     i18n.changeLanguage(language)
+    //       .then(() => console.log("Language changed successfully:", i18n.language))
+    //       .catch(error => console.error("Error changing language:", error));
+    //   }, [language, i18n]);
     
     return (
         <section>
