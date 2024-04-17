@@ -1287,7 +1287,7 @@
             "sizeTitle": "Size",
             "bedTitle": "Bed",
             "install": "Installation",
-            "in1": "Windows: no view",
+            "in1": "Outside Window",
             "in2": "Bathtub",
             "in3": "LCD TV 50 inches",
             "in4": "Toilet with bidet function",
@@ -3493,29 +3493,37 @@
         "pay-method": "Payment Method:",
         "method": [
             {
+                "value": "By cash at counter (VND/USD/JPY)",
                 "name": "By cash at counter (VND/USD/JPY)"
             },
             {
+                "value": "By credit at counter (VND only)",
                 "name": "By credit at counter (VND only)"
             },
             {
+                "value": "By company transfer after check out",
                 "name": "By company transfer before check in"
             },
             {
+                "value": "Others",
                 "name": "Others"
             }
         ],
         "method2": [
             {
+                "value": "By cash at counter (VND/USD/JPY)",
                 "name": "By cash at counter (VND/USD/JPY)"
             },
             {
+                "value": "By credit at counter (VND only)",
                 "name": "By credit at counter (VND only)"
             },
             {
+                "value": "By company transfer after check out",
                 "name": "By company transfer after check out"
             },
             {
+                "value": "Others",
                 "name": "Others"
             }
         ],
@@ -4017,7 +4025,7 @@
         "close":"Close",
         "reserve":"Reserve Now",
         "promo_title":"Update: Online Massage Booking Now Available at Azumaya Hotel!",
-        "promo_content":"We're thrilled to introduce our latest enhancement: the ability to reserve your massage therapy sessions directly through our website! No more hassle of waiting in queues or navigating phone calls. With just a few clicks, you can secure your spot for a rejuvenating massage experience. \n\nAzumaya Hotel is dedicated to providing you with the utmost comfort and relaxation. \n\nDon't miss out on this opportunity to pamper yourself. Take advantage of our convenient online booking system today at Azumaya Hotel!"
+        "promo_content":"Our massage service can be booked online through the Azumaya Hotel website. \nNo more waiting, you can make a reservation in advance. \nWith a few simple clicks and information input, you can book our hotel massage service. Please use it."
         
     },
     "error":{

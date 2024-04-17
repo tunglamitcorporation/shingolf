@@ -30,23 +30,18 @@ function Header() {
     useEffect(() => {
       const handleScroll = () => {
         const position = window.scrollY;
-        // You can define your conditions for changing the background color here
         if (position > 100) {
-          setBackgroundColor('#482979'); // Change to whatever color you want
+          setBackgroundColor('#482979'); 
         } else {
-          setBackgroundColor('transparent'); // Change to default color
+          setBackgroundColor('transparent'); 
         }
       };
-  
-      // Add scroll event listener when component mounts
+
       window.addEventListener('scroll', handleScroll);
-  
-      // Clean up the event listener when component unmounts
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-     // Empty dependency array ensures the effect runs only once
   const toggleHeader = () => {
       setIsOpen(!isOpen)
   }
@@ -366,7 +361,11 @@ function Header() {
                         ))}
                         </ul>
                     </Tab>
-
+                    <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" style={{width:130}} to="http://azumayacambodia.com/">
+                        {t("header.cambodia")}
+                      </Link>
+                    </Tab>
                     {/* <Tab className="header__navbar-item">
                             <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></Tab> */}
                     <Tab className="header__navbar-item">
@@ -393,14 +392,14 @@ function Header() {
                         {service.map((item)=>(
                           <li className = "header__navbar-sub-link" >
                           <Link 
-                          to ={item.link}>{item.name}
+                          to = {item.link}>{item.name}
                           </Link>
                             </li>
                         ))}
                         </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" style={{width:140}} to="/contract/">
+                      <Link className="header__navbar-link-2" to="/contract/">
                         {t("header.contract")}
                       </Link>
                     </Tab>
@@ -412,11 +411,6 @@ function Header() {
                     <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/q&a/">
                         {t("header.policies")}
-                      </Link>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" style={{width:130}} to="http://azumayacambodia.com/">
-                        {t("header.cambodia")}
                       </Link>
                     </Tab>
                   </TabList>

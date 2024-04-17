@@ -8,7 +8,7 @@ import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-function Reservation({token}) {
+function Reservation({token, deviceType}) {
   const { t, i18n } = useTranslation();
   const language = i18n.language
   useEffect(() => {
@@ -50,11 +50,11 @@ function Reservation({token}) {
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
   const [guestInformation, setGuestInformation] = useState({
-    guest1: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', booker:'Same as person who will stay',bookerName:'', email:'', phone:'', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
-    guest2: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
-    guest3: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
-    guest4: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
-    guest5: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:''},
+    guest1: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', booker:'Same as person who will stay',bookerName:'', email:'', phone:'', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
+    guest2: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
+    guest3: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
+    guest4: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
+    guest5: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
   })
   console.log(guestInformation);
   const [specialRequest, setSpecialRequest] = useState('');
@@ -107,7 +107,7 @@ function Reservation({token}) {
       newTabs.push(`Room ${i}`);
     }
     setTabs(newTabs);
-    setActiveTab(0); // Set active tab to the first tab
+    setActiveTab(0); 
   };
   const handleSelectChange = (e) => {
     setRoomAmount(e.target.value);
@@ -409,7 +409,12 @@ function Reservation({token}) {
     } else {
       errors.selectedBranch = ''
     }
-
+    if (selectedRoom == t('booking.room_placeholder')){
+      errors.selectedRoom = 'required';
+      isVaLid = false
+    } else {
+      errors.selectedRoom= ''
+    }
     if (!startDate) {
       errors.startDate = 'required';
       isVaLid = false
@@ -434,53 +439,165 @@ function Reservation({token}) {
       isVaLid = false
 
     } 
+    //GUEST 1
     if (!guestInformation.guest1.familyName) {
       errors.familyName = 'required';
       isVaLid = false
-
     } 
     if (!guestInformation.guest1.givenName ) {
       errors.givenName = 'required';
       isVaLid = false
-
-    } 
-    if (!guestInformation.guest1.gender) {
-      errors.gender = 'required';
-      isVaLid = false
-
     } 
     if (guestInformation.guest1.day === "Day") {
       errors.selectedDay = 'required';
       isVaLid = false
-
     } 
     if (guestInformation.guest1.month === "Month") {
       errors.selectedMonth = 'required';
       isVaLid = false
-
     } 
     if (guestInformation.guest1.year === "Year") {
       errors.selectedYear = 'required';
       isVaLid = false
-
+    } 
+    if (!guestInformation.guest1.secondFamilyName) {
+      errors.secondFamilyName = 'required';
+      isVaLid = false
+    } 
+    if (!guestInformation.guest1.secondGivenName) {
+      errors.secondGivenName = 'required';
+      isVaLid = false
     } 
     if (!guestInformation.guest1.email) {
       errors.email = 'required';
       isVaLid = false
-
     }  else if (!validateEmail(guestInformation.guest1.email)) {
       errors.email = 'Invalid email format';
       isVaLid = false
-
     }
     if (!guestInformation.guest1.phone) {
       errors.phone = 'required';
       isVaLid = false
-
     } 
-    setErrors(errors);
-    return isVaLid
-  }
+    //GUEST 2
+    if (!guestInformation.guest2.familyName) {
+      errors.familyName2 = 'required';
+      isVaLid = false
+    } 
+    if (!guestInformation.guest2.givenName ) {
+      errors.givenName2 = 'required';
+      isVaLid = false
+    } 
+    // if (guestInformation.guest2.day === "Day") {
+    //   errors.selectedDay2 = 'required';
+    //   isVaLid = false
+    // } 
+    // if (guestInformation.guest2.month === "Month") {
+    //   errors.selectedMonth2 = 'required';
+    //   isVaLid = false
+    // } 
+    // if (guestInformation.guest2.year === "Year") {
+    //   errors.selectedYear2 = 'required';
+    //   isVaLid = false
+    // } 
+    // if (!guestInformation.guest2.secondFamilyName) {
+    //   errors.secondFamilyName2 = 'required';
+    //   isVaLid = false
+    // } 
+    // if (!guestInformation.guest2.secondGivenName) {
+    //   errors.secondGivenName2 = 'required';
+    //   isVaLid = false
+    // } 
+//GUEST 3
+  if (!guestInformation.guest3.familyName) {
+    errors.familyName3 = 'required';
+    isVaLid = false
+  } 
+  if (!guestInformation.guest3.givenName ) {
+    errors.givenName3 = 'required';
+    isVaLid = false
+  } 
+  // if (guestInformation.guest3.day === "Day") {
+  //   errors.selectedDay3 = 'required';
+  //   isVaLid = false
+  // } 
+  // if (guestInformation.guest3.month === "Month") {
+  //   errors.selectedMonth3 = 'required';
+  //   isVaLid = false
+  // } 
+  // if (guestInformation.guest3.year === "Year") {
+  //   errors.selectedYear3 = 'required';
+  //   isVaLid = false
+  // } 
+  // if (!guestInformation.guest3.secondFamilyName) {
+  //   errors.secondFamilyName3 = 'required';
+  //   isVaLid = false
+  // } 
+  // if (!guestInformation.guest3.secondGivenName) {
+  //   errors.secondGivenName3 = 'required';
+  //   isVaLid = false
+  // } 
+//GUEST 4
+if (!guestInformation.guest4.familyName) {
+  errors.familyName4 = 'required';
+  isVaLid = false
+} 
+if (!guestInformation.guest4.givenName ) {
+  errors.givenName4 = 'required';
+  isVaLid = false
+} 
+// if (guestInformation.guest4.day === "Day") {
+//   errors.selectedDay4 = 'required';
+//   isVaLid = false
+// } 
+// if (guestInformation.guest4.month === "Month") {
+//   errors.selectedMonth4 = 'required';
+//   isVaLid = false
+// } 
+// if (guestInformation.guest4.year === "Year") {
+//   errors.selectedYear4 = 'required';
+//   isVaLid = false
+// } 
+// if (!guestInformation.guest4.secondFamilyName) {
+//   errors.secondFamilyName4 = 'required';
+//   isVaLid = false
+// } 
+// if (!guestInformation.guest4.secondGivenName) {
+//   errors.secondGivenName4 = 'required';
+//   isVaLid = false
+// } 
+//GUEST 5
+if (!guestInformation.guest5.familyName) {
+  errors.familyName5 = 'required';
+  isVaLid = false
+} 
+if (!guestInformation.guest5.givenName ) {
+  errors.givenName5 = 'required';
+  isVaLid = false
+} 
+// if (guestInformation.guest5.day === "Day") {
+//   errors.selectedDay5 = 'required';
+//   isVaLid = false
+// } 
+// if (guestInformation.guest5.month === "Month") {
+//   errors.selectedMonth5 = 'required';
+//   isVaLid = false
+// } 
+// if (guestInformation.guest5.year === "Year") {
+//   errors.selectedYear5 = 'required';
+//   isVaLid = false
+// } 
+// if (!guestInformation.guest5.secondFamilyName) {
+//   errors.secondFamilyName5 = 'required';
+//   isVaLid = false
+// } 
+// if (!guestInformation.guest5.secondGivenName) {
+//   errors.secondGivenName5 = 'required';
+//   isVaLid = false
+// } 
+  setErrors(errors);
+  return isVaLid
+}
   const handleSubmit = async(e) => {
     e.preventDefault();
 
@@ -524,16 +641,19 @@ function Reservation({token}) {
         earlyIn ,
         lateOut ,
         specialRequest,
-        language
+        language, 
+        deviceType
     }
-    console.log(dataObject);
+    
       if (validateForm()) {
         const token= "73344833-5b52-4403-9255-695907647688"
         const source = await sendReservationRequest(dataObject, token)
         navigate(`/thank-you/${cityParam}`)
+        console.log(dataObject);
       } else {
-       alert(`Please ensure that all required fields are completed`)
-         }
+       alert(`Please ensure that all required fields are completed 
+
+If you make reservation from 2 rooms or more, please ensure that all required fields are completed in all rooms`)}
       }  
   function DayPicker({guest,id}) {
     const minDay = 1;
@@ -541,6 +661,7 @@ function Reservation({token}) {
     const birthDay = 0;
     const onHandleChange = (e) => {
       handleInputChange(`guest${id}`, 'day', e.target.value);
+      errors.selectedDay = ''
     };
     const options = [];
     for (let i = minDay; i <= maxDay; i++) {
@@ -571,6 +692,8 @@ function Reservation({token}) {
 
     const onHandleChange = (e) => {
       handleInputChange(`guest${id}`, 'month', e.target.value);
+      errors.selectedMonth = ''
+
     };
     const options = [];
     for (let i = minMonth; i <= maxMonth; i++) {
@@ -601,6 +724,8 @@ function Reservation({token}) {
 
     const onHandleChange = (e) => {
       handleInputChange(`guest${id}`, 'year', e.target.value);
+      errors.selectedYear = ''
+
     };
     const options = [];
     for (let i = minYear; i <= maxYear; i++) {
@@ -877,7 +1002,7 @@ function Reservation({token}) {
             </div>
             <select
               value={selectedRoom}
-              className={errors.selectedRoom? "col-md-4 form__content validate_failed" : "col-md-4 form__content" }
+              className={errors.selectedRoom ? "col-md-4 form__content validate_failed" : "col-md-4 form__content" }
               onChange={(e) => {
                 setSelectedRoom(e.target.value);
                 errors.selectedRoom = ''
@@ -1025,14 +1150,14 @@ function Reservation({token}) {
                  <span className="required__note">*</span>
                </div>
                <DayPicker guest={guestInformation.guest1.day} id={1}/>
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
+               {errors.selectedDay1 && 
+               <p className="col-md-1 error-message">{errors.selectedDay1}</p>}
                <MonthPicker guest={guestInformation.guest1.month} id={1} />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
+               {errors.selectedMonth1 && 
+               <p className="col-md-1 error-message">{errors.selectedMonth1}</p>}
                <YearPicker guest={guestInformation.guest1.year}  id={1} />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
+               {errors.selectedYear1 && 
+               <p className="col-md-1 error-message">{errors.selectedYear1}</p>}
              </div>
              {showButton >= 2 && (
                <div className="row">
@@ -1055,21 +1180,24 @@ function Reservation({token}) {
                          ref={inputRef}
                          placeholder={t("reservation.family-name")}
                          type="text"
-                         className="col-md-2 form__content"
+                         className={errors.secondFamilyName ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                          value={guestInformation.guest1.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
                          onChange={(e) => handleInputChange('guest1','secondFamilyName', e.target.value)}
                        />
-
+                        {errors.secondFamilyName && 
+                      <p className="col-md-1 error-message">{errors.secondFamilyName}</p>}
                        <input
                          ref={input2Ref}
                          placeholder={t("reservation.given-name")}
                          type="text"
-                         className=" col-md-2 form__content"
+                         className={errors.secondGivenName ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                          value={guestInformation.guest1.secondGivenName}
                          onClick={handleSecondGivenNameClick}
                          onChange={(e) => handleInputChange('guest1','secondGivenName', e.target.value)}
                        />
+                       {errors.secondGivenName && 
+                      <p className="col-md-1 error-message">{errors.secondGivenName}</p>}
                      </div>
                      <div className="row">
                        <div className="col-md-2 name__title">
@@ -1172,13 +1300,20 @@ function Reservation({token}) {
                  value={guestInformation.guest1.email}
                  className={errors.email? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  placeholder={t("reservation.email")}
-                 onChange={(e) => handleInputChange('guest1', 'email', e.target.value)}
+                 onChange={(e) => {
+                  handleInputChange('guest1', 'email', e.target.value)
+                  if(!validateEmail(e.target.value)){
+                    errors.email = 'Invalid email format'
+                  }else{
+                    errors.email = ''
+                  }
+                }}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.email-note")}
                </span>
                {errors.email && 
-               <p className="col-md-1 error-message">{errors.email}</p>}
+               <p className="col-md-1 error_message-email">{errors.email}</p>}
              </div>
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1196,7 +1331,10 @@ function Reservation({token}) {
                      event.preventDefault();
                    }
                  }}
-                 onChange={(e) => handleInputChange('guest1', 'phone', e.target.value)}
+                 onChange={(e) => {
+                  handleInputChange('guest1', 'phone', e.target.value)
+                  errors.phone = ''
+                }}
                />
                <span className="col-md-6 required__note">
                  {t("reservation.phone-note")}
@@ -1381,13 +1519,13 @@ function Reservation({token}) {
                  }}
                > {statusC == 0 &&
                  payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
+                 <option key={item.name} value={item.value}>
                    {item.name}
                  </option>
                ))} 
                {statusC == 1 && 
                  payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
+                   <option key={item.name} value={item.value}>
                      {item.name}
                    </option>
                  ))} 
@@ -1418,21 +1556,27 @@ function Reservation({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  value={guestInformation.guest2.familyName}
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest2','familyName', e.target.value)}
+                 className={errors.familyName2 ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                 onChange={(e) => {
+                  handleInputChange('guest2','familyName', e.target.value)
+                  errors.familyName2 = ''
+                }}
                />
-                {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
+                {errors.familyName2 && 
+               <p className="col-md-1 error-message">{errors.familyName2}</p>}
                <input
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
                  value={guestInformation.guest2.givenName}
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest2','givenName', e.target.value)}
+                 className={errors.givenName2 ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                 onChange={(e) => {
+                  handleInputChange('guest2','givenName', e.target.value)
+                  errors.givenName2 = ''
+                }}
                />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
+                {errors.givenName2 && 
+               <p className="col-md-1 error-message">{errors.givenName2}</p>}
                <span className="col-md-4 required__note">
                  {t("reservation.name-required")}
                </span>
@@ -1442,7 +1586,7 @@ function Reservation({token}) {
                  {t("reservation.gender")}
                  <span className="required__note">*</span>
                </div>
-               <div className={errors.gender? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
+               <div className={errors.gender2 ? "col-md-2 form__group validate_failed" : "col-md-2 form__group"}>
                  <input
                    type="radio"
                    name="gender"
@@ -1450,7 +1594,6 @@ function Reservation({token}) {
                    value="Mr."
                    checked={guestInformation.guest2.gender === "Mr."}
                    onChange={(e) => handleRadioChange('guest2', 'gender',e.target.value)}
-                   
                  />
                  <label htmlFor="gMale">{t("reservation.mr")}</label>
                </div>
@@ -1465,8 +1608,8 @@ function Reservation({token}) {
                  />
                  <label htmlFor="gFemale">{t("reservation.ms")}</label>
                </div>
-               {errors.gender && 
-               <p className="col-md-2 error-message">{errors.gender}</p>}
+               {errors.gender2 && 
+               <p className="col-md-2 error-message">{errors.gender2}</p>}
              </div>
              <div className="row">
                <div className="col-md-2 name__title">
@@ -1474,14 +1617,14 @@ function Reservation({token}) {
                  <span className="required__note">*</span>
                </div>
                <DayPicker guest={guestInformation.guest2.day} id={2}/>
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
+               {errors.selectedDay2 && 
+               <p className="col-md-1 error-message">{errors.selectedDay2}</p>}
                <MonthPicker guest={guestInformation.guest2.month} id={2} />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
+               {errors.selectedMonth2 && 
+               <p className="col-md-1 error-message">{errors.selectedMonth2}</p>}
                <YearPicker guest={guestInformation.guest2.year}  id={2} />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
+               {errors.selectedYear2 && 
+               <p className="col-md-1 error-message">{errors.selectedYear2}</p>}
              </div>
              {showButton >= 2 && (
                <div className="row">
@@ -1779,7 +1922,7 @@ function Reservation({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  value={guestInformation.guest3.familyName}
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                 className={errors.familyName3? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => handleInputChange('guest3','familyName', e.target.value)}
                />
                 {errors.familyName && 
@@ -1789,11 +1932,11 @@ function Reservation({token}) {
                  type="text"
                  name="gName"
                  value={guestInformation.guest3.givenName}
-                 className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                 className={errors.givenName3? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => handleInputChange('guest3','givenName', e.target.value)}
                />
-                {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
+                {errors.givenName3 && 
+               <p className="col-md-1 error-message">{errors.givenName3}</p>}
                <span className="col-md-4 required__note">
                  {t("reservation.name-required")}
                </span>
@@ -1835,14 +1978,14 @@ function Reservation({token}) {
                  <span className="required__note">*</span>
                </div>
                <DayPicker guest={guestInformation.guest3.day} id={3}/>
-               {errors.selectedDay && 
-               <p className="col-md-1 error-message">{errors.selectedDay}</p>}
+               {errors.selectedDay3 && 
+               <p className="col-md-1 error-message">{errors.selectedDay3}</p>}
                <MonthPicker guest={guestInformation.guest3.month} id={3} />
-               {errors.selectedMonth&& 
-               <p className="col-md-1 error-message">{errors.selectedMonth}</p>}
+               {errors.selectedMonth3 && 
+               <p className="col-md-1 error-message">{errors.selectedMonth3}</p>}
                <YearPicker guest={guestInformation.guest3.year}  id={3} />
-               {errors.selectedYear && 
-               <p className="col-md-1 error-message">{errors.selectedYear}</p>}
+               {errors.selectedYear3 && 
+               <p className="col-md-1 error-message">{errors.selectedYear3}</p>}
              </div>
              {showButton >= 2 && (
                <div className="row">
@@ -2141,21 +2284,21 @@ function Reservation({token}) {
                 placeholder={t("reservation.family-name")}
                 type="text"
                 value={guestInformation.guest4.familyName}
-                className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                className={errors.familyName4? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                 onChange={(e) => handleInputChange('guest4','familyName', e.target.value)}
               />
                {errors.familyName && 
-              <p className="col-md-1 error-message">{errors.familyName}</p>}
+              <p className="col-md-1 error-message">{errors.familyName4}</p>}
               <input
                 placeholder={t("reservation.given-name")}
                 type="text"
                 name="gName"
                 value={guestInformation.guest4.givenName}
-                className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                className={errors.givenName4? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                 onChange={(e) => handleInputChange('guest4','givenName', e.target.value)}
               />
                {errors.givenName && 
-              <p className="col-md-1 error-message">{errors.givenName}</p>}
+              <p className="col-md-1 error-message">{errors.givenName4}</p>}
               <span className="col-md-4 required__note">
                 {t("reservation.name-required")}
               </span>
@@ -2499,21 +2642,21 @@ function Reservation({token}) {
                  placeholder={t("reservation.family-name")}
                  type="text"
                  value={guestInformation.guest5.familyName}
-                 className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                 className={errors.familyName5? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => handleInputChange('guest5','familyName', e.target.value)}
                />
                 {errors.familyName && 
-               <p className="col-md-1 error-message">{errors.familyName}</p>}
+               <p className="col-md-1 error-message">{errors.familyName5}</p>}
                <input
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
-                 value={guestInformation.guest5.givenName}
+                 value={guestInformation.guest5.givenName5}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => handleInputChange('guest5','givenName', e.target.value)}
                />
                 {errors.givenName && 
-               <p className="col-md-1 error-message">{errors.givenName}</p>}
+               <p className="col-md-1 error-message">{errors.givenName5}</p>}
                <span className="col-md-4 required__note">
                  {t("reservation.name-required")}
                </span>

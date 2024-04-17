@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Home from "./container/Home/Home";
 import Feature from "./container/Feature/Feature";
 import Policies from "./container/Policies/Policies";
@@ -29,37 +29,47 @@ import HPRoomDetail from "./components/BranchDetail/hai-phong/room";
 import ThankYou from './container/Reservation/ThankYou';
 import VietnamService from "./container/Service/Service"
 import ErrorPage from './container/Units/ErrorPage';
-import Feedback from './container/Units/Feedback';
+// import Feedback from './container/Units/Feedback';
 import Reservation_backup from './container/Reservation/Reservation_backup'
 import ThankYouService from './container/Service/ThankYou';
 import ThankYouContract from './container/Contract/ThankYou';
-import translationEN from './JSON/en.json'
-import translationJA from './JSON/ja.json'
-import translationVIE from './JSON/vie.json'
+
 function NewRouter(props) {
     const {news} = props;
-    const { i18n } = useTranslation();
-    // const language = window.location.pathname.split('/')[1];
+    // const { i18n } = useTranslation();
+    const [deviceType, setDeviceType] = useState('');
+      useEffect(() => {
+        const handleResize = () => {
+          const width = window.innerWidth;
+          if (width >= 1024) {
+            setDeviceType('pc');
+          } else if (width >= 768) {
+            setDeviceType('tablet');
+          } else {
+            setDeviceType('phone');
+          }
+        };
     
-    // useEffect(() => {
-    //     console.log("Language:", language); // Check if language is correctly extracted
-    //     i18n.changeLanguage(language)
-    //       .then(() => console.log("Language changed successfully:", i18n.language))
-    //       .catch(error => console.error("Error changing language:", error));
-    //   }, [language, i18n]);
+        handleResize(); // Call the function on initial load
+        window.addEventListener('resize', handleResize); // Add event listener for resize
     
+        // Cleanup function
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []); // Empty dependency array ensures the effect runs 
     return (
         <section>
             <Routes>
                 <Route exact path='/' element={<Home news = {news} />} />
                 <Route path = "/service/" element={<VietnamService />} />
                 <Route path = "/q&a/" element={<Policies />} />
-                <Route path = "/reservation/" element={<Reservation />} />
+                <Route path = "/reservation/" element={<Reservation deviceType={deviceType} />} />
                 <Route path = "/feature/" element={<Feature/>} />
                 <Route path = "/feature/:featureID/" element={<Feature/>} />
                 <Route path = "/breakfast/" element={<VietnamService />} />
                 <Route path = "/rotenburo/" element={<VietnamService />} />
-                <Route path = "/massage/" element={<VietnamService />} />
+                <Route path = "/massage/" element={<VietnamService deviceType={deviceType} />} />
                 <Route path = "/contract/" element={<Contract />} />
                 <Route path = "/thank-you/:selectedCity/" element={<ThankYou />} />
                 <Route path = "/massage/thank-you/:selectedCity/" element={<ThankYouService />} />
@@ -82,6 +92,7 @@ function NewRouter(props) {
                 <Route path = "/da-nang/room/" element={<DNRoomDetail />} />
                 <Route path = "/hai-phong/room/" element={<HPRoomDetail />} />
                 <Route path = '*' element={<ErrorPage />} />
+                <Route path = '/dev-test' element={<Reservation_backup />} />
 
                 <Route exact path='/ja/' element={<Home news = {news} />} />
                 <Route path = "/ja/service/" element={<VietnamService />} />

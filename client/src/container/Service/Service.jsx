@@ -11,7 +11,7 @@ import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { format } from "date-fns";
 import { sendMassageRequest } from "../../api/reservation";
 
-export default function VietnamService() {
+export default function VietnamService({deviceType}) {
   const [branch, setBranch] = useState('')
   const [city, setCity] = useState('')
   const navigate = useNavigate()
@@ -100,7 +100,8 @@ export default function VietnamService() {
         email,
         branch,
         specialRequest,
-        language
+        language,
+        deviceType
       }
       console.log(dataObject);
       e.preventDefault()
@@ -408,7 +409,8 @@ export default function VietnamService() {
         email,
         branch,
         specialRequest,
-        language
+        language,
+        deviceType
       }
       console.log(dataObject);
       e.preventDefault()
@@ -717,7 +719,8 @@ export default function VietnamService() {
         email,
         branch,
         specialRequest,
-        language
+        language,
+        deviceType
       }
       console.log(dataObject);
       e.preventDefault()
@@ -1002,7 +1005,7 @@ export default function VietnamService() {
   const specialNote = t("service_roten.special_note", { returnObjects: true });
   const massageHN_hour = t("service_massage.table_ll1", { returnObjects: true  });
   const massageHN_price = t("service_massage.table_ll2", {returnObjects: true });
-  const massageDN_hour = t("service_massage.table_dn1", {returnObjects: true });7
+  const massageDN_hour = t("service_massage.table_dn1", {returnObjects: true });
   const massageDN_price = t("service_massage.table_dn2", {returnObjects: true});
   const massageHCM_hour = t("service_massage.table_tvl1", {returnObjects: true});
   const massageHCM_price = t("service_massage.table_tvl2", {returnObjects: true});

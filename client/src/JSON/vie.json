@@ -1229,7 +1229,7 @@
             "sizeTitle": "Kích thước",
             "bedTitle": "Giường",
             "install": "Trang thiết bị",
-            "in1": "Cửa sổ không nhìn ra ngoài",
+            "in1": "Cửa sổ nhìn ra ngoài",
             "in2": "Bồn tắm",
             "in3": "TV màn hình 50 inches",
             "in4": "Bồn cầu tự động",
@@ -3668,29 +3668,37 @@
         "pay-method": "Hình thức thanh toán:",
         "method": [
             {
+                "value": "By cash at counter (VND/USD/JPY)",
                 "name": "Thanh toán bằng tiền mặt tại quầy (VND/USD/JPY)"
             },
             {
+                "value": "By credit at counter (VND only)",
                 "name": "Thanh toán bằng thẻ tại quầy (chỉ tiền Việt)"
             },
             {
+                "value": "By company transfer after check out",
                 "name": "Thanh toán công ty chuyển khoản trước ngày nhận phòng"
             },
             {
+                "value": "Others",
                 "name": "Khác"
             }
         ],
         "method2": [
             {
+                "value": "By cash at counter (VND/USD/JPY)",
                 "name": "Thanh toán bằng tiền mặt tại quầy (VND/USD/JPY)"
             },
             {
+                "value": "By credit at counter (VND only)",
                 "name": "Thanh toán bằng thẻ tại quầy (chỉ tiền Việt)"
             },
             {
+                "value": "By company transfer after check out",
                 "name": "Thanh toán công ty chuyển khoản sau ngày trả phòng"
             },
             {
+                "value": "Others",
                 "name": "Khác"
             }
         ],
@@ -4190,8 +4198,8 @@
         "special":"Ghi chú",
         "close":"Đóng",
         "reserve":"Đặt Ngay",
-        "promo_title":"Đặt lịch Massage Trực Tuyến đã có mặt tại Khách sạn Azumaya!",
-        "promo_content":"Chúng tôi rất vui mừng giới thiệu cải tiến mới nhất của chúng tôi: khả năng đặt lịch dịch vụ massage trực tiếp thông qua trang web của chúng tôi! Không còn phải lo lắng về việc chờ đợi trong hàng hoặc gọi điện thoại nữa. Chỉ cần vài cú click, bạn có thể đảm bảo đặt lịch cho một buổi massage sảng khoái. \n\nKhách Sạn Azumaya cam kết mang lại cho bạn sự thoải mái và thư giãn tối đa. \n\nĐừng bỏ lỡ cơ hội này để thưởng cho bản thân. Hãy tận dụng hệ thống đặt lịch trực tuyến tiện lợi của chúng tôi ngay hôm nay tại Khách Sạn Azumaya!"
+        "promo_title":"Thông tin cập nhật: Đã có dịch vụ đặt chỗ massage trực tuyến tại khách sạn Azumaya!",
+        "promo_content":"Dịch vụ massage hiện có thể đặt trực tuyến thông qua trang web của Khách sạn Azumaya. \nQuý khách có thể đặt chỗ trước mà không phải chờ đợi. \nQua một vài cú nhấp chuột và nhập thông tin đơn giản, Quý khách có thể đặt dịch vụ massage. Xin hãy sử dụng."
     },
     "error": {
         "title": "Trang bạn đang tìm kiếm không tồn tại",
