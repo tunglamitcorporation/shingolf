@@ -147,7 +147,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                           class="button-57 call-btn mt-5"
                           role="button"
                         >
-                          <Link to = "/massage">
+                          <Link to = "/massage/">
                           <span style={{color:'#482979'}} class="text">
                             {t("service_massage.reserve")}
                           </span>

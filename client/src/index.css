@@ -922,7 +922,7 @@ code {
 }
 .footer{
   background-color: var(--dark--background--color);
-  /* margin-top: 60px; */
+  margin-top: 60px;
 }
 .footer__container{
   padding-top: 30px;
@@ -2664,6 +2664,15 @@ font-size: 1.2rem !important;
   padding-right: 5px;
   margin-top: 10px;
   font-size: 2rem !important  ;
+}
+.policies__header{
+  padding: 100px 0;
+}
+.reservation__content{
+  padding: 100px 0;
+}
+.service__header{
+  padding: 100px 0;
 }
 }
 /* tablet */
