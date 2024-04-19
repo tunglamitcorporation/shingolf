@@ -18,8 +18,8 @@ export default function HotelHN({ news }) {
   const [selectedCity, setSelectedCity] = useState('hotel-hn');
   const [selectedBranch, setSelectedBranch] = useState('hai-ba-trung-detail');
   const a = t("header.hn")
-    const b = t("header.title")
-    const c = a + " | "+ b
+  const b = t("header.title")
+  const c = a + " | "+ b
   const AutoPlaySlider =  withAutoplay(AwesomeSlider)
   return (
     <div>

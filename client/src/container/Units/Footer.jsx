@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 export default function Footer() {
     const {t} = useTranslation();
     const footer = t("footer.branch", {returnObjects: true})
@@ -38,6 +39,44 @@ export default function Footer() {
                     </div> 
                 </div>
             </div>
+        </div>
+        <div className="footer__container2">
+        <div className="container-fluid" >
+            <div className="row justify-content-center align-items-center">
+                <div className="col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                  <div className="content__feature-item m-0">
+                    <div className="content__feature-container m-0" style={{height: '200px'}}>
+                      <div
+                        className="content__feature-img"
+                        style={{background: 'url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/cambodia1_salltm.png) center center / cover no-repeat', height:'200px'}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                          to = 'http://azumayacambodia.com/'
+                      ></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                  <div className="content__feature-item m-0">
+                    <div className="content__feature-container m-0" style={{height: '200px'}}>
+                      <div
+                        className="content__feature-img"
+                        style={{background: 'url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1713502465/AzumayaWeb/myanmar_owbthq.jpg) center center / cover no-repeat', height:'200px'}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                          to = 'http://azumayamyanmar.com/'
+                      ></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
         <div className="footer__container3">
                     <div className="container">

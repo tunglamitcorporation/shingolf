@@ -460,14 +460,14 @@ function Reservation({token, deviceType}) {
       errors.selectedYear = 'required';
       isVaLid = false
     } 
-    if (!guestInformation.guest1.secondFamilyName) {
-      errors.secondFamilyName = 'required';
-      isVaLid = false
-    } 
-    if (!guestInformation.guest1.secondGivenName) {
-      errors.secondGivenName = 'required';
-      isVaLid = false
-    } 
+    // if (!guestInformation.guest1.secondFamilyName) {
+    //   errors.secondFamilyName = 'required';
+    //   isVaLid = false
+    // } 
+    // if (!guestInformation.guest1.secondGivenName) {
+    //   errors.secondGivenName = 'required';
+    //   isVaLid = false
+    // } 
     if (!guestInformation.guest1.email) {
       errors.email = 'required';
       isVaLid = false
@@ -480,14 +480,14 @@ function Reservation({token, deviceType}) {
       isVaLid = false
     } 
     //GUEST 2
-    if (!guestInformation.guest2.familyName) {
-      errors.familyName2 = 'required';
-      isVaLid = false
-    } 
-    if (!guestInformation.guest2.givenName ) {
-      errors.givenName2 = 'required';
-      isVaLid = false
-    } 
+    // if (!guestInformation.guest2.familyName) {
+    //   errors.familyName2 = 'required';
+    //   isVaLid = false
+    // } 
+    // if (!guestInformation.guest2.givenName ) {
+    //   errors.givenName2 = 'required';
+    //   isVaLid = false
+    // } 
     // if (guestInformation.guest2.day === "Day") {
     //   errors.selectedDay2 = 'required';
     //   isVaLid = false
@@ -509,14 +509,14 @@ function Reservation({token, deviceType}) {
     //   isVaLid = false
     // } 
 //GUEST 3
-  if (!guestInformation.guest3.familyName) {
-    errors.familyName3 = 'required';
-    isVaLid = false
-  } 
-  if (!guestInformation.guest3.givenName ) {
-    errors.givenName3 = 'required';
-    isVaLid = false
-  } 
+  // if (!guestInformation.guest3.familyName) {
+  //   errors.familyName3 = 'required';
+  //   isVaLid = false
+  // } 
+  // if (!guestInformation.guest3.givenName ) {
+  //   errors.givenName3 = 'required';
+  //   isVaLid = false
+  // } 
   // if (guestInformation.guest3.day === "Day") {
   //   errors.selectedDay3 = 'required';
   //   isVaLid = false
@@ -538,14 +538,14 @@ function Reservation({token, deviceType}) {
   //   isVaLid = false
   // } 
 //GUEST 4
-if (!guestInformation.guest4.familyName) {
-  errors.familyName4 = 'required';
-  isVaLid = false
-} 
-if (!guestInformation.guest4.givenName ) {
-  errors.givenName4 = 'required';
-  isVaLid = false
-} 
+// if (!guestInformation.guest4.familyName) {
+//   errors.familyName4 = 'required';
+//   isVaLid = false
+// } 
+// if (!guestInformation.guest4.givenName ) {
+//   errors.givenName4 = 'required';
+//   isVaLid = false
+// } 
 // if (guestInformation.guest4.day === "Day") {
 //   errors.selectedDay4 = 'required';
 //   isVaLid = false
@@ -567,14 +567,14 @@ if (!guestInformation.guest4.givenName ) {
 //   isVaLid = false
 // } 
 //GUEST 5
-if (!guestInformation.guest5.familyName) {
-  errors.familyName5 = 'required';
-  isVaLid = false
-} 
-if (!guestInformation.guest5.givenName ) {
-  errors.givenName5 = 'required';
-  isVaLid = false
-} 
+// if (!guestInformation.guest5.familyName) {
+//   errors.familyName5 = 'required';
+//   isVaLid = false
+// } 
+// if (!guestInformation.guest5.givenName ) {
+//   errors.givenName5 = 'required';
+//   isVaLid = false
+// } 
 // if (guestInformation.guest5.day === "Day") {
 //   errors.selectedDay5 = 'required';
 //   isVaLid = false
@@ -598,6 +598,7 @@ if (!guestInformation.guest5.givenName ) {
   setErrors(errors);
   return isVaLid
 }
+console.log(errors);
   const handleSubmit = async(e) => {
     e.preventDefault();
 
@@ -644,12 +645,12 @@ if (!guestInformation.guest5.givenName ) {
         language, 
         deviceType
     }
-    
+    console.log(dataObject);
       if (validateForm()) {
         const token= "73344833-5b52-4403-9255-695907647688"
         const source = await sendReservationRequest(dataObject, token)
         navigate(`/thank-you/${cityParam}`)
-        console.log(dataObject);
+        console.log(source);
       } else {
        alert(`Please ensure that all required fields are completed 
 
@@ -1180,24 +1181,24 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          ref={inputRef}
                          placeholder={t("reservation.family-name")}
                          type="text"
-                         className={errors.secondFamilyName ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                         className="col-md-2 form__content"
                          value={guestInformation.guest1.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
                          onChange={(e) => handleInputChange('guest1','secondFamilyName', e.target.value)}
                        />
-                        {errors.secondFamilyName && 
-                      <p className="col-md-1 error-message">{errors.secondFamilyName}</p>}
+                        {/* {errors.secondFamilyName && 
+                      <p className="col-md-1 error-message">{errors.secondFamilyName}</p>} */}
                        <input
                          ref={input2Ref}
                          placeholder={t("reservation.given-name")}
                          type="text"
-                         className={errors.secondGivenName ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
+                         className="col-md-2 form__content"
                          value={guestInformation.guest1.secondGivenName}
                          onClick={handleSecondGivenNameClick}
                          onChange={(e) => handleInputChange('guest1','secondGivenName', e.target.value)}
                        />
-                       {errors.secondGivenName && 
-                      <p className="col-md-1 error-message">{errors.secondGivenName}</p>}
+                       {/* {errors.secondGivenName && 
+                      <p className="col-md-1 error-message">{errors.secondGivenName}</p>} */}
                      </div>
                      <div className="row">
                        <div className="col-md-2 name__title">

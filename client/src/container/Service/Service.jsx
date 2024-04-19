@@ -956,7 +956,7 @@ export default function VietnamService({deviceType}) {
   const c = a + " | " + b
   const d = t("header.breakfast")
   const e = t("header.title")
-  const f = d + " | " + e
+  const f = d + " | " + e 
   const g = t("header.roten")
   const h = t("header.title")
   const i = g + " | " + h
@@ -964,19 +964,21 @@ export default function VietnamService({deviceType}) {
   const k = t("header.title")
   const l = j + " | " + k
   const [title, setTitle] = useState('')
+  const [pageTitle, setPageTitle] = useState('');
+  
   useEffect(() => {
     switch (location.pathname) {
-      case '/breakfast':
+      case '/breakfast/':
         setSelectedTab(0);
         setTitle(f)
         setPageTitle(d)
         break;
-      case '/rotenburo':
+      case '/rotenburo/':
         setSelectedTab(1);
         setTitle(i)
         setPageTitle(g)
         break;
-        case '/massage':
+        case '/massage/':
         setTitle(l)
         setSelectedTab(2);
         setPageTitle(j)
@@ -987,7 +989,8 @@ export default function VietnamService({deviceType}) {
         setPageTitle(a)
          
     }
-  }, [location]);
+  }, []);
+  console.log(pageTitle);
 
   const handleTabSelect = (index) => {
     setSelectedTab(index);
@@ -1014,7 +1017,7 @@ export default function VietnamService({deviceType}) {
   const [modalShow, setModalShow] = useState(false);
   const [modalShow1, setModalShow1] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
-  const [pageTitle, setPageTitle] = useState('');
+  
 
   return (
     <>

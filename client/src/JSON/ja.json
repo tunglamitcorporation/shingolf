@@ -1041,15 +1041,15 @@
         "service_name": [
             {
                 "name": "朝食",
-                "link": "/breakfast"
+                "link": "/breakfast/"
             },
             {
                 "name": "露天風呂",
-                "link": "/rotenburo"
+                "link": "/rotenburo/"
             },
             {
                 "name": "マッサージ",
-                "link": "/massage"
+                "link": "/massage/"
             }
         ],
         
@@ -1980,7 +1980,7 @@
             "id": 2,
             "branch_name": "Azumaya Linh Lang",
             "room_id": "d",
-            "name": "DELUXE ( NO VIEW )",
+            "name": "DELUXE",
             "size": "19",
             "sizeTitle": "広さ",
             "bedTitle": "ベットサイズ",

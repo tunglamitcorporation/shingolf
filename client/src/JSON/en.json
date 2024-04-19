@@ -830,15 +830,15 @@
             "service_name": [
                 {
                     "name": "Breakfast",
-                    "link": "/breakfast"
+                    "link": "/breakfast/"
                 },
                 {
                     "name": "Rotenburo",
-                    "link": "/rotenburo"
+                    "link": "/rotenburo/"
                 },
                 {
                     "name": "Massage",
-                    "link": "/massage"
+                    "link": "/massage/"
                 }
             ],
         "hcm-roten-title": "Open-air Bathtub (Rotenburo) are open daily as Public timing For men only (Visitor are also welcome)",
@@ -1943,7 +1943,7 @@
             "id": 2,
             "branch_name": "Azumaya Linh Lang",
             "room_id": "d",
-            "name": "DELUXE ( NO VIEW )",
+            "name": "DELUXE",
             "size": "19",
             "sizeTitle": "Size",
             "bedTitle": "Bed",

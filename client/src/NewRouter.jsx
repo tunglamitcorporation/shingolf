@@ -50,14 +50,14 @@ function NewRouter(props) {
           }
         };
     
-        handleResize(); // Call the function on initial load
-        window.addEventListener('resize', handleResize); // Add event listener for resize
+        handleResize(); 
+        window.addEventListener('resize', handleResize); 
     
         // Cleanup function
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-      }, []); // Empty dependency array ensures the effect runs 
+      }, []); 
     return (
         <section>
             <Routes>
@@ -92,7 +92,7 @@ function NewRouter(props) {
                 <Route path = "/da-nang/room/" element={<DNRoomDetail />} />
                 <Route path = "/hai-phong/room/" element={<HPRoomDetail />} />
                 <Route path = '*' element={<ErrorPage />} />
-                <Route path = '/dev-test' element={<Reservation_backup />} />
+                <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
 
                 <Route exact path='/ja/' element={<Home news = {news} />} />
                 <Route path = "/ja/service/" element={<VietnamService />} />

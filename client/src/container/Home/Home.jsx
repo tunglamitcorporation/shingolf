@@ -155,6 +155,11 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                           </Link>
                         </button>
               </div>
+              <img
+                      className="style-line col-md-2" style={{marginTop: '50px'}}
+                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      alt=""
+                    />
           </div>
         </div>
       <AnimatedOnScroll>

@@ -67,7 +67,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/news/"
+              to="/home/"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}
@@ -75,11 +75,12 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to="/q&a/"
               onClick={()=> setIsOpen(false)}
+              Link
+              to="/news/"
               className="header__mobile-navbar-link"
             >
-              {t("header.policies")}
+              {t("header.news")}
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -120,6 +121,15 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
+              to="http://azumayacambodia.com"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.cambodia")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
               to="/reservation/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
@@ -145,6 +155,33 @@ function Header() {
               {t("header.service")}
             </Link>
           </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/breakfast/"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.breakfast")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/rotenburo/"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.roten")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/massage/"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.massage")}
+            </Link>
+          </li>
           {/* <li className="header__mobile-navbar-item">
             <Link
               to="/Massage"
@@ -161,6 +198,15 @@ function Header() {
               className="header__mobile-navbar-link"
             >
               {t("header.contract")}
+            </Link>
+          </li>
+          <li className="header__mobile-navbar-item">
+            <Link
+              to="/q&a/"
+              onClick={()=> setIsOpen(false)}
+              className="header__mobile-navbar-link"
+            >
+              {t("header.policies")}
             </Link>
           </li>
         </ul>

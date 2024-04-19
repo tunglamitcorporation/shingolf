@@ -383,6 +383,57 @@ app.get('*', function(req, res) {
         xTitle = 'Q&A - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'This is the hotel overview page. We will solve short questions from the FAQ section. Please feel free to contact us for any other questions.'
     }
+    else if(req.url === '/breakfast/'){
+        title = 'Breakfast - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        description = 'Start your day right with breakfast at Azumaya Hotel. Fresh, delicious, and satisfying – the perfect way to begin your stay'
+        canonical = 'http://azumayavietnam/breakfast/',
+        next = 'http://azumayavietnam/breakfast/'
+        ogLocale
+        ogSiteName 
+        ogType = "website"
+        keywords = "Azumaya Breakfast 東屋"
+        ogTitle = 'Breakfast - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        ogDescription = 'Start your day right with breakfast at Azumaya Hotel. Fresh, delicious, and satisfying – the perfect way to begin your stay'
+        ogUrl = 'http://azumayavietnam/breakfast/'
+        ogImage = 'https://res.cloudinary.com/dtdfsaaei/image/upload/v1711850054/AzumayaWeb/BREAKFAST/BRFLTT_zhmkyf.jpg'
+        xCard = "summary"
+        xTitle = 'Breakfast - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        xDescription = 'Start your day right with breakfast at Azumaya Hotel. Fresh, delicious, and satisfying – the perfect way to begin your stay'
+    }
+    else if(req.url === '/rotenburo/'){
+        title = 'Rotenburo - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        description = "Experience relaxation at Azumaya Hotel's open-air bath. Enjoy the soothing waters and scenic views for a serene getaway."
+        canonical = 'http://azumayavietnam/rotenburo/',
+        next = 'http://azumayavietnam/rotenburo/'
+        ogLocale
+        ogSiteName 
+        ogType = "website"
+        keywords = "Azumaya Rotenburo 東屋"
+        ogTitle = 'Rotenburo - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        ogDescription = "Experience relaxation at Azumaya Hotel's open-air bath. Enjoy the soothing waters and scenic views for a serene getaway."
+        ogUrl = 'http://azumayavietnam/rotenburo/'
+        ogImage = 'https://res.cloudinary.com/dtdfsaaei/image/upload/v1708923672/AzumayaWeb/Rotenburo/rtbrdn3_rscz5x.jpg'
+        xCard = "summary"
+        xTitle = 'Rotenburo - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        xDescription = "Experience relaxation at Azumaya Hotel's open-air bath. Enjoy the soothing waters and scenic views for a serene getaway."
+    }
+    else if(req.url === '/massage/'){
+        title = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        description = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."
+        canonical = 'http://azumayavietnam/massage/',
+        next = 'http://azumayavietnam/massage/'
+        ogLocale
+        ogSiteName 
+        ogType = "website"
+        keywords = "Azumaya Massage 東屋"
+        ogTitle = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        ogDescription = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."
+        ogUrl = 'http://azumayavietnam/massage/'
+        ogImage = 'https://res.cloudinary.com/dtdfsaaei/image/upload/v1712810123/AzumayaWeb/massage-title_vjftlg.jpg'
+        xCard = "summary"
+        xTitle = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
+        xDescription = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."
+    }
 
 const filePath = path.resolve(__dirname, "client/build", "index.html")
 let htmlContent = fs.readFileSync(filePath, "utf8")
