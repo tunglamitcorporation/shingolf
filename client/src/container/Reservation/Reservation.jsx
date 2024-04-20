@@ -57,6 +57,8 @@ function Reservation({token, deviceType}) {
     guest5: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
   })
   console.log(guestInformation);
+  const regex = /^[A-Za-zÀ-Ỹà-ỹ\s]*$/; 
+  const [alertShown, setAlertShown] = useState(false);
   const [specialRequest, setSpecialRequest] = useState('');
   const [pickupTime, setPickupTime] = useState('');
   const [pickupNumber, setPickupNumber] = useState('');
@@ -1091,7 +1093,14 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  value={guestInformation.guest1.familyName}
                  className={errors.familyName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => {
-                   handleInputChange('guest1','familyName', e.target.value)
+                   const value = e.target.value
+                   if(regex.test(value)){
+                     handleInputChange('guest1','familyName', value)
+                     setAlertShown(false)
+                   }else if(!alertShown){
+                    alert('Please write in Alphabet')
+                    setAlertShown(true)
+                   }
                    errors.familyName = ''
                  }}
                />
@@ -1104,7 +1113,14 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  value={guestInformation.guest1.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => {
-                  handleInputChange('guest1','givenName', e.target.value)
+                  const value = e.target.value
+                   if(regex.test(value)){
+                      handleInputChange('guest1','givenName', value)
+                      setAlertShown(false)
+                   }else if (!alertShown){
+                    alert('Please write in Alphabet')
+                    setAlertShown(true)
+                   }
                   errors.givenName = ''
                  }}
                />
@@ -1184,7 +1200,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className="col-md-2 form__content"
                          value={guestInformation.guest1.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={(e) => handleInputChange('guest1','secondFamilyName', e.target.value)}
+                         onChange={(e) =>{
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest1','secondFamilyName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown) {
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondFamilyName = ''
+                         }}
                        />
                         {/* {errors.secondFamilyName && 
                       <p className="col-md-1 error-message">{errors.secondFamilyName}</p>} */}
@@ -1195,7 +1221,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className="col-md-2 form__content"
                          value={guestInformation.guest1.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={(e) => handleInputChange('guest1','secondGivenName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest1','secondGivenName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondGivenName = ''
+                         }}
                        />
                        {/* {errors.secondGivenName && 
                       <p className="col-md-1 error-message">{errors.secondGivenName}</p>} */}
@@ -1212,7 +1248,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                             value="Mr."
                             checked={guestInformation.guest1.secondGender === "Mr."}
                             onChange={(e) => handleRadioChange('guest1', 'secondGender', e.target.value)}
-                            
                           />
                           <label htmlFor="gMale2">{t("reservation.mr")}</label>
                         </div>
@@ -1288,7 +1323,16 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 className="booker-name form__content col-md-2"
                 value={guestInformation.guest1.bookerName}
                 placeholder={t("reservation.name")}
-                onChange={(e) => handleInputChange('guest1', 'bookerName', e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value
+                  if(regex.test(value)){
+                    handleInputChange('guest1','bookerName', value)
+                    setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                }}
               />
             </div>}
              <div className="row">
@@ -1323,9 +1367,9 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                </div>
                <input
                  type="text"
+                 maxLength={12}
                  value={guestInformation.guest1.phone}
                  className={errors.phone? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 id=""
                  placeholder={t("reservation.phone")}
                  onKeyPress={(event) => {
                    if (!/[0-9]/.test(event.key)) {
@@ -1559,7 +1603,14 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  value={guestInformation.guest2.familyName}
                  className={errors.familyName2 ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => {
-                  handleInputChange('guest2','familyName', e.target.value)
+                  const value = e.target.value
+                  if(regex.test(value)){
+                  handleInputChange('guest2','familyName', value)
+                  setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
                   errors.familyName2 = ''
                 }}
                />
@@ -1572,7 +1623,14 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  value={guestInformation.guest2.givenName}
                  className={errors.givenName2 ? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
                  onChange={(e) => {
-                  handleInputChange('guest2','givenName', e.target.value)
+                  const value = e.target.value
+                  if(regex.test(value)){
+                  handleInputChange('guest2','givenName', value)
+                  setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
                   errors.givenName2 = ''
                 }}
                />
@@ -1651,7 +1709,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className="col-md-2 form__content"
                          value={guestInformation.guest2.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={(e) => handleInputChange('guest2','secondFamilyName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest2','secondFamilyName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondFamilyName2 = ''
+                         }}
                        />
 
                        <input
@@ -1661,7 +1729,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className=" col-md-2 form__content"
                          value={guestInformation.guest2.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={(e) => handleInputChange('guest2','secondGivenName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest2','secondGivenName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondGivenName2 = ''
+                         }}
                        />
                      </div>
                      <div className="row">
@@ -1733,114 +1811,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
              </div>
-             {/* <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     handleInputChange('guest2', 'contract', e.target.value)
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     handleInputChange('guest2', 'contract', e.target.value)
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-               <div className="row">
-               <div className="col-md-2 name__title">{t("reservation.company")}</div>
-               <input
-                 ref={input4Ref}
-                 type="text"
-                 className="booker-name form__content col-md-4"
-                 placeholder={t("reservation.company")}
-                 value={guestInformation.guest2.company}
-                 onChange={handleChangeCompanyName2}
-               />
-               {searchCompany && guestInformation.guest2.company ?
-              //  <div className="row">
-              //  <div className="col-md-2 name__title"></div>
-               <ul
-               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-               className="form__content col-md-4">
-                {searchCompany.map((item)=> (
-                  <li onClick={() => handleChooseCompany2(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
-                ))}
-               </ul>
-              //  </div>
-               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-             }
-               {guestInformation.guest2.company  ?
-               <>
-               <div className="row">
-               <div className="col-md-2 name__title">Choice of Discount: </div>
-               <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-               <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount1"
-                value='Company have contract 5% OFF'
-                onChange={(e) => handleRadioChange('guest2', 'discount', e.target.value)}
-              />
-              <label  htmlFor="discount1">Company have contract 5% OFF</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount2"
-                value="Company have contract free laundry 120.000vnd/day"
-                onChange={(e) => handleRadioChange('guest2', 'discount', e.target.value)}
-              />
-                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount3"
-                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-                onChange={(e) => handleRadioChange('guest2', 'discount', e.target.value)}
-              />
-                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              </div>
-              </> : ""
-            } 
-            </div>} */}
              <div className="row">
                <div className="col-md-2 name__title">
                  {t("reservation.vat-invoice")}
@@ -1884,13 +1854,13 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
+                 <option key={item.name} value={item.value}>
                    {item.name}
                  </option>
                ))} 
                {statusC === 1 && 
                  payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
+                   <option key={item.name} value={item.value}>
                      {item.name}
                    </option>
                  ))} 
@@ -1924,7 +1894,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  type="text"
                  value={guestInformation.guest3.familyName}
                  className={errors.familyName3? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest3','familyName', e.target.value)}
+                 onChange={(e) => {
+                  const value = e.target.value
+                  if(regex.test(value)){
+                  handleInputChange('guest3','givenName', value)
+                  setAlertShown(false)
+                }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                    errors.familyName3 = ''
+                 }}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName}</p>}
@@ -1934,7 +1914,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  name="gName"
                  value={guestInformation.guest3.givenName}
                  className={errors.givenName3? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest3','givenName', e.target.value)}
+                 onChange={(e) => {
+                  const value = e.target.value
+                  if(regex.test(value)){
+                  handleInputChange('guest3','givenName', value)
+                  setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                  errors.givenName3 = ''
+                 }}
                />
                 {errors.givenName3 && 
                <p className="col-md-1 error-message">{errors.givenName3}</p>}
@@ -2012,7 +2002,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className="col-md-2 form__content"
                          value={guestInformation.guest3.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={(e) => handleInputChange('guest3','secondFamilyName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest3','secondFamilyName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondFamilyName3 = ''
+                         }}
                        />
 
                        <input
@@ -2022,7 +2022,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className=" col-md-2 form__content"
                          value={guestInformation.guest3.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={(e) => handleInputChange('guest3','secondGivenName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest3','secondGivenName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondGivenName3 = ''
+                         }}
                        />
                      </div>
                      <div className="row">
@@ -2037,7 +2047,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                             value="Mr."
                             checked={guestInformation.guest3.secondGender === "Mr."}
                             onChange={(e) => handleRadioChange('guest3', 'secondGender', e.target.value)}
-                            
                           />
                           <label htmlFor="gMale2">{t("reservation.mr")}</label>
                         </div>
@@ -2094,114 +2103,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
              </div>
-             {/* <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.n-cont")}
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     handleInputChange('guest3', 'contract', e.target.value)
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value={t("reservation.h-cont")}
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     handleInputChange('guest3', 'contract', e.target.value)
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-               <div className="row">
-               <div className="col-md-2 name__title">{t("reservation.company")}</div>
-               <input
-                 ref={input4Ref}
-                 type="text"
-                 className="booker-name form__content col-md-4"
-                 placeholder={t("reservation.company")}
-                 value={guestInformation.guest3.company}
-                 onChange={handleChangeCompanyName3}
-               />
-               {searchCompany && guestInformation.guest3.company ?
-              //  <div className="row">
-              //  <div className="col-md-2 name__title"></div>
-               <ul
-               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-               className="form__content col-md-4">
-                {searchCompany.map((item)=> (
-                  <li onClick={() => handleChooseCompany3(`${item.name}`)} className="company_list" value={item.name}>{item.name}</li>
-                ))}
-               </ul>
-              //  </div>
-               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-             }
-               {guestInformation.guest3.company  ?
-               <>
-               <div className="row">
-               <div className="col-md-2 name__title">Choice of Discount: </div>
-               <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-               <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount1"
-                value='Company have contract 5% OFF'
-                onChange={(e) => handleRadioChange('guest3', 'discount', e.target.value)}
-              />
-              <label  htmlFor="discount1">Company have contract 5% OFF</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount2"
-                value="Company have contract free laundry 120.000vnd/day"
-                onChange={(e) => handleRadioChange('guest3', 'discount', e.target.value)}
-              />
-                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount3"
-                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-                onChange={(e) => handleRadioChange('guest3', 'discount', e.target.value)}
-              />
-                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              </div>
-              </> : ""
-            } 
-            </div>} */}
              <div className="row">
                <div className="col-md-2 name__title">
                  {t("reservation.vat-invoice")}
@@ -2245,13 +2146,13 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
+                 <option key={item.name} value={item.value}>
                    {item.name}
                  </option>
                ))} 
                {statusC === 1 && 
                  payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
+                   <option key={item.name} value={item.value}>
                      {item.name}
                    </option>
                  ))} 
@@ -2286,7 +2187,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 type="text"
                 value={guestInformation.guest4.familyName}
                 className={errors.familyName4? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                onChange={(e) => handleInputChange('guest4','familyName', e.target.value)}
+                onChange={(e) =>{
+                  const value = e.target.value
+                  if(regex.test(value)){
+                   handleInputChange('guest4','familyName', value)
+                   setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                  errors.familyName4 = ''
+                }}
               />
                {errors.familyName && 
               <p className="col-md-1 error-message">{errors.familyName4}</p>}
@@ -2296,7 +2207,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 name="gName"
                 value={guestInformation.guest4.givenName}
                 className={errors.givenName4? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                onChange={(e) => handleInputChange('guest4','givenName', e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value
+                  if(regex.test(value)){
+                   handleInputChange('guest4','givenName', value)
+                   setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                  errors.givenName4 = ''
+                }}
               />
                {errors.givenName && 
               <p className="col-md-1 error-message">{errors.givenName4}</p>}
@@ -2374,7 +2295,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                         className="col-md-2 form__content"
                         value={guestInformation.guest4.secondFamilyName}
                         onClick={handleSecondFamilyNameClick}
-                        onChange={(e) => handleInputChange('guest4','secondFamilyName', e.target.value)}
+                        onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest4','secondFamilyName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondFamilyName4 = ''
+                        }}
                       />
 
                       <input
@@ -2384,7 +2315,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                         className=" col-md-2 form__content"
                         value={guestInformation.guest4.secondGivenName}
                         onClick={handleSecondGivenNameClick}
-                        onChange={(e) => handleInputChange('guest4','secondGivenName', e.target.value)}
+                        onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest4','secondGivenName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondGivenName4 = ''
+                        }}
                       />
                     </div>
                     <div className="row">
@@ -2456,111 +2397,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
               </div>
             </div>
-            {/* <div className="row">
-              <div className="col-md-2 name__title">
-                {t("reservation.contract")}
-              </div>
-              <div className="col-md-2">
-                <input
-                  type="radio"
-                  id="hContract"
-                  className="Contract"
-                  value={t("reservation.n-cont")}
-                  checked={statusC == 0}
-                  onClick={(e) => {
-                    handleInputChange('guest4', 'contract', e.target.value)
-                    handleSelectedCompany(0);
-                  }}
-                />
-                <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-              </div>
-              <div className="col-md-2">
-                <input
-                  type="radio"
-                  name="contract"
-                  id="hContract"
-                  className="Contract"
-                  value={t("reservation.h-cont")}
-                  checked={statusC == 1}
-                  onClick={(e) => {
-                    handleInputChange('guest4', 'contract', e.target.value)
-                    handleSelectedCompany(1);
-                  }}
-                />
-                <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-              </div>
-            </div>
-            {statusC == 1 && 
-              <div className="row">
-              <div className="col-md-2 name__title">{t("reservation.company")}</div>
-              <input
-                ref={input4Ref}
-                type="text"
-                className="booker-name form__content col-md-4"
-                placeholder={t("reservation.company")}
-                value={guestInformation.guest4.company}
-                onChange={handleChangeCompanyName4}
-              />
-              {searchCompany && guestInformation.guest4.company ?
-              <ul
-              style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-              className="form__content col-md-4">
-               {searchCompany.map((item)=> (
-                 <li onClick={() => handleChooseCompany4(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
-               ))}
-              </ul>
-              : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-            }
-              {guestInformation.guest4.company  ?
-              <>
-              <div className="row">
-              <div className="col-md-2 name__title">Choice of Discount: </div>
-              <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-              <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount1"
-               value='Company have contract 5% OFF'
-               onChange={(e) => handleRadioChange('guest4', 'discount', e.target.value)}
-             />
-             <label  htmlFor="discount1">Company have contract 5% OFF</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount2"
-               value="Company have contract free laundry 120.000vnd/day"
-               onChange={(e) => handleRadioChange('guest4', 'discount', e.target.value)}
-             />
-               <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             <div className="row">
-             <div className="col-md-2 name__title"></div>
-               <div className="col-md-6 ml-2">
-             <input
-               type="radio"
-               name="discount"
-               className="special"
-               id="discount3"
-               value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-               onChange={(e) => handleRadioChange('guest4', 'discount', e.target.value)}
-             />
-               <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-               </div>
-             </div>
-             </div>
-             </> : ""
-           } 
-           </div>} */}
             <div className="row">
               <div className="col-md-2 name__title">
                 {t("reservation.vat-invoice")}
@@ -2604,13 +2440,13 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 }}
               > {statusC === 0 &&
                 payMethod.map((item) => (
-                <option key={item.name} value={item.name}>
+                <option key={item.name} value={item.value}>
                   {item.name}
                 </option>
               ))} 
               {statusC === 1 && 
                 payMethod2.map((item) => (
-                  <option key={item.name} value={item.name}>
+                  <option key={item.name} value={item.value}>
                     {item.name}
                   </option>
                 ))} 
@@ -2644,7 +2480,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  type="text"
                  value={guestInformation.guest5.familyName}
                  className={errors.familyName5? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest5','familyName', e.target.value)}
+                 onChange={(e) => {
+                  const value = e.target.value
+                  if(regex.test(value)){
+                   handleInputChange('guest5','familyName', value)
+                   setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                  errors.familyName5 = ''
+                 }}
                />
                 {errors.familyName && 
                <p className="col-md-1 error-message">{errors.familyName5}</p>}
@@ -2652,9 +2498,19 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  placeholder={t("reservation.given-name")}
                  type="text"
                  name="gName"
-                 value={guestInformation.guest5.givenName5}
+                 value={guestInformation.guest5.givenName}
                  className={errors.givenName? "col-md-2 form__content validate_failed" : "col-md-2 form__content"}
-                 onChange={(e) => handleInputChange('guest5','givenName', e.target.value)}
+                 onChange={(e) => {
+                  const value = e.target.value
+                  if(regex.test(value)){
+                   handleInputChange('guest5','givenName', value)
+                   setAlertShown(false)
+                  }else if(!alertShown){
+                   alert('Please write in Alphabet')
+                   setAlertShown(true)
+                  }
+                  errors.givenName5 = ''
+                 }}
                />
                 {errors.givenName && 
                <p className="col-md-1 error-message">{errors.givenName5}</p>}
@@ -2732,7 +2588,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className="col-md-2 form__content"
                          value={guestInformation.guest5.secondFamilyName}
                          onClick={handleSecondFamilyNameClick}
-                         onChange={(e) => handleInputChange('guest5','secondFamilyName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest5','secondFamilyName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondFamilyName5 = ''
+                         }}
                        />
  
                        <input
@@ -2742,7 +2608,17 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                          className=" col-md-2 form__content"
                          value={guestInformation.guest5.secondGivenName}
                          onClick={handleSecondGivenNameClick}
-                         onChange={(e) => handleInputChange('guest5','secondGivenName', e.target.value)}
+                         onChange={(e) => {
+                          const value = e.target.value
+                          if(regex.test(value)){
+                            handleInputChange('guest5','secondGivenName', value)
+                            setAlertShown(false)
+                          }else if(!alertShown){
+                           alert('Please write in Alphabet')
+                           setAlertShown(true)
+                          }
+                          errors.secondGivenName5 = ''
+                         }}
                        />
                      </div>
                      <div className="row">
@@ -2814,114 +2690,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  <label htmlFor="no-smk">{t("reservation.non-smk")}</label>
                </div>
              </div>
-             {/* <div className="row">
-               <div className="col-md-2 name__title">
-                 {t("reservation.contract")}
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   id="hContract"
-                   className="Contract"
-                   value="No Contract"
-                   checked={statusC == 0}
-                   onClick={(e) => {
-                     handleInputChange('guest5', 'contract', e.target.value)
-                     handleSelectedCompany(0);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.n-cont")}</label>
-               </div>
-               <div className="col-md-2">
-                 <input
-                   type="radio"
-                   name="contract"
-                   id="hContract"
-                   className="Contract"
-                   value="Have Contract"
-                   checked={statusC == 1}
-                   onClick={(e) => {
-                     handleInputChange('guest5', 'contract', e.target.value)
-                     handleSelectedCompany(1);
-                   }}
-                 />
-                 <label htmlFor="hContract">{t("reservation.h-cont")}</label>
-               </div>
-             </div>
-             {statusC == 1 && 
-               <div className="row">
-               <div className="col-md-2 name__title">{t("reservation.company")}</div>
-               <input
-                 ref={input4Ref}
-                 type="text"
-                 className="booker-name form__content col-md-4"
-                 placeholder={t("reservation.company")}
-                 value={guestInformation.guest5.company}
-                 onChange={handleChangeCompanyName5}
-               />
-               {searchCompany && guestInformation.guest5.company ?
-              //  <div className="row">
-              //  <div className="col-md-2 name__title"></div>
-               <ul
-               style={{border:"1px solid #000", height:"200px", overflowY:"scroll", textTransform:"uppercase"}}
-               className="form__content col-md-4">
-                {searchCompany.map((item)=> (
-                  <li onClick={() => handleChooseCompany5(`${item.name}`)} className="company_list" key={item.company_id} value={item.name}>{item.name}</li>
-                ))}
-               </ul>
-              //  </div>
-               : <span className=" col-md-4 required__note">{t("reservation.company-note")}</span>
-             }
-               {guestInformation.guest5.company  ?
-               <>
-               <div className="row">
-               <div className="col-md-2 name__title">Choice of Discount: </div>
-               <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-               <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount1"
-                value='Company have contract 5% OFF'
-                onChange={(e) => handleRadioChange('guest5', 'discount', e.target.value)}
-              />
-              <label  htmlFor="discount1">Company have contract 5% OFF</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount2"
-                value="Company have contract free laundry 120.000vnd/day"
-                onChange={(e) => handleRadioChange('guest5', 'discount', e.target.value)}
-              />
-                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              <div className="row">
-              <div className="col-md-2 name__title"></div>
-                <div className="col-md-6 ml-2">
-              <input
-                type="radio"
-                name="discount"
-                className="special"
-                id="discount3"
-                value="Company have contract 5% OFF + free laundry 120.000vnd/day"
-                onChange={(e) => handleRadioChange('guest5', 'discount', e.target.value)}
-              />
-                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
-                </div>
-              </div>
-              </div>
-              </> : ""
-            } 
-            </div>} */}
              <div className="row">
                <div className="col-md-2 name__title">
                  {t("reservation.vat-invoice")}
@@ -2965,13 +2733,13 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  }}
                > {statusC === 0 &&
                  payMethod.map((item) => (
-                 <option key={item.name} value={item.name}>
+                 <option key={item.name} value={item.value}>
                    {item.name}
                  </option>
                ))} 
                {statusC === 1 && 
                  payMethod2.map((item) => (
-                   <option key={item.name} value={item.name}>
+                   <option key={item.name} value={item.value}>
                      {item.name}
                    </option>
                  ))} 

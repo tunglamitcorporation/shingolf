@@ -243,7 +243,7 @@ function Header() {
                 <div className="col-md-12">
                   <Link to="/">
                     <img
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png"
+                      src="https://azumayavietnam.com/image/logo/azlogo.png"
                       alt="logo"
                     />
                   </Link>
@@ -301,7 +301,7 @@ function Header() {
         <div className="header__mobile-logo">
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png"
+              src="https://azumayavietnam.com/image/logo/azlogo.png"
               alt="logo"
             />
           </Link>
@@ -330,7 +330,7 @@ function Header() {
                 <div className="col-md-12">
                   <Link to="/">
                     <img
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1700714360/AzumayaWeb/nyvyprbkrs1v54vdmwib.png"
+                      src="https://azumayavietnam.com/image/logo/azlogo.png"
                       alt="logo"
                     />
                   </Link>

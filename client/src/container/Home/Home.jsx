@@ -12,6 +12,8 @@ import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import MyForm from "../../Test";
 import ImageUploader from "../../Test";
+import Test from "../../Test2";
+import EnglishOnlyInput from "../../Test2";
 
 function LineModal(props) {
   return (
@@ -89,7 +91,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                   <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735800/AzumayaWeb/hanoi1_yrqgvy.png"
+                    src="https://azumayavietnam.com/image/areaimage/hanoi1.png"
                     alt="hotel hanoi azumaya hotel"
                   />
                   </Link>
@@ -100,7 +102,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 <Link className='link-route' to = '/hotel-hcm' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/hochiminh1_glyoyn.png"
+                    src="https://azumayavietnam.com/image/areaimage/hochiminh1.png"
                     alt="hotel ho chi minh azumaya hotel"
                   />
                  </Link>
@@ -111,7 +113,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 <Link className='link-route' to = '/hotel-dn' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/danang1_om37cr.png"
+                    src="https://azumayavietnam.com/image/areaimage/danang1.png"
                     alt="hotel da nang azumaya hotel"
                   />
                  </Link>
@@ -122,7 +124,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                 <Link className='link-route' to = '/hotel-hp' >
                   <img
                     className="content__branch-img"
-                    src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735806/AzumayaWeb/haiphong1_vr2jyt.png"
+                    src="https://azumayavietnam.com/image/areaimage/haiphong1.png"
                     alt="hotel hai phong azumaya"
                   />
                  </Link>
@@ -133,11 +135,12 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
         </div>
       <div className="is-sticky">
         <Booking />
+        {/* <EnglishOnlyInput /> */}
       </div>
         <div className="container mt-5">
           <div className="row justify-content-center align-item-center">
               <div className="col-md-6 d-flex align-items-center justify-content-center">
-                <img style={{width: '70%', height:'100%'}} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1712893321/promo-massage_gab00y.jpg" alt="massage" />
+                <img style={{width: '70%', height:'100%'}} src="https://azumayavietnam.com/image/massage/promo-massage.jpg" alt="massage" />
               </div>
               <div className="col-md-6 pre-line">
                 <div className="promo-title">{t('service_massage.promo_title')}</div>
@@ -157,7 +160,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
               </div>
               <img
                       className="style-line col-md-2" style={{marginTop: '50px'}}
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
           </div>
@@ -353,7 +356,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                   <div className="content__qr">
                     <img
                       className="content__qr-img"
-                      src={t("home.line_link")}
+                      src="https://azumayavietnam.com/image/logo/line.png"
                       alt="qr line azumaya hotel"
                     />
                     <button 

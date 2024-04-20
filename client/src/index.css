@@ -968,7 +968,7 @@ code {
 .reservation__content{
   width: 100%;
   padding: 250px 0;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/rd2qg5wkfxdoarlvcuwl.jpg) center center / cover no-repeat fixed;
+  background: url(https://azumayavietnam.com/image/reservation/rsvt-bg.jpg) center center / cover no-repeat fixed;
   background-attachment: fixed;
   position: relative;
   text-align: center;
@@ -1076,7 +1076,7 @@ code {
 .policies__header {
   width: 100%;
   padding: 200px 0;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1712654045/AzumayaWeb/banner_r3uovx.jpg) center center / cover no-repeat;
+  background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   position: relative;
   text-align: center;
@@ -1128,7 +1128,7 @@ code {
 .feature__content-background{
   width: 100%;
   padding: 150px 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027482/AzumayaWeb/xdnpuoiovao4jlwxfa0b.jpg) center center / cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://azumayavietnam.com/image/feature/bg-feature.jpg) center center / cover no-repeat;
 
 }
 .highlight__text{
@@ -1187,7 +1187,7 @@ code {
 .service__header {
   width: 100%;
   padding: 200px 0;
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1712654045/AzumayaWeb/banner_r3uovx.jpg) center center / cover no-repeat;
+  background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   position: relative;
   text-align: center;

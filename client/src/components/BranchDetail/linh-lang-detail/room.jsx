@@ -247,7 +247,7 @@ export default function LLRoomDetail() {
                     {t("room_ll.room")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
@@ -273,7 +273,7 @@ export default function LLRoomDetail() {
                     {t("room_ll.tariff")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                   </div>
@@ -372,7 +372,7 @@ export default function LLRoomDetail() {
                     {t("room_ll.business")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
@@ -475,7 +475,7 @@ export default function LLRoomDetail() {
                   <div className="room__title">
                     {t("room_ll.location")}
                     <img
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                       className="style-line"
                     />

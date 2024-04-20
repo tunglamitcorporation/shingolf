@@ -251,7 +251,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                     {t("room_km3.room")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
@@ -277,7 +277,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                     {t("room_km3.tariff")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                   </div>
@@ -384,7 +384,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                     {t("room_km3.business")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px" }}>
@@ -392,7 +392,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                     </p>
                   </div>
                   <div className="room__container">
-                    {/* <table className="room__table room__table-service">
+                    <table className="room__table room__table-service">
                       <tbody>
                         <tr>
                           <th rowSpan={2}>{t("room_km3.pickup")}</th>
@@ -455,8 +455,8 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                           </td>
                         </tr>
                       </tbody>
-                    </table> */}
-      <div className="feature__type-list">
+                    </table>
+      {/* <div className="feature__type-list">
         <div className="container" id="containerID">
           <div className="container">
             <div className="row justify-content-center">
@@ -487,10 +487,10 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
                     <div className="col-md-12">
                       <div className="table-footer">
-                        {/* <h1>{t("room_km3.board")}</h1> */}
+                        <h1>{t("room_km3.board")}</h1>
                         <p className="mt-5">
                           {t("room_km3.contact1")}
                           <a className="ml-1" href={`tel:${t("room_km3.phone")}`}>
@@ -519,7 +519,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                   <div className="room__title">
                     {t("room_km3.location")}
                     <img
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                       className="style-line"
                     />

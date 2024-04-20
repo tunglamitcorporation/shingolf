@@ -277,7 +277,7 @@ export default function VietnamService({deviceType}) {
             <div className="space-line">
               <div className="row justify-content-center">
                 <div className="col-6 col-md-6">
-                  <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
+                  <img src="https://azumayavietnam.com/image/logo/style-line.png" />
                 </div>
               </div>
             </div>
@@ -587,7 +587,7 @@ export default function VietnamService({deviceType}) {
             <div className="space-line">
               <div className="row justify-content-center">
                 <div className="col-6 col-md-6">
-                  <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
+                  <img src="https://azumayavietnam.com/image/logo/style-line.png" />
                 </div>
               </div>
             </div>
@@ -896,7 +896,7 @@ export default function VietnamService({deviceType}) {
             <div className="space-line">
               <div className="row justify-content-center">
                 <div className="col-6 col-md-6">
-                  <img src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png" />
+                  <img src="https://azumayavietnam.com/image/logo/style-line.png" />
                 </div>
               </div>
             </div>

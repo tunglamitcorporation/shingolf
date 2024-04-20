@@ -203,7 +203,7 @@ export default function HPRoomDetail() {
                     {t("room_hp.room")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
@@ -229,7 +229,7 @@ export default function HPRoomDetail() {
                     {t("room_hp.tariff")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                   </div>
@@ -338,7 +338,7 @@ export default function HPRoomDetail() {
                     {t("room_hp.business")}
                     <img
                       className="style-line"
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                     />
                     <p style={{ fontSize: "1.4rem", paddingTop: "10px", textAlign:"justify" }}>
@@ -450,7 +450,7 @@ export default function HPRoomDetail() {
                   <div className="room__title">
                     {t("room_hp.location")}
                     <img
-                      src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1698027484/AzumayaWeb/cyztqxdrc4jh9gqtxfbv.png"
+                      src="https://azumayavietnam.com/image/logo/style-line.png"
                       alt=""
                       className="style-line"
                     />
