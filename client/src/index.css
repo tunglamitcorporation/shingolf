@@ -795,7 +795,7 @@ code {
   background-color: #09e009 !important; 
 }
 .content__welcome{
-  background: url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1701655335/AzumayaWeb/welcome-bg_z5dr6z.jpg) center center / cover no-repeat;
+  background: url(https://azumayavietnam.com/image/rtbr/rtbrdn5.jpg) center center / cover no-repeat;
   background-attachment: fixed;
   font-size: 18px;
   line-height: 1.4em;
@@ -2395,7 +2395,7 @@ filter: brightness(0.5);
   }
   .header__mobile-logo img{
     width: 100px;
-    height: 40px;
+    height: 60px;
   }
   .content__title span{
     top: 12%;
