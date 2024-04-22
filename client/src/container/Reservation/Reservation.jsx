@@ -1821,7 +1821,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    name="vatInvoice"
                    id="no-need"
                    className="VATInvoice"
-                   value={t("reservation.n-need")}
+                  value="No Necessary"
                    onClick={(e)=> handleRadioChange('guest2', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
@@ -1832,7 +1832,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    name="vatInvoice"
                    id="need"
                    className="VATInvoice"
-                   value={t("reservation.need")}
+                   value="Necessary"
                    onClick={(e)=> handleRadioChange('guest2', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
@@ -2113,7 +2113,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    name="vatInvoice"
                    id="no-need"
                    className="VATInvoice"
-                   value={t("reservation.n-need")}
+                  value="No Necessary"
                    onClick={(e)=> handleRadioChange('guest3', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
@@ -2124,7 +2124,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    name="vatInvoice"
                    id="need"
                    className="VATInvoice"
-                   value={t("reservation.need")}
+                   value="Necessary"
                    onClick={(e)=> handleRadioChange('guest3', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>
@@ -2700,7 +2700,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    name="vatInvoice"
                    id="no-need"
                    className="VATInvoice"
-                   value={t("reservation.n-need")}
+                  value="No Necessary"
                    onClick={(e)=> handleRadioChange('guest5', 'vat', e.target.value)}
                  />
                  <label htmlFor="no-need">{t("reservation.n-need")}</label>
@@ -2711,7 +2711,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    name="vatInvoice"
                    id="need"
                    className="VATInvoice"
-                   value={t("reservation.need")}
+                   value="Necessary"
                    onClick={(e)=> handleRadioChange('guest5', 'vat', e.target.value)}
                  />
                  <label htmlFor="need">{t("reservation.need")}</label>

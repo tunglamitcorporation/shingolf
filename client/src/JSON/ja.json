@@ -35,7 +35,7 @@
                 "mail": "reservation@azumayavietnam.com"
             },
             {
-                "name": "Azumaya HCM ANNEX",
+                "name": "Azumaya Annex",
                 "add": "8A/8B2 Thai Van Lung St., Dist. 1, HCMC",
                 "num": "+84.28.3824 6835",
                 "mail": "reservation@azumayavietnam.com"
@@ -48,7 +48,7 @@
             },
             {
                 "name": "Azumaya Thai Van Lung 2",
-                "add": "29 Thai Van Lung St., Dist. 1, HCMC",
+                "add": "27-29 Thai Van Lung St., Dist. 1, HCMC",
                 "num": "+84.28.3827 1071 & +84.28.3827.1072",
                 "mail": "reservation3@azumayavietnam.com"
             },
@@ -1185,7 +1185,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -1408,7 +1408,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -1646,7 +1646,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -1747,8 +1747,8 @@
             "price": "1.370.000VND+",
             "images":[
             "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_1.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_2.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg"]
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg", 
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_4.jpg"]
 
             
         },
@@ -1793,8 +1793,8 @@
             "price": "1.450.000VND+",
             "images":[
             "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_1.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_2.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg"]
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg", 
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_4.jpg"]
 
         },
         {
@@ -1941,7 +1941,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -2126,7 +2126,7 @@
         "slider":[
             {
                 "desc":"ホーチミン",
-                "image":"https://azumayavietnam.com/image/hcm/tvl1/tvl1retouch/Lobby02.jpg"
+                "image":"https://azumayavietnam.com/image/hcm/tvl1/tvl1retouch/Lobby_02.jpg"
             },
             {
                 "desc":"ホーチミン",
@@ -2142,7 +2142,7 @@
                 "id": 1,
                 "name": "タイバンルン１号店",
                 "desc": "全51部屋、露天風呂、和朝食ビュッフェ、フットマッサージ、居酒屋「テン」、全室に洗浄機能付きトイレ、日本語放送を完備。館内にはリピート率90%以上を誇る自慢の東屋マッサージを併設。\"午後10:45がラストオーダー\"。また深夜２時までオープンしている日本食居酒屋「テン」では日本酒、焼酎、刺身を含む居酒屋メニューが満載。一人でもお気軽にどうぞ。露天風呂に浸かり、居酒屋テンで一杯、マッサージを受けて、部屋でスポーツニュースを観て一日の疲れを癒す、東屋が誇るワンストップサービスを提供しています。立地もタイバンルン２号店向かい、レタントン店へも徒歩３分ほどの抜群のロケーションです。",
-                "image": "https://azumayavietnam.com/image/branchimage/tvl1.jpg",
+                "image": "https://azumayavietnam.com/image/branchimage/tvl1os.png",
                 "link": "/thai-van-lung-1-detail/room/"
             },
             {
@@ -2171,13 +2171,13 @@
     },
     "room_tvl1": {
         "room": "お部屋のご案内",
-        "roomContent": "和朝食、露天風呂（男性専用）、>テレビ国際放送、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
+        "roomContent": "和朝食、露天風呂（男性専用）、テレビ国際放送、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
         "tariff": "価格表一覧",
         "vat": "※客室代にて消費税(VAT)別途",
         "service": "料金に含まれるもの:",
-        "serviceContent": "和朝食\n露天風呂（男性専用）\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
+        "serviceContent": "和朝食\n露天風呂（男性専用）\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
         "facility": "アメニティー&設備:",
-        "facilityContent": "ワーキングデスク\n50/32型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
+        "facilityContent": "ワーキングデスク\n型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
@@ -2197,7 +2197,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -2218,7 +2218,7 @@
         "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはホーチミン市の中心の日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域です。",
-        "address": " 住所 ：8A/7D1-8D1-9D1, Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
+        "address": " 住所 ：8A/7D1 - 8A/8D1 - 8A/9D1, Thai Van Lung Street, Dist 1, HCM City, Vietnam.",
         "emailTitle": "Eメール",
         "type": "部屋タイプ",
         "rate": "客室料金",
@@ -2551,7 +2551,6 @@
             "in2": "バスタブ",
             "in3": "51型液晶テレビ",
             "in4": "洗浄機能付きトイレ",
-            "in5": "自動水栓",
             "priceTitle": "料金",
             "bed": "1.8m キング",
             "bed_size": "キング",
@@ -2560,7 +2559,7 @@
             "tick_b": true,
             "price": "2.380.000VND+",
             "images":[
-            "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIP_1.jpg", 
+            "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIPTATAMI_1.jpg", 
             "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIP_2.jpg", 
             "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIP_3.jpg"]
 
@@ -2569,13 +2568,13 @@
     ],
     "room_tvl2": {
         "room": "お部屋のご案内",
-        "roomContent": "和朝食、露天風呂(女性専用時間あり)、19TVチャンネル、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
+        "roomContent": "和朝食、露天風呂(女性専用時間あり)、テレビ国際放送、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
         "tariff": "価格表一覧",
         "vat": "※客室代にて消費税(VAT)別途",
         "service": "料金に含まれるもの:",
-        "serviceContent": "和朝食\n露天風呂\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
+        "serviceContent": "和朝食\n露天風呂\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐駐\n5 % サービスチャージ",
         "facility": "アメニティー&設備:",
-        "facilityContent": "ワーキングデスク\n50/32型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
+        "facilityContent": "ワーキングデスク\n型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
@@ -2595,7 +2594,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -2614,7 +2613,7 @@
         "website": "www.azumayavietnam.com からお願いします。",
         "location": "アクセス",
         "locationContent": "当ホテルはホーチミン市の中心の日本人街に位置し、近辺には沢山の日本食レストラン、カラオケラウンジ、バーがございます。どこへ行くにもアクセスが簡単なため、多くの日本人出張者や駐在者に人気のある地域です。",
-        "address": "住所 ：27-29 Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
+        "address": "住所 ：27-29  Thai Van Lung Street Dist 1 , HCM City , Vietnam.",
         "emailTitle": "Eメール",
         "type": "部屋タイプ",
         "rate": "客室料金",
@@ -2843,13 +2842,13 @@
     ],
     "room_ltt": {
         "room": "お部屋のご案内",
-        "roomContent": "和朝食、露天風呂(女性専用時間あり)、19TVチャンネル、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
+        "roomContent": "和朝食、露天風呂(女性専用時間あり)、テレビ国際放送、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
         "tariff": "価格表一覧",
         "vat": "※客室代にて消費税(VAT)別途",
         "service": "料金に含まれるもの:",
-        "serviceContent": "和朝食\n露天風呂（男性専用）\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
+        "serviceContent": "和朝食\n露天風呂（男性専用）\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
         "facility": "アメニティー&設備:",
-        "facilityContent": "ワーキングデスク\n50/32型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
+        "facilityContent": "ワーキングデスク\n型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
@@ -2869,7 +2868,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",
@@ -2941,7 +2940,7 @@
             "bedTitle": "ベットサイズ",
             "install": "設備",
             "in1": "窓",
-            "in2": "バスタブ",
+            "in2": "バスタブなし",
             "in3": "32型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
             "priceTitle": "料金",
@@ -2987,7 +2986,7 @@
             "bedTitle": "ベットサイズ",
             "install": "設備",
             "in1": "窓なし",
-            "in2": "バスタブ",
+            "in2": "バスタブなし",
             "in3": "50型ソニーテレビ",
             "in4": "洗浄機能付きトイレ",
             "priceTitle": "料金",
@@ -3030,14 +3029,14 @@
         "tariff": "価格表一覧",
         "vat": "※客室代にて消費税(VAT)別途",
         "service": "料金に含まれるもの:",
-        "serviceContent": "和朝食\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
+        "serviceContent": "和朝食\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料\n24TVチャンネル (JP, EN, VN, KR)\n日本語対応可能なスタッフ常駐\n5 % サービスチャージ",
         "facility": "アメニティー&設備:",
-        "facilityContent": "ワーキングデスク\n50/32型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
+        "facilityContent": "ワーキングデスク\n型液晶テレビ\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
         "rental": "無料のレンタル:: ",
         "rentalContent": "220V → 110V の変圧器\n追加のハブ",
         "business": "ビジネスサービス",
         "businessContent": "2週間以上宿泊されるお客様について",
-        "business_annex": "\nANNEX L (30.2m2) 45USD/ night\nANNEX M (27.2m2) 40USD/ night\n以下の価格を含む。\n\n. 5 % サービスチャージ\n. 朝食\n. 露天風呂(男性専用)\n. . フットマッサージ10%割引\n.  高速無線Wi-fi\n. ランドリー1セット/日 \n. 19TVチャンネル\n\n 1日100,000ドンまで無料のランドリーセット",
+        "business_annex": "\nANNEX L (30.2m2) 45USD/ night\nANNEX M (27.2m2) 40USD/ night\n以下の価格を含む。\n\n. 5 % サービスチャージ\n. 朝食\n. 露天風呂(男性専用)\n. . フットマッサージ10%割引\n.  高速無線Wi-fi\n. ランドリー1セット/日 \n. テレビ国際放送\n\n 1日100,000ドンまで無料のランドリーセット",
         "ask": "受付までお申し付けください。",
         "board": "お問い合わせ",
         "contact1": "ご予約はお電話：:",
@@ -3159,11 +3158,11 @@
     },
     "room_dn": {
         "room": "お部屋のご案内",
-        "roomContent": "和朝食、露天風呂（男性専用）、19TVチャンネル、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
+        "roomContent": "和朝食、露天風呂（男性専用）、テレビ国際放送、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
         "tariff": "価格表一覧",
         "vat": "※客室代にて消費税(VAT)別途",
         "service": "料金に含まれるもの:",
-        "serviceContent": "和朝食\n露天風呂（男性専用）\n19TV チャンネル\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料",
+        "serviceContent": "和朝食\n露天風呂（男性専用）\n24TV チャンネル\n高速無線&有線インターネット\nベッドメイキング\nミネラルウォーター２本+ミニバー３本が毎日無料",
         "facility": "アメニティー&設備:",
         "facilityContent": "ワーキングデスク\n32型ソニーテレビ)\n無料wifi\nセキュリティーボックス\nヘアドライヤー\n髭剃り、歯ブラシ\nシャンプー、コンディショナー、ボディーソープ等\n洗浄機能付きトイレ",
         "rental": "無料のレンタル:: ",
@@ -3305,7 +3304,7 @@
             "price": "1.250.000VND+",
             "images":[
             "https://azumayavietnam.com/image/room/dn/ExecutiveDouble_1.jpg", 
-            "https://azumayavietnam.com/image/room/dn/ExecutiveDouble_2.jpg"]
+            "https://azumayavietnam.com/image/room/dn/ExecutiveDouble_2.JPG"]
 
         },
         {
@@ -3352,7 +3351,7 @@
             "price": "1.500.000VND+", 
             "images":[
             "https://azumayavietnam.com/image/room/dn/Suite_1.jpg", 
-            "https://azumayavietnam.com/image/room/dn/Suite_2.jpg"]
+            "https://azumayavietnam.com/image/room/dn/Suite_2.JPG"]
 
         }
     ],
@@ -3384,7 +3383,7 @@
     },
     "room_hp": {
         "room": "お部屋のご案内",
-        "roomContent": "和朝食、露天風呂(女性専用時間あり)、19TVチャンネル、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
+        "roomContent": "和朝食、露天風呂(女性専用時間あり)、24TVチャンネル、高速無線＆有線インターネット、毎日のルームメイキング、ミネラルウォーター２本+ミニバー３本が毎日無料、これらは料金に含まれております。",
         "tariff": "価格表一覧",
         "vat": "※客室代にて消費税(VAT)別途",
         "service": "料金に含まれるもの:",
@@ -3411,7 +3410,7 @@
         "print_fee2": "11枚目以降、1枚につき2000ドン",
         "tel": "電話サービス",
         "tel_fee1": "ベトナム国内: 無料",
-        "tel_fee2": "国際電話: 20.000ドン/分",
+        "tel_fee2": "国際電話: 25.000ドン/分",
         "rental_car": "レンタカー",
         "tour": "ツアー",
         "visa": "ビザ手続き",

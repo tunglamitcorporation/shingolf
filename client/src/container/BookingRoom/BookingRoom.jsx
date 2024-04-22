@@ -2,6 +2,7 @@ import Flatpickr from "react-flatpickr";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate} from "react-router-dom";
 import { format } from 'date-fns';
+import ScrollToTop from "../../units/ScrollToTop";
 export default function BookingRoom ({startDate, endDate, selectedCity, selectedBranch, setStartDate, setEndDate, setSelectedCity, setSelectedBranch}){
 
     const {t} = useTranslation()

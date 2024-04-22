@@ -65,7 +65,7 @@ function App() {
             </>        
                     )}
     </div>
-      <ScrollToTop />
+      <ScrollToTop x={0} y={0} />
       <NewRouter news={news}/>
       <Footer />
       </div>

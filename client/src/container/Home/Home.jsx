@@ -10,10 +10,6 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
-import MyForm from "../../Test";
-import ImageUploader from "../../Test";
-import Test from "../../Test2";
-import EnglishOnlyInput from "../../Test2";
 
 function LineModal(props) {
   return (
@@ -52,6 +48,7 @@ export default function Home({news}) {
   const caption = t("caption", {returnObjects: true})
   const [isOpen, setIsOpen] = useState(false)
   const [modalShow, setModalShow] = useState(false);
+  const [loading, setLoading] = useState(true);
   const c = t("header.title")
 useEffect(()=>{
   if(isOpen) {
@@ -61,7 +58,6 @@ useEffect(()=>{
   }
 })
 const AutoPlaySlider =  withAutoplay(AwesomeSlider)
-
   return (
     <>
     <HelmetLayout title = {c} />

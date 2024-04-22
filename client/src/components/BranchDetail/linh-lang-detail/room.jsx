@@ -10,6 +10,7 @@ import classNames from "classnames";
 import HelmetLayout from "../../HelmetLayout/HelmetLayout";
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import ScrollToTop from "../../../units/ScrollToTop";
 
 
 
@@ -142,6 +143,7 @@ export default function LLRoomDetail() {
   }
   return (
     <>
+    <ScrollToTop x={0} y={1200} />
     <HelmetLayout title= {c} />
       <div className="area_header" >
               <div className="overlay"></div>

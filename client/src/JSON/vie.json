@@ -48,7 +48,7 @@
             },
             {
                 "name": "Azumaya Thái Văn Lung 2",
-                "add": "29 Đường Thái Văn Lung, Quận 1, Thành phố HCM",
+                "add": "27-29 Đường Thái Văn Lung, Quận 1, Thành phố HCM",
                 "num": "+84.28.3827 1071 & +84.28.3827.1072",
                 "mail": "reservation3@azumayavietnam.com"
             },
@@ -1644,8 +1644,8 @@
             "price": "1.370.000VNĐ+",
             "images":[
             "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_1.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_2.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg"]
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg", 
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_4.jpg"]
         },
         {
             "id": 3,
@@ -1691,8 +1691,8 @@
             "price": "1.450.000VNĐ+",
             "images":[
             "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_1.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_2.jpg", 
-            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg"]
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg", 
+            "https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_4.jpg"]
         },
         {
             "id": 5,
@@ -2018,7 +2018,7 @@
         "slider": [
             {
                 "desc": "Azumaya Hồ Chi Minh",
-                "image":"https://azumayavietnam.com/image/hcm/tvl1/tvl1retouch/Lobby02.jpg"
+                "image":"https://azumayavietnam.com/image/hcm/tvl1/tvl1retouch/Lobby_02.jpg"
             },
             {
                 "desc": "Azumaya Hồ Chi Minh",
@@ -2035,7 +2035,7 @@
                 "id": 1,
                 "name": "Azumaya Thái Văn Lung 1",
                 "desc": "Chi nhánh Khách sạn Azumaya Thái Văn Lung 1 nằm ở vị trí thuận lợi, là sự lựa chọn hoàn hảo của khách hàng Nhật khi đến công tác và lưu trú. Khách sạn có tổng cộng 51 phòng nghỉ và tất cả các phòng đều được trang bị nhà vệ sinh có bồn cầu tự động và hệ thống các kênh truyền hình tivi Nhật Bản. Bên trong khách sạn, chúng tôi còn phục vụ bể tắm nước nóng ngoài trời và buffet sáng kiểu Nhật. Đặc biệt, khách hàng có thể tận hưởng dịch vụ mát-xa mang phong cách riêng của khách sạn Azumaya với tỷ lệ 90% khách hàng thường xuyên quay lại (10:45 tối là thời gian nhận yêu cầu mát-xa cuối cùng). Tại khu vực tầng hầm, khách hàng có thể ghé thăm và thưởng thức món ăn truyền thống Nhật Bản tại nhà hàng “Thiên” với thực đơn đa dạng bao gồm rượu sake, Sho-chu, sashimi và thời gian mở cửa đến 2 giờ sáng. Quý khách hàng có thể xoa dịu mệt mỏi chỉ bằng cách ở trong khách sạn của chúng tôi: tắm bể tắm nước nóng ngoài trời độc đáo, thưởng thưởng món ăn tại \"Thiên\", sử dụng dịch vụ mát-xa, xem các chương trình tivi tại phòng và thư giãn. Chi nhánh Thái Văn Lung 2 của chúng tôi nằm đối diện và chi nhánh Lê Thánh Tôn cách đó chỉ 3 phút đi bộ.",
-                "image": "https://azumayavietnam.com/image/branchimage/tvl1.jpg",
+                "image": "https://azumayavietnam.com/image/branchimage/tvl1os.png",
                 "link": "/thai-van-lung-1-detail/room/"
             },
             {
@@ -2070,7 +2070,7 @@
         "service": "Dịch vụ bao gồm :",
         "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n24 kênh TV (tiếng Nhật, Anh, Việt, Hàn)\nLễ tân tiếng nhật 24/24\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bàn làm việc\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
+        "facilityContent": "Bàn làm việc\nTV LED \nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Bộ chuyển đổi nguồn điện (220V-> 110V)\nỔ cắm điện rời",
         "business": "Dịch vụ kinh doanh",
@@ -2433,7 +2433,6 @@
             "in2": "Bồn tắm",
             "in3": "LED TV 51 inches",
             "in4": "Bồn cầu tự động",
-            "in5": "Auto wash stand",
             "priceTitle": "Giá",
             "bed": "Giường đơn 1,8m",
             "bed_size": "Giường đơn 1.8m",
@@ -2442,20 +2441,20 @@
             "tick_b": true,
             "price": "2.380.000VNĐ+",
             "images":[
-            "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIP_1.jpg", 
+            "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIPTATAMI_1.jpg", 
             "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIP_2.jpg", 
             "https://azumayavietnam.com/image/room/hcm/tvl1-new/VIP_3.jpg"]
         }
     ],
     "room_tvl2": {
         "room": "Giới thiệu  phòng",
-        "roomContent": "Bao gồm các dịch vụ sau: Bữa sáng kiểu Nhật, Bể tắm nước nóng ngoài trời (chỉ dành cho nam), Kênh truyền hình quốc tế, Wi-Fi tốc độ cao miễn phí (dịch vụ internet không dây), Dọn phòng hàng ngày, 2 chai nước suối và 3 loại nước minibar hàng ngày.",
+        "roomContent": "Bao gồm các dịch vụ sau: Bữa sáng kiểu Nhật, Bể tắm nước nóng ngoài trời (dành cho cả nam và nữ), Kênh truyền hình quốc tế, Wi-Fi tốc độ cao miễn phí (dịch vụ internet không dây), Dọn phòng hàng ngày, 2 chai nước suối và 3 loại nước minibar hàng ngày.",
         "tariff": "Danh sách giá phòng",
         "vat": "*Giá phòng chưa bao gồm 8% VAT",
         "service": "Dịch vụ bao gồm :",
         "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n24 kênh TV (tiếng Nhật, Anh, Việt, Hàn)\nLễ tân tiếng nhật 24/24\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bàn làm việc\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
+        "facilityContent": "Bàn làm việc\nTV LED \nWi-Fi miễn phí\nKét sắt\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
@@ -2721,7 +2720,7 @@
         "service": "Dịch vụ bao gồm :",
         "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n24 kênh TV (tiếng Nhật, Anh, Việt, Hàn)\nLễ tân tiếng nhật 24/24\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bàn làm việc\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nHộp bảo mật\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
+        "facilityContent": "Bàn làm việc\nTV LED \nWi-Fi miễn phí\nHộp bảo mật\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
@@ -2813,11 +2812,11 @@
             "bedTitle": "Giường",
             "install": "Trang thiết bị",
             "in1": "Cửa sổ nhìn ra ngoài",
-            "in2": "Bồn tắm",
+            "in2": "Không có bồn tắm",
             "in3": "TV màn hình 32 inches",
             "in4": "Bồn cầu tự động",
             "priceTitle": "Giá",
-            "bed": "1.6m Double size bed",
+            "bed": "Giường đơn 1.6m",
             "bed_size": "Giường đơn 1.6m",
             "tick_b": false,
             "price": "1.390.000VNĐ+",
@@ -2857,7 +2856,7 @@
             "bedTitle": "Giường",
             "install": "Trang thiết bị",
             "in1": "Không có cửa sổ",
-            "in2": "Bồn tắm",
+            "in2": "Không có bồn tắm",
             "in3": "TV màn hình 50 inches",
             "in4": "Bồn cầu tự động",
             "priceTitle": "Giá",
@@ -2900,7 +2899,7 @@
         "service": "Dịch vụ bao gồm :",
         "serviceContent": "Bữa sáng kiểu Nhật\nBồn tắm nước nóng ngoài trời\nInternet tốc độ cao\nDọn phòng hàng ngày\nNước miễn phí hàng ngày + Miễn phí 3 đồ uống\n24 kênh TV (tiếng Nhật, Anh, Việt, Hàn)\nLễ tân tiếng nhật 24/24\n5% phí dịch vụ",
         "facility": "Tiện nghi và trang thiết bị :",
-        "facilityContent": "Bàn làm việc\nTV LED (inch 50 & 32 )\nWi-Fi miễn phí\nHộp bảo mật\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
+        "facilityContent": "Bàn làm việc\nTV LED \nWi-Fi miễn phí\nHộp bảo mật\nMáy sấy tóc\nDao cạo râu & bàn chải đánh răng\nDầu gội, dầu xả và xà phòng tắm\nBồn cầu tự động",
         "rental": "Cho thuê miễn phí : ",
         "rentalContent": "Chuyển nguồn điện (220V-> 110V)\n Ổ cắm điện",
         "business": "Dịch vụ kinh doanh",
@@ -3168,7 +3167,7 @@
             "price": "1.250.000VNĐ+",
             "images":[
             "https://azumayavietnam.com/image/room/dn/ExecutiveDouble_1.jpg", 
-            "https://azumayavietnam.com/image/room/dn/ExecutiveDouble_2.jpg"]
+            "https://azumayavietnam.com/image/room/dn/ExecutiveDouble_2.JPG"]
         },
         {
             "id": 4,
@@ -3213,7 +3212,7 @@
             "price": "1.500.000VNĐ+",
             "images":[
             "https://azumayavietnam.com/image/room/dn/Suite_1.jpg", 
-            "https://azumayavietnam.com/image/room/dn/Suite_2.jpg"]
+            "https://azumayavietnam.com/image/room/dn/Suite_2.JPG"]
         }
     ],
     "hp-branch": {

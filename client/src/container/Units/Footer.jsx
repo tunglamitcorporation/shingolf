@@ -48,7 +48,7 @@ export default function Footer() {
                     <div className="content__feature-container m-0" style={{height: '200px'}}>
                       <div
                         className="content__feature-img"
-                        style={{background: 'url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1710735801/AzumayaWeb/cambodia1_salltm.png) center center / cover no-repeat', height:'200px'}}
+                        style={{background: 'url(https://azumayavietnam.com/image/areaimage/cambodia1.png) center center / cover no-repeat', height:'200px'}}
                       >
                           <Link 
                           className="d-block"
@@ -64,7 +64,7 @@ export default function Footer() {
                     <div className="content__feature-container m-0" style={{height: '200px'}}>
                       <div
                         className="content__feature-img"
-                        style={{background: 'url(https://res.cloudinary.com/dtdfsaaei/image/upload/v1713502465/AzumayaWeb/myanmar_owbthq.jpg) center center / cover no-repeat', height:'200px'}}
+                        style={{background: 'url(https://azumayavietnam.com/image/areaimage/myanmar.jpg) center center / cover no-repeat', height:'200px'}}
                       >
                           <Link 
                           className="d-block"

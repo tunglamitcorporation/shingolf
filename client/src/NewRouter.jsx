@@ -49,11 +49,8 @@ function NewRouter(props) {
             setDeviceType('phone');
           }
         };
-    
         handleResize(); 
         window.addEventListener('resize', handleResize); 
-    
-        // Cleanup function
         return () => {
           window.removeEventListener('resize', handleResize);
         };
@@ -67,8 +64,8 @@ function NewRouter(props) {
                 <Route path = "/reservation/" element={<Reservation deviceType={deviceType} />} />
                 <Route path = "/feature/" element={<Feature/>} />
                 <Route path = "/feature/:featureID/" element={<Feature/>} />
-                <Route path = "/breakfast/" element={<VietnamService />} />
-                <Route path = "/rotenburo/" element={<VietnamService />} />
+                <Route path = "/breakfast/" element={<VietnamService deviceType={deviceType}/>} />
+                <Route path = "/rotenburo/" element={<VietnamService deviceType={deviceType}/>} />
                 <Route path = "/massage/" element={<VietnamService deviceType={deviceType} />} />
                 <Route path = "/contract/" element={<Contract />} />
                 <Route path = "/thank-you/:selectedCity/" element={<ThankYou />} />
@@ -94,7 +91,7 @@ function NewRouter(props) {
                 <Route path = '*' element={<ErrorPage />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
 
-                <Route exact path='/ja/' element={<Home news = {news} />} />
+                {/* <Route exact path='/ja/' element={<Home news = {news} />} />
                 <Route path = "/ja/service/" element={<VietnamService />} />
                 <Route path = "/ja/q&a/" element={<Policies />} />
                 <Route path = "/ja/reservation/" element={<Reservation />} />
@@ -124,7 +121,7 @@ function NewRouter(props) {
                 <Route path = "/ja/annex-detail/room/" element={<AnnexRoomDetail />} />
                 <Route path = "/ja/da-nang/room/" element={<DNRoomDetail />} />
                 <Route path = "/ja/hai-phong/room/" element={<HPRoomDetail />} />
-                <Route path = '/ja/*' element={<ErrorPage />} />
+                <Route path = '/ja/*' element={<ErrorPage />} /> */}
             </Routes>
         </section>
     );

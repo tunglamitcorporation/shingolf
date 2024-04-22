@@ -989,9 +989,7 @@ export default function VietnamService({deviceType}) {
         setPageTitle(a)
          
     }
-  }, []);
-  console.log(pageTitle);
-
+  }, [location]);
   const handleTabSelect = (index) => {
     setSelectedTab(index);
   }
@@ -1018,7 +1016,6 @@ export default function VietnamService({deviceType}) {
   const [modalShow1, setModalShow1] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
   
-
   return (
     <>
     <HelmetLayout title = {title}/>
