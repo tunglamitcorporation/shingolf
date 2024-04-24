@@ -5,7 +5,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import {useRef, useState, useEffect} from 'react';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { sendContractRequest } from "../../api/reservation";
-
 export default function Contract() {
   const {t} = useTranslation();
   const contractFeature  = t("contract.feature", {returnObjects:true})

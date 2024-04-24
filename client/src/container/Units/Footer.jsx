@@ -59,7 +59,7 @@ export default function Footer() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                {/* <div className="col-md-4 col-lg-4 col-xl-2 col-xxl-2">
                   <div className="content__feature-item m-0">
                     <div className="content__feature-container m-0" style={{height: '200px'}}>
                       <div
@@ -74,7 +74,7 @@ export default function Footer() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Footer() {
                     <div className="container">
                         <div className="row" style={{textAlign:'center'}}>
                             <div className="col-md-12">
-                    <img className="footer__logo" src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1697875380/AzumayaWeb/oq0sv0woicgxankvnfin.png" alt="" />
+                    <img className="footer__logo" src="https://azumayavietnam.com/image/logo/azlogo.png" alt="" />
                     <div className="footer__copyright">
                         <p className="mb-0 pt-3">Copyright © 2024 - Azumaya - All Right Reversed</p>
                     </div>

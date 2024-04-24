@@ -763,6 +763,8 @@
     },
     "home": {
         "name": "Azumaya Hotel",
+        "best-link":"【Best rate guarantee】",
+        "best-rate":"Azumaya Hotel offers the best deals for your booking",
         "news_title": "WHAT'S NEWS ?",
         "welcome_title": "Welcome to Azumaya Hotel",
         "welcome_sub-title": "Comfort served for business travelers",
@@ -1788,67 +1790,67 @@
             "id": 1,
             "title": "Pick up & Drop off Service",
             "content": "From 6:00 to 20:59: 625.000 VND\nFrom 21:00 to 5:59: 750.000 VND\n\nCar for 4-7 persons",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/pu-do_ea9m4c.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/pu-do.jpg"
         },
         {
             "id": 2,
             "title": "Minibar",
             "content": "Soft drink, beer, etc.\nFrom 20.000 VND",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/minibar_wpox8f.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/minibar.jpg"
         },
         {
             "id": 3,
             "title": "Laundry",
             "content": "Special price for long staying guest\nFrom 20.000 VND",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/laundry_ahnuwq.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/laundry.jpeg"
         },
         {
             "id": 4,
             "title": "Print & Copy",
             "content": "FREE for first 10 pages / day\nFrom 11th page, 2.000VND charged per page",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/printcopy_cxbs5v.webp"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/printcopy.jpg"
         },
         {
             "id": 5,
             "title": "Tel",
             "content": "FREE for local number / day\n25.000VND charged for international number",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664310/AzumayaWeb/tel_jjorhm.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/tel.jpg"
         },
         {
             "id": 6,
             "title": "Rental Car",
             "content": "Ask receptionist",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/rentalcar_fhqsms.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/rentalcar.jpg"
         },
         {
             "id": 7,
             "title": "Tour",
             "content": "Ask receptionist",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664311/AzumayaWeb/tour_asodqe.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/tour.jpg"
         },
         {
             "id": 8,
             "title": "Extend Visa",
             "content": "Ask receptionist",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664308/AzumayaWeb/visa_htwjfp.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/visa.jpg"
         },
         {
             "id": 9,
             "title": "Food Delivery",
             "content": "Ask receptionist",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664309/AzumayaWeb/food_brzm3q.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/food.jpg"
         },
         {
             "id": 10,
             "title": "Male Rotenburo",
             "content": "* Opening time: \nMon ~ Fri : 6:00 ~ 9:00/ 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* We open for ladies everyday at Kim Ma 2 Branch \n*Opening time: \nMon ~ Fri : 17:00 ~ 23:00\nSat ~ Sun : 7:00 ~ 23:00\n* If you want to use this service, please contact reception in advance.",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1701664675/AzumayaWeb/f-ctr5_e7tzm3.jpg"
+            "image": "https://azumayavietnam.com/image/rtbr/RTBRLL.jpg"
         },
         {
             "id": 11,
             "title": "Breakfast",
             "content": "Mon ~ Sat: 6:00 ~ 8:00 Buffet/ 8:00 ~ 10:00 Set menu\nSun: 6:00 ~ 10:00 Set menu",
-            "image": "https://azumayavietnam.com/image/dtdfsaaei/image/upload/v1708664685/AzumayaWeb/breakfast_vpnvhg.jpg"
+            "image": "https://azumayavietnam.com/image/bussiness-demo/breakfast.JPG"
         }
     ],
     "room_ll": {

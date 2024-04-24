@@ -12,7 +12,6 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import ScrollToTop from "../../../units/ScrollToTop";
 
-
 export default function KM3RoomDetail() {
   const { t } = useTranslation();
   const location = useLocation();
@@ -25,6 +24,8 @@ export default function KM3RoomDetail() {
   const a = t("branch.km3")
   const b = t("header.title")
   const c = a + " | "+ b
+  const p =  '../../image/food.jpg'
+  console.log(p);
   console.log(receivedData);
   const [startDate, setStartDate] = useState(receivedData ? receivedData.startDate : '');
   const [endDate, setEndDate] = useState(receivedData ? receivedData.endDate : '');
@@ -394,7 +395,7 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                     </p>
                   </div>
                   <div className="room__container">
-                    <table className="room__table room__table-service">
+                    {/* <table className="room__table room__table-service">
                       <tbody>
                         <tr>
                           <th rowSpan={2}>{t("room_km3.pickup")}</th>
@@ -457,39 +458,39 @@ const [selectedCity, setSelectedCity] = useState('hotel-hn');
                           </td>
                         </tr>
                       </tbody>
-                    </table>
-      {/* <div className="feature__type-list">
-        <div className="container" id="containerID">
-          <div className="container">
-            <div className="row justify-content-center">
-            {business_km3.map((item) => (
-              <div key={item.id} className="business-card col-md-4 pre-line m-1" id={item.id}>
-              <div className="card" style={{ border: "none" }}>
-                <div className="row g-4">
-                  <div className="col-md-12">
-                    <img className="business-img" src={item.image} alt="" />
-                  </div>
-                  <div className="col-md-12">
-                    <div className="card-body" style={{ padding: 0 }}>
-                      <h2 className="card-title">{item.title}</h2>
-                      <p className="card-text left">{item.content}</p>
-                      <p className="card-text left">{item.note}</p>
-                      <div className="btn-holder">
-                      <div className="btn__detail control-position">
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                    </table> */}
+                  <div className="feature__type-list">
+                    <div className="container" id="containerID">
+                      <div className="container">
+                        <div className="row justify-content-center">
+                        {business_km3.map((item) => (
+                          <div key={item.id} className="business-card col-md-4 pre-line m-1" id={item.id}>
+                          <div className="card" style={{ border: "none" }}>
+                            <div className="row g-4">
+                              <div className="col-md-12">
+                                <img className="business-img" src={item.image} alt="" />
+                              </div>
+                              <div className="col-md-12">
+                                <div className="card-body" style={{ padding: 0 }}>
+                                  <h2 className="card-title">{item.title}</h2>
+                                  <p className="card-text left">{item.content}</p>
+                                  <p className="card-text left">{item.note}</p>
+                                  <div className="btn-holder">
+                                  <div className="btn__detail control-position">
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                 )
                 )
             }
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
                     <div className="col-md-12">
                       <div className="table-footer">
                         <h1>{t("room_km3.board")}</h1>

@@ -88,7 +88,7 @@ function NewRouter(props) {
                 <Route path = "/annex-detail/room/" element={<AnnexRoomDetail />} />
                 <Route path = "/da-nang/room/" element={<DNRoomDetail />} />
                 <Route path = "/hai-phong/room/" element={<HPRoomDetail />} />
-                <Route path = '*' element={<ErrorPage />} />
+                <Route path = '*' element={<Home news={news} />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
 
                 {/* <Route exact path='/ja/' element={<Home news = {news} />} />

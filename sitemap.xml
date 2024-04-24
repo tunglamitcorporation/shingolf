@@ -10,127 +10,127 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/about</loc>
+        <loc>https://azumayavietnam.com/about/</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/hotel-hn</loc>
+        <loc>https://azumayavietnam.com/hotel-hn/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/hotel-hcm</loc>
+        <loc>https://azumayavietnam.com/hotel-hcm/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/hotel-dn</loc>
+        <loc>https://azumayavietnam.com/hotel-dn/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/hotel-hp</loc>
+        <loc>https://azumayavietnam.com/hotel-hp/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/service</loc>
+        <loc>https://azumayavietnam.com/service/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/q&amp;a</loc>
+        <loc>https://azumayavietnam.com/q&amp;a/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/feature</loc>
+        <loc>https://azumayavietnam.com/feature/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/breakfast</loc>
+        <loc>https://azumayavietnam.com/breakfast/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/massage</loc>
+        <loc>https://azumayavietnam.com/massage/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/rotenburo</loc>
+        <loc>https://azumayavietnam.com/rotenburo/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/contract</loc>
+        <loc>https://azumayavietnam.com/contract/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/thankyou/:selectedCity</loc>
+        <loc>https://azumayavietnam.com/thankyou/:selectedCity/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/news</loc>
+        <loc>https://azumayavietnam.com/news/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/news/:title</loc>
+        <loc>https://azumayavietnam.com/news/:title/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/hai-ba-trung-detail/room</loc>
+        <loc>https://azumayavietnam.com/hai-ba-trung-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/kim-ma-2-detail/room</loc>
+        <loc>https://azumayavietnam.com/kim-ma-2-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/kim-ma-3-detail/room</loc>
+        <loc>https://azumayavietnam.com/kim-ma-3-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/linh-lang-detail/room</loc>
+        <loc>https://azumayavietnam.com/linh-lang-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/thai-van-lung-1-detail/room</loc>
+        <loc>https://azumayavietnam.com/thai-van-lung-1-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/thai-van-lung-2-detail/room</loc>
+        <loc>https://azumayavietnam.com/thai-van-lung-2-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/le-thanh-ton-detail/room</loc>
+        <loc>https://azumayavietnam.com/le-thanh-ton-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/annex-detail/room</loc>
+        <loc>https://azumayavietnam.com/annex-detail/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/da-nang/room</loc>
+        <loc>https://azumayavietnam.com/da-nang/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/hai-phong/room</loc>
+        <loc>https://azumayavietnam.com/hai-phong/room/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -140,7 +140,7 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://azumayavietnam.com/feedback</loc>
+        <loc>https://azumayavietnam.com/feedback/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>

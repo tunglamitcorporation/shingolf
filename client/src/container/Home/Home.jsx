@@ -10,7 +10,7 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
-
+import bestRate from "../../image/best-rate.png"
 function LineModal(props) {
   return (
     <>
@@ -131,7 +131,12 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
         </div>
       <div className="is-sticky">
         <Booking />
-        {/* <EnglishOnlyInput /> */}
+      </div>
+      <div className="container">
+        <div className="d-flex justify-content-center align-items-center">
+              <img style={{width: '20%', height:'20%'}} src={bestRate} />
+            <h2 style={{borderTop: '3px solid #89734C', borderBottom:'3px solid #89734C', paddingTop:'30px',paddingBottom:'30px'}}><Link style ={{color: '#89734C'}} to = "/feature/1">{t('home.best-link')}</Link>{t('home.best-rate')}</h2>
+        </div>
       </div>
         <div className="container mt-5">
           <div className="row justify-content-center align-item-center">

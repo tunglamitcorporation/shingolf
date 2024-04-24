@@ -450,18 +450,18 @@ function Reservation({token, deviceType}) {
       errors.givenName = 'required';
       isVaLid = false
     } 
-    if (guestInformation.guest1.day === "Day") {
-      errors.selectedDay = 'required';
-      isVaLid = false
-    } 
-    if (guestInformation.guest1.month === "Month") {
-      errors.selectedMonth = 'required';
-      isVaLid = false
-    } 
-    if (guestInformation.guest1.year === "Year") {
-      errors.selectedYear = 'required';
-      isVaLid = false
-    } 
+    // if (guestInformation.guest1.day === "Day") {
+    //   errors.selectedDay = 'required';
+    //   isVaLid = false
+    // } 
+    // if (guestInformation.guest1.month === "Month") {
+    //   errors.selectedMonth = 'required';
+    //   isVaLid = false
+    // } 
+    // if (guestInformation.guest1.year === "Year") {
+    //   errors.selectedYear = 'required';
+    //   isVaLid = false
+    //}
     // if (!guestInformation.guest1.secondFamilyName) {
     //   errors.secondFamilyName = 'required';
     //   isVaLid = false
@@ -1167,14 +1167,14 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  <span className="required__note">*</span>
                </div>
                <DayPicker guest={guestInformation.guest1.day} id={1}/>
-               {errors.selectedDay1 && 
-               <p className="col-md-1 error-message">{errors.selectedDay1}</p>}
+               {/* {errors.selectedDay1 && 
+               <p className="col-md-1 error-message">{errors.selectedDay1}</p>} */}
                <MonthPicker guest={guestInformation.guest1.month} id={1} />
-               {errors.selectedMonth1 && 
-               <p className="col-md-1 error-message">{errors.selectedMonth1}</p>}
+               {/* {errors.selectedMonth1 &&  */}
+               {/* <p className="col-md-1 error-message">{errors.selectedMonth1}</p>} */}
                <YearPicker guest={guestInformation.guest1.year}  id={1} />
-               {errors.selectedYear1 && 
-               <p className="col-md-1 error-message">{errors.selectedYear1}</p>}
+              {/* //  {errors.selectedYear1 &&  */}
+              {/* /<p className="col-md-1 error-message">{errors.selectedYear1}</p>} */}
              </div>
              {showButton >= 2 && (
                <div className="row">
