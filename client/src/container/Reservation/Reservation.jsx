@@ -1897,7 +1897,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                  onChange={(e) => {
                   const value = e.target.value
                   if(regex.test(value)){
-                  handleInputChange('guest3','givenName', value)
+                  handleInputChange('guest3','familyName', value)
                   setAlertShown(false)
                 }else if(!alertShown){
                    alert('Please write in Alphabet')

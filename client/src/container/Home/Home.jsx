@@ -11,6 +11,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import bestRate from "../../image/best-rate.png"
+import App from "../../Test";
 function LineModal(props) {
   return (
     <>
@@ -166,6 +167,7 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
                     />
           </div>
         </div>
+        {/* <App /> */}
       <AnimatedOnScroll>
         <div className="content__news">
           <div className="container">
