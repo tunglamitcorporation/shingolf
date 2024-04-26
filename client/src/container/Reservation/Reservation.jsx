@@ -7,6 +7,7 @@ import { findCompanyByRequest, sendReservationRequest } from "../../api/reservat
 import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import MyComponent from "../../Test";
 
 function Reservation({token, deviceType}) {
   const { t, i18n } = useTranslation();
@@ -40,13 +41,14 @@ function Reservation({token, deviceType}) {
   const filteredRoom = flatRoom.filter((r) => r.branch_id == selectedBranch);
   const cityParam = selectedCity ? selectedCity.replace(/\s+/g, "-") : "";
   const [startDate, setStartDate] = useState(
-    receivedData ? receivedData.startDate : ""
+    receivedData ? receivedData.startDate : null
   );
   const [endDate, setEndDate] = useState(
-    receivedData ? receivedData.endDate : "" 
+    receivedData ? receivedData.endDate : null
   );
-  const [startTime, setStartTime] = useState("15:00");
-  const [endTime, setEndTime] = useState("12:00");
+  console.log(startDate, endDate);
+  const [startTime, setStartTime] = useState('15:00');
+  const [endTime, setEndTime] = useState('12:00');
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
   const [guestInformation, setGuestInformation] = useState({
@@ -68,15 +70,6 @@ function Reservation({token, deviceType}) {
   const [lateOut, setLateOut] = useState('');
   const [searchCompany, setSearchCompany] = useState([]); 
   const [difference, setDifference] = useState(null);
-
-  const calculateDifference = () => {
-    if (startDate && endDate) {
-      const differenceInMilliseconds = Math.abs(endDate - startDate);
-      const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-      setDifference(differenceInDays);
-    }
-  };
-  console.log(difference);
   
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
@@ -600,7 +593,14 @@ function Reservation({token, deviceType}) {
   setErrors(errors);
   return isVaLid
 }
-console.log(errors);
+
+const calculateDifference = () => {
+    const differenceInMilliseconds = Math.abs(endDate - startDate);
+    const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+    setDifference(differenceInDays);
+    console.log(differenceInDays)
+};
+console.log(difference);
   const handleSubmit = async(e) => {
     e.preventDefault();
 
@@ -949,7 +949,6 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
               onChange={(dates) => {
                 setEndDate(dates[0]);
                 errors.endDate = ''
-                calculateDifference()
               }}
             />
              {errors.endDate && 
@@ -1286,7 +1285,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    type="radio"
                    name="Booker"
                    id="booker"
-                   value={`${t('reservation.same-person')}`}
+                   value='Same as person who will stay'
                    checked={status === 0}
                    onClick={(e) => {
                      handleSelected(0);
@@ -1301,7 +1300,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    type="radio"
                    name="Booker"
                    id="booker"
-                   value={`${t('reservation.diff-person')}`}
+                   value='Different with who will stay'
                    checked={status === 1}
                    onClick={(e) => {
                      handleSelected(1);
@@ -1443,6 +1442,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                    onClick={(e) => {
                      handleInputChange('guest1', 'contract', e.target.value)
                      handleSelectedCompany(1);
+                     calculateDifference()
                    }}
                  />
                  <label htmlFor="hContract">{t("reservation.h-cont")}</label>
@@ -1484,7 +1484,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 value='Company have contract 5% OFF'
                 onChange={(e) => handleRadioChange('guest1', 'discount', e.target.value)}
               />
-              <label  htmlFor="discount1">Company have contract 5% OFF</label>
+              <label  htmlFor="discount1">{t('reservation.discount1')}</label>
                 </div>
               </div>
               <div className="row">
@@ -1498,7 +1498,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 value="Company have contract free laundry 120.000vnd/day"
                 onChange={(e) => handleRadioChange('guest1', 'discount', e.target.value)}
               />
-                <label htmlFor="discount2">Company have contract free laundry 120.000vnd/day</label>
+                <label htmlFor="discount2">{t('reservation.discount2')}</label>
                 </div>
               </div>
               {difference >= 10 && (
@@ -1513,7 +1513,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
                 value="Company have contract 5% OFF + free laundry 120.000vnd/day"
                 onChange={(e) => handleRadioChange('guest1', 'discount', e.target.value)}
               />
-                <label htmlFor="discount3">Company have contract 5% OFF + free laundry 120.000vnd/day</label>
+                <label htmlFor="discount3">{t('reservation.discount3')}</label>
                 </div>
               </div>
               )}

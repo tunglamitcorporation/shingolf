@@ -293,7 +293,7 @@ app.get('*', function(req, res) {
         ogTitle = 'News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'Explore the world of Azumaya Hotel through the latest news and unique articles about travel, cuisine, and outstanding experiences at top destinations. Share captivating stories about lifestyle, local culture, and the amazing things awaiting you at Azumaya Hotel.'
         ogUrl = 'http://azumayavietnam/news/'
-        ogImage = 'https://azumayavietnam.com/image/welcome-bg_z5dr6z.jpg'
+        ogImage = 'https://azumayavietnam.com/image/areaheader/oshp.jpg'
         xCard = "summary"
         xTitle = 'News - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Explore the world of Azumaya Hotel through the latest news and unique articles about travel, cuisine, and outstanding experiences at top destinations. Share captivating stories about lifestyle, local culture, and the amazing things awaiting you at Azumaya Hotel.'
@@ -310,7 +310,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath'
         ogUrl = 'http://azumayavietnam/service/'
-        ogImage = 'https://azumayavietnam.com/image/Az_website_service_page_photos-2_ximtqy.jpg'
+        ogImage = 'https://azumayavietnam.com/image/service/rtbr-en.jpg'
         xCard = "summary"
         xTitle = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath'
@@ -327,7 +327,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No chips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease. We would like to introduce you to the greatest charm of Azumaya.'
         ogUrl = 'http://azumayavietnam/feature/'
-        ogImage = 'https://azumayavietnam.com/image/m3weovuhk4pgmsh2xgud.jpg'
+        ogImage = 'https://azumayavietnam.com/image/feature/m3weovuhk4pgmsh2xgud.jpg'
         xCard = "summary"
         xTitle = 'Feature - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'We offer Japanese hospitality at prices starting from $35 per night, which is cheaper than the market price. No chips required, the reception desk can speak Japanese, the payment currency can be yen/dollar, and the shape of the outlet is the same as Japan, so people who come from Vietnam to a foreign country, Vietnam, can feel at ease. We would like to introduce you to the greatest charm of Azumaya.'
@@ -344,7 +344,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Reservation - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'The Azumaya Hotel welcomes business travelers with comfortable accommodations and modern amenities tailored to their needs. Enjoy a relaxing stay with our spacious rooms, complimentary Wi-Fi, and convenient location near major business districts. Book your reservation today for a seamless travel experience.'
         ogUrl = 'http://azumayavietnam/reservation/'
-        ogImage = 'https://azumayavietnam.com/image/rd2qg5wkfxdoarlvcuwl.jpg'
+        ogImage = 'https://azumayavietnam.com/image/reservation/rsvt-bg.jpg'
         xCard = "summary"
         xTitle = 'Reservation - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'The Azumaya Hotel welcomes business travelers with comfortable accommodations and modern amenities tailored to their needs. Enjoy a relaxing stay with our spacious rooms, complimentary Wi-Fi, and convenient location near major business districts. Book your reservation today for a seamless travel experience.'
@@ -361,7 +361,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Contract - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'Azumaya Hotel accepts a corporate contract for staying at a special price for companies that frequently make business trips to Southeast Asia. Please consider this opportunity.'
         ogUrl = 'http://azumayavietnam/contract/'
-        ogImage = 'https://azumayavietnam.com/image/bg-contract_frmwem.jpg'
+        ogImage = 'https://azumayavietnam.com/image/reservation/bg-contract.jpg'
         xCard = "summary"
         xTitle = 'Contract - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Azumaya Hotel accepts a corporate contract for staying at a special price for companies that frequently make business trips to Southeast Asia. Please consider this opportunity.'
@@ -378,7 +378,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Q&A - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'Azumaya Hotel accepts a corporate Q&A for staying at a special price for companies that frequently make business trips to Southeast Asia. Please consider this opportunity.'
         ogUrl = 'http://azumayavietnam/q&a/'
-        ogImage = 'https://azumayavietnam.com/image/PP/Promo/529888125-transformed_adalkk.jpg'
+        ogImage = 'https://azumayavietnam.com/image/lobby/LBLTT.JPG'
         xCard = "summary"
         xTitle = 'Q&A - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'This is the hotel overview page. We will solve short questions from the FAQ section. Please feel free to contact us for any other questions.'
@@ -395,7 +395,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Breakfast - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'Start your day right with breakfast at Azumaya Hotel. Fresh, delicious, and satisfying – the perfect way to begin your stay'
         ogUrl = 'http://azumayavietnam/breakfast/'
-        ogImage = 'https://azumayavietnam.com/image/BREAKFAST/BRFLTT_zhmkyf.jpg'
+        ogImage = 'https://azumayavietnam.com/image/breakfast/BRFLTT.jpg'
         xCard = "summary"
         xTitle = 'Breakfast - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'Start your day right with breakfast at Azumaya Hotel. Fresh, delicious, and satisfying – the perfect way to begin your stay'
@@ -412,7 +412,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Rotenburo - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = "Experience relaxation at Azumaya Hotel's open-air bath. Enjoy the soothing waters and scenic views for a serene getaway."
         ogUrl = 'http://azumayavietnam/rotenburo/'
-        ogImage = 'https://azumayavietnam.com/image/Rotenburo/rtbrdn3_rscz5x.jpg'
+        ogImage = 'https://azumayavietnam.com/image/rtbt/rtbrdn3.jpg'
         xCard = "summary"
         xTitle = 'Rotenburo - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = "Experience relaxation at Azumaya Hotel's open-air bath. Enjoy the soothing waters and scenic views for a serene getaway."
@@ -429,7 +429,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."
         ogUrl = 'http://azumayavietnam/massage/'
-        ogImage = 'https://azumayavietnam.com/image/massage-title_vjftlg.jpg'
+        ogImage = 'https://azumayavietnam.com/image/massage/massage-title.png'
         xCard = "summary"
         xTitle = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."

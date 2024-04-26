@@ -40,8 +40,10 @@ export default function Booking (){
 
     const handleSendData = () => {
         const data = {
-            startDate: startDate ? format(startDate, 'yyyy-MM-dd'): '',
-            endDate: endDate ? format(endDate,'yyyy-MM-dd'): '',
+            startDate: startDate ,
+            // ? format(startDate, 'yyyy-MM-dd'): '',
+            endDate: endDate ,
+            //  format(endDate,'yyyy-MM-dd'): '',
             selectedCity,
             selectedBranch
         }

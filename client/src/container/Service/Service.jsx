@@ -10,6 +10,7 @@ import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { format } from "date-fns";
 import { sendMassageRequest } from "../../api/reservation";
+import ScrollToTop from "../../units/ScrollToTop";
 
 export default function VietnamService({deviceType}) {
   const [branch, setBranch] = useState('')
@@ -1393,6 +1394,7 @@ export default function VietnamService({deviceType}) {
               </div>
             </TabPanel>
             <TabPanel>
+              <ScrollToTop x={0} y={1200} />
               <div className="service__content p-0">
                 <div className="row justify-content-center">
                   <Link className="image-holder p-0" to="">
