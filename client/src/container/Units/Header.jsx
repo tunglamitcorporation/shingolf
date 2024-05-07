@@ -67,7 +67,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/home/"
+              to="/"
               className="header__mobile-navbar-link"
             >
               {t("header.home")}

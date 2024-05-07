@@ -671,7 +671,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
       const day = birthDay + i;
       options.push(
         <option value={day} key={day}>
-          {day}
+          {day <=9 ? '0' + day : day}
         </option>
       );
     }
@@ -703,7 +703,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
       const month = birthMonth + i;
       options.push(
         <option value={month} key={month}>
-          {month}
+          {month <=9 ? '0' + month : month}
         </option>
       );
     }
