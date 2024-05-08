@@ -310,7 +310,7 @@ app.get('*', function(req, res) {
         ogTitle = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         ogDescription = 'It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath'
         ogUrl = 'http://azumayavietnam/service/'
-        ogImage = 'https://azumayavietnam.com/image/service/rtbr-en.jpg'
+        ogImage = 'https://azumayavietnam.com/image/service/rtbr-ja.jpg'
         xCard = "summary"
         xTitle = 'Service - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = 'It is a detailed page of the services offered by Azumaya Including breakfast, massage and open-air bath'
