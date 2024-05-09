@@ -4187,8 +4187,45 @@
         "feedback_4":"Browser and device used (e.g., Chrome on Windows, Safari on iPhone):",
         "feedback_5":"Additional comments or screenshots (if available):",
         "feedback_6":"Choose Image:"
-    }
+    },
     
 
     
+    "booking_test": {
+    "title": "Booking",
+    "date_in": "Check in date",
+    "date_out": "Check out date",
+    "reserve": "Reserve",
+    "placeHolder": "Please choose a city",
+    "room_placeholder": "Please choose a kind of room",
+    "city": [
+        {
+            "id": "Test",
+            "city_name": "Test"
+        }
+    ],
+    "branch": [
+        {
+            "branch_id": "Test",
+            "city_id": "Test",
+            "city_name": "Test",
+            "branch_name": "Test"
+        }
+    ],
+    "room":[
+        {
+            "branch_id":"Test",
+            "branch_name":"Test",
+            "room_name":"Please select a kind of room"
+
+        },
+        {
+            "branch_id":"Test",
+            "branch_name":"Test",
+            "room_name":"Test"
+
+        }
+        
+    ]
+}
 }

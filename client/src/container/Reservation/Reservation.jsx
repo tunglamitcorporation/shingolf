@@ -7,13 +7,11 @@ import { findCompanyByRequest, sendReservationRequest } from "../../api/reservat
 import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import MyComponent from "../../Test";
-
+import Spinner from 'react-bootstrap/Spinner';
 function Reservation({token, deviceType}) {
   const { t, i18n } = useTranslation();
   const language = i18n.language
   useEffect(() => {
-    console.log("Current language:", language);
   }, [language]);
   const location = useLocation();
   const receivedData = location.state || {};
@@ -29,6 +27,7 @@ function Reservation({token, deviceType}) {
   const [selectedCity, setSelectedCity] = useState('hotel-hcm');
   const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
   const [selectedRoom, setSelectedRoom] = useState(t('booking.room_placeholder'));
+
   const a = t("header.reservation")
   const b = t("header.title")
   const c = a + " | "+ b
@@ -46,7 +45,6 @@ function Reservation({token, deviceType}) {
   const [endDate, setEndDate] = useState(
     receivedData ? receivedData.endDate : null
   );
-  console.log(startDate, endDate);
   const [startTime, setStartTime] = useState('15:00');
   const [endTime, setEndTime] = useState('12:00');
   const [roomAmount, setRoomAmount] = useState(1);
@@ -58,7 +56,6 @@ function Reservation({token, deviceType}) {
     guest4: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
     guest5: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
   })
-  console.log(guestInformation);
   const regex = /^[A-Za-zÀ-Ỹà-ỹ\s]*$/; 
   const [alertShown, setAlertShown] = useState(false);
   const [specialRequest, setSpecialRequest] = useState('');
@@ -70,7 +67,7 @@ function Reservation({token, deviceType}) {
   const [lateOut, setLateOut] = useState('');
   const [searchCompany, setSearchCompany] = useState([]); 
   const [difference, setDifference] = useState(null);
-  
+  const [loading, setLoading] = useState(false)
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
   const handleInputChange = (tabId, inputName, value) => {
@@ -598,9 +595,7 @@ const calculateDifference = () => {
     const differenceInMilliseconds = Math.abs(endDate - startDate);
     const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
     setDifference(differenceInDays);
-    console.log(differenceInDays)
 };
-console.log(difference);
   const handleSubmit = async(e) => {
     e.preventDefault();
 
@@ -647,17 +642,26 @@ console.log(difference);
         language, 
         deviceType
     }
-    console.log(dataObject);
-      if (validateForm()) {
+    if (validateForm()) {
+      setLoading(true)
+      try{
         const token= "73344833-5b52-4403-9255-695907647688"
         const source = await sendReservationRequest(dataObject, token)
-        navigate(`/thank-you/${cityParam}`)
+        setTimeout(() => {
+          setLoading(false);
+          navigate(`/thank-you/${cityParam}`)
+        }, 3000);
         console.log(source);
-      } else {
-       alert(`Please ensure that all required fields are completed 
+      }
+      catch(errors) {
+        console.error('Error sending data:', errors);
+        setLoading(false);
+      }
+    } else {
+     alert(`Please ensure that all required fields are completed 
 
 If you make reservation from 2 rooms or more, please ensure that all required fields are completed in all rooms`)}
-      }  
+    }  
   function DayPicker({guest,id}) {
     const minDay = 1;
     const maxDay = 31;
@@ -843,6 +847,14 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
   }
   return ( 
     <div>
+     {loading && (
+     <div className="container">
+      <div style={{height: "100%", width: "100%", position: 'absolute', left:0, right: 0, backgroundColor: 'rgba(0,0,0,0.3)', zIndex:1}} className="row justify-content-center align-items-center ml-0 mr-0">
+        <Spinner animation="border" role="status" style={{color: "#482979"}}>
+         </Spinner>
+      </div>
+     </div>
+    )}
      <HelmetLayout title = {c} />
     <div className="reservation__content">
       <div className="container">

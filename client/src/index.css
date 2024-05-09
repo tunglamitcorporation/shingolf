@@ -2350,6 +2350,16 @@ filter: brightness(0.5);
     color: white;
   }
 }
+.spinner-border {
+  --bs-spinner-width: 12rem !important;
+  --bs-spinner-height: 12rem !important;
+  --bs-spinner-vertical-align: -0.125em !important;
+  --bs-spinner-border-width: 1em !important;
+  --bs-spinner-animation-speed: 0.75s !important;
+  --bs-spinner-animation-name: spinner-border !important;
+  border: var(--bs-spinner-border-width) solid currentcolor;
+  border-right-color: transparent;
+}
 /* mobile */
 @media screen and (max-width: 46.1875em){
   html,body{
@@ -2697,8 +2707,12 @@ font-size: 1.2rem !important;
   .header__PC,  .header__PC-2, .header{
       display: none;
   }
-  .header__mobile-logo{
+  .header__mobile-logo {
     display: block;
+  }
+  .header__mobile-logo img{
+    width: 100px;
+    height: 60px;
   }
   .feature__content-title{
     font-size: 1.4rem;

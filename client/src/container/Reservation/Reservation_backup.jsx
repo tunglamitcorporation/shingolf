@@ -7,6 +7,7 @@ import { findCompanyByRequest, sendReservationRequest } from "../../api/reservat
 import { format } from "date-fns";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Spinner from 'react-bootstrap/Spinner';
 
 function Reservation({token, deviceType}) {
   const { t, i18n } = useTranslation();
@@ -18,16 +19,17 @@ function Reservation({token, deviceType}) {
   const receivedData = location.state || {};
   const navigate = useNavigate()
   const [text, setText] = useState(`${t("reservation.more")}`);
-  const city = t("booking.city", { returnObjects: true });
-  const branch = t("booking.branch", { returnObjects: true });
-  const room = t("booking.room", { returnObjects: true });
+  const city = t("booking_test.city", { returnObjects: true });
+  const branch = t("booking_test.branch", { returnObjects: true });
+  const room = t("booking_test.room", { returnObjects: true });
   const payMethod = t("reservation.method", { returnObjects: true });
   const payMethod2 = t("reservation.method2", { returnObjects: true });
   const earlyInNote =t("reservation.earlyIn_note", { returnObjects: true });
   const lateOutNote =t("reservation.lateOut_note", { returnObjects: true });
-  const [selectedCity, setSelectedCity] = useState('hotel-hcm');
-  const [selectedBranch, setSelectedBranch] = useState('le-thanh-ton-detail');
+  const [selectedCity, setSelectedCity] = useState('Test');
+  const [selectedBranch, setSelectedBranch] = useState('Test');
   const [selectedRoom, setSelectedRoom] = useState(t('booking.room_placeholder'));
+  const [loading, setLoading] = useState(false)
   const a = t("header.reservation")
   const b = t("header.title")
   const c = a + " | "+ b
@@ -40,17 +42,17 @@ function Reservation({token, deviceType}) {
   const filteredRoom = flatRoom.filter((r) => r.branch_id == selectedBranch);
   const cityParam = selectedCity ? selectedCity.replace(/\s+/g, "-") : "";
   const [startDate, setStartDate] = useState(
-    receivedData ? receivedData.startDate : ""
+    receivedData ? receivedData.startDate : "Tue May 28 2024 00:00:00 GMT+0700 (Indochina Time)"
   );
   const [endDate, setEndDate] = useState(
-    receivedData ? receivedData.endDate : "" 
+    receivedData ? receivedData.endDate : "Sat Jun 08 2024 00:00:00 GMT+0700 (Indochina Time)" 
   );
   const [startTime, setStartTime] = useState("15:00");
   const [endTime, setEndTime] = useState("12:00");
   const [roomAmount, setRoomAmount] = useState(1);
   const [guestAmount, setGuestAmount] = useState(1);
   const [guestInformation, setGuestInformation] = useState({
-    guest1: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', booker:'Same as person who will stay',bookerName:'', email:'', phone:'', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
+    guest1: {familyName:'IT TEAM', givenName: 'TEST', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', booker:'Same as person who will stay',bookerName:'', email:'it3@azumayavietnam.com', phone:'0839098505', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
     guest2: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
     guest3: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
     guest4: {familyName:'', givenName: '', gender: 'Mr.', day: 'Day', month: 'Month', year: 'Year', secondFamilyName:'', secondGivenName:'',secondGender:'Mr.', secondDay:'Day', secondMonth:'Month', secondYear:'Year', roomType:'Non Smoking',contract:'No Contract',company:'',discount:'', vat:'No Necessary', payMethod:'By cash at counter (VND/USD/JPY)'},
@@ -65,8 +67,7 @@ function Reservation({token, deviceType}) {
   const [earlyIn, setEarlyIn] = useState('');
   const [lateOut, setLateOut] = useState('');
   const [searchCompany, setSearchCompany] = useState([]); 
-  const [difference, setDifference] = useState(null);
-
+  const [difference, setDifference] = useState(null);console.log(endDate);
   const calculateDifference = () => {
     if (startDate && endDate) {
       const differenceInMilliseconds = Math.abs(endDate - startDate);
@@ -74,8 +75,7 @@ function Reservation({token, deviceType}) {
       setDifference(differenceInDays);
     }
   };
-  console.log(difference);
-  
+ 
   const [tabs, setTabs] = useState(['Room 1']);
   const [activeTab, setActiveTab] = useState(0);
   const handleInputChange = (tabId, inputName, value) => {
@@ -216,9 +216,6 @@ function Reservation({token, deviceType}) {
       setSelectedRoom(receivedData.selectedRoom);
     }
   }, [receivedData]);
-  // const [selectedRoom, setSelectedRoom] = useState(
-  //   receivedData ? receivedData.selectedRoom : `${t('booking.room_placeholder')}`   
-  // );
   useEffect(() => {
     if (show) {
       inputRef.current.focus();
@@ -251,78 +248,6 @@ function Reservation({token, deviceType}) {
       setSearchCompany('')
     }
   };
-  // const handleChangeCompanyName2 = (e) => {
-  //   handleInputChange('guest2', 'company', e.target.value);
-
-  //   if(guestInformation.guest2.company) {
-  //  const timer = setTimeout(() => {
-  //       findCompanyByRequest(guestInformation.guest2.company, token)
-  //       .then(response => {
-  //         setSearchCompany(response.data.company)
-  //       })
-  //       .catch(error => {
-  //           console.log(error);
-  //       }, 3000)
-  //     })
-  //     return () => clearTimeout(timer)
-  //   }else{
-  //     setSearchCompany('')
-  //   }
-  // };
-  // const handleChangeCompanyName3 = (e) => {
-  //   handleInputChange('guest3', 'company', e.target.value);
-
-  //   if(guestInformation.guest3.company) {
-  //  const timer = setTimeout(() => {
-  //       findCompanyByRequest(guestInformation.guest3.company, token)
-  //       .then(response => {
-  //         setSearchCompany(response.data.company)
-  //       })
-  //       .catch(error => {
-  //           console.log(error);
-  //       }, 3000)
-  //     })
-  //     return () => clearTimeout(timer)
-  //   }else{
-  //     setSearchCompany('')
-  //   }
-  // };
-  // const handleChangeCompanyName4 = (e) => {
-  //   handleInputChange('guest4', 'company', e.target.value);
-
-  //   if(guestInformation.guest3.company) {
-  //  const timer = setTimeout(() => {
-  //       findCompanyByRequest(guestInformation.guest4.company, token)
-  //       .then(response => {
-  //         setSearchCompany(response.data.company)
-  //       })
-  //       .catch(error => {
-  //           console.log(error);
-  //       }, 3000)
-  //     })
-  //     return () => clearTimeout(timer)
-  //   }else{
-  //     setSearchCompany('')
-  //   }
-  // };
-  // const handleChangeCompanyName5 = (e) => {
-  //   handleInputChange('guest5', 'company', e.target.value);
-
-  //   if(guestInformation.guest5.company) {
-  //  const timer = setTimeout(() => {
-  //       findCompanyByRequest(guestInformation.guest5.company, token)
-  //       .then(response => {
-  //         setSearchCompany(response.data.company)
-  //       })
-  //       .catch(error => {
-  //           console.log(error);
-  //       }, 3000)
-  //     })
-  //     return () => clearTimeout(timer)
-  //   }else{
-  //     setSearchCompany('')
-  //   }
-  // };
   const handleSecondFamilyNameClick = () => {
     inputRef.current.focus();
   };
@@ -345,22 +270,6 @@ function Reservation({token, deviceType}) {
     handleInputChange('guest1', 'company', value)
     setSearchCompany('')
   }
-  // const handleChooseCompany2 = (value) => {
-  //   handleInputChange('guest2', 'company', value)
-  //   setSearchCompany('')
-  // }
-  // const handleChooseCompany3 = (value) => {
-  //   handleInputChange('guest3', 'company', value)
-  //   setSearchCompany('')
-  // }
-  // const handleChooseCompany4 = (value) => {
-  //   handleInputChange('guest4', 'company', value)
-  //   setSearchCompany('')
-  // }
-  // const handleChooseCompany5 = (value) => {
-  //   handleInputChange('guest5', 'company', value)
-  //   setSearchCompany('')
-  // }
   const handlePickupNumber = (e) => {
     const newValue = e.target.value;
     setPickupNumber(newValue);
@@ -448,24 +357,16 @@ function Reservation({token, deviceType}) {
       errors.givenName = 'required';
       isVaLid = false
     } 
-    if (guestInformation.guest1.day === "Day") {
-      errors.selectedDay = 'required';
-      isVaLid = false
-    } 
-    if (guestInformation.guest1.month === "Month") {
-      errors.selectedMonth = 'required';
-      isVaLid = false
-    } 
-    if (guestInformation.guest1.year === "Year") {
-      errors.selectedYear = 'required';
-      isVaLid = false
-    } 
-    // if (!guestInformation.guest1.secondFamilyName) {
-    //   errors.secondFamilyName = 'required';
+    // if (guestInformation.guest1.day === "Day") {
+    //   errors.selectedDay = 'required';
     //   isVaLid = false
     // } 
-    // if (!guestInformation.guest1.secondGivenName) {
-    //   errors.secondGivenName = 'required';
+    // if (guestInformation.guest1.month === "Month") {
+    //   errors.selectedMonth = 'required';
+    //   isVaLid = false
+    // } 
+    // if (guestInformation.guest1.year === "Year") {
+    //   errors.selectedYear = 'required';
     //   isVaLid = false
     // } 
     if (!guestInformation.guest1.email) {
@@ -479,122 +380,6 @@ function Reservation({token, deviceType}) {
       errors.phone = 'required';
       isVaLid = false
     } 
-    //GUEST 2
-    // if (!guestInformation.guest2.familyName) {
-    //   errors.familyName2 = 'required';
-    //   isVaLid = false
-    // } 
-    // if (!guestInformation.guest2.givenName ) {
-    //   errors.givenName2 = 'required';
-    //   isVaLid = false
-    // } 
-    // if (guestInformation.guest2.day === "Day") {
-    //   errors.selectedDay2 = 'required';
-    //   isVaLid = false
-    // } 
-    // if (guestInformation.guest2.month === "Month") {
-    //   errors.selectedMonth2 = 'required';
-    //   isVaLid = false
-    // } 
-    // if (guestInformation.guest2.year === "Year") {
-    //   errors.selectedYear2 = 'required';
-    //   isVaLid = false
-    // } 
-    // if (!guestInformation.guest2.secondFamilyName) {
-    //   errors.secondFamilyName2 = 'required';
-    //   isVaLid = false
-    // } 
-    // if (!guestInformation.guest2.secondGivenName) {
-    //   errors.secondGivenName2 = 'required';
-    //   isVaLid = false
-    // } 
-//GUEST 3
-  // if (!guestInformation.guest3.familyName) {
-  //   errors.familyName3 = 'required';
-  //   isVaLid = false
-  // } 
-  // if (!guestInformation.guest3.givenName ) {
-  //   errors.givenName3 = 'required';
-  //   isVaLid = false
-  // } 
-  // if (guestInformation.guest3.day === "Day") {
-  //   errors.selectedDay3 = 'required';
-  //   isVaLid = false
-  // } 
-  // if (guestInformation.guest3.month === "Month") {
-  //   errors.selectedMonth3 = 'required';
-  //   isVaLid = false
-  // } 
-  // if (guestInformation.guest3.year === "Year") {
-  //   errors.selectedYear3 = 'required';
-  //   isVaLid = false
-  // } 
-  // if (!guestInformation.guest3.secondFamilyName) {
-  //   errors.secondFamilyName3 = 'required';
-  //   isVaLid = false
-  // } 
-  // if (!guestInformation.guest3.secondGivenName) {
-  //   errors.secondGivenName3 = 'required';
-  //   isVaLid = false
-  // } 
-//GUEST 4
-// if (!guestInformation.guest4.familyName) {
-//   errors.familyName4 = 'required';
-//   isVaLid = false
-// } 
-// if (!guestInformation.guest4.givenName ) {
-//   errors.givenName4 = 'required';
-//   isVaLid = false
-// } 
-// if (guestInformation.guest4.day === "Day") {
-//   errors.selectedDay4 = 'required';
-//   isVaLid = false
-// } 
-// if (guestInformation.guest4.month === "Month") {
-//   errors.selectedMonth4 = 'required';
-//   isVaLid = false
-// } 
-// if (guestInformation.guest4.year === "Year") {
-//   errors.selectedYear4 = 'required';
-//   isVaLid = false
-// } 
-// if (!guestInformation.guest4.secondFamilyName) {
-//   errors.secondFamilyName4 = 'required';
-//   isVaLid = false
-// } 
-// if (!guestInformation.guest4.secondGivenName) {
-//   errors.secondGivenName4 = 'required';
-//   isVaLid = false
-// } 
-//GUEST 5
-// if (!guestInformation.guest5.familyName) {
-//   errors.familyName5 = 'required';
-//   isVaLid = false
-// } 
-// if (!guestInformation.guest5.givenName ) {
-//   errors.givenName5 = 'required';
-//   isVaLid = false
-// } 
-// if (guestInformation.guest5.day === "Day") {
-//   errors.selectedDay5 = 'required';
-//   isVaLid = false
-// } 
-// if (guestInformation.guest5.month === "Month") {
-//   errors.selectedMonth5 = 'required';
-//   isVaLid = false
-// } 
-// if (guestInformation.guest5.year === "Year") {
-//   errors.selectedYear5 = 'required';
-//   isVaLid = false
-// } 
-// if (!guestInformation.guest5.secondFamilyName) {
-//   errors.secondFamilyName5 = 'required';
-//   isVaLid = false
-// } 
-// if (!guestInformation.guest5.secondGivenName) {
-//   errors.secondGivenName5 = 'required';
-//   isVaLid = false
-// } 
   setErrors(errors);
   return isVaLid
 }
@@ -608,6 +393,7 @@ console.log(errors);
         case 'hotel-hcm': return "Ho Chi Minh"
         case 'hotel-dn': return "Da Nang"
         case 'hotel-hp': return "Hai Phong"
+        case 'Test': return "Test"
       }
     }
     function getBranchValue(value){
@@ -649,10 +435,21 @@ console.log(errors);
     }
     console.log(dataObject);
       if (validateForm()) {
-        const token= "73344833-5b52-4403-9255-695907647688"
-        const source = await sendReservationRequest(dataObject, token)
-        navigate(`/thank-you/${cityParam}`)
-        console.log(source);
+        setLoading(true)
+        try{
+          const token= "73344833-5b52-4403-9255-695907647688"
+          const source = await sendReservationRequest(dataObject, token)
+          setTimeout(() => {
+            setLoading(false);
+            // Navigate to another page after submitting the form
+            navigate(`/thank-you/${cityParam}`)
+          }, 3000);
+          console.log(source);
+        }
+        catch(error) {
+          console.error('Error fetching data:', error);
+          setLoading(false);
+        }
       } else {
        alert(`Please ensure that all required fields are completed 
 
@@ -843,6 +640,15 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
   }
   return ( 
     <div>
+      {loading && (
+     <div className="container">
+      <div style={{height: "100%", width: "100%", position: 'absolute', left:0, right: 0, backgroundColor: 'rgba(0,0,0,0.3)', zIndex:1}} className="row justify-content-center align-items-center ml-0 mr-0">
+        <Spinner animation="border" role="status" style={{color: "#482979"}}>
+            <span>Loading...</span>
+         </Spinner>
+      </div>
+     </div>
+    )}
      <HelmetLayout title = {c} />
     <div className="reservation__content">
       <div className="container">
