@@ -14,7 +14,7 @@ export default function ThankYouContract() {
             <div>
               <HelmetLayout title= {c}
     />
-      <div className="reservation__content" style={{background: 'url("https://res.cloudinary.com/dtdfsaaei/image/upload/v1701655335/AzumayaWeb/welcome-bg_z5dr6z.jpg") center center / cover no-repeat'}}>
+      <div className="reservation__content">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

@@ -976,7 +976,7 @@ If you make reservation from 2 rooms or more, please ensure that all required fi
             <Flatpickr
               value={startTime}
               options={{
-                enableTime: true,
+                enableTime: true, 
                 noCalendar: true,
                 minTime: "01:00",
                 maxTime: "00:00",

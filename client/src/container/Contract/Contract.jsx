@@ -96,6 +96,7 @@ const validate = () => {
       case 'hotel-hcm': return "Ho Chi Minh"
       case 'hotel-dn': return "Da Nang"
       case 'hotel-hp': return "Hai Phong"
+      case 'hotel-pp':  return "Phnom Penh"
     }
   }
   e.preventDefault();

@@ -31,7 +31,7 @@ export default function Footer() {
                         <div className="footer__branch-name mb-3 mt-3">
                             <div className="bold-white">{t('footer.name')}</div>
                         </div>
-                        <div className="footer__branch-location">
+                        <div className="footer__branch-location pre-line">
                             <p>{t("footer.add")}<br />
                             {t('footer.num')}<br />
                             {t('footer.mail')}</p>

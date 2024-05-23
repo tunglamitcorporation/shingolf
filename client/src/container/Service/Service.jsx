@@ -85,7 +85,6 @@ export default function VietnamService({deviceType}) {
         const selectedDate = new Date(selectedDates[0]);
         const timeString = selectedDate.toTimeString().split(" ")[0];
         setStartTime(timeString);
-        errors.startTime = ''
       } else {
         setStartTime(null);
       }

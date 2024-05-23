@@ -91,7 +91,7 @@
             
         ],
                 "name": "Azumaya Phnom Penh",
-                "add": "No. 302, St. 228., PhnomPenh., Campuchia",
+                "add": "No.302, St.228., Sangkat Boeng Reang., \nKhan Doun Penh., Phnom Penh., Cambodia",
                 "num": "+855.23.218.9618",
                 "mail": "reservation@azumayacambodia.com"
     },
@@ -2737,14 +2737,14 @@
             "id": 8,
             "branch_name": "Azumaya Thai Van Lung 2",
             "room_id": "tl",
-            "name": "DELUXE ",
+            "name": "DELUXE",
             "size": "18",
             "sizeTitle": "Size",
             "bedTitle": "Bed",
             "install": "Installation",
             "in1": "Window",
             "in2": "Bathtub",
-            "in3": "Smart TV 32 inches",
+            "in3": "Smart TV 50 inches",
             "in4": "Toilet with bidet function",
             "priceTitle": "Price",
             "bed": "",
@@ -4188,9 +4188,6 @@
         "feedback_5":"Additional comments or screenshots (if available):",
         "feedback_6":"Choose Image:"
     },
-    
-
-    
     "booking_test": {
     "title": "Booking",
     "date_in": "Check in date",
