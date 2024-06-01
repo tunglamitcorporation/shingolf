@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Tab, Tabs, TabList } from "react-tabs";
 import Cookies from "js-cookie";
 import Avatar from 'react-avatar';
+import logo from '../../image/logo.jpg'
 function Header() {
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
@@ -27,21 +28,7 @@ function Header() {
         i18n.changeLanguage(savedLang)
       }
     })
-    useEffect(() => {
-      const handleScroll = () => {
-        const position = window.scrollY;
-        if (position > 100) {
-          setBackgroundColor('#482979'); 
-        } else {
-          setBackgroundColor('transparent'); 
-        }
-      };
 
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
   const toggleHeader = () => {
       setIsOpen(!isOpen)
   }
@@ -220,88 +207,47 @@ function Header() {
   return (
     <>
       <div className='top-header'>
-                <div className='container'>
+                <div className='container-fluid'>
                     <div className='row align-items-center'>
-                        <div className='col-md-10'>
-                        <p style={{marginLeft:'220px'}}>{t('header.top-header')}</p>
+                    <div className="col-md-6">
+                        <div className="header-text">Liên hệ: 0123456789</div>
+                    </div>
+                    <div className="col-md-6 d-flex justify-content-end align-items-center">
+                    <select
+                        style={{ width: "100px", height:"30px", border: "1px solid #ff3131" }}
+                        >
+                        <option>Tất cả</option> 
+                        <option>Danh mục</option>
+                        <option>Hãng</option>
+                        <option>Tình Trạng</option>
+                        <option>Sale</option>
+                        <option>Outlet</option>
+                     </select>
+                       <select
+                        style={{ width: "100px", height:"30px", border: "1px solid #ff3131" }}
+                        >
+                        <option>Mới nhất</option>
+                        <option>Đánh giá</option>
+                        <option>Giá thấp đến cao</option>
+                        <option>Giá cao đến thấp</option>
+                     </select>
+                        <div className="search-bar d-flex align-items-center">
+                            <input 
+                            type="text"
+                            className="input-style" />
+                            <div className="search-bar-icon d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
                         </div>
-                        <div className='btn-lang col-md-2'>
-                        <button className ='btn-en mr-3' onClick={()=>changeLanguage('en')}></button>                
-                        <button className ='btn-ja mr-3' onClick={()=>changeLanguage('ja')}></button>  
-                        <button className ='btn-vie mr-3' onClick={()=>changeLanguage('vie')}></button>  
-                        {/* <button className ='btn-kor mr-3' onClick={()=>changeLanguage('kor')}></button>   */}
+                        <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
+                        </div>
                         </div>
                     </div>
                 </div>
-            </div>
-      <div className="header_container">
-      <div className="header-2">
-        <div className="header__PC-2">
-          <div className="header__logo">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <Link to="/">
-                    <img
-                      src="https://azumayavietnam.com/image/logo/azlogo.png"
-                      alt="logo"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <ul className="header__navbar-list-2">
-            <li className="header__navbar-item header-reserve"> 
-              <Link
-                className={`header__navbar-link header-reserve ${active? 'tab_active' : ''}`}
-                onClick={handleActive}
-                onBlur={(e)=>setActive(false)}
-                to="reservation"
-                style={{ color: "#fff" }}
-              >
-                {t("header.reservation")}
-              </Link>
-            </li>
-            <li className="header__navbar-item header-reserve">
-              <Link
-                className="header__navbar-link header-reserve"
-                to="/Cambodia/Cambodia"
-                style={{ color: "#fff" }}
-              >
-                {t("header.cambodia")}
-              </Link>
-            </li>
-            <li className="header__navbar-item header-reserve">
-              <Link
-                to = "/Login"
-                target="_blank"
-                className="header__navbar-link header-reserve"
-                style={{ color: "#fff" }}
-              >
-                Sign In
-              </Link>
-            </li>
-            <li className="mt-2">
-              <Link
-                to = "/Login"
-                target="_blank"
-                style={{ color: "#fff" }}
-              >
-                <Avatar 
-                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-1/394314988_3576024049338244_1513351123669816224_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=5740b7&_nc_ohc=HHV1lmBFfe0AX8CBVCX&_nc_ht=scontent.fhan18-1.fna&oh=00_AfA3H6HQhxq3XDbbqahRGqQvW2LJ0LiHbLXO2oD5d1rWBA&oe=65A6ACCA"
-                facebookId="FouNdeRLH"
-                size="40"
-                round={true}
-                 />
-              </Link>
-            </li>
-          </ul>
-        </div>
         <div className="header__mobile-logo">
           <Link to="/">
             <img
-              src="https://azumayavietnam.com/image/logo/azlogo.png"
+              src={logo}
               alt="logo"
             />
           </Link>
@@ -314,11 +260,8 @@ function Header() {
           </button>
         </div>
         <HeaderMobile />
-      </div>
-      </div>
-     <div className="is-sticky">
-     <div className="container">
-      <div className="header" style={{backgroundColor: backgroundColor}}>
+     <div className="container-fluid" style={{marginTop: 50}}>
+      <div className="header">
         <Tabs
         // selectedTabClassName="service__active" 
         className="header__PC">
@@ -327,10 +270,10 @@ function Header() {
              <div className="header__logo">
             <div className="container">
               <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-6">
                   <Link to="/">
                     <img
-                      src="https://azumayavietnam.com/image/logo/azlogo.png"
+                      src={logo}
                       alt="logo"
                     />
                   </Link>
@@ -339,131 +282,48 @@ function Header() {
             </div>
           </div>
                 </Tab>
+               
               </TabList>      
                   <TabList className="header__navbar-list mb-0">
                   <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/">
-                        {t("header.home")}
+                        TRANG CHỦ
                       </Link>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/news/">
-                        {t("header.news")}
-                      </Link>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-hcm/">
-                        {t("header.hcm")}
-                      </Link>
-                      <ul className="header__navbar-item-list" style={{width:200}}>
-                        {hcm.map((item)=>(
-                          <li className = "header__navbar-sub-link" >
-                          <Link 
-                          to ={item.link}>{item.name}
-                          </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-hn/">
-                        {t("header.hn")}
-                      </Link>
-                      <ul className="header__navbar-item-list" style={{width:200}}>
-                        {hn.map((item)=>(
-                          <li className = "header__navbar-sub-link" >
-                          <Link
-                          to ={item.link}>{item.name}
-                          </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-dn/">
-                        {t("header.dn")}
-                      </Link>
-                      <ul className="header__navbar-item-list" style={{width:200}}>
-                        {dn.map((item)=>(
-                          <li className = "header__navbar-sub-link" >
-                          <Link 
-                          to ={item.link}>{item.name}
-                          </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/hotel-hp/">
-                        {t("header.hp")}
-                      </Link>
-                      <ul className="header__navbar-item-list" style={{width:200}}>
-                        {hp.map((item)=>(
-                          <li className = "header__navbar-sub-link" >
-                          <Link 
-                          to ={item.link}>{item.name}
-                          </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" style={{width:130}} to="http://azumayacambodia.com/">
-                        {t("header.cambodia")}
-                      </Link>
-                    </Tab>
-                    {/* <Tab className="header__navbar-item">
-                            <Link  className = "header__navbar-link-2" to = '/Reservation'>{t('header.item3')}</Link></Tab> */}
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/feature/">
-                        {t("header.feature")}
-                      </Link>
-                      <ul className="header__navbar-item-list">
-                        {feature.map((item)=>(
-                          <Tab className = "header__navbar-sub-link">
-                          <Link 
-                          to ={`/Feature/${item.id}`}> 
-                          <span style={{backgroundColor:"#482979", padding:"5px", marginRight:"8px"}}>
-                            {item.num}</span>{t(item.title)}
-                            </Link>
-                            </Tab>
-                        ))}
-                        </ul>
                     </Tab>
                     <Tab className="header__navbar-item">
                       <Link className="header__navbar-link-2" to="/service/">
-                        {t("header.service")}
-                      </Link>
-                      <ul className="header__navbar-item-list" style={{width: 240}}>
-                        {service.map((item)=>(
-                          <li className = "header__navbar-sub-link" >
-                          <Link 
-                          to = {item.link}>{item.name}
-                          </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    </Tab>
-                    <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/contract/">
-                        {t("header.contract")}
+                        SẢN PHẨM
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/reservation/">
-                        {t("header.reservation")}
+                      <Link className="header__navbar-link-2" to="/">
+                        GIỚI THIỆU
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/q&a/">
-                        {t("header.policies")}
+                      <Link className="header__navbar-link-2" to="/">
+                        LIÊN HỆ
+                      </Link>
+                    </Tab>
+                    <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/">
+                        KIỂM TRA ĐƠN HÀNG
+                      </Link>
+                    </Tab>
+                    <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/">
+                        TIN TỨC GOLF
+                      </Link>
+                    </Tab>
+                    <Tab className="header__navbar-item">
+                      <Link className="header__navbar-link-2" to="/">
+                       TRUYỀN HÌNH GOLF
                       </Link>
                     </Tab>
                   </TabList>
                   </Tabs>
             </div>
           </div>
-     </div>
     </>
   );
 }

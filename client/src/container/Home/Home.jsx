@@ -1,5 +1,4 @@
 // import "flatpickr/dist/themes/airbnb.css";
-import Booking from "../Units/Booking";
 import { useTranslation } from "react-i18next";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import {Form, Link} from "react-router-dom"
@@ -7,40 +6,10 @@ import {format, parse} from "date-fns"
 import { useState, useEffect } from "react";
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
-import bestRate from "../../image/best-rate.png"
-import App from "../../Test";
-function LineModal(props) {
-  return (
-    <>
-      <Modal
-       {...props}
-       size="lg"
-       aria-labelledby="contained-modal-title-vcenter"
-       centered
-       backdrop="static"
-       keyboard={false}
-      >
-        <Modal.Header className="justify-content-end">
-          <Button variant="light right" onClick={props.onHide}>
-          <i class="fa-solid fa-xmark purple"></i>
-        </Button>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                  <img width={"100%"} src="https://res.cloudinary.com/dtdfsaaei/image/upload/v1710388651/AzumayaWeb/img-ads_qlzhfp.jpg" alt="azumaya hotel line ads" />
-              </div>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
-}
 
 export default function Home({news}) {
   const { t } = useTranslation();
@@ -63,369 +32,952 @@ const AutoPlaySlider =  withAutoplay(AwesomeSlider)
     <>
     <HelmetLayout title = {c} />
     <div className="homepage">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
       <div className="content">
-      <div className="overlay"></div>
+      {/* <div className="overlay"></div> */}
       <AutoPlaySlider
       animation = "scaleOutAnimation"
       mobileTouch
+      bullets = {false}
       infinite
       play
       interval = {5000}>
             {caption.map((item) => (
                <div data-src={item.image}>
-                                 <Link to = {item.link}>
+                                 {/* <Link to = {item.link}>
                                   <p className="carousel_name">{item.name}<br />{item.caption}</p>
-                                  </Link>
+                                  </Link> */}
                                   </div>
                           ))}
         </AutoPlaySlider>
       </div>
-      <div className="content">
-          <div className="container-fluid">
-            <div className="row g-0 p-0">
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
+          </div>
+        </div>
+      </div>
+      <div className="container pl-5">
+  <div className="row">
+    <div className="col-6 col-md-6 mt-5">
+      <div className="row p-0">
+        <div className="col-md-4 p-0 m-0 d-flex align-items-center justify-content-center" style={{ backgroundColor: '#fec800', height: '300px' }}>
+          <div className="banner-title">Gậy Golf</div>
+        </div>
+        <div className="col-md-8 p-0 m-0">
+          <Link className='link-route' to='/hotel-hn'>
+            <img
+              className="content__branch-img"
+              src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
+              alt="hotel hanoi azumaya hotel"
+            />
+          </Link>
+        </div>
+      </div>
+    </div>
+    <div className="col-6 col-md-6 mt-5">
+      <div className="row p-0">
+        <div className="col-md-4 p-0 m-0 d-flex align-items-center justify-content-center" style={{ backgroundColor: '#fec800', height: '300px' }}>
+          <div className="banner-title">Gậy Golf</div>
+        </div>
+        <div className="col-md-8 p-0 m-0">
+          <Link className='link-route' to='/hotel-hn'>
+            <img
+              className="content__branch-img"
+              src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
+              alt="hotel hanoi azumaya hotel"
+            />
+          </Link>
+        </div>
+      </div>
+    </div>
+
+              <div className="col-6 col-md-6 mt-5">
+                  <div className="row p-0">
+                    <div className="col-md-4 p-0 m-0 d-flex align-items-center justify-content-center" style={{backgroundColor: '#fec800', height: '300px'}}>
+                     <div className="banner-title">Gậy Golf</div>
+                    </div>
+                    <div className="col-md-8 p-0 m-0">
                   <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
-                    src="https://azumayavietnam.com/image/areaimage/hanoi1.png"
+                    src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
                     alt="hotel hanoi azumaya hotel"
                   />
                   </Link>
+                  </div>
                 </div>
               </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                <Link className='link-route' to = '/hotel-hcm' >
+              <div className="col-6 col-md-6 mt-5">
+                  <div className="row p-0">
+                    <div className="col-md-4 p-0 m-0 d-flex align-items-center justify-content-center" style={{backgroundColor: '#fec800', height: '300px'}}>
+                     <div className="banner-title">Gậy Golf</div>
+                    </div>
+                    <div className="col-md-8 p-0 m-0">
+                  <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
-                    src="https://azumayavietnam.com/image/areaimage/hochiminh1.png"
-                    alt="hotel ho chi minh azumaya hotel"
+                    src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
+                    alt="hotel hanoi azumaya hotel"
                   />
-                 </Link>
+                  </Link>
+                  </div>
                 </div>
               </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                <Link className='link-route' to = '/hotel-dn' >
+              <div className="col-6 col-md-6 mt-5">
+                  <div className="row p-0">
+                    <div className="col-md-4 p-0 m-0 d-flex align-items-center justify-content-center" style={{backgroundColor: '#fec800', height: '300px'}}>
+                     <div className="banner-title">Gậy Golf</div>
+                    </div>
+                    <div className="col-md-8 p-0 m-0">
+                  <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
-                    src="https://azumayavietnam.com/image/areaimage/danang1.png"
-                    alt="hotel da nang azumaya hotel"
+                    src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
+                    alt="hotel hanoi azumaya hotel"
                   />
-                 </Link>
+                  </Link>
+                  </div>
                 </div>
               </div>
-              <div className="col-6 col-md-3 offset-0">
-                <div className="content__branch-item">
-                <Link className='link-route' to = '/hotel-hp' >
+              <div className="col-6 col-md-6 mt-5">
+                  <div className="row p-0">
+                    <div className="col-md-4 p-0 m-0 d-flex align-items-center justify-content-center" style={{backgroundColor: '#fec800', height: '300px'}}>
+                     <div className="banner-title">Gậy Golf</div>
+                    </div>
+                    <div className="col-md-8 p-0 m-0">
+                  <Link className='link-route' to = '/hotel-hn' >
                   <img
                     className="content__branch-img"
-                    src="https://azumayavietnam.com/image/areaimage/haiphong1.png"
-                    alt="hotel hai phong azumaya"
+                    src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
+                    alt="hotel hanoi azumaya hotel"
                   />
-                 </Link>
+                  </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+              </div>
           </div>
-        </div>
-      <div className="is-sticky">
-        <Booking />
-      </div>
-      <div className="container">
-        <div className="d-flex justify-content-center align-items-center mt-5">
-              <img style={{width: '20%', height:'20%'}} src={bestRate} />
-            <h2 style={{borderTop: '3px solid #89734C', borderBottom:'3px solid #89734C', paddingTop:'30px',paddingBottom:'30px'}}><Link style ={{color: '#89734C'}} to = "/feature/1">{t('home.best-link')}</Link> {t('home.best-rate')}</h2>
-        </div>
-      </div>
-        <div className="container mt-5">
-          <div className="row justify-content-center align-item-center">
-              <div className="col-md-6 d-flex align-items-center justify-content-center">
-                <img style={{width: '70%', height:'100%'}} src="https://azumayavietnam.com/image/massage/promo-massage.jpg" alt="massage" />
-              </div>
-              <div className="col-md-6 pre-line">
-                <div className="promo-title">{t('service_massage.promo_title')}</div>
-                <p className="promo-text mt-5">{t('service_massage.promo_content')}</p>
-              <button
-              style={{width:'200px'}}
-                          class="button-57 call-btn mt-5"
-                          role="button"
-                        >
-                          <Link to = "/massage/">
-                          <span style={{color:'#482979'}} class="text">
-                            {t("service_massage.reserve")}
-                          </span>
-                          <span><i class="fa-solid fa-circle-chevron-right"></i></span>
-                          </Link>
-                        </button>
-              </div>
-              <img
-                      className="style-line col-md-2" style={{marginTop: '50px'}}
-                      src="https://azumayavietnam.com/image/logo/style-line.png"
-                      alt=""
-                    />
-          </div>
-        </div>
-        {/* <App /> */}
       <AnimatedOnScroll>
-        <div className="content__news">
+        <div className="content__feature mt-5">
+          <div className="content__feature-title">GẬY GOLF MỚI</div>
           <div className="container">
-            <div className="row align-item-center justify-content-center">
-              <div className="col-md-12 col-lg-10" style={{marginTop: 60}}>
-                <h2 className="content__news-title" style={{fontWeight:'bold'}}>{t("home.news_title")}</h2>
-                <ul className="content__news-list">
-                {homeNews.map((article) => {
-               const parsedDate = parse(article.date, 'yyyy-MM-dd', new Date()); 
-               const formattedDate = format(parsedDate, 'MMM do yyyy')
-               const [all, month, day, suffix, year] = formattedDate.match(/(\w+) (\d+)(\w+) (\d+)/);
-               const encodedTitle = encodeURIComponent(article.title);
-               const modifiedTitle = encodedTitle.replace(/%20/g, '-');
-              if (article.allBranch == true)
-               {
-                return (
-                  <div className="row justify-content-evenly">
-                    <div className="col-md-2 mt-1 news_date-container">
-                      <div className="news_box1">
-                        <div className="news_time-home">
-                        <div className="month">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-2 news_branch-container">
-                          <div className="allbranch allbranch_home">{t("header.vietnam")}</div>
-                    </div>
-                    <div className="col-md-7 mt-2 news_title-container">
-                      <div >
-                        <Link
-                        key={article.id}
-                          className="news_title news_homeTitle"
-                          to={`/News/${modifiedTitle}`}
-                        >
-                          <div className="article_title">{article.news_title}</div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              } else if (article.hn == true) {
-                return (
-                  <div className="row justify-content-evenly">
-                    <div className="col-md-2 mt-1 news_date-container" >
-                      <div className="news_box1">
-                        <div className="news_time-home">
-                        <div className="month">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
-                      </div>
-                    </div>
-                        <div className="col-md-2 news_branch-container" >
-                          <div className="hanoi hanoi_home">{t("header.hn")}</div>
-                        </div>
-                    <div className="col-md-7 mt-2 news_title-container">
-                      <div key={article.id}>
-                        <Link
-                          className="news_title news_homeTitle"
-                          to={`/News/${modifiedTitle}`}
-                        >
-                          <div className="article_title">{article.news_title}</div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              } else if (article.hp == true) {
-                return (
-                  <div className="row justify-content-evenly">
-                    <div className="col-md-2 mt-1 news_date-container" >
-                      <div className="news_box1">
-                        <div className="news_time-home">
-                        <div className="month">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
-                      </div>
-                    </div>
-                        <div className="col-md-2 news_branch-container" >
-                          <div className="haiphong haiphong_home">{t("header.hp")}</div>
-                        </div>
-                    <div className="col-md-7 mt-2 news_title-container">
-                      <div key={article.id}>
-                        <Link
-                          className="news_title news_homeTitle"
-                          to={`/News/${modifiedTitle}`}
-                        >
-                          <div className="article_title">{article.news_title}</div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              } else if (article.dn == true) {
-                return (
-                  <div className="row justify-content-evenly">
-                    <div className="col-md-2 mt-1 news_date-container" >
-                      <div className="news_box1">
-                        <div className="news_time-home">
-                          <div className="month">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
-                      </div>
-                    </div>
-                        <div className="col-md-2 news_branch-container" >
-                          <div className="danang danang_home">{t("header.dn")}</div>
-                        </div>
-                    <div className="col-md-7 mt-2 news_title-container"> 
-                      <div key={article.id}>
-                        <Link
-                          className="news_title news_homeTitle"
-                          to={`/News/${modifiedTitle}`}
-                        >
-                          <div className="article_title">{article.news_title}</div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              } else if (article.hcm == true) {
-                return (
-                  <div className="row justify-content-evenly">
-                    <div className="col-md-2 mt-1 news_date-container" >
-                      <div className="news_box1">
-                        <div className="news_time-home">
-                          <div className="month">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
-                      </div>
-                    </div>
-                        <div className="col-md-2 news_branch-container" >
-                          <div className="hochiminh hochiminh_home">{t("header.hcm")}</div>
-                        </div>
-                    <div className="col-md-7 mt-2 news_title-container">
-                      <div key={article.id}>
-                        <Link
-                          className="news_title news_homeTitle"
-                          to={`/News/${modifiedTitle}`}
-                        >
-                          <div className="article_title">{article.news_title}</div>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                );
-              } else if (article.az == true) {
-                return (
-                  <div className="row justify-content-evenly">
-                    <div className="col-md-2 mt-1 news_date-container" >
-                      <div className="news_box1">
-                        <div className="news_time-home">
-                          <div className="month">{month}</div>
-                        <div className="day pl-2">{day}</div>
-                        <sub className="suffix pt-2">{suffix}</sub>
-                        <div className="year pl-2">{year}</div>
-                        </div>
-                      </div>
-                    </div>
-                        <div className="col-md-2 news_branch-container" >
-                          <div className="azumaya azumaya_home">{t("header.az")}</div>
-                        </div>
-                    <div className="col-md-7 mt-2 news_title-container">
-                      <div key={article.id}>
-                        <Link
-                          className="news_title news_homeTitle"
-                          to={`/News/${modifiedTitle}`}
-                        >
-                          <div className="article_title">{article.news_title}</div>
-                        </Link>
-                      </div>
-                    </div>
-                    </div>
-                );
-              }
-            })}
-                </ul>
-              </div>
-                <div className="col-md-2">
-                  <div className="content__qr">
-                    <img
-                      className="content__qr-img"
-                      src="https://azumayavietnam.com/image/logo/line.png"
-                      alt="qr line azumaya hotel"
-                    />
-                    <button 
-                    onClick={() => setModalShow(true)
-                    }
-                    className="base__btn btn--detail">
-                      {t("home.line_btn")}
-                    </button>
-                   <LineModal
-                   show = {modalShow}
-                   onHide = {()=> setModalShow(false)}/>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedOnScroll>
-      <AnimatedOnScroll>
-        <div className="content__welcome">
-          <div className="container">
-            <div className="row align-item-center">
-              <div className="col-md-12 p-3">
-                <h1 className="content__welcome-text">
-                  {t("home.welcome_title")}
-                  <small className="welcome_text-small">{t("home.welcome_sub-title")}</small>
-                </h1>
-                <p className="welcome-content">{t("home.welcome_content")}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* <TabsInput /> */}
-      </AnimatedOnScroll>
-      <AnimatedOnScroll>
-        <div className="content__feature">
-          <div className="content__feature-title">{t("feature.name")}</div>
-          <div className="container-fluid">
-            <div className="row" style={{ justifyContent: "center" }}>
-              {featureItem.map((item) => (
-                <div className="col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+            <div className="row">
+                <div className="col-md-3">
+                <Link to = '/feature/' style={{textDecoration: "none"}}>
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
                         className="content__feature-img"
-                        style={{ backgroundImage: `url(${item.image})` }}
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
                       >
                           <Link 
                           className="d-block"
                           style={{height: '100%'}}
-                      to = {`/Feature/${item.id}`}
+                      to = "/feature/"
+                      ></Link>
+                      </div>
+                    </div>
+                    
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </Link>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
                       ></Link>
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href={`/Feature/${item.id}`}>{item.title}</a>
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                     </div>
-                    <div className="content__feature-text">
-                      <p style={{ textAlign: "justify" }}>{item.content.slice(0, 75)}...
-                      <Link 
-                      className="continue_link" 
-                      to = {`/Feature/${item.id}`}
-                      >{t("feature.continue")}</Link></p>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">28.475.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </AnimatedOnScroll>
+      <AnimatedOnScroll>
+        <div className="content__feature">
+          <div className="content__feature-title">TRANG PHỤC</div>
+          <div className="container">
+            <div className="row">
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-002_FC?rp=standard-0pad|gridTileDesktop&scl=1&fmt=jpg&qlt=50&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=512&hei=640&size=512,640)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Áo Men's UA Matchplay Stripe Polo</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">1.349.000 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </AnimatedOnScroll>
+      <AnimatedOnScroll>
+        <div className="content__feature">
+          <div className="content__feature-title">TÚI GOLF</div>
+          <div className="container">
+            <div className="row">
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="content__feature-item">
+                    <div className="content__feature-container">
+                      <div
+                        className="content__feature-img"
+                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/823066_90970001-6_17736afeb40749fe82cc135b7e3ea67e_1024x1024.jpg)"}}
+                      >
+                          <Link 
+                          className="d-block"
+                          style={{height: '100%'}}
+                      to = ""
+                      ></Link>
+                      </div>
+                    </div>
+                    <div className="content__feature-name">
+                      <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
+                    </div>
+                    <div className="content__feature-text d-flex">
+                     <div className="price">20.500.200 VNĐ</div>
+                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                        <div className="col-md-6 p-0">
+                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
           </div>
         </div>

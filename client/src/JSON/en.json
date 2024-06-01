@@ -24,7 +24,7 @@
         "breakfast": "Breakfast",
         "roten":"Rotenburo",
         "massage": "Massage",
-        "title":"Azumaya, a business hotel in Hanoi, Ho Chi Minh and Da Nang - Azumaya, a hotel for business people with a special Japanese breakfast and open-air bath in Hanoi, Da Nang and Ho Chi Minh"
+        "title":"Shin Golf"
     },
     "footer": {
         "branch": [
@@ -3831,58 +3831,28 @@
     },
     "caption": [
         {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRKM2.jpeg",
+            "image": "https://www.rhosgolf.co.uk/wp-content/uploads/2024/03/Pro-Shop-2024.jpg",
             "caption": "Azumaya Hotel Kim Ma 2",
             "name":"Ha Noi",
             "link": "/kim-ma-2-detail/room/"
         },
         {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRHP.png",
+            "image": "https://mohegansun.com/content/dam/mohegansun/Images/Shopping/The-Golf-Shop-at-Pautipaug/Carousel-GolfShop_2-1440x620.jpg",
             "caption": "Azumaya Hotel Hai Phong",
             "name":"Hai Phong",
             "link": "/hai-phong/room/"
         },
         {
-            "image": "https://azumayavietnam.com/image/rtbr/rtbrdn3.jpeg",
+            "image": "https://www.blackhawkgolfcourse.com/images/galleries/pro_shop/Golf_Shop_2018-1.jpg",
             "caption": "Azumaya Hotel Da Nang",
             "name":"Da Nang",
             "link": "/da-nang/room/"
         },
         {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRTVL1.jpeg",
+            "image": "https://www.willungagolf.com.au/files/assets/wgc/pro-shop-stock-2.jpg",
             "caption": "Azumaya Hotel Thai Van Lung 1",
             "name":"Ho Chi Minh",
             "link": "/thai-van-lung-1-detail/room/"
-        },
-        {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRHBT1.jpeg",
-            "caption": "Azumaya Hotel Hai Ba Trung 1",
-            "name":"Ha Noi",
-            "link": "/hai-ba-trung-detail/room/"
-        },
-        {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRLL.jpg",
-            "caption": "Azumaya Hotel Linh Lang",
-            "name":"Ha Noi",
-            "link": "/linh-lang-detail/room/"
-        },
-        {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRKM3.png",
-            "caption": "Azumaya Hotel Kim Ma 3",
-            "name":"Ha Noi",
-            "link": "/kim-ma-3-detail/room/"
-        },
-        {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRLTT.jpeg",
-            "caption": "Azumaya Hotel Le Thanh Ton",
-            "name":"Ho Chi Minh",
-            "link": "/le-thanh-ton-detail/room/"
-        },
-        {
-            "image": "https://azumayavietnam.com/image/rtbr/RTBRTVL2.jpeg",
-            "caption": "Azumaya Hotel Thai Van Lung 2",
-            "name":"Ho Chi Minh",
-            "link": "/thai-van-lung-2-detail/room/"
         }
         
     ],

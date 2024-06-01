@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import {Link} from 'react-router-dom'
-import Collapsible from 'react-collapsible'
+ 
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 
 export default function Policies(){
