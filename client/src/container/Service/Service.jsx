@@ -28,7 +28,7 @@ export default function VietnamService({deviceType}) {
       <div className="content__feature">
         <div className="container">
           <div className="row">
-            <div className="col-md-3 mt-5 list-container" style={{backgroundColor: '#f6f6f6'}}>
+            <div className="col-6 col-md-3 mt-5 list-container" style={{backgroundColor: '#f6f6f6'}}>
               <div className="container">
                 <div className="row">
               <div className="all-list"><i class="fa-solid fa-bars"></i> DANH MỤC</div>
@@ -166,7 +166,7 @@ export default function VietnamService({deviceType}) {
                         <option>Giá cao đến thấp</option>
                      </select>
                     </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <Link to ='/feature/' style={{textDecoration: 'none'}}>
                   <div className="content__feature-item">
                     <div className="content__feature-container">
@@ -184,9 +184,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -201,7 +201,7 @@ export default function VietnamService({deviceType}) {
                   </div>
                   </Link>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -218,9 +218,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -234,7 +234,7 @@ export default function VietnamService({deviceType}) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -251,9 +251,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -267,7 +267,7 @@ export default function VietnamService({deviceType}) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -284,9 +284,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -300,7 +300,7 @@ export default function VietnamService({deviceType}) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -317,9 +317,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -333,7 +333,7 @@ export default function VietnamService({deviceType}) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -350,9 +350,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -366,7 +366,7 @@ export default function VietnamService({deviceType}) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -383,9 +383,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -399,7 +399,7 @@ export default function VietnamService({deviceType}) {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-6 col-md-3">
                   <div className="content__feature-item">
                     <div className="content__feature-container">
                       <div
@@ -416,9 +416,9 @@ export default function VietnamService({deviceType}) {
                     <div className="content__feature-name">
                       <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                     </div>
-                    <div className="content__feature-text d-flex">
+                    <div className="content__feature-text d-md-flex">
                      <div className="price">20.500.200đ</div>
-                     <div className="price ml-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price ml-md-2 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                     </div>
                     <div className="btn-container">
                       <div className="row">

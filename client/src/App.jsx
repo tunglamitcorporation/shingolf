@@ -10,6 +10,7 @@ import ScrollToTop from "./units/ScrollToTop.js";
 import './index.css'
 import './base.css'
 import './App.css';
+import BottomBar from "./container/Units/BottomBar.jsx";
 
 function App() {
 
@@ -67,6 +68,7 @@ function App() {
     </div>
       <ScrollToTop x={0} y={0} />
       <NewRouter news={news}/>
+      <BottomBar />
       <Footer />
       </div>
         ): <div><NewRouter news={news}/></div>}

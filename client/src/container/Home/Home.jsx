@@ -34,7 +34,7 @@
       <div className="homepage">
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 mt-0">
         <div className="content">
         {/* <div className="overlay"></div> */}
         <AutoPlaySlider
@@ -56,9 +56,9 @@
             </div>
           </div>
         <div className="row">
-      <div className="col-6 col-md-6 mt-5">
+      <div className="col-4 col-md-6 mt-5">
         <div className="banner-container">
-          <div className="col-md-4 d-flex align-items-center justify-content-center banner-width">
+          <div className="col-md-4 d-md-flex align-items-center justify-content-center banner-width">
             <div className="banner-title">Gậy Golf</div>
           </div>
           <div className="col-md-8 p-0 m-0">
@@ -72,9 +72,9 @@
           </div>
         </div>
       </div>
-      <div className="col-6 col-md-6 mt-5">
+      <div className="col-4 col-md-6 mt-5">
         <div className="banner-container">
-          <div className="col-md-4 d-flex align-items-center justify-content-center banner-width">
+          <div className="col-md-4 d-md-flex align-items-center justify-content-center banner-width">
             <div className="banner-title">Gậy Golf</div>
           </div>
           <div className="col-md-8  p-0 m-0">
@@ -89,9 +89,9 @@
         </div>
       </div>
 
-                <div className="col-6 col-md-6 mt-5">
+                <div className="col-4 col-md-6 mt-5">
                     <div className="banner-container">
-                      <div className="col-md-4 d-flex align-items-center justify-content-center banner-width">
+                      <div className="col-md-4 d-md-flex align-items-center justify-content-center banner-width">
                       <div className="banner-title">Gậy Golf</div>
                       </div>
                       <div className="col-md-8  p-0 m-0">
@@ -105,9 +105,9 @@
                     </div>
                   </div>
                 </div>
-                <div className="col-6 col-md-6 mt-5">
+                <div className="col-4 col-md-6 mt-5">
                     <div className="banner-container">
-                      <div className="col-md-4 d-flex align-items-center justify-content-center banner-width">
+                      <div className="col-md-4 d-md-flex align-items-center justify-content-center banner-width">
                       <div className="banner-title">Gậy Golf</div>
                       </div>
                       <div className="col-md-8  p-0 m-0">
@@ -121,9 +121,9 @@
                     </div>
                   </div>
                 </div>
-                <div className="col-6 col-md-6 mt-5">
+                <div className="col-4 col-md-6 mt-5">
                     <div className="banner-container">
-                      <div className="col-md-4 d-flex align-items-center justify-content-center banner-width">
+                      <div className="col-md-4 d-md-flex align-items-center justify-content-center banner-width">
                       <div className="banner-title">Gậy Golf</div>
                       </div>
                       <div className="col-md-8  p-0 m-0">
@@ -137,9 +137,9 @@
                     </div>
                   </div>
                 </div>
-                <div className="col-6 col-md-6 mt-5">
+                <div className="col-4 col-md-6 mt-5">
                     <div className="banner-container">
-                      <div className="col-md-4 d-flex align-items-center justify-content-center banner-width">
+                      <div className="col-md-4 d-md-flex align-items-center justify-content-center banner-width">
                       <div className="banner-title">Gậy Golf</div>
                       </div>
                       <div className="col-md-8  p-0 m-0">
@@ -160,7 +160,7 @@
             <div className="content__feature-title">GẬY GOLF MỚI</div>
             <div className="container">
               <div className="row">
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                   <Link to = '/feature/' style={{textDecoration: "none"}}>
                     <div className="content__feature-item">
                       <div className="content__feature-container">
@@ -179,9 +179,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -196,7 +196,7 @@
                     </div>
                     </Link>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -213,9 +213,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -229,7 +229,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -246,9 +246,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>1.000.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -262,7 +262,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -279,9 +279,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>1.000.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -295,7 +295,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -312,9 +312,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>1.000.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -328,7 +328,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -345,9 +345,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>1.000.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -361,7 +361,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -378,9 +378,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>1.000.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -394,7 +394,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -411,9 +411,9 @@
                       <div className="content__feature-name">
                         <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">28.475.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">28.475.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -437,7 +437,7 @@
             <div className="content__feature-title">TRANG PHỤC</div>
             <div className="container">
               <div className="row">
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -454,9 +454,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -470,7 +470,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -487,9 +487,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -503,7 +503,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -520,9 +520,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -536,7 +536,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -553,9 +553,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -569,7 +569,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -586,9 +586,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -602,7 +602,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -619,9 +619,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -635,7 +635,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -652,9 +652,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -668,7 +668,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -685,9 +685,9 @@
                       <div className="content__feature-name">
                         <a href="">Áo Men's UA Matchplay Stripe Polo</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">1.349.000 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">1.349.000đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>33.500.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -711,7 +711,7 @@
             <div className="content__feature-title">TÚI GOLF</div>
             <div className="container">
               <div className="row">
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -728,9 +728,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -744,7 +744,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -761,9 +761,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -777,7 +777,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -794,9 +794,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -810,7 +810,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -827,9 +827,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -843,7 +843,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -860,9 +860,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -876,7 +876,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -893,9 +893,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -909,7 +909,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -926,9 +926,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">
@@ -942,7 +942,7 @@
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-3">
+                  <div className="col-6 col-md-3">
                     <div className="content__feature-item">
                       <div className="content__feature-container">
                         <div
@@ -959,9 +959,9 @@
                       <div className="content__feature-name">
                         <a href="">Túi đựng gậy Puma Tour Stand Bag 24'' P.BLK</a>
                       </div>
-                      <div className="content__feature-text d-flex">
-                      <div className="price">20.500.200 VNĐ</div>
-                      <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>22.778.000 VNĐ</div>
+                      <div className="content__feature-text d-md-flex">
+                      <div className="price">20.500.200đ</div>
+                      <div className="price ml-md-5 strikethrough"style={{color: "#ccc"}}>22.778.000đ</div>
                       </div>
                       <div className="btn-container">
                         <div className="row">

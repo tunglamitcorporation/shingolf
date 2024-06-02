@@ -10,6 +10,7 @@ import VietnamService from "./container/Service/Service"
 import Reservation_backup from './container/Reservation/Reservation_backup'
 import Cart from './container/Reservation/Reservation';
 import LoginContainer from './container/User/LoginContainer';
+import ExchangeRate from './Test';
 function NewRouter(props) {
     const {news} = props;
     // const { i18n } = useTranslation();
@@ -41,6 +42,7 @@ function NewRouter(props) {
                 <Route path = "/admin/login" element={<LoginContainer/>} exact/>
                 <Route path = '*' element={<Home news={news} />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
+                <Route path = '/test' element={<ExchangeRate />} />
             </Routes>
         </section>
     );

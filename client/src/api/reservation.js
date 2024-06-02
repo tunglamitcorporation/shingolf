@@ -26,4 +26,5 @@ export const findCompanyByRequest = (value, token) => {
     return axios.post(`${newURL}`, { value }, {
         headers: { Authorization: token }
     });
+
 }

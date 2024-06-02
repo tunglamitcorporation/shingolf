@@ -9,7 +9,7 @@
     .login_container {
         margin-top: 100px;
         font-size: 1.2rem;
-        background: #60a3bc !important;
+        /* background: #60a3bc !important; */
     }
     .user_card {
         height: 400px;

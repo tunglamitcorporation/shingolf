@@ -9,30 +9,31 @@ export default function Footer() {
         <div className="footer__container">
             <div className="container">
                 <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 d-flex">
                     <div className="header__logo">
                   <Link to="/">
-                    <img
+                    <img 
                       src={logo}
                       alt="logo"
                     />
                   </Link>
-                  <div className="slogan">SLOGAN</div>
-                  <div className="footer__branch-location">
-                    <p>Dia chi</p>
-                    <p>Dien thoai</p>
-                    <p>Email</p>
-                  </div>
                     </div>
+                  <div className="slogan">ĐƠN VỊ ORDER GẬY GOLF UY TÍN HÀNG ĐẦU VIỆT NAM <br /> GIAO HÀNG TỪ 3-5 NGÀY SAU KHI NHẬN CỌC </div>
                 </div>
-                <div className="col-md-6">
-                    <ul>
-                        <li>Chính sách</li>
-                        <li>Chính sách</li>
-                        <li>Chính sách</li>
-                        <li>Chính sách</li>
-                        <li>Chính sách</li>
-                    </ul>
+                <div className="col-md-6 pb-5 left">
+                  <div className="footer__branch-location">
+                    <p>ĐỊA CHỈ KHO NHẬT</p>
+                    <p>ĐỊA CHỈ KHO VIỆT</p>
+                    <p>ĐƠN VỊ VẬN CHUYỂN</p>
+                    <p>ĐƠN VỊ HỢP TÁC</p>
+                  </div>
+                <div className="policies d-flex flex-column align-items-start">
+                    <Link to = ''>Chính sách</Link>
+                    <Link to = ''>Chính sách</Link>
+                    <Link to = ''>Chính sách</Link>
+                    <Link to = ''>Chính sách</Link>
+                    <Link to = ''>Chính sách</Link>
+                </div>
                 </div>
                 </div>
             </div>

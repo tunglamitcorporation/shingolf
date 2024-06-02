@@ -19,6 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
+  background-color: #fff !important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -35,11 +36,11 @@ code {
   left: 0;
   
 }
+.header-container-all{
+  margin-top: 50px
+}
 .header-2, .header__PC-2{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #FF3131;
+  /* background-color: #FF3131; */
   width: 100%;
   height: 99px;
 }
@@ -49,7 +50,7 @@ code {
 .header__mobile{
 
   margin-right: 10px;
-  color: var(--white--color);
+  color: #ff3131;
   text-align: center;
   background-color: transparent;
   text-decoration: none;
@@ -106,6 +107,7 @@ code {
   font-weight: bold;
   font-size: 1.4rem;
 }
+
 .header-text {
   font-size: 1.4rem;
   color: #fff;
@@ -119,13 +121,19 @@ code {
 .search-bar {
   margin-right: 20px;
 }
+.header-cart-icon{
+  font-size: 2rem;
+  color: #ff3131;
+}
 .input-style {
   border: 1px solid #fff;
   height: 30px;
   width: 200px;
   font-size: 1.4rem;
   padding-left: 5px;
-  border: 1px solid #FF3131;
+  border-color: #ff3131;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .search-bar-icon {
   background-color: #FF3131;
@@ -133,8 +141,11 @@ code {
   font-size: 1.4rem;
   height: 30px;
   width: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .price{
+  width: 50%;
   font-size: 1.6rem;
   color: #FF3131;
   font-weight: bold;
@@ -205,6 +216,7 @@ code {
   font-size: 2rem;
   font-weight: bold;
   margin-left: 15px;
+  color: #Ff3131;
 }
 .product-title{
   font-size: 2.5rem;
@@ -241,6 +253,9 @@ code {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 3rem;
+}
+.header-cart{
+  text-align: right;
 }
 .login__form{
     width: 100%;
@@ -311,7 +326,9 @@ code {
 .header-list {
   width: 100px; 
   height:30px; 
-  border: 1px solid #ff3131
+  margin-left: 10px;
+  border: 1px solid #ff3131;
+  border-radius: 10px;
 }
 
 .cart-summary p {
@@ -336,6 +353,24 @@ code {
 .contact-button:hover,
 .pay-button:hover {
   background-color: #e52e2e;
+}
+.bottom-bar-container{
+  width: 100%;
+  height:60px;
+  background-color: #FF3131;
+  position: fixed;
+  right :0;
+  bottom : 0;
+  z-index: 1000;
+  display: none;
+}
+.bottom-bar-title,.bottom-bar-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.bottom-bar-icon{
+  font-size: 2rem;
 }
 .login_title{
   display: flex;
@@ -628,6 +663,7 @@ code {
   padding-bottom: 10px;
   height:150px;
   width: 150px;
+  border-radius: 50%;
 }
 .header__navbar-list-2{
   height: 100%;
@@ -1131,8 +1167,10 @@ code {
   color: #555;
 
 }
+
 .footer{
-  background-color: #FEC800;
+  background-color: #fff;
+  border: 1px solid #fec800;
   position: relative;
   bottom: 0;
   left: 0;
@@ -1152,9 +1190,14 @@ code {
 .footer__branch-location p
 {
   font-size: 1.4rem;
-  color: #fff; 
-  margin-left: 15px;
-
+  font-weight: bold;
+  color: #fec800; 
+}
+.policies a{
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000
 }
 .footer__container2{
   margin-top: 30px;
@@ -2591,6 +2634,9 @@ filter: brightness(0.5);
   .massage__header{
     background-attachment: unset;
   }
+  .content{
+    margin-top: 0;
+  }
   .header{
       height: 50px;
   }
@@ -2658,9 +2704,6 @@ filter: brightness(0.5);
 }
 .content__feature{
     margin-top: 5%;
-}
-.content__feature-item{
-    margin: 0 40px;
 }
 .content__feature-title{
     left: 35%;
@@ -2907,6 +2950,33 @@ font-size: 1.2rem !important;
 .cart-container{
   width: 100%;
 }
+.content__branch-img{
+  height: 150px;
+}
+.bottom-bar-container{
+  display: block;
+}
+.header-cart-icon{
+  font-size: 4rem;
+  color: #ff3131;
+  text-align: right;
+}
+.header-container-all{
+  margin-top: 60px
+}
+.phone-container{
+  color: #000;
+  font-size: 1.4rem;
+}
+.top-header{
+  display: none;
+}
+.banner-title{
+  font-size: 2rem;
+}
+.slogan{
+  font-size: 1.6rem;
+}
 }
 /* tablet */
 @media screen  and (min-width: 46.25em) and (max-width: 63.9375em){
@@ -3026,5 +3096,8 @@ font-size: 1.2rem !important;
 }
 .header-text{
   display: none;
+}
+.bottom-bar-container{
+  display: block;
 }
 }
