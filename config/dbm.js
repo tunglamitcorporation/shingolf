@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const {
     MONGODB_URL,
-    MONGODB_URL_AZ_WEB_BRANCH,
-    MONGODB_URL_AZ_WEB_MEMBER,   
-    MONGODB_URL_AZ_WEB_CONTENT
+    MONGODB_URL_PRODUCT,
+    MONGODB_URL_USERS,
+
 } = process.env;
 
 const confirmMongoose = {
@@ -22,8 +22,8 @@ mongoose.connect(MONGODB_URL, confirmMongoose, err => {
     console.log("Connect to mongodb")
 });
 
-mongoose.branch = mongoose.createConnection(MONGODB_URL_AZ_WEB_BRANCH, confirmMongoose);
-mongoose.member = mongoose.createConnection(MONGODB_URL_AZ_WEB_MEMBER, confirmMongoose);
-mongoose.content = mongoose.createConnection(MONGODB_URL_AZ_WEB_CONTENT, confirmMongoose);
+mongoose.product = mongoose.createConnection(MONGODB_URL_PRODUCT, confirmMongoose);
+
+mongoose.users = mongoose.createConnection(MONGODB_URL_USERS, confirmMongoose);
 
 module.exports = mongoose;

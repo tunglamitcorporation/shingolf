@@ -13,7 +13,7 @@ import './App.css';
 
 function App() {
 
-  const display = !['/Login','/SignUp'].some(substring =>location.pathname.includes(substring))
+  const display = !['/Login','/SignUp','/admin'].some(substring =>location.pathname.includes(substring))
   const [showTop, setShowTop] = useState(false)
   const { t, i18n } = useTranslation();
   const newsData = useMemo(() => t('news.source', {returnObjects:true}), [t]);
@@ -49,7 +49,7 @@ function App() {
   return (
     <div>
 
-      {display &&(
+      {display ? (
         <div>
         <Header />
     <div className ="top">
@@ -69,7 +69,7 @@ function App() {
       <NewRouter news={news}/>
       <Footer />
       </div>
-        )}
+        ): <div><NewRouter news={news}/></div>}
           </div>
         )
 }

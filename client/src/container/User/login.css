@@ -1,0 +1,61 @@
+.login {
+    display: block;
+    align-items: center;
+    /* padding-top: 200px; */
+    padding: 15% 0;
+}
+.login .login__header {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.login .login__form {
+    width: 900px;
+    height: 300px;
+    /* margin: auto; */
+    background: rgb(214, 213, 213);
+    align-items: center;
+    padding: 70px 10px;
+    border-radius: 25px;
+    text-emphasis: none;
+    text-align: center;
+}
+
+.login .login__form .login__form__group {
+    font-size: 2.5rem;
+    padding-bottom: 8px;
+}
+
+.login .login__form .login__form__group .login__form__email--label {
+    font-weight: 600;
+    padding-right: 4px;
+    text-align: right;
+}
+
+.login .login__form .login__form__group .login__form__group--input {
+    min-width: 420px;
+    border-radius: 5px;
+    padding: 4px 8px;
+}
+.login .login__form__button {
+    opacity: 0.8;
+    font-size: 2rem;
+    padding: 8px 24px;
+    margin-top: 8px;
+    margin-right: 35px;
+    border-radius: 25px;
+}
+
+.login .login__form__button:hover {
+    opacity: 1;
+}
+
+.login .login__forgot {
+    font-size: 2rem;
+    text-decoration-line: underline;
+    display: inline-block;
+}
+
+.login .login__forgot:hover {
+    text-decoration-line: unset;
+}
