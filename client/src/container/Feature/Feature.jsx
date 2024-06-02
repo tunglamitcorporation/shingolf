@@ -84,10 +84,10 @@ export default function Feature() {
                     </div>
                     <div className="btn-container">
                       <div className="row">
-                        <div className="col-md-6 p-0" style={{height: '100px'}}>
+                        <div className="col-md-6 p-0">
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div>
-                        <div className="col-md-6 p-0"style={{height: '100px'}}>
+                        <div className="col-md-6 p-0">
                         <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>MUA NGAY</Link>
                         </div>
                       </div>

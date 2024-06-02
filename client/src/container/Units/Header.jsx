@@ -57,7 +57,7 @@ function Header() {
               to="/"
               className="header__mobile-navbar-link"
             >
-              {t("header.home")}
+              TRANG CHỦ 
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -67,7 +67,7 @@ function Header() {
               to="/news/"
               className="header__mobile-navbar-link"
             >
-              {t("header.news")}
+             SẢN PHẨM
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -76,7 +76,7 @@ function Header() {
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
-              {t("header.hn")}
+              GIỚI THIỆU 
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -85,7 +85,7 @@ function Header() {
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
-              {t("header.hcm")}
+              LIÊN HỆ
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -94,7 +94,7 @@ function Header() {
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
-              {t("header.dn")}
+              KIỂM TRA ĐƠN HÀNG
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -103,7 +103,7 @@ function Header() {
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
-              {t("header.hp")}
+              TIN TỨC GOLF
             </Link>
           </li>
           <li className="header__mobile-navbar-item">
@@ -112,88 +112,7 @@ function Header() {
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
-              {t("header.cambodia")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/reservation/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.reservation")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/feature/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.feature")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/service/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.service")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/breakfast/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.breakfast")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/rotenburo/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.roten")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/massage/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.massage")}
-            </Link>
-          </li>
-          {/* <li className="header__mobile-navbar-item">
-            <Link
-              to="/Massage"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.massage")}
-            </Link>
-          </li> */}
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/contract/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.contract")}
-            </Link>
-          </li>
-          <li className="header__mobile-navbar-item">
-            <Link
-              to="/q&a/"
-              onClick={()=> setIsOpen(false)}
-              className="header__mobile-navbar-link"
-            >
-              {t("header.policies")}
+              TRUYỀN HÌNH GOLF
             </Link>
           </li>
         </ul>
@@ -212,9 +131,17 @@ function Header() {
                     <div className="col-md-6">
                         <div className="header-text">Liên hệ: 0123456789</div>
                     </div>
-                    <div className="col-md-6 d-flex justify-content-end align-items-center">
+                    <div className="col-md-6 d-flex justify-content-center align-items-center">
+                      <div className="d-flex align-items-center">
+                        <div className="search-bar d-flex align-items-center">
+                            <input 
+                            type="text"
+                            className="input-style" />
+                            <div className="search-bar-icon d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
                     <select
-                        style={{ width: "100px", height:"30px", border: "1px solid #ff3131" }}
+                        className="header-list"
                         >
                         <option>Tất cả</option> 
                         <option>Danh mục</option>
@@ -224,26 +151,22 @@ function Header() {
                         <option>Outlet</option>
                      </select>
                        <select
-                        style={{ width: "100px", height:"30px", border: "1px solid #ff3131" }}
+                        className="header-list"
                         >
                         <option>Mới nhất</option>
                         <option>Đánh giá</option>
                         <option>Giá thấp đến cao</option>
                         <option>Giá cao đến thấp</option>
                      </select>
-                        <div className="search-bar d-flex align-items-center">
-                            <input 
-                            type="text"
-                            className="input-style" />
-                            <div className="search-bar-icon d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
                         </div>
                         <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
                         </div>
+                      </div>
                         </div>
                     </div>
                 </div>
+                <div className="header_container">
+      <div className="header-2">
         <div className="header__mobile-logo">
           <Link to="/">
             <img
@@ -259,6 +182,9 @@ function Header() {
             <i className="fa-solid fa-bars"></i>
           </button>
         </div>
+        <HeaderMobile />
+      </div>
+      </div>
         <HeaderMobile />
      <div className="container-fluid" style={{marginTop: 50}}>
       <div className="header">

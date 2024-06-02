@@ -28,7 +28,7 @@ export default function VietnamService({deviceType}) {
       <div className="content__feature">
         <div className="container">
           <div className="row">
-            <div className="col-md-3 mt-5" style={{backgroundColor: '#f6f6f6'}}>
+            <div className="col-md-3 mt-5 list-container" style={{backgroundColor: '#f6f6f6'}}>
               <div className="container">
                 <div className="row">
               <div className="all-list"><i class="fa-solid fa-bars"></i> DANH MỤC</div>
@@ -155,11 +155,10 @@ export default function VietnamService({deviceType}) {
       </div>
             <div className="container">
             <div className="row">
-            <div className="sort-list">
+            <div className="sort-list-container">
               Sắp xếp
                     <select
-                        style={{ width: "350px", marginLeft: "10px" }}
-                        className="col-md-2 form__content"
+                        className="sort-list"
                         >
                         <option>Mới nhất</option>
                         <option>Đánh giá</option>

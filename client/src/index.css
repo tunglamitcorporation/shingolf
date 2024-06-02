@@ -39,9 +39,9 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary--color);
+  background-color: #FF3131;
   width: 100%;
-  height: 84px;
+  height: 99px;
 }
 .header_container{
   display: none;
@@ -51,7 +51,7 @@ code {
   margin-right: 10px;
   color: var(--white--color);
   text-align: center;
-  background-color: var(--primary--color);
+  background-color: transparent;
   text-decoration: none;
   font-size: 4rem;
   text-align: center;
@@ -189,8 +189,14 @@ code {
   margin-left: 10px;
   text-transform: uppercase;
 }
+.sort-list-container{
+  font-size: 1.4rem;
+}
 .sort-list{
   font-size: 1.4rem;
+  width: 200px;
+  height: 30px;
+  margin-left: 10px;
 }
 .thumbs-wrapper {
   text-align: center;
@@ -282,8 +288,8 @@ code {
 .cart-item span {
   flex: 1;
   text-align: center;
+  font-size: 1.4rem;
 }
-
 .cart-summary {
   margin-top: 20px;
   padding: 20px;
@@ -295,10 +301,41 @@ code {
 .cart-summary h2 {
   margin-top: 0;
 }
+.banner-container {
+  display: flex;
+  flex-direction: row;
+}
+.banner-width {
+  background-color: #fec800;
+}
+.header-list {
+  width: 100px; 
+  height:30px; 
+  border: 1px solid #ff3131
+}
 
 .cart-summary p {
-  font-size: 1.2em;
+  font-size: 2rem;
   font-weight: bold;
+  color: #ff3131
+}
+.contact-button,
+.pay-button {
+  background-color: #ff3131;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+  height: 40px;
+  width: 100px;
+}
+
+.contact-button:hover,
+.pay-button:hover {
+  background-color: #e52e2e;
 }
 .login_title{
   display: flex;
@@ -795,7 +832,7 @@ code {
   overflow: hidden;  
 }
 .content__branch-img{
-  width: 93%;
+  width: 100%;
   height: 300px;
   object-fit: cover;
   border: 1px solid #FEC800;
@@ -1362,15 +1399,15 @@ code {
 }
 .service__header {
   width: 100%;
-  padding: 200px 0;
-  background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat;
+  padding: 100px 0;
+  /* background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat; */
   margin-top:  60px;
   background-attachment: fixed;
   position: relative;
   text-align: center;
 }
 .service__header h1{
-    color: #fff;
+    color: #FF3131;
     font-size: 52px;
     font-weight: bold
 }
@@ -1760,6 +1797,7 @@ a:hover {
 .top-header{
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 15px;
   background-color: #FEC800;
@@ -2553,9 +2591,6 @@ filter: brightness(0.5);
   .massage__header{
     background-attachment: unset;
   }
-  .top-header{
-    padding: 40px;
-  }
   .header{
       height: 50px;
   }
@@ -2577,7 +2612,7 @@ filter: brightness(0.5);
   }
   .header__mobile-logo img{
     width: 100px;
-    height: 60px;
+    height: 100px;
   }
   .content__title span{
     top: 12%;
@@ -2854,7 +2889,23 @@ font-size: 1.2rem !important;
   padding: 100px 0;
 }
 .service__header{
-  padding: 100px 0;
+  padding: 20px 0;
+}
+.banner-container {
+  display: flex;
+  flex-direction: column;
+}
+.list-container{
+  display: none;
+}
+.header-text{
+  display: none;
+}
+.header-list {
+  display: none;
+}
+.cart-container{
+  width: 100%;
 }
 }
 /* tablet */
@@ -2885,7 +2936,7 @@ font-size: 1.2rem !important;
   }
   .header__mobile-logo img{
     width: 100px;
-    height: 60px;
+    height: 100px;
   }
   .feature__content-title{
     font-size: 1.4rem;
@@ -2969,5 +3020,11 @@ font-size: 1.2rem !important;
 }
 .awssld__wrapper{
   height: 500px !important;
+}
+.list-container{
+  display: none;
+}
+.header-text{
+  display: none;
 }
 }
