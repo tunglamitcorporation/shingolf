@@ -60,6 +60,8 @@ app.use(express.static(path.join(__dirname,"./client/build")))
     // app.get('*', function (req, res) {
     //     res.sendFile(path.join(__dirname, "/client/build","index.html"));
     // });
+
+// use cors check yen rate
 app.get('*', function(req, res) {
     const ogSiteName = "東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル - Azumaya,ハノイとダナン、ホーチミンにあるこだわりの和朝食と露天風呂、ビジネスパーソン向けホテルの東屋ベトナムホテル"
     const ogLocale = "en_US"
