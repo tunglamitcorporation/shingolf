@@ -1,36 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 
-const EnglishOnlyInput = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [showNotification, setShowNotification] = useState(false);
+function Page2() {
+  const { productName } = useParams();
+  const location = useLocation();
+  const { price } = location.state || {};
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-
-    // Regular expression to detect Japanese characters
-    const japaneseRegex = /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}ー]+/u;
-
-    if (japaneseRegex.test(value)) {
-      setShowNotification(true);
-    } else {
-      setShowNotification(false);
-      setInputValue(value);
-    }
-  };
+  if (!price) {
+    return <h2>Product not found</h2>;
+  }
 
   return (
     <div>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        placeholder="Enter English text only"
-      />
-      {showNotification && (
-        <p style={{ color: 'red' }}>Please input English text only.</p>
-      )}
+      <h1>Product Details</h1>
+      <p>Product Name: {productName}</p>
+      <p>Price: {price}</p>
     </div>
   );
-};
+}
 
-export default EnglishOnlyInput;
+export default Page2;

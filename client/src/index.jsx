@@ -12,9 +12,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 import i18n from'./i18n'
 import { I18nextProvider } from 'react-i18next';
 import DisableTouchPadHorizontalScroll from './DisableTouchPadScroll';
-
+import { ProductHistoryProvider } from './ProductHistoryContext';
 root.render(
   // <React.StrictMode>
+  <ProductHistoryProvider>
       <BrowserRouter>
         <I18nextProvider i18n={i18n}>
             <FontProvider>
@@ -26,6 +27,7 @@ root.render(
             </FontProvider>
         </I18nextProvider>
       </BrowserRouter>
+      </ProductHistoryProvider>
   // </React.StrictMode>
   
 );

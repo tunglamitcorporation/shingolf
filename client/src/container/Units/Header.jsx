@@ -1,10 +1,35 @@
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Tab, Tabs, TabList } from "react-tabs";
 import Cookies from "js-cookie";
 import logo from '../../image/logo.jpg'
 import axios from "axios";
+import ProductHistoryContext from "../../ProductHistoryContext";
+
+const productData = {
+  newGolfStick: [
+    {
+      id: 'golfsticknew',
+      productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
+      price: '10',
+    },
+  ],
+  golfClothesMen: [
+    {
+      id: 'golfclothesmen',
+      productName: 'Áo Mens UA Matchplay Stripe Polo',
+      price: '40',
+    },
+  ],
+  golfBag: [
+    {
+      id: 'golfbag',
+      productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
+      price: '60',
+    },
+  ],
+};
 function Header() {
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
@@ -12,18 +37,12 @@ function Header() {
     Cookies.set('selectedLanguage', lng, {expires: 365})
     
   };
-  const feature = t("feature.feature_item", { returnObjects: true });
-  const hcm = t("hcm-branch.branch", {returnObjects:true})
-  const hn = t("hn-branch.branch", {returnObjects:true})
-  const dn = t("dn-branch.branch", {returnObjects:true})
-  const hp = t("hp-branch.branch", {returnObjects:true})
-  const service = t("service.service_name", {returnObjects:true})
   const [isOpen, setIsOpen] = useState(false)
   const [exchangeRate, setExchangeRate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [backgroundColor, setBackgroundColor] = useState('transparent');
-
+  const navigate = useNavigate()
+  const { addProductToHistory } = useContext(ProductHistoryContext);
     useEffect(()=>{
       const savedLang = Cookies.get('selectedLanguage');
       if(savedLang && i18n.language !== savedLang){
@@ -41,8 +60,38 @@ function Header() {
       document.body.style.position = "";
     }
   })
-;
  
+  const formatProductName = (name) => {
+    return name.replace(/\s/g, '-');
+  };
+  const handleProduct = (product) => {
+    addProductToHistory(product);
+    const formattedProductName = formatProductName(product.productName);
+    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, id: product.id } });
+  };
+const [searchTerm, setSearchTerm] = useState('');
+
+const handleChange = (event) => {
+  setSearchTerm(event.target.value);
+};
+
+const filterProducts = (data, term) => {
+  const lowercasedTerm = term.toLowerCase();
+  const filteredData = {};
+
+  Object.keys(data).forEach((category) => {
+    filteredData[category] = data[category].filter((item) =>
+      item.productName.toLowerCase().includes(lowercasedTerm)
+    );
+  });
+
+  return filteredData;
+};
+
+const filteredProductData = filterProducts(productData, searchTerm);
+const noProductsFound = !Object.values(filteredProductData).some(
+  (products) => products.length > 0
+);
   const HeaderMobile = () => {
     return(
     <ul className={`header__mobile-navbar-list ${isOpen ? 'open' :''}`}>
@@ -156,12 +205,60 @@ function Header() {
                     <div className="col-md-6 d-flex justify-content-center align-items-center">
                       <div className="d-flex align-items-center">
                         <div className="search-bar d-flex align-items-center">
-                            <input 
-                            type="text"
-                            className="input-style" />
-                            <div className="search-bar-icon d-flex justify-content-center align-items-center">
+                              <input  
+                              type="text"
+                              placeholder="Search products"
+                              value={searchTerm}
+                              onChange={handleChange}
+                              className="input-style"
+                            />
+                             <div className="search-bar-icon d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
+                            {/* {searchTerm && (
+                              <div className="results" >
+                                {Object.keys(filteredProductData).map((category) => (
+                                  <div key={category} className="category">
+                                    {filteredProductData[category].length > 0 ? (
+                                      filteredProductData[category].map((item) => (
+                                        <div key={item.id} className="productItem" onClick={() => {
+                                          handleProduct(item)
+                                          setSearchTerm('')
+                                          }}>
+                                          <div className="search-productName">{item.productName}</div>
+                                          <div className="search-price">${item.price}</div>
+                                          <div className="categoryTitle">{category}</div>
+                                        </div>
+                                      ))
+                                    ) : (
+                                      <div className="noProducts">No products found</div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            )} */}
+                            {searchTerm && (
+                              <div className="results">
+                                {noProductsFound ? (
+                                  <div className="noProducts">No products found</div>
+                                ) : (
+                                  Object.keys(filteredProductData).map((category) => (
+                                    <div key={category} className="category">
+                                      {filteredProductData[category].map((item) => (
+                                        <div key={item.id} className="productItem" onClick={() => {
+                                          handleProduct(item)
+                                          setSearchTerm('')
+                                          }}>
+                                         <div className="search-productName">{item.productName}</div>
+                                          <div className="search-price">${item.price}</div>
+                                          <div className="categoryTitle">{category}</div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  ))
+                                )}
+                              </div>
+                            )}
                     <select
                         className="header-list"
                         >

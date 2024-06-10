@@ -1,50 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ExchangeRate = () => {
-  const [exchangeRate, setExchangeRate] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const data = [
+  {
+    productName: 'test1',
+    price: '10'
+  },
+  {
+    productName: 'test2',
+    price: '20'
+  }
+];
 
-  useEffect(() => {
-    const fetchExchangeRate = async () => {
-      try {
-        const response = await axios.get('https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=8');
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(response.data, 'application/xml');
-        const rates = Array.from(xml.getElementsByTagName('Exrate'));
-        const usdRate = rates.find(rate => rate.getAttribute('CurrencyCode') === 'JPY');
-        setExchangeRate(usdRate.getAttribute('Sell'));
-      } catch (error) {
-        setError('Error fetching exchange rates');
-      } finally {
-        setLoading(false);
-      }
-    };
+function Page1() {
+  const navigate = useNavigate();
 
-    fetchExchangeRate();
-  }, []);
-
-  const containerStyle = {
-    background: '#fff',
-    padding: '20px',
-    textAlign: 'center'
+  const handleButtonClick = (product) => {
+    navigate(`/test2/${product.productName}`, { state: { price: product.price } });
   };
 
-  if (loading) {
-    return <div style={containerStyle}>Loading...</div>;
-  }
-
-  if (error) {
-    return <div style={containerStyle}>{error}</div>;
-  }
-
   return (
-    <div style={containerStyle}>
-      <h1>Exchange Rate: JPY to VND</h1>
-      <p>{exchangeRate}</p>
+    <div>
+      <h1>Home</h1>
+      <ul>
+        {data.map(product => (
+          <li key={product.productName}>
+            <button onClick={() => handleButtonClick(product)}>
+              {product.productName}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
-};
+}
 
-export default ExchangeRate;
+export default Page1;

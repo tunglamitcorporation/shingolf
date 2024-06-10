@@ -29,7 +29,15 @@ function App() {
     }
   })
   const [news, setNews] = useState([])
+  const [language, setLanguage] = useState('');
 
+  useEffect(() => {
+    // Get the browser's language
+    const browserLanguage = navigator.language || navigator.userLanguage;
+    setLanguage(browserLanguage);
+  }, []);
+
+    
   useEffect(() =>{
               const handleScroll = () => {
                   setShowTop(window.scrollY >= 1000)
@@ -52,6 +60,10 @@ function App() {
 
       {display ? (
         <div>
+          {/* <div>
+      <h1>Browser Language Checker</h1>
+      <p>Your browser language is: {language}</p>
+    </div> */}
         <Header />
     <div className ="top">
             {showTop && (
@@ -66,7 +78,7 @@ function App() {
             </>        
                     )}
     </div>
-      <ScrollToTop x={0} y={0} />
+      <ScrollToTop x={0} y={0}/>
       <NewRouter news={news}/>
       <BottomBar />
       <Footer />

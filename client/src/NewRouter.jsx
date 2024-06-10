@@ -10,7 +10,8 @@ import VietnamService from "./container/Service/Service"
 import Reservation_backup from './container/Reservation/Reservation_backup'
 import Cart from './container/Reservation/Reservation';
 import LoginContainer from './container/User/LoginContainer';
-import ExchangeRate from './Test';
+import Page1 from './Test';
+import Page2 from './Test2';
 function NewRouter(props) {
     const {news} = props;
     // const { i18n } = useTranslation();
@@ -36,13 +37,15 @@ function NewRouter(props) {
         <section>
             <Routes>
                 <Route exact path='/' element={<Home news = {news} />} />
+                <Route path = "/service/:productType" element={<VietnamService />} />
                 <Route path = "/service/" element={<VietnamService />} />
                 <Route path = "/cart/" element={<Cart />} />
-                <Route path = "/feature/" element={<Feature/>} />
+                <Route path = "/feature/:productName" element={<Feature />} />
                 <Route path = "/admin/login" element={<LoginContainer/>} exact/>
                 <Route path = '*' element={<Home news={news} />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
-                <Route path = '/test' element={<ExchangeRate />} />
+                <Route path = '/test' element={<Page1 />} />
+                <Route path='/test2/:productName' element={<Page2 />} />
             </Routes>
         </section>
     );
