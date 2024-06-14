@@ -1,0 +1,25 @@
+.admin_components-title {
+    background-color: yellow;
+    font-size: 3rem;
+    color: red;
+    padding: 24px;
+    margin: auto
+}
+
+.product {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.product-title {
+    background-color: yellow;
+    font-size: 3rem;
+    color: red;
+    padding: 24px;
+    margin: auto
+}
+
+.admin-home_page-picture-content .admin-home_page-picture-content-input_link {
+    font-size: 1.3rem;
+    color: blue
+}
