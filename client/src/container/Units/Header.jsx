@@ -6,49 +6,48 @@ import Cookies from "js-cookie";
 import logo from '../../image/logo.jpg'
 import axios from "axios";
 import ProductHistoryContext from "../../ProductHistoryContext";
+import { useCart } from "../../CartProvider";
+const productData = [
+  {
+    id: 'golfsticknew',
+    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
+    price: '10'
+  },
+  {
+    id: 'golfclothesmen',
+    productName: 'Áo Mens UA Matchplay Stripe Polo',
+    price: '40'
+  },
+  {
+    id: 'golfbag',
+    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
+    price: '60'
+  }
+];
 
-const productData = {
-  newGolfStick: [
-    {
-      id: 'golfsticknew',
-      productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-      price: '10',
-    },
-  ],
-  golfClothesMen: [
-    {
-      id: 'golfclothesmen',
-      productName: 'Áo Mens UA Matchplay Stripe Polo',
-      price: '40',
-    },
-  ],
-  golfBag: [
-    {
-      id: 'golfbag',
-      productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-      price: '60',
-    },
-  ],
-};
 function Header() {
   const { t, i18n } = useTranslation();
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    Cookies.set('selectedLanguage', lng, {expires: 365})
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  //   Cookies.set('selectedLanguage', lng, {expires: 365})
     
-  };
+  // };
   const [isOpen, setIsOpen] = useState(false)
   const [exchangeRate, setExchangeRate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const { cartCount } = useCart();
+  const { cartItems } = useCart();
+
   const navigate = useNavigate()
   const { addProductToHistory } = useContext(ProductHistoryContext);
-    useEffect(()=>{
-      const savedLang = Cookies.get('selectedLanguage');
-      if(savedLang && i18n.language !== savedLang){
-        i18n.changeLanguage(savedLang)
-      }
-    })
+    // useEffect(()=>{
+    //   const savedLang = Cookies.get('selectedLanguage');
+    //   if(savedLang && i18n.language !== savedLang){
+    //     i18n.changeLanguage(savedLang)
+    //   }
+    // })
 
   const toggleHeader = () => {
       setIsOpen(!isOpen)
@@ -68,30 +67,19 @@ function Header() {
     addProductToHistory(product);
     const formattedProductName = formatProductName(product.productName);
     navigate(`/feature/${formattedProductName}`, { state: { price: product.price, id: product.id } });
+    setSearchTerm('')
+  }
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
   };
-const [searchTerm, setSearchTerm] = useState('');
-
-const handleChange = (event) => {
-  setSearchTerm(event.target.value);
-};
-
-const filterProducts = (data, term) => {
-  const lowercasedTerm = term.toLowerCase();
-  const filteredData = {};
-
-  Object.keys(data).forEach((category) => {
-    filteredData[category] = data[category].filter((item) =>
-      item.productName.toLowerCase().includes(lowercasedTerm)
+  const filterProducts = (data, term) => {
+    const lowercasedTerm = term.toLowerCase();
+    return data.filter((product) =>
+      product.productName.toLowerCase().includes(lowercasedTerm)
     );
-  });
+  };
 
-  return filteredData;
-};
-
-const filteredProductData = filterProducts(productData, searchTerm);
-const noProductsFound = !Object.values(filteredProductData).some(
-  (products) => products.length > 0
-);
+  const filteredProducts = filterProducts(productData, searchTerm);
   const HeaderMobile = () => {
     return(
     <ul className={`header__mobile-navbar-list ${isOpen ? 'open' :''}`}>
@@ -215,50 +203,24 @@ const noProductsFound = !Object.values(filteredProductData).some(
                              <div className="search-bar-icon d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            {/* {searchTerm && (
-                              <div className="results" >
-                                {Object.keys(filteredProductData).map((category) => (
-                                  <div key={category} className="category">
-                                    {filteredProductData[category].length > 0 ? (
-                                      filteredProductData[category].map((item) => (
-                                        <div key={item.id} className="productItem" onClick={() => {
-                                          handleProduct(item)
-                                          setSearchTerm('')
-                                          }}>
-                                          <div className="search-productName">{item.productName}</div>
-                                          <div className="search-price">${item.price}</div>
-                                          <div className="categoryTitle">{category}</div>
-                                        </div>
-                                      ))
-                                    ) : (
-                                      <div className="noProducts">No products found</div>
-                                    )}
-                                  </div>
-                                ))}
-                              </div>
-                            )} */}
-                            {searchTerm && (
-                              <div className="results">
-                                {noProductsFound ? (
-                                  <div className="noProducts">No products found</div>
-                                ) : (
-                                  Object.keys(filteredProductData).map((category) => (
-                                    <div key={category} className="category">
-                                      {filteredProductData[category].map((item) => (
-                                        <div key={item.id} className="productItem" onClick={() => {
-                                          handleProduct(item)
-                                          setSearchTerm('')
-                                          }}>
-                                         <div className="search-productName">{item.productName}</div>
-                                          <div className="search-price">${item.price}</div>
-                                          <div className="categoryTitle">{category}</div>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  ))
-                                )}
-                              </div>
-                            )}
+                              {searchTerm && (
+                                <div className="results">
+                                  {filteredProducts.length > 0 ? (
+                                    filteredProducts.map((product) => (
+                                      <div
+                                        key={product.id}
+                                        className="productItem"
+                                        onClick={() => handleProduct(product)}
+                                      >
+                                        <div className="search-productName">{product.productName}</div>
+                                        <div className="search-price">${product.price}</div>
+                                      </div>
+                                    ))
+                                  ) : (
+                                    <div className="noProducts">No products found</div>
+                                  )}
+                                </div>
+                              )}
                     <select
                         className="header-list"
                         >
@@ -279,6 +241,8 @@ const noProductsFound = !Object.values(filteredProductData).some(
                      </select>
                         </div>
                         <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
+                        {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>}
+
                         </div>
                       </div>
                         </div>
@@ -286,17 +250,14 @@ const noProductsFound = !Object.values(filteredProductData).some(
                 </div>
                 <div className="header_container">
       <div className="header-2">
-          <div className="d-flex align-items-center">
-            <div className="col-md-4">
+          <div className="d-flex align-items-center justify-content-between ml-3 mr-3">
             <div className="btn__header-mobile">
           <button
            onClick={toggleHeader}
            className="header__mobile">
             <i className="fa-solid fa-bars"></i>
           </button>
-        </div>
             </div>
-            <div className="col-md-4">
               <div className="header__mobile-logo">
                 <Link to="/">
                   <img
@@ -305,11 +266,10 @@ const noProductsFound = !Object.values(filteredProductData).some(
                   />
                 </Link>
               </div>
-            </div>
-            <div className="col-md-4">
               <div className="header-cart">
-            <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping header-cart-icon"/></Link>
-              </div>
+              <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
+              {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>}
+
             </div>
         </div>
         <div className="d-flex mb-5 align-items-center">
@@ -324,7 +284,7 @@ const noProductsFound = !Object.values(filteredProductData).some(
                             </div>
                             <div className="mt-2" style={{fontSize: "1.4rem", fontWeight:'bold'}}>Tỉ giá hôm nay:  {exchangeRate}</div>
           </div>
-          <div className="col-md-6 ml-5">
+          <div className="col-md-6 m-0 p-0">
             <a href="tel:01541251" className="text-decoration-none d-flex align-items-center phone-container">
               <i class="fa-solid fa-phone mr-3"></i>
               <div>0123141235</div>

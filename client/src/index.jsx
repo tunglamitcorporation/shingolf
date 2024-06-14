@@ -13,17 +13,21 @@ import i18n from'./i18n'
 import { I18nextProvider } from 'react-i18next';
 import DisableTouchPadHorizontalScroll from './DisableTouchPadScroll';
 import { ProductHistoryProvider } from './ProductHistoryContext';
+import { CartProvider } from './CartProvider';
+
 root.render(
   // <React.StrictMode>
   <ProductHistoryProvider>
       <BrowserRouter>
         <I18nextProvider i18n={i18n}>
             <FontProvider>
+              <CartProvider>
               <DisableArrowScroll>
                 <DisableTouchPadHorizontalScroll>
                 <App />
                 </DisableTouchPadHorizontalScroll>
               </DisableArrowScroll>
+              </CartProvider>
             </FontProvider>
         </I18nextProvider>
       </BrowserRouter>

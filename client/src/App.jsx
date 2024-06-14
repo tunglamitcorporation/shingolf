@@ -10,8 +10,10 @@ import ScrollToTop from "./units/ScrollToTop.js";
 import './index.css'
 import './base.css'
 import './App.css';
+import { Routes, Route } from "react-router-dom";
 import BottomBar from "./container/Units/BottomBar.jsx";
-
+import SearchPage from "./container/Units/SearchPage.jsx";
+import RankTable from "./container/Units/RatePage.jsx";
 function App() {
 
   const display = !['/Login','/SignUp','/admin'].some(substring =>location.pathname.includes(substring))
@@ -57,33 +59,34 @@ function App() {
           },[newsData])
   return (
     <div>
-
-      {display ? (
+{display &&(
         <div>
-          {/* <div>
-      <h1>Browser Language Checker</h1>
-      <p>Your browser language is: {language}</p>
-    </div> */}
         <Header />
-    <div className ="top">
+         <div className ="top">
             {showTop && (
              <>
             <button className="btn__top" onClick={scrollToTop}>
             <i className="fa-solid fa-angle-up"></i>
             </button>
-            {/* <button className ='btn-en btn_en-fixed ' onClick={()=>changeLanguage('en')}></button>                
-            <button className ='btn-ja btn_ja-fixed' onClick={()=>changeLanguage('ja')}></button>  
-            <button className ='btn-vie btn_vie-fixed' onClick={()=>changeLanguage('vie')}></button>   */}
+            {/* <button className ='btn-en btn_en-fixed ' onClick={()=>{
+              changeLanguage('en')
+            }}></button>                
+            <button className ='btn-ja btn_ja-fixed' onClick={()=>{
+              changeLanguage('ja')
+              }}></button>  
+            <button className ='btn-vie btn_vie-fixed' onClick={()=>{
+              changeLanguage('vie')
+              }}></button>   */}
             {/* <button className ='btn-kor btn_kor-fixed' onClick={()=>changeLanguage('kor')}></button>   */}
             </>        
                     )}
     </div>
-      <ScrollToTop x={0} y={0}/>
+      <ScrollToTop x={0} y={0} />
       <NewRouter news={news}/>
       <BottomBar />
       <Footer />
       </div>
-        ): <div><NewRouter news={news}/></div>}
+        )}
           </div>
         )
 }

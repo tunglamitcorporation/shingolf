@@ -8,18 +8,26 @@ import { useLocation } from "react-router-dom";
 import ProductHistoryContext from "../../ProductHistoryContext";
 export default function Feature() {
   const { t } = useTranslation();
-  const [activeDiv, setActiveDiv] = useState(1);
   const { productName } = useParams();
   const location = useLocation();
   const { price, id} = location.state || {};
   const { productHistory } = useContext(ProductHistoryContext);
-  const handleClickDiv1 = () => {
-    setActiveDiv(1);
-  };
 
-  const handleClickDiv2 = () => {
-    setActiveDiv(2);
-  };
+  // const [activeDiv1, setActiveDiv1] = useState(null);
+  // const [activeDiv2, setActiveDiv2] = useState(null);
+  // const [activeDiv3, setActiveDiv3] = useState(null);
+
+  // const handleClickDiv1 = (index) => {
+  //   setActiveDiv1(index);
+  // };
+
+  // const handleClickDiv2 = (index) => {
+  //   setActiveDiv2(index);
+  // };
+
+  // const handleClickDiv3 = (index) => {
+  //   setActiveDiv3(index);
+  // };
   
   return (
     <div>
@@ -76,9 +84,17 @@ export default function Feature() {
                      <div className="price" style={{fontSize: '3rem'}}>20.500.200đ {price}</div>
                      <div className="price ml-2 strikethrough"style={{ fontSize: '3rem', color: "#ccc"}}>22.778.000đ</div>
                     </div>
+                                  <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 100}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>Mới</li>
+                    </ul>
                     <ul className="d-flex pl-0 mt-3">
-                      <li className="product-type" onClick={handleClickDiv1} style={{ backgroundColor: activeDiv === 1 ? '#ff3131' : '#fff', cursor: 'pointer', color: activeDiv === 1 ? '#fff' : "#FF3131" }}>Mới</li>
-                      <li className="product-type"  onClick={handleClickDiv2} style={{ backgroundColor: activeDiv === 2 ? '#ff3131' : '#fff', cursor: 'pointer', color: activeDiv === 2 ? '#fff' : "#FF3131" }}>Cũ</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 100}}>Độ Loft:  </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>9</li>
+                    </ul>
+                    <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 100}}>Loại Cán: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>X</li>
                     </ul>
                     <div className="hotline">
                       <a href="tel:012931231124">HotLine: 1094581205812</a>
@@ -101,53 +117,45 @@ export default function Feature() {
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #000'}}>
-                <tr>
-                <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Cán gậy</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Độ loft</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+              <tr>
+                <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Driver</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>45 inch</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>300g</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>?</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Phụ kiện</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>?</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Grip</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>?</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Tay thuận</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Tay Phải</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Rank</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>A</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Năm sản xuất</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>2024</td>
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>123</td>
+                <td style={{border: '1px solid #000', width: 500, fontSize: 15, padding: 5}}>4356346</td>
                 </tr>
               </table>
             </div>
@@ -199,7 +207,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -232,7 +240,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -265,7 +273,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -298,7 +306,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -342,7 +350,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -375,7 +383,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -408,7 +416,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -441,7 +449,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</a>
+                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>
@@ -480,7 +488,7 @@ export default function Feature() {
                       </div>
                     </div>
                     <div className="content__feature-name">
-                      <a href="">{product.productName}</a>
+                      <div href="">{product.productName}</div>
                     </div>
                     <div className="content__feature-text d-flex">
                      <div className="price">28.475.000 VNĐ</div>

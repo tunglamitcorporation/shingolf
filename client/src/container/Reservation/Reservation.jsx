@@ -4,7 +4,7 @@ import { useEffect,  useState} from 'react';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import { useCart } from "../../CartProvider";
 export default function Feature() {
   const { t } = useTranslation();
   const dn = t("dn", { returnObjects: true });
@@ -29,26 +29,94 @@ export default function Feature() {
     }, [featureID]);
     const Cart = () => {
       // Sample cart items
-      const items = [
-        { id: 1, name: 'Item 1', price: 29.99, quantity: 1 },
-        { id: 2, name: 'Item 2', price: 49.99, quantity: 2 },
-      ];
+      const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart } = useCart();
+      const [totalPrice, setTotalPrice] = useState(0);
+
+      useEffect(() => {
+        const calculateTotalPrice = () => {
+          const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+          setTotalPrice(total);
+        };
+        calculateTotalPrice();
+      }, [cartItems]);
+    
+      const handleIncreaseQuantity = (productId) => {
+        increaseQuantity(productId);
+        const updatedTotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        setTotalPrice(updatedTotal);
+      };
+    
+      const handleDecreaseQuantity = (productId) => {
+        decreaseQuantity(productId);
+        const updatedTotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        setTotalPrice(updatedTotal);
+      };
     
       return (
         <div className="cart-container">
-          <h1>Shopping Cart</h1>
-          <div className="cart-items">
-            {items.map(item => (
-              <div key={item.id} className="cart-item">
-                <span>{item.name}</span>
-                <span>${item.price}</span>
-                <span>Qty: {item.quantity}</span>
+          {cartItems.length > 0 ? (
+        <ul>
+          {cartItems.map((item, index) => {
+          return(
+            <div className="cart-items">
+            <div className="d-flex align-items-center justify-content-between">
+       <div key={index}>
+          <div style={{ textDecoration: 'none' }}>
+            <div className="content__feature-item" style={{margin: '10px 10px'}}>
+              <div className="content__feature-container" style={{height: '100px', display:'block', marginTop:0}}>
+                <div
+                  className="content__feature-img"
+                  style={{
+                    width:'100px',
+                    height:'100px',
+                    backgroundSize:'contain',
+                    backgroundImage:
+                    `url(${item.image})`,
+                  }}
+                ></div>
               </div>
-            ))}
+            </div>
           </div>
+        </div>
+              <div className="content__feature-name" style={{width:'unset'}}>
+                <div>{item.productName}</div>
+              </div>
+              <div className="content__feature-text d-md-flex" style={{fontSize: '1.4rem', width: 'unset'}}>
+                <div className="price">28.475.000đ {item.price}</div>
+                <div className="price ml-md-5" style={{ color: '#ccc', textDecoration: 'line-through', textDecorationColor:'#000' }}>
+                  33.500.000đ
+                </div>
+              </div>
+              <div className="quantity-controls">
+              {/* <button onClick={() => {
+                  const newQuantity = decreaseQuantity(item.id);
+                  if (newQuantity !== undefined ) {
+                    setTotalPrice(prevTotalPrice => prevTotalPrice - item.price);
+                  }
+                }}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => {
+                  const newQuantity = increaseQuantity(item.id);
+                  setTotalPrice(prevTotalPrice => prevTotalPrice + item.price);
+                }}>+</button> */}
+                <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+            </div>
+            <div className="content__feature-text d-md-flex" style={{fontSize: '1.4rem', width: 'unset'}}>
+            <div className="price">28.475.000đ {item.price * item.quantity}</div>
+            </div>
+            <button className="delete-button" onClick={() => removeFromCart(item.id)}>Xóa</button>
+            </div>
+          </div>
+          )
+    })}
+        </ul>
+      ) : (
+        <p>Your cart is empty.</p>
+      )}
           <div className="cart-summary">
-            <h2>Summary</h2>
-            <p>Total: ${items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</p>
+            <p>Total:{totalPrice}</p>
             <div className="cart-buttons">
               <button className="contact-button">Contact</button>
               <button className="pay-button">Pay</button>

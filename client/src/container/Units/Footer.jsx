@@ -38,6 +38,30 @@ export default function Footer() {
                 </div>
             </div>
         </div>
+        {/* <div className="bottom-bar-container container">
+                <div className="d-flex align-items-center justify-content-between">
+                <div className="d-flex justify-content-center align-items-center flex-column"> 
+                    <i class="fa-solid fa-home bottom-bar-icon"></i>
+                    <div to ='/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Trang Chủ</div>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center flex-column">
+                    <i class="fa-solid fa-magnifying-glass bottom-bar-icon"></i>
+                    <div to ='/search/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Tìm kiếm</div>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center flex-column">
+                    <i class="fa-solid fa-chart-simple bottom-bar-icon"></i>
+                    <div to ='/rate/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Bảng xếp hạng</div>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center flex-column">
+                    <i class="fa-solid fa-clock-rotate-left bottom-bar-icon"></i>
+                    <div to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Lịch sử</div>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center flex-column">
+                    <i class="fa-regular fa-money-bill-trend-up bottom-bar-icon"></i>
+                    <div to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Bảng giá</div>
+                    </div>
+                </div>
+            </div> */}
         </div>
     )
 }
