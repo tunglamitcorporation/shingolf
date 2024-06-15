@@ -6,11 +6,139 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useLocation } from "react-router-dom";
 import ProductHistoryContext from "../../ProductHistoryContext";
+
+const productData = [
+  {
+    id: 'golfsticknew',
+    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
+    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    price: 33500000,
+    sale: 28475000,
+    rate: 5,
+    productType:'New'
+  },
+  {
+    id: 'golfsticknew',
+    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
+    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    price: 33500000,
+    sale: 28475000,
+    rate: 5,
+    productType:'New'
+  },
+  {
+    id: 'golfsticknew',
+    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
+    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    price: 33500000,
+    sale: 28475000,
+    rate: 5,
+    productType:'New'
+  },
+  {
+    id: 'golfsticknew',
+    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
+    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    price: 33500000,
+    sale: 28475000,
+    rate: 5,
+    productType:'New'
+  },
+   {
+     id:'golfclothesmen',
+     productName: 'Áo Mens UA Matchplay Stripe Polo',
+     image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
+    price: 3500000,
+    sale: 2847500,
+    rate: 4,
+    productType:'Like New'
+
+
+   },
+   {
+    id:'golfclothesmen',
+    productName: 'Áo Mens UA Matchplay Stripe Polo',
+    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
+   price: 3500000,
+   sale: 2847500,
+   rate: 4,
+   productType:'Like New'
+
+
+  },
+  {
+    id:'golfclothesmen',
+    productName: 'Áo Mens UA Matchplay Stripe Polo',
+    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
+   price: 3500000,
+   sale: 2847500,
+   rate: 4,
+   productType:'Like New'
+
+
+  },
+  {
+    id:'golfclothesmen',
+    productName: 'Áo Mens UA Matchplay Stripe Polo',
+    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
+   price: 3500000,
+   sale: 2847500,
+   rate: 4,
+   productType:'Like New'
+
+
+  },
+   {
+     id:'golfbag',
+     productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
+     image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
+     price: 5000000,
+    sale: 4750000,  
+    rate: 3,
+    productType:'Outlet'
+
+
+   },
+   {
+    id:'golfbag',
+    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
+    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
+    price: 5000000,
+   sale: 4750000,  
+   rate: 3,
+   productType:'Outlet'
+
+
+  },
+  {
+    id:'golfbag',
+    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
+    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
+    price: 5000000,
+   sale: 4750000,  
+   rate: 3,
+   productType:'Outlet'
+
+
+  },
+  {
+    id:'golfbag',
+    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
+    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
+    price: 5000000,
+   sale: 4750000,  
+   rate: 3,
+   productType:'Outlet'
+
+
+  }
+
+  ]
 export default function Feature() {
   const { t } = useTranslation();
   const { productName } = useParams();
   const location = useLocation();
-  const { price, id} = location.state || {};
+  const { price, sale, image, rate, productType, id} = location.state || {};
   const { productHistory } = useContext(ProductHistoryContext);
 
   // const [activeDiv1, setActiveDiv1] = useState(null);
@@ -28,7 +156,32 @@ export default function Feature() {
   // const handleClickDiv3 = (index) => {
   //   setActiveDiv3(index);
   // };
+  const StarRating = ({ rate }) => {
+    const renderStars = (rate) => {
+      const stars = [];
+      for (let i = 0; i < rate; i++) {
+        stars.push(
+          <i
+            key={i}
+            style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+            className="fa-solid fa-star"
+          ></i>
+        );
+      }
+      return stars;
+    };
   
+    return (
+      <div>
+        {renderStars(rate)}
+      </div>
+    );
+  };
+  const handleProduct = (product) => {
+    addProductToHistory(product);
+    const formattedProductName = formatProductName(product.productName);
+    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.id, sale: product.sale, rate: product.rate, image: product.image, productType: product.productType }});
+  };
   return (
     <div>
       <HelmetLayout />
@@ -57,36 +210,30 @@ export default function Feature() {
           <div className="row">
             <div className="col-md-6">
             <Carousel 
-         showArrows
-         showThumbs={true}
-         showStatus={false}
-         showIndicators={false}
-         emulateTouch
-         stopOnHover
-         autoPlay
-         infiniteLoop>
-              <img src="https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_1.jpg" />
-              <img src="https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_3.jpg" />
-              <img src="https://azumayavietnam.com/image/room/hn/km3-new/DeluxeM_NoWindow_4.jpg" />
+                showArrows
+                showThumbs={true}
+                showStatus={false}
+                showIndicators={false}
+                emulateTouch
+                stopOnHover
+                autoPlay
+                infiniteLoop>
+              <img src={image[0]} />
+              <img src={image[1]} />
+              <img src={image[1]} />
         </Carousel>
             </div>
             <div className="col-md-6">
-              <div className="rate d-flex">
-              <i style = {{fontSize: '1.8rem', color:'#fec800', marginRight:5}}class="fa-solid fa-star"></i>
-              <i style = {{fontSize: '1.8rem', color:'#fec800', marginRight:5}}class="fa-solid fa-star"></i>
-              <i style = {{fontSize: '1.8rem', color:'#fec800', marginRight:5}}class="fa-solid fa-star"></i>
-              <i style = {{fontSize: '1.8rem', color:'#fec800', marginRight:5}}class="fa-solid fa-star"></i>
-              <i style = {{fontSize: '1.8rem', color:'#fec800', marginRight:5}}class="fa-solid fa-star"></i>
-              </div>
-              <div className="product-title">{productName}</div>
+             <StarRating rate={rate} />
+              <div className="product-title">{productName.replace(/-/g, ' ')}</div>
               <div className="product-status">Còn Hàng</div>
               <div className="content__feature-text d-flex">
-                     <div className="price" style={{fontSize: '3rem'}}>20.500.200đ {price}</div>
-                     <div className="price ml-2 strikethrough"style={{ fontSize: '3rem', color: "#ccc"}}>22.778.000đ</div>
+                     <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(price)}đ</div>
+                     <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(sale)}đ</div>
                     </div>
-                                  <ul className="d-flex pl-0 mt-3">
+                      <ul className="d-flex pl-0 mt-3">
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 100}}>Loại hàng: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>Mới</li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{productType}</li>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 100}}>Độ Loft:  </li>
@@ -335,177 +482,119 @@ export default function Feature() {
           <div className="content__feature-title">SẢN PHẨM TƯƠNG TỰ</div>
           <div className="container">
             <div className="row">
-                <div className="col-6 col-md-3">
-                  <div className="content__feature-item">
+              {productData
+              .filter(product => product.id == id)
+              .map(product => (
+                <div key={product.id} className="col-6 col-md-3 p-3">
+                <div style={{ textDecoration: 'none' }}>
+                  <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                     <div className="content__feature-container">
                       <div
+                       onClick={() => handleProduct(product)}
                         className="content__feature-img"
-                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                        style={{
+                          backgroundImage:
+                          `url(${product.image})`,
+                          }}
                       >
-                          <Link 
-                          className="d-block"
-                          style={{height: '100%'}}
-                      to = ""
-                      ></Link>
+                        <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                        <div>Sale</div>
+                        <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                        </div>
                       </div>
                     </div>
-                    <div className="content__feature-name">
-                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
+                    <div style={{padding:'10px'}}>
+                    <div className="d-flex justify-content-between align-items-center">
+                   <StarRating rate={product.rate} />
+                   <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                     </div>
-                    <div className="content__feature-text d-flex">
-                     <div className="price">28.475.000 VNĐ</div>
-                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    <div className="content__feature-name">
+                      <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                    </div>
+                    <div className="content__feature-text d-md-flex justify-content-between">
+                      <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
+                      <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                    </div>
                     </div>
                     <div className="btn-container">
-                      <div className="row">
+                      <div className="row pb-0">
                         <div className="col-md-6 p-0">
-                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                          <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                            THÊM VÀO GIỎ
+                          </div>
                         </div>
                         <div className="col-md-6 p-0">
-                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        <div onClick={() => {
+                            addToCart(product)
+                            navigate('/cart/')
+                            }} className="buy-btn">
+                            MUA NGAY
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="col-6 col-md-3">
-                  <div className="content__feature-item">
-                    <div className="content__feature-container">
-                      <div
-                        className="content__feature-img"
-                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
-                      >
-                          <Link 
-                          className="d-block"
-                          style={{height: '100%'}}
-                      to = ""
-                      ></Link>
-                      </div>
-                    </div>
-                    <div className="content__feature-name">
-                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
-                    </div>
-                    <div className="content__feature-text d-flex">
-                     <div className="price">28.475.000 VNĐ</div>
-                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
-                    </div>
-                    <div className="btn-container">
-                      <div className="row">
-                        <div className="col-md-6 p-0">
-                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
-                        </div>
-                        <div className="col-md-6 p-0">
-                        <Link to = ""className="buy-btn">MUA NGAY</Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-md-3">
-                  <div className="content__feature-item">
-                    <div className="content__feature-container">
-                      <div
-                        className="content__feature-img"
-                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
-                      >
-                          <Link 
-                          className="d-block"
-                          style={{height: '100%'}}
-                      to = ""
-                      ></Link>
-                      </div>
-                    </div>
-                    <div className="content__feature-name">
-                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
-                    </div>
-                    <div className="content__feature-text d-flex">
-                     <div className="price">28.475.000 VNĐ</div>
-                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
-                    </div>
-                    <div className="btn-container">
-                      <div className="row">
-                        <div className="col-md-6 p-0">
-                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
-                        </div>
-                        <div className="col-md-6 p-0">
-                        <Link to = ""className="buy-btn">MUA NGAY</Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-6 col-md-3">
-                  <div className="content__feature-item">
-                    <div className="content__feature-container">
-                      <div
-                        className="content__feature-img"
-                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
-                      >
-                          <Link 
-                          className="d-block"
-                          style={{height: '100%'}}
-                      to = ""
-                      ></Link>
-                      </div>
-                    </div>
-                    <div className="content__feature-name">
-                      <div href="">Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC</div>
-                    </div>
-                    <div className="content__feature-text d-flex">
-                     <div className="price">28.475.000 VNĐ</div>
-                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>1.000.000 VNĐ</div>
-                    </div>
-                    <div className="btn-container">
-                      <div className="row">
-                        <div className="col-md-6 p-0">
-                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
-                        </div>
-                        <div className="col-md-6 p-0">
-                        <Link to = ""className="buy-btn">MUA NGAY</Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              ))
+              }
             </div>
           </div>
           <div className="content__feature-title">SẢN PHẨM ĐÃ XEM</div>
           <div className="container">
             <div className="row">
             {productHistory.map((product, index) => (
-                <div className="col-6 col-md-3">
-                  <div className="content__feature-item">
+                <div key={product.id} className="col-6 col-md-3 p-3">
+                <div style={{ textDecoration: 'none'}}>
+                  <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                     <div className="content__feature-container">
                       <div
+                       onClick={() => handleProduct(product)}
                         className="content__feature-img"
-                        style={{ backgroundImage: "url(https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg)"}}
+                        style={{
+                          backgroundImage:
+                          `url(${product.image})`,
+                          }}
                       >
-                          <Link 
-                          className="d-block"
-                          style={{height: '100%'}}
-                      to = ""
-                      ></Link>
+                        <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                        <div>Sale</div>
+                        <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                        </div>
                       </div>
                     </div>
-                    <div className="content__feature-name">
-                      <div href="">{product.productName}</div>
+                    <div style={{padding:'10px'}}>
+                    <div className="d-flex justify-content-between align-items-center">
+                   <StarRating rate={product.rate} />
+                   <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                     </div>
-                    <div className="content__feature-text d-flex">
-                     <div className="price">28.475.000 VNĐ</div>
-                     <div className="price ml-5 strikethrough"style={{color: "#ccc"}}>33.500.000 VNĐ</div>
+                    <div className="content__feature-name">
+                      <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                    </div>
+                    <div className="content__feature-text d-md-flex justify-content-between">
+                      <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
+                      <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                    </div>
                     </div>
                     <div className="btn-container">
-                      <div className="row">
+                      <div className="row pb-0">
                         <div className="col-md-6 p-0">
-                        <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc'}}>THÊM VÀO GIỎ</Link>
+                          <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                            THÊM VÀO GIỎ
+                          </div>
                         </div>
                         <div className="col-md-6 p-0">
-                        <Link to = ""className="buy-btn">MUA NGAY</Link>
+                        <div onClick={() => {
+                            addToCart(product)
+                            navigate('/cart/')
+                            }} className="buy-btn">
+                            MUA NGAY
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
                 ))}
             </div>
           </div>

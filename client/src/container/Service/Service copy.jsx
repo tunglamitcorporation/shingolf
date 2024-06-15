@@ -6,129 +6,130 @@ import { useTranslation } from "react-i18next";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import Collapsible from 'react-collapsible'
 import ProductHistoryContext from "../../ProductHistoryContext";
+import { identitytoolkit } from "googleapis/build/src/apis/identitytoolkit";
+
 const productData = [
   {
-    id: 'golfsticknew',
+    productId: 'golfsticknew',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
   {
-    id: 'golfsticknew',
+    productId: 'golfsticknew',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
   {
-    id: 'golfsticknew',
+    productId: 'golfsticknew',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
   {
-    id: 'golfsticknew',
+    productId: 'golfsticknew',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
    {
-     id:'golfclothesmen',
+     productId:'golfclothesmen',
      productName: 'Áo Mens UA Matchplay Stripe Polo',
      image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
     price: 3500000,
     sale: 2847500,
     rate: 4,
-    prodcttype:'Like New'
+    productType:'Like New'
 
 
    },
    {
-    id:'golfclothesmen',
+    productId:'golfclothesmen',
     productName: 'Áo Mens UA Matchplay Stripe Polo',
     image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
    price: 3500000,
    sale: 2847500,
    rate: 4,
-   prodcttype:'Like New'
+   productType:'Like New'
 
 
   },
   {
-    id:'golfclothesmen',
+    productId:'golfclothesmen',
     productName: 'Áo Mens UA Matchplay Stripe Polo',
     image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
    price: 3500000,
    sale: 2847500,
    rate: 4,
-   prodcttype:'Like New'
+   productType:'Like New'
 
 
   },
   {
-    id:'golfclothesmen',
+    productId:'golfclothesmen',
     productName: 'Áo Mens UA Matchplay Stripe Polo',
     image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
    price: 3500000,
    sale: 2847500,
    rate: 4,
-   prodcttype:'Like New'
+   productType:'Like New'
 
 
   },
    {
-     id:'golfbag',
+     productId:'golfbag',
      productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
      image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
      price: 5000000,
     sale: 4750000,  
     rate: 3,
-    prodcttype:'Outlet'
+    productType:'Outlet'
 
 
    },
    {
-    id:'golfbag',
+    productId:'golfbag',
     productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
     image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
     price: 5000000,
    sale: 4750000,  
    rate: 3,
-   prodcttype:'Outlet'
+   productType:'Outlet'
 
 
   },
   {
-    id:'golfbag',
+    productId:'golfbag',
     productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
     image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
     price: 5000000,
    sale: 4750000,  
    rate: 3,
-   prodcttype:'Outlet'
+   productType:'Outlet'
 
 
   },
   {
-    id:'golfbag',
+    productId:'golfbag',
     productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
     image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
     price: 5000000,
    sale: 4750000,  
    rate: 3,
-   prodcttype:'Outlet'
-
+   productType:'Outlet'
 
   }
 
@@ -140,18 +141,14 @@ export default function VietnamService() {
   const location = useLocation();
   const { price, id } = location.state || {};
   const { addProductToHistory } = useContext(ProductHistoryContext);
-  const [selectedProductId, setSelectedProductId] = useState('golfsticknew');
-  const selectedProduct = productData.filter(product => product.id === selectedProductId);
-  const handleProductClick = (id) => {
-    setSelectedProductId(id);
-  };
+  let [checkedId, setCheckedId] = useState('golfsticknew')
   const formatProductName = (name) => {
     return name.replace(/\s/g, '-');
   };
   const handleProduct = (product) => {
     addProductToHistory(product);
     const formattedProductName = formatProductName(product.productName);
-    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, id: product.id } });
+    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.sale, rate: product.rate, image: product.image, productType: product.productType }});
   };
   const StarRating = ({ rate }) => {
     const renderStars = (rate) => {
@@ -314,11 +311,10 @@ export default function VietnamService() {
                         <option>Giá cao đến thấp</option>
                      </select>
                     </div>
-                    {/* {productData.map(product => {
-                      {if (product.id == id) {
-                        return ( */}
-                        {selectedProduct.map(product => (
-                          <div key={product.id} className="col-6 col-md-3 p-3">
+                    {productData
+                    .filter(product => product.productId === checkedId)
+                    .map(product => (
+                          <div key={product.productId} className="col-6 col-md-3 p-3">
                           <div style={{ textDecoration: 'none' }}>
                             <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                               <div className="content__feature-container">
@@ -327,7 +323,7 @@ export default function VietnamService() {
                                   className="content__feature-img"
                                   style={{
                                     backgroundImage:
-                                    `url(${product.image})`,
+                                    `url(${product.image[0]})`,
                                     }}
                                 >
                                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
@@ -339,7 +335,7 @@ export default function VietnamService() {
                               <div style={{padding:'10px'}}>
                               <div className="d-flex justify-content-between align-items-center">
                              <StarRating rate={product.rate} />
-                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.prodcttype}</div>
+                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                               </div>
                               <div className="content__feature-name">
                                 <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -369,60 +365,64 @@ export default function VietnamService() {
                             </div>
                           </div>
                         </div>
-                        ))}
-                      {/* }  else if (id == null) {
-                        return (
-                          <div key={product.id} className="col-6 col-md-3 p-3">
-                          <div style={{ textDecoration: 'none' }}>
-                            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                              <div className="content__feature-container">
-                                <div
-                                 onClick={() => handleProduct(product)}
-                                  className="content__feature-img"
-                                  style={{
-                                    backgroundImage:
-                                    `url(${product.image})`,
-                                    }}
-                                >
-                                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                                  <div>Sale</div>
-                                  <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div style={{padding:'10px'}}>
-                              <div className="d-flex justify-content-between align-items-center">
-                             <StarRating rate={product.rate} />
-                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.prodcttype}</div>
-                              </div>
-                              <div className="content__feature-name">
-                                <div onClick={() => handleProduct(product)}>{product.productName}</div>
-                              </div>
-                              <div className="content__feature-text d-md-flex justify-content-between">
-                                <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
-                                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                              </div>
-                              </div>
-                              <div className="btn-container">
-                                <div className="row pb-0">
-                                  <div className="col-md-6 p-0">
-                                    <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                      THÊM VÀO GIỎ
-                                    </div>
-                                  </div>
-                                  <div className="col-md-6 p-0">
-                                  <div onClick={() => {
-                                      addToCart(product)
-                                      navigate('/cart/')
-                                      }} className="buy-btn">
-                                      MUA NGAY
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> */}
+                        ))
+                      }  
+                      {/* // else if (id == null) {
+                      //   return (
+                      //     <div key={product.productId} className="col-6 col-md-3 p-3">
+                      //     <div style={{ textDecoration: 'none' }}>
+                      //       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                      //         <div className="content__feature-container">
+                      //           <div
+                      //            onClick={() => handleProduct(product)}
+                      //             className="content__feature-img"
+                      //             style={{
+                      //               backgroundImage:
+                      //               `url(${product.image[0]})`,
+                      //               }}
+                      //           >
+                      //             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      //             <div>Sale</div>
+                      //             <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                      //             </div>
+                      //           </div>
+                      //         </div>
+                      //         <div style={{padding:'10px'}}>
+                      //         <div className="d-flex justify-content-between align-items-center">
+                      //        <StarRating rate={product.rate} />
+                      //        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
+                      //         </div>
+                      //         <div className="content__feature-name">
+                      //           <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                      //         </div>
+                      //         <div className="content__feature-text d-md-flex justify-content-between">
+                      //           <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
+                      //           <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                      //         </div>
+                      //         </div>
+                      //         <div className="btn-container">
+                      //           <div className="row pb-0">
+                      //             <div className="col-md-6 p-0">
+                      //               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                      //                 THÊM VÀO GIỎ
+                      //               </div>
+                      //             </div>
+                      //             <div className="col-md-6 p-0">
+                      //             <div onClick={() => {
+                      //                 addToCart(product)
+                      //                 navigate('/cart/')
+                      //                 }} className="buy-btn">
+                      //                 MUA NGAY
+                      //               </div>
+                      //             </div>
+                      //           </div>
+                      //         </div>
+                      //       </div>
+                      //     </div>
+                      //   </div>
+                      //   )
+                      // } */}
+
 
 
             </div>
