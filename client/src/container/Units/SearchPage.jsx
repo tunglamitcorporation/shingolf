@@ -1,87 +1,199 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Collapsible from 'react-collapsible';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Header';
 
-const productData = [
+const categoryLabel = [
   {
-    id: 'golfsticknew',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image: 'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: '10',
-    rate: 5,
+    id: 'newgolfclub',
+    categoryName:'Gậy golf mới',
+    labels: [
+      'Tất cả các loại gậy', 
+      'Gậy driver', 
+      'Gậy gỗ', 
+      'Gậy rescue/ hybrid',
+      'Gậy sắt lẻ', 
+      'Set gậy sắt', 
+      'Gậy kỹ thuật / wedgey', 
+      'Gậy gạt/ Putter', 
+      'Bộ gậy giá rẻ' ]
   },
   {
-    id: 'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-    price: '40',
-    rate:4,
+    id: 'oldgolfclub',
+    categoryName:'Gậy golf cũ',
+    labels: [
+      'Tất cả các loại gậy', 
+      'Gậy driver', 
+      'Gậy gỗ', 
+      'Gậy rescue/ hybrid', 
+      'Gậy sắt lẻ', 
+      'Set gậy sắt', 
+      'Gậy kỹ thuật / wedgey', 
+      'Gậy gạt/ Putter', 
+      'Bộ gậy giá rẻ', 
+      'Phụ kiện khác' ]
   },
   {
-    id: 'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: '60',
-    rate: 3,
+    id: 'grip',
+    categoryName:'Cán gậy / Grip',
+    labels: [
+      'Cán gậy', 
+      'Grip' ]
+  },
+  {
+    id: 'mengolfclothes',
+    categoryName:'Quần áo golf nam',
+    labels: [
+      'Tất cả quần áo golf nam',
+      'Áo polo',
+      'Áo khoác',
+      'Áo len',
+      'Áo gile',
+      'Quần',
+      'Áo giữ nhiệt',
+      'Mũ',
+      'Kính',
+      'Thắt lưng',
+      'Tất',
+      'Quần áo mưa',
+      'Phụ kiện khác'
+    ]
+  },
+  {
+    id: 'womengolfclothes',
+    categoryName:'Quần áo golf nữ',
+    labels: [
+      'Tất cả quần áo golf nữ',
+      'Áo polo',
+      'Áo khoác',
+      'Áo len',
+      'Áo gile',
+      'Chân váy',
+      'Váy dài liền thân',
+      'Quần',
+      'Áo giữ nhiệt',
+      'Mũ',
+      'Kính',
+      'Thắt lưng',
+      'Tất',
+      'Quần áo mưa',
+      'Phụ kiện khác'
+    ]
+  },
+  {
+    id: 'accessories',
+    categoryName:'Phụ kiện ra sân - bóng golf',
+    labels: [
+      'Tất cả các phụ kiện ra sân',
+      'Bóng golf',
+      'Găng tay',
+      'Dụng cụ đo khoảng cách',
+      'Mác bóng và tee',
+      'Ô',
+      'Phụ kiện khác'
+    ]
+  },
+  {
+    id: 'golfbags',
+    categoryName:'Túi gậy - túi golf',
+    labels: [
+      'Tất cả túi gậy túi golf',
+      'Túi gậy',
+      'Túi gậy nhỏ',
+      'Túi lớn',
+      'Túi nhỏ cầm tay',
+      'Túi xách 2 quai',
+      'Túi đeo hông và balo',
+      'Túi đựng giày',
+      'Túi đựng bóng',
+      'Bộ bảo vệ túi gậy',
+      'Bọc đầu gậy'
+    ]
+  },
+  {
+    id: 'gollfshoes',
+    categoryName:'Giày golf',
+    labels: [
+      'Giày golf có gắn đinh',
+      'Giày golf không gắn đinh'
+    ]
+  },
+  {
+    id: 'golftraining',
+    categoryName:'Dụng cụ luyện tập golf',
+    labels: [
+      'Tất cả dụng cụ '
+    ]
   }
 ];
 
-export default function SearchPage () {
-  const [checkedItems, setCheckedItems] = useState({
-    golfsticknew: false,
-    golfclothesmen: false,
-    golfbag: false
-  });
+const SearchPage = () => {
+  const [checkedItems, setCheckedItems] = useState({});
+  const navigate = useNavigate();
 
-  const handleCheckboxChange = (event) => {
-    setCheckedItems({
-      ...checkedItems,
-      [event.target.name]: event.target.checked,
-    });
+  const handleCheckboxChange = (category, label) => {
+    setCheckedItems(prevState => ({
+      ...prevState,
+      [category]: {
+        ...prevState[category],
+        [label]: !prevState[category]?.[label]
+      }
+    }));
   };
 
   const handleSearch = () => {
-    const selectedIds = Object.keys(checkedItems).filter((key) => checkedItems[key]);
-    const selectedProducts = productData.filter((product) => selectedIds.includes(product.id));
-    alert(`Selected products: ${selectedProducts.map(p => p.productName).join(', ')}`);
-  };
+    const selectedCategories = Object.keys(checkedItems).filter(category =>
+      Object.keys(checkedItems[category] || {}).some(label => checkedItems[category][label])
+    );
+    const selectedLabels = selectedCategories.reduce((acc, category) => {
+      acc[category] = Object.keys(checkedItems[category]).filter(label => checkedItems[category][label]);
+      return acc;
+    }, {});
+    const formattedCategories = selectedCategories.join('+');
+    navigate(`/service/${formattedCategories}`, { state: {selectedCategories, selectedLabels } });
+console.log(selectedLabels);
 
+  };
   const handleUncheckAll = () => {
-    setCheckedItems({
-      golfsticknew: false,
-      golfclothesmen: false,
-      golfbag: false
-    });
+    setCheckedItems({});
   };
 
   return (
-    <div className="container-fluid" style={{height: '100%'}}>
-        <div className="row m-0 p-0" style={{flexDirection: 'column', justifyContent: 'space-between'}}>
-      <Collapsible trigger="Click to open search options" className="mb-3 ml-0">
-      <div className="container">
-        <ul className="list-group">
-            {Object.keys(checkedItems).map((key) => (
-            
-                <li key={key} className="list-group-item">
-                <div className="form-check">
-                    <input
-                    className="form-check-input"
-                    type="checkbox"
-                    name={key}
-                    checked={checkedItems[key]}
-                    onChange={handleCheckboxChange}
-                    />
-                    <label className="form-check-label" htmlFor={key}>
-                    {key}
-                    </label>
-                </div>
-                </li>
-            ))}
-            </ul>
+    <div className="container pt-2">
+      {categoryLabel.map(category => (
+        <div className='d-flex align-items-center' >
+        <Collapsible key={category.id} trigger={`${category.categoryName}`}>
+          {/* <ul className="list-group"> */}
+                <div className="container">
+                  <div className="row justify-content-between">
+            {category.labels.map(label => (
+              // <li key={label} className="list-group-item">
+              <div key={label} className="col-6 mb-4">
+                <div className={`border p-3 ${checkedItems[category.id]?.[label] ? 'border-primary' : ''}`} onClick={() => handleCheckboxChange(category.id, label)}>
+              <div className="form-check d-flex align-items-center" style={{height:'50px'}}>
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  style={{ display: 'none' }} 
+                  id={`${category.id}-${label}`}
+                  checked={checkedItems[category.id]?.[label] || false}
+                  onChange={() => handleCheckboxChange(category.id, label)}
+                />
+                <label className="form-check-label m-0" style={{textTransform:'none'}} htmlFor={`${category.id}-${label}`}>
+                  {label}
+                </label>
+              </div>
+              </div>
             </div>
-      </Collapsible>
-      <div className="d-flex" style={{marginTop:'20px'}}>
+                // </li>
+                ))}
+              </div>
+              </div>
+          {/* </ul> */}
+        </Collapsible>
+        </div>
+      ))}
+      <div className="d-flex" style={{marginTop:'20px', marginBottom:'100px'}}>
         <div className="col-md-6 m-o p-0">
         <button onClick={handleSearch} style={{width: "100%", height:  '30px', backgroundColor: '#ff3131', border: 'none', color: '#fff', fontWeight: 'bold'}}>Search</button>
         </div>
@@ -89,8 +201,8 @@ export default function SearchPage () {
         <button onClick={handleUncheckAll} style={{width: "100%", height:  '30px', backgroundColor: '#ccc', border: 'none', color: '#fff', fontWeight: 'bold'}}>Uncheck All</button>
         </div>
       </div>
-        </div>
     </div>
   );
 };
 
+export default SearchPage;

@@ -134,9 +134,10 @@ const productData = [
   }
 
   ]
-export default function Feature() {
+export default function Feature({fetchData}) {
   const { t } = useTranslation();
   const { productName } = useParams();
+  console.log(productName);
   const location = useLocation();
   const { price, sale, image, rate, productType, id} = location.state || {};
   const { productHistory } = useContext(ProductHistoryContext);
@@ -177,10 +178,13 @@ export default function Feature() {
       </div>
     );
   };
+  const formatProductName = (name) => {
+    return name.replace(/\s/g, '-');
+  };
   const handleProduct = (product) => {
     addProductToHistory(product);
     const formattedProductName = formatProductName(product.productName);
-    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.id, sale: product.sale, rate: product.rate, image: product.image, productType: product.productType }});
+    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.id, sale: product.saleprice, rate: product.rate, image: product.image, productType: product.productType }});
   };
   return (
     <div>
@@ -218,9 +222,9 @@ export default function Feature() {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={image[0]} />
-              <img src={image[1]} />
-              <img src={image[1]} />
+              <img src={image} />
+              <img src={image} />
+              <img src={image} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -482,7 +486,7 @@ export default function Feature() {
           <div className="content__feature-title">SẢN PHẨM TƯƠNG TỰ</div>
           <div className="container">
             <div className="row">
-              {productData
+              {fetchData
               .filter(product => product.id == id)
               .map(product => (
                 <div key={product.id} className="col-6 col-md-3 p-3">
@@ -499,7 +503,7 @@ export default function Feature() {
                       >
                         <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                         <div>Sale</div>
-                        <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                        <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                         </div>
                       </div>
                     </div>
@@ -509,10 +513,10 @@ export default function Feature() {
                    <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                     </div>
                     <div className="content__feature-name">
-                      <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                      <div onClick={() => handleProduct(product)}>{product.productname}</div>
                     </div>
                     <div className="content__feature-text d-md-flex justify-content-between">
-                      <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
+                      <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
                       <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
                     </div>
                     </div>

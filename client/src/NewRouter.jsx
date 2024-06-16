@@ -15,8 +15,21 @@ import Page2 from './Test2';
 import SearchPage from './container/Units/SearchPage';
 import RankTable from './container/Units/RatePage';
 import AdminManage from './container/User/AdminManage';
-function NewRouter(props) {
-    const {news} = props;
+import { takeAll } from './api/product';
+function NewRouter() {
+  const [fetchData, setFetchData] = useState([]);
+
+  useEffect(() => {
+    const token = ''; // Set your token here
+    takeAll(token)
+        .then(response => {
+            setFetchData(response.data.data);
+            console.log('Data received:', response.data);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}, []);
     // const { i18n } = useTranslation();
     const [deviceType, setDeviceType] = useState('');
       useEffect(() => {
@@ -40,14 +53,14 @@ function NewRouter(props) {
         <section>
             <Routes>
 
-                <Route exact path='/' element={<Home news = {news} />} />
+                <Route exact path='/' element={<Home fetchData = {fetchData} />} />
                 <Route path = "/service/:productType" element={<VietnamService />} />
                 <Route path = "/service/" element={<VietnamService />} />
                 <Route path = "/cart/" element={<Cart />} />
-                <Route path = "/feature/:productName" element={<Feature />} />
+                <Route path = "/feature/:productName" element={<Feature  fetchData = {fetchData} />} />
                 <Route path = "/admin/home" element={<AdminManage />} exact/>
                 <Route path = "/admin/login" element={<LoginContainer />} exact/>
-                <Route path = '*' element={<Home news={news} />} />
+                <Route path = '*' element={<Home fetchData={fetchData} />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
                 <Route path = '/test' element={<Page1 />} />
                 <Route path = '/search/' element = {<SearchPage />} />

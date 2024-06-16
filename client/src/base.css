@@ -177,26 +177,25 @@ textarea{
 .btn_en-fixed {
     position: fixed;
     right : 20px;
-    bottom :  80px;
+    bottom :140px;
     z-index: 999;
-    width:30px;
-    height:30px;
-    background: url("https://cdn-icons-png.flaticon.com/128/197/197374.png") center center / cover no-repeat;
+    width:50px;
+    height:50px;
+      background: url('https://cdn-icons-png.flaticon.com/512/3616/3616215.png') center center / contain no-repeat;
     border-radius:50px;
     font-size:2.4rem;
     color:#fff;
     animation: fadeIn 0.5s linear;
     cursor: pointer;
-    box-shadow: 0 0 5px #2f2f2f;
 }
 .btn_ja-fixed {
     position: fixed;
     right : 20px;
-    bottom :  120px;
+    bottom : 260px;
     z-index: 999;
-    width:30px;
-    height:30px;
-    background: url("https://cdn-icons-png.flaticon.com/128/197/197604.png") center center / cover no-repeat;
+    width:50px;
+    height:50px;
+    background: url('https://cdn-icons-png.flaticon.com/512/15047/15047435.png') center center / contain no-repeat;
     font-size:2.4rem;
     color:#fff;
     animation: fadeIn 0.5s linear;
@@ -204,22 +203,20 @@ textarea{
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 5px #2f2f2f;
 }
 .btn_vie-fixed {
     position: fixed;
     right : 20px;
-    bottom :  160px;
+    bottom :  200px;
     z-index: 999;
-    width:30px;
-    height:30px;
-    background: url("https://cdn-icons-png.flaticon.com/128/197/197473.png") center center / cover no-repeat;
+    width:50px;
+    height:50px;
+    background: url('https://plant.vn/wp-content/uploads/2021/09/zalo-icon-circle-1.png') center center / contain no-repeat;
     border-radius:50px;
     font-size:2.4rem;
     color:#fff;
     animation: fadeIn 0.5s linear;
     cursor: pointer;
-    box-shadow: 0 0 5px #2f2f2f;
 
 }
 .btn_kor-fixed {

@@ -8,49 +8,52 @@ import Collapsible from 'react-collapsible'
 import ProductHistoryContext from "../../ProductHistoryContext";
 const productData = [
   {
-    id: 'golfsticknew',
+    id: 'newgolfclub',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
+    image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New',
+    labels: ['Tất cả các loại gậy']
   },
   {
-    id: 'golfsticknew',
+    id: 'newgolfclub',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
     image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
   {
-    id: 'golfsticknew',
+    id: 'newgolfclub',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
     image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
   {
-    id: 'golfsticknew',
+    id: 'newgolfclub',
     productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
     image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
     price: 33500000,
     sale: 28475000,
     rate: 5,
-    prodcttype:'New'
+    productType:'New'
   },
    {
-     id:'golfclothesmen',
+     id:'mengolfclothes',
      productName: 'Áo Mens UA Matchplay Stripe Polo',
      image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
     price: 3500000,
     sale: 2847500,
     rate: 4,
-    prodcttype:'Like New'
+    productType:'Like New',
+    labels: ['Tất cả quần áo golf nam']
+
 
 
    },
@@ -61,7 +64,7 @@ const productData = [
    price: 3500000,
    sale: 2847500,
    rate: 4,
-   prodcttype:'Like New'
+   productType:'Like New'
 
 
   },
@@ -72,7 +75,7 @@ const productData = [
    price: 3500000,
    sale: 2847500,
    rate: 4,
-   prodcttype:'Like New'
+   productType:'Like New'
 
 
   },
@@ -83,7 +86,7 @@ const productData = [
    price: 3500000,
    sale: 2847500,
    rate: 4,
-   prodcttype:'Like New'
+   productType:'Like New'
 
 
   },
@@ -94,7 +97,7 @@ const productData = [
      price: 5000000,
     sale: 4750000,  
     rate: 3,
-    prodcttype:'Outlet'
+    productType:'Outlet'
 
 
    },
@@ -105,7 +108,7 @@ const productData = [
     price: 5000000,
    sale: 4750000,  
    rate: 3,
-   prodcttype:'Outlet'
+   productType:'Outlet'
 
 
   },
@@ -116,7 +119,7 @@ const productData = [
     price: 5000000,
    sale: 4750000,  
    rate: 3,
-   prodcttype:'Outlet'
+   productType:'Outlet'
 
 
   },
@@ -127,7 +130,7 @@ const productData = [
     price: 5000000,
    sale: 4750000,  
    rate: 3,
-   prodcttype:'Outlet'
+   productType:'Outlet'
 
 
   }
@@ -138,10 +141,43 @@ export default function VietnamService() {
   const {t, i18n} = useTranslation()
   const { productName } = useParams();
   const location = useLocation();
-  const { price, id } = location.state || {};
+  const { price, id, selectedCategories =[], selectedLabels = {}} = location.state || {};
+  // const selectedCategories = ["golfsticknew"];
+  // const selectedLabels = {
+  //   "golfsticknew": [
+  //     "Tất cả các loại gậy"
+  //   ]
+  // };
+  console.log(selectedCategories, selectedLabels);
   const { addProductToHistory } = useContext(ProductHistoryContext);
-  const [selectedProductId, setSelectedProductId] = useState('golfsticknew');
-  const selectedProduct = productData.filter(product => product.id === selectedProductId);
+  const [selectedProductId, setSelectedProductId] = useState('newgolfclub')
+  ;
+  // const filteredProducts = productData.filter(product => {
+  //   if (!selectedCategories.includes(product.id)) {
+  //     return false; // Skip products not in selectedCategories
+  //   }
+  
+  //   if (!product.labels || !Array.isArray(product.labels)) {
+  //     return false; // Skip products without labels or if labels is not an array
+  //   }
+  
+  //   if (!selectedLabels[product.id]) {
+  //     return true; // No specific labels selected for this product, include it
+  //   }
+  
+  //   // Check if any label of the product matches the selected labels
+  //   return product.labels.some(label => selectedLabels[product.id].includes(label));
+  // });
+  
+  // const selectedProduct = productData.filter(product => product.id === selectedProductId);
+
+  const filteredProducts = selectedCategories.length > 0
+  ? productData.filter(product =>
+    selectedCategories.includes(product.id) &&
+    product.labels && product.labels.some(label => selectedLabels[product.id]?.includes(label))
+  )
+  : productData.filter(product => product.id === selectedProductId);
+
   const handleProductClick = (id) => {
     setSelectedProductId(id);
   };
@@ -151,7 +187,7 @@ export default function VietnamService() {
   const handleProduct = (product) => {
     addProductToHistory(product);
     const formattedProductName = formatProductName(product.productName);
-    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, id: product.id } });
+    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.sale, rate: product.rate, image: product.image, productType: product.productType }});
   };
   const StarRating = ({ rate }) => {
     const renderStars = (rate) => {
@@ -279,7 +315,7 @@ export default function VietnamService() {
               </div>
               </div>
             </div>
-            <div style={{width: '80%'}}>
+            <div style={{width: '100%'}}>
             <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -314,10 +350,7 @@ export default function VietnamService() {
                         <option>Giá cao đến thấp</option>
                      </select>
                     </div>
-                    {/* {productData.map(product => {
-                      {if (product.id == id) {
-                        return ( */}
-                        {selectedProduct.map(product => (
+                        {filteredProducts.map(product => (
                           <div key={product.id} className="col-6 col-md-3 p-3">
                           <div style={{ textDecoration: 'none' }}>
                             <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
@@ -327,7 +360,7 @@ export default function VietnamService() {
                                   className="content__feature-img"
                                   style={{
                                     backgroundImage:
-                                    `url(${product.image})`,
+                                    `url(${product.image[0]})`,
                                     }}
                                 >
                                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
@@ -339,10 +372,10 @@ export default function VietnamService() {
                               <div style={{padding:'10px'}}>
                               <div className="d-flex justify-content-between align-items-center">
                              <StarRating rate={product.rate} />
-                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.prodcttype}</div>
+                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                               </div>
                               <div className="content__feature-name">
-                                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                                <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                               </div>
                               <div className="content__feature-text d-md-flex justify-content-between">
                                 <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
@@ -370,60 +403,6 @@ export default function VietnamService() {
                           </div>
                         </div>
                         ))}
-                      {/* }  else if (id == null) {
-                        return (
-                          <div key={product.id} className="col-6 col-md-3 p-3">
-                          <div style={{ textDecoration: 'none' }}>
-                            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                              <div className="content__feature-container">
-                                <div
-                                 onClick={() => handleProduct(product)}
-                                  className="content__feature-img"
-                                  style={{
-                                    backgroundImage:
-                                    `url(${product.image})`,
-                                    }}
-                                >
-                                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                                  <div>Sale</div>
-                                  <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div style={{padding:'10px'}}>
-                              <div className="d-flex justify-content-between align-items-center">
-                             <StarRating rate={product.rate} />
-                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.prodcttype}</div>
-                              </div>
-                              <div className="content__feature-name">
-                                <div onClick={() => handleProduct(product)}>{product.productName}</div>
-                              </div>
-                              <div className="content__feature-text d-md-flex justify-content-between">
-                                <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
-                                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                              </div>
-                              </div>
-                              <div className="btn-container">
-                                <div className="row pb-0">
-                                  <div className="col-md-6 p-0">
-                                    <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                      THÊM VÀO GIỎ
-                                    </div>
-                                  </div>
-                                  <div className="col-md-6 p-0">
-                                  <div onClick={() => {
-                                      addToCart(product)
-                                      navigate('/cart/')
-                                      }} className="buy-btn">
-                                      MUA NGAY
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> */}
-
 
             </div>
           </div>

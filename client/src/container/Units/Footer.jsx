@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer__container">
             <div className="container">
                 <div className="row">
-                <div className="col-md-6 d-flex">
+                <div className="col-md-4 d-flex">
                     <div className="header__logo">
                   <Link to="/">
                     <img 
@@ -20,48 +20,34 @@ export default function Footer() {
                     </div>
                   <div className="slogan">ĐƠN VỊ ORDER GẬY GOLF UY TÍN HÀNG ĐẦU VIỆT NAM <br /> GIAO HÀNG TỪ 3-5 NGÀY SAU KHI NHẬN CỌC </div>
                 </div>
-                <div className="col-md-6 pb-5 left">
+                <div className="col-md-4 pb-5 left">
                   <div className="footer__branch-location">
-                    <p>ĐỊA CHỈ KHO NHẬT</p>
-                    <p>ĐỊA CHỈ KHO VIỆT</p>
-                    <p>ĐƠN VỊ VẬN CHUYỂN</p>
-                    <p>ĐƠN VỊ HỢP TÁC</p>
+                    <h2 style={{color: '#ff3131', fontWeight:'bold'}}>KHO NHẬT BẢN</h2>
+                    <p>KHO SAITAMA</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: 333-0866 埼玉県川口市芝3丁目1-19</p>
+                    <p><i class="fa-solid fa-phone"></i> 08090930496</p>
+                    <p>KHO OSAKA</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: 581-0018 大阪府八尾市青山町3-3-11 セトン旭106号室</p>
+                    <p><i class="fa-solid fa-phone"></i> 07085861274</p>
+                    <h2 style={{color: '#ff3131', fontWeight:'bold'}}>KHO VIỆT NAM</h2>
+                    <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: SỐ 41 – NGÕ 69 – VẠN XUÂN – LAI XÁ – KIM CHUNG – HOÀI ĐỨC – HÀ NỘI</p>
+                    <p><i class="fa-solid fa-phone"></i> 08686234999</p>
+                    <h2>ĐƠN VỊ VẬN CHUYỂN: Vận chuyển MCS – SAGAWA EXPRESS – VIETTEL POST</h2>
+                    <h2>ĐƠN VỊ HỢP TÁC: Vận chuyển MCS – GOLF Partner – GOLF DO</h2>
                   </div>
+                </div>
+                 <div className="col-md-4">
                 <div className="policies d-flex flex-column align-items-start">
-                    <Link to = ''>Chính sách</Link>
-                    <Link to = ''>Chính sách</Link>
-                    <Link to = ''>Chính sách</Link>
-                    <Link to = ''>Chính sách</Link>
-                    <Link to = ''>Chính sách</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Quy trình đặt hàng</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Thanh toán</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Vận chuyển và giao nhận</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Hải quan và các phí liên quan</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Chính sách đổi trả và bảo hànhh</Link>
                 </div>
-                </div>
+                  </div>
                 </div>
             </div>
         </div>
-        {/* <div className="bottom-bar-container container">
-                <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex justify-content-center align-items-center flex-column"> 
-                    <i class="fa-solid fa-home bottom-bar-icon"></i>
-                    <div to ='/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Trang Chủ</div>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center flex-column">
-                    <i class="fa-solid fa-magnifying-glass bottom-bar-icon"></i>
-                    <div to ='/search/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Tìm kiếm</div>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center flex-column">
-                    <i class="fa-solid fa-chart-simple bottom-bar-icon"></i>
-                    <div to ='/rate/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Bảng xếp hạng</div>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center flex-column">
-                    <i class="fa-solid fa-clock-rotate-left bottom-bar-icon"></i>
-                    <div to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Lịch sử</div>
-                    </div>
-                    <div className="d-flex justify-content-center align-items-center flex-column">
-                    <i class="fa-regular fa-money-bill-trend-up bottom-bar-icon"></i>
-                    <div to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Bảng giá</div>
-                    </div>
-                </div>
-            </div> */}
         </div>
     )
 }

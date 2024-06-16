@@ -3,26 +3,36 @@ export default function BottomBar() {
     return (
             <div className="bottom-bar-container container">
                 <div className="d-flex align-items-center justify-content-between">
+                <Link to ='/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                 <div className="d-flex justify-content-center align-items-center flex-column"> 
                     <i class="fa-solid fa-home bottom-bar-icon"></i>
-                    <Link to ='/' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Trang Chủ</Link>
+                    Trang Chủ
                     </div>
+                    </Link>
+                    <Link to ='/search' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                     <div className="d-flex justify-content-center align-items-center flex-column">
                     <i class="fa-solid fa-magnifying-glass bottom-bar-icon"></i>
-                    <Link to ='/search' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Tìm kiếm</Link>
+                    Tìm kiếm
                     </div>
+                    </Link>
+                    <Link to ='/rate' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                     <div className="d-flex justify-content-center align-items-center flex-column">
                     <i class="fa-solid fa-chart-simple bottom-bar-icon"></i>
-                    <Link to ='/rate' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Bảng xếp hạng</Link>
+                    Bảng xếp hạng
                     </div>
+                    </Link>
+                    <Link to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                     <div className="d-flex justify-content-center align-items-center flex-column">
                     <i class="fa-solid fa-clock-rotate-left bottom-bar-icon"></i>
-                    <Link to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Lịch sử</Link>
+                   Lịch sử
                     </div>
+                    </Link>
+                    <Link to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                     <div className="d-flex justify-content-center align-items-center flex-column">
                     <i class="fa-regular fa-money-bill-trend-up bottom-bar-icon"></i>
-                    <Link to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>Bảng giá</Link>
+                    Bảng giá
                     </div>
+                    </Link>
                 </div>
             </div>
     )

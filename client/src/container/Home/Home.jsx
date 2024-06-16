@@ -9,14 +9,14 @@
   import 'react-awesome-slider/dist/styles.css';
   import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
   import ProductHistoryContext from "../../ProductHistoryContext";
-import { useCart } from "../../CartProvider";
+  import { useCart } from "../../CartProvider";
   const data = [
     {
-      productId: 'golfsticknew',
+      productId: 'newgolfclub',
       productName: 'Gậy Golf Mới',
     },
      {
-      productId: 'golfstickold',
+      productId: 'oldgolfclub',
       productName: 'Gậy Golf Cũ',
     },
     {
@@ -175,12 +175,12 @@ import { useCart } from "../../CartProvider";
       }
 
       ]
-  export default function Home({news}) {
+  export default function Home({fetchData}) {
     const { t } = useTranslation();
     const caption = t("caption", {returnObjects: true})
     const navigate = useNavigate()
     const { addToCart } = useCart();
-
+    
     const { addProductToHistory } = useContext(ProductHistoryContext);
     const formatProductName = (name) => {
       return name.replace(/\s/g, '-');
@@ -188,14 +188,13 @@ import { useCart } from "../../CartProvider";
     const handleProduct = (product) => {
       addProductToHistory(product);
       const formattedProductName = formatProductName(product.productName);
-      navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.sale, rate: product.rate, image: product.image, productType: product.productType }});
+      navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.saleprice, rate: product.rate, image: product.image, productType: product.productType }});
     };
     const handleProductType = (product) => {
       const formattedProductId = formatProductName(product.productId);
       navigate(`/service/${formattedProductId}`, { state: { price: product.price, id: product.productId } });
     };
     const c = t("header.title")         
-    const sliceData = data.slice(0, 6)
     const selectedProducts = [
       data[0], 
       data[1], 
@@ -225,7 +224,7 @@ import { useCart } from "../../CartProvider";
         </div>
       );
     };
-  const AutoPlaySlider =  withAutoplay(AwesomeSlider)
+  const AutoPlaySlider = withAutoplay(AwesomeSlider)
     return (
       <>
       <HelmetLayout title = {c} />
@@ -298,8 +297,8 @@ import { useCart } from "../../CartProvider";
             <div className="content__feature-title">GẬY GOLF MỚI</div>
             <div className="container">
             <div className="row">
-      {productData
-        .filter(product => product.productId === 'golfsticknew')
+      {fetchData
+        .filter(product => product.productId === 'newgolfclub')
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3">
             <div style={{ textDecoration: 'none' }}>
@@ -310,12 +309,12 @@ import { useCart } from "../../CartProvider";
                     className="content__feature-img"
                     style={{
                       backgroundImage:
-                      `url(${product.image[0]})`,
+                      `url(${product.image})`,
                       }}
                   >
                     <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                     <div>Sale</div>
-                    <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                     </div>
                   </div>
                 </div>
@@ -325,10 +324,10 @@ import { useCart } from "../../CartProvider";
                <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                 </div>
                 <div className="content__feature-name">
-                  <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                 </div>
                 <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
                   <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
                 </div>
                 </div>
@@ -389,7 +388,7 @@ import { useCart } from "../../CartProvider";
                <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                 </div>
                 <div className="content__feature-name">
-                  <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                 </div>
                 <div className="content__feature-text d-md-flex justify-content-between">
                   <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
@@ -453,7 +452,7 @@ import { useCart } from "../../CartProvider";
                <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
                 </div>
               <div className="content__feature-name">
-                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                <div  className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
               </div>
               <div className="content__feature-text d-md-flex justify-content-between">
                 <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
