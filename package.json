@@ -18,6 +18,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.1",
     "cheerio": "^1.0.0-rc.12",
@@ -40,6 +42,7 @@
     "react-router-config": "^5.1.1",
     "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
+    "react-table": "^7.8.0",
     "sitemap": "^7.1.1"
   },
   "devDependencies": {

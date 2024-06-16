@@ -9,6 +9,11 @@ router.post('/find_product/:category/:type', productCtrl.findProduct);
 
 router.get('/list_menus', productCtrl.makeListMenu);
 
+router.get('/take_all', productCtrl.takeAll);
+
+router.post('/take_categories/:type', productCtrl.takeListCategory);
+
+
 // router.past('/change_category', productCtrl.changeByAdmin);
 
 // router.past('/change_type', productCtrl.changeByAdmin);

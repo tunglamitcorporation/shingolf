@@ -14,6 +14,7 @@ import Page1 from './Test';
 import Page2 from './Test2';
 import SearchPage from './container/Units/SearchPage';
 import RankTable from './container/Units/RatePage';
+import AdminManage from './container/User/AdminManage';
 function NewRouter(props) {
     const {news} = props;
     // const { i18n } = useTranslation();
@@ -38,12 +39,14 @@ function NewRouter(props) {
     return (
         <section>
             <Routes>
+
                 <Route exact path='/' element={<Home news = {news} />} />
                 <Route path = "/service/:productType" element={<VietnamService />} />
                 <Route path = "/service/" element={<VietnamService />} />
                 <Route path = "/cart/" element={<Cart />} />
                 <Route path = "/feature/:productName" element={<Feature />} />
-                <Route path = "/admin/login" element={<LoginContainer/>} exact/>
+                <Route path = "/admin/home" element={<AdminManage />} exact/>
+                <Route path = "/admin/login" element={<LoginContainer />} exact/>
                 <Route path = '*' element={<Home news={news} />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
                 <Route path = '/test' element={<Page1 />} />

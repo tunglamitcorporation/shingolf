@@ -6,6 +6,7 @@ const productCtrl = {
         try {
             const dataOnBody = req.body;
 
+            dataOnBody.productCode = "XXX";
             if(!dataOnBody) return res.json({ msg: "Have note data"}) 
             dataOnBody.logEdit = [];
             dataOnBody.logEdit.push({
@@ -83,21 +84,73 @@ const productCtrl = {
     },
     makeListMenu: async (req, res) => {
         try {
-            const allData = await PRODUCT.find({},{ category: 1, type: 1});
+            const allData = await PRODUCT.find({},{ category: 1, productType: 1});
             const dataReturn = {};
 
             if(!allData) return res.json({ status: 0, msg: "Have not data"});
             
             allData.forEach(item => {
                 if(item.category in dataReturn) {
-                    dataReturn[item.category].push(item.type);
+                    if(!dataReturn[item.category].includes(item.productType)) dataReturn[item.category].push(item.productType);
                 } else {
-                    dataReturn[item.category] = [item.type];
+                    dataReturn[item.category] = [item.productType];
                 }
             })
 
             return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
-        } catch (error) {
+        } catch (err) {
+            console.log("err.message", err.message);
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    takeAll: async (req, res) => {
+        try {
+            
+             const dataReturn = await PRODUCT.find({}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+
+             console.log("vo here")
+
+             
+             return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
+            
+        } catch (err) {
+            console.log("err.message", err.message);
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    takeListCategory: async (req, res) => {
+        try {
+            const { type } = req.params;
+            const dataOnBody = req.body;
+            const allDataCategory = await PRODUCT.find({},{ category: 1, productType: 1}); //await PRODUCT.find({},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0});
+
+            const categories = [];
+            allDataCategory.forEach(item => {
+                if(categories.length ===0 ) {
+                    categories.push(item.category);
+                } else {
+                    if(!categories.includes(item.category)) {
+                        categories.push(item.category);
+                    }
+                }
+            });
+
+            if(type ==="index") {
+                if(dataOnBody.value < categories.length) {
+                    const dataCategoryWithIndex = await PRODUCT.find({ category: categories[dataOnBody.value]},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0}); 
+                    return res.json({ status:0, msg:"Success take data", data: dataCategoryWithIndex})
+                } else return res.json({ status : 1, msg:"Have not data"})
+            } else {
+                if(categories.includes(dataOnBody.value)) {
+                    const dataCategoryWithIndex = await PRODUCT.find({ category: dataOnBody.value},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0}); 
+                    return res.json({ status:0, msg:"Success take data", data: dataCategoryWithIndex})
+
+                } else return res.json({ status : 1, msg:"Have not data"})
+            }
+
+            // return res.json({ categories });
+
+        } catch (err) {
             console.log("err.message", err.message);
             return res.status(500).json({msg: err.message})
         }

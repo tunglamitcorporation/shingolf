@@ -16,7 +16,9 @@ import SearchPage from "./container/Units/SearchPage.jsx";
 import RankTable from "./container/Units/RatePage.jsx";
 function App() {
 
-  const display = !['/Login','/SignUp','/admin'].some(substring =>location.pathname.includes(substring))
+  //,'/admin'
+  const display = !['/Login','/SignUp'].some(substring =>location.pathname.includes(substring));
+  const isAdmin = !['/admin'].some(substring =>location.pathname.includes(substring));
   const [showTop, setShowTop] = useState(false)
   const { t, i18n } = useTranslation();
   const newsData = useMemo(() => t('news.source', {returnObjects:true}), [t]);
@@ -61,7 +63,7 @@ function App() {
     <div>
 {display &&(
         <div>
-        <Header />
+        {isAdmin && <Header /> }
          <div className ="top">
             {showTop && (
              <>
@@ -84,7 +86,7 @@ function App() {
       <ScrollToTop x={0} y={0} />
       <NewRouter news={news}/>
       <BottomBar />
-      <Footer />
+      {isAdmin && <Footer /> }
       </div>
         )}
           </div>

@@ -63,7 +63,7 @@ function GlobalFilter({
 }
 
 function Table({ columns, data, search, showIconOnName, selectIndex,
-    supportFunction1, type, }) {
+    supportFunction1, type, listMenu}) {
     // Use the state and functions returned from useTable to build your UI
     const {
         getTableProps,
@@ -109,16 +109,7 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
                 return (<a href={"" + cell.value} target="_blank" rel="noreferrer">
                     {cell.column.buttonName}
                 </a>);
-            case "PassportPicture" : 
-                return (<div className="op-hidden"></div>)
-            case "View": return (<button className='btn btn-primary'
-                                    onClick={()=>{
-                                        onChangeSelectIndex(pageIndex*10 + i)
-                                        onChangeSelectIndex2(pageIndex*10 + i)
-                                    }}>View</button>);  
-            case "Contract": 
-                return (<div>{cell.value ? "Yes": "No"}</div>)
-            case "Price": 
+            case "Price": case "Sale Price":
                 return (<div>{Number(cell.value).toLocaleString()}</div>)
             case "Edit":
                 return (<FontAwesomeIcon
@@ -265,7 +256,8 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
                                             {...cell.getCellProps()} >
                                             <div className="d-flex justify-content-between align-items-center" >
                                                 <span className="ml-2"
-                                                    style={{ textAlign: 'left' }}>
+                                                    style={{...cell.column.style}}>
+                                                        {/*  { textAlign: 'left' } */}
                                                     {checkHeader(cell.column.Header, cell, i)}
                                                     {/* {cell.render('Cell')} */}
                                                 </span>
@@ -308,11 +300,10 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
 }
 
 function ProductManageItems(props) {
-    const { supportFunction1 } = props;
+    const { supportFunction1, listMenu } = props;
     // const auth = useSelector(state => state.auth);
     // const { role } = auth.user;
 
-    console.log("type", props.type)
     const [selectIndex, setSelectIndex ] =useState(0);
 
     // // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -321,46 +312,82 @@ function ProductManageItems(props) {
     const COLUMNS_SELECT = {
         product: [
             {
-                Header: 'ID',
-                accessor: 'product_id',
+                Header: 'Product ID',
+                accessor: 'id',
                 class: 'with-70',
-                style: { fontSize: '1.4rem', width: '70px',  }
+                style: { fontSize: '1.4rem', width: '120px', textAlign: 'center' }
             },
             {
-                Header: 'category',
+                Header: 'Product Code',
+                accessor: 'productCode',
+                class: 'with-70',
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            },
+            {
+                Header: 'Category',
                 accessor: 'category',
                 class: 'with-70',
-                style: { fontSize: '1.4rem', width: '70px',  }
+                style: { fontSize: '1.4rem', width: '100px', textAlign: 'center' }
             },
             {
-                Header: 'type',
-                accessor: 'type',
+                Header: 'Product Type',
+                accessor: 'productType',
                 class: 'with-70',
-                style: { fontSize: '1.4rem', width: '70px',  }
+                style: { fontSize: '1.4rem', width: '100px', textAlign: 'center' }
             },
             {
-                Header: 'name',
-                accessor: 'name',
+                Header: 'Product Name',
+                accessor: 'productname',
                 class: 'with-70',
-                style: { fontSize: '1.4rem', width: '70px',  }
+                style: { fontSize: '1.4rem', width: '240px', }
             },
             {
-                Header: 'quantity',
-                accessor: 'quantity',
+                Header: 'Amount',
+                accessor: 'amount',
                 class: 'with-70',
-                style: { fontSize: '1.4rem', width: '70px',  }
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            },
+            {
+                Header: 'Price',
+                accessor: 'price',
+                class: 'with-70',
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            },
+            {
+                Header: 'Sale Price',
+                accessor: 'saleprice',
+                class: 'with-70',
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            },
+            {
+                Header: 'rate',
+                accessor: 'rate',
+                class: 'with-70',
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            },
+            {
+                Header: 'size',
+                accessor: 'size',
+                class: 'with-70',
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            },
+            {
+                Header: 'color',
+                accessor: 'color',
+                class: 'with-70',
+                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
             },
             {
               Header: 'Edit',
               accessor: 'edit',
               class: 'with-70',
-              style: { fontSize: '1.4rem', width: '70px',  }
+              style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
             },
             {
               Header: 'History',
               accessor: 'history',
               class: 'with-70',
-              style: { fontSize: '1.4rem', width: '70px',  }
+              style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
             }
             
         ],
@@ -372,6 +399,7 @@ function ProductManageItems(props) {
                 columns={COLUMNS_SELECT[props.type]}
                 type = {props.type}
                 data={data}
+                listMenu = {listMenu}
                 selectIndex = {selectIndex}
                 supportFunction1={supportFunction1}
                 search={props.search}

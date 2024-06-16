@@ -8,7 +8,10 @@ import ProductShowDetail from "./ProductShowDetail.jsx";
 
 
 function ProducManage() {
-    const [dataRender, setDataRender] = useState([]);
+    const [dataRender, setDataRender] = useState({
+        listMenu: {},
+        data: []
+    });
     const [typeView, setTypeView] = useState("All");
     const [modalShow, setModalShow] = useState(false);
     const [show, setShow] = useState(false);
@@ -17,28 +20,34 @@ function ProducManage() {
     useEffect(()=>{
         // call API take all product and make table
         const takeData = async () => {
-            const data = await productAPi.takeAll()
-            console.log(data)
-            setDataRender(data.data.data)
+            const result = await productAPi.takeAll();
+            const takeListCatolo = await productAPi.makeListMenu();
+            console.log( takeListCatolo)
+            setDataRender({
+                data: result.data.data,
+                listMenu: takeListCatolo.data.data,
+            })
         }
 
         takeData();
     },[])
-
-
+    
+    const updateNewProduct = async (data) => {
+        const result = await productAPi.addProduct(data,"token");
+        console.log("result", result);
+    }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
+    // function renderItem() {
+    //     let result = [];
 
-    function renderItem() {
-        let result = [];
+    //     if(dataRender.length > 0) {
 
-        if(dataRender.length > 0) {
-
-        }
-        return result;
-    }
+    //     }
+    //     return result;
+    // }
     return(
         <div className="mt-5 product">
 
@@ -47,7 +56,13 @@ function ProducManage() {
                 <Modal.Title>Add Product</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <ProductShowDetail />
+                    {
+                        Object.keys(dataRender.listMenu).length > 0 
+                        &&  <ProductShowDetail listMenu={dataRender.listMenu}
+                                            onUpdateNewProDuct={updateNewProduct}
+                            />
+                    }
+                    
                 </Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
@@ -66,9 +81,10 @@ function ProducManage() {
             {/* <img src="https://cdn.24h.com.vn/upload/1-2021/images/2021-03-18/gia-nhap-duong-dua-bikini-tieu-thu-ha-noi-chiem-tron-song-bb9-5639403-1616037657-573-width800height999.jpg" alt="pic" /> */}
 
             {
-            dataRender.length > 0 && <ProductManageItems
+            dataRender.data.length > 0 && <ProductManageItems
                                             type = "product"
-                                            data = {dataRender}
+                                            data = {dataRender.data}
+                                            listMenu={dataRender.listMenu}
                                             supportFunction1={()=> {}}
                                         />
         }

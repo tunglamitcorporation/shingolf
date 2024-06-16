@@ -32,7 +32,7 @@ function LoginContainer() {
 
     useLayoutEffect(() => {
         if (firstLogin) {
-            history.push("/home")
+           // navigate("/home")
         }  else setIsLoading(false)
     }, [firstLogin]);
 
@@ -53,7 +53,7 @@ function LoginContainer() {
 
             // dispatch(hideLoading())
             // dispatch(authAction.login())
-            navigate("/home")
+       //     navigate("/home")
             
 
         } catch (error) {
@@ -111,7 +111,7 @@ function LoginContainer() {
                         <div style={{ fontSize: '1.3rem', color:"red"}}>
                             {err } 
                             {/* && showErrMsg(err) */}
-                            {success && showSuccessMsg(success)}
+                            {/* {success && showSuccessMsg(success)} */}
                         </div>
 				   </div>
 

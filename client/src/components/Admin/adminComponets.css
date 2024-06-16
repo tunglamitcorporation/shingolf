@@ -23,3 +23,18 @@
     font-size: 1.3rem;
     color: blue
 }
+
+.product_show_detail-content {
+    font-size: 1.3rem;
+    color: blue
+}
+
+.product_show_detail-content .product_show_detail-content-item {
+    width: 200px;
+    min-width:200px;
+    max-width: 200px;
+    height: 180px;
+    min-height:180px;
+    max-height: 180px;
+    color: blue
+}
