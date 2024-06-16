@@ -222,14 +222,14 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={image} />
-              <img src={image} />
-              <img src={image} />
+              <img src={image[0]} />
+              <img src={image[0]} />
+              <img src={image[0]} />
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={rate} />
-              <div className="product-title">{productName.replace(/-/g, ' ')}</div>
+              <div className="product-title-client">{productName.replace(/-/g, ' ')}</div>
               <div className="product-status">Còn Hàng</div>
               <div className="content__feature-text d-flex">
                      <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(price)}đ</div>

@@ -50,38 +50,38 @@
   ];
   const productData = [
       {
-        productId: 'golfsticknew',
+        productId: 'newgolfclub',
         productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
         image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
         price: 33500000,
-        sale: 28475000,
+        saleprice: 28475000,
         rate: 5,
         productType:'New'
       },
       {
-        productId: 'golfsticknew',
+        productId: 'newgolfclub',
         productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
         image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
         price: 33500000,
-        sale: 28475000,
+        saleprice: 28475000,
         rate: 5,
         productType:'New'
       },
       {
-        productId: 'golfsticknew',
+        productId: 'newgolfclub',
         productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
         image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
         price: 33500000,
-        sale: 28475000,
+        saleprice: 28475000,
         rate: 5,
         productType:'New'
       },
       {
-        productId: 'golfsticknew',
+        productId: 'newgolfclub',
         productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
         image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
         price: 33500000,
-        sale: 28475000,
+        saleprice: 28475000,
         rate: 5,
         productType:'New'
       },
@@ -90,7 +90,7 @@
          productName: 'Áo Mens UA Matchplay Stripe Polo',
          image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
         price: 3500000,
-        sale: 2847500,
+        saleprice: 2847500,
         rate: 4,
         productType:'Like New'
 
@@ -101,7 +101,7 @@
         productName: 'Áo Mens UA Matchplay Stripe Polo',
         image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
        price: 3500000,
-       sale: 2847500,
+       saleprice: 2847500,
        rate: 4,
        productType:'Like New'
 
@@ -112,7 +112,7 @@
         productName: 'Áo Mens UA Matchplay Stripe Polo',
         image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
        price: 3500000,
-       sale: 2847500,
+       saleprice: 2847500,
        rate: 4,
        productType:'Like New'
 
@@ -123,7 +123,7 @@
         productName: 'Áo Mens UA Matchplay Stripe Polo',
         image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
        price: 3500000,
-       sale: 2847500,
+       saleprice: 2847500,
        rate: 4,
        productType:'Like New'
 
@@ -134,7 +134,7 @@
          productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
          image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
          price: 5000000,
-        sale: 4750000,  
+        saleprice: 4750000,  
         rate: 3,
         productType:'Outlet'
 
@@ -145,7 +145,7 @@
         productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
         image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
         price: 5000000,
-       sale: 4750000,  
+       saleprice: 4750000,  
        rate: 3,
        productType:'Outlet'
 
@@ -156,7 +156,7 @@
         productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
         image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
         price: 5000000,
-       sale: 4750000,  
+       saleprice: 4750000,  
        rate: 3,
        productType:'Outlet'
 
@@ -167,7 +167,7 @@
         productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
         image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
         price: 5000000,
-       sale: 4750000,  
+       saleprice: 4750000,  
        rate: 3,
        productType:'Outlet'
 
@@ -297,7 +297,7 @@
             <div className="content__feature-title">GẬY GOLF MỚI</div>
             <div className="container">
             <div className="row">
-      {fetchData
+      {productData
         .filter(product => product.productId === 'newgolfclub')
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3">
@@ -309,7 +309,7 @@
                     className="content__feature-img"
                     style={{
                       backgroundImage:
-                      `url(${product.image})`,
+                      `url(${product.image[0]})`,
                       }}
                   >
                     <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>

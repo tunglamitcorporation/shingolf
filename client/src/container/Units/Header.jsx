@@ -274,29 +274,51 @@ function Header() {
         </div>
         <div className="d-flex mb-5 align-items-center">
           <div className="col-md-6 ml-3 p-0">
-          <div className="search-bar d-flex align-items-center">
+          <div className="search-bar d-flex align-items-center justify-content-between">
+            <div className="d-flex">
                             <input 
                             type="text"
                             className="input-style" />
                             <div className="search-bar-icon d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
+                            {searchTerm && (
+                                <div className="results">
+                                  {filteredProducts.length > 0 ? (
+                                    filteredProducts.map((product) => (
+                                      <div
+                                        key={product.id}
+                                        className="productItem"
+                                        onClick={() => handleProduct(product)}
+                                      >
+                                        <div className="search-productName">{product.productName}</div>
+                                        <div className="search-price">${product.price}</div>
+                                      </div>
+                                    ))
+                                  ) : (
+                                    <div className="noProducts">No products found</div>
+                                  )}
+                                </div>
+                              )}
+
+            </div>
+                            <div className="d-flex">
+            <a href="tel:01541251" className="text-decoration-none d-flex align-items-center phone-container">
+              <i class="fa-solid fa-phone mr-3" style={{color:'#ff3131', fontSize: '2rem'}}></i>
+              {/* <div>0123141235</div> */}
+            </a>
+            <a href="" className="text-decoration-none d-flex align-items-center phone-container">
+            <i class="fa-solid fa-globe mr-3" style={{color:'#ff3131', fontSize: '2rem'}}></i>
+              {/* <div>ShinGolf</div> */}
+            </a>
+            <a href="" className="text-decoration-none d-flex align-items-center phone-container">
+            <i class="fa-brands fa-facebook mr-3" style={{color: '#0866FF', fontSize: '2rem'}}></i>
+              {/* <div>ShinGolf</div> */}
+            </a>
+          </div>
                             </div>
                             <div className="mt-2" style={{fontSize: "1.4rem", fontWeight:'bold'}}>Tỉ giá hôm nay:  {exchangeRate}</div>
-          </div>
-          <div className="col-md-6 m-0 p-0">
-            <a href="tel:01541251" className="text-decoration-none d-flex align-items-center phone-container">
-              <i class="fa-solid fa-phone mr-3"></i>
-              <div>0123141235</div>
-            </a>
-            <a href="" className="text-decoration-none d-flex align-items-center phone-container">
-            <i class="fa-solid fa-globe mr-3"></i>
-              <div>ShinGolf</div>
-            </a>
-            <a href="" className="text-decoration-none d-flex align-items-center phone-container">
-            <i class="fa-brands fa-facebook mr-3" style={{color: '#0866FF'}}></i>
-              <div>ShinGolf</div>
-            </a>
+                          
           </div>
         </div>
         
