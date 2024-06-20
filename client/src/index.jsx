@@ -14,6 +14,8 @@ import { I18nextProvider } from 'react-i18next';
 import DisableTouchPadHorizontalScroll from './DisableTouchPadScroll';
 import { ProductHistoryProvider } from './ProductHistoryContext';
 import { CartProvider } from './CartProvider';
+import { Provider } from 'react-redux'
+import store from './store'
 
 root.render(
   // <React.StrictMode>
@@ -24,7 +26,9 @@ root.render(
               <CartProvider>
               <DisableArrowScroll>
                 <DisableTouchPadHorizontalScroll>
-                <App />
+                    <Provider store={store()}>
+                      <App />
+                    </Provider>
                 </DisableTouchPadHorizontalScroll>
               </DisableArrowScroll>
               </CartProvider>

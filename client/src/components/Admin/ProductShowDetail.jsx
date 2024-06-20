@@ -12,7 +12,7 @@ function ProductShowDetail(props) {
         "category": "",
         "productType": "",
         "productname": "",
-        "productImage": [],
+        // "productImage": [],
         "status": "",
         "amount": 0,
         "price": 0,
@@ -65,8 +65,8 @@ function ProductShowDetail(props) {
       listMenu: {}
     }
       );
+      const [file, setFile] = useState(null);
 
-      console.log("data.productDetal",data.productDetail.category)
       useEffect(() => {
         if(props.listMenu) {
           if(Object.keys(props.listMenu).length >0) {
@@ -130,16 +130,107 @@ function ProductShowDetail(props) {
       }
 
         // Hàm để xử lý khi người dùng chọn ảnh
-        const handleImageChange = (event) => {
-          const file = event.target.files[0];
-          if (file) {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-              setSelectedImage(reader.result);
+      //   const handleImageChange = (event) => {
+      //     const file = event.target.files[0];
+      //     if (file) {
+      //     const reader = new FileReader();
+      //     reader.onloadend = () => {
+      //         setSelectedImage(reader.result);
+      //     };
+      //     reader.readAsDataURL(file);
+      //     }
+      // };
+
+
+      // Hàm để xử lý khi người dùng chọn ảnh
+      // const handleImageChange = (event) => {
+      //     const file = event.target.files[0];
+      //     if (file) {
+      //     const reader = new FileReader();
+      //     reader.onloadend = () => {
+      //         setSelectedImage(reader.result);
+      //     };
+      //     reader.readAsDataURL(file);
+      //     }
+      // };
+  
+      
+  const handleFileChange = (e) => {
+      // if (Number(branchID) === 15)
+      // else setFile(e.target.files[0]);    
+      handleImageChange(e)    
+  };
+  
+  const handleImageChange = (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+  
+      const reader = new FileReader();
+      reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+              const canvas = document.createElement("canvas");    
+              const MAX_WIDTH = 1500; // Set maximum width for the resized image
+              const scaleFactor = MAX_WIDTH / img.width;
+              canvas.width = MAX_WIDTH;
+              canvas.height = img.height * scaleFactor;
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            //  const resizedDataURL = canvas.toDataURL("image/png");
+              let resizedDataURL 
+              canvas.toBlob((blob) => {
+                  resizedDataURL = new File([blob], "fileName.jpg", { type: "image/jpeg" })
+                  setFile(resizedDataURL);
+              }, 'image/jpeg');
           };
-          reader.readAsDataURL(file);
-          }
+          img.src = e.target.result;
       };
+      reader.readAsDataURL(file);
+  };
+  
+  const handleUploadPassport = async (link,name) => {
+      console.log("start up Picture")
+      const formData = new FormData();
+      formData.append('image', file);
+      //formData.append('image_data', file);
+      // image_data
+  
+      try {
+       console.log("start up Picture 2")
+        const response = await fetch(`http://103.163.119.180:5100/upload${link}/${name}`, { //+dataState._id
+          method: 'POST',
+          body: formData,
+          headers: { Authorization: "", },
+          // headers: { Link: link, Name: name },
+        });
+  
+        console.log("response", response);
+  
+      //   if (response.ok) {
+      //     const data = await response.json();
+      //     //console.log('URL ảnh đã tải lên:', data.imageUrl);
+          
+      //     const responseUpPassport = await uploadPassPort(dataState._id, { link:data.imageUrl }, token);
+  
+      //     //console.log("responseUpPassport", responseUpPassport);
+  
+      //     if(responseUpPassport) {
+      //         if(responseUpPassport.data.status === 1) informationToast(responseUpPassport.data.msg);
+      //         else errorToast(responseUpPassport.data.msg);
+      //     }
+      //     // update to server
+      //     setDataState({
+      //         ...dataState,
+      //         passport: data.imageUrl
+      //     })
+      //   } else {
+      //     errorToast("Error when upload Passport, Please check the photo size < 1Mb")
+      //     //console.error('Lỗi tải lên ảnh.');
+      //   }
+      } catch (error) {
+        console.error('Lỗi kết nối máy chủ:', error);
+      }
+  };
 
       function renderContent(dataRender) {
         let result = [];
@@ -241,27 +332,32 @@ function ProductShowDetail(props) {
 
                     <div style={{width:"20%"}} className="mr-2">
                         <img className="product_show_detail-content-item" src="https://toquoc.mediacdn.vn/2018/12/25/cau-vang-ba-na-3-15457134861131150541874.jpg"></img>
-                        <input type="file" accept="image/*" onChange={handleImageChange} />
+                        <input type="file" accept="image/*" onChange={handleFileChange} />
+                        <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test1")}>Update Sale</button>
                     </div>
 
                     <div style={{width:"20%"}} className="mr-2">
                         <img className="product_show_detail-content-item" src="https://nemthuanviet.com/wp-content/uploads/2023/10/canh-dep-1.jpg"></img>
-                        <input type="file" accept="image/*" onChange={handleImageChange} />
+                        <input type="file" accept="image/*" onChange={handleFileChange} />
+                        <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test2")}>Update Sale</button>
                     </div>
 
                     <div style={{width:"20%"}} className="mr-2">
                         <img className="product_show_detail-content-item" src="https://ik.imagekit.io/tvlk/blog/2023/07/canh-dep-thien-nhien-Viet-Nam-11-1024x576.jpg?tr=dpr-2,w-675"></img>
-                        <input type="file" accept="image/*" onChange={handleImageChange} />
+                        <input type="file" accept="image/*" onChange={handleFileChange} />
+                        <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test3")}>Update Sale</button>
                       </div>
                 
                     <div style={{width:"20%"}} className="mr-2">
                         <img className="product_show_detail-content-item" src="https://m.yodycdn.com/blog/phong-canh-dep-o-viet-nam-yody-vn-14.jpg"></img>
-                        <input type="file" accept="image/*" onChange={handleImageChange} />
+                        <input type="file" accept="image/*" onChange={handleFileChange} />
+                        <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test4")}>Update Sale</button>
                     </div>
 
                     <div style={{width:"20%"}} className="mr-2">
                         <img className="product_show_detail-content-item" src="https://m.yodycdn.com/blog/phong-canh-dep-o-viet-nam-yody-vn-14.jpg"></img>
-                        <input type="file" accept="image/*" onChange={handleImageChange} />
+                        <input type="file" accept="image/*" onChange={handleFileChange} />
+                        <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test5")}>Update Sale</button>
                     </div>
 
                 </div>

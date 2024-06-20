@@ -311,12 +311,12 @@ function ProductManageItems(props) {
 
     const COLUMNS_SELECT = {
         product: [
-            {
-                Header: 'Product ID',
-                accessor: 'id',
-                class: 'with-70',
-                style: { fontSize: '1.4rem', width: '120px', textAlign: 'center' }
-            },
+            // {
+            //     Header: 'Product ID',
+            //     accessor: 'id',
+            //     class: 'with-70',
+            //     style: { fontSize: '1.4rem', width: '120px', textAlign: 'center' }
+            // },
             {
                 Header: 'Product Code',
                 accessor: 'productCode',
@@ -337,7 +337,7 @@ function ProductManageItems(props) {
             },
             {
                 Header: 'Product Name',
-                accessor: 'productname',
+                accessor: 'productName',
                 class: 'with-70',
                 style: { fontSize: '1.4rem', width: '240px', }
             },

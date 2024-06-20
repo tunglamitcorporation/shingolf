@@ -20,7 +20,8 @@
 .admin-content-title{
     font-weight: 600;
     padding: 8px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    background-color: aqua;
 }
 
 .admin-home_page-picture-content-item {

@@ -15,6 +15,8 @@ const app = express();
 //const axios = require('axios');
 var bodyParser = require('body-parser');
 
+const multer = require('multer');
+
 var jsonParser = bodyParser.json({ limit: 1024 * 1024 * 20, type: 'application/json' });
 var urlencodedParser = bodyParser.urlencoded({
     extended: true,
@@ -22,6 +24,64 @@ var urlencodedParser = bodyParser.urlencoded({
     parameterLimit: 50000,
     type: 'application/x-www-form-urlencoded'
 })
+
+
+// Cấu hình Multer để tải ảnh lên
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+      const link = req.header("Link");
+      const { link1, link2, name } = req.params;
+
+    //  callback(null, `./image/${link}`);
+      callback(null, `./image/${link1}/${link2}`);
+
+    },
+    filename: (req, file, callback) => {
+    const { link1, link2, name } = req.params;
+     //onst guestId = req.header("");
+    // const name = req.header("Name");
+     const fileName = `${name}.png`;
+     callback(null, fileName);
+    },
+});
+
+
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 1 * 1024 * 1024 }, // 1 Mb
+    fileFilter: (req, file, callback) => {
+        const acceptableExtensions = ['png', 'jpg', 'jpeg', 'jpg']
+        if (!(acceptableExtensions.some(extension => 
+            path.extname(file.originalname).toLowerCase() === `.${extension}`)
+        )) {
+            return callback(new Error(`Extension not allowed, accepted extensions are ${acceptableExtensions.join(',')}`))
+        }
+        callback(null, true)
+    }
+  });
+
+//   app.post('/upload/:id', upload.single('image'), (req, res) => {
+//     if (!req.file) {
+//       return res.status(400).send('Không có ảnh được tải lên.');
+//     }
+  
+//     return res.status(200).json({ imageUrl: `/img/passport/${req.file.filename}` });
+//   });
+  
+app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
+    console.log("req.params",  req.params)
+    const { link1, link2, name } = req.params;
+    try {
+      if (!req.file) {
+        return res.status(400).send('Không có ảnh được tải lên.');
+      }
+    
+      return res.status(200).json({ imageUrl: `/image/${link1}/${link2}/${name}.png` });
+    } catch (error) {
+      console.log("error upload passport", error.message)
+      return res.status(500).json({ msg: error.message });
+    }
+  });
 
 app.use(jsonParser);
 app.use(urlencodedParser);
@@ -435,7 +495,7 @@ app.get('*', function(req, res) {
         xCard = "summary"
         xTitle = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."
-    }
+    } 
 
 const filePath = path.resolve(__dirname, "client/build", "index.html")
 let htmlContent = fs.readFileSync(filePath, "utf8")
