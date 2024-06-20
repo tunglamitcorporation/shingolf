@@ -32,7 +32,7 @@ function LoginContainer() {
 
     useLayoutEffect(() => {
         if (firstLogin) {
-           // navigate("/home")
+            navigate("/admin/home")
         }  else setIsLoading(false)
     }, [firstLogin]);
 
@@ -53,7 +53,7 @@ function LoginContainer() {
 
             // dispatch(hideLoading())
             // dispatch(authAction.login())
-       //     navigate("/home")
+           navigate("/admin/home")
             
 
         } catch (error) {
