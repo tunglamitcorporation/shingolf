@@ -492,6 +492,8 @@ app.get('*', function(req, res) {
         xCard = "summary"
         xTitle = 'Massage - 東屋ホテルベトナム｜ハノイホーチミンダナンのビジネスホテル'
         xDescription = "Relax with a massage at Azumaya Hotel. Our expert therapists will leave you feeling refreshed and revitalized."
+    } else {
+         res.sendFile(path.join(__dirname, "/client/build","index.html"));
     }
 
 const filePath = path.resolve(__dirname, "client/build", "index.html")
