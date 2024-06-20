@@ -29,14 +29,17 @@ var urlencodedParser = bodyParser.urlencoded({
 // Cấu hình Multer để tải ảnh lên
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        const link = req.header("Link");
-   
+      const link = req.header("Link");
+      const { link1, link2, name } = req.params;
 
-      callback(null, `./image/${link}`);
+    //  callback(null, `./image/${link}`);
+      callback(null, `./image/${link1}/${link2}`);
+
     },
     filename: (req, file, callback) => {
+    const { link1, link2, name } = req.params;
      //onst guestId = req.header("");
-     const name = req.header("Name");
+    // const name = req.header("Name");
      const fileName = `${name}.png`;
      callback(null, fileName);
     },
@@ -65,7 +68,7 @@ const upload = multer({
 //     return res.status(200).json({ imageUrl: `/img/passport/${req.file.filename}` });
 //   });
   
-  app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
+app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
     console.log("req.params",  req.params)
     const { link1, link2, name } = req.params;
     try {

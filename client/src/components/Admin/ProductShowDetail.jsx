@@ -200,8 +200,8 @@ function ProductShowDetail(props) {
         const response = await fetch(`http://103.163.119.180:5100/upload${link}/${name}`, { //+dataState._id
           method: 'POST',
           body: formData,
-          // headers: { Authorization: "", },
-          headers: { Link: link, Name: name },
+          headers: { Authorization: "", },
+          // headers: { Link: link, Name: name },
         });
   
         console.log("response", response);

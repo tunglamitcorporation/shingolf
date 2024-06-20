@@ -132,7 +132,7 @@ function HomePage() {
             method: 'POST',
             body: formData,
             // headers: { Authorization: "", },
-            headers: { Link: link, Name: name },
+            // headers: { Link: link, Name: name },
         });
 
         console.log("response", response);
