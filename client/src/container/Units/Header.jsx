@@ -1,5 +1,5 @@
 import { Link, useNavigate} from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { useSSR, useTranslation } from "react-i18next";
 import { useState, useEffect, useContext } from "react";
 import { Tab, Tabs, TabList } from "react-tabs";
 import Cookies from "js-cookie";
@@ -7,24 +7,8 @@ import logo from '../../image/logo.jpg'
 import axios from "axios";
 import ProductHistoryContext from "../../ProductHistoryContext";
 import { useCart } from "../../CartProvider";
-const productData = [
-  {
-    id: 'golfsticknew',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    price: '10'
-  },
-  {
-    id: 'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    price: '40'
-  },
-  {
-    id: 'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    price: '60'
-  }
-];
-
+import { makeListMenu } from "../../api/product";
+import { takeAll } from "../../api/product";
 function Header() {
   const { t, i18n } = useTranslation();
   // const changeLanguage = (lng) => {
@@ -37,17 +21,22 @@ function Header() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const { cartCount } = useCart();
-  const { cartItems } = useCart();
-
+  const [selectedCategories, setSelectedCategories] = useState('')
+  console.log(selectedCategories);
   const navigate = useNavigate()
-  const { addProductToHistory } = useContext(ProductHistoryContext);
-    // useEffect(()=>{
-    //   const savedLang = Cookies.get('selectedLanguage');
-    //   if(savedLang && i18n.language !== savedLang){
-    //     i18n.changeLanguage(savedLang)
-    //   }
-    // })
+  // const { addProductToHistory } = useContext(ProductHistoryContext);
+  const [fetchData, setFetchData] = useState([])
+  useEffect(() => {
+    const token = ''; 
+    takeAll(token)
+        .then(response => {
+            setFetchData(response.data.data);
+            console.log('Data received:', response.data);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}, []);
 
   const toggleHeader = () => {
       setIsOpen(!isOpen)
@@ -79,7 +68,7 @@ function Header() {
     );
   };
 
-  const filteredProducts = filterProducts(productData, searchTerm);
+  const filteredProducts = filterProducts(fetchData, searchTerm);
   const HeaderMobile = () => {
     return(
     <ul className={`header__mobile-navbar-list ${isOpen ? 'open' :''}`}>
@@ -103,7 +92,7 @@ function Header() {
             <Link
               onClick={()=> setIsOpen(false)}
               Link
-              to="/service/"
+              to="/product-list/"
               className="header__mobile-navbar-link"
             >
              SẢN PHẨM
@@ -223,25 +212,27 @@ function Header() {
                               )}
                     <select
                         className="header-list"
+                        onChange={(e) => {
+                          setSelectedCategories(e.target.value)
+                          const formattedProductId = formatProductName(e.target.value);
+                          navigate(`/product-list/${formattedProductId}`, { state: { id: e.target.value } });
+                        }}
                         >
-                        <option>Tất cả</option> 
-                        <option>Danh mục</option>
-                        <option>Hãng</option>
-                        <option>Tình Trạng</option>
-                        <option>Sale</option>
-                        <option>Outlet</option>
-                     </select>
-                       <select
-                        className="header-list"
-                        >
-                        <option>Mới nhất</option>
-                        <option>Đánh giá</option>
-                        <option>Giá thấp đến cao</option>
-                        <option>Giá cao đến thấp</option>
+                        {/* <option value=''>Tất cả</option>  */}
+                        <option value=''>Loại sản phẩm</option>
+                        <option value='newgolfclub'>Gậy golf mới</option>
+                        <option value='oldgolfclub'>Gây golf cũ</option>
+                        <option value='grip'>Cán gậy/ Grip</option>
+                        <option value='mengolfclothes'>Quần áo golf nam</option>
+                        <option value='womengolfclothes'>Quần áo golf nữ</option>
+                        <option value='accessories'>Phụ kiện golf</option>
+                        <option value='golfbag'>Túi golf</option>
+                        <option value='golfshoes'>Giày golf</option>
+                        <option value='golftraining'>Dụng cụ luyện tập</option>
                      </select>
                         </div>
-                        <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
-                        {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>}
+                        {/* <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
+                        {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>} */}
 
                         </div>
                       </div>
@@ -266,11 +257,11 @@ function Header() {
                   />
                 </Link>
               </div>
-              <div className="header-cart">
+              {/* <div className="header-cart">
               <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
               {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>}
 
-            </div>
+            </div> */}
         </div>
         <div className="d-flex mb-5 align-items-center">
           <div className="col-md-6 ml-3 p-0">
@@ -355,7 +346,7 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/service/">
+                      <Link className="header__navbar-link-2" to="/product-list/">
                         SẢN PHẨM
                       </Link>
                     </Tab>

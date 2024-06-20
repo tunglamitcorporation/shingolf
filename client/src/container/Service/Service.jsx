@@ -5,211 +5,210 @@ import { useEffect, useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import Collapsible from 'react-collapsible'
-import ProductHistoryContext from "../../ProductHistoryContext";
-const productData = [
-  {
-    id: 'newgolfclub',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New',
-    labels: ['Tất cả các loại gậy']
-  },
-  {
-    id: 'newgolfclub',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-  {
-    id: 'newgolfclub',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-  {
-    id: 'newgolfclub',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-   {
-     id:'mengolfclothes',
-     productName: 'Áo Mens UA Matchplay Stripe Polo',
-     image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-    price: 3500000,
-    sale: 2847500,
-    rate: 4,
-    productType:'Like New',
-    labels: ['Tất cả quần áo golf nam']
+import { makeListMenu } from "../../api/product";
 
-
-
-   },
-   {
-    id:'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-   price: 3500000,
-   sale: 2847500,
-   rate: 4,
-   productType:'Like New'
-
-
-  },
-  {
-    id:'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-   price: 3500000,
-   sale: 2847500,
-   rate: 4,
-   productType:'Like New'
-
-
-  },
-  {
-    id:'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-   price: 3500000,
-   sale: 2847500,
-   rate: 4,
-   productType:'Like New'
-
-
-  },
-   {
-     id:'golfbag',
-     productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-     image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-     price: 5000000,
-    sale: 4750000,  
-    rate: 3,
-    productType:'Outlet'
-
-
-   },
-   {
-    id:'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: 5000000,
-   sale: 4750000,  
-   rate: 3,
-   productType:'Outlet'
-
-
-  },
-  {
-    id:'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: 5000000,
-   sale: 4750000,  
-   rate: 3,
-   productType:'Outlet'
-
-
-  },
-  {
-    id:'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: 5000000,
-   sale: 4750000,  
-   rate: 3,
-   productType:'Outlet'
-
-
-  }
-
-  ]
-export default function VietnamService() {
+export default function VietnamService({fetchData, listMenu}) {
   const navigate = useNavigate()
   const {t, i18n} = useTranslation()
   const { productName } = useParams();
   const location = useLocation();
-  const { price, id, selectedCategories =[], selectedLabels = {}} = location.state || {};
-  // const selectedCategories = ["golfsticknew"];
-  // const selectedLabels = {
-  //   "golfsticknew": [
-  //     "Tất cả các loại gậy"
-  //   ]
-  // };
-  console.log(selectedCategories, selectedLabels);
-  const { addProductToHistory } = useContext(ProductHistoryContext);
-  const [selectedProductId, setSelectedProductId] = useState('newgolfclub')
-  ;
-  // const filteredProducts = productData.filter(product => {
-  //   if (!selectedCategories.includes(product.id)) {
-  //     return false; // Skip products not in selectedCategories
-  //   }
-  
-  //   if (!product.labels || !Array.isArray(product.labels)) {
-  //     return false; // Skip products without labels or if labels is not an array
-  //   }
-  
-  //   if (!selectedLabels[product.id]) {
-  //     return true; // No specific labels selected for this product, include it
-  //   }
-  
-  //   // Check if any label of the product matches the selected labels
-  //   return product.labels.some(label => selectedLabels[product.id].includes(label));
-  // });
-  
-  // const selectedProduct = productData.filter(product => product.id === selectedProductId);
+  const { price, id, selectedCategories =[]} = location.state || {};
+  const checkId = id || 'newgolfclub'
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedProductType, setSelectedProductType] = useState('');
+  const [visible, setVisible] = useState (true)
+
+  const convertListMenu = []
+  for (const [title, items] of Object.entries(listMenu)) {
+    items.forEach((item, index) => {
+      if (index === 0) {
+        convertListMenu.push({ title, item });
+      } else {
+        convertListMenu.push({ title: '', item });
+      }
+    });
+  }
 
   const filteredProducts = selectedCategories.length > 0
-  ? productData.filter(product =>
-    selectedCategories.includes(product.id) &&
-    product.labels && product.labels.some(label => selectedLabels[product.id]?.includes(label))
+  ? fetchData.filter(product =>
+    selectedCategories.includes(product.productType) 
   )
-  : productData.filter(product => product.id === selectedProductId);
+  : fetchData.filter(product => product.productId === checkId)
 
-  const handleProductClick = (id) => {
-    setSelectedProductId(id);
+  const handleCategoryClick = (product) => (event) => {
+    event.preventDefault();
+    setSelectedCategory(product);
+    setVisible(false)
   };
+  console.log(selectedCategory);
   const formatProductName = (name) => {
     return name.replace(/\s/g, '-');
   };
   const handleProduct = (product) => {
-    addProductToHistory(product);
+    addProductToHistory(product); 
     const formattedProductName = formatProductName(product.productName);
-    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.sale, rate: product.rate, image: product.image, productType: product.productType }});
-  };
+    navigate(`/product/${formattedProductName}`, { state: { 
+      price: product.price, 
+      productId: product.productId, 
+      sale: product.saleprice, 
+      rate: product.rate, 
+      productType: product.productType,
+      status: product.status,
+      amount: product.amount,
+      loft: product.loft,
+      stickType: product.sticktype,
+      stickHardType: product.stickhardtype,
+      feature: product.feature,
+      long: product.long,
+      weight: product.weight,
+      stickCover: product.stickcover,
+      accessory: product.accessory,
+      grip: product.grip,
+      hand: product.hand,
+      rank: product.rank,
+      produceYear: product.produceyear,
+      manageNumber: product.managenumber,
+      size: product.size,
+      shoesType: product.shoestype,
+      sex: product.sex,
+      brand: product.brand,
+      produceLocation: product.producelocation,
+      guarantee: product.guarantee,
+      color: product.color,
+      material: product.material,
+      content: product.content,
+      images: product.images,
+      productCode: product.productCode,
+    }});
+  };  
   const StarRating = ({ rate }) => {
-    const renderStars = (rate) => {
-      const stars = [];
-      for (let i = 0; i < rate; i++) {
-        stars.push(
-          <i
-            key={i}
-            style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
-            className="fa-solid fa-star"
-          ></i>
-        );
-      }
-      return stars;
-    };
+    const fullStars = Math.floor(rate);
+    const halfStar = rate % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
   
     return (
       <div>
-        {renderStars(rate)}
+        {[...Array(fullStars)].map((_, index) => (
+          <i
+            key={index}
+            style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+            className="fa-solid fa-star"
+          ></i>
+        ))}
+        {halfStar && (
+          <i
+            style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+            className="fa-solid fa-star-half-alt"
+          ></i>
+        )}
+        {[...Array(emptyStars)].map((_, index) => (
+          <i
+            key={fullStars + index + 1}
+            style={{ fontSize: '1.4rem', color: '#dcdcdc', marginTop: 10 }}
+            className="fa-solid fa-star"
+          ></i>
+        ))}
       </div>
     );
-  };  
+  };
+  const renderProduct = (product) => (
+    <div key={product.productId} className="col-6 col-md-3 p-3" >
+      <div style={{ textDecoration: 'none' }}>
+        <div className="content__feature-item product-container" style={{ overflow: 'hidden' }}>
+          <div className="content__feature-container">
+            <div
+              onClick={() => handleProduct(product)}
+              className="content__feature-img"
+              style={{ backgroundImage: `url(${product.image})` }}
+            >
+              <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '50px', height: '50px', position: 'absolute', right: 0, backgroundColor: '#fec800', color: '#ff3131', fontSize: '1.4rem', fontWeight: 'bold' }}>
+                <div>Sale</div>
+                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+              </div>
+            </div>
+          </div>
+          <div style={{ padding: '10px' }}>
+            <div className="d-flex justify-content-between align-items-center">
+              <StarRating rate={product.rate} />
+              <div className="d-flex justify-content-center align-items-center" style={{ width: 'fit-content', height: '30px', padding: '10px', border: '1px solid green', fontSize: '1.4rem', color: 'green', marginTop: '10px', borderRadius: '10px' }}>{product.rank}</div>
+            </div>
+            <div className="content__feature-name">
+
+              <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName} </div>
+            </div>
+            <div className="content__feature-text d-md-flex justify-content-between">
+              {product.saleprice != '' ? (
+                <>
+                <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                </>
+              ) : (
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+              )}
+            </div>
+          </div>
+          <div className="btn-container">
+            <div className="row pb-0">
+              {/* <div className="col-md-6 p-0">
+                <div onClick={() => addToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                  THÊM VÀO GIỎ
+                </div>
+              </div> */}
+             <div className="col-md-12 p-0">
+                    <div 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+    // const [sortedProducts, setSortedProducts] = useState(selectedCategory);
+    // const [sortOption, setSortOption] = useState('none'); 
+  
+    // const sortByPriceHigh = () => {
+    //   const sorted = [...fetchData].sort((a, b) => b.saleprice - a.saleprice);
+    //   setSortedProducts(sorted);
+    //   setSortOption('priceHigh');
+    //   setVisible(false)
+    // };
+  
+    // const sortByPriceLow = () => {
+    //   const sorted = [...fetchData].sort((a, b) => a.saleprice - b.saleprice);
+    //   setSortedProducts(sorted);
+    //   setSortOption('priceLow');
+    //   setVisible(false)
+
+    // };
+  
+    // const sortByRateHigh = () => {
+    //   const sorted = [...fetchData].sort((a, b) => b.rate - a.rate);
+    //   setSortedProducts(sorted);
+    //   setSortOption('rateHigh');
+    //   setVisible(false)
+
+    // };
+  
+    // const sortByRateLow = () => {
+    //   const sorted = [...fetchData].sort((a, b) => a.rate - b.rate);
+    //   setSortedProducts(sorted);
+    //   setSortOption('rateLow');
+    //   setVisible(false)
+
+    // };
+    // const resetSorting = () => {
+    //   setSortedProducts(fetchData);
+    //   setSortOption('none');
+    //   setVisible(false)
+
+    // }
   return (
     <>
     <HelmetLayout />
@@ -228,90 +227,14 @@ export default function VietnamService() {
               <div className="container">
                 <div className="row">
               <div className="all-list"><i class="fa-solid fa-bars"></i> DANH MỤC</div>
-              <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Mới</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
+              {convertListMenu.map(item => (
+              <div className="row ml-5 p-0">
+                <h3 className="bold mt-3" style={{display: item.title != '' ? 'block' : 'none'}}>{item.title}</h3>
+                <div className="row justify-content-evenly">
+                <Link className="list-item" to ="#" onClick={handleCategoryClick(item.item)}>{item.item}</Link>
                 </div>
-                <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Cũ</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
                 </div>
-                <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Mới</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
-                </div>
-                <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Mới</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
-                </div>
-                <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Mới</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
-                </div>
-                <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Mới</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
-                </div>
-                <div className="row ml-5">
-              <Link to ="" className="Collapsible list-item">Gậy Golf Mới</Link>
-                <Link className="list-item" to = "/feature/">Tất cả các loại gậy</Link>
-                <Link className="list-item" to = "/feature/">Gậy driver</Link>
-                <Link className="list-item" to = "/feature/">Gậy gỗ</Link>
-                <Link className="list-item" to = "/feature/">Gậy rescue/ hybrid</Link>
-                <Link className="list-item" to = "/feature/">Gậy sắt lẻ</Link>
-                <Link className="list-item" to = "/feature/">Set gậy sắt</Link>
-                <Link className="list-item" to = "/feature/">Gậy kỹ thuật / wedgey</Link>
-                <Link className="list-item" to = "/feature/">Gậy gạt/ Putter</Link>
-                <Link className="list-item" to = "/feature/">Bộ gậy giá rẻ</Link>
-                </div>
+              ))}
               </div>
               </div>
             </div>
@@ -328,7 +251,7 @@ export default function VietnamService() {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/service/">
+                  <Link className="breadcrumb__title" to="/product/">
                     Sản phẩm
                   </Link>
                 </li>
@@ -339,76 +262,40 @@ export default function VietnamService() {
       </div>
             <div className="container">
             <div className="row">
-            <div className="sort-list-container">
+            {/* <div className="sort-list-container mb-5">
               Sắp xếp
                     <select
                         className="sort-list"
                         >
-                        <option>Mới nhất</option>
-                        <option>Đánh giá</option>
-                        <option>Giá thấp đến cao</option>
-                        <option>Giá cao đến thấp</option>
+                        <option onClick={resetSorting}>Mới nhất</option>
+                        <option onClick={sortByRateHigh}>Đánh giá</option>
+                        <option onClick={sortByPriceLow}>Giá thấp đến cao</option>
+                        <option onClick={sortByPriceHigh}>Giá cao đến thấp</option>
                      </select>
-                    </div>
-                        {filteredProducts.map(product => (
-                          <div key={product.id} className="col-6 col-md-3 p-3">
-                          <div style={{ textDecoration: 'none' }}>
-                            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                              <div className="content__feature-container">
-                                <div
-                                 onClick={() => handleProduct(product)}
-                                  className="content__feature-img"
-                                  style={{
-                                    backgroundImage:
-                                    `url(${product.image[0]})`,
-                                    }}
-                                >
-                                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                                  <div>Sale</div>
-                                  <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div style={{padding:'10px'}}>
-                              <div className="d-flex justify-content-between align-items-center">
-                             <StarRating rate={product.rate} />
-                             <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
-                              </div>
-                              <div className="content__feature-name">
-                                <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                              </div>
-                              <div className="content__feature-text d-md-flex justify-content-between">
-                                <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
-                                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                              </div>
-                              </div>
-                              <div className="btn-container">
-                                <div className="row pb-0">
-                                  <div className="col-md-6 p-0">
-                                    <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                      THÊM VÀO GIỎ
-                                    </div>
-                                  </div>
-                                  <div className="col-md-6 p-0">
-                                  <div onClick={() => {
-                                      addToCart(product)
-                                      navigate('/cart/')
-                                      }} className="buy-btn">
-                                      MUA NGAY
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                    </div> */}
+                    <div>
+                    {/* <div style={{display: visible == true ? 'none' : 'block'}}>
+                      <div className="row">
+                      {sortedProducts.map(product => renderProduct(product))}
+                      </div>
+                    </div> */}
+                    {/* <div style={{display: visible == true ? 'block' : 'none'}}> */}
+                     
+                        <div className="row">
+                          {fetchData
+                            .filter(product => product.productType === selectedCategory)
+                            .map(product => renderProduct(product))}
                         </div>
-                        ))}
-
+                        <div className="row" style={{display: visible ? 'flex' : 'none'}}>
+                          {filteredProducts.map(product => renderProduct(product))}
+                        </div>
+                      </div>
+                    </div>
+                    </div>
             </div>
           </div>
             </div>
-          </div>
-        </div>
+        {/* </div> */}
          
     </>
   );

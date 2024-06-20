@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer__container">
             <div className="container">
                 <div className="row">
-                <div className="col-md-4 d-flex">
+                <div className="col-md-12 d-flex justify-content-center align-items-center">
                     <div className="header__logo">
                   <Link to="/">
                     <img 
@@ -18,9 +18,10 @@ export default function Footer() {
                     />
                   </Link>
                     </div>
-                  <div className="slogan">ĐƠN VỊ ORDER GẬY GOLF UY TÍN HÀNG ĐẦU VIỆT NAM <br /> GIAO HÀNG TỪ 3-5 NGÀY SAU KHI NHẬN CỌC </div>
+                  <div className="slogan">ĐƠN VỊ ORDER GẬY GOLF UY TÍN HÀNG ĐẦU VIỆT NAM <br /> <br /> GIAO HÀNG TỪ 3-5 NGÀY SAU KHI NHẬN CỌC </div>
                 </div>
-                <div className="col-md-4 pb-5 left">
+                <div className="d-flex justify-content-center">
+                <div className="pb-5 left">
                   <div className="footer__branch-location">
                     <h2 style={{color: '#ff3131', fontWeight:'bold'}}>KHO NHẬT BẢN</h2>
                     <p>KHO SAITAMA</p>
@@ -36,15 +37,16 @@ export default function Footer() {
                     <h2>ĐƠN VỊ HỢP TÁC: Vận chuyển MCS – GOLF Partner – GOLF DO</h2>
                   </div>
                 </div>
-                 <div className="col-md-4">
+                 <div>
                 <div className="policies d-flex flex-column align-items-start">
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Quy trình đặt hàng</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Thanh toán</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Vận chuyển và giao nhận</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Hải quan và các phí liên quan</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.4rem'}}to = ''>Chính sách đổi trả và bảo hànhh</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Quy trình đặt hàng</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Thanh toán</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Vận chuyển và giao nhận</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Hải quan và các phí liên quan</Link>
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Chính sách đổi trả và bảo hànhh</Link>
                 </div>
                   </div>
+                </div>
                 </div>
             </div>
         </div>

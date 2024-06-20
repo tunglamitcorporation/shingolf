@@ -20,19 +20,19 @@
       productName: 'Gậy Golf Cũ',
     },
     {
-      productId:'golfstickhangle',
+      productId:'grip',
       productName: 'Cán Gậy/ Grip',
     },
     {
-      productId:'golfclothesmen',
+      productId:'mengolfclothes',
       productName: 'Quần Áo Golf Nam',
     },
     {
-      productId:'golfclotheswwomen',
+      productId:'womengolfclothes',
       productName: 'Quần Áo Golf Nữ',
     },
     {
-      productId:'golfacessory',
+      productId:'accessories',
       productName: 'Phụ Kiện Golf',
     },
     {
@@ -44,7 +44,7 @@
       productName: 'Giày Golf',
     },
     {
-      productId:'golfpractice',
+      productId:'golftraining',
       productName: 'Phụ Kiện Tập Luyện',
     }
   ];
@@ -186,13 +186,46 @@
       return name.replace(/\s/g, '-');
     };
     const handleProduct = (product) => {
-      addProductToHistory(product);
+      addProductToHistory(product); 
       const formattedProductName = formatProductName(product.productName);
-      navigate(`/feature/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.saleprice, rate: product.rate, image: product.image, productType: product.productType }});
+      navigate(`/feature/${formattedProductName}`, { state: { 
+        price: product.price, 
+        productId: product.productId, 
+        sale: product.saleprice, 
+        rate: product.rate, 
+        productType: product.productType,
+        status: product.status,
+        amount: product.amount,
+        loft: product.loft,
+        stickType: product.sticktype,
+        stickHardType: product.stickhardtype,
+        feature: product.feature,
+        long: product.long,
+        weight: product.weight,
+        stickCover: product.stickcover,
+        accessory: product.accessory,
+        grip: product.grip,
+        hand: product.hand,
+        rank: product.rank,
+        produceYear: product.produceyear,
+        manageNumber: product.managenumber,
+        size: product.size,
+        shoesType: product.shoestype,
+        sex: product.sex,
+        brand: product.brand,
+        produceLocation: product.producelocation,
+        guarantee: product.guarantee,
+        color: product.color,
+        material: product.material,
+        content: product.content,
+        images: product.images,
+        productCode: product.productCode,
+        
+      }});
     };
     const handleProductType = (product) => {
       const formattedProductId = formatProductName(product.productId);
-      navigate(`/service/${formattedProductId}`, { state: { price: product.price, id: product.productId } });
+      navigate(`/product-list/${formattedProductId}`, { state: { price: product.price, id: product.productId } });
     };
     const c = t("header.title")         
     const selectedProducts = [
@@ -297,7 +330,7 @@
             <div className="content__feature-title">GẬY GOLF MỚI</div>
             <div className="container">
             <div className="row">
-      {productData
+      {fetchData
         .filter(product => product.productId === 'newgolfclub')
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3">
@@ -309,7 +342,7 @@
                     className="content__feature-img"
                     style={{
                       backgroundImage:
-                      `url(${product.image[0]})`,
+                      `url(${product.images})`,
                       }}
                   >
                     <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
@@ -321,7 +354,7 @@
                 <div style={{padding:'10px'}}>
                 <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
                 </div>
                 <div className="content__feature-name">
                   <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -333,18 +366,20 @@
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
-                    <div className="col-md-6 p-0">
+                    {/* <div className="col-md-6 p-0">
                       <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                         THÊM VÀO GIỎ
                       </div>
+                    </div> */}
+                   <div className="col-md-12 p-0">
+                    <div 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                      className="buy-btn">
+                      LIÊN HỆ
                     </div>
-                    <div className="col-md-6 p-0">
-                    <div onClick={() => {
-                        addToCart(product)
-                        navigate('/cart/')
-                        }} className="buy-btn">
-                        MUA NGAY
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -361,8 +396,8 @@
             <div className="content__feature-title">TRANG PHỤC</div>
             <div className="container">
             <div className="row">
-      {productData
-        .filter(product => product.productId === 'golfclothesmen')
+      {fetchData
+        .filter(product => product.productId === 'mengolfclothes')
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3" >
             <div style={{ textDecoration: 'none' }}>
@@ -385,7 +420,7 @@
                 <div style={{padding:'10px'}}>
                 <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform: 'capitalize'}}>{product.rank}</div>
                 </div>
                 <div className="content__feature-name">
                   <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -397,18 +432,20 @@
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
-                    <div className="col-md-6 p-0">
+                    {/* <div className="col-md-6 p-0">
                       <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                         THÊM VÀO GIỎ
                       </div>
+                    </div> */}
+                    <div className="col-md-12 p-0">
+                    <div 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                      className="buy-btn">
+                      LIÊN HỆ
                     </div>
-                    <div className="col-md-6 p-0">
-                    <div onClick={() => {
-                        addToCart(product)
-                        navigate('/cart/')
-                        }} className="buy-btn">
-                        MUA NGAY
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -425,7 +462,7 @@
             <div className="content__feature-title">TÚI GOLF</div>
             <div className="container">
             <div className="row">
-      {productData
+      {fetchData
         .filter(product => product.productId === 'golfbag')
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3">
@@ -449,7 +486,7 @@
               <div style={{padding:'10px'}}>
               <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
                 </div>
               <div className="content__feature-name">
                 <div  className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -461,17 +498,19 @@
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
-                  <div className="col-md-6 p-0">
+                  {/* <div className="col-md-6 p-0">
                     <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                       THÊM VÀO GIỎ
                     </div>
-                  </div>
-                  <div className="col-md-6 p-0">
-                  <div onClick={() => {
-                      addToCart(product)
-                      navigate('/cart/')
-                      }} className="buy-btn">
-                      MUA NGAY
+                  </div> */}
+                  <div className="col-md-12 p-0">
+                  <div 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                      className="buy-btn">
+                      LIÊN HỆ
                     </div>
                   </div>
                 </div>

@@ -15,12 +15,13 @@ import Page2 from './Test2';
 import SearchPage from './container/Units/SearchPage';
 import RankTable from './container/Units/RatePage';
 import AdminManage from './container/User/AdminManage';
-import { takeAll } from './api/product';
+import { makeListMenu, takeAll } from './api/product';
 function NewRouter() {
   const [fetchData, setFetchData] = useState([]);
+  const [listMenu, setListMenu] = useState([]);
 
   useEffect(() => {
-    const token = ''; // Set your token here
+    const token = ''; 
     takeAll(token)
         .then(response => {
             setFetchData(response.data.data);
@@ -29,6 +30,17 @@ function NewRouter() {
         .catch(error => {
             console.error('Error fetching data:', error);
         });
+}, []);
+useEffect(() => {
+  const token = ''; 
+  makeListMenu(token)
+      .then(response => {
+          setListMenu(response.data.data);
+          console.log('Data received:', response.data);
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
 }, []);
     // const { i18n } = useTranslation();
     const [deviceType, setDeviceType] = useState('');
@@ -54,16 +66,16 @@ function NewRouter() {
             <Routes>
 
                 <Route exact path='/' element={<Home fetchData = {fetchData} />} />
-                <Route path = "/service/:productType" element={<VietnamService />} />
-                <Route path = "/service/" element={<VietnamService />} />
+                <Route path = "/product-list/:productType" element={<VietnamService fetchData = {fetchData} listMenu={listMenu}  />} />
+                <Route path = "/product-list/" element={<VietnamService fetchData = {fetchData} listMenu={listMenu} />} />
                 <Route path = "/cart/" element={<Cart />} />
-                <Route path = "/feature/:productName" element={<Feature  fetchData = {fetchData} />} />
+                <Route path = "/product/:productName" element={<Feature fetchData = {fetchData} />} />
                 <Route path = "/admin/home" element={<AdminManage />} exact/>
                 <Route path = "/admin/login" element={<LoginContainer />} exact/>
                 <Route path = '*' element={<Home fetchData={fetchData} />} />
                 <Route path = '/dev-test' element={<Reservation_backup deviceType={deviceType}/>} />
                 <Route path = '/test' element={<Page1 />} />
-                <Route path = '/search/' element = {<SearchPage />} />
+                <Route path = '/search/' element = {<SearchPage listMenu={listMenu} />} />
                 <Route path = '/rate/' element = {<RankTable />} />
                 <Route path='/test2/:productName' element={<Page2 />} />
             </Routes>
