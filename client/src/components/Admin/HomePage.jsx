@@ -128,7 +128,7 @@ function HomePage() {
 
         try {
         console.log("start up Picture 2")
-        const response = await fetch(`/upload${link}/${name}`, { //+dataState._id
+        const response = await fetch(`http://103.163.119.180:5100/upload${link}/${name}`, { //+dataState._id
             method: 'POST',
             body: formData,
             // headers: { Authorization: "", },
