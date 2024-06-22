@@ -136,7 +136,7 @@ function HomePage() {
         //     // headers: { Link: link, Name: name },
         // });
 
-        const response = await axios.post(`/upload${link}/${name}`, formData, {
+        const response = await axios.post(`http://103.163.119.180:5100/upload${link}/${name}`, formData, {
             headers: {
                 'Content-Type':'multipart/form-data'
             }

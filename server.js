@@ -15,6 +15,8 @@ const app = express();
 //const axios = require('axios');
 var bodyParser = require('body-parser');
 
+app.use(cors());
+
 const multer = require('multer');
 
 var jsonParser = bodyParser.json({ limit: 1024 * 1024 * 20, type: 'application/json' });
@@ -87,7 +89,7 @@ app.use(jsonParser);
 app.use(urlencodedParser);
 
 app.use(express.json());
-app.use(cors());
+
 app.use(cookieParser());
 app.use(fileUpload({ useTempFiles: true }));
 
