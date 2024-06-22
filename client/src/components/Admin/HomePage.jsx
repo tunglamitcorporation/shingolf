@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './adminComponets.css'
+import './adminComponets.css';
+import axios from 'axios';
 
 function HomePage() {
 
@@ -128,13 +129,18 @@ function HomePage() {
 
         try {
         console.log("start up Picture 2")
-        const response = await fetch(`http://103.163.119.180:5100/upload${link}/${name}`, { //+dataState._id
-            method: 'POST',
-            body: formData,
-            // headers: { Authorization: "", },
-            // headers: { Link: link, Name: name },
-        });
+        // const response = await fetch(`/upload${link}/${name}`, { //+dataState._id
+        //     method: 'POST',
+        //     body: formData,
+        //     // headers: { Authorization: "", },
+        //     // headers: { Link: link, Name: name },
+        // });
 
+        const response = await axios.post(`/upload${link}/${name}`, formData, {
+            headers: {
+                'Content-Type':'multipart/form-data'
+            }
+        });
         console.log("response", response);
 
         //   if (response.ok) {
