@@ -45,7 +45,8 @@ const productSchema = new mongoose.Schema({
         image2: { type: String , default:"" },
         image3: { type: String , default:"" },
         image4: { type: String , default:"" }
-    }
+    },
+    activate: {type: Boolean, default: true}
 }, {
     timestamps: true
 })

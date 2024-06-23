@@ -5,13 +5,17 @@ import { Form, Container, Row, Col } from 'react-bootstrap';
 import './adminComponets.css'
 function ProductShowDetail(props) {
     // const {listMenu} = props;
-    const LIST_SELECT_PRODUCT_ID =  ['golfsticknew', 'golfstickold', 'golfstickhangle', 'golfclothesmen', 'golfclotheswwomen', 'golfacessory', 'golfbag', 'golfshoes', 'golfpractice'];
+   // const LIST_SELECT_PRODUCT_ID =  ['golfsticknew', 'golfstickold', 'golfstickhangle', 'golfclothesmen', 'golfclotheswwomen', 'golfacessory', 'golfbag', 'golfshoes', 'golfpractice'];
+    const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining"];
+    const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+
     const [data, setData] =useState({
       productDetail: {
         "productId": "",
         "category": "",
         "productType": "",
         "productname": "",
+        "productCode": "",
         // "productImage": [],
         "status": "",
         "amount": 0,
@@ -76,7 +80,6 @@ function ProductShowDetail(props) {
             newData.productDetail.productId = LIST_SELECT_PRODUCT_ID[0];
             newData.productDetail.productType = props.listMenu[""+Object.keys(props.listMenu)[0]][0];
             
-
             setData(newData);
           }
         }
@@ -196,8 +199,7 @@ function ProductShowDetail(props) {
       // image_data
   
       try {
-       console.log("start up Picture 2")
-        const response = await fetch(`http://103.163.119.180:5100/upload${link}/${name}`, { //+dataState._id
+        const response = await fetch(`/upload${link}/${name}`, { //+dataState._id
           method: 'POST',
           body: formData,
           headers: { Authorization: "", },
@@ -328,7 +330,7 @@ function ProductShowDetail(props) {
                     {checkName(key)}
                   </Form.Label>
 
-                  <div className="product_show_detail-content d-flex">
+                 {data.productDetail.productCode !== "" && <div className="product_show_detail-content d-flex">
 
                     <div style={{width:"20%"}} className="mr-2">
                         <img className="product_show_detail-content-item" src="https://toquoc.mediacdn.vn/2018/12/25/cau-vang-ba-na-3-15457134861131150541874.jpg"></img>
@@ -360,7 +362,7 @@ function ProductShowDetail(props) {
                         <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test5")}>Update Sale</button>
                     </div>
 
-                </div>
+                </div> }
               </Form.Group>
     
         ))}
