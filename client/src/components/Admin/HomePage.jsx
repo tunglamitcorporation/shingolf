@@ -22,64 +22,64 @@ function HomePage() {
     const LIST_UPDATE = {
         banner: [
             {
-                "linkPicture": "banner/banner1.jpg",
+                "linkPicture": "banner/banner1.png",
                 "linkUpdate": "/home/banner",
                 "name": "banner1"
             },
             {
-                "linkPicture": "banner/banner2.jpg",
+                "linkPicture": "banner/banner2.png",
                 "linkUpdate": "/home/banner",
                 "name": "banner2"
             },
             {
-                "linkPicture": "banner/banner3.jpg",
+                "linkPicture": "banner/banner3.png",
                 "linkUpdate": "/home/banner",
                 "name": "banner3"
             },
             {
-                "linkPicture": "banner/banner4.jpg",
+                "linkPicture": "banner/banner4.png",
                 "linkUpdate": "/home/banner",
                 "name": "banner4"
             },
             {
-                "linkPicture": "banner/banner5.jpg",
+                "linkPicture": "banner/banner5.png",
                 "linkUpdate": "/home/banner",
                 "name": "banner5"
             },
             {
-                "linkPicture": "banner/banner6.jpg",
+                "linkPicture": "banner/banner6.png",
                 "linkUpdate": "/home/banner",
                 "name": "banner6"
             }
         ],
         sale: [
             {
-                "linkPicture": "sale/sale1.jpg",
+                "linkPicture": "sale/sale1.png",
                 "linkUpdate": "/home/sale",
                 "name": "sale1"
             },
             {
-                "linkPicture": "sale/sale2.jpg",
+                "linkPicture": "sale/sale2.png",
                 "linkUpdate": "/home/sale",
                 "name": "sale2"
             },
             {
-                "linkPicture": "sale/sale3.jpg",
+                "linkPicture": "sale/sale3.png",
                 "linkUpdate": "/home/sale",
                 "name": "sale3"
             },
             {
-                "linkPicture": "sale/sale4.jpg",
+                "linkPicture": "sale/sale4.png",
                 "linkUpdate": "/home/sale",
                 "name": "sale4"
             },
             {
-                "linkPicture": "sale/sale5.jpg",
+                "linkPicture": "sale/sale5.png",
                 "linkUpdate": "/home/sale",
                 "name": "sale5"
             },
             {
-                "linkPicture": "sale/sale6.jpg",
+                "linkPicture": "sale/sale6.png",
                 "linkUpdate": "/home/sale",
                 "name": "sale6"
             }
