@@ -56,7 +56,9 @@ const productCtrl = {
             const { value } = dataOnBody;
 
             if(type === "name") {
-                const dataReturn = await PRODUCT.find({ name: { $regex: value, $options: "i" }}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+                const dataReturn = await PRODUCT.find({ productName: { $regex: value }}, {logEdit: 0, createdAt: 0, updatedAt: 0,}); //, $options: "i"
+                //const dataReturn = await PRODUCT.find({ productName: value }, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+
                 return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
             }
 
