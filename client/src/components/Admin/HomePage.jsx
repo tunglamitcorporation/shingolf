@@ -129,18 +129,21 @@ function HomePage() {
 
         try {
         console.log("start up Picture 2")
-        // const response = await fetch(`/upload${link}/${name}`, { //+dataState._id
-        //     method: 'POST',
-        //     body: formData,
-        //     // headers: { Authorization: "", },
-        //     // headers: { Link: link, Name: name },
-        // });
-
-        const response = await axios.post(`http://103.163.119.180:5100/upload${link}/${name}`, formData, {
-            headers: {
-                'Content-Type':'multipart/form-data'
-            }
+       const response = await fetch(`/upload${link}/${name}`, { //+dataState._id
+       // const response = await fetch(`/user/update_picture/home/banner/banner2`, { //+dataState._id
+            method: 'POST',
+            body: formData,
+            // headers: { Authorization: "", },
+            // headers: { Link: link, Name: name },
         });
+
+        // const response = await axios.post(`/user/update_picture/home/banner/banner2`, formData, {
+        //     //http://localhost:3000/user/update_picture/product/image/test2
+        //     ///user/update_picture/home/banner/banner2
+        //     headers: {
+        //         'Content-Type':'multipart/form-data'
+        //     }
+        // });
         console.log("response", response);
 
         //   if (response.ok) {

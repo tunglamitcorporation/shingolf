@@ -49,7 +49,7 @@ const userCtrl = {
             return res.status(500).json({ msg: error.message });
         }
     },
-    login: async = async (req, res) => {
+    login: async (req, res) => {
         try {
             const { email, password } = req.body;
             console.log("vo here")
@@ -81,6 +81,26 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    updatePicture: async (req, res) => {
+        try {
+
+            const { link1, link2, name } = req.params;
+
+            // console.log("link1", link1)
+            // console.log("link2", link2)
+            // console.log("name", name)
+
+            // if (!req.file) {
+            // return res.status(400).send('Không có ảnh được tải lên.');
+            // }
+        
+            return res.status(200).json({ imageUrl: `/image/${link1}/${link2}/${name}.png` });
+
+        } catch (err) {
+            console.log("err.message", err.message);
+            return res.status(500).json({msg: err.message})    
+        }
+    }
 }
 
 function validateEmail(email) {

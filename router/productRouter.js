@@ -13,6 +13,8 @@ router.get('/take_all', productCtrl.takeAll);
 
 router.post('/take_categories/:type', productCtrl.takeListCategory);
 
+// router.post('/update_picture', productCtrl.updatePicture)
+
 
 // router.past('/change_category', productCtrl.changeByAdmin);
 

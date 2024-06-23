@@ -16,12 +16,14 @@ const app = express();
 var bodyParser = require('body-parser');
 
 app.use(cors());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 
 const multer = require('multer');
 
 var jsonParser = bodyParser.json({ limit: 1024 * 1024 * 20, type: 'application/json' });
 var urlencodedParser = bodyParser.urlencoded({
-    extended: true,
+    extended: false,//true,
     limit: 1024 * 1024 * 20,
     parameterLimit: 50000,
     type: 'application/x-www-form-urlencoded'
@@ -62,13 +64,13 @@ const upload = multer({
     }
   });
 
-//   app.post('/upload/:id', upload.single('image'), (req, res) => {
-//     if (!req.file) {
-//       return res.status(400).send('Không có ảnh được tải lên.');
-//     }
-  
-//     return res.status(200).json({ imageUrl: `/img/passport/${req.file.filename}` });
-//   });
+app.post('/upload/:id', upload.single('image'), (req, res) => {
+if (!req.file) {
+    return res.status(400).send('Không có ảnh được tải lên.');
+}
+
+return res.status(200).json({ imageUrl: `/img/passport/${req.file.filename}` });
+});
   
 app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
     console.log("req.params",  req.params)
