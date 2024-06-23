@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import Collapsible from 'react-collapsible'
 import { makeListMenu } from "../../api/product";
+import ProductHistoryContext from "../../ProductHistoryContext";
 
 export default function VietnamService({fetchData, listMenu}) {
   const navigate = useNavigate()
@@ -17,6 +18,7 @@ export default function VietnamService({fetchData, listMenu}) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('');
   const [visible, setVisible] = useState (true)
+  const { addProductToHistory } = useContext(ProductHistoryContext);
 
   const convertListMenu = []
   for (const [title, items] of Object.entries(listMenu)) {
@@ -119,7 +121,10 @@ export default function VietnamService({fetchData, listMenu}) {
             <div
               onClick={() => handleProduct(product)}
               className="content__feature-img"
-              style={{ backgroundImage: `url(${product.image})` }}
+              style={{ 
+                backgroundImage: `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+               }}
+              title={product.productCode}
             >
               <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '50px', height: '50px', position: 'absolute', right: 0, backgroundColor: '#fec800', color: '#ff3131', fontSize: '1.4rem', fontWeight: 'bold' }}>
                 <div>Sale</div>

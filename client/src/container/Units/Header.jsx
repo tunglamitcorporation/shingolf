@@ -16,6 +16,7 @@ function Header() {
   //   Cookies.set('selectedLanguage', lng, {expires: 365})
     
   // };
+  const { addProductToHistory } = useContext(ProductHistoryContext);
   const [isOpen, setIsOpen] = useState(false)
   const [exchangeRate, setExchangeRate] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -55,7 +56,39 @@ function Header() {
   const handleProduct = (product) => {
     addProductToHistory(product);
     const formattedProductName = formatProductName(product.productName);
-    navigate(`/feature/${formattedProductName}`, { state: { price: product.price, id: product.id } });
+    navigate(`/product/${formattedProductName}`, { state: { 
+      price: product.price, 
+      productId: product.productId, 
+      sale: product.saleprice, 
+      rate: product.rate, 
+      productType: product.productType,
+      status: product.status,
+      amount: product.amount,
+      loft: product.loft,
+      stickType: product.sticktype,
+      stickHardType: product.stickhardtype,
+      feature: product.feature,
+      long: product.long,
+      weight: product.weight,
+      stickCover: product.stickcover,
+      accessory: product.accessory,
+      grip: product.grip,
+      hand: product.hand,
+      rank: product.rank,
+      produceYear: product.produceyear,
+      manageNumber: product.managenumber,
+      size: product.size,
+      shoesType: product.shoestype,
+      sex: product.sex,
+      brand: product.brand,
+      produceLocation: product.producelocation,
+      guarantee: product.guarantee,
+      color: product.color,
+      material: product.material,
+      content: product.content,
+      images: product.images,
+      productCode: product.productCode,
+    }});
     setSearchTerm('')
   }
   const handleChange = (event) => {
@@ -176,7 +209,7 @@ function Header() {
                 <div className='container-fluid'>
                     <div className='row align-items-center'>
                     <div className="col-md-6">
-                        <div className="header-text">Liên hệ: 0123456789</div>
+                        <div className="header-text">Liên hệ: 0564545545</div>
                         <div className="header-text">Tỉ giá hôm nay: {exchangeRate}</div>
                     </div>
                     <div className="col-md-6 d-flex justify-content-center align-items-center">
@@ -294,7 +327,7 @@ function Header() {
 
             </div>
                             <div className="d-flex">
-            <a href="tel:01541251" className="text-decoration-none d-flex align-items-center phone-container">
+            <a href="tel:0564545545" className="text-decoration-none d-flex align-items-center phone-container">
               <i class="fa-solid fa-phone mr-3" style={{color:'#ff3131', fontSize: '2rem'}}></i>
               {/* <div>0123141235</div> */}
             </a>

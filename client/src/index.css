@@ -958,7 +958,7 @@ code {
 .content{
   position: relative; 
   width: 100%;
-  background-color:rgba(0,0,0,1);
+  /* background-color:rgba(0,0,0,1); */
   z-index: 1;
   margin-top: 50px;
 
@@ -2407,9 +2407,9 @@ height: 250px;
   width: 160px;
   align-items: flex-end;
 }
-.awssld__content img{
+/* .awssld__content img{
 filter: brightness(0.5);
-}
+} */
 .carousel_name{
   position: absolute;
   right: 20px;

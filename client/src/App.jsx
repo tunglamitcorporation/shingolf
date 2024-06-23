@@ -70,16 +70,9 @@ function App() {
             <button className="btn__top" onClick={scrollToTop}>
             <i className="fa-solid fa-angle-up"></i>
             </button>
-            <button className ='btn-en btn_en-fixed ' onClick={()=>{
-              changeLanguage('en')
-            }}></button>                
-            <button className ='btn-ja btn_ja-fixed' onClick={()=>{
-              changeLanguage('ja')
-              }}></button>  
-            <button className ='btn-vie btn_vie-fixed' onClick={()=>{
-              changeLanguage('vie')
-              }}></button>
-            {/* <button className ='btn-kor btn_kor-fixed' onClick={()=>changeLanguage('kor')}></button>   */}
+            <a className="btn-en btn_en-fixed" href="tel:0564545545"></a>              
+            <a className ='btn-ja btn_ja-fixed' href=""></a>  
+            <a className ='btn-vie btn_vie-fixed' href="https://zalo.me/0564545545"></a>
             </>        
                     )}
     </div>

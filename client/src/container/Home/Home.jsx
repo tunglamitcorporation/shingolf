@@ -178,6 +178,7 @@
   export default function Home({fetchData}) {
     const { t } = useTranslation();
     const caption = t("caption", {returnObjects: true})
+    const caption2 = t("caption2", {returnObjects: true})
     const navigate = useNavigate()
     const { addToCart } = useCart();
     
@@ -188,7 +189,7 @@
     const handleProduct = (product) => {
       addProductToHistory(product); 
       const formattedProductName = formatProductName(product.productName);
-      navigate(`/feature/${formattedProductName}`, { state: { 
+      navigate(`/product/${formattedProductName}`, { state: { 
         price: product.price, 
         productId: product.productId, 
         sale: product.saleprice, 
@@ -257,6 +258,8 @@
         </div>
       );
     };
+    // const code = 'A0001'
+    // console.log(`https://shingolf.vn/image/product/image/${code}_image1.png`);
   const AutoPlaySlider = withAutoplay(AwesomeSlider)
     return (
       <>
@@ -266,7 +269,6 @@
           <div className="row">
             <div className="col-md-12 mt-0">
         <div className="content">
-        {/* <div className="overlay"></div> */}
         <AutoPlaySlider
         animation = "scaleOutAnimation"
         mobileTouch
@@ -275,7 +277,7 @@
         play
         interval = {5000}>
               {caption.map((item) => (
-                <div data-src={item.image}>
+                <div data-src={item.image} title={item.image}>
                                   {/* <Link to = {item.link}>
                                     <p className="carousel_name">{item.name}<br />{item.caption}</p>
                                     </Link> */}
@@ -284,7 +286,6 @@
           </AutoPlaySlider>
         </div>
         <div className="content">
-        {/* <div className="overlay"></div> */}
         <AutoPlaySlider
         animation = "scaleOutAnimation"
         mobileTouch
@@ -292,8 +293,8 @@
         infinite
         play
         interval = {5000}>
-              {caption.map((item) => (
-                <div data-src={item.image}>
+              {caption2.map((item) => (
+                <div data-src={item.image} title={item.image}>
                                   {/* <Link to = {item.link}>
                                     <p className="carousel_name">{item.name}<br />{item.caption}</p>
                                     </Link> */}
@@ -342,8 +343,9 @@
                     className="content__feature-img"
                     style={{
                       backgroundImage:
-                      `url(${product.images})`,
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
                       }}
+                      title={product.productCode}
                   >
                     <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                     <div>Sale</div>
@@ -372,14 +374,15 @@
                       </div>
                     </div> */}
                    <div className="col-md-12 p-0">
-                    <div 
+                    <a 
                   // onClick={() => {
                   //     addToCart(product)
                   //     navigate('/cart/')
                   //     }} 
+                      href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
-                    </div>
+                    </a>
                     </div>
                   </div>
                 </div>
@@ -408,8 +411,9 @@
                     className="content__feature-img"
                     style={{
                       backgroundImage:
-                      `url(${product.image})`,
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
                       }}
+                      title={product.productCode}
                   >
                     <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                     <div>Sale</div>
@@ -438,14 +442,15 @@
                       </div>
                     </div> */}
                     <div className="col-md-12 p-0">
-                    <div 
+                    <a 
                   // onClick={() => {
                   //     addToCart(product)
                   //     navigate('/cart/')
                   //     }} 
+                   href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
-                    </div>
+                    </a>
                     </div>
                   </div>
                 </div>
@@ -474,8 +479,9 @@
                   className="content__feature-img"
                   style={{
                     backgroundImage:
-                    `url(${product.image})`,
+                    `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
                     }}
+                    title={product.productCode}
                 >
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                   <div>Sale</div>
@@ -504,14 +510,15 @@
                     </div>
                   </div> */}
                   <div className="col-md-12 p-0">
-                  <div 
+                  <a 
                   // onClick={() => {
                   //     addToCart(product)
                   //     navigate('/cart/')
                   //     }} 
+                   href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>

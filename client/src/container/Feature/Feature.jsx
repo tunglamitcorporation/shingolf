@@ -6,133 +6,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useLocation } from "react-router-dom";
 import ProductHistoryContext from "../../ProductHistoryContext";
-const productData = [
-  {
-    id: 'golfsticknew',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-  {
-    id: 'golfsticknew',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-  {
-    id: 'golfsticknew',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-  {
-    id: 'golfsticknew',
-    productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-    image :'https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg',
-    price: 33500000,
-    sale: 28475000,
-    rate: 5,
-    productType:'New'
-  },
-   {
-     id:'golfclothesmen',
-     productName: 'Áo Mens UA Matchplay Stripe Polo',
-     image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-    price: 3500000,
-    sale: 2847500,
-    rate: 4,
-    productType:'Like New'
-
-
-   },
-   {
-    id:'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-   price: 3500000,
-   sale: 2847500,
-   rate: 4,
-   productType:'Like New'
-
-
-  },
-  {
-    id:'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-   price: 3500000,
-   sale: 2847500,
-   rate: 4,
-   productType:'Like New'
-
-
-  },
-  {
-    id:'golfclothesmen',
-    productName: 'Áo Mens UA Matchplay Stripe Polo',
-    image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-   price: 3500000,
-   sale: 2847500,
-   rate: 4,
-   productType:'Like New'
-
-
-  },
-   {
-     id:'golfbag',
-     productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-     image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-     price: 5000000,
-    sale: 4750000,  
-    rate: 3,
-    productType:'Outlet'
-
-
-   },
-   {
-    id:'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: 5000000,
-   sale: 4750000,  
-   rate: 3,
-   productType:'Outlet'
-
-
-  },
-  {
-    id:'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: 5000000,
-   sale: 4750000,  
-   rate: 3,
-   productType:'Outlet'
-
-
-  },
-  {
-    id:'golfbag',
-    productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-    image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-    price: 5000000,
-   sale: 4750000,  
-   rate: 3,
-   productType:'Outlet'
-
-
-  }
-
-  ]
 export default function Feature({fetchData}) {
   const { t } = useTranslation();
   const { productName } = useParams();
@@ -237,9 +110,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -269,7 +142,7 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{stickHardType}</li>
                     </ul>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                      <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -277,7 +150,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                        <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -335,15 +208,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -366,8 +239,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -402,14 +276,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-12 p-0">
-                          <div 
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
                           //     }}
+                                href="https://zalo.me/0564545545"
                                className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -439,9 +314,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-               <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -471,7 +346,7 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{stickHardType}</li>
                     </ul>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -479,7 +354,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -537,15 +412,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -568,8 +443,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -604,14 +480,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-12 p-0">
-                          <div 
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
                           //     }}
+                                href="https://zalo.me/0564545545"
                                className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -641,9 +518,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-               <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -669,7 +546,7 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>X</li>
                     </ul>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -677,7 +554,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -723,15 +600,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={images.image1}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={images.image2}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={images.image3}/>
              </div>
              {content.content4}
               </p>
@@ -754,8 +631,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -784,14 +662,15 @@ export default function Feature({fetchData}) {
                             </div> */}
                           {/* </div> */}
                           <div className="col-md-12 p-0">
-                          <div 
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
-                          //     }} 
-                              className="buy-btn">
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -821,9 +700,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-           <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+            <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -849,7 +728,7 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{sex}</li>
                     </ul>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -857,7 +736,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -899,15 +778,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -930,8 +809,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -966,14 +846,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-6 p-0">
-                          <div
-                          //  onClick={() => {
+                          <a 
+                          // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
-                          //     }} 
-                              className="buy-btn">
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1003,9 +884,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-             <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -1031,7 +912,7 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{sex}</li>
                     </ul>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -1039,7 +920,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -1081,15 +962,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -1112,8 +993,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -1148,14 +1030,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-12 p-0">
-                          <div 
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
                           //     }}
+                                href="https://zalo.me/0564545545"
                                className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1185,9 +1068,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+               <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -1205,7 +1088,7 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -1213,7 +1096,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -1251,15 +1134,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -1282,8 +1165,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -1318,14 +1202,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-12 p-0">
-                          <div
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
                           //     }}
+                                href="https://zalo.me/0564545545"
                                className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1355,9 +1240,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+               <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -1375,7 +1260,7 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -1383,7 +1268,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -1425,15 +1310,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -1456,8 +1341,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -1492,14 +1378,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-6 p-0">
-                          <div 
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
-                          //     }} 
-                              className="buy-btn">
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1529,9 +1416,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={images} />
-              <img src={images} />
-              <img src={images} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -1557,7 +1444,7 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{sex}</li>
                     </ul>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -1565,7 +1452,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -1615,15 +1502,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image1}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image2}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image3}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -1646,8 +1533,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -1682,14 +1570,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-12 p-0">
-                          <div 
+                          <a 
                           // onClick={() => {
                           //     addToCart(product)
                           //     navigate('/cart/')
-                          //     }} 
-                              className="buy-btn">
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
                               LIÊN HỆ
-                            </div>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1719,9 +1608,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img src={images.image1} />
-              <img src={images.image2} />
-              <img src={images.image3} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`} />
+              <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -1739,7 +1628,7 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                     <div className="hotline">
-                      <a href="tel:012931231124">HotLine: 1094581205812</a>
+                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
@@ -1747,7 +1636,7 @@ export default function Feature({fetchData}) {
                         <Link to = "" className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px'}}>THÊM VÀO GIỎ</Link>
                         </div> */}
                         <div className="col-md-12 p-0">
-                        <Link to = ""className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
+                       <Link to ="https://zalo.me/0564545545" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</Link>
                         </div>
                       </div>
                     </div>
@@ -1777,15 +1666,15 @@ export default function Feature({fetchData}) {
               <p>
              {content.content1}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image1.png`}/>
              </div>
              {content.content2}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image2.png`}/>
              </div>
              {content.content3}
              <div className="d-flex justify-content-center" style={{marginTop: 10}}>
-             <img src={images.image}/>
+             <img alt={productCode} src={`https://shingolf.vn/image/product/image/${productCode}_image3.png`}/>
              </div>
              {content.content4}
               </p>
@@ -1808,8 +1697,9 @@ export default function Feature({fetchData}) {
                           className="content__feature-img"
                           style={{
                             backgroundImage:
-                            `url(${product.image})`,
+                             `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                             }}
+title={product.productCode}
                         >
                           <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
                           <div>Sale</div>
@@ -1844,14 +1734,15 @@ export default function Feature({fetchData}) {
                             </div>
                           </div> */}
                           <div className="col-md-12 p-0">
-                    <div 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </div>
+                          <a 
+                          // onClick={() => {
+                          //     addToCart(product)
+                          //     navigate('/cart/')
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
+                              LIÊN HỆ
+                            </a>
                     </div>
                         </div>
                       </div>
@@ -1885,7 +1776,7 @@ export default function Feature({fetchData}) {
                         className="content__feature-img"
                         style={{
                           backgroundImage:
-                          `url(${product.image})`,
+                           `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                           }}
                       >
                         <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
@@ -1921,14 +1812,15 @@ export default function Feature({fetchData}) {
                           </div>
                         </div> */}
                         <div className="col-md-12 p-0">
-                    <div 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </div>
+                        <a 
+                          // onClick={() => {
+                          //     addToCart(product)
+                          //     navigate('/cart/')
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
+                              LIÊN HỆ
+                            </a>
                     </div>
                       </div>
                     </div>
@@ -1952,7 +1844,7 @@ export default function Feature({fetchData}) {
                         className="content__feature-img"
                         style={{
                           backgroundImage:
-                          `url(${product.images})`,
+                          `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                           }}
                       >
                         <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
@@ -1988,14 +1880,15 @@ export default function Feature({fetchData}) {
                           </div>
                         </div> */}
                         <div className="col-md-12 p-0">
-                    <div 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </div>
+                        <a 
+                          // onClick={() => {
+                          //     addToCart(product)
+                          //     navigate('/cart/')
+                          //     }}
+                                href="https://zalo.me/0564545545"
+                               className="buy-btn">
+                              LIÊN HỆ
+                            </a>
                     </div>
                       </div>
                     </div>
