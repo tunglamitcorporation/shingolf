@@ -4,12 +4,13 @@ import logo from '../../image/logo.jpg'
 export default function Footer() {
     const {t} = useTranslation();
     const footer = t("footer.branch", {returnObjects: true})
+    const policies = t("policies_content", {returnObjects: true})
     return(
         <div className="footer">
         <div className="footer__container">
             <div className="container">
                 <div className="row">
-                <div className="col-md-12 d-flex justify-content-center align-items-center">
+                <div className="col-12 col-md-2">
                     <div className="header__logo">
                   <Link to="/">
                     <img 
@@ -18,10 +19,14 @@ export default function Footer() {
                     />
                   </Link>
                     </div>
-                  <div className="slogan">ĐƠN VỊ ORDER GẬY GOLF UY TÍN HÀNG ĐẦU VIỆT NAM <br /> <br /> GIAO HÀNG TỪ 3-5 NGÀY SAU KHI NHẬN CỌC </div>
                 </div>
-                <div className="d-flex justify-content-center">
-                <div className="pb-5 left">
+                <div className="col-12 col-md-10 mb-4">
+                  <div className="slogan mt-5">ĐƠN VỊ ORDER GẬY GOLF UY TÍN HÀNG ĐẦU VIỆT NAM </div>
+                  <div className="slogan mt-2">GIAO HÀNG TỪ 3-5 NGÀY SAU KHI NHẬN CỌC </div>
+                </div>
+                <div className="container">
+                  <div className="row">
+                <div className="col-md-6 col-12 pb-5 left">
                   <div className="footer__branch-location">
                     <h2 style={{color: '#ff3131', fontWeight:'bold'}}>KHO NHẬT BẢN</h2>
                     <p>KHO SAITAMA</p>
@@ -32,19 +37,18 @@ export default function Footer() {
                     <p><i class="fa-solid fa-phone"></i> 07085861274</p>
                     <h2 style={{color: '#ff3131', fontWeight:'bold'}}>KHO VIỆT NAM</h2>
                     <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: SỐ 41 – NGÕ 69 – VẠN XUÂN – LAI XÁ – KIM CHUNG – HOÀI ĐỨC – HÀ NỘI</p>
-                    <p><i class="fa-solid fa-phone"></i> 08686234999</p>
+                    <p><i class="fa-solid fa-phone"></i> 0868623499</p>
                     <h2>ĐƠN VỊ VẬN CHUYỂN: Vận chuyển MCS – SAGAWA EXPRESS – VIETTEL POST</h2>
                     <h2>ĐƠN VỊ HỢP TÁC: Vận chuyển MCS – GOLF Partner – GOLF DO</h2>
                   </div>
                 </div>
-                 <div>
+                 <div className="col-md-6 col-12">
                 <div className="policies d-flex flex-column align-items-start">
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Quy trình đặt hàng</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Thanh toán</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Vận chuyển và giao nhận</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Hải quan và các phí liên quan</Link>
-                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = ''>Chính sách đổi trả và bảo hànhh</Link>
+                  {policies.map(item => (
+                    <Link style={{color: '#ff3131', fontWeight:'bold', fontSize: '1.6rem'}}to = {`/policies/${item.title.replace(/\s/g, '-')}/`}>{item.title}</Link>
+                  ))}
                 </div>
+                  </div>
                   </div>
                 </div>
                 </div>

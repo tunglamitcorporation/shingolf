@@ -10,178 +10,54 @@
   import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
   import ProductHistoryContext from "../../ProductHistoryContext";
   import { useCart } from "../../CartProvider";
-  const data = [
-    {
-      productId: 'newgolfclub',
-      productName: 'Gậy Golf Mới',
-    },
-     {
-      productId: 'oldgolfclub',
-      productName: 'Gậy Golf Cũ',
-    },
-    {
-      productId:'grip',
-      productName: 'Cán Gậy/ Grip',
-    },
-    {
-      productId:'mengolfclothes',
-      productName: 'Quần Áo Golf Nam',
-    },
-    {
-      productId:'womengolfclothes',
-      productName: 'Quần Áo Golf Nữ',
-    },
-    {
-      productId:'accessories',
-      productName: 'Phụ Kiện Golf',
-    },
-    {
-      productId:'golfbag',
-      productName: 'Túi Golf',
-    },
-    {
-      productId:'golfshoes',
-      productName: 'Giày Golf',
-    },
-    {
-      productId:'golftraining',
-      productName: 'Phụ Kiện Tập Luyện',
-    }
-  ];
-  const productData = [
-      {
-        productId: 'newgolfclub',
-        productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-        image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
-        price: 33500000,
-        saleprice: 28475000,
-        rate: 5,
-        productType:'New'
-      },
-      {
-        productId: 'newgolfclub',
-        productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-        image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
-        price: 33500000,
-        saleprice: 28475000,
-        rate: 5,
-        productType:'New'
-      },
-      {
-        productId: 'newgolfclub',
-        productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-        image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
-        price: 33500000,
-        saleprice: 28475000,
-        rate: 5,
-        productType:'New'
-      },
-      {
-        productId: 'newgolfclub',
-        productName: 'Gậy Driver Honma BERES-08 Aizu 3* 10.5R - MIX DYNAMIC',
-        image :['https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg','https://product.hstatic.net/200000836511/product/3c4ea287-73e9-4ef0-aeda-3c316aba9819_0376999ca01745a79b5756a1ce9b4d53_dd8c83f4aaa14a3284f7a47eba8aad2b_1024x1024.jpg'],
-        price: 33500000,
-        saleprice: 28475000,
-        rate: 5,
-        productType:'New'
-      },
-       {
-         productId:'golfclothesmen',
-         productName: 'Áo Mens UA Matchplay Stripe Polo',
-         image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-        price: 3500000,
-        saleprice: 2847500,
-        rate: 4,
-        productType:'Like New'
-
-
-       },
-       {
-        productId:'golfclothesmen',
-        productName: 'Áo Mens UA Matchplay Stripe Polo',
-        image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-       price: 3500000,
-       saleprice: 2847500,
-       rate: 4,
-       productType:'Like New'
-
-
-      },
-      {
-        productId:'golfclothesmen',
-        productName: 'Áo Mens UA Matchplay Stripe Polo',
-        image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-       price: 3500000,
-       saleprice: 2847500,
-       rate: 4,
-       productType:'Like New'
-
-
-      },
-      {
-        productId:'golfclothesmen',
-        productName: 'Áo Mens UA Matchplay Stripe Polo',
-        image: 'https://underarmour.scene7.com/is/image/Underarmour/V5-1377376-001_FC?rp=standard-0pad|pdpZoomDesktop&scl=0.72&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=f0f0f0&wid=1836&hei=1950&size=1500,1500',
-       price: 3500000,
-       saleprice: 2847500,
-       rate: 4,
-       productType:'Like New'
-
-
-      },
-       {
-         productId:'golfbag',
-         productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-         image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-         price: 5000000,
-        saleprice: 4750000,  
-        rate: 3,
-        productType:'Outlet'
-
-
-       },
-       {
-        productId:'golfbag',
-        productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-        image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-        price: 5000000,
-       saleprice: 4750000,  
-       rate: 3,
-       productType:'Outlet'
-
-
-      },
-      {
-        productId:'golfbag',
-        productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-        image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-        price: 5000000,
-       saleprice: 4750000,  
-       rate: 3,
-       productType:'Outlet'
-
-
-      },
-      {
-        productId:'golfbag',
-        productName: 'Túi đựng gậy Puma Tour Stand Bag 24P.BLK',
-        image: 'https://product.hstatic.net/1000007560/product/cobra_tour_stand_bag_2024_909700_2fe43b91c5614400aceaedf6aa07c1bf_large.jpg',
-        price: 5000000,
-       saleprice: 4750000,  
-       rate: 3,
-       productType:'Outlet'
-
-
-      }
-
-      ]
-  export default function Home({fetchData}) {
+  export default function Home({fetchData, listMenu}) {
     const { t } = useTranslation();
     const caption = t("caption", {returnObjects: true})
     const caption2 = t("caption2", {returnObjects: true})
     const navigate = useNavigate()
-    const { addToCart } = useCart();
-    
+    const [copySuccess, setCopySuccess] = useState('');
+     const textToCopy = "This text will be copied to clipboard";
+
+     const copyToClipboard = async () => {
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        setCopySuccess('Copied!');
+        alert(copySuccess, textToCopy)
+      } catch (err) {
+        setCopySuccess('Failed to copy!');
+      }
+    };
+  
+    // const convertListMenu = []
+    // for (const [title, items] of Object.entries(listMenu)) {
+    //   items.forEach((item, index) => {
+    //     if (index === 0) {
+    //       convertListMenu.push({ title, item });
+    //     } else {
+    //       convertListMenu.push({ title: '', item });
+    //     }
+    //   });
+    // }
+    const groupedData = {};
+
+for (const [title, items] of Object.entries(listMenu)) {
+  if (!groupedData[title]) {
+    groupedData[title] = [];
+  }
+  groupedData[title] = groupedData[title].concat(items);
+}
+
+const convertListMenu = Object.keys(groupedData).map(title => ({
+  title,
+  items: groupedData[title]
+}));;
+console.log(listMenu);
+const { addToCart } = useCart();
+
+const handleAddToCart = (product) => {
+      addToCart(product)
+      alert(`Đã thêm ${product.productName} vào giỏ hàng`)
+    }
     const { addProductToHistory } = useContext(ProductHistoryContext);
     const formatProductName = (name) => {
       return name.replace(/\s/g, '-');
@@ -225,18 +101,19 @@
       }});
     };
     const handleProductType = (product) => {
-      const formattedProductId = formatProductName(product.productId);
-      navigate(`/product-list/${formattedProductId}`, { state: { price: product.price, id: product.productId } });
+      const formattedProductId = formatProductName(product.title);
+      navigate(`/product-list/${formattedProductId}`, { state: { price: product.price, id: product.title } });
     };
     const c = t("header.title")         
-    const selectedProducts = [
-      data[0], 
-      data[1], 
-      data[7], 
-      data[3], 
-      data[4], 
-      data[5], 
-    ];
+    // const selectedProducts = [
+    //  convertListMenu[0], 
+    //  convertListMenu[3], 
+    //  convertListMenu[4], 
+    //  convertListMenu[6], 
+    //  convertListMenu[10], 
+    //  convertListMenu[12], 
+    // ];
+    const selectedList = convertListMenu.slice(1,7)
     const StarRating = ({ rate }) => {
       const renderStars = (rate) => {
         const stars = [];
@@ -305,20 +182,13 @@
             </div>
           </div>
         <div className="row">
-          {selectedProducts.map(product => (
+          {selectedList.map(product => (
       <div className="col-4 col-md-6 mt-5">
       <div onClick={() => handleProductType(product)} style={{cursor:'pointer'}}>
         <div className="banner-container">
           <div className="col-md-12 d-flex align-items-center justify-content-center banner-width">
-            <div className="banner-title">{product.productName}</div>
+            <div className="banner-title">{product.title}</div>
           </div>
-          {/* <div className="col-md-8 p-0 m-0">
-              <img
-                className="content__branch-img"
-                src="https://bizweb.dktcdn.net/100/226/755/files/equipment-new-irons.jpg?v=1548170880304"
-                alt="hotel hanoi azumaya hotel"
-              />
-            </div> */}
           </div>
         </div>
       </div>
@@ -365,20 +235,18 @@
                   <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
                   <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
                 </div>
+                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
-                    {/* <div className="col-md-6 p-0">
-                      <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                    <div className="col-md-6 p-0">
+                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                         THÊM VÀO GIỎ
                       </div>
-                    </div> */}
-                   <div className="col-md-12 p-0">
+                    </div>
+                   <div className="col-md-6 p-0">
                     <a 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
+                      target="_blank"
                       href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
@@ -436,17 +304,18 @@
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
-                    {/* <div className="col-md-6 p-0">
-                      <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                    <div className="col-md-6 p-0">
+                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                         THÊM VÀO GIỎ
                       </div>
-                    </div> */}
-                    <div className="col-md-12 p-0">
+                    </div>
+                    <div className="col-md-6 p-0">
                     <a 
                   // onClick={() => {
                   //     addToCart(product)
                   //     navigate('/cart/')
                   //     }} 
+                  target="_blank"
                    href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
@@ -504,17 +373,18 @@
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
-                  {/* <div className="col-md-6 p-0">
-                    <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                  <div className="col-md-6 p-0">
+                    <div  onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                       THÊM VÀO GIỎ
                     </div>
-                  </div> */}
-                  <div className="col-md-12 p-0">
+                  </div>
+                  <div className="col-md-6 p-0">
                   <a 
                   // onClick={() => {
                   //     addToCart(product)
                   //     navigate('/cart/')
                   //     }} 
+                  target="_blank"
                    href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ

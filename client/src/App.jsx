@@ -40,9 +40,8 @@ function App() {
     const browserLanguage = navigator.language || navigator.userLanguage;
     setLanguage(browserLanguage);
   }, []);
-
     
-  useEffect(() =>{
+  useEffect(() => {
               const handleScroll = () => {
                   setShowTop(window.scrollY >= 1000)
               }
@@ -70,9 +69,9 @@ function App() {
             <button className="btn__top" onClick={scrollToTop}>
             <i className="fa-solid fa-angle-up"></i>
             </button>
-            <a className="btn-en btn_en-fixed" href="tel:0564545545"></a>              
+            <a className="btn-en btn_en-fixed d-flex justify-content-center align-items-center" href="tel:0564545545"><i class="fa-solid fa-phone"></i></a>              
             <a className ='btn-ja btn_ja-fixed' href=""></a>  
-            <a className ='btn-vie btn_vie-fixed' href="https://zalo.me/0564545545"></a>
+            <a className ='btn-vie btn_vie-fixed' target="blank" href="https://zalo.me/0564545545"></a>
             </>        
                     )}
     </div>

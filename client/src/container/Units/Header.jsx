@@ -23,7 +23,8 @@ function Header() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState('')
-  console.log(selectedCategories);
+  const { cartCount } = useCart();
+  const { cartItems } = useCart();
   const navigate = useNavigate()
   // const { addProductToHistory } = useContext(ProductHistoryContext);
   const [fetchData, setFetchData] = useState([])
@@ -151,7 +152,7 @@ function Header() {
           </li>
           <li className="header__mobile-navbar-item">
             <Link
-              to=""
+              to="/check-order/"
               onClick={()=> setIsOpen(false)}
               className="header__mobile-navbar-link"
             >
@@ -198,7 +199,6 @@ function Header() {
   
       fetchExchangeRate();
     }, []);
-
   const [active, setActive] = useState(false)
   const handleActive = () => {
     setActive(!active)
@@ -212,7 +212,7 @@ function Header() {
                         <div className="header-text">Liên hệ: 0564545545</div>
                         <div className="header-text">Tỉ giá hôm nay: {exchangeRate}</div>
                     </div>
-                    <div className="col-md-6 d-flex justify-content-center align-items-center">
+                    <div className="col-md-6 d-flex justify-content-end">
                       <div className="d-flex align-items-center">
                         <div className="search-bar d-flex align-items-center">
                               <input  
@@ -243,16 +243,16 @@ function Header() {
                                   )}
                                 </div>
                               )}
-                    <select
+                    {/* <select
                         className="header-list"
                         onChange={(e) => {
                           setSelectedCategories(e.target.value)
                           const formattedProductId = formatProductName(e.target.value);
                           navigate(`/product-list/${formattedProductId}`, { state: { id: e.target.value } });
                         }}
-                        >
+                        > */}
                         {/* <option value=''>Tất cả</option>  */}
-                        <option value=''>Loại sản phẩm</option>
+                        {/* <option value=''>Loại sản phẩm</option>
                         <option value='newgolfclub'>Gậy golf mới</option>
                         <option value='oldgolfclub'>Gây golf cũ</option>
                         <option value='grip'>Cán gậy/ Grip</option>
@@ -261,11 +261,11 @@ function Header() {
                         <option value='accessories'>Phụ kiện golf</option>
                         <option value='golfbag'>Túi golf</option>
                         <option value='golfshoes'>Giày golf</option>
-                        <option value='golftraining'>Dụng cụ luyện tập</option>
-                     </select>
+                        <option value='golftraining'>Dụng cụ luyện tập</option> */}
+                     {/* </select> */}
                         </div>
-                        {/* <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
-                        {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>} */}
+                        <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#fff", fontSize: '2rem'}} /></Link>
+                        {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>}
 
                         </div>
                       </div>
@@ -290,19 +290,23 @@ function Header() {
                   />
                 </Link>
               </div>
-              {/* <div className="header-cart">
+              <div className="header-cart">
               <Link to = "/cart/"className="header-link"><i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '2rem'}} /></Link>
               {cartItems.length > 0 && <div className="cart-number">{cartItems.length}</div>}
 
-            </div> */}
+            </div>
         </div>
         <div className="d-flex mb-5 align-items-center">
           <div className="col-md-6 ml-3 p-0">
           <div className="search-bar d-flex align-items-center justify-content-between">
             <div className="d-flex">
-                            <input 
-                            type="text"
-                            className="input-style" />
+                             <input  
+                              type="text"
+                              placeholder="Search products"
+                              value={searchTerm}
+                              onChange={handleChange}
+                              className="input-style"
+                            />
                             <div className="search-bar-icon d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
@@ -311,7 +315,7 @@ function Header() {
                                   {filteredProducts.length > 0 ? (
                                     filteredProducts.map((product) => (
                                       <div
-                                        key={product.id}
+                                        key={product.productId}
                                         className="productItem"
                                         onClick={() => handleProduct(product)}
                                       >
@@ -394,7 +398,7 @@ function Header() {
                       </Link>
                     </Tab>
                     <Tab className="header__navbar-item">
-                      <Link className="header__navbar-link-2" to="/">
+                      <Link className="header__navbar-link-2" to="/check-order/">
                         KIỂM TRA ĐƠN HÀNG
                       </Link>
                     </Tab>

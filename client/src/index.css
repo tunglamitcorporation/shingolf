@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -127,21 +127,41 @@ code {
   color: #ff3131;
 }
 .input-style {
-  border: 1px solid #fff;
+  border: 1px solid #ff3131;
   height: 30px;
   width: 200px;
+  font-size: 1.4rem;
+  padding-left: 5px;
+  border-color: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.search-bar-icon {
+  background-color: #fff;
+  border-left: 1px solid #ff3131;
+  color: #ff3131;
+  font-size: 1.4rem;
+  height: 30px;
+  width: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.input-style2 {
+  border: 1px solid #fff;
+  height: 50px;
+  width: 100%;
   font-size: 1.4rem;
   padding-left: 5px;
   border-color: #ff3131;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.search-bar-icon {
+.search-bar-icon2 {
   background-color: #FF3131;
   color: #fff;
   font-size: 1.4rem;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -178,6 +198,7 @@ code {
   height: 30px;
   line-height: 30px;
   width: 100%;
+  /* border-radius: 10px; */
 }
 .buy-btn:hover{
   color: #fff;
@@ -249,11 +270,12 @@ code {
 .product-status{
   font-size: 1.4rem;
   border: 1px solid green;
-  width: fit-content;
-  padding: 5px;
+  padding: 5px ;
   color: green;
+  text-align: center;
   border-radius: 10px;
   margin-top: 10px;
+  width: 100px;
 }
 .product-type{
   font-size: 1.4rem;
@@ -282,6 +304,10 @@ code {
 .header-cart{
   text-align: right;
 }
+.cart-header{
+  display: flex;
+}
+
 .login__form{
     width: 100%;
     height: 80%;
@@ -357,7 +383,7 @@ code {
 
 .cart-items {
   border-top: 2px solid #fec300;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 .cart-item {
@@ -375,7 +401,7 @@ code {
 .cart-summary {
   margin-top: 20px;
   padding: 20px;
-  background-color: #fec300;
+  background-color: #ff3131;
   color: #fff;
   border-radius: 8px;
 }
@@ -424,9 +450,11 @@ code {
   background-color: #ff3131;
   border: none;
   color: white;
-  padding: 5px 10px;
+  padding: 5px 5px;
   cursor: pointer;
-  margin-left: 10px;
+  height: 20px;
+  border-radius: 50%;
+  
 }
 
 .delete-button:hover {
@@ -458,12 +486,12 @@ code {
 .cart-summary p {
   font-size: 2rem;
   font-weight: bold;
-  color: #ff3131
+  color:#fff
 }
 .contact-button,
 .pay-button {
-  background-color: #ff3131;
-  color: #fff;
+  background-color: #fff;
+  color: #ff3131;
   border: none;
   padding: 10px 20px;
   font-size: 1.4rem;
@@ -511,6 +539,10 @@ code {
   border: 1px solid #ff3131;
   transform: translateY(-1rem);
 }
+.image_content{
+  width: 90%;
+  object-fit: contain;
+}
 .login_title{
   display: flex;
   justify-content: center;
@@ -534,10 +566,11 @@ code {
 }
 .container_login {
   overflow: scroll;
-  
   display: flex;
   height: 100vh !important;
-  
+}
+.awssld__content > img{
+  object-fit: fill !important;
 }
 .left_login {
   overflow: hidden;
@@ -815,7 +848,7 @@ code {
 }
 .header__navbar-list{
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -1296,7 +1329,6 @@ code {
 .content__feature-text,
 .content__feature-name {
   width: 100%;
-  margin-top: 10px;
 }
 .content__feature-text p {
   font-size: 1.4rem;
@@ -1471,16 +1503,17 @@ code {
 /* Hotel Policies */
 .policies__header {
   width: 100%;
-  padding: 200px 0;
-  background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat;
+  padding: 50px 0;
+  /* background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat; */
   background-attachment: fixed;
   position: relative;
   text-align: center;
 }
 .policies__header h1{
-    color: #fff;
+    color: #ff3131;
     font-size: 52px;
     font-weight: bold
+    
 }
 .content__policies{
   height: 100%;
@@ -1544,7 +1577,7 @@ code {
   border-top: solid 1px #c5c5c5;
   border-left: solid 1px #c5c5c5;
   border-right: solid 1px #c5c5c5;
-  border-bottom: solid 4px #482979;
+  border-bottom: solid 4px #FF3131;
   padding: 30px;
   overflow: hidden;
   margin-bottom: 40px
@@ -1582,7 +1615,7 @@ code {
 }
 .service__header {
   width: 100%;
-  padding: 100px 0;
+  padding: 50px 0;
   /* background: url(https://azumayavietnam.com/image/feature/banner.jpg) center center / cover no-repeat; */
   margin-top:  60px;
   background-attachment: fixed;
@@ -1983,7 +2016,7 @@ a:hover {
   justify-content: center;
   width: 100%;
   padding: 15px;
-  background-color: #FEC800;
+  background-color: #ff3131;
 }
 .top-header p {
   color: #acacac;
@@ -2407,9 +2440,8 @@ height: 250px;
   width: 160px;
   align-items: flex-end;
 }
-/* .awssld__content img{
-filter: brightness(0.5);
-} */
+
+
 .carousel_name{
   position: absolute;
   right: 20px;
@@ -2694,7 +2726,7 @@ filter: brightness(0.5);
   font-weight: bold
 }
 .awssld__wrapper{
-  height: 600px !important;
+  height: 700px !important;
 }
 .logo_az {
   position: absolute;
@@ -2989,9 +3021,6 @@ filter: brightness(0.5);
   width: 45% !important;
   margin-left: 0;
 }
-.footer{
-  display: none;
-}
 .content__news-list{
   list-style: none;
   margin-left:0;
@@ -3032,11 +3061,8 @@ font-size: 1.2rem !important;
   font-size: 32px;
 
 }
-.footer__container{
-  display: none;
-}
 .awssld__wrapper{
-  height: 300px !important;
+  height: 280px !important;
 }
 .carousel_name{
   position: absolute;
@@ -3118,7 +3144,7 @@ font-size: 1.2rem !important;
   font-size: 2rem;
 }
 .slogan{
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .cart-number{
   background-color: #ff3131;
@@ -3145,6 +3171,23 @@ font-size: 1.2rem !important;
   border: 1px solid #ddd;
   overflow-y: auto;
   z-index: 10;
+}
+
+.awssld__box {
+  height: 95% !important;
+}
+.input-style {
+  border-left: 1px solid #ff3131;
+  border-top: 1px solid #ff3131;
+  border-bottom: 1px solid #ff3131;
+}
+.search-bar-icon {
+  border-top: 1px solid #ff3131;
+  border-right: 1px solid #ff3131;
+  border-bottom: 1px solid #ff3131;
+}
+.cart-header{
+  display: none;
 }
 }
 /* tablet */

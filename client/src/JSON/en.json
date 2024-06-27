@@ -4207,5 +4207,28 @@
         }
         
     ]
-}
+},
+    "policies_content":[
+        {
+            "title": "Quy trình đặt hàng",
+            "content":"Quý khách vui lòng liên hệ với chúng tôi để xác nhận sản phẩm và số lượng cụ thể mà Quý khách đang quan tâm. Chúng tôi sẽ cung cấp thông tin chi tiết về sản phẩm, giá cả và các điều khoản mua bán."
+        },
+        {
+            "title": "Thanh toán",
+            "content":"Phương thức thanh toán được chấp nhận bao gồm chuyển khoản ngân hàng hoặc thanh toán trực tuyến theo thoả thuận trước đó. \nChi tiết về phương thức thanh toán sẽ được cung cấp cụ thể trong quá trình đặt hàng."
+        },
+        {
+            "title": "Vận chuyển và giao nhận",
+            "content":"Chúng tôi sẽ tổ chức vận chuyển từ Nhật Bản về Việt Nam thông qua các dịch vụ vận tải chuyên nghiệp. \nThời gian vận chuyển dự kiến và chi phí phát sinh sẽ được thông báo trước cho Quý khách."
+        },
+        {
+            "title": "Hải quan và các phí liên quan",
+            "content":"Chúng tôi sẽ hỗ trợ trong các thủ tục hải quan và cung cấp thông tin chi tiết về các khoản phí hải quan và thuế nhập khẩu."
+        },
+        {
+            "title": "Chính sách đổi trả và bảo hành",
+            "content":"Vui lòng kiểm tra kỹ sản phẩm khi nhận hàng. Trong trường hợp có bất kỳ sự cố nào liên quan đến sản phẩm, Quý khách vui lòng liên hệ với chúng tôi để được hỗ trợ đổi trả và bảo hành theo quy định."
+        }
+
+    ]
 }

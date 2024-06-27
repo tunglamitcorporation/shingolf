@@ -7,19 +7,19 @@ import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import Collapsible from 'react-collapsible'
 import { makeListMenu } from "../../api/product";
 import ProductHistoryContext from "../../ProductHistoryContext";
-
+import { useCart } from "../../CartProvider";
 export default function VietnamService({fetchData, listMenu}) {
   const navigate = useNavigate()
   const {t, i18n} = useTranslation()
   const { productName } = useParams();
   const location = useLocation();
   const { price, id, selectedCategories =[]} = location.state || {};
-  const checkId = id || 'newgolfclub'
+  const checkId = id || 'Gậy Golf Mới'
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedProductType, setSelectedProductType] = useState('');
   const [visible, setVisible] = useState (true)
   const { addProductToHistory } = useContext(ProductHistoryContext);
-
+  const {addToCart} = useCart()
   const convertListMenu = []
   for (const [title, items] of Object.entries(listMenu)) {
     items.forEach((item, index) => {
@@ -35,7 +35,7 @@ export default function VietnamService({fetchData, listMenu}) {
   ? fetchData.filter(product =>
     selectedCategories.includes(product.productType) 
   )
-  : fetchData.filter(product => product.productId === checkId)
+  : fetchData.filter(product => product.category === checkId)
 
   const handleCategoryClick = (product) => (event) => {
     event.preventDefault();
@@ -154,20 +154,22 @@ export default function VietnamService({fetchData, listMenu}) {
           </div>
           <div className="btn-container">
             <div className="row pb-0">
-              {/* <div className="col-md-6 p-0">
+              <div className="col-md-6 p-0">
                 <div onClick={() => addToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                   THÊM VÀO GIỎ
                 </div>
-              </div> */}
-             <div className="col-md-12 p-0">
-                    <div 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </div>
+              </div>
+             <div className="col-md-6 p-0">
+             <a 
+                             // onClick={() => {
+                             //     addToCart(product)
+                             //     navigate('/cart/')
+                             //     }}
+                                   target="_blank"
+                                   href="https://zalo.me/0564545545"
+                                  className="buy-btn">
+                                 LIÊN HỆ
+                               </a>
                     </div>
             </div>
           </div>

@@ -12,10 +12,10 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
-      const existingProduct = prevItems.find((item) => item.id === product.id);
+      const existingProduct = prevItems.find((item) => item.productCode === product.productCode);
       if (existingProduct) {
         return prevItems.map((item) =>
-          item.id === product.id
+          item.productCode === product.productCode
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -24,11 +24,11 @@ export const CartProvider = ({ children }) => {
       }
     });
   };
-  const increaseQuantity = (productId) => {
+  const increaseQuantity = (productCode) => {
     let updatedQuantity;
     setCartItems((prevItems) =>
       prevItems.map((item) => {
-        if (item.id === productId) {
+        if (item.productCode === productCode) {
           updatedQuantity = item.quantity + 1;
           return { ...item, quantity: updatedQuantity };
         }
@@ -38,11 +38,11 @@ export const CartProvider = ({ children }) => {
     return updatedQuantity;
   };
 
-  const decreaseQuantity = (productId) => {
+  const decreaseQuantity = (productCode) => {
     let updatedQuantity;
     setCartItems((prevItems) =>
       prevItems.map((item) => {
-        if (item.id === productId && item.quantity > 1) {
+        if (item.productCode === productCode && item.quantity > 1) {
           updatedQuantity = item.quantity - 1;
           return { ...item, quantity: updatedQuantity };
         }
@@ -61,10 +61,12 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
-  const removeFromCart = (productId) => {
+
+  const removeFromCart = (productCode) => {
     setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== productId)
+      prevItems.filter((item) => item.productCode !== productCode)
     );
+    localStorage.removeItem('cartItems')
   };
   return (
     <CartContext.Provider value={{ cartItems, addToCart, increaseQuantity, decreaseQuantity, removeFromCart }}>

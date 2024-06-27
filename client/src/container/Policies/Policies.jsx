@@ -1,24 +1,35 @@
 import { useTranslation } from 'react-i18next'
 import {Link} from 'react-router-dom'
+import { useState } from 'react';
  
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 
-export default function Policies(){
+export default function Policies({fetchData}){
     const {t} = useTranslation()
-    const data = t('policy.data',{returnObjects:true})
-    const faq = t('faq.data', {returnObjects:true})
-    const a = t("header.policies")
-    const b = t("header.title")
-    const c = a + " | "+ b
+    const [searchTerm, setSearchTerm] = useState('');
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+      };
+      const filterProducts = (data, term) => {
+        const lowercasedTerm = term.toLowerCase();
+        return data.filter((product) =>
+          product.productName.toLowerCase().includes(lowercasedTerm)
+        );
+      };
+    
+      const filteredProducts = filterProducts(fetchData, searchTerm);
+    // const a = t("header.policies")
+    // const b = t("header.title")
+    // const c = a + " | "+ b
 
     return(
         <div> 
-            <HelmetLayout title = {c} />
+            <HelmetLayout  />
             <div className="policies__header">
                     <div classNameName="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{t('policy.title')}</h1>
+                                <h1>KIỂM TRA ĐƠN HÀNG</h1>
                             </div>
                         </div>
                     </div>
@@ -37,7 +48,7 @@ export default function Policies(){
                                        /
                                    </li>
                                    <li className = "breadcrumb__item">
-                                       <Link className ="breadcrumb__title" to = '/q&a/'>{t('header.policies')}</Link>
+                                       <Link className ="breadcrumb__title" to = '/check-order/'>Kiểm tra đơn hàng</Link>
                                 </li>
                        </ul>
                        </div>
@@ -47,20 +58,40 @@ export default function Policies(){
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-12'>
-                    <div className="content__policies">     
-                            <table className="table__policies pre-line">
-                             {data.map(item=>(
-                            <tr>
-                            <td style={{fontWeight: 600, width:250}}>{item.name}</td>
-                            <td >{item.content}</td>
-                            </tr>
-                            ))}
-                            </table>
-                    </div>
-                    </div>
+                        <div className="search-bar d-flex align-items-center" style={{height: '300px'}}>
+                              <input  
+                              type="text"
+                              placeholder="Nhập mã đơn hàng của bạn"
+                              value={searchTerm}
+                              onChange={handleChange}
+                              className="input-style2"
+                            />
+                             <div className="search-bar-icon2 d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                              {searchTerm && (
+                                <div className="results">
+                                  {filteredProducts.length > 0 ? (
+                                    filteredProducts.map((product) => (
+                                      <div
+                                        key={product.id}
+                                        className="productItem"
+                                        onClick={() => handleProduct(product)}
+                                      >
+                                        <div className="search-productName">{product.productName}</div>
+                                        <div className="search-price">${product.price}</div>
+                                      </div>
+                                    ))
+                                  ) : (
+                                    <div className="noProducts">No products found</div>
+                                  )}
+                                </div>
+                              )}
+                        </div>
+                        </div>
                     </div>
                 </div>
-            <div className="container">
+            {/* <div className="container">
                 <div className="row">
                     <div className="col-md-12">
                         <div className="content__policies">
@@ -77,7 +108,7 @@ export default function Policies(){
                         </div>
                     </div>
                 </div>
-                </div>    
+                </div>     */}
             </div>
        
     )
