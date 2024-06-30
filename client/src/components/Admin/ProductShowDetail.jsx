@@ -314,7 +314,8 @@ function ProductShowDetail(props) {
                 } 
                 
               {/* </Col> */}
-            </Form.Group> : key === "content" ?  
+            </Form.Group> : 
+            key === "content" ?  
               <Form.Group as={Row} key={key} className="d-flex">
                 <Form.Label column sm={2} style={{fontSize:'1.4rem'}}>
                   {checkName(key)}
@@ -322,9 +323,15 @@ function ProductShowDetail(props) {
                 <div>
                   {renderContent(data.productDetail[key])}
                 </div>
-              </Form.Group>
-                
-
+              </Form.Group> :
+             (key === "size" || key === "color") ?  <Form.Group as={Row} key={key} className="d-flex">
+             {/* <Form.Label column sm={2} style={{fontSize:'1.4rem'}}>
+               {checkName(key)}
+             </Form.Label> */}
+             {/* <div>
+               {renderContent(data.productDetail[key])}
+             </div> */}
+           </Form.Group>
             :<Form.Group as={Row} key={key} className="d-flex">
                 <Form.Label column sm={2} style={{fontSize:'1.4rem'}}>
                     {checkName(key)}

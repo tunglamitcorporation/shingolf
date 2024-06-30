@@ -15,8 +15,7 @@ function ProducManage() {
     const [typeView, setTypeView] = useState("All");
     const [modalShow, setModalShow] = useState(false);
     const [show, setShow] = useState(false);
-    
-    console.log("datarender", dataRender)
+
     useEffect(()=>{
         // call API take all product and make table
         const takeData = async () => {
@@ -34,20 +33,15 @@ function ProducManage() {
     
     const updateNewProduct = async (data) => {
         const result = await productAPi.addProduct(data,"token");
-        console.log("result", result);
+    }
+
+    const onOpenEditProduct = (id) =>{
+        setShow(true)   
     }
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
-    // function renderItem() {
-    //     let result = [];
-
-    //     if(dataRender.length > 0) {
-
-    //     }
-    //     return result;
-    // }
     return(
         <div className="mt-5 product">
 
@@ -86,6 +80,7 @@ function ProducManage() {
                                             data = {dataRender.data}
                                             listMenu={dataRender.listMenu}
                                             supportFunction1={()=> {}}
+                                            onOpenEditProduct={() => onOpenEditProduct}
                                         />
         }
 

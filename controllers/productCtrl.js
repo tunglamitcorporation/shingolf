@@ -56,13 +56,13 @@ const productCtrl = {
             const { value } = dataOnBody;
 
             if(type === "name") {
-                const dataReturn = await PRODUCT.find({ productName: { $regex: value }}, {logEdit: 0, createdAt: 0, updatedAt: 0,}); //, $options: "i"
+                const dataReturn = await PRODUCT.find({ productName: { $regex: value }, activate: true}, {logEdit: 0, createdAt: 0, updatedAt: 0,}); //, $options: "i"
                 //const dataReturn = await PRODUCT.find({ productName: value }, {logEdit: 0, createdAt: 0, updatedAt: 0,});
 
                 return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
             }
 
-            if(type ==="price") {
+            else if(type ==="price") {
                 const { min_price, max_price } = dataOnBody;
                 // min_price = 10
                 // max_price = 100
@@ -70,15 +70,28 @@ const productCtrl = {
                     "price": {
                         "$gte": min_price, 
                         "$lte": max_price  
-                    }
+                    },
+                    activate: true
                 }, {logEdit: 0, createdAt: 0, updatedAt: 0,});
                 return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
             }
 
-            if(type === "category") {
-                const dataReturn = await PRODUCT.find({ category: category }, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+            else if(type === "category") {
+                const dataReturn = await PRODUCT.find({ category: category , activate: true}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
                 return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
             }
+
+            else {
+                const queryData = {};
+                queryData[""+type] = dataOnBody.value;
+                queryData.activate = true
+
+       
+                const dataReturn = await PRODUCT.find(queryData, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+                return res.json({ status: 1, msg: "successfully find product", data: dataReturn });  
+            }
+
+
         } catch (err) {
             console.log("err.message", err.message);
             return res.status(500).json({msg: err.message})
@@ -86,7 +99,7 @@ const productCtrl = {
     },
     makeListMenu: async (req, res) => {
         try {
-            const allData = await PRODUCT.find({},{ category: 1, productType: 1});
+            const allData = await PRODUCT.find({activate: true},{ category: 1, productType: 1});
             const dataReturn = {};
 
             if(!allData) return res.json({ status: 0, msg: "Have not data"});

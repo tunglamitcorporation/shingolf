@@ -63,7 +63,7 @@ function GlobalFilter({
 }
 
 function Table({ columns, data, search, showIconOnName, selectIndex,
-    supportFunction1, type, listMenu}) {
+    supportFunction1, type, listMenu, onOpenEditProduct}) {
     // Use the state and functions returned from useTable to build your UI
     const {
         getTableProps,
@@ -99,12 +99,15 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
         useGlobalFilter,
         useSortBy,
         usePagination,
+        onOpenEditProduct
     )
 
     function checkHeader(value, cell, i) {
         switch (value) {
             case "Time":  
                 return (changeDataFullFormat_DDMMYYYY(cell.value));
+            case "Activate":
+                return <div style={{color: cell.value ? "":"red"}}>{cell.value.toString()}</div>
             case "Button": 
                 return (<a href={"" + cell.value} target="_blank" rel="noreferrer">
                     {cell.column.buttonName}
@@ -113,7 +116,7 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
                 return (<div>{Number(cell.value).toLocaleString()}</div>)
             case "Edit":
                 return (<FontAwesomeIcon
-                  onClick={() => onOpenEditCompany(pageIndex * 10 + i)}
+                  onClick={() => onOpenEditProduct(pageIndex * 10 + i)}
                   style={{
                       width: '15px',
                       color: 'green',
@@ -135,6 +138,8 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
                   className={(cell.column.Header === "Name" && showIconOnName) ? "btn__add_icon icon mr-2" : "op-hidden"}
                   icon={checkFont["faHistory"]}
               />
+              case "size": case "color":
+                 return <div></div>//(<div>{cell.value.toString()}</div>)
             case "Check In": case "Check Out": case "Birth Day": case "Birthday":
                 return (cell.value === "" || cell.value === undefined)? cell.value: (changeDataToDDMMYYYY(cell.value));
             default: return cell.render('Cell');
@@ -300,7 +305,7 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
 }
 
 function ProductManageItems(props) {
-    const { supportFunction1, listMenu } = props;
+    const { supportFunction1, listMenu, onOpenEditProduct } = props;
     // const auth = useSelector(state => state.auth);
     // const { role } = auth.user;
 
@@ -365,18 +370,24 @@ function ProductManageItems(props) {
                 class: 'with-70',
                 style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
             },
+            // {
+            //     Header: 'size',
+            //     accessor: 'size',
+            //     class: 'with-70',
+            //     style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            // },
+            // {
+            //     Header: 'color',
+            //     accessor: 'color',
+            //     class: 'with-70',
+            //     style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
+            // },
             {
-                Header: 'size',
-                accessor: 'size',
+                Header: 'Activate',
+                accessor: 'activate',
                 class: 'with-70',
                 style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
-            },
-            {
-                Header: 'color',
-                accessor: 'color',
-                class: 'with-70',
-                style: { fontSize: '1.4rem', width: '70px', textAlign: 'center' }
-            },
+              },
             {
               Header: 'Edit',
               accessor: 'edit',
@@ -404,6 +415,7 @@ function ProductManageItems(props) {
                 supportFunction1={supportFunction1}
                 search={props.search}
                 showIconOnName={true}
+                onOpenEditProduct={onOpenEditProduct}
             />
         </Styles>
     );

@@ -12,7 +12,6 @@ function AdminManage() {
 
     useEffect(()=>{
         const isLoginCheck = localStorage.getItem('firstLogin');
-        console.log("IstLoginCheck", isLoginCheck)
 
         if(!isLoginCheck || isLoginCheck === null) setIsLogin(false);
         else setIsLogin(isLoginCheck)
