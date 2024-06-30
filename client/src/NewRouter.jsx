@@ -47,7 +47,7 @@ useEffect(() => {
 }, []);
     // const { i18n } = useTranslation();
     const [deviceType, setDeviceType] = useState('');
-      useEffect(() => {
+      useEffect(() => { 
         const handleResize = () => {
           const width = window.innerWidth;
           if (width >= 1024) {

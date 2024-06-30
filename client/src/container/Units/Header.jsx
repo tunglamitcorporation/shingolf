@@ -209,7 +209,7 @@ function Header() {
                 <div className='container-fluid'>
                     <div className='row align-items-center'>
                     <div className="col-md-6">
-                        <div className="header-text">Liên hệ: 0564545545</div>
+                        <div className="header-text">Liên hệ: 0564.545.545</div>
                         <div className="header-text">Tỉ giá hôm nay: {exchangeRate}</div>
                     </div>
                     <div className="col-md-6 d-flex justify-content-end">
@@ -217,7 +217,7 @@ function Header() {
                         <div className="search-bar d-flex align-items-center">
                               <input  
                               type="text"
-                              placeholder="Search products"
+                              placeholder="Tìm kiếm"
                               value={searchTerm}
                               onChange={handleChange}
                               className="input-style"
@@ -225,17 +225,20 @@ function Header() {
                              <div className="search-bar-icon d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                              {searchTerm && (
+                            {searchTerm && (
                                 <div className="results">
                                   {filteredProducts.length > 0 ? (
                                     filteredProducts.map((product) => (
                                       <div
-                                        key={product.id}
+                                        key={product.productId}
                                         className="productItem"
                                         onClick={() => handleProduct(product)}
                                       >
-                                        <div className="search-productName">{product.productName}</div>
-                                        <div className="search-price">${product.price}</div>
+                                        <div className="d-flex">
+                                        <img src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} style={{width: 50, height: 50}} />
+                                        <div className="ml-3 search-productName">{product.productName}</div>
+                                        </div>
+                                        <div className="search-price">Giá: {product.price}¥</div>
                                       </div>
                                     ))
                                   ) : (
@@ -319,8 +322,11 @@ function Header() {
                                         className="productItem"
                                         onClick={() => handleProduct(product)}
                                       >
-                                        <div className="search-productName">{product.productName}</div>
-                                        <div className="search-price">${product.price}</div>
+                                        <div className="d-flex">
+                                        <img src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} style={{width: 50, height: 50}} />
+                                        <div className="ml-3 search-productName">{product.productName}</div>
+                                        </div>
+                                        <div className="search-price">Giá: {product.price}¥</div>
                                       </div>
                                     ))
                                   ) : (

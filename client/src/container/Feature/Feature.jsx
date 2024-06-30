@@ -7,19 +7,36 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useLocation } from "react-router-dom";
 import ProductHistoryContext from "../../ProductHistoryContext";
 import { useCart } from "../../CartProvider";
+import AlertComponent from "../../Alert";
+
 export default function Feature({fetchData}) {
   const { t } = useTranslation();
   const { productName } = useParams();
   const navigate = useNavigate()
-  const [product, setProduct] = useState(null);
   const location = useLocation();
   const { addToCart } = useCart();
+  const [show, setShow] = useState(false);
+ 
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setShow(false);
+      }, 1000);  
+  
+      return () => clearTimeout(timer);
+    }, [show]);
+  
   const {
     productId,
     productType,
+    loft,
+    stickHardType,
+    size,
+    color
     } = location.state || {};
-    console.log(fetchData);
     
+      const [productSelect1, setProductSelect1] = useState()
+      const [productSelect2, setProductSelect2] = useState()
+    console.log(productSelect1, productSelect2);
     const StarRating = ({ rate }) => {
       const renderStars = (rate) => {
         const stars = [];
@@ -43,6 +60,10 @@ export default function Feature({fetchData}) {
     };
   const { productHistory } = useContext(ProductHistoryContext);
   const { addProductToHistory } = useContext(ProductHistoryContext);
+  const handleAddToCart = (product, productSelect1, productSelect2) => {
+    addToCart(product, productSelect1, productSelect2)
+    setShow(true)
+  }
   const formatProductName = (name) => {
     return name.replace(/\s/g, '-');
   };
@@ -54,6 +75,9 @@ export default function Feature({fetchData}) {
   return (
     <div>
       <HelmetLayout />
+      {show && (
+        <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
+      )}
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-12">
@@ -109,11 +133,11 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -121,15 +145,27 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
+                      {product.loft.loft1 != '' ? (
+                      <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Độ Loft: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.loft.loft1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.loft.loft1}>{product.loft.loft1}°</option>
                           <option value={product.loft.loft2}>{product.loft.loft2}°</option>
                           <option value={product.loft.loft3}>{product.loft.loft3}°</option>
                       </select>
+                      </>   
+                      ) : ''}
+                      {product.stickhardtype.type1 !='' ? (
+                      <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width:80, marginLeft:20}}>Loại Cán: </li>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.stickhardtype}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2 || setProductSelect2(product.stickhardtype.type1)}
+                      onChange={(e) => setProductSelect2(e.target.value)}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
                           <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
                           <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
@@ -137,10 +173,11 @@ export default function Feature({fetchData}) {
                           {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
                           
                       </select>
+                      </>  
+                      ) : ''}
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
                     {/* <ul className="d-flex pl-0 mt-3">
-                      
                     </ul> */}
                     <div className="hotline">
                       <a href="tel:0564545545">HotLine: 0564545545</a>
@@ -148,7 +185,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                         <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product, productSelect1, productSelect2)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -262,26 +299,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product)//     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -330,11 +366,11 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -342,21 +378,34 @@ export default function Feature({fetchData}) {
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80,  marginLeft:20}}>Độ Loft: </li>
+                      {product.loft.loft1 != '' ? (
+                        <>
+                      <li 
+                      style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80,  marginLeft:20}}
+                      value={productSelect1}
+                      onChange={(e) => setProductSelect1(e.target.value || setProductSelect1(product.loft.loft1))}>Độ Loft: </li>
                       <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
                           <option value={product.loft.loft1}>{product.loft.loft1}°</option>
                           <option value={product.loft.loft2}>{product.loft.loft2}°</option>
                           <option value={product.loft.loft3}>{product.loft.loft3}°</option>
                       </select>
+                        </>
+                      ) : ''}
+                      {product.stickhardtype.type1 != '' ? (
+                        <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại Cán: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2}
+                      onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.stickhardtype.type1))}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
                           <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
                           <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
                           {product.stickhardtype.type4 ? (<option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option>) : ''}
                           {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
-                          
                       </select>
+                        </>
+                      ) : ''}
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
                     {/* <ul className="d-flex pl-0 mt-3">
@@ -368,7 +417,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -482,26 +531,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product) // navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -551,20 +599,24 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại hàng: </li>
                       <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
                     </ul>
+                    {product.stickhardtype.type1 != '' ? (
                     <ul className="d-flex pl-0 mt-3">
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại Cán: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.stickhardtype.type1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
                           <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
                           <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
@@ -574,13 +626,14 @@ export default function Feature({fetchData}) {
                       </select>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
+                    ) : ''}
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -682,26 +735,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product)                             //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -752,32 +804,46 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
-                      <ul className="d-flex pl-0 mt-3">
+                    <ul className="d-flex pl-0 mt-3">
+                      {product.size.size1 != '' ? (
+                          <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.size.size1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
                           <option value={product.size.size2}>{product.size.size2}</option>
                           <option value={product.size.size3}>{product.size.size3}</option>
                           {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
                           {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
                       </select>
+                          </>
+                      ) : ''}
+                      {product.color.color1 != '' ? (
+                        <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2 || setProductSelect2(product.color.color1)}
+                      onChange={(e) => setProductSelect2(e.target.value )}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
                           <option value={product.color.color3}>{product.color.color3}</option>
                           {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
                           {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
                       </select>
+                        </>
+                      ):''}
+                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
                     {/* <ul className="d-flex pl-0 mt-3">
                       
@@ -792,7 +858,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -890,26 +956,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product) //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -935,7 +1000,7 @@ export default function Feature({fetchData}) {
           </div>
             </>  
             )}
-             {product.productName === productName.replace(/-/g, '') && product.productId === 'womengolfclothes' && (
+             {product.productName === productName.replace(/-/g, ' ') && product.productId === 'womengolfclothes' && (
             <>
             <div className="row">
             <div className="col-md-6">
@@ -960,16 +1025,19 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
              {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.size.size1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
                           <option value={product.size.size2}>{product.size.size2}</option>
                           <option value={product.size.size3}>{product.size.size3}</option>
@@ -978,7 +1046,10 @@ export default function Feature({fetchData}) {
                       </select>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2 || setProductSelect2(product.color.color1)}
+                      onChange={(e) => setProductSelect2(e.target.value) }>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
                           <option value={product.color.color3}>{product.color.color3}</option>
@@ -1000,7 +1071,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1098,26 +1169,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product)                             //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -1168,31 +1238,45 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
              {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
+                      {product.size.size1 != '' ? (
+                          <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1  || setProductSelect1(product.size.size1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
                           <option value={product.size.size2}>{product.size.size2}</option>
                           <option value={product.size.size3}>{product.size.size3}</option>
                           {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
                           {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
                       </select>
+                          </>
+                      ) : ''}
+                      {product.color.color1 != '' ? (
+                        <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2  || setProductSelect2(product.color.color1)}
+                      onChange={(e) => setProductSelect2(e.target.value)}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
                           <option value={product.color.color3}>{product.color.color3}</option>
                           {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
                           {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
                       </select>
+                        </>
+                      ):''}
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
                     <div className="hotline">
@@ -1201,7 +1285,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1295,26 +1379,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product)                             //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -1363,31 +1446,45 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
              {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
+                      {product.size.size1 != '' ? (
+                          <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.size.size1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
                           <option value={product.size.size2}>{product.size.size2}</option>
                           <option value={product.size.size3}>{product.size.size3}</option>
                           {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
                           {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
                       </select>
+                          </>
+                      ) : ''}
+                      {product.color.color1 != '' ? (
+                        <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2 || setProductSelect2(product.color.color1)}
+                      onChange={(e) => setProductSelect2(e.target.value)}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
                           <option value={product.color.color3}>{product.color.color3}</option>
                           {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
                           {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
                       </select>
+                        </>
+                      ):''}
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
                     <div className="hotline">
@@ -1396,7 +1493,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1494,26 +1591,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product) //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -1564,31 +1660,45 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
              {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
+                      {product.size.size1 != '' ? (
+                          <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.size.size1)}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
                           <option value={product.size.size2}>{product.size.size2}</option>
                           <option value={product.size.size3}>{product.size.size3}</option>
                           {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
                           {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
                       </select>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80,marginLeft: 20}}>Màu sắc: </li>
+                          </>
+                      ) : ''}
+                      {product.color.color1 != '' ? (
+                        <>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2}
+                      onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.color.color2))}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
                           <option value={product.color.color3}>{product.color.color3}</option>
                           {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
                           {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
                       </select>
+                        </>
+                      ):''}
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
@@ -1601,7 +1711,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1707,26 +1817,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product)                             //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -1777,11 +1886,11 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
              {product.saleprice != '' ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <div className="hotline">
@@ -1790,7 +1899,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> addToCart(product) } className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1876,26 +1985,25 @@ export default function Feature({fetchData}) {
                          <div className="content__feature-text d-md-flex justify-content-between">
                          {product.salepriceprice != '' ? (
                    <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                    </>
                  ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                  )}
                          </div>
                          </div>
                          <div className="btn-container">
                            <div className="row pb-0">
                              <div className="col-md-6 p-0">
-                               <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                                  THÊM VÀO GIỎ
                                </div>
                              </div>
                              <div className="col-md-6 p-0">
                              <a 
                              // onClick={() => {
-                             //     addToCart(product)
-                             //     navigate('/cart/')
+                             //     handleAddToCart(product)                             //     navigate('/cart/')
                              //     }}
                                    target="_blank"
                                    href="https://zalo.me/0564545545"
@@ -1960,11 +2068,11 @@ export default function Feature({fetchData}) {
                     <div className="content__feature-text d-md-flex justify-content-between">
                     {product.salepriceprice != '' ? (
                 <>
-                <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     </div>
@@ -2028,11 +2136,11 @@ export default function Feature({fetchData}) {
                     <div className="content__feature-text d-md-flex justify-content-between">
                     {product.salepriceprice != '' ? (
                 <>
-                <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}đ</div>
-                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     </div>

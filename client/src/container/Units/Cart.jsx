@@ -1,11 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next"; 
-import { useEffect,  useState} from 'react';
+import { useEffect, useState} from 'react';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useCart } from "../../CartProvider";
 import axios from "axios";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+
 export default function Cart() {
     const Cart = () => {
       const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart } = useCart();
@@ -13,7 +16,224 @@ export default function Cart() {
       const [exchangeRate, setExchangeRate] = useState(null);
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
+      const [modalShow, setModalShow] = useState(false);
+      const [productSelect1, setProductSelect1] = useState('')
+      const [productSelect2, setProductSelect2] = useState('')
+      
+function MassageThaiVanLung1Modal(props) {
+  const {t} = useTranslation()
+  const [guestName, setGuestName] = useState('');
+  const [specialRequest, setSpecialRequest] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [errors, setErrors] = useState('')
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  const validate = () => {
+    let errors = {}
+    let isVaLid = true
+  
+    if (!guestName) {
+      errors.guestName = 'required';
+      isVaLid = false
+    }  
+    if (!email) {
+      errors.email = 'required';
+      isVaLid = false
+  
+    } 
+    else if (!validateEmail(email)) {
+      errors.email = 'Invalid email format';
+      isVaLid = false
+  
+    }
+    if (!phone) {
+      errors.phone = 'required';
+      isVaLid = false
+  
+    } 
+    setErrors(errors);
+    return isVaLid
+  }
+  const cartSelected = cartItems.map(item => [item.productName, item.productSelect1, item.productSelect2])
+  const linkProduct =  cartSelected.map(item => item[0]);
+  const replacedLinkItems = linkProduct.map(item => item.replace(/ /g, '-'));
+  const urlPrefix = "https://shingolf.vn/product/";
+  const finalUrls = replacedLinkItems.map(item => `${urlPrefix}${item}`);
 
+  const handleSubmit = async(e) => {
+    const dataObject = {
+      guestName,
+      phone,
+      email,
+      cartSelected,
+      productLink: finalUrls.
+      productSelect1,
+      productSelect2,
+    }
+    e.preventDefault()
+    if(validate()){
+      console.log(dataObject);
+      // const token = "73344833-5b52-4403-9255-695907647688"
+      // const source = await sendMassageRequest(dataObject, token)
+      // navigate (`/${language}/massage/thank-you/${city}/`)
+    }else{
+      alert(`Please ensure that all required fields are completed`)
+    }
+  }
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      backdrop="static"
+      keyboard={false}
+    >
+      <Modal.Header>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Đặt hàng
+        </Modal.Title>
+        <Button variant="light" onClick={props.onHide}>
+          <i class="fa-solid fa-xmark purple"></i>
+        </Button>
+      </Modal.Header>
+      <div className="row p-5">
+        <div className="col-md-6 massage_reservation">
+          <Modal.Body>
+          <form onSubmit={handleSubmit}>
+            <h2>Thông tin khách hàng</h2>
+            <div className="row pl-3 pr-3">
+            <input
+                placeholder="Họ và tên"
+                type="text"
+                className={errors.guestName ? 'col-md-12 form__content mb-0 validate_failed' : 'col-md-12 form__content mb-0'}
+                value={guestName}
+                onChange={(e) => {
+                  setGuestName(e.target.value);
+                  setErrors((prevErrors) => ({ ...prevErrors, guestName: '' }));
+                }}
+              />
+            </div>
+            <div className="row pl-3 pr-3">
+              <input
+                type="text"
+                maxLength={10}
+                className={errors.phone ? 'booker-phone form__content col-md-12 validate_failed' : 'booker-phone form__content col-md-12'}
+                id=""
+                value={phone}
+                placeholder="Số điện thoại"
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
+                onChange={(e) => {
+                  setPhone(e.target.value)
+                  setErrors((prevErrors) => ({ ...prevErrors, phone: '' }));
+                }
+                }
+              />
+                <input
+                type="text"
+                className={errors.email ? 'col-md-12 form__content validate_failed' : 'col-md-12 form__content'}
+                id=""
+                value={email}
+                placeholder="Email"
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  setErrors((prevErrors) => ({ ...prevErrors, email: '' }));
+                }}
+              />
+              <textarea
+                  className="text-note"
+                  cols="40"
+                  rows="6"
+                  placeholder="Ghi chú"
+                  value={specialRequest}
+                  onChange={(e) => setSpecialRequest(e.target.value)}
+                ></textarea>
+              <div className="row justify-content-center">
+                <button
+                  id="send"
+                  class="button-57 send-btn col-3 col-md-6"
+                  type="submit"
+                >
+                  <span class="text" style={{ color: "#fff" }}>
+                  {t('reservation.send')}
+                  </span>
+                  <span className="d-flex align-item-center">
+                    <i
+                      class="fa-sharp fa-regular fa-paper-plane green"
+                      style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+                    ></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+            </form>
+          </Modal.Body>
+        </div>
+        <div className="col-md-6">
+          <div className="space-line">
+            <div className="row justify-content-center">
+              <div className="col-6 col-md-6">
+                <img src="https://azumayavietnam.com/image/logo/style-line.png" />
+              </div>
+            </div>
+          </div>
+          <Modal.Body>
+            <h2>Liên hệ Hotline</h2>
+            <div className="btn_container mt-4">
+              <button className="button-57 call-btn p-0">
+                <a className="d-block" href="tel:0868623499">
+                  <i
+                    class="fa-solid fa-phone red"
+                    style={{ lineHeight: "3.8rem" }}
+                  ></i>
+                </a>
+                <span className="w-100">
+                  <a className="d-block call-after" href="tel:0868623499">
+                  0868.623.499
+                  </a>
+                </span>
+              </button>
+            </div>
+            <div className="room__container mt-5">
+              <div className="gg-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.3118580146515!2d105.71949861158183!3d21.06020308661545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455cd304436e3%3A0x4640c03e9367d2b3!2zNDEgTmfDtSA2OSBW4bqhbiBYdcOibiwgS2ltIENodW5nLCBIb8OgaSDEkOG7qWMsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1719730779361!5m2!1svi!2s"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </Modal.Body>
+        </div>
+      </div>
+      <Modal.Footer>
+        <button
+          class="button-57 close-btn"
+          role="button"
+          onClick={props.onHide}
+        >
+          <span class="text" style={{ color: "#fff" }}>
+            {t('service_massage.close')}
+          </span>
+          <span>
+            <i
+              class="fa-solid fa-xmark red"
+              style={{ fontSize: "1.8rem", lineHeight: "2.8rem" }}
+            ></i>
+          </span>
+        </button>
+      </Modal.Footer>
+    </Modal>
+  );
+}   
       const handleIncreaseQuantity = (productId) => {
         increaseQuantity(productId);
         const updatedTotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -75,6 +295,12 @@ export default function Cart() {
               <div className="content__feature-name col-md-1">
                 <div>Phân loại</div>
               </div>
+              <div className="content__feature-name col-md-1">
+                <div>Lựa chọn 1</div>
+              </div>
+              <div className="content__feature-name col-md-1">
+                <div>Lựa chọn 2</div>
+              </div>
               <div className="content__feature-text d-md-flex col-md-2" style={{fontSize: '1.4rem'}}>
                 <div className="content__feature-name" style={{fontSize: '1.4rem'}} >
                     <div>Giá</div>
@@ -91,7 +317,6 @@ export default function Cart() {
           {cartItems.map((item, index) => {
           return(
             <div className="cart-items d-flex">
-            <button className="delete-button d-flex align-items-center" onClick={() => removeFromCart(item.productCode)}><i class="fa-solid fa-xmark"></i></button>
            <div className="col-md-2" key={index}>
           <div style={{ textDecoration: 'none' }}>
             <div className="content__feature-item">
@@ -114,31 +339,57 @@ export default function Cart() {
               <div className="content__feature-name col-md-3">
                 <div>{item.productName}</div>
               </div>
-              <div className="content__feature-name col-md-1">
+              <div className="content__feature-name col-md-1 center">
                 <div>{item.productType}</div>
               </div>
+              <div className="content__feature-name col-md-1 center">
+                <div>{item.productSelect1}</div>
+              </div>
+              <div className="content__feature-name col-md-1 center">
+                <div>{item.productSelect2}</div>
+              </div>
+              {/* <div className="content__feature-name col-md-1">
+                          <>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect1}
+                      onChange={(e) => setProductSelect1(e.target.value)}>
+                          <option value={item.size.size1}>{item.size.size1}</option>
+                          <option value={item.size.size2}>{item.size.size2}</option>
+                          <option value={item.size.size3}>{item.size.size3}</option>
+                          {item.size.size4 ? (<option value={item.size.size4}>{item.size.size4}</option>) : ''}
+                          {item.size.size5 ? (<option value={item.size.size5}>{item.size.size5}</option>) : ''}
+                      </select>
+                          </>
+                      </div>
+                      <div className="content__feature-name col-md-1 center">
+                        <>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Màu sắc: </li>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2}
+                      onChange={(e) => setProductSelect2(e.target.value)}>
+                          <option value={item.color.color1}>{item.color.color1}</option>
+                          <option value={item.color.color2}>{item.color.color2}</option>
+                          <option value={item.color.color3}>{item.color.color3}</option>
+                          {item.color.color4 ? (<option value={item.color.color4}>{item.color.color4}</option>) : ''}
+                          {item.color.color5 ? (<option value={item.color.color5}>{item.color.color5}</option>) : ''}
+                      </select>
+                        </>
+                    </div> */}
               <div className="content__feature-text d-flex col-md-2" style={{fontSize: '1.2rem'}}>
                 <div className="price">{Intl.NumberFormat('de-DE').format(item.price)}đ</div>
                 <div className="price ml-3 mr-2" style={{ color: '#ccc', textDecoration: 'line-through', textDecorationColor:'#000' }}>{Intl.NumberFormat('de-DE').format(item.saleprice)}đ</div>
               </div>
               <div className="quantity-controls col-md-1 mr-2">
-              {/* <button onClick={() => {
-                  const newQuantity = decreaseQuantity(item.id);
-                  if (newQuantity !== undefined ) {
-                    setTotalPrice(prevTotalPrice => prevTotalPrice - item.price);
-                  }
-                }}>-</button>
-                <span>{item.quantity}</span>
-                <button onClick={() => {
-                  const newQuantity = increaseQuantity(item.id);
-                  setTotalPrice(prevTotalPrice => prevTotalPrice + item.price);
-                }}>+</button> */}
                 <button onClick={() => handleDecreaseQuantity(item.productCode)}>-</button>
                 <span>{item.quantity}</span>
                 <button onClick={() => handleIncreaseQuantity(item.productCode)}>+</button>
             </div>
-            <div className="content__feature-text d-flex col-md-1 total-product-price" style={{fontSize: '1.2rem'}}>
+            <div className="content__feature-text d-flex col-md-1 total-product-price ml-4" style={{fontSize: '1.2rem'}}>
             <div className="price">{Intl.NumberFormat('de-DE').format((item.price * item.quantity).toFixed(2))}</div>
+            <button className="delete-button d-flex align-items-center ml-5" onClick={() => removeFromCart(item.productCode)}><i class="fa-solid fa-xmark"></i></button>
             </div>
             </div>
               </div>
@@ -157,7 +408,14 @@ export default function Cart() {
           <div className="cart-summary">
             <p>Tổng: {Intl.NumberFormat('de-DE').format(totalPrice.toFixed(3))}đ <small style={{fontSize: '1.2rem'}}>(Đã bao gồm 8% VAT)</small></p>
             <div className="cart-buttons">
-              <button className="contact-button">Liên hệ</button>
+              <button onClick={() => setModalShow(true)} className="contact-button">Liên hệ</button>
+              <MassageThaiVanLung1Modal
+                          show={modalShow}
+                          onHide={() => setModalShow(false)}
+                        />
+              {/* <InformationModal
+                   show = {modalShow}
+                   onHide = {()=> setModalShow(false)}/> */}
               {/* <button className="pay-button">Pay</button> */}
             </div>
           </div>
@@ -187,7 +445,7 @@ export default function Cart() {
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <Link className="breadcrumb__title" to="/feature/">
+                  <Link className="breadcrumb__title" to="/cart/">
                     Giỏ Hàng
                   </Link>
                 </li>

@@ -68,6 +68,7 @@ textarea{
 }
 .text-note {
     font-size: 1.4rem;
+    border-color: #c5c5c5;
 }
 ::placeholder{
     color: var(--white--color);
@@ -193,6 +194,9 @@ textarea{
 .btn_en-fixed:hover{
     color: #fff;
 }
+.btn_kor-fixed:hover{
+    color: #fff;
+}
 .btn_ja-fixed {
     position: fixed;
     right : 20px;
@@ -227,20 +231,23 @@ textarea{
 .btn_kor-fixed {
     position: fixed;
     right : 20px;
-    bottom :  200px;
+    bottom :260px;
     z-index: 999;
-    width:30px;
-    height:30px;
-    background: url("https://cdn-icons-png.flaticon.com/128/197/197582.png") center center / cover no-repeat;
+    width:35px;
+    height:35px;
+      /* background: url('https://cdn-icons-png.flaticon.com/512/3616/3616215.png') center center / contain no-repeat; */
     border-radius:50px;
-    font-size:2.4rem;
+    font-size:2rem;
     color:#fff;
+    background-color: #ff3131;
+    text-decoration: none;
     animation: fadeIn 0.5s linear;
+    cursor: pointer;
 }
 .btn__top:hover{
     color: #ffffff;
-    background-color: #fec800;
-    border-color: #fec800;
+    background-color: #ff3131;
+    border-color: #ff3131;
 }
 .btn__send{
     width: 30%;

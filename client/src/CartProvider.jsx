@@ -10,17 +10,21 @@ export const CartProvider = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
+  const addToCart = (product, productSelect1, productSelect2) => {
     setCartItems((prevItems) => {
-      const existingProduct = prevItems.find((item) => item.productCode === product.productCode);
+      const existingProduct = prevItems.find((item) => item.productCode === product.productCode &&
+      item.productSelect1 === productSelect1 &&
+      item.productSelect2 === productSelect2);
       if (existingProduct) {
         return prevItems.map((item) =>
-          item.productCode === product.productCode
+          item.productCode === product.productCode &&
+        item.productSelect1 === productSelect1 &&
+        item.productSelect2 === productSelect2
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
-        return [...prevItems, { ...product, quantity: 1 }];
+        return [...prevItems, { ...product, productSelect1, productSelect2, quantity: 1 }];
       }
     });
   };

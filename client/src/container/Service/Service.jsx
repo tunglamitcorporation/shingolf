@@ -8,6 +8,7 @@ import Collapsible from 'react-collapsible'
 import { makeListMenu } from "../../api/product";
 import ProductHistoryContext from "../../ProductHistoryContext";
 import { useCart } from "../../CartProvider";
+import AlertComponent from "../../Alert";
 export default function VietnamService({fetchData, listMenu}) {
   const navigate = useNavigate()
   const {t, i18n} = useTranslation()
@@ -20,6 +21,19 @@ export default function VietnamService({fetchData, listMenu}) {
   const [visible, setVisible] = useState (true)
   const { addProductToHistory } = useContext(ProductHistoryContext);
   const {addToCart} = useCart()
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 1000);  
+
+    return () => clearTimeout(timer);
+  }, [show]);
+  const handleAddToCart = (product) => {
+    addToCart(product)
+    setShow(true)
+    // alert(`Đã thêm ${product.productName} vào giỏ hàng`)
+  }
   const convertListMenu = []
   for (const [title, items] of Object.entries(listMenu)) {
     items.forEach((item, index) => {
@@ -144,18 +158,18 @@ export default function VietnamService({fetchData, listMenu}) {
             <div className="content__feature-text d-md-flex justify-content-between">
               {product.saleprice != '' ? (
                 <>
-                <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
-                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </>
               ) : (
-                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
             </div>
           </div>
           <div className="btn-container">
             <div className="row pb-0">
               <div className="col-md-6 p-0">
-                <div onClick={() => addToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                <div onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                   THÊM VÀO GIỎ
                 </div>
               </div>
@@ -219,6 +233,9 @@ export default function VietnamService({fetchData, listMenu}) {
   return (
     <>
     <HelmetLayout />
+    {show && (
+        <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
+      )}
       <div className="service__header">
         <div className="container">
           <div className="row">

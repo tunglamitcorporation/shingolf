@@ -10,6 +10,7 @@
   import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
   import ProductHistoryContext from "../../ProductHistoryContext";
   import { useCart } from "../../CartProvider";
+  import AlertComponent from "../../Alert";
   export default function Home({fetchData, listMenu}) {
     const { t } = useTranslation();
     const caption = t("caption", {returnObjects: true})
@@ -17,7 +18,15 @@
     const navigate = useNavigate()
     const [copySuccess, setCopySuccess] = useState('');
      const textToCopy = "This text will be copied to clipboard";
-
+    const [show, setShow] = useState(false);
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setShow(false);
+      }, 1000);  
+  
+      return () => clearTimeout(timer);
+    }, [show]);
+  
      const copyToClipboard = async () => {
       try {
         await navigator.clipboard.writeText(textToCopy);
@@ -38,7 +47,7 @@
     //     }
     //   });
     // }
-    const groupedData = {};
+const groupedData = {};
 
 for (const [title, items] of Object.entries(listMenu)) {
   if (!groupedData[title]) {
@@ -50,13 +59,14 @@ for (const [title, items] of Object.entries(listMenu)) {
 const convertListMenu = Object.keys(groupedData).map(title => ({
   title,
   items: groupedData[title]
-}));;
-console.log(listMenu);
+}));
+
 const { addToCart } = useCart();
 
 const handleAddToCart = (product) => {
       addToCart(product)
-      alert(`Đã thêm ${product.productName} vào giỏ hàng`)
+      setShow(true)
+      // alert(`Đã thêm ${product.productName} vào giỏ hàng`)
     }
     const { addProductToHistory } = useContext(ProductHistoryContext);
     const formatProductName = (name) => {
@@ -105,15 +115,52 @@ const handleAddToCart = (product) => {
       navigate(`/product-list/${formattedProductId}`, { state: { price: product.price, id: product.title } });
     };
     const c = t("header.title")         
-    // const selectedProducts = [
-    //  convertListMenu[0], 
-    //  convertListMenu[3], 
-    //  convertListMenu[4], 
-    //  convertListMenu[6], 
-    //  convertListMenu[10], 
-    //  convertListMenu[12], 
-    // ];
-    const selectedList = convertListMenu.slice(1,7)
+    const selectedList = 
+      [
+        {
+            "title": "Gậy Golf Mới",
+            "items": [
+                "Gậy Driver",
+                "set gậy sắt"
+            ]
+        },
+        {
+            "title": "Gậy golf cũ",
+            "items": [
+                "Gậy Driver",
+                "set gậy sắt"
+            ]
+        },
+        {
+            "title": "Bộ gậy giá rẻ",
+            "items": [
+                "Bộ gậy golf"
+            ]
+        },
+        {
+            "title": "Phụ kiện golf",
+            "items": [
+                "Găng tay",
+                "Bóng",
+                "Mũ",
+                "Dây thắt lưng"
+            ]
+        },
+        {
+            "title": "Quần áo golf nam",
+            "items": [
+                "Áo cộc tay",
+                "Quần dài"
+            ]
+        },
+        {
+            "title": "Quần áo golf nữ",
+            "items": [
+                "Váy ngắn"
+            ]
+        }
+    ]
+    // const selectedList = convertListMenu.slice(1,7)
     const StarRating = ({ rate }) => {
       const renderStars = (rate) => {
         const stars = [];
@@ -141,9 +188,13 @@ const handleAddToCart = (product) => {
     return (
       <>
       <HelmetLayout title = {c} />
+      {show && (
+        <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
+      )}
       <div className="homepage">
         <div className="container">
           <div className="row">
+
             <div className="col-md-12 mt-0">
         <div className="content">
         <AutoPlaySlider
@@ -232,8 +283,8 @@ const handleAddToCart = (product) => {
                   <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                 </div>
                 <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}đ</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
                 </div>
@@ -298,8 +349,8 @@ const handleAddToCart = (product) => {
                   <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                 </div>
                 <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 </div>
                 <div className="btn-container">
@@ -367,8 +418,8 @@ const handleAddToCart = (product) => {
                 <div  className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
               </div>
               <div className="content__feature-text d-md-flex justify-content-between">
-                <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}đ</div>
-                <div className="price ml-md-5" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}đ</div>
+                <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}¥</div>
+                <div className="price ml-md-5" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               </div>
               <div className="btn-container">
