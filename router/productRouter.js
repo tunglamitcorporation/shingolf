@@ -13,6 +13,10 @@ router.get('/take_all', productCtrl.takeAll);
 
 router.post('/take_categories/:type', productCtrl.takeListCategory);
 
+router.post('/send_mail_sale', productCtrl.sendMailSale);
+
+router.post('/make_invoice`', productCtrl.makeInvoice);
+
 // router.post('/update_picture', productCtrl.updatePicture)
 
 
