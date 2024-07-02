@@ -254,9 +254,11 @@ const productCtrl = {
                 if(dataOnBody.listProduct.length > 0) {
                     dataOnBody.listProduct.forEach(item => {
                        return result.push(`<tr>
-                            <td style="border: 1px solid">${item.name}</td>
-                            <td style="border: 1px solid">${item.quantity}</td>
-                            <td style="border: 1px solid">${item.price}</td>
+                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.name}</td>
+                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.quantity}</td>
+                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.price}</td>
+                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.option1}</td>
+                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.option2}</td>
                         </tr>`)
                     })
                 }
@@ -276,9 +278,11 @@ const productCtrl = {
                 <h2>Danh sách sản phẩm</h2>
                 <table>
                     <tr>
-                        <th style="border: 1px solid">Tên hàng hóa</th>
-                        <th style="border: 1px solid">Số lượng</th>
-                        <th style="border: 1px solid">Thành tiền</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Tên hàng hóa</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Số lượng</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Thành tiền</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Lựa chọn 1</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Lựa chọn 2</th>
                     </tr>
                     ${renderListProduct()}
                 </table>
