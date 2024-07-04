@@ -449,6 +449,9 @@ code {
   min-width: 30px;
   text-align: center;
 }
+.select-category{
+  display: none;
+}
 .delete-button {
   background-color: #ff3131;
   border: none;
@@ -3215,6 +3218,9 @@ font-size: 1.2rem !important;
 }
 .cart-header{
   display: none;
+}
+.select-category{
+  display: block;
 }
 }
 /* tablet */

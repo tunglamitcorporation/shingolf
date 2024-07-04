@@ -65,7 +65,10 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
-
+  const getItemQuantity = (productCode) => {
+    const item = cartItems.find((item) => item.productCode === productCode);
+    return item ? item.quantity : 0;
+  };
   const removeFromCart = (productCode) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.productCode !== productCode)
@@ -73,7 +76,7 @@ export const CartProvider = ({ children }) => {
     localStorage.removeItem('cartItems')
   };
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, increaseQuantity, decreaseQuantity, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, increaseQuantity, decreaseQuantity, removeFromCart, getItemQuantity }}>
       {children}
     </CartContext.Provider>
   );

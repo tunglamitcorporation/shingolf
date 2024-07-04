@@ -249,11 +249,12 @@ const handleAddToCart = (product) => {
         </div>
         <AnimatedOnScroll>
           <div className="content__feature mt-5">
-            <div className="content__feature-title">GẬY GOLF MỚI</div>
+            <div className="content__feature-title">GIÀY GOLF</div>
             <div className="container">
             <div className="row">
       {fetchData
-        .filter(product => product.productId === 'newgolfclub')
+        .filter(product => product.productId === 'golfshoes')
+        .slice(0, 8)  
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3">
             <div style={{ textDecoration: 'none' }}>
@@ -313,82 +314,15 @@ const handleAddToCart = (product) => {
             </div>
           </div>
         </AnimatedOnScroll>
-        <AnimatedOnScroll>
-        <div className="content__feature mt-5">
-            <div className="content__feature-title">TRANG PHỤC</div>
-            <div className="container">
-            <div className="row">
-      {fetchData
-        .filter(product => product.productId === 'mengolfclothes')
-        .map((product) => (
-          <div key={product.productId} className="col-6 col-md-3 p-3" >
-            <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
-                <div className="content__feature-container">
-                  <div
-                   onClick={() => handleProduct(product)}
-                    className="content__feature-img"
-                    style={{
-                      backgroundImage:
-                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
-                      }}
-                      title={product.productCode}
-                  >
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                  </div>
-                </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform: 'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                </div>
-                <div className="btn-container">
-                  <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                        THÊM VÀO GIỎ
-                      </div>
-                    </div>
-                    <div className="col-md-6 p-0">
-                    <a 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                  target="_blank"
-                   href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-    </div>
-            </div>
-          </div>
-        </AnimatedOnScroll>
-        <AnimatedOnScroll>
+
+          <AnimatedOnScroll>
         <div className="content__feature mt-5">
             <div className="content__feature-title">TÚI GOLF</div>
             <div className="container">
             <div className="row">
       {fetchData
         .filter(product => product.productId === 'golfbag')
+        .slice(0, 8)
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-3 p-3">
           <div style={{ textDecoration: 'none' }}>
@@ -451,6 +385,424 @@ const handleAddToCart = (product) => {
             </div>
           </div>
         </AnimatedOnScroll>
+
+        <AnimatedOnScroll>
+          <div className="content__feature mt-5">
+            <div className="content__feature-title">GẬY GOLF MỚI</div>
+            <div className="container">
+            <div className="row">
+      {fetchData
+        .filter(product => product.productId === 'newgolfclub')
+        .slice(0, 8)  
+        .map((product) => (
+          <div key={product.productId} className="col-6 col-md-3 p-3">
+            <div style={{ textDecoration: 'none' }}>
+              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                <div className="content__feature-container">
+                  <div
+                   onClick={() => handleProduct(product)}
+                    className="content__feature-img"
+                    style={{
+                      backgroundImage:
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                      }}
+                      title={product.productCode}
+                  >
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'10px'}}>
+                <div className="d-flex justify-content-between align-items-center">
+               <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
+                </div>
+                <div className="content__feature-name">
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                </div>
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
+                </div>
+                <div className="btn-container">
+                  <div className="row pb-0">
+                    <div className="col-md-6 p-0">
+                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        THÊM VÀO GIỎ
+                      </div>
+                    </div>
+                   <div className="col-md-6 p-0">
+                    <a 
+                      target="_blank"
+                      href="https://zalo.me/0564545545"
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
+
+        <AnimatedOnScroll>
+          <div className="content__feature mt-5">
+            <div className="content__feature-title">GẬY GOLF CŨ</div>
+            <div className="container">
+            <div className="row">
+      {fetchData
+        .filter(product => product.productId === 'oldgolfclub')
+        .slice(0, 8)  
+        .map((product) => (
+          <div key={product.productId} className="col-6 col-md-3 p-3">
+            <div style={{ textDecoration: 'none' }}>
+              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                <div className="content__feature-container">
+                  <div
+                   onClick={() => handleProduct(product)}
+                    className="content__feature-img"
+                    style={{
+                      backgroundImage:
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                      }}
+                      title={product.productCode}
+                  >
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'10px'}}>
+                <div className="d-flex justify-content-between align-items-center">
+               <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
+                </div>
+                <div className="content__feature-name">
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                </div>
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
+                </div>
+                <div className="btn-container">
+                  <div className="row pb-0">
+                    <div className="col-md-6 p-0">
+                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        THÊM VÀO GIỎ
+                      </div>
+                    </div>
+                   <div className="col-md-6 p-0">
+                    <a 
+                      target="_blank"
+                      href="https://zalo.me/0564545545"
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
+
+        <AnimatedOnScroll>
+          <div className="content__feature mt-5">
+            <div className="content__feature-title">BỘ GẬY</div>
+            <div className="container">
+            <div className="row">
+      {fetchData
+        .filter(product => product.productId === 'golfset')
+        .slice(0, 8)  
+        .map((product) => (
+          <div key={product.productId} className="col-6 col-md-3 p-3">
+            <div style={{ textDecoration: 'none' }}>
+              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                <div className="content__feature-container">
+                  <div
+                   onClick={() => handleProduct(product)}
+                    className="content__feature-img"
+                    style={{
+                      backgroundImage:
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                      }}
+                      title={product.productCode}
+                  >
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'10px'}}>
+                <div className="d-flex justify-content-between align-items-center">
+               <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
+                </div>
+                <div className="content__feature-name">
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                </div>
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
+                </div>
+                <div className="btn-container">
+                  <div className="row pb-0">
+                    <div className="col-md-6 p-0">
+                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        THÊM VÀO GIỎ
+                      </div>
+                    </div>
+                   <div className="col-md-6 p-0">
+                    <a 
+                      target="_blank"
+                      href="https://zalo.me/0564545545"
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
+
+        <AnimatedOnScroll>
+        <div className="content__feature mt-5">
+            <div className="content__feature-title">PHỤ KIỆN</div>
+            <div className="container">
+            <div className="row">
+      {fetchData
+        .filter(product => product.productId === 'accessories')
+        .slice(0,8)
+        .map((product) => (
+          <div key={product.productId} className="col-6 col-md-3 p-3" >
+            <div style={{ textDecoration: 'none' }}>
+              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
+                <div className="content__feature-container">
+                  <div
+                   onClick={() => handleProduct(product)}
+                    className="content__feature-img"
+                    style={{
+                      backgroundImage:
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                      }}
+                      title={product.productCode}
+                  >
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'10px'}}>
+                <div className="d-flex justify-content-between align-items-center">
+               <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform: 'capitalize'}}>{product.rank}</div>
+                </div>
+                <div className="content__feature-name">
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                </div>
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                </div>
+                <div className="btn-container">
+                  <div className="row pb-0">
+                    <div className="col-md-6 p-0">
+                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        THÊM VÀO GIỎ
+                      </div>
+                    </div>
+                    <div className="col-md-6 p-0">
+                    <a 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                  target="_blank"
+                   href="https://zalo.me/0564545545"
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
+
+        <AnimatedOnScroll>
+        <div className="content__feature mt-5">
+            <div className="content__feature-title">QUẦN ÁO NAM</div>
+            <div className="container">
+            <div className="row">
+      {fetchData
+        .filter(product => product.productId === 'mengolfclothes')
+        .slice(0,8)
+        .map((product) => (
+          <div key={product.productId} className="col-6 col-md-3 p-3" >
+            <div style={{ textDecoration: 'none' }}>
+              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
+                <div className="content__feature-container">
+                  <div
+                   onClick={() => handleProduct(product)}
+                    className="content__feature-img"
+                    style={{
+                      backgroundImage:
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                      }}
+                      title={product.productCode}
+                  >
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'10px'}}>
+                <div className="d-flex justify-content-between align-items-center">
+               <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform: 'capitalize'}}>{product.rank}</div>
+                </div>
+                <div className="content__feature-name">
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                </div>
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                </div>
+                <div className="btn-container">
+                  <div className="row pb-0">
+                    <div className="col-md-6 p-0">
+                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        THÊM VÀO GIỎ
+                      </div>
+                    </div>
+                    <div className="col-md-6 p-0">
+                    <a 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                  target="_blank"
+                   href="https://zalo.me/0564545545"
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
+
+        <AnimatedOnScroll>
+        <div className="content__feature mt-5">
+            <div className="content__feature-title">QUẦN ÁO NỮ</div>
+            <div className="container">
+            <div className="row">
+      {fetchData
+        .filter(product => product.productId === 'womengolfclothes')
+        .slice(0,8)
+        .map((product) => (
+          <div key={product.productId} className="col-6 col-md-3 p-3" >
+            <div style={{ textDecoration: 'none' }}>
+              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
+                <div className="content__feature-container">
+                  <div
+                   onClick={() => handleProduct(product)}
+                    className="content__feature-img"
+                    style={{
+                      backgroundImage:
+                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                      }}
+                      title={product.productCode}
+                  >
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.sale) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{padding:'10px'}}>
+                <div className="d-flex justify-content-between align-items-center">
+               <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform: 'capitalize'}}>{product.rank}</div>
+                </div>
+                <div className="content__feature-name">
+                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                </div>
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.sale)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                </div>
+                <div className="btn-container">
+                  <div className="row pb-0">
+                    <div className="col-md-6 p-0">
+                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        THÊM VÀO GIỎ
+                      </div>
+                    </div>
+                    <div className="col-md-6 p-0">
+                    <a 
+                  // onClick={() => {
+                  //     addToCart(product)
+                  //     navigate('/cart/')
+                  //     }} 
+                  target="_blank"
+                   href="https://zalo.me/0564545545"
+                      className="buy-btn">
+                      LIÊN HỆ
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+            </div>
+          </div>
+        </AnimatedOnScroll>
+
       </div>
       </>
     );

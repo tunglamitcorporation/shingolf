@@ -16,9 +16,14 @@ export function  makeListMenu(token) {
     });
 }
 
-
 export function addProduct(data, token) {
     let newURL = "/product/add_product";
+    return axios.post(`${newURL}`, data, {
+        headers: { Authorization: token }
+    });
+}
+export function makeInvoice(data, token) {
+    let newURL = "/product/make_invoice";
     return axios.post(`${newURL}`, data, {
         headers: { Authorization: token }
     });
