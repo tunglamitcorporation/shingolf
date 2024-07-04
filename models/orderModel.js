@@ -1,26 +1,38 @@
 const mongoose = require('mongoose');
 var conn = require('../config/dbm');
 
-const invoiceSchema = new mongoose.Schema({
-    id: {
+const orderSchema = new mongoose.Schema({
+    oderId: {
         type: String,
         trim: true,
     },
-    customerName: {
+    guestName:  {
         type: String,
         trim: true,
     },
-    custormerAddress: {
+    phone: {
         type: String,
         trim: true,
     },
-    custormerPhone: {
+    email: {
         type: String,
         trim: true,
     },
-    customerNote: {
+    address: {
         type: String,
         trim: true,
+    },
+    note: {
+        type: String,
+        trim: true,
+    },
+    noteByAdmim: {
+        type: String,
+        trim: true,
+    },
+    cartSelected: {
+        type: Array,
+        default: []
     },
     status: {
         type: Array,
@@ -30,19 +42,9 @@ const invoiceSchema = new mongoose.Schema({
         type: Boolean,
         trim: true,
     },
-    note: {
-        type: String,
-        trim: true,
-    },
-    productList: {
-        type: Array,
-        default: []
-    }
-
-    
 }, {
     timestamps: true
 });
 
-module.exports = conn.model("Invoice", invoiceSchema);
+module.exports = conn.model("Order", orderSchema);
  

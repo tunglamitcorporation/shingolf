@@ -1,5 +1,5 @@
 const PRODUCT = require('../models/productModel');
-const Invoice = require('../models/invoiceModel');
+const Order= require('../models/orderModel');
 const { getTodayFullFormat } = require('../units/supportDate')
 const sentMailSale = require('./units/sentMail');
 
@@ -223,25 +223,44 @@ const productCtrl = {
             return res.status(500).json({msg: err.message})    
         }
     },
-    makeInvoice: async (req, res) => {
+    makeOrder: async (req, res) => {
         try {
             const dataOnBody = req.body;
 
-            const newIvocie = new Invoice({
-                id: 125,
-                customerName: dataOnBody.customerName,
-                custormerAddress: dataOnBody.customerAddress,
-                custormerPhone: dataOnBody.customerPhone,
-                customerNote: dataOnBody.customerNote,
+            const demo = {
+                "guestName": "lam",
+                "phone": "12412",
+                "email": "lam@lam.com",
+                "address" :"Office AZIT",
+                "note": "TEst note by Team IT",
+                "cartSelected": [
+                    {
+                        "productName":"Gậy driver Ping g430 max 10k 0000731011",
+                        "productLink":  "https://shingolf.vn/product/Gậy-driver-Ping-g430-max-10k-0000731011",
+                        "productSelect1": "9",
+                        "productSelect2": "SR",
+                        "quantity":"1",
+                        "price":"10000",
+                    }
+                 ]
+            }
+
+            const productID = Date.now();
+
+            const newIvocie = new Order({
+                id: productID,
+                guestName: dataOnBody.guestName,
+                address: dataOnBody.address,
+                phone: dataOnBody.phone,
+                email: dataOnBody.email,
+                note: dataOnBody.note,
                 status: [],
                 confirm: false,
-                productList: dataOnBody.productList,
-                note: ""
+                cartSelected: dataOnBody.cartSelected,
+                noteByAdmin: ""
             })
 
             await newIvocie.save()
-
-            
 
             // send mail
             const to = "vanhaicddt2.1@gmail.com";
@@ -251,12 +270,16 @@ const productCtrl = {
 
             function renderListProduct() {
                 let result = [];
-                if(dataOnBody.listProduct.length > 0) {
-                    dataOnBody.listProduct.forEach(item => {
+                if(dataOnBody.cartSelected.length > 0) {
+                    dataOnBody.cartSelected.forEach(item => {
                        return result.push(`<tr>
-                            <td style="border: 1px solid">${item.name}</td>
+                            <td style="border: 1px solid">${item.productName}</td>
                             <td style="border: 1px solid">${item.quantity}</td>
                             <td style="border: 1px solid">${item.price}</td>
+                            <td style="border: 1px solid">${item.productSelect1}</td>
+                            <td style="border: 1px solid">${item.productSelect2}</td>
+                            <td style="border: 1px solid">
+                            <a heref=${item.productLink}></a></td>
                         </tr>`)
                     })
                 }
@@ -266,18 +289,20 @@ const productCtrl = {
 
             const html = `
                 <h1>Thông báo đơn hàng mới</h1>
-                <h3>Đơn hàng có mã: ${dataOnBody.id}</h3>
+                <h3>Đơn hàng có mã: ${productID}</h3>
                 <h3>Tong tiền: ${dataOnBody.totalPrice}</h3>
-                <h3>Người nhận: ${dataOnBody.customerName}</h3>
-                <h3>Số điện thoại:: ${dataOnBody.customerPhone}</h3>
-                <h3>Địa chỉ: ${dataOnBody.customerAddress}</h3>
-                <h3>Ghi chú: ${dataOnBody.customerNote}</h3>
+                <h3>Người nhận: ${dataOnBody.guestName}</h3>
+                <h3>Số điện thoại:: ${dataOnBody.phone}</h3>
+                <h3>Địa chỉ: ${dataOnBody.cuaddress}</h3>
+                <h3>Ghi chú: ${dataOnBody.note}</h3>
                 <br/>
                 <h2>Danh sách sản phẩm</h2>
                 <table>
                     <tr>
                         <th style="border: 1px solid">Tên hàng hóa</th>
                         <th style="border: 1px solid">Số lượng</th>
+                        <th style="border: 1px solid">Select 1</th>
+                        <th style="border: 1px solid">Select 2</th>
                         <th style="border: 1px solid">Thành tiền</th>
                     </tr>
                     ${renderListProduct()}
