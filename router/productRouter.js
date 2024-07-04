@@ -3,7 +3,7 @@ const productCtrl = require('../controllers/productCtrl');
 
 router.post('/add_product', productCtrl.addProduct);
 
-router.patch('/update_product/:id', productCtrl.updatePorduct);
+router.patch('/update_product/:productCode', productCtrl.updateProduct);
 
 router.post('/find_product/:category/:type', productCtrl.findProduct);
 

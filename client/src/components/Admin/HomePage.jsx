@@ -6,7 +6,7 @@ function HomePage() {
 
     const [selectedImage, setSelectedImage] = useState(null);
     const [file, setFile] = useState(null);
-
+    const dateToNumber = Date.now();
     // Hàm để xử lý khi người dùng chọn ảnh
     // const handleImageChange = (event) => {
     //     const file = event.target.files[0];
@@ -22,64 +22,64 @@ function HomePage() {
     const LIST_UPDATE = {
         banner: [
             {
-                "linkPicture": "banner/banner1.png",
+                "linkPicture": "banner/banner1.png?v="+dateToNumber,
                 "linkUpdate": "/home/banner",
                 "name": "banner1"
             },
             {
-                "linkPicture": "banner/banner2.png",
+                "linkPicture": "banner/banner2.png?v="+dateToNumber,
                 "linkUpdate": "/home/banner",
                 "name": "banner2"
             },
             {
-                "linkPicture": "banner/banner3.png",
+                "linkPicture": "banner/banner3.png?v="+dateToNumber,
                 "linkUpdate": "/home/banner",
                 "name": "banner3"
             },
             {
-                "linkPicture": "banner/banner4.png",
+                "linkPicture": "banner/banner4.png?v="+dateToNumber,
                 "linkUpdate": "/home/banner",
                 "name": "banner4"
             },
             {
-                "linkPicture": "banner/banner5.png",
+                "linkPicture": "banner/banner5.png?v="+dateToNumber,
                 "linkUpdate": "/home/banner",
                 "name": "banner5"
             },
             {
-                "linkPicture": "banner/banner6.png",
+                "linkPicture": "banner/banner6.png?v="+dateToNumber,
                 "linkUpdate": "/home/banner",
                 "name": "banner6"
             }
         ],
         sale: [
             {
-                "linkPicture": "sale/sale1.png",
+                "linkPicture": "sale/sale1.png?v="+dateToNumber,
                 "linkUpdate": "/home/sale",
                 "name": "sale1"
             },
             {
-                "linkPicture": "sale/sale2.png",
+                "linkPicture": "sale/sale2.png?v="+dateToNumber,
                 "linkUpdate": "/home/sale",
                 "name": "sale2"
             },
             {
-                "linkPicture": "sale/sale3.png",
+                "linkPicture": "sale/sale3.png?v="+dateToNumber,
                 "linkUpdate": "/home/sale",
                 "name": "sale3"
             },
             {
-                "linkPicture": "sale/sale4.png",
+                "linkPicture": "sale/sale4.png?v="+dateToNumber,
                 "linkUpdate": "/home/sale",
                 "name": "sale4"
             },
             {
-                "linkPicture": "sale/sale5.png",
+                "linkPicture": "sale/sale5.png?v="+dateToNumber,
                 "linkUpdate": "/home/sale",
                 "name": "sale5"
             },
             {
-                "linkPicture": "sale/sale6.png",
+                "linkPicture": "sale/sale6.png?v="+dateToNumber,
                 "linkUpdate": "/home/sale",
                 "name": "sale6"
             }

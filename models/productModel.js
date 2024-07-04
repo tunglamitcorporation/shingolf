@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
     category: {type: String, required: true},
     productType: {type: String, required: true},
     productCode: {type: String, required: true},
-    productname: { type: String, required: true },
+    productName: { type: String, required: true },
     productImage: { type: [String], default: [] },
     status: { type: String, required: true, default: "còn hàng" },
     amount: { type: Number, required: true, default: 0 },
@@ -35,16 +35,22 @@ const productSchema = new mongoose.Schema({
     material: { type: String, default:"" },
     content: {
         // type: Object
-        content1: { type: String, default:"" },
-        content2: { type: String, default:"" },
-        content3: { type: String, default:"" },
-        content4: { type: String, default:"" },
+        type: Object ,
+        default: {
+            content1: { type: String, default:"" },
+            content2: { type: String, default:"" },
+            content3: { type: String, default:"" },
+            content4: { type: String, default:"" 
+        }},
     },
     images: {
-        image1: { type: String , default:"" },
-        image2: { type: String , default:"" },
-        image3: { type: String , default:"" },
-        image4: { type: String , default:"" }
+        type: Object ,
+        default: {
+            image1: { type: String , default:"" },
+            image2: { type: String , default:"" },
+            image3: { type: String , default:"" },
+            image4: { type: String , default:"" }
+        }
     },
     activate: {type: Boolean, default: true}
 }, {
