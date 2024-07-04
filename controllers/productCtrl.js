@@ -273,7 +273,6 @@ const productCtrl = {
                 if(dataOnBody.cartSelected.length > 0) {
                     dataOnBody.cartSelected.forEach(item => {
                        return result.push(`<tr>
-<<<<<<< HEAD
                             <td style="border: 1px solid">${item.productName}</td>
                             <td style="border: 1px solid">${item.quantity}</td>
                             <td style="border: 1px solid">${item.price}</td>
@@ -281,13 +280,6 @@ const productCtrl = {
                             <td style="border: 1px solid">${item.productSelect2}</td>
                             <td style="border: 1px solid">
                             <a heref=${item.productLink}></a></td>
-=======
-                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.name}</td>
-                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.quantity}</td>
-                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.price}</td>
-                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.option1}</td>
-                            <td style="border:1px solid;padding: 4px;font-size: 1.1rem;">${item.option2}</td>
->>>>>>> 8829875fec65720e6e0a5983e18414f4de993468
                         </tr>`)
                     })
                 }
@@ -307,19 +299,11 @@ const productCtrl = {
                 <h2>Danh sách sản phẩm</h2>
                 <table>
                     <tr>
-<<<<<<< HEAD
-                        <th style="border: 1px solid">Tên hàng hóa</th>
-                        <th style="border: 1px solid">Số lượng</th>
-                        <th style="border: 1px solid">Select 1</th>
-                        <th style="border: 1px solid">Select 2</th>
-                        <th style="border: 1px solid">Thành tiền</th>
-=======
                         <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Tên hàng hóa</th>
                         <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Số lượng</th>
                         <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Thành tiền</th>
                         <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Lựa chọn 1</th>
                         <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Lựa chọn 2</th>
->>>>>>> 8829875fec65720e6e0a5983e18414f4de993468
                     </tr>
                     ${renderListProduct()}
                 </table>
