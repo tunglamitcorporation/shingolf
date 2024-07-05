@@ -30,8 +30,8 @@ const productCtrl = {
 
             // return res.json({ dataOnBody });
 
-            // const newProduct = new PRODUCT(dataOnBody);
-            // await newProduct.save();
+            onst newProduct = new PRODUCT(dataOnBody);
+            await newProduct.save();
             delete dataOnBody.logEdit
 
             return res.status(200).json({msg: "Product added successfully", data: dataOnBody})
