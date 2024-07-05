@@ -18,7 +18,7 @@ const productCtrl = {
             const index = LIST_SELECT_PRODUCT_ID.indexOf(productId);
             const fistCode = LIST_SELECT_PRODUCT_CODE[index];
 
-            const checkCount = await PRODUCT.find({ productId }, { status: 1}).count();
+            const checkCount = await PRODUCT.find({ productId }, { name: 1}).count();
             const productCode = fistCode + (checkCount + 1).toString().padStart(4, '0');;
 
             dataOnBody.logEdit = [];
