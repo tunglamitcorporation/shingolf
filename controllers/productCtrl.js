@@ -30,7 +30,7 @@ const productCtrl = {
 
             // return res.json({ dataOnBody });
 
-            onst newProduct = new PRODUCT(dataOnBody);
+            const newProduct = new PRODUCT(dataOnBody);
             await newProduct.save();
             delete dataOnBody.logEdit
 
