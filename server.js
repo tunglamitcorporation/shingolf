@@ -80,7 +80,7 @@ app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
         return res.status(400).send('Không có ảnh được tải lên.');
       }
     
-      return res.status(200).json({ imageUrl: `/image/${link1}/${link2}/${name}.png` });
+      return res.status(200).json({ imageUrl: `/image/${link1}/${link2}/${name}` });
     } catch (error) {
       console.log("error upload passport", error.message)
       return res.status(500).json({ msg: error.message });
