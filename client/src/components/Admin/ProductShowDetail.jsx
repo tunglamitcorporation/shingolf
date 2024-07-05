@@ -40,7 +40,11 @@ function ProductShowDetail(props) {
         "produceyear": "",
         "managenumber": "",
         "size": "",
-        "shoestype": "",
+        "shoestype": {
+          "type1": "",
+          "type2": "",
+          "type3": "",
+        },
         "sex": "",
         "brand": "",
         "producelocation": "",
@@ -193,7 +197,10 @@ function ProductShowDetail(props) {
 
       function checkName(key) {
         switch(key) {
+          case "productName": return "Product Name";
           case "productname": return "Product Name";
+          case "productCode": return "Product Code";
+          case "productId": return "Product Show";
           case "sticktype": return "Stick Type";
           case "stickhardtype": return "Stickhard Type";
           case "produceyear": return "Produce Year";
