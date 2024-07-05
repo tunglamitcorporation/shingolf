@@ -4,8 +4,8 @@ const { getTodayFullFormat } = require('../units/supportDate')
 const sentMailSale = require('./units/sentMail');
 
 
-const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining"];
-const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
+const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',"K"];
 
 const productCtrl = {
     addProduct: async (req, res) => {
