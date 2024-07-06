@@ -305,7 +305,7 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
 }
 
 function ProductManageItems(props) {
-    const { supportFunction1, listMenu, onOpenEditProduct } = props;
+    const { supportFunction1, listMenu,} = props;
     // const auth = useSelector(state => state.auth);
     // const { role } = auth.user;
 
@@ -415,7 +415,7 @@ function ProductManageItems(props) {
                 supportFunction1={supportFunction1}
                 search={props.search}
                 showIconOnName={true}
-                onOpenEditProduct={onOpenEditProduct}
+                onOpenEditProduct={props.onOpenEditProduct}
             />
         </Styles>
     );

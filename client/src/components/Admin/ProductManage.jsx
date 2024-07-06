@@ -10,7 +10,8 @@ import ProductShowDetail from "./ProductShowDetail.jsx";
 function ProducManage() {
     const [dataRender, setDataRender] = useState({
         listMenu: {},
-        data: []
+        data: [],
+        productDetail: {}
     });
     const [typeView, setTypeView] = useState("All");
     const [modalShow, setModalShow] = useState(false);
@@ -21,10 +22,11 @@ function ProducManage() {
         const takeData = async () => {
             const result = await productAPi.takeAll();
             const takeListCatolo = await productAPi.makeListMenu();
-            console.log( takeListCatolo)
+            // console.log( takeListCatolo)
             setDataRender({
                 data: result.data.data,
                 listMenu: takeListCatolo.data.data,
+                productDetail: {}
             })
         }
 
@@ -33,38 +35,71 @@ function ProducManage() {
     
     const updateNewProduct = async (data) => {
         const result = await productAPi.addProduct(data,"token");
+        if(result) {
+            const newData = {...dataRender};
+            newData.productDetail = result.data.data;
+            setDataRender(newData);
+        }
+    }
+
+    const updateProduct = async (data) => {
+        const result = await productAPi.updateProduct(data,data.productCode,"token");
+        // console.log("result", result)
+        // setShow(false);
     }
 
     const onOpenEditProduct = (id) =>{
-        setShow(true)   
+        console.log("id", id)
+        // console.log("data", dataRender.data[id])
+
+        if(typeof id === "number") {
+            const takeData = async () => {
+                const result = await productAPi.takeDataByType("token",{value: dataRender.data[id].productCode},"productCode");
+                setDataRender({
+                    ... dataRender,
+                    productDetail:  result.data.data[0]
+                })
+
+                setShow(true)  
+            }
+            takeData();
+        }
+
     }
 
+
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () => {
+        setDataRender({...dataRender, productDetail: {}});
+        setShow(true);
+    };
   
     return(
         <div className="mt-5 product">
 
              <Modal show={show} onHide={handleClose} animation={false} size="xl">
                 <Modal.Header closeButton>
-                <Modal.Title>Add Product</Modal.Title>
+                <Modal.Title>Add New Product</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {
                         Object.keys(dataRender.listMenu).length > 0 
                         &&  <ProductShowDetail listMenu={dataRender.listMenu}
-                                            onUpdateNewProDuct={updateNewProduct}
+                                               productDetail={dataRender.productDetail}
+                                               onUpdateNewProDuct={updateNewProduct}
+                                               onUpdateProDuct={updateProduct}
+                                               onHide={handleClose}
                             />
                     }
                     
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                {/* <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
                 <Button variant="primary" onClick={handleClose}>
                     Add Product
-                </Button>
+                </Button> */}
                 </Modal.Footer>
             </Modal>
 
@@ -80,7 +115,7 @@ function ProducManage() {
                                             data = {dataRender.data}
                                             listMenu={dataRender.listMenu}
                                             supportFunction1={()=> {}}
-                                            onOpenEditProduct={() => onOpenEditProduct}
+                                            onOpenEditProduct={onOpenEditProduct}
                                         />
         }
 

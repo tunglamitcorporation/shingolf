@@ -3,42 +3,66 @@ const Order= require('../models/orderModel');
 const { getTodayFullFormat } = require('../units/supportDate')
 const sentMailSale = require('./units/sentMail');
 
+
+const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
+const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',"K"];
+
 const productCtrl = {
     addProduct: async (req, res) => {
         try {
             const dataOnBody = req.body;
 
-            dataOnBody.productCode = "XXX";
-            if(!dataOnBody) return res.json({ msg: "Have note data"}) 
+            if(!dataOnBody) return res.json({ msg: "Have note data"});
+
+            const { productId } = dataOnBody;
+            const index = LIST_SELECT_PRODUCT_ID.indexOf(productId);
+            const fistCode = LIST_SELECT_PRODUCT_CODE[index];
+
+            const checkCount = await PRODUCT.find({ productId }, { name: 1}).count();
+            const productCode = fistCode + (checkCount + 1).toString().padStart(4, '0');;
+
             dataOnBody.logEdit = [];
+            dataOnBody.productCode = productCode;
             dataOnBody.logEdit.push({
                 date: getTodayFullFormat(),
                 action: "Add product"
             });
+
+            // return res.json({ dataOnBody });
+
             const newProduct = new PRODUCT(dataOnBody);
             await newProduct.save();
-            return res.status(200).json({msg: "Product added successfully"})
+            delete dataOnBody.logEdit
+
+            return res.status(200).json({msg: "Product added successfully", data: dataOnBody})
 
         } catch (err) { 
             console.log("err.message", err.message);
             return res.status(500).json({msg: err.message})
         }
     }, 
-    updatePorduct: async (req, res) => {
+    updateProduct: async (req, res) => {
         try {
             const dataOnBody = req.body;
-            const id = req.params.id;
+            const { productCode } = req.params;
 
-            const oldData = await PRODUCT.findOne({_id: id}, {logEdit: 0, createdAt: 0, updatedAt: 0, __v: 0});
+            const oldData = await PRODUCT.findOne({productCode}, {logEdit: 0, createdAt: 0, updatedAt: 0, __v: 0});
+
             if("logEdit" in dataOnBody) delete dataOnBody.logEdit;
             if(!oldData) return res.json({ status: 2, msg:"Have not product"});
             delete oldData._id
+            const oldPictureLink = oldData.picture;
+            delete oldData._doc.picture
+            delete dataOnBody.picture
+
+
             const changeDataRecord = compareObjects(oldData._doc, dataOnBody);
 
             if(Object.keys(changeDataRecord).length > 1) {
                 delete changeDataRecord._id;
-                await PRODUCT.findByIdAndUpdate(id, {
+                await PRODUCT.findOneAndUpdate({productCode}, {
                     ...dataOnBody,
+                    picture: oldPictureLink,
                     $push: { logEdit: changeDataRecord}
                 });
                 return res.json({ status: 1, msg: "Product updated successfully"})

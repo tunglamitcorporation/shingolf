@@ -22,9 +22,24 @@ export function addProduct(data, token) {
         headers: { Authorization: token }
     });
 }
+
 export function makeOrder(data, token) {
     let newURL = "/product/make_order";
     return axios.post(`${newURL}`, data, {
+        headers: { Authorization: token }
+    });
+}
+
+export function takeDataByType(token, data, type) {
+    let newURL = "/product/find_product/product/" + type;
+    return axios.post(`${newURL}`, data, {
+        headers: { Authorization: token }
+    });
+}
+
+export function updateProduct(data, id, token) {
+    let newURL = "/product/update_product/" + id;
+    return axios.patch(`${newURL}`, data, {
         headers: { Authorization: token }
     });
 }
