@@ -8,7 +8,7 @@ import { useCart } from "../../CartProvider";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { makeInvoice } from "../../api/product";
+import { makeOrder } from "../../api/product";
 export default function Cart() {
     const Cart = () => {
       const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart, getItemQuantity } = useCart();
@@ -17,8 +17,6 @@ export default function Cart() {
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
       const [modalShow, setModalShow] = useState(false);
-      // const [productSelect1, setProductSelect1] = useState('')
-      // const [productSelect2, setProductSelect2] = useState('')
       const [quantity, setQuantity] = useState(1)
       
 function MassageThaiVanLung1Modal(props) {
@@ -28,6 +26,7 @@ function MassageThaiVanLung1Modal(props) {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState('')
+  const [address, setAddress] = useState('');
   const validateEmail = (email) => {
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,6 +38,10 @@ function MassageThaiVanLung1Modal(props) {
   
     if (!guestName) {
       errors.guestName = 'required';
+      isVaLid = false
+    }  
+    if (!address) {
+      errors.address = 'required';
       isVaLid = false
     }  
     if (!email) {
@@ -69,38 +72,22 @@ function MassageThaiVanLung1Modal(props) {
       quantity : getItemQuantity(item.productCode)
     }
   ])
-const cartProduct = JSON.stringify(cartSelected)
-  const productName = cartItems.map(item => item.productName)
-  const productSelect1 = cartItems.map(item => item.productSelect1)
-  const productSelect2 = cartItems.map(item => item.productSelect2)
-  // const linkProduct =  cartSelected.map(item => item[0]);
-  // const replacedLinkItems = linkProduct.map(item => item.replace(/ /g, '-'));
-  // const urlPrefix = "https://shingolf.vn/product/";
-  // const finalUrls = replacedLinkItems.map(item => `${urlPrefix}${item}`);
   const handleSubmit = async(e) => {
     const dataObject = {
       guestName,
+      address,
       phone,
       email,
-      // cartSelected,
-      cartProduct,
+      cartSelected,
       totalPrice,
-      exchangeRate
-      // cartSelected: [
-      //   {
-      //     productName,
-      //     productSelect1,
-      //     productSelect2,
-      //     productLink: finalUrls,
-      //   }
-      // ]
-      
+      exchangeRate,
+      specialRequest
     }
     e.preventDefault()
     if(validate()){
       console.log(dataObject);
       const token = ""
-      const source = await makeInvoice(dataObject, token)
+      const source = await makeOrder(dataObject, token)
       // navigate (`/${language}/massage/thank-you/${city}/`)
     }else{
       alert(`Please ensure that all required fields are completed`)
@@ -137,6 +124,18 @@ const cartProduct = JSON.stringify(cartSelected)
                 onChange={(e) => {
                   setGuestName(e.target.value);
                   setErrors((prevErrors) => ({ ...prevErrors, guestName: '' }));
+                }}
+              />
+            </div>
+            <div className="row pl-3 pr-3">
+            <input
+                placeholder="Địa chỉ"
+                type="text"
+                className={errors.address ? 'col-md-12 form__content mb-0 validate_failed' : 'col-md-12 form__content mb-0'}
+                value={address}
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                  setErrors((prevErrors) => ({ ...prevErrors, address: '' }));
                 }}
               />
             </div>

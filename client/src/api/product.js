@@ -22,8 +22,8 @@ export function addProduct(data, token) {
         headers: { Authorization: token }
     });
 }
-export function makeInvoice(data, token) {
-    let newURL = "/product/make_invoice";
+export function makeOrder(data, token) {
+    let newURL = "/product/make_order";
     return axios.post(`${newURL}`, data, {
         headers: { Authorization: token }
     });
