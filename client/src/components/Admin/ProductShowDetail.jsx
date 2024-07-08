@@ -438,7 +438,7 @@ function ProductShowDetail(props) {
                                 </div>
 
                                 <div style={{width:"20%"}} className="mr-2">
-                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image5.png`}></img>
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image5.png?v=${dateByNumber}`}></img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
                                     <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image5`)}>Update Image</button>
                                     <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image5`)}>Delete</button>
@@ -475,7 +475,7 @@ function ProductShowDetail(props) {
                                 </div>
 
                                 <div style={{width:"20%"}} className="mr-2">
-                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image10.png`}></img>
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image10.png?v=${dateByNumber}`}></img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
                                     <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image10`)}>Update Image</button>
                                     <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image10`)}>Delete</button>
