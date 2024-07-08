@@ -160,11 +160,13 @@ export default function VietnamService({fetchData, listMenu}) {
                }}
               title={product.productCode}
             >
-              <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '50px', height: '50px', position: 'absolute', right: 0, backgroundColor: '#fec800', color: '#ff3131', fontSize: '1.4rem', fontWeight: 'bold' }}>
-                <div>Sale</div>
-                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+              {product.saleprice > 0 ? (
+                <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '50px', height: '50px', position: 'absolute', right: 0, backgroundColor: '#fec800', color: '#ff3131', fontSize: '1.4rem', fontWeight: 'bold' }}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                </div>
+              ):''}
               </div>
-            </div>
           </div>
           <div style={{ padding: '10px' }}>
             <div className="d-flex justify-content-between align-items-center">

@@ -298,7 +298,7 @@ code {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 .header-cart{
@@ -471,9 +471,9 @@ code {
   flex-direction: row;
 }
 .banner-width {
-  background-color: #fec800;
-  height: 200px;
-  border-radius: 20px;
+  background-color: #ff3131;
+  height: 50px;
+  border-radius: 5px;
 }
 .header-list {
   width: 150px; 
@@ -1315,7 +1315,7 @@ code {
 }
 .content__feature-title{
 
-  font-size: 3rem;
+  font-size: 2.5rem;
   width: 100%;
   text-align: center;
   font-weight: 600;   
@@ -1327,7 +1327,7 @@ code {
 .content__feature-container{
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 250px;
   overflow: hidden;
   display: flex;
   
@@ -1338,7 +1338,7 @@ code {
   background-size: cover;
   background-position: center;
   vertical-align: middle;
-  height: 350px;
+  height: 250px;
 }
 .brand-img{
   height: 315px;
@@ -2756,7 +2756,7 @@ height: 250px;
   font-weight: bold
 }
 .awssld__wrapper{
-  height: 700px !important;
+  height: 500px !important;
 }
 .logo_az {
   position: absolute;
@@ -2790,6 +2790,138 @@ height: 250px;
 .promo-title{
   font-size: 1.8rem;
   font-weight: bold;
+}
+body {
+  font: 12px/1.5 'PT Sans', serif;
+  margin: 25px;
+}
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+.tag:hover::after {
+   border-left-color: crimson; 
+}
+.hot-product-container:nth-child(1){
+  margin-top: 50px;
+}
+.hot-product-container:nth-child(2),
+.hot-product-container:nth-child(3){
+  margin-top: 30px;
+}
+.hot-item {
+  position: relative;
+  overflow: hidden;
+  height: 146.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hot-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(2px);
+  z-index: 1;
+}
+.hot-item p {
+  position: relative;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 2;
+}
+.sale {
+	position: relative;
+	display: inline-block;
+	background: #Ff3131;
+	color: white;
+	height:50px;
+	width:50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height:50px;
+	transform: rotate(-20deg);
+	animation: beat 1s ease infinite alternate;
+	&:before,
+	&:after {
+		content:"";
+		position: absolute;
+		background: inherit;
+		height: inherit;
+		width: inherit;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transform: rotate(30deg);
+	}
+	&:after {
+		transform: rotate(60deg);
+	}
+}
+
+@keyframes beat {
+	from {	transform: rotate(-20deg) scale(1); }
+	to {	transform: rotate(-20deg) scale(1.1); }
 }
 @media (-moz-touch-enabled: 0), (pointer: fine) {
   .service__location:hover{
@@ -3171,7 +3303,7 @@ font-size: 1.2rem !important;
   display: none;
 }
 .banner-title{
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 .slogan{
   font-size: 1.4rem;
@@ -3202,9 +3334,9 @@ font-size: 1.2rem !important;
   overflow-y: auto;
   z-index: 10;
 }
-
-.awssld__box {
-  height: 95% !important;
+.custom-slider {
+  width: 50% !important;
+  height: 50% !important;
 }
 .input-style {
   border-left: 1px solid #ff3131;
@@ -3221,6 +3353,9 @@ font-size: 1.2rem !important;
 }
 .select-category{
   display: block;
+}
+.hot-product-container{
+  display: none;
 }
 }
 /* tablet */

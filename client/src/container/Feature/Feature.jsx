@@ -10,13 +10,32 @@ import { useCart } from "../../CartProvider";
 import AlertComponent from "../../Alert";
 
 export default function Feature({fetchData}) {
+
   const { t } = useTranslation();
   const { productName } = useParams();
   const navigate = useNavigate()
   const location = useLocation();
   const { addToCart } = useCart();
   const [show, setShow] = useState(false);
- 
+  const [imageExists, setImageExists] = useState(null);
+  const [isLoaded, setIsLoaded] = useState({
+    isLoaded1: true,
+    isLoaded2: true,
+    isLoaded3: true,
+    isLoaded4: true,
+    isLoaded5: true,
+    isLoaded6: true,
+    isLoaded7: true,
+    isLoaded8: true,
+    isLoaded9: true,
+    isLoaded10: true
+  });
+  const handleIsLoadedChange = (key, value) => {
+    setIsLoaded(prevState => ({
+      ...prevState,
+      [key]: value,
+    }));
+  };
     useEffect(() => {
       const timer = setTimeout(() => {
         setShow(false);
@@ -24,7 +43,7 @@ export default function Feature({fetchData}) {
   
       return () => clearTimeout(timer);
     }, [show]);
-  
+    
   const {
     productId,
     productType,
@@ -36,7 +55,6 @@ export default function Feature({fetchData}) {
     
       const [productSelect1, setProductSelect1] = useState()
       const [productSelect2, setProductSelect2] = useState()
-    console.log(productSelect1, productSelect2);
     const StarRating = ({ rate }) => {
       const renderStars = (rate) => {
         const stars = [];
@@ -70,9 +88,10 @@ export default function Feature({fetchData}) {
   const handleProduct = (product) => {
     addProductToHistory(product);
     const formattedProductName = formatProductName(product.productName);
-    navigate(`/product/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.salepriceprice, rate: product.rate, image: product.image, productType: product.productType }});
+    navigate(`/product/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.saleprice, rate: product.rate, image: product.image, productType: product.productType }});
   };
-  return (
+
+  return(
     <div>
       <HelmetLayout />
       {show && (
@@ -106,7 +125,16 @@ export default function Feature({fetchData}) {
       </div>
       <div className="feature__characteristic">
         <div className="container">
-          {fetchData.map(product => (
+          {fetchData.map(product => {
+            const { size1, size2, size3, size4, size5 } = product.size;
+            const {loft1, loft2, loft3, loft4, loft5} = product.loft
+            const {type1, type2, type3, type4, type5} = product.stickhardtype
+            const {color1, color2, color3, color4, color5} = product.color
+            const sizeString = [size1, size2, size3, size4, size5].filter(size => size).join(', ');
+            const loftString = [loft1, loft2, loft3, loft4, loft5].filter(loft => loft).join(', ');
+            const typeString = [type1, type2, type3, type4, type5].filter(stickhardtype => stickhardtype).join(', ');
+            const colorString = [color1, color2, color3, color4, color5].filter(color => color).join(', ')
+            return(
             <>
             {product.productName === productName.replace(/-/g, ' ') && product.productId === 'newgolfclub' && (
             <>
@@ -114,16 +142,34 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
             <Carousel 
                 showArrows
-                showThumbs={true}
+                showThumbs={false}
                 showStatus={false}
                 showIndicators={false}
                 emulateTouch
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} alt={product.productCode} onError={() => handleIsLoadedChange('isLoaded1',false)}  />
+                   {isLoaded.isLoaded2 == true ? 
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} alt={product.productCode} onError={() => handleIsLoadedChange('isLoaded2', false)}  /> : ''}
+                   {/* <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image4.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image5.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image6.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image7.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image8.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image9.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
+                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} /> */}
+                  {/* <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image4.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image5.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image6.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image7.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image8.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image9.png`} />
+                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image10.png`} /> */}
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -131,10 +177,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-              {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -195,13 +242,25 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
                 <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ loft</th>
+                {loftString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{loftString}</td>
+                )}
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                {typeString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
@@ -260,7 +319,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -282,10 +341,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                              {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -297,14 +358,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -364,10 +427,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-              {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -427,13 +491,24 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
                 <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                </tr>
+                 <tr>
+                {loftString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{loftString}</td>
+                )}
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                {typeString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
@@ -492,7 +567,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -514,10 +589,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                             {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -529,14 +606,265 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
+                         </div>
+                         </div>
+                         <div className="btn-container">
+                           <div className="row pb-0">
+                             <div className="col-md-6 p-0">
+                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                 THÊM VÀO GIỎ
+                               </div>
+                             </div>
+                             <div className="col-md-6 p-0">
+                             <a 
+                             // onClick={() => {
+                             //     handleAddToCart(product) // navigate('/cart/')
+                             //     }}
+                                   target="_blank"
+                                   href="https://zalo.me/0564545545"
+                                  className="buy-btn">
+                                 LIÊN HỆ
+                               </a>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                )}
+              </>
+          
+)))}
+            </div>
+          </div>
+        </div>
+          </div>
+            </div>
+          </div>
+            </>  
+            )}
+             {product.productName === productName.replace(/-/g, ' ') && product.productId === 'golfset' && (
+            <>
+             <div className="row">
+            <div className="col-md-6">
+            <Carousel 
+                showArrows
+                showThumbs={true}
+                showStatus={false}
+                showIndicators={false}
+                emulateTouch
+                stopOnHover
+                autoPlay
+                infiniteLoop>
+              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
+              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
+              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+        </Carousel>
+            </div>
+            <div className="col-md-6">
+             <StarRating rate={product.rate} />
+              <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
+              <div className="product-status">{product.rank}</div>
+              <div className="content__feature-text d-flex">
+              {product.saleprice > 0 ? (
+                <>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
+                </>
+              ) : (
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              )}
+                    </div>
+                      <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
+                    </ul>
+                    <ul className="d-flex pl-0 mt-3">
+                      {product.loft.loft1 != '' ? (
+                        <>
+                      <li 
+                      style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80,  marginLeft:20}}
+                      value={productSelect1}
+                      onChange={(e) => setProductSelect1(e.target.value || setProductSelect1(product.loft.loft1))}>Độ Loft: </li>
+                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                          <option value={product.loft.loft1}>{product.loft.loft1}°</option>
+                          <option value={product.loft.loft2}>{product.loft.loft2}°</option>
+                          <option value={product.loft.loft3}>{product.loft.loft3}°</option>
+                      </select>
+                        </>
+                      ) : ''}
+                      {product.stickhardtype.type1 != '' ? (
+                        <>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại Cán: </li>
+                      <select 
+                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      value={productSelect2}
+                      onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.stickhardtype.type1))}>
+                          <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
+                          <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
+                          <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
+                          {product.stickhardtype.type4 ? (<option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option>) : ''}
+                          {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
+                      </select>
+                        </>
+                      ) : ''}
+                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
+                    </ul>
+                    {/* <ul className="d-flex pl-0 mt-3">
+                     
+                    </ul> */}
+                    <div className="hotline">
+                      <a href="tel:0564545545">HotLine: 0564545545</a>
+                    </div>
+                    <div className="btn-container">
+                      <div className="row">
+                      <div className="col-md-6 p-0">
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        </div>
+                        <div className="col-md-6 p-0">
+                        <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-10">
+            <div className="product-info">
+              <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
+              <table style={{border: '1px solid #8f8b8b'}}>
+              <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                </tr>
+                 <tr>
+                {loftString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{loftString}</td>
+                )}
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                {typeString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                )}
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.long}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.weight}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.stickcover}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Phụ kiện</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.accessory}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Grip</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.grip}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Tay thuận</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.hand}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Rank</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.rank}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Năm sản xuất</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.produceyear}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                </tr>
+              </table>
+            </div>
+            <div className="description">
+              <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginTop: 20, marginBottom: 10}}>Thông tin sản phẩm</div>
+              <p>
+             {product.content.content1}
+            <div className="d-flex justify-content-center" style={{marginTop: 10, height:500}}>
+             <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`}/>
+             </div>
+             {product.content.content2}
+            <div className="d-flex justify-content-center" style={{marginTop: 10, height:500}}>
+             <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`}/>
+             </div>
+             {product.content.content3}
+            <div className="d-flex justify-content-center" style={{marginTop: 10, height:500}}>
+             <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`}/>
+             </div>
+             {product.content.content4}
+              </p>
+            </div>
+            </div>
+            <div className="col-md-2">
+              <div className="row">
+          <div className="content__feature">
+          <div className="content__feature-title">ShinGolf đề xuất</div>
+          <div className="container">
+            <div className="row">
+            {fetchData.map((product => (
+              <>
+                {product.productType === productType && (
+                     <div key={product.productCode} className="col-6 col-md-12">
+                     <div style={{ textDecoration: 'none' }}>
+                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                         <div className="content__feature-container">
+                           <div
+                            onClick={() => handleProduct(product)}
+                             className="content__feature-img"
+                             style={{
+                               backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
+                               }}
+                               title={product.productCode}
+                           >
+                             {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
+                           </div>
+                         </div>
+                         <div style={{padding:'10px'}}>
+                         <div className="d-flex justify-content-between align-items-center">
+                        <StarRating rate={product.rate} />
+                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
+                         </div>
+                         <div className="content__feature-name">
+                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                         </div>
+                         <div className="content__feature-text d-md-flex justify-content-between">
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -597,10 +925,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-              {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -643,13 +972,19 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại cán</th>
                 <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                </tr>
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                {typeString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
@@ -696,7 +1031,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -718,10 +1053,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                             {product.saleprice > 0 ? (
+                                <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                                <div>Sale</div>
+                                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                                </div>
+                                ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -733,14 +1070,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -802,10 +1141,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, '')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-              {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -868,13 +1208,15 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Kích thước</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.size.size1}, {product.size.size2}, {product.size.size3}, {product.size.size4}, {product.size.size5}</td>
+                {sizeString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{sizeString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Giới tính</th>
@@ -886,7 +1228,9 @@ export default function Feature({fetchData}) {
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.color.color1}, {product.color.color2}, {product.color.color3}, {product.color.color4}, {product.color.color5}</td>
+                {colorString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
@@ -917,7 +1261,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -939,10 +1283,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                              {product.saleprice > 0 ? (
+                                <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                                <div>Sale</div>
+                                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                                </div>
+                                ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -954,14 +1300,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -1023,10 +1371,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-             {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -1081,13 +1430,15 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Kích thước</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.size.size1}, {product.size.size2}, {product.size.size3}, {product.size.size4}, {product.size.size5}</td>
+                {sizeString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{sizeString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Giới tính</th>
@@ -1099,7 +1450,9 @@ export default function Feature({fetchData}) {
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.color.color1}, {product.color.color2}, {product.color.color3}, {product.color.color4}, {product.color.color5}</td>
+                {colorString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
@@ -1130,7 +1483,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -1152,10 +1505,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                             {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -1167,14 +1522,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -1236,10 +1593,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-             {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -1295,7 +1653,7 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
@@ -1305,7 +1663,9 @@ export default function Feature({fetchData}) {
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.color.color1}, {product.color.color2}, {product.color.color3}, {product.color.color4}, {product.color.color5}</td>
+                {colorString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
@@ -1340,7 +1700,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -1362,10 +1722,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                              {product.saleprice > 0 ? (
+                                <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                                <div>Sale</div>
+                                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                                </div>
+                                ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -1377,14 +1739,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -1444,31 +1808,17 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-             {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
-                      {product.size.size1 != '' ? (
-                          <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
-                      <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
-                      value={productSelect1 || setProductSelect1(product.size.size1)}
-                      onChange={(e) => setProductSelect1(e.target.value)}>
-                          <option value={product.size.size1}>{product.size.size1}</option>
-                          <option value={product.size.size2}>{product.size.size2}</option>
-                          <option value={product.size.size3}>{product.size.size3}</option>
-                          {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
-                          {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
-                      </select>
-                          </>
-                      ) : ''}
                       {product.color.color1 != '' ? (
                         <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
@@ -1503,7 +1853,7 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
@@ -1517,7 +1867,9 @@ export default function Feature({fetchData}) {
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.color.color1}, {product.color.color2}, {product.color.color3}, {product.color.color4}, {product.color.color5}</td>
+                {colorString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
@@ -1552,7 +1904,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -1574,10 +1926,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                              {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -1589,14 +1943,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -1658,10 +2014,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-             {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -1710,24 +2067,28 @@ export default function Feature({fetchData}) {
                     </div>
                     <div className="btn-container">
                       <div className="row">
-                      <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                      <div className="col-4 col-md-4 pr-0">
+                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '1.4rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
-                        <div className="col-md-6 p-0">
-                        <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
+                        <div className="col-4 col-md-4 pl-0">
+                        <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '1.4rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
                         </div>
                       </div>
                     </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Kích cỡ:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.size.size1}, {product.size.size2}, {product.size.size3}, {product.size.size4}, {product.size.size5}</td>
+                {sizeString && (
+                <td style={{ border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5 }}>
+                  {sizeString}
+                </td>
+              )}
                 </tr>
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Giới tính:</th>
@@ -1743,7 +2104,9 @@ export default function Feature({fetchData}) {
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.color.color1}, {product.color.color2}, {product.color.color3}, {product.color.color4}, {product.color.color5}</td>
+                {colorString && (
+                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                )}
                 </tr>
                 <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
@@ -1778,7 +2141,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -1800,10 +2163,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                             {product.saleprice > 0 ? (
+                            <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                            <div>Sale</div>
+                            <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                            </div>
+                            ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -1815,14 +2180,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -1884,10 +2251,11 @@ export default function Feature({fetchData}) {
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
               <div className="product-status">{product.rank}</div>
               <div className="content__feature-text d-flex">
-             {product.saleprice != '' ? (
+              {product.saleprice > 0 ? (
                 <>
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-md-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
@@ -1909,7 +2277,7 @@ export default function Feature({fetchData}) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-10">
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
@@ -1946,7 +2314,7 @@ export default function Feature({fetchData}) {
               </p>
             </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="row">
           <div className="content__feature">
           <div className="content__feature-title">ShinGolf đề xuất</div>
@@ -1968,10 +2336,12 @@ export default function Feature({fetchData}) {
                                }}
                                title={product.productCode}
                            >
-                             <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                             <div>Sale</div>
-                             <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                             </div>
+                             {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
                            </div>
                          </div>
                          <div style={{padding:'10px'}}>
@@ -1983,14 +2353,16 @@ export default function Feature({fetchData}) {
                            <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                          </div>
                          <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.salepriceprice != '' ? (
-                   <>
-                   <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                   <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                   </>
-                 ) : (
-                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                 )}
+                         {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                          </div>
                          </div>
                          <div className="btn-container">
@@ -2028,7 +2400,7 @@ export default function Feature({fetchData}) {
             </>  
             )}
          </>
-          ))
+          )})
           }
      
           <div className="row">
@@ -2039,7 +2411,7 @@ export default function Feature({fetchData}) {
               {fetchData
               .filter(product => product.productId === productId)
               .map(product => (
-                <div key={product.productCode} className="col-6 col-md-3 p-3">
+                <div key={product.productCode} className="col-6 col-md-2 p-3">
                 <div style={{ textDecoration: 'none' }}>
                   <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                     <div className="content__feature-container">
@@ -2051,10 +2423,12 @@ export default function Feature({fetchData}) {
                            `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                           }}
                       >
-                        <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                        <div>Sale</div>
-                        <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                        </div>
+                        {product.saleprice > 0 ? (
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                    ) : ''} 
                       </div>
                     </div>
                     <div style={{padding:'10px'}}>
@@ -2066,14 +2440,16 @@ export default function Feature({fetchData}) {
                       <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                     </div>
                     <div className="content__feature-text d-md-flex justify-content-between">
-                    {product.salepriceprice != '' ? (
-                <>
-                <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </>
-              ) : (
-                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-              )}
+                    {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                     </div>
                     </div>
                     <div className="btn-container">
@@ -2107,7 +2483,7 @@ export default function Feature({fetchData}) {
           <div className="container">
             <div className="row">
             {productHistory.map((product, index) => (
-                <div key={product.productCode} className="col-6 col-md-3 p-3">
+                <div key={product.productCode} className="col-6 col-md-2 p-3">
                 <div style={{ textDecoration: 'none'}}>
                   <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                     <div className="content__feature-container">
@@ -2119,10 +2495,12 @@ export default function Feature({fetchData}) {
                           `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
                           }}
                       >
-                        <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                        <div>Sale</div>
-                        <div>{((product.price - product.salepriceprice) / product.price * 100).toFixed(0)}%</div>
-                        </div>
+                        {product.saleprice > 0 ? (
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                    ) : ''} 
                       </div>
                     </div>
                     <div style={{padding:'10px'}}>
@@ -2134,14 +2512,16 @@ export default function Feature({fetchData}) {
                       <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
                     </div>
                     <div className="content__feature-text d-md-flex justify-content-between">
-                    {product.salepriceprice != '' ? (
-                <>
-                <div className="price">{Intl.NumberFormat('de-DE').format(product.salepriceprice)}¥</div>
-                <div className="price" style={{ color: '#000', textDecoration: 'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </>
-              ) : (
-                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-              )}
+                    {product.saleprice > 0 ? (
+                <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                ): (
+                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                </div>
+                )}
                     </div>
                     </div>
                     <div className="btn-container">
