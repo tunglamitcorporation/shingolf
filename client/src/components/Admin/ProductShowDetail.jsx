@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 import { Form, Container, Row, Col, Alert } from 'react-bootstrap';
+import axios from 'axios';
 import './adminComponets.css'
+import { errorToast, informationToast, } from '../../units/Toast/index'; //warningToast, 
+
 function ProductShowDetail(props) {
     // const {listMenu} = props;
    // const LIST_SELECT_PRODUCT_ID =  ['golfsticknew', 'golfstickold', 'golfstickhangle', 'golfclothesmen', 'golfclotheswwomen', 'golfacessory', 'golfbag', 'golfshoes', 'golfpractice'];
     const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining"];
     const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
-    const dateByNumber = Date.now();
+  //  const dateByNumber = Date.now();
     const [data, setData] =useState({
       productDetail: {
         "productCode": "* Waiting make product *",
@@ -28,7 +31,11 @@ function ProductShowDetail(props) {
           "loft3": "",
         },
         "sticktype": "",
-        "stickhardtype": "",
+        "stickhardtype": {
+          "type1":"",
+          "type2":"",
+          "type3":""
+        },
         "feature": "",
         "long": "",
         "weight": "",
@@ -83,7 +90,10 @@ function ProductShowDetail(props) {
     }
       );
       const [file, setFile] = useState(null);
+      const [multi, setMultiFile] = useState([]);
+      const [dateByNumber, setDateByNumber] = useState(Date.now());
 
+ //     console.log("data", data)
       useEffect(() => {
         if(props.listMenu) {
           
@@ -135,13 +145,13 @@ function ProductShowDetail(props) {
               newData.productDetail.category = Object.keys(props.listMenu)[0];
               newData.productDetail.productId = LIST_SELECT_PRODUCT_ID[0];
               newData.productDetail.productType = props.listMenu[""+Object.keys(props.listMenu)[0]][0];
-
-
             }
             
             setData(newData);
           }
         }
+
+        informationToast("Ok when load data")
       },[props.listMenu, props])
 
 
@@ -156,6 +166,14 @@ function ProductShowDetail(props) {
         } else props.onHide()
       }
 
+      function onConfirmDeleteProduct(data) {
+          if (confirm("Do you want delete this product ? \nBạn có muốn XÓA BỎ sản phẩm này cùng với ảnh không ?")) {
+             props.onDeleteProduct(data)
+          } else {
+            
+          }
+      }
+
       function onChangeInput(area, target, value, option) {
         const newData = {...data};
 
@@ -163,9 +181,6 @@ function ProductShowDetail(props) {
         console.log("option", option)
 
         if(typeof option === "number" || typeof option === "string") {
-          console.log("targe 1", target)
-          console.log("option 1", option)
-
           newData[area][target][option] = value;
           setData(newData);
         } else {
@@ -211,37 +226,59 @@ function ProductShowDetail(props) {
           default: return capitalize(key);
         }
       }
-
-        // Hàm để xử lý khi người dùng chọn ảnh
-      //   const handleImageChange = (event) => {
-      //     const file = event.target.files[0];
-      //     if (file) {
-      //     const reader = new FileReader();
-      //     reader.onloadend = () => {
-      //         setSelectedImage(reader.result);
-      //     };
-      //     reader.readAsDataURL(file);
-      //     }
-      // };
-
-
-      // Hàm để xử lý khi người dùng chọn ảnh
-      // const handleImageChange = (event) => {
-      //     const file = event.target.files[0];
-      //     if (file) {
-      //     const reader = new FileReader();
-      //     reader.onloadend = () => {
-      //         setSelectedImage(reader.result);
-      //     };
-      //     reader.readAsDataURL(file);
-      //     }
-      // };
-  
       
   const handleFileChange = (e) => {
-      // if (Number(branchID) === 15)
-      // else setFile(e.target.files[0]);    
       handleImageChange(e)    
+  };
+
+  const handleMultiFileChange = async (event) => {
+    const fileSelect = event.target.files;
+    let dataUpdate = [];
+
+    for (let i = 0; i < fileSelect.length ; i++) {
+     //handleMultiImageChange(event.target.files[i])
+     const reader = new FileReader();
+      reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement("canvas");    
+                const MAX_WIDTH = 1500; // Set maximum width for the resized image
+                const scaleFactor = MAX_WIDTH / img.width;
+                canvas.width = MAX_WIDTH;
+                canvas.height = img.height * scaleFactor;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+              //  const resizedDataURL = canvas.toDataURL("image/png");
+                let resizedDataURL 
+                canvas.toBlob((blob) => {
+                    resizedDataURL = new File([blob], "fileName.jpg", { type: "image/jpeg" })
+                    // newListResize.push(resizedDataURL);
+                    // setFile(resizedDataURL);
+                    dataUpdate.push(resizedDataURL);
+                }, 'image/jpeg');
+            };
+            img.src = e.target.result;
+        };
+        
+        reader.readAsDataURL(fileSelect[i]);
+
+    }
+
+    setMultiFile(dataUpdate)
+    // console.log("dataUpdate", dataUpdate)
+    //  handleMultiImageChange(event)    
+};
+
+  const handleUploadMultiImagae = async (event, link, name) => {
+    event.preventDefault();
+
+    console.log("multi", multi.length)
+    const formData = new FormData();
+    for (let i = 0; i < multi.length; i++) {
+      //formData.append('photos', multi[i]);
+      handleUploadPassport(link, name+`_image${i+1}`, multi[i] )
+    }
+    informationToast("Success upload multi image")
   };
   
   const handleImageChange = (event) => {
@@ -271,9 +308,10 @@ function ProductShowDetail(props) {
       reader.readAsDataURL(file);
   };
   
-  const handleUploadPassport = async (link,name) => {
+  const handleUploadPassport = async (link,name, fileSelect) => {
+    event.preventDefault();
       const formData = new FormData();
-      formData.append('image', file);
+      formData.append('image', fileSelect ? fileSelect : file);
 
       try {
         const response = await fetch(`/upload${link}/${name}`, { //+dataState._id
@@ -285,45 +323,62 @@ function ProductShowDetail(props) {
   
       } catch (error) {
         console.error('Lỗi kết nối máy chủ:', error);
+        return errorToast("Error when upad multi image " + name)
       }
+
+      if(!fileSelect) return informationToast("Success upload image")
+      setDateByNumber(Date.now())
   };
 
-      function renderContent(dataRender, key) {
-        let result = [];
+  const handleDeleteImage = async (event, name) => {
+    event.preventDefault();
+    const response = await axios.delete(`/delete-image/${name}`);
 
-        Object.keys(dataRender).forEach((item, index) => {
-          result.push( <Form.Group as={Row} key={item} className="d-flex">
-            <Form.Label column sm={2} style={{fontSize:'1.6rem', backgroundColor:"yellow", fontWeight:'600'}}>
-                {checkName(item)}
-              </Form.Label>
-             <Form.Control type={"text"}
-                          style={{width:'70%',fontSize:'1.4rem'}} 
-                          value={data.productDetail[key][item]}
-                          placeholder={`Enter item`} 
-                          onChange = {e => onChangeInput("productDetail", key, e.target.value, item)}/>
-           </Form.Group>)
-        })
+    if(response) {
+      if(response.data.stauts === 1) return informationToast(""+response.data.msg);
+      else return errorToast(""+response.data.msg);
+    } else return errorToast("Error when delete image")
+  }
 
-        return result;
-      }
+  function renderContent(dataRender, key) {
+    let result = [];
+
+    Object.keys(dataRender).forEach((item, index) => {
+      result.push( <Form.Group as={Row} key={item} className="d-flex">
+        <Form.Label column sm={2} style={{fontSize:'1.6rem', backgroundColor:"yellow", fontWeight:'600'}}>
+            {checkName(item)}
+          </Form.Label>
+          <Form.Control type={"text"}
+                      style={{width:'70%',fontSize:'1.4rem'}} 
+                      value={data.productDetail[key][item]}
+                      placeholder={`Enter item`} 
+                      onChange = {e => onChangeInput("productDetail", key, e.target.value, item)}/>
+        </Form.Group>)
+    })
+
+    return result;
+  }
       
-    function renderListSelect(dataRender, target) {
-      let result = [];
-      // console.log("target", target);
-      // console.log("dataRender", dataRender);
-      
-      if(target === "productType" && !dataRender) {
-         dataRender = data.listMenu[Object.keys(data.listMenu)[0]]
-      }
-
-      if(dataRender.length > 0) {
-        dataRender.forEach(item => {
-          result.push(<option value={item} onClick = {()=> onChangeInput("productDetail",target, item)} style={{padding: "8px"}}>{item}</option>)
-        })
-      }
-
-      return result;
+  function renderListSelect(dataRender, target) {
+    let result = [];
+    // console.log("target", target);
+    // console.log("dataRender", dataRender);
+    
+    if(target === "productType" && !dataRender) {
+        dataRender = data.listMenu[Object.keys(data.listMenu)[0]]
     }
+
+    if(dataRender.length > 0) {
+      dataRender.forEach(item => {
+        result.push(<option value={item} 
+                            onClick = {()=> onChangeInput("productDetail",target, item)} 
+                            style={{padding: "8px"}}>{item}
+                            </option>)
+      })
+    }
+
+    return result;
+  }
 
     function renderInputWithKeyArray(key, Row,) {
        switch(key) {
@@ -348,39 +403,96 @@ function ProductShowDetail(props) {
                                 {checkName(key)}
                               </Form.Label>
 
-                            {data.productDetail.productCode !== "* Waiting make product *" ? <div className="product_show_detail-content d-flex">
-
+                            {data.productDetail.productCode !== "* Waiting make product *" ? <>
+                              <h2  style={{fontWeight:"600", color:"red"}}>--Upload Sign File --</h2>
+                            <div className="product_show_detail-content d-flex">
                                 <div style={{width:"20%"}} className="mr-2">
-                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image1.png?v=${dateByNumber}`}></img>
+                                    <img className="product_show_detail-content-item" 
+                                 //   src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image1.png?v=${dateByNumber}`}>
+                                         src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image1.png?v=${dateByNumber}`}>
+                                    </img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
-                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image1`)}>Update Sale</button>
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image1`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image1`)}>Delete</button>
                                 </div>
 
                                 <div style={{width:"20%"}} className="mr-2">
                                     <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image2.png?v=${dateByNumber}`}></img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
-                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image2`)}>Update Sale</button>
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image2`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image2`)}>Delete</button>
                                 </div>
 
                                 <div style={{width:"20%"}} className="mr-2">
                                     <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image3.png?v=${dateByNumber}`}></img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
-                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image3`)}>Update Sale</button>
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image3`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image3`)}>Delete</button>
                                   </div>
                             
                                 <div style={{width:"20%"}} className="mr-2">
                                     <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image4.png?v=${dateByNumber}`}></img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
-                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image4`)}>Update Sale</button>
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image4`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image4`)}>Delete</button>
                                 </div>
 
-                                {/* <div style={{width:"20%"}} className="mr-2">
-                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${ata.productDetail.productCode}_image5.png`}></img>
+                                <div style={{width:"20%"}} className="mr-2">
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image5.png?v=${dateByNumber}`}></img>
                                     <input type="file" accept="image/*" onChange={handleFileChange} />
-                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image","test5")}>Update Sale</button>
-                                </div> */}
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image5`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image5`)}>Delete</button>
+                                </div>
+                            </div> 
 
-                            </div> : <Form.Control type={typeof data.productDetail[key] === "number" ? "number": "text"}
+                            <div className="product_show_detail-content d-flex">
+                                <div style={{width:"20%"}} className="mr-2">
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image6.png?v=${dateByNumber}`}></img>
+                                    <input type="file" accept="image/*" onChange={handleFileChange} />
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image6`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image6`)}>Delete</button>
+                                </div>
+
+                                <div style={{width:"20%"}} className="mr-2">
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image7.png?v=${dateByNumber}`}></img>
+                                    <input type="file" accept="image/*" onChange={handleFileChange} />
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image7`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image7`)}>Delete</button>
+                                </div>
+
+                                <div style={{width:"20%"}} className="mr-2">
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image8.png?v=${dateByNumber}`}></img>
+                                    <input type="file" accept="image/*" onChange={handleFileChange} />
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image8`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image8`)}>Delete</button>
+                                  </div>
+                            
+                                <div style={{width:"20%"}} className="mr-2">
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image9.png?v=${dateByNumber}`}></img>
+                                    <input type="file" accept="image/*" onChange={handleFileChange} />
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image9`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image9`)}>Delete</button>
+                                </div>
+
+                                <div style={{width:"20%"}} className="mr-2">
+                                    <img className="product_show_detail-content-item" src={`https://shingolf.vn/image/product/image/${data.productDetail.productCode}_image10.png?v=${dateByNumber}`}></img>
+                                    <input type="file" accept="image/*" onChange={handleFileChange} />
+                                    <button className="btn btn-primary mt-3" onClick={() => handleUploadPassport("/product/image",`${data.productDetail.productCode}_image10`)}>Update Image</button>
+                                    <button className="btn btn-danger mt-3 ml-2" onClick={e => handleDeleteImage(e, `${data.productDetail.productCode}_image10`)}>Delete</button>
+                                </div>
+                            </div> 
+                            <div className="mt-4" style={{width:"20%"}}>
+                               <h2  style={{fontWeight:"600", color:"red"}}>--Upload Multi File --</h2>
+                               <input type="file" accept="image/*" onChange={handleMultiFileChange}  multiple style={{padding:"20px 0", fontSize:"1.5rem"}}/>
+                               <button className="btn btn-success mt-3 p-3" onClick={e => handleUploadMultiImagae(e,"/product/image",`${data.productDetail.productCode}`)}>Update Multi Image</button>
+                            </div>
+                            <h4>* Max = 10 images, when change image change image product with image order</h4>
+                            <h4>* Tối đa = 10 ảnh, khi đổi ảnh thay đổi ảnh sản phẩm theo thứ tự ảnh</h4>
+
+                            <div className="mt-4">
+                            </div>
+
+                            </>: <Form.Control type={typeof data.productDetail[key] === "number" ? "number": "text"}
                                                   style={{width:'20%'}} 
                                                   disabled
                                                   placeholder={data.productDetail.productCode} />
@@ -398,6 +510,10 @@ function ProductShowDetail(props) {
 
         case "category": case "productType": case "productId": return <><select name="cars" id="cars" style={{width:'60%', fontSize:'1.4rem'}} 
                                     onChange={e => onChangeInput("productDetail", key, e.target.value)}>
+                                      <option value={data.productDetail[key]} 
+                                        onClick = {()=> onChangeInput("productDetail",target, data.productDetail[key])} 
+                                        style={{padding: "8px"}}>{data.productDetail[key]}
+                                        </option>
                             {renderListSelect(key === "category" ? Object.keys(data.listMenu) 
                                                 : key === "productType" ? data.listMenu[""+data.productDetail.category] : LIST_SELECT_PRODUCT_ID, key)}
                             </select>
@@ -429,7 +545,7 @@ function ProductShowDetail(props) {
       <fieldset >
        {Object.keys(data.listMenu).length > 0 && Object.keys(data.productDetail).map((key) => (
         
-          (typeof data.productDetail[key] === "string" || typeof data.productDetail[key] === "number") ?  
+          (typeof data.productDetail[key] === "string" || typeof data.productDetail[key] === "number" || data.productDetail[key] === null) ?  
             <Form.Group as={Row} key={key} className="d-flex">
               <Form.Label column sm={2} style={{fontSize:'1.6rem', backgroundColor:"aqua", fontWeight:'600'}}>
                   {checkName(key)}
@@ -448,7 +564,13 @@ function ProductShowDetail(props) {
              >{
               data.productDetail.productCode !== "* Waiting make product *" ? "Update Product" : "Create New Product"
              }</div>
-        <div className="btn btn-danger ml-3" 
+       {
+       data.productDetail.productCode !== "* Waiting make product *" && <div className="btn btn-danger ml-3" 
+             onClick={() => onConfirmDeleteProduct(data.productDetail.productCode)}
+             style={{fontSize:'1.4rem', padding:'8px', width:'120px'}}
+             >Delete Product</div>
+       }
+        <div className="btn btn-success ml-3" 
              onClick={() => onConfirmHide()}
              style={{fontSize:'1.4rem', padding:'8px', width:'120px'}}
              >Close</div>

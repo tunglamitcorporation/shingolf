@@ -18,6 +18,7 @@ import Policies from './container/Policies/Policies';
 import PoliciesContent from './container/Reservation/Reservation';
 import ShareButton from './Test';
 import Cart from './container/Units/Cart';
+// import { ToastContainer, } from 'react-toastify';
 
 function NewRouter() {
   const [fetchData, setFetchData] = useState([]);
@@ -67,7 +68,6 @@ useEffect(() => {
     return (
         <section>
             <Routes>
-
                 <Route exact path='/' element={<Home fetchData = {fetchData} listMenu={listMenu} />} />
                 <Route path = "/product-list/:productType" element={<VietnamService fetchData = {fetchData} listMenu={listMenu}  />} />
                 <Route path = "/product-list/" element={<VietnamService fetchData = {fetchData} listMenu={listMenu} />} />

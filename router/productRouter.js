@@ -17,6 +17,9 @@ router.post('/send_mail_sale', productCtrl.sendMailSale);
 
 router.post('/make_order', productCtrl.makeOrder);
 
+router.get('/change_with_request', productCtrl.changeWithRequest);
+
+router.delete('/delete_product/:productCode', productCtrl.deleteProduct)
 
 // router.post('/update_picture', productCtrl.updatePicture)
 

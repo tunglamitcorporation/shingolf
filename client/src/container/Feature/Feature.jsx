@@ -149,27 +149,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} alt={product.productCode} onError={() => handleIsLoadedChange('isLoaded1',false)}  />
-                   {isLoaded.isLoaded2 == true ? 
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} alt={product.productCode} onError={() => handleIsLoadedChange('isLoaded2', false)}  /> : ''}
-                   {/* <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image4.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image5.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image6.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image7.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image8.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image9.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} />
-                   <img  className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image.png`} alt={product.productCode} onError={handleError} style={{ display: isLoaded ? 'block' : 'none' }} /> */}
-                  {/* <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image4.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image5.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image6.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image7.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image8.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image9.png`} />
-                  <img alt={product.productCode} className="image_content" style={{display : imageExists == true ? 'block' : 'none'}} src={`https://shingolf.vn/image/product/image/${product.productCode}_image10.png`} /> */}
+                   <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
+              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
+              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">

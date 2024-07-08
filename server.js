@@ -63,14 +63,6 @@ const upload = multer({
         callback(null, true)
     }
   });
-
-app.post('/upload/:id', upload.single('image'), (req, res) => {
-if (!req.file) {
-    return res.status(400).send('Không có ảnh được tải lên.');
-}
-
-return res.status(200).json({ imageUrl: `/img/passport/${req.file.filename}` });
-});
   
 app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
     console.log("req.params",  req.params)
@@ -85,6 +77,28 @@ app.post('/upload/:link1/:link2/:name', upload.single('image'), (req, res) => {
       console.log("error upload passport", error.message)
       return res.status(500).json({ msg: error.message });
     }
+  });
+
+  app.post('/upload-multiple/:link1/:link2/:name', upload.array('photos', 10), (req, res, next) => {
+    console.log("vo here up multi")
+ //   res.send('Files uploaded successfully!');
+    return res.json({ msg:"Success upload multi"})
+  });
+
+// Route để xóa ảnh
+app.delete('/delete-image/:name', (req, res) => {
+    const name = req.params.name;
+    console.log("name")
+
+    const filePath = path.join(__dirname, "/image/product/image/"+name+".png");
+  
+    fs.unlink(filePath, (err) => {
+      if (err) {
+        console.error('Error when delele file:', err);
+        return res.json({status: 0, msg:'Error when delele file'});
+      }
+      res.json({ status: 1, msg:"success delete file"});
+    });
   });
 
 app.use(jsonParser);

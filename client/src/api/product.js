@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 // export function 
 
 export function takeAll(token) {
@@ -43,3 +42,15 @@ export function updateProduct(data, id, token) {
         headers: { Authorization: token }
     });
 }
+
+export function deleteProduct(id, token) {
+    let newURL = "/product/delete_product/" + id;
+    return axios.delete(`${newURL}`, {
+        headers: { Authorization: token }
+    });
+}
+
+// export function  updateMultiPicture(data) {
+//     let newURL = "/product/update_multi_picture";
+//     return axios.patch(`${newURL}`, data);
+// }

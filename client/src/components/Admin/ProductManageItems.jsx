@@ -103,6 +103,7 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
     )
 
     function checkHeader(value, cell, i) {
+        // find data on productCode
         switch (value) {
             case "Time":  
                 return (changeDataFullFormat_DDMMYYYY(cell.value));
@@ -115,8 +116,9 @@ function Table({ columns, data, search, showIconOnName, selectIndex,
             case "Price": case "Sale Price":
                 return (<div>{Number(cell.value).toLocaleString()}</div>)
             case "Edit":
+
                 return (<FontAwesomeIcon
-                  onClick={() => onOpenEditProduct(pageIndex * 10 + i)}
+                  onClick={() => onOpenEditProduct(cell.row.allCells[0].value)}
                   style={{
                       width: '15px',
                       color: 'green',

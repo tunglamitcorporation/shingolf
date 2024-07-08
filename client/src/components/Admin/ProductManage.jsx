@@ -5,7 +5,10 @@ import './adminComponets.css'
 import Modal from "react-bootstrap/Modal";
 import Button from 'react-bootstrap/Button';
 import ProductShowDetail from "./ProductShowDetail.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import { errorToast, informationToast, } from '../../units/Toast/index'; //warningToast, 
 
+import 'react-toastify/dist/ReactToastify.css'
 
 function ProducManage() {
     const [dataRender, setDataRender] = useState({
@@ -45,32 +48,50 @@ function ProducManage() {
     const updateProduct = async (data) => {
         const result = await productAPi.updateProduct(data,data.productCode,"token");
         // console.log("result", result)
+
         // setShow(false);
     }
 
+    const onDeleteProduct = async (productCode) => {
+        const result = await productAPi.deleteProduct(productCode,"token");
+        if(result) {
+            if(result.data.status === 1){
+                informationToast(""+result.data.msg);
+                // delete on state
+                const updatedProducts = dataRender.data.filter(product => product.productCode !== productCode);
+                setDataRender({...dataRender, data: updatedProducts});
+
+                return handleClose();
+            }
+            else return errorToast("Error when delete product");
+        } else return errorToast("Error when delete product");
+    }
+
     const onOpenEditProduct = (id) =>{
-        console.log("id", id)
+       // console.log("id", id)
         // console.log("data", dataRender.data[id])
 
-        if(typeof id === "number") {
+        if(typeof id === "string") {
             const takeData = async () => {
-                const result = await productAPi.takeDataByType("token",{value: dataRender.data[id].productCode},"productCode");
+                const result = await productAPi.takeDataByType("token",{value: id},"productCode");
                 setDataRender({
                     ... dataRender,
                     productDetail:  result.data.data[0]
                 })
 
-                setShow(true)  
+                setShow(true)
             }
-            takeData();
+           takeData();
         }
 
     }
 
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false)
+    };
     const handleShow = () => {
-        setDataRender({...dataRender, productDetail: {}});
+       // setDataRender({...dataRender, productDetail: {}});
         setShow(true);
     };
   
@@ -89,6 +110,7 @@ function ProducManage() {
                                                onUpdateNewProDuct={updateNewProduct}
                                                onUpdateProDuct={updateProduct}
                                                onHide={handleClose}
+                                               onDeleteProduct={onDeleteProduct}
                             />
                     }
                     
@@ -118,6 +140,18 @@ function ProducManage() {
                                             onOpenEditProduct={onOpenEditProduct}
                                         />
         }
+
+            <ToastContainer 
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
 
         </div>
 
