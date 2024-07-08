@@ -11,10 +11,12 @@ const {
 
 const confirmMongoose = {
     // useCreateIndex: true,
-    // useFindAndModify: false,
+    useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true,
 };
+
+//mongoose.set('useFindAndModify', false);
 
 mongoose.connect(MONGODB_URL, confirmMongoose, err => {
     if (err) throw err

@@ -2,7 +2,9 @@ const PRODUCT = require('../models/productModel');
 const Order= require('../models/orderModel');
 const { getTodayFullFormat } = require('../units/supportDate')
 const sentMailSale = require('./units/sentMail');
-
+const { glob } = require('glob');
+const fs = require('fs');
+const path = require('path');
 
 const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
 const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',"K"];
@@ -146,14 +148,8 @@ const productCtrl = {
     },
     takeAll: async (req, res) => {
         try {
-            
-             const dataReturn = await PRODUCT.find({}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
-
-             console.log("vo here")
-
-             
-             return res.json({ status: 1, msg: "successfully find product", data: dataReturn });
-            
+             const dataReturn = await PRODUCT.find({activate: true}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+             return res.json({ status: 1, msg: "successfully find product", data: dataReturn });    
         } catch (err) {
             console.log("err.message", err.message);
             return res.status(500).json({msg: err.message})
@@ -341,6 +337,69 @@ const productCtrl = {
         } catch(err) {
             console.log("err.message", err.message);
             return res.status(500).json({msg: err.message})    
+        }
+    },
+    changeWithRequest: async (req, res ) => {
+        try {
+            const { type } = req.params;
+
+//             const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes",
+// "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
+// const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',"K"];
+
+            const productIdCheck = "golfset"
+    
+            const index = LIST_SELECT_PRODUCT_ID.indexOf(productIdCheck);
+            const fistCode = LIST_SELECT_PRODUCT_CODE[index];
+
+            const dataCheck = await PRODUCT.find({},{productId:1, productCode: 1});
+            const dataReturn = []
+            dataCheck.forEach(item => {
+                if(item.productId === productIdCheck) dataReturn.push(item)
+            })
+
+            for(let i = 0; i < dataReturn.length;i++) {
+                const productCode = fistCode + (i+1).toString().padStart(4, '0');
+                console.log("productCode", productCode)
+
+                await PRODUCT.findOneAndUpdate({_id: dataReturn[i]._id}, {
+                    productCode: productCode
+                })
+            }
+
+            return res.json({dataReturn})
+
+        }catch(error) {
+            console.log("error.message", error.message);
+            return res.status(500).json({msg: error.message})
+        }
+    },
+    deleteProduct: async (req, res) => {
+        try {
+            const { productCode } = req.params;
+
+            const product = await PRODUCT.findOneAndUpdate({ productCode }, { activate:false });
+            const images = await glob([`image/product/image/${productCode}_image*.{png,jpeg}`])
+
+          //  return res.json({ images })
+
+            if( images.length > 0) {
+                for(let i = 0; i < images.length; i ++) {
+                    fs.unlink(images[i], (err) => {
+                        if (err) {
+                          console.error('Error when delele file:', err);
+                          return res.json({status: 0, msg:'Error when delele file'});
+                        }
+                     //   res.json({ status: 1, msg:"success delete file"});
+                      });
+                }
+            }
+
+            return res.json({ status: 1, msg: "Success delete product"})
+
+        } catch (error) {
+            console.log("error.message", error.message);
+            return res.status(500).json({msg: error.message})
         }
     }
 }

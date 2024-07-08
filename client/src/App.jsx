@@ -14,6 +14,7 @@ import { Routes, Route } from "react-router-dom";
 import BottomBar from "./container/Units/BottomBar.jsx";
 import SearchPage from "./container/Units/SearchPage.jsx";
 import RankTable from "./container/Units/RatePage.jsx";
+
 function App() {
 
   //,'/admin'

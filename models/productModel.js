@@ -14,7 +14,11 @@ const productSchema = new mongoose.Schema({
     rate: { type: Number, required: true },
     loft: { type: Object },
     sticktype: { type: String, default:"" },
-    stickhardtype: { type: Object },
+    stickhardtype: { type: Object, default: {
+            type1:"",
+             type2:"",
+             type3:""
+    }},
     feature: { type: String, default:"" },
     long: { type: String, default:"" },
     weight: { type: String, default:"" },
@@ -40,8 +44,7 @@ const productSchema = new mongoose.Schema({
             content1: { type: String, default:"" },
             content2: { type: String, default:"" },
             content3: { type: String, default:"" },
-            content4: { type: String, default:"" 
-        }},
+            content4: { type: String, default:"" }},
     },
     images: {
         type: Object ,
