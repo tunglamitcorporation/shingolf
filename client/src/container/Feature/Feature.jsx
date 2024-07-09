@@ -149,9 +149,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-                   <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+                  <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
+                  <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
+                  <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -648,9 +648,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+                  {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">

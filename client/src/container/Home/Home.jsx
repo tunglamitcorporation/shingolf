@@ -272,66 +272,65 @@ const handleAddToCart = (product) => {
         .slice(0, 8)  
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
-            <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                <div className="content__feature-container">
-                  <div
-                   onClick={() => handleProduct(product)}
-                    className="content__feature-img"
-                    style={{
-                      backgroundImage:
-                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
-                      }}
-                      title={product.productCode}
-                  >
-                    {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
+          <div style={{ textDecoration: 'none' }}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+            {product.saleprice > 0 ? (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                   </div>
+                  ) : ''} 
+              <div className="content__feature-container">
+                <div
+                 onClick={() => handleProduct(product)}
+                  className="content__feature-img"
+                  style={{
+                    backgroundImage:
+                    `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                    }}
+                    title={product.productCode}
+                >
                 </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
-                </div>
-                <div className="btn-container">
-                  <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                        THÊM VÀO GIỎ
-                      </div>
-                    </div>
-                   <div className="col-md-6 p-0">
-                    <a 
-                      target="_blank"
-                      href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
+              </div>
+              <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+              <div className="d-flex justify-content-between align-items-center">
+             <StarRating rate={product.rate} />
+              </div>
+              <div className="content__feature-name mt-2">
+                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+              </div>
+              {product.saleprice > 0 ? (
+              <div className="content__feature-text d-flex">
+                <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              ): (
+                <div className="content__feature-text d-flex">
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              )}
+              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              </div>
+              <div className="btn-container">
+                <div className="row pb-0">
+                  <div className="col-md-12 p-0">
+                    <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                      THÊM VÀO GIỎ
                     </div>
                   </div>
+                 {/* <div className="col-md-6 p-0">
+                  <a 
+                    target="_blank"
+                    href="https://zalo.me/0564545545"
+                    className="buy-btn">
+                    LIÊN HỆ
+                  </a>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
+        </div>
         ))}
     </div>
             </div>
@@ -349,7 +348,13 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-          <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+            {product.saleprice > 0 ? (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                  </div>
+                  ) : ''} 
               <div className="content__feature-container">
                 <div
                  onClick={() => handleProduct(product)}
@@ -360,52 +365,42 @@ const handleAddToCart = (product) => {
                     }}
                     title={product.productCode}
                 >
-                 {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
-                  </div>
                 </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
+              </div>
+              <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+              <div className="d-flex justify-content-between align-items-center">
+             <StarRating rate={product.rate} />
+              </div>
+              <div className="content__feature-name mt-2">
+                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+              </div>
+              {product.saleprice > 0 ? (
+              <div className="content__feature-text d-flex">
+                <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              ): (
+                <div className="content__feature-text d-flex">
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              )}
+              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
-                  <div className="col-md-6 p-0">
-                    <div  onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                  <div className="col-md-12 p-0">
+                    <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                       THÊM VÀO GIỎ
                     </div>
                   </div>
-                  <div className="col-md-6 p-0">
+                 {/* <div className="col-md-6 p-0">
                   <a 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                  target="_blank"
-                   href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
-                  </div>
+                    target="_blank"
+                    href="https://zalo.me/0564545545"
+                    className="buy-btn">
+                    LIÊN HỆ
+                  </a>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -427,66 +422,65 @@ const handleAddToCart = (product) => {
         .slice(0, 8)  
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
-            <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                <div className="content__feature-container">
-                  <div
-                   onClick={() => handleProduct(product)}
-                    className="content__feature-img"
-                    style={{
-                      backgroundImage:
-                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
-                      }}
-                      title={product.productCode}
-                  >
-                   {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
+          <div style={{ textDecoration: 'none' }}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+            {product.saleprice > 0 ? (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                   </div>
+                  ) : ''} 
+              <div className="content__feature-container">
+                <div
+                 onClick={() => handleProduct(product)}
+                  className="content__feature-img"
+                  style={{
+                    backgroundImage:
+                    `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                    }}
+                    title={product.productCode}
+                >
                 </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
-                </div>
-                <div className="btn-container">
-                  <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                        THÊM VÀO GIỎ
-                      </div>
-                    </div>
-                   <div className="col-md-6 p-0">
-                    <a 
-                      target="_blank"
-                      href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
+              </div>
+              <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+              <div className="d-flex justify-content-between align-items-center">
+             <StarRating rate={product.rate} />
+              </div>
+              <div className="content__feature-name mt-2">
+                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+              </div>
+              {product.saleprice > 0 ? (
+              <div className="content__feature-text d-flex">
+                <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              ): (
+                <div className="content__feature-text d-flex">
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              )}
+              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              </div>
+              <div className="btn-container">
+                <div className="row pb-0">
+                  <div className="col-md-12 p-0">
+                    <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                      THÊM VÀO GIỎ
                     </div>
                   </div>
+                 {/* <div className="col-md-6 p-0">
+                  <a 
+                    target="_blank"
+                    href="https://zalo.me/0564545545"
+                    className="buy-btn">
+                    LIÊN HỆ
+                  </a>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
+        </div>
         ))}
     </div>
             </div>
@@ -503,66 +497,65 @@ const handleAddToCart = (product) => {
         .slice(0, 8)  
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
-            <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                <div className="content__feature-container">
-                  <div
-                   onClick={() => handleProduct(product)}
-                    className="content__feature-img"
-                    style={{
-                      backgroundImage:
-                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
-                      }}
-                      title={product.productCode}
-                  >
-                    {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
+          <div style={{ textDecoration: 'none' }}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+            {product.saleprice > 0 ? (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                   </div>
+                  ) : ''} 
+              <div className="content__feature-container">
+                <div
+                 onClick={() => handleProduct(product)}
+                  className="content__feature-img"
+                  style={{
+                    backgroundImage:
+                    `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                    }}
+                    title={product.productCode}
+                >
                 </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
-                </div>
-                <div className="btn-container">
-                  <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                        THÊM VÀO GIỎ
-                      </div>
-                    </div>
-                   <div className="col-md-6 p-0">
-                    <a 
-                      target="_blank"
-                      href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
+              </div>
+              <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+              <div className="d-flex justify-content-between align-items-center">
+             <StarRating rate={product.rate} />
+              </div>
+              <div className="content__feature-name mt-2">
+                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+              </div>
+              {product.saleprice > 0 ? (
+              <div className="content__feature-text d-flex">
+                <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              ): (
+                <div className="content__feature-text d-flex">
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              )}
+              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              </div>
+              <div className="btn-container">
+                <div className="row pb-0">
+                  <div className="col-md-12 p-0">
+                    <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                      THÊM VÀO GIỎ
                     </div>
                   </div>
+                 {/* <div className="col-md-6 p-0">
+                  <a 
+                    target="_blank"
+                    href="https://zalo.me/0564545545"
+                    className="buy-btn">
+                    LIÊN HỆ
+                  </a>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
+        </div>
         ))}
     </div>
             </div>
@@ -581,6 +574,12 @@ const handleAddToCart = (product) => {
           <div key={product.productId} className="col-6 col-md-2 p-3">
             <div style={{ textDecoration: 'none' }}>
               <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+              {product.saleprice > 0 ? (
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                    ) : ''} 
                 <div className="content__feature-container">
                   <div
                    onClick={() => handleProduct(product)}
@@ -591,49 +590,42 @@ const handleAddToCart = (product) => {
                       }}
                       title={product.productCode}
                   >
-                    {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
                   </div>
                 </div>
-                <div style={{padding:'10px'}}>
+                <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                 <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
                 </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                <div className="content__feature-name mt-2">
+                  <div onClick={() => handleProduct(product)}>{product.productName}</div>
                 </div>
                 {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="content__feature-text d-flex">
+                  <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                   <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="content__feature-text d-flex">
                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 )}
-                {/* <i onClick={{copyToClipboard}} class="fa-solid fa-copy" style={{fontSize: '2rem', color:'#ff3131'}}></i> */}
+                <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
-                    <div className="col-md-6 p-0">
+                    <div className="col-md-12 p-0">
                       <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                         THÊM VÀO GIỎ
                       </div>
                     </div>
-                   <div className="col-md-6 p-0">
+                   {/* <div className="col-md-6 p-0">
                     <a 
                       target="_blank"
                       href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
                     </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -654,70 +646,66 @@ const handleAddToCart = (product) => {
         .filter(product => product.productId === 'accessories')
         .slice(0,8)
         .map((product) => (
-          <div key={product.productId} className="col-6 col-md-2 p-3" >
-            <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
-                <div className="content__feature-container">
-                  <div
-                   onClick={() => handleProduct(product)}
-                    className="content__feature-img"
-                    style={{
-                      backgroundImage:
-                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
-                      }}
-                      title={product.productCode}
-                  >
-                    {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
+          <div key={product.productId} className="col-6 col-md-2 p-3">
+          <div style={{ textDecoration: 'none' }}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+            {product.saleprice > 0 ? (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                   </div>
+                  ) : ''} 
+              <div className="content__feature-container">
+                <div
+                 onClick={() => handleProduct(product)}
+                  className="content__feature-img"
+                  style={{
+                    backgroundImage:
+                    `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                    }}
+                    title={product.productCode}
+                >
                 </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                </div>
-                <div className="btn-container">
-                  <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                        THÊM VÀO GIỎ
-                      </div>
-                    </div>
-                    <div className="col-md-6 p-0">
-                    <a 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                  target="_blank"
-                   href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
+              </div>
+              <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+              <div className="d-flex justify-content-between align-items-center">
+             <StarRating rate={product.rate} />
+              </div>
+              <div className="content__feature-name mt-2">
+                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+              </div>
+              {product.saleprice > 0 ? (
+              <div className="content__feature-text d-flex">
+                <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              ): (
+                <div className="content__feature-text d-flex">
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              )}
+              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              </div>
+              <div className="btn-container">
+                <div className="row pb-0">
+                  <div className="col-md-12 p-0">
+                    <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                      THÊM VÀO GIỎ
                     </div>
                   </div>
+                 {/* <div className="col-md-6 p-0">
+                  <a 
+                    target="_blank"
+                    href="https://zalo.me/0564545545"
+                    className="buy-btn">
+                    LIÊN HỆ
+                  </a>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
+        </div>
         ))}
     </div>
             </div>
@@ -733,70 +721,66 @@ const handleAddToCart = (product) => {
         .filter(product => product.productId === 'mengolfclothes')
         .slice(0,8)
         .map((product) => (
-          <div key={product.productId} className="col-6 col-md-2 p-3" >
-            <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
-                <div className="content__feature-container">
-                  <div
-                   onClick={() => handleProduct(product)}
-                    className="content__feature-img"
-                    style={{
-                      backgroundImage:
-                      `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
-                      }}
-                      title={product.productCode}
-                  >
-                   {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
+          <div key={product.productId} className="col-6 col-md-2 p-3">
+          <div style={{ textDecoration: 'none' }}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+            {product.saleprice > 0 ? (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                   </div>
+                  ) : ''} 
+              <div className="content__feature-container">
+                <div
+                 onClick={() => handleProduct(product)}
+                  className="content__feature-img"
+                  style={{
+                    backgroundImage:
+                    `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                    }}
+                    title={product.productCode}
+                >
                 </div>
-                <div style={{padding:'10px'}}>
-                <div className="d-flex justify-content-between align-items-center">
-               <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
-                </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                </div>
-                {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                </div>
-                <div className="btn-container">
-                  <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                        THÊM VÀO GIỎ
-                      </div>
-                    </div>
-                    <div className="col-md-6 p-0">
-                    <a 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                  target="_blank"
-                   href="https://zalo.me/0564545545"
-                      className="buy-btn">
-                      LIÊN HỆ
-                    </a>
+              </div>
+              <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+              <div className="d-flex justify-content-between align-items-center">
+             <StarRating rate={product.rate} />
+              </div>
+              <div className="content__feature-name mt-2">
+                <div onClick={() => handleProduct(product)}>{product.productName}</div>
+              </div>
+              {product.saleprice > 0 ? (
+              <div className="content__feature-text d-flex">
+                <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              ): (
+                <div className="content__feature-text d-flex">
+                <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+              </div>
+              )}
+              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              </div>
+              <div className="btn-container">
+                <div className="row pb-0">
+                  <div className="col-md-12 p-0">
+                    <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                      THÊM VÀO GIỎ
                     </div>
                   </div>
+                 {/* <div className="col-md-6 p-0">
+                  <a 
+                    target="_blank"
+                    href="https://zalo.me/0564545545"
+                    className="buy-btn">
+                    LIÊN HỆ
+                  </a>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
+        </div>
         ))}
     </div>
             </div>
@@ -812,9 +796,15 @@ const handleAddToCart = (product) => {
         .filter(product => product.productId === 'womengolfclothes')
         .slice(0,8)
         .map((product) => (
-          <div key={product.productId} className="col-6 col-md-2 p-3" >
+          <div key={product.productId} className="col-6 col-md-2 p-3">
             <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item  product-container" style={{overflow: 'hidden'}}>
+              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+              {product.saleprice > 0 ? (
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                    <div>Sale</div>
+                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                    </div>
+                    ) : ''} 
                 <div className="content__feature-container">
                   <div
                    onClick={() => handleProduct(product)}
@@ -825,52 +815,42 @@ const handleAddToCart = (product) => {
                       }}
                       title={product.productCode}
                   >
-                   {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
                   </div>
                 </div>
-                <div style={{padding:'10px'}}>
+                <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                 <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px', textTransform:'capitalize'}}>{product.rank}</div>
                 </div>
-                <div className="content__feature-name">
-                  <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                <div className="content__feature-name mt-2">
+                  <div onClick={() => handleProduct(product)}>{product.productName}</div>
                 </div>
                 {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="content__feature-text d-flex">
+                  <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                   <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
+                  <div className="content__feature-text d-flex">
                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 )}
+                <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
-                    <div className="col-md-6 p-0">
-                      <div  onClick={()=> handleAddToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                    <div className="col-md-12 p-0">
+                      <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                         THÊM VÀO GIỎ
                       </div>
                     </div>
-                    <div className="col-md-6 p-0">
+                   {/* <div className="col-md-6 p-0">
                     <a 
-                  // onClick={() => {
-                  //     addToCart(product)
-                  //     navigate('/cart/')
-                  //     }} 
-                  target="_blank"
-                   href="https://zalo.me/0564545545"
+                      target="_blank"
+                      href="https://zalo.me/0564545545"
                       className="buy-btn">
                       LIÊN HỆ
                     </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

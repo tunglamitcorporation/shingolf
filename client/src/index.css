@@ -564,6 +564,7 @@ code {
 }
 .product-container{
   transition: transform 0.2s ease-in-out;
+  border: 1px solid #ccc;
 }
 .product-container:hover{
   border: 1px solid #ff3131;
@@ -1339,6 +1340,7 @@ code {
   background-position: center;
   vertical-align: middle;
   height: 250px;
+  margin: 5px;
 }
 .brand-img{
   height: 315px;
@@ -1349,17 +1351,12 @@ code {
 /* .content__feature-img:hover {
   transform: scale(1.2);
 } */
-.content__feature-name div{
-  display: block;
-  text-decoration: none;
+.content__feature-name{
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--black--color);
 }
-.content__feature-text,
-.content__feature-name {
-  width: 100%;
-}
+
 .content__feature-text p {
   font-size: 1.4rem;
   line-height: 2rem;
@@ -3356,6 +3353,15 @@ font-size: 1.2rem !important;
 }
 .hot-product-container{
   display: none;
+}
+.content__feature-container{
+  height: 200px;
+}
+.content__feature-img{
+  height: 200px;
+}
+.price{
+  font-size: 1.4rem;
 }
 }
 /* tablet */
