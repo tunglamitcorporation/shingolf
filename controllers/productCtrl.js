@@ -14,7 +14,8 @@ const productCtrl = {
         try {
             const dataOnBody = req.body;
 
-            if(!dataOnBody) return res.json({ msg: "Have note data"});
+            if(!dataOnBody) return res.json({ msg: "Have note data", status: 0});
+            if("productCode" in dataOnBody) return res.json({ msg: "Error when update new prodduct", status: 0})
 
             const { productId } = dataOnBody;
             const index = LIST_SELECT_PRODUCT_ID.indexOf(productId);
@@ -148,7 +149,24 @@ const productCtrl = {
     },
     takeAll: async (req, res) => {
         try {
-             const dataReturn = await PRODUCT.find({activate: true}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+             const dataCategoryWithIndex = await PRODUCT.find({activate: true}, {logEdit: 0, createdAt: 0, updatedAt: 0,});
+             let dataReturn = [];
+             if(dataCategoryWithIndex.length > 0) {
+                // dataReturn = dataCategoryWithIndex.forEach(item => {
+                //     const { productCode } = item;
+                //     const image = makeListImageByProductCode(productCode);
+                //     console.log("image", image)
+                // })
+                // for(let j = 0; j < dataCategoryWithIndex.length; j++) {
+                //     const { productCode } = dataCategoryWithIndex[j];
+                //     updatedImages =  makeListImageByProductCode(productCode)
+                //     dataReturn.push({...dataCategoryWithIndex[j]._doc, images: updatedImages });
+                // }
+
+                dataReturn = await makeListImageByProductCode(dataCategoryWithIndex)
+            }
+
+
              return res.json({ status: 1, msg: "successfully find product", data: dataReturn });    
         } catch (err) {
             console.log("err.message", err.message);
@@ -159,7 +177,7 @@ const productCtrl = {
         try {
             const { type } = req.params;
             const dataOnBody = req.body;
-            const allDataCategory = await PRODUCT.find({},{ category: 1, productType: 1}); //await PRODUCT.find({},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0});
+            const allDataCategory = await PRODUCT.find({ activate: true },{ category: 1, productType: 1}); //await PRODUCT.find({},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0});
 
             const categories = [];
             allDataCategory.forEach(item => {
@@ -174,13 +192,31 @@ const productCtrl = {
 
             if(type ==="index") {
                 if(dataOnBody.value < categories.length) {
-                    const dataCategoryWithIndex = await PRODUCT.find({ category: categories[dataOnBody.value]},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0}); 
+                    const dataCategoryWithIndex = await PRODUCT.find({ category: categories[dataOnBody.value], activate: true},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0}); 
                     return res.json({ status:0, msg:"Success take data", data: dataCategoryWithIndex})
                 } else return res.json({ status : 1, msg:"Have not data"})
             } else {
                 if(categories.includes(dataOnBody.value)) {
-                    const dataCategoryWithIndex = await PRODUCT.find({ category: dataOnBody.value},{ logEdit: 0, createdAt:0, updatedAt:0, __v:0}); 
-                    return res.json({ status:0, msg:"Success take data", data: dataCategoryWithIndex})
+                    const dataCategoryWithIndex = await PRODUCT.find({ category: dataOnBody.value, activate: true },{ logEdit: 0, createdAt:0, updatedAt:0, __v:0, content: 0, }); 
+
+                    let dataReturn = [];
+
+                    if(dataCategoryWithIndex.length > 0) {
+                        // dataReturn = dataCategoryWithIndex.forEach(item => {
+                        //     const { productCode } = item;
+                        //     const image = makeListImageByProductCode(productCode);
+                        //     console.log("image", image)
+                        // })
+                        // for(let j = 0; j < dataCategoryWithIndex.length; j++) {
+                        //     const { productCode } = dataCategoryWithIndex[j];
+                        //     updatedImages =  makeListImageByProductCode(productCode)
+                        //     dataReturn.push({...dataCategoryWithIndex[j]._doc, images: updatedImages });
+                        // }
+
+                        dataReturn = await makeListImageByProductCode(dataCategoryWithIndex)
+                    }
+
+                    return res.json({ status:0, msg:"Success take data", data: dataReturn})
 
                 } else return res.json({ status : 1, msg:"Have not data"})
             }
@@ -241,6 +277,69 @@ const productCtrl = {
         } catch (err) {
             console.log("err.message", err.message);
             return res.status(500).json({msg: err.message})    
+        }
+    },
+    changeWithRequest: async (req, res ) => {
+        try {
+            const { type } = req.params;
+
+//             const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes",
+// "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
+// const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',"K"];
+
+            const productIdCheck = "golfset"
+    
+            const index = LIST_SELECT_PRODUCT_ID.indexOf(productIdCheck);
+            const fistCode = LIST_SELECT_PRODUCT_CODE[index];
+
+            const dataCheck = await PRODUCT.find({},{productId:1, productCode: 1});
+            const dataReturn = []
+            dataCheck.forEach(item => {
+                if(item.productId === productIdCheck) dataReturn.push(item)
+            })
+
+            for(let i = 0; i < dataReturn.length;i++) {
+                const productCode = fistCode + (i+1).toString().padStart(4, '0');
+                console.log("productCode", productCode)
+
+                await PRODUCT.findOneAndUpdate({_id: dataReturn[i]._id}, {
+                    productCode: productCode
+                })
+            }
+
+            return res.json({dataReturn})
+
+        }catch(error) {
+            console.log("error.message", error.message);
+            return res.status(500).json({msg: error.message})
+        }
+    },
+    deleteProduct: async (req, res) => {
+        try {
+            const { productCode } = req.params;
+
+            const product = await PRODUCT.findOneAndUpdate({ productCode }, { activate:false });
+            const images = await glob([`image/product/image/${productCode}_image*.{png,jpeg}`])
+
+          //  return res.json({ images })
+
+            if( images.length > 0) {
+                for(let i = 0; i < images.length; i ++) {
+                    fs.unlink(images[i], (err) => {
+                        if (err) {
+                          console.error('Error when delele file:', err);
+                          return res.json({status: 0, msg:'Error when delele file'});
+                        }
+                     //   res.json({ status: 1, msg:"success delete file"});
+                      });
+                }
+            }
+
+            return res.json({ status: 1, msg: "Success delete product"})
+
+        } catch (error) {
+            console.log("error.message", error.message);
+            return res.status(500).json({msg: error.message})
         }
     },
     makeOrder: async (req, res) => {
@@ -339,64 +438,20 @@ const productCtrl = {
             return res.status(500).json({msg: err.message})    
         }
     },
-    changeWithRequest: async (req, res ) => {
+    takeAllDataOder: async (req, res)=> {
         try {
-            const { type } = req.params;
-
-//             const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes",
-// "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
-// const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',"K"];
-
-            const productIdCheck = "golfset"
-    
-            const index = LIST_SELECT_PRODUCT_ID.indexOf(productIdCheck);
-            const fistCode = LIST_SELECT_PRODUCT_CODE[index];
-
-            const dataCheck = await PRODUCT.find({},{productId:1, productCode: 1});
-            const dataReturn = []
-            dataCheck.forEach(item => {
-                if(item.productId === productIdCheck) dataReturn.push(item)
-            })
-
-            for(let i = 0; i < dataReturn.length;i++) {
-                const productCode = fistCode + (i+1).toString().padStart(4, '0');
-                console.log("productCode", productCode)
-
-                await PRODUCT.findOneAndUpdate({_id: dataReturn[i]._id}, {
-                    productCode: productCode
-                })
-            }
-
-            return res.json({dataReturn})
-
-        }catch(error) {
+            const data = await Order.find({}).sort({id: -1});
+            return res.json({data})
+        } catch (error) {
             console.log("error.message", error.message);
             return res.status(500).json({msg: error.message})
         }
     },
-    deleteProduct: async (req, res) => {
+    takedataOrderByType: async (req, res) => {
         try {
-            const { productCode } = req.params;
-
-            const product = await PRODUCT.findOneAndUpdate({ productCode }, { activate:false });
-            const images = await glob([`image/product/image/${productCode}_image*.{png,jpeg}`])
-
-          //  return res.json({ images })
-
-            if( images.length > 0) {
-                for(let i = 0; i < images.length; i ++) {
-                    fs.unlink(images[i], (err) => {
-                        if (err) {
-                          console.error('Error when delele file:', err);
-                          return res.json({status: 0, msg:'Error when delele file'});
-                        }
-                     //   res.json({ status: 1, msg:"success delete file"});
-                      });
-                }
-            }
-
-            return res.json({ status: 1, msg: "Success delete product"})
-
+            const { type } = req.params;
+            const data = await Order.find({ complete: type === "complete" }).sort({id: -1});
+            return res.json({data})
         } catch (error) {
             console.log("error.message", error.message);
             return res.status(500).json({msg: error.message})
@@ -414,4 +469,32 @@ function compareObjects(obj1, obj2) {
     return diff;
 }
 
+const makeListImageByProductCode = async (dataCheck) => {
+    let dataReturn = [];
+
+    for(let j = 0; j < dataCheck.length; j++) {
+        const { productCode } = dataCheck[j];
+      //  console.log("productCode", productCode)
+
+        let images = await glob([`image/product/image/${productCode}_image*.png`])
+
+        // Thay thế \\ bằng /
+        let updatedImages = images.map(image => "/"+image.replace(/\\/g, '/'));
+
+       // Sắp xếp danh sách theo tên phần từ từ nhỏ đến lớn
+       updatedImages.sort((a, b) => {
+           let nameA = a.split('/').pop().toLowerCase();
+           let nameB = b.split('/').pop().toLowerCase();
+           return nameA.localeCompare(nameB);
+       });
+
+      //  console.log("updatedImages", updatedImages)
+        dataReturn.push({...dataCheck[j]._doc, images: updatedImages });
+    }
+
+
+    // findProduct(productCode);
+
+    return dataReturn;
+}
 module.exports = productCtrl
