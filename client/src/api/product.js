@@ -22,6 +22,13 @@ export function addProduct(data, token) {
     });
 }
 
+export function makeOrder(data, token) {
+    let newURL = "/product/make_order";
+    return axios.post(`${newURL}`, data, {
+        headers: { Authorization: token }
+    });
+}
+
 export function takeDataByType(token, data, type) {
     let newURL = "/product/find_product/product/" + type;
     return axios.post(`${newURL}`, data, {

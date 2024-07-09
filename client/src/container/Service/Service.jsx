@@ -17,7 +17,8 @@ export default function VietnamService({fetchData, listMenu}) {
   const { price, id, selectedCategories =[]} = location.state || {};
   const checkId = id || 'Gậy Golf Mới'
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedProductType, setSelectedProductType] = useState('');
+  const [subcategories, setSubcategories] = useState([]);
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
   const [visible, setVisible] = useState (true)
   const { addProductToHistory } = useContext(ProductHistoryContext);
   const {addToCart} = useCart()
@@ -44,6 +45,7 @@ export default function VietnamService({fetchData, listMenu}) {
       }
     });
   }
+  console.log(listMenu);
 
   const filteredProducts = selectedCategories.length > 0
   ? fetchData.filter(product =>
@@ -55,6 +57,24 @@ export default function VietnamService({fetchData, listMenu}) {
     event.preventDefault();
     setSelectedCategory(product);
     setVisible(false)
+  };
+  const handleCategoryChange = (event) => {
+    const selectedProduct = event.target.value;
+    const subcategories = listMenu[selectedProduct] || [];
+    setSubcategories(subcategories);
+    if (subcategories.length > 0) {
+      setSelectedCategory(subcategories[0]);
+    } else {
+      setSelectedCategory('');
+    }
+    setVisible(false)
+
+  };
+  const handleCategoryChangeItem = (event) => {
+    const selectedProduct = event.target.value;
+    setSelectedCategory(selectedProduct); 
+    setVisible(false)
+
   };
   console.log(selectedCategory);
   const formatProductName = (name) => {
@@ -140,11 +160,13 @@ export default function VietnamService({fetchData, listMenu}) {
                }}
               title={product.productCode}
             >
-              <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '50px', height: '50px', position: 'absolute', right: 0, backgroundColor: '#fec800', color: '#ff3131', fontSize: '1.4rem', fontWeight: 'bold' }}>
-                <div>Sale</div>
-                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+              {product.saleprice > 0 ? (
+                <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '50px', height: '50px', position: 'absolute', right: 0, backgroundColor: '#fec800', color: '#ff3131', fontSize: '1.4rem', fontWeight: 'bold' }}>
+                  <div>Sale</div>
+                  <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                </div>
+              ):''}
               </div>
-            </div>
           </div>
           <div style={{ padding: '10px' }}>
             <div className="d-flex justify-content-between align-items-center">
@@ -285,6 +307,28 @@ export default function VietnamService({fetchData, listMenu}) {
         </div>
       </div>
             <div className="container">
+              <div className="row">
+              <select className="col-md-2 col-4 ml-3 form__content select-category" onChange={handleCategoryChange}>
+                <option value="">Danh mục</option>
+                {Object.keys(listMenu).map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+              <select value ={selectedCategory} className="col-md-2 col-4 ml-3 form__content select-category" onChange={handleCategoryChangeItem}>
+                {subcategories.map((subcategory, index) => (
+                  <option key={index} value={subcategory}>
+                    {subcategory}
+                  </option>
+                ))}
+              </select>
+                {/* <select className="col-md-2 col-4 ml-3 form__content select-category" onChange={handleCategoryChange}>
+                  {convertListMenu.map(item => (
+                    <option value={item.item}>{item.item}</option>
+                  ))}
+                </select> */}
+              </div>
             <div className="row">
             {/* <div className="sort-list-container mb-5">
               Sắp xếp

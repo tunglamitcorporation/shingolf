@@ -95,14 +95,17 @@ function Header() {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  const filterProducts = (data, term) => {
-    const lowercasedTerm = term.toLowerCase();
-    return data.filter((product) =>
-      product.productName.toLowerCase().includes(lowercasedTerm)
-    );
-  };
+  // const filterProducts = (data, term) => {
+  //   const lowercasedTerm = term.toLowerCase();
+  //   return data.filter((product) =>
+  //     product.productName.toLowerCase().includes(lowercasedTerm)
+  //   );
+  // };
+  const filteredProducts = fetchData.filter(product =>
+    product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-  const filteredProducts = filterProducts(fetchData, searchTerm);
+  // const filteredProducts = filterProducts(fetchData, searchTerm);
   const HeaderMobile = () => {
     return(
     <ul className={`header__mobile-navbar-list ${isOpen ? 'open' :''}`}>
@@ -196,7 +199,6 @@ function Header() {
           setLoading(false);
         }
       };
-  
       fetchExchangeRate();
     }, []);
   const [active, setActive] = useState(false)

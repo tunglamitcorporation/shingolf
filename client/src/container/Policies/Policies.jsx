@@ -69,24 +69,15 @@ export default function Policies({fetchData}){
                              <div className="search-bar-icon2 d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                              {searchTerm && (
-                                <div className="results">
-                                  {filteredProducts.length > 0 ? (
-                                    filteredProducts.map((product) => (
+                                {/* <div className="results">
                                       <div
-                                        key={product.id}
                                         className="productItem"
-                                        onClick={() => handleProduct(product)}
                                       >
-                                        <div className="search-productName">{product.productName}</div>
-                                        <div className="search-price">${product.price}</div>
+                                        <div className="search-productName"></div>
+                                        <div className="search-price"></div>
                                       </div>
-                                    ))
-                                  ) : (
-                                    <div className="noProducts">No products found</div>
-                                  )}
-                                </div>
-                              )}
+                                    <div className="noProducts">Không tìm thấy đơn hàng</div>
+                                </div> */}
                         </div>
                         </div>
                     </div>

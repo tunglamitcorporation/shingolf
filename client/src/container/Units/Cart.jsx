@@ -8,17 +8,16 @@ import { useCart } from "../../CartProvider";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-
+import { makeOrder } from "../../api/product";
 export default function Cart() {
     const Cart = () => {
-      const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart } = useCart();
+      const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart, getItemQuantity } = useCart();
       const [totalPrice, setTotalPrice] = useState(0);
       const [exchangeRate, setExchangeRate] = useState(null);
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
       const [modalShow, setModalShow] = useState(false);
-      const [productSelect1, setProductSelect1] = useState('')
-      const [productSelect2, setProductSelect2] = useState('')
+      const [quantity, setQuantity] = useState(1)
       
 function MassageThaiVanLung1Modal(props) {
   const {t} = useTranslation()
@@ -27,6 +26,7 @@ function MassageThaiVanLung1Modal(props) {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState('')
+  const [address, setAddress] = useState('');
   const validateEmail = (email) => {
     // Regular expression for email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,6 +38,10 @@ function MassageThaiVanLung1Modal(props) {
   
     if (!guestName) {
       errors.guestName = 'required';
+      isVaLid = false
+    }  
+    if (!address) {
+      errors.address = 'required';
       isVaLid = false
     }  
     if (!email) {
@@ -58,27 +62,32 @@ function MassageThaiVanLung1Modal(props) {
     setErrors(errors);
     return isVaLid
   }
-  const cartSelected = cartItems.map(item => [item.productName, item.productSelect1, item.productSelect2])
-  const linkProduct =  cartSelected.map(item => item[0]);
-  const replacedLinkItems = linkProduct.map(item => item.replace(/ /g, '-'));
-  const urlPrefix = "https://shingolf.vn/product/";
-  const finalUrls = replacedLinkItems.map(item => `${urlPrefix}${item}`);
-
+  const cartSelected = cartItems.map(item => [
+     {
+      productName: item.productName,
+      productSelect1: item.productSelect1,
+      productSelect2: item.productSelect2,
+      productLink: `https://shingolf.vn/product/${(item.productName).replace(/ /g, '-')}`,
+      price: item.price,
+      quantity : getItemQuantity(item.productCode)
+    }
+  ])
   const handleSubmit = async(e) => {
     const dataObject = {
       guestName,
+      address,
       phone,
       email,
       cartSelected,
-      productLink: finalUrls.
-      productSelect1,
-      productSelect2,
+      totalPrice,
+      exchangeRate,
+      specialRequest
     }
     e.preventDefault()
     if(validate()){
       console.log(dataObject);
-      // const token = "73344833-5b52-4403-9255-695907647688"
-      // const source = await sendMassageRequest(dataObject, token)
+      const token = ""
+      const source = await makeOrder(dataObject, token)
       // navigate (`/${language}/massage/thank-you/${city}/`)
     }else{
       alert(`Please ensure that all required fields are completed`)
@@ -115,6 +124,18 @@ function MassageThaiVanLung1Modal(props) {
                 onChange={(e) => {
                   setGuestName(e.target.value);
                   setErrors((prevErrors) => ({ ...prevErrors, guestName: '' }));
+                }}
+              />
+            </div>
+            <div className="row pl-3 pr-3">
+            <input
+                placeholder="Địa chỉ"
+                type="text"
+                className={errors.address ? 'col-md-12 form__content mb-0 validate_failed' : 'col-md-12 form__content mb-0'}
+                value={address}
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                  setErrors((prevErrors) => ({ ...prevErrors, address: '' }));
                 }}
               />
             </div>
@@ -383,9 +404,13 @@ function MassageThaiVanLung1Modal(props) {
                 <div className="price ml-3 mr-2" style={{ color: '#ccc', textDecoration: 'line-through', textDecorationColor:'#000' }}>{Intl.NumberFormat('de-DE').format(item.saleprice)}đ</div>
               </div>
               <div className="quantity-controls col-md-1 mr-2">
-                <button onClick={() => handleDecreaseQuantity(item.productCode)}>-</button>
+                <button onClick={() => {
+                handleDecreaseQuantity(item.productCode)
+                }}>-</button>
                 <span>{item.quantity}</span>
-                <button onClick={() => handleIncreaseQuantity(item.productCode)}>+</button>
+                <button onClick={() => {
+                  handleIncreaseQuantity(item.productCode)
+                  }}>+</button>
             </div>
             <div className="content__feature-text d-flex col-md-1 total-product-price ml-4" style={{fontSize: '1.2rem'}}>
             <div className="price">{Intl.NumberFormat('de-DE').format((item.price * item.quantity).toFixed(2))}</div>
@@ -406,7 +431,7 @@ function MassageThaiVanLung1Modal(props) {
         </>
       )}
           <div className="cart-summary">
-            <p>Tổng: {Intl.NumberFormat('de-DE').format(totalPrice.toFixed(3))}đ <small style={{fontSize: '1.2rem'}}>(Đã bao gồm 8% VAT)</small></p>
+            <p>Tổng: {Intl.NumberFormat('de-DE').format(totalPrice.toFixed(3))}¥<small style={{fontSize: '1.2rem'}}>(Đã bao gồm 8% VAT)</small></p>
             <div className="cart-buttons">
               <button onClick={() => setModalShow(true)} className="contact-button">Liên hệ</button>
               <MassageThaiVanLung1Modal

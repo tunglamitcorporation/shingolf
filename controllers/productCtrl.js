@@ -383,46 +383,67 @@ const productCtrl = {
 
             // send mail
             const to = "vanhaicddt2.1@gmail.com";
-            const cc = "";
+            const cc = "nguyenductunglam0503@gmail.com";
             const bcc = "";
-            const subject = "[ShinGolf] Thông báo đơn hàng mới" + dataOnBody.id;
+            const subject = "[ShinGolf] Thông báo đơn hàng mới" +" "+ productID;
 
-            function renderListProduct() {
+            // function renderListProduct() {
+            //     let result = [];
+            //     if(dataOnBody.cartSelected.length > 0) {
+            //         dataOnBody.cartSelected.forEach(item => {
+            //            return result.push(`<tr>
+            //                 <td style="border: 1px solid">${item.productName}</td>
+            //                 <td style="border: 1px solid">${item.quantity}</td>
+            //                 <td style="border: 1px solid">${item.price}</td>
+            //                 <td style="border: 1px solid">${item.productSelect1}</td>
+            //                 <td style="border: 1px solid">${item.productSelect2}</td>
+            //                 <td style="border: 1px solid">
+            //                 <a heref=${item.productLink}></a></td>
+            //             </tr>`)
+            //         })
+            //     }
+
+            //     return result.join('')
+            // }
+            function renderListProduct(data) {
                 let result = [];
-                if(dataOnBody.cartSelected.length > 0) {
-                    dataOnBody.cartSelected.forEach(item => {
-                       return result.push(`<tr>
-                            <td style="border: 1px solid">${item.productName}</td>
-                            <td style="border: 1px solid">${item.quantity}</td>
-                            <td style="border: 1px solid">${item.price}</td>
-                            <td style="border: 1px solid">${item.productSelect1}</td>
-                            <td style="border: 1px solid">${item.productSelect2}</td>
-                            <td style="border: 1px solid">
-                            <a heref=${item.productLink}></a></td>
-                        </tr>`)
-                    })
+                if (dataOnBody.cartSelected.length > 0) {
+                    dataOnBody.cartSelected.forEach(cart => {
+                        cart.forEach(item => {
+                            result.push(`<tr>
+                                <td style="border: 1px solid; text-align:center">${item.productName}</td>
+                                <td style="border: 1px solid; text-align:center">${item.quantity}</td>
+                                <td style="border: 1px solid; text-align:center">${Intl.NumberFormat('de-DE').format(item.price)}¥</td>
+                                <td style="border: 1px solid; text-align:center">${item.productSelect1 || ''}</td>
+                                <td style="border: 1px solid; text-align:center">${item.productSelect2 || ''}</td>
+                                <td style="border: 1px solid; text-align:center">
+                                <a href="${item.productLink}">Link</a></td>
+                            </tr>`);
+                        });
+                    });
                 }
-
-                return result.join('')
+            
+                return result.join('');
             }
 
             const html = `
                 <h1>Thông báo đơn hàng mới</h1>
-                <h3>Đơn hàng có mã: ${productID}</h3>
-                <h3>Tong tiền: ${dataOnBody.totalPrice}</h3>
+                <h3>Mã đơn hàng: ${productID}</h3>
+                <h3>Tổng tiền: ${Intl.NumberFormat('de-DE').format(dataOnBody.totalPrice)}¥</h3>
+                <h3>Tỉ giá: ${dataOnBody.exchangeRate}</h3>
                 <h3>Người nhận: ${dataOnBody.guestName}</h3>
-                <h3>Số điện thoại:: ${dataOnBody.phone}</h3>
-                <h3>Địa chỉ: ${dataOnBody.cuaddress}</h3>
-                <h3>Ghi chú: ${dataOnBody.note}</h3>
+                <h3>Số điện thoại: ${dataOnBody.phone}</h3>
+                <h3>Địa chỉ: ${dataOnBody.address}</h3>
+                <h3>Ghi chú: ${dataOnBody.specialRequest}</h3>
                 <br/>
                 <h2>Danh sách sản phẩm</h2>
                 <table>
                     <tr>
-                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Tên hàng hóa</th>
-                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Số lượng</th>
-                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Thành tiền</th>
-                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Lựa chọn 1</th>
-                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: yellow;">Lựa chọn 2</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: #ff3131; text-align:center; color: #fff">Tên hàng hóa</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: #ff3131; text-align:center; color: #fff">Số lượng</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: #ff3131; text-align:center; color: #fff">Thành tiền</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: #ff3131; text-align:center; color: #fff">Lựa chọn 1</th>
+                        <th style="border:1px solid;padding: 8px;font-size: 1.15rem;background: #ff3131; text-align:center; color: #fff">Lựa chọn 2</th>
                     </tr>
                     ${renderListProduct()}
                 </table>
