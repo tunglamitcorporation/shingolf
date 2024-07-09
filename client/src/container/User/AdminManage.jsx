@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import logo from '../../image/logo.jpg'
 import './adminManage.css'
 import HomePage from '../../components/Admin/HomePage';
-import ProducManage from '../../components/Admin/ProductManage';
+import ProducManage from '../../components/Admin/ProductManage/ProductManage';
 import Option from '../../components/Admin/Option';
 import LoginContainer from './LoginContainer';
+import OrderManage from '../../components/Admin/OrderManage/OrderManage';
 
 function AdminManage() {
     const [isLogin, setIsLogin] = useState(false);
@@ -33,7 +34,7 @@ function AdminManage() {
             case 1:
                 return <HomePage />
             case 2:
-                return <h1>Oder Manage</h1>
+                return <OrderManage />
             case 3:
                 return <Option />
             default:

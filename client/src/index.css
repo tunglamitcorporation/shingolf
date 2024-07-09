@@ -18,12 +18,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
   background-color: #fff !important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.container-wrapper{
+  transform: scale(0.8);
 }
 .header, .header__PC{
   /* position: absolute; */
@@ -276,6 +278,7 @@ code {
   border-radius: 10px;
   margin-top: 10px;
   width: 100px;
+  text-transform: capitalize;
 }
 .product-type{
   font-size: 1.4rem;
@@ -284,6 +287,7 @@ code {
   width: 80px;
   padding:5px 10px;
   text-align: center;
+  text-transform: capitalize;
 }
 .hotline a{
   text-decoration: none;
@@ -2525,6 +2529,9 @@ height: 250px;
 .image-holder:hover img{
   transform: scale(1.1); 
 } */
+ table td {
+  text-transform: capitalize
+ }
 .service_table{
   width: 500px;
 }
@@ -2915,6 +2922,16 @@ body {
 		transform: rotate(60deg);
 	}
 }
+.sale-badge{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: #ff3131;
+  color: #fff;
+  font-size:1.4rem;
+  font-weight:bold;
+  z-index:999;
+}
 
 @keyframes beat {
 	from {	transform: rotate(-20deg) scale(1); }
@@ -3221,7 +3238,7 @@ font-size: 1.2rem !important;
 
 }
 .awssld__wrapper{
-  height: 280px !important;
+  height: 200px !important;
 }
 .carousel_name{
   position: absolute;
@@ -3355,13 +3372,30 @@ font-size: 1.2rem !important;
   display: none;
 }
 .content__feature-container{
-  height: 200px;
+  height: 150px;
 }
 .content__feature-img{
-  height: 200px;
+  height: 150px;
+}
+.content__feature-name{
+  font-size: 1rem;
 }
 .price{
-  font-size: 1.4rem;
+  font-size: 1rem;
+}
+.sale-badge{
+  width: 30px;
+  height: 30px;
+  font-size:0.8rem;
+}
+.buy-btn {
+  font-size: 1rem;
+  height: 25px;
+  line-height: 25px;
+}
+.product-container:hover{
+  border: 1px solid #ccc;
+  transform: none
 }
 }
 /* tablet */
@@ -3485,5 +3519,9 @@ font-size: 1.2rem !important;
 }
 .bottom-bar-container{
   display: block;
+}
+.product-container:hover{
+  border: 1px solid #ccc;
+  transform: none
 }
 }

@@ -152,23 +152,32 @@ const handleAddToCart = (product) => {
     ]
     // const selectedList = convertListMenu.slice(1,7)
     const StarRating = ({ rate }) => {
-      const renderStars = (rate) => {
-        const stars = [];
-        for (let i = 0; i < rate; i++) {
-          stars.push(
-            <i
-              key={i}
-              style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
-              className="fa-solid fa-star"
-            ></i>
-          );
-        }
-        return stars;
-      };
+      const fullStars = Math.floor(rate);
+      const halfStar = rate % 1 >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
     
       return (
         <div>
-          {renderStars(rate)}
+          {[...Array(fullStars)].map((_, index) => (
+            <i
+              key={index}
+              style={{ fontSize: '1rem', color: '#fec800', marginTop: 10 }}
+              className="fa-solid fa-star"
+            ></i>
+          ))}
+          {halfStar && (
+            <i
+              style={{ fontSize: '1rem', color: '#fec800', marginTop: 10 }}
+              className="fa-solid fa-star-half-alt"
+            ></i>
+          )}
+          {[...Array(emptyStars)].map((_, index) => (
+            <i
+              key={fullStars + index + 1}
+              style={{ fontSize: '1rem', color: '#dcdcdc', marginTop: 10 }}
+              className="fa-solid fa-star"
+            ></i>
+          ))}
         </div>
       );
     };
@@ -575,7 +584,7 @@ const handleAddToCart = (product) => {
             <div style={{ textDecoration: 'none' }}>
               <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
               {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
+                    <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                     <div>Sale</div>
                     <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                     </div>
@@ -595,6 +604,7 @@ const handleAddToCart = (product) => {
                 <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                 <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
+               <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
                 </div>
                 <div className="content__feature-name mt-2">
                   <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -609,7 +619,6 @@ const handleAddToCart = (product) => {
                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 )}
-                <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">

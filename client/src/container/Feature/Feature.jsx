@@ -55,27 +55,36 @@ export default function Feature({fetchData}) {
     
       const [productSelect1, setProductSelect1] = useState()
       const [productSelect2, setProductSelect2] = useState()
-    const StarRating = ({ rate }) => {
-      const renderStars = (rate) => {
-        const stars = [];
-        for (let i = 0; i < rate; i++) {
-          stars.push(
-            <i
-              key={i}
-              style={{ fontSize: '1 rem', color: '#fec800', marginTop: 10 }}
-              className="fa-solid fa-star"
-            ></i>
-          );
-        }
-        return stars;
+      const StarRating = ({ rate }) => {
+        const fullStars = Math.floor(rate);
+        const halfStar = rate % 1 >= 0.5;
+        const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+      
+        return (
+          <div>
+            {[...Array(fullStars)].map((_, index) => (
+              <i
+                key={index}
+                style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+                className="fa-solid fa-star"
+              ></i>
+            ))}
+            {halfStar && (
+              <i
+                style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+                className="fa-solid fa-star-half-alt"
+              ></i>
+            )}
+            {[...Array(emptyStars)].map((_, index) => (
+              <i
+                key={fullStars + index + 1}
+                style={{ fontSize: '1.4rem', color: '#dcdcdc', marginTop: 10 }}
+                className="fa-solid fa-star"
+              ></i>
+            ))}
+          </div>
+        );
       };
-    
-      return (
-        <div>
-          {renderStars(rate)}
-        </div>
-      );
-    };
   const { productHistory } = useContext(ProductHistoryContext);
   const { addProductToHistory } = useContext(ProductHistoryContext);
   const handleAddToCart = (product, productSelect1, productSelect2) => {
@@ -97,7 +106,7 @@ export default function Feature({fetchData}) {
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
       )}
-      <div className="container mt-5">
+      <div className="container mt-5 container-wrapper">
         <div className="row">
           <div className="col-md-12">
             <div className="re__breadcrumb">
@@ -149,15 +158,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-                  <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-                  <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-                  <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+                  {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -307,74 +316,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                              {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
                               ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product)//     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>  
 )))}
@@ -399,15 +405,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+              {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -555,74 +561,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                             {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
                               ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product) // navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
           
@@ -648,7 +651,7 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-                  {product.images.map(item => (
+             {product.images.map(item => (
                     <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
                   ))}
         </Carousel>
@@ -656,7 +659,7 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -804,74 +807,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                             {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
                               ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product) // navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
           
@@ -897,15 +897,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+              {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -1019,74 +1019,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                             {product.saleprice > 0 ? (
-                                <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                                <div>Sale</div>
-                                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
                                 </div>
-                                ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product)                             //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
              
@@ -1113,15 +1110,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-            <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+            {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div> 
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, '')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -1249,74 +1246,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                              {product.saleprice > 0 ? (
-                                <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                                <div>Sale</div>
-                                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
                                 </div>
-                                ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product) //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
              
@@ -1343,15 +1337,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-            <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+           {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -1471,74 +1465,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                             {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
                               ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product)                             //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
              
@@ -1565,15 +1556,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-               <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+             {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -1688,74 +1679,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                              {product.saleprice > 0 ? (
-                                <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                                <div>Sale</div>
-                                <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
                                 </div>
-                                ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product)                             //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>             
 )))}
@@ -1780,9 +1768,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-               <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+             {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -1892,74 +1880,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                              {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
                               ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product) //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
              
@@ -1986,9 +1971,9 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+              {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
@@ -2129,74 +2114,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                             {product.saleprice > 0 ? (
-                            <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                            <div>Sale</div>
-                            <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                              <div>Sale</div>
+                              <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                              </div>
+                              ) : ''} 
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
                             </div>
-                            ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product)                             //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>
              
@@ -2223,15 +2205,15 @@ export default function Feature({fetchData}) {
                 stopOnHover
                 autoPlay
                 infiniteLoop>
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image2.png`} />
-              <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/image/product/image/${product.productCode}_image3.png`} />
+             {product.images.map(item => (
+                    <img alt={product.productCode} className="image_content" src={`https://shingolf.vn/${item}`} />
+                  ))}
         </Carousel>
             </div>
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -2302,74 +2284,71 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">ShinGolf đề xuất</div>
           <div className="container">
             <div className="row">
-            {fetchData.map((product => (
+            {fetchData
+            .slice(1,5)
+            .map((product => (
               <>
                 {product.productType === productType && (
-                     <div key={product.productCode} className="col-6 col-md-12">
-                     <div style={{ textDecoration: 'none' }}>
-                       <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                         <div className="content__feature-container">
-                           <div
-                            onClick={() => handleProduct(product)}
-                             className="content__feature-img"
-                             style={{
-                               backgroundImage:
-                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                               }}
-                               title={product.productCode}
-                           >
-                             {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
+                      <div key={product.productId} className="col-md-12 p-3">
+                      <div style={{ textDecoration: 'none' }}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        {product.saleprice > 0 ? (
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
                               ) : ''} 
-                           </div>
-                         </div>
-                         <div style={{padding:'10px'}}>
-                         <div className="d-flex justify-content-between align-items-center">
-                        <StarRating rate={product.rate} />
-                        <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.rank}</div>
-                         </div>
-                         <div className="content__feature-name">
-                           <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                         </div>
-                         <div className="content__feature-text d-md-flex justify-content-between">
-                         {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                         </div>
-                         </div>
-                         <div className="btn-container">
-                           <div className="row pb-0">
-                             <div className="col-md-6 p-0">
-                               <div  onClick={() => handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                 THÊM VÀO GIỎ
-                               </div>
-                             </div>
-                             <div className="col-md-6 p-0">
-                             <a 
-                             // onClick={() => {
-                             //     handleAddToCart(product)                             //     navigate('/cart/')
-                             //     }}
-                                   target="_blank"
-                                   href="https://zalo.me/0564545545"
-                                  className="buy-btn">
-                                 LIÊN HỆ
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                          <div className="content__feature-container">
+                            <div
+                             onClick={() => handleProduct(product)}
+                              className="content__feature-img"
+                              style={{
+                                backgroundImage:
+                                `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                                }}
+                                title={product.productCode}
+                            >
+                            </div>
+                          </div>
+                          <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                          <div className="d-flex justify-content-between align-items-center">
+                         <StarRating rate={product.rate} />
+                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                          </div>
+                          <div className="content__feature-name mt-2">
+                            <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                          </div>
+                          {product.saleprice > 0 ? (
+                          <div className="content__feature-text d-flex">
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          ): (
+                            <div className="content__feature-text d-flex">
+                            <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                          </div>
+                          )}
+                          </div>
+                          <div className="btn-container">
+                            <div className="row pb-0">
+                              <div className="col-md-12 p-0">
+                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                                  THÊM VÀO GIỎ
+                                </div>
+                              </div>
+                             {/* <div className="col-md-6 p-0">
+                              <a 
+                                target="_blank"
+                                href="https://zalo.me/0564545545"
+                                className="buy-btn">
+                                LIÊN HỆ
+                              </a>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 )}
               </>             
 )))}
@@ -2393,65 +2372,61 @@ export default function Feature({fetchData}) {
               {fetchData
               .filter(product => product.productId === productId)
               .map(product => (
-                <div key={product.productCode} className="col-6 col-md-2 p-3">
+                <div key={product.productId} className="col-6 col-md-2 p-3">
                 <div style={{ textDecoration: 'none' }}>
                   <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                  {product.saleprice > 0 ? (
+                        <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                        <div>Sale</div>
+                        <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                        </div>
+                        ) : ''} 
                     <div className="content__feature-container">
                       <div
                        onClick={() => handleProduct(product)}
                         className="content__feature-img"
                         style={{
                           backgroundImage:
-                           `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
+                          `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
                           }}
+                          title={product.productCode}
                       >
-                        {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
                       </div>
                     </div>
-                    <div style={{padding:'10px'}}>
+                    <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                     <div className="d-flex justify-content-between align-items-center">
                    <StarRating rate={product.rate} />
-                   <div className="d-flex justify-content-center align-items-center" style={{padding: 5, border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
+                   <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
                     </div>
-                    <div className="content__feature-name">
-                      <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
+                    <div className="content__feature-name mt-2">
+                      <div onClick={() => handleProduct(product)}>{product.productName}</div>
                     </div>
-                    <div className="content__feature-text d-md-flex justify-content-between">
                     {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
+                    <div className="content__feature-text d-flex">
+                      <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                      <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                     </div>
+                    ): (
+                      <div className="content__feature-text d-flex">
+                      <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                    </div>
+                    )}
                     </div>
                     <div className="btn-container">
                       <div className="row pb-0">
-                        <div className="col-md-6 p-0">
-                          <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                        <div className="col-md-12 p-0">
+                          <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
                             THÊM VÀO GIỎ
                           </div>
                         </div>
-                        <div className="col-md-6 p-0">
+                       {/* <div className="col-md-6 p-0">
                         <a 
-                          // onClick={() => {
-                          //     addToCart(product)
-                          //     navigate('/cart/')
-                          //     }}
-                                href="https://zalo.me/0564545545"
-                               className="buy-btn">
-                              LIÊN HỆ
-                            </a>
-                    </div>
+                          target="_blank"
+                          href="https://zalo.me/0564545545"
+                          className="buy-btn">
+                          LIÊN HỆ
+                        </a>
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -2465,70 +2440,66 @@ export default function Feature({fetchData}) {
           <div className="container">
             <div className="row">
             {productHistory.map((product, index) => (
-                <div key={product.productCode} className="col-6 col-md-2 p-3">
-                <div style={{ textDecoration: 'none'}}>
-                  <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
-                    <div className="content__feature-container">
-                      <div
-                       onClick={() => handleProduct(product)}
-                        className="content__feature-img"
-                        style={{
-                          backgroundImage:
-                          `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png`,
-                          }}
-                      >
-                        {product.saleprice > 0 ? (
-                    <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', right:0, backgroundColor: '#fec800', color: '#ff3131', fontSize:'1.4rem', fontWeight:'bold'}}>
-                    <div>Sale</div>
-                    <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
-                    </div>
-                    ) : ''} 
-                      </div>
-                    </div>
-                    <div style={{padding:'10px'}}>
-                    <div className="d-flex justify-content-between align-items-center">
-                   <StarRating rate={product.rate} />
-                   <div className="d-flex justify-content-center align-items-center" style={{width: 'fit-content', height: '30px',padding: '10px', border: '1px solid green', fontSize:'1.4rem', color:'green', marginTop: '10px', borderRadius: '10px'}}>{product.productType}</div>
-                    </div>
-                    <div className="content__feature-name">
-                      <div className="wrapper" onClick={() => handleProduct(product)}>{product.productName}</div>
-                    </div>
-                    <div className="content__feature-text d-md-flex justify-content-between">
-                    {product.saleprice > 0 ? (
-                <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                  <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                ): (
-                  <div className="content__feature-text d-md-flex justify-content-between">
-                  <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                </div>
-                )}
-                    </div>
-                    </div>
-                    <div className="btn-container">
-                      <div className="row pb-0">
-                        <div className="col-md-6 p-0">
-                          <div  onClick={() => addToCart(product)}className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                            THÊM VÀO GIỎ
-                          </div>
-                        </div>
-                        <div className="col-md-6 p-0">
-                        <a 
-                          // onClick={() => {
-                          //     addToCart(product)
-                          //     navigate('/cart/')
-                          //     }}
-                                href="https://zalo.me/0564545545"
-                               className="buy-btn">
-                              LIÊN HỆ
-                            </a>
-                    </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+               <div key={product.productId} className="col-6 col-md-2 p-3">
+               <div style={{ textDecoration: 'none' }}>
+                 <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                 {product.saleprice > 0 ? (
+                       <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                       <div>Sale</div>
+                       <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
+                       </div>
+                       ) : ''} 
+                   <div className="content__feature-container">
+                     <div
+                      onClick={() => handleProduct(product)}
+                       className="content__feature-img"
+                       style={{
+                         backgroundImage:
+                         `url(https://shingolf.vn/image/product/image/${product.productCode}_image1.png)`,
+                         }}
+                         title={product.productCode}
+                     >
+                     </div>
+                   </div>
+                   <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
+                   <div className="d-flex justify-content-between align-items-center">
+                  <StarRating rate={product.rate} />
+                  <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                   </div>
+                   <div className="content__feature-name mt-2">
+                     <div onClick={() => handleProduct(product)}>{product.productName}</div>
+                   </div>
+                   {product.saleprice > 0 ? (
+                   <div className="content__feature-text d-flex">
+                     <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                     <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                   </div>
+                   ): (
+                     <div className="content__feature-text d-flex">
+                     <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                   </div>
+                   )}
+                   </div>
+                   <div className="btn-container">
+                     <div className="row pb-0">
+                       <div className="col-md-12 p-0">
+                         <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
+                           THÊM VÀO GIỎ
+                         </div>
+                       </div>
+                      {/* <div className="col-md-6 p-0">
+                       <a 
+                         target="_blank"
+                         href="https://zalo.me/0564545545"
+                         className="buy-btn">
+                         LIÊN HỆ
+                       </a>
+                       </div> */}
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
                 ))}
             </div>
           </div>

@@ -127,20 +127,20 @@ export default function VietnamService({fetchData, listMenu}) {
         {[...Array(fullStars)].map((_, index) => (
           <i
             key={index}
-            style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+            style={{ fontSize: '1rem', color: '#fec800', marginTop: 10 }}
             className="fa-solid fa-star"
           ></i>
         ))}
         {halfStar && (
           <i
-            style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+            style={{ fontSize: '1rem', color: '#fec800', marginTop: 10 }}
             className="fa-solid fa-star-half-alt"
           ></i>
         )}
         {[...Array(emptyStars)].map((_, index) => (
           <i
             key={fullStars + index + 1}
-            style={{ fontSize: '1.4rem', color: '#dcdcdc', marginTop: 10 }}
+            style={{ fontSize: '1rem', color: '#dcdcdc', marginTop: 10 }}
             className="fa-solid fa-star"
           ></i>
         ))}

@@ -42,6 +42,10 @@ const orderSchema = new mongoose.Schema({
         type: Boolean,
         trim: true,
     },
+    complete: {
+        type: Boolean,
+        trim: false,
+    }
 }, {
     timestamps: true
 });
