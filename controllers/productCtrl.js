@@ -15,7 +15,7 @@ const productCtrl = {
             const dataOnBody = req.body;
 
             if(!dataOnBody) return res.json({ msg: "Have note data", status: 0});
-            if("productCode" !== "") return res.json({ msg: "Error when update new prodduct", status: 0})
+            if("productCode" !== "* Waiting make product *") return res.json({ msg: "Error when update new prodduct", status: 0})
 
             const { productId } = dataOnBody;
             const index = LIST_SELECT_PRODUCT_ID.indexOf(productId);
