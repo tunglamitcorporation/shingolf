@@ -9,8 +9,9 @@ import './../adminComponets.css'
 function ProductShowDetail(props) {
     // const {listMenu} = props;
    // const LIST_SELECT_PRODUCT_ID =  ['golfsticknew', 'golfstickold', 'golfstickhangle', 'golfclothesmen', 'golfclotheswwomen', 'golfacessory', 'golfbag', 'golfshoes', 'golfpractice'];
-    const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining"];
-    const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+    const LIST_SELECT_PRODUCT_ID =["newgolfclub", "oldgolfclub", "grip", "mengolfclothes", "womengolfclothes", "accessories", "golfbag", "golfshoes", "golftraining","golfset"];
+
+    const LIST_SELECT_PRODUCT_CODE=  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K'];
   //  const dateByNumber = Date.now();
     const [data, setData] =useState({
       productDetail: {
