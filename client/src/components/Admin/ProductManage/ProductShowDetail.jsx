@@ -47,7 +47,11 @@ function ProductShowDetail(props) {
         "rank": "",
         "produceyear": "",
         "managenumber": "",
-        "size": "",
+        "size": {
+          "size1": "",
+          "size2": "",
+          "size3": "",
+        },
         "shoestype": {
           "type1": "",
           "type2": "",
