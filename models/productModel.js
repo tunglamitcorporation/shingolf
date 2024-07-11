@@ -29,7 +29,11 @@ const productSchema = new mongoose.Schema({
     rank: { type: String, default:"" },
     produceyear: { type: String, default:"" },
     managenumber: { type: String, default:"" },
-    size: { type: Object },
+    size: { type: Object, default: {
+        size1:"",
+        size2:"",
+        size3:""
+    },
     shoestype: { type: Object },
     sex: { type: String, default:"" },
     brand: { type: String, default:"" },
