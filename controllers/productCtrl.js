@@ -24,6 +24,23 @@ const productCtrl = {
             const checkCount = await PRODUCT.find({ productId }, { name: 1}).count();
             const productCode = fistCode + (checkCount + 1).toString().padStart(4, '0');;
 
+            if(productId === "mengolfclothes" || productId === "womengolfclothes" || productId==="golfshoes") {
+                if(dataOnBody.size === "") {
+                    dataOnBody.size = {
+                    size1 :"S",
+                    size2 : "M",
+                    size3 : "M",
+                    } 
+                } else {
+                    const valueSize = dataOnBody.size;
+                    dataOnBody.size = {
+                        size1: valueSize,
+                        size2: "",
+                        size3: ""
+                    };
+                }
+            }
+
             dataOnBody.logEdit = [];
             dataOnBody.productCode = productCode;
             dataOnBody.logEdit.push({
