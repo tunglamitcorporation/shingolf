@@ -33,7 +33,7 @@ const productSchema = new mongoose.Schema({
         size1:"",
         size2:"",
         size3:""
-    },
+    }},
     shoestype: { type: Object },
     sex: { type: String, default:"" },
     brand: { type: String, default:"" },
