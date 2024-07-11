@@ -12,6 +12,7 @@ import { makeOrder } from "../../api/product";
 export default function Cart() {
     const Cart = () => {
       const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart, getItemQuantity } = useCart();
+      console.log("🚀 ~ Cart ~ cartItems:", cartItems)
       const [totalPrice, setTotalPrice] = useState(0);
       const [exchangeRate, setExchangeRate] = useState(null);
       const [loading, setLoading] = useState(true);
@@ -400,8 +401,8 @@ function MassageThaiVanLung1Modal(props) {
                         </>
                     </div> */}
               <div className="content__feature-text d-flex col-md-2" style={{fontSize: '1.2rem'}}>
-                <div className="price">{Intl.NumberFormat('de-DE').format(item.price)}đ</div>
-                <div className="price ml-3 mr-2" style={{ color: '#ccc', textDecoration: 'line-through', textDecorationColor:'#000' }}>{Intl.NumberFormat('de-DE').format(item.saleprice)}đ</div>
+                <div className="price">{Intl.NumberFormat('de-DE').format(item.price)}¥</div>
+                <div className="price ml-3 mr-2" style={{ color: '#ccc', textDecoration: 'line-through', textDecorationColor:'#000' }}>{Intl.NumberFormat('de-DE').format(item.saleprice)}¥</div>
               </div>
               <div className="quantity-controls col-md-1 mr-2">
                 <button onClick={() => {
@@ -413,7 +414,7 @@ function MassageThaiVanLung1Modal(props) {
                   }}>+</button>
             </div>
             <div className="content__feature-text d-flex col-md-1 total-product-price ml-4" style={{fontSize: '1.2rem'}}>
-            <div className="price">{Intl.NumberFormat('de-DE').format((item.price * item.quantity).toFixed(2))}</div>
+            <div className="price">{Intl.NumberFormat('de-DE').format((item.price * item.quantity).toFixed(2))}¥</div>
             <button className="delete-button d-flex align-items-center ml-5" onClick={() => removeFromCart(item.productCode)}><i class="fa-solid fa-xmark"></i></button>
             </div>
             </div>
@@ -431,17 +432,13 @@ function MassageThaiVanLung1Modal(props) {
         </>
       )}
           <div className="cart-summary">
-            <p>Tổng: {Intl.NumberFormat('de-DE').format(totalPrice.toFixed(3))}¥<small style={{fontSize: '1.2rem'}}>(Đã bao gồm 8% VAT)</small></p>
+            <p>Tổng: {Intl.NumberFormat('de-DE').format(totalPrice.toFixed(3))}¥<small style={{fontSize: '1.2rem'}}> (Đã bao gồm 8% VAT)</small></p>
             <div className="cart-buttons">
-              <button onClick={() => setModalShow(true)} className="contact-button">Liên hệ</button>
+              <button onClick={() => setModalShow(true)} className="contact-button">Đặt hàng</button>
               <MassageThaiVanLung1Modal
                           show={modalShow}
                           onHide={() => setModalShow(false)}
                         />
-              {/* <InformationModal
-                   show = {modalShow}
-                   onHide = {()=> setModalShow(false)}/> */}
-              {/* <button className="pay-button">Pay</button> */}
             </div>
           </div>
         </div>

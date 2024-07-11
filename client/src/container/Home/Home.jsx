@@ -34,26 +34,6 @@
       return () => clearTimeout(timer);
     }, [show]);
   
-     const copyToClipboard = async () => {
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        setCopySuccess('Copied!');
-        alert(copySuccess, textToCopy)
-      } catch (err) {
-        setCopySuccess('Failed to copy!');
-      }
-    };
-  
-    // const convertListMenu = []
-    // for (const [title, items] of Object.entries(listMenu)) {
-    //   items.forEach((item, index) => {
-    //     if (index === 0) {
-    //       convertListMenu.push({ title, item });
-    //     } else {
-    //       convertListMenu.push({ title: '', item });
-    //     }
-    //   });
-    // }
 const groupedData = {};
 
 for (const [title, items] of Object.entries(listMenu)) {
@@ -125,32 +105,31 @@ const handleAddToCart = (product) => {
     const selectedList = 
       [
         {
-            "title": "Gậy Golf Mới",
+            "title": "Gậy\n Golf\n Mới",
             "image": newGolf
             
         },
         {
-            "title": "Gậy golf cũ",
+            "title": "Gậy\n golf\n cũ",
            "image": oldGolf
         },
         {
-            "title": "Bộ gậy giá rẻ",
+            "title": "Bộ\n gậy\n giá\n rẻ",
             "image":setGolf
         },
         {
-            "title": "Phụ kiện golf",
+            "title": "Phụ\n kiện\n golf",
             "image": pkGolf
         },
         {
-            "title": "Quần áo golf nam",
+            "title": "Quần\n áo\n golf\n nam",
             "image":manGolf
         },
         {
-            "title": "Quần áo golf nữ",
+            "title": "Quần\n áo\n golf\n nữ",
            "image":womanGof
         }
     ]
-    // const selectedList = convertListMenu.slice(1,7)
     const StarRating = ({ rate }) => {
       const fullStars = Math.floor(rate);
       const halfStar = rate % 1 >= 0.5;
@@ -181,8 +160,7 @@ const handleAddToCart = (product) => {
         </div>
       );
     };
-    // const code = 'A0001'
-    // console.log(`https://shingolf.vn/image/product/image/${code}_image1.png`);
+
   const AutoPlaySlider = withAutoplay(AwesomeSlider)
     return (
       <>
@@ -191,7 +169,7 @@ const handleAddToCart = (product) => {
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
       )}
         <div className="container">
-          <div className="row">
+        <div className="row">
             <div className="col-md-8">
         <div className="content">
         <AutoPlaySlider
@@ -253,7 +231,24 @@ const handleAddToCart = (product) => {
                             ))}
           </AutoPlaySlider>
         </div>
-            </div>
+        </div>
+                </div>
+                <div className="product-id-mobile">
+                  <div className="container p-0">
+                    <div className="row">
+                    {selectedList
+                    .map(product => (
+                      <div className="col-4 mb-2 mt-4">
+                      <div className="" onClick={() => handleProductType(product)} style={{cursor:'pointer'}}>
+                      <div className="hot-item" style={{ backgroundImage: `url(${product.image})` }}>
+                      <p>{product.title}</p>
+                      </div>
+                      </div>
+                    </div>
+                    ))}  
+                    </div>
+                  </div>
+
                 </div>
         <div className="row">
           {convertListMenu.map(product => (

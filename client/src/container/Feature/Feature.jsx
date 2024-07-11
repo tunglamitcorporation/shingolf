@@ -18,24 +18,6 @@ export default function Feature({fetchData}) {
   const { addToCart } = useCart();
   const [show, setShow] = useState(false);
   const [imageExists, setImageExists] = useState(null);
-  const [isLoaded, setIsLoaded] = useState({
-    isLoaded1: true,
-    isLoaded2: true,
-    isLoaded3: true,
-    isLoaded4: true,
-    isLoaded5: true,
-    isLoaded6: true,
-    isLoaded7: true,
-    isLoaded8: true,
-    isLoaded9: true,
-    isLoaded10: true
-  });
-  const handleIsLoadedChange = (key, value) => {
-    setIsLoaded(prevState => ({
-      ...prevState,
-      [key]: value,
-    }));
-  };
     useEffect(() => {
       const timer = setTimeout(() => {
         setShow(false);
@@ -170,12 +152,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -352,8 +334,8 @@ export default function Feature({fetchData}) {
                           </div>
                           {product.saleprice > 0 ? (
                           <div className="content__feature-text d-flex">
-                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                           </div>
                           ): (
                             <div className="content__feature-text d-flex">
@@ -417,12 +399,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
+                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="sale">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -469,7 +451,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product, productSelect1, productSelect2)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -570,7 +552,7 @@ export default function Feature({fetchData}) {
                       <div style={{ textDecoration: 'none' }}>
                         <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
-                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
+                              <div className="d-flex flex-column justify-content-center align-items-center sale-badge ml-5">
                               <div>Sale</div>
                               <div>{((product.price - product.saleprice) / product.price * 100).toFixed(0)}%</div>
                               </div>
@@ -597,8 +579,8 @@ export default function Feature({fetchData}) {
                           </div>
                           {product.saleprice > 0 ? (
                           <div className="content__feature-text d-flex">
-                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
-                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                            <div className="price mr-3">{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                            <div className="price" style={{ color: '#000', textDecoration:'line-through' }}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                           </div>
                           ): (
                             <div className="content__feature-text d-flex">
@@ -663,12 +645,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -715,7 +697,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product,  productSelect1, productSelect2)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -909,12 +891,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -935,7 +917,6 @@ export default function Feature({fetchData}) {
                           {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
                           
                       </select>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
                     ) : ''}
                     <div className="hotline">
@@ -944,7 +925,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product, productSelect1)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1122,12 +1103,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
@@ -1177,7 +1158,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product, productSelect1, productSelect2)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1349,12 +1330,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
@@ -1396,7 +1377,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product, productSelect1, productSelect2)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1568,15 +1549,15 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
-                    <ul className="d-flex pl-0 mt-3">
+                    {/* <ul className="d-flex pl-0 mt-3">
                       {product.size.size1 != '' ? (
                           <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
@@ -1595,7 +1576,6 @@ export default function Feature({fetchData}) {
                       {product.color.color1 != '' ? (
                         <>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                       <select 
                       style={{width: 100, height:30, fontSize: '1.4rem'}}
                       value={productSelect2  || setProductSelect2(product.color.color1)}
@@ -1608,8 +1588,7 @@ export default function Feature({fetchData}) {
                       </select>
                         </>
                       ):''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
-                    </ul>
+                    </ul> */}
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
@@ -1776,16 +1755,16 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                 <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
@@ -1795,7 +1774,7 @@ export default function Feature({fetchData}) {
                       {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                       <select 
                       style={{width: 100, height:30, fontSize: '1.4rem'}}
-                      value={productSelect2 || setProductSelect2(product.color.color1)}
+                      value={productSelect1 || setProductSelect1(product.color.color1)}
                       onChange={(e) => setProductSelect2(e.target.value)}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
@@ -1813,7 +1792,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-md-6 p-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product,  productSelect1)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '2.5rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-md-6 p-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '2.5rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -1979,16 +1958,16 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
-              <div className="product-status">{product.rank}</div>
+              <div className="product-status">{product.brand}</div>
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
-                <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
+                  <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
@@ -2014,7 +1993,7 @@ export default function Feature({fetchData}) {
                       <select 
                       style={{width: 100, height:30, fontSize: '1.4rem'}}
                       value={productSelect2}
-                      onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.color.color2))}>
+                      onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.color.color1))}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           <option value={product.color.color2}>{product.color.color2}</option>
                           <option value={product.color.color3}>{product.color.color3}</option>
@@ -2035,7 +2014,7 @@ export default function Feature({fetchData}) {
                     <div className="btn-container">
                       <div className="row">
                       <div className="col-4 col-md-4 pr-0">
-                        <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '1.4rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
+                        <div onClick={()=> handleAddToCart(product, productSelect1, productSelect2)} className="buy-btn" style={{backgroundColor:'#ccc', fontSize: '1.4rem', height: '40px', padding: '5px', cursor:'pointer'}}>THÊM VÀO GIỎ</div>
                         </div>
                         <div className="col-4 col-md-4 pl-0">
                         <a href ="https://zalo.me/0564545545" target="_blank" className="buy-btn" style={{fontSize: '1.4rem', height: '40px', padding: '5px'}}>LIÊN HỆ</a>
@@ -2217,12 +2196,12 @@ export default function Feature({fetchData}) {
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 <div className="price ml-5"style={{ fontSize: '3rem', color: "#000", textDecoration: 'line-through'}}>{Intl.NumberFormat('de-DE').format(product.saleprice)}¥</div>
                 <div className="sale ml-5">{((product.price - product.saleprice) / product.price * 100).toFixed(0)}% OFF</div>
                 </>
               ) : (
-                <div className="price" style={{fontSize: '3rem'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
+                <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
                     <div className="hotline">
