@@ -48,7 +48,7 @@ export default function Footer() {
                 </div>
                   </div>
                   </div>
-                  <div className="row">
+                  <div className="row" style={{borderTop: '1px solid #ff3131'}}>
                   <div className="col-md-12">
                 <h4 style={{color: '#000', textAlign:'center'}}>ĐƠN VỊ VẬN CHUYỂN:  <h3 style={{fontWeight:'bold'}}>Vận chuyển MCS – SAGAWA EXPRESS – VIETTEL POST</h3></h4>
                 <h4 style={{color: '#000', textAlign:'center'}}>ĐƠN VỊ HỢP TÁC: <h3 style={{fontWeight:'bold'}}>Vận chuyển MCS – GOLF Partner – GOLF DO</h3> </h4>

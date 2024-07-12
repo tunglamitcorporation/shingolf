@@ -47,20 +47,20 @@ export default function Feature({fetchData}) {
             {[...Array(fullStars)].map((_, index) => (
               <i
                 key={index}
-                style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+                style={{ fontSize: '1rem', color: '#fec800', marginTop: 10 }}
                 className="fa-solid fa-star"
               ></i>
             ))}
             {halfStar && (
               <i
-                style={{ fontSize: '1.4rem', color: '#fec800', marginTop: 10 }}
+                style={{ fontSize: '1rem', color: '#fec800', marginTop: 10 }}
                 className="fa-solid fa-star-half-alt"
               ></i>
             )}
             {[...Array(emptyStars)].map((_, index) => (
               <i
                 key={fullStars + index + 1}
-                style={{ fontSize: '1.4rem', color: '#dcdcdc', marginTop: 10 }}
+                style={{ fontSize: '1rem', color: '#dcdcdc', marginTop: 10 }}
                 className="fa-solid fa-star"
               ></i>
             ))}
@@ -88,7 +88,7 @@ export default function Feature({fetchData}) {
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
       )}
-      <div className="container mt-5 container-wrapper">
+      <div className="container mt-5">
         <div className="row">
           <div className="col-md-12">
             <div className="re__breadcrumb">
@@ -161,44 +161,55 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại hàng: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.productType}</li>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
                       {product.loft.loft1 != '' ? (
                       <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Độ Loft: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Độ Loft: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.loft.loft1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.loft.loft1}>{product.loft.loft1}°</option>
-                          <option value={product.loft.loft2}>{product.loft.loft2}°</option>
-                          <option value={product.loft.loft3}>{product.loft.loft3}°</option>
+                          {product.loft.loft2 ? <option value={product.loft.loft2}>{product.loft.loft2}°</option> : '' }
+                         {product.loft.loft3 ? <option value={product.loft.loft3}>{product.loft.loft3}°</option> : ''} 
+                         {product.loft.loft4 ? <option value={product.loft.loft4}>{product.loft.loft4}°</option> : '' }
+                         {product.loft.loft5? <option value={product.loft.loft5}>{product.loft.loft5}°</option> : ''} 
+                         {product.loft.loft6? <option value={product.loft.loft6}>{product.loft.loft6}°</option> : ''} 
+                         {product.loft.loft7? <option value={product.loft.loft7}>{product.loft.loft7}°</option> : ''} 
+                         {product.loft.loft8? <option value={product.loft.loft8}>{product.loft.loft8}°</option> : ''} 
+                         {product.loft.loft9? <option value={product.loft.loft9}>{product.loft.loft9}°</option> : ''} 
+                         {product.loft.loft10? <option value={product.loft.loft10}>{product.loft.loft10}°</option> : ''} 
+                         {product.loft.loft11? <option value={product.loft.loft11}>{product.loft.loft11}°</option> : ''} 
+                         {product.loft.loft12? <option value={product.loft.loft12}>{product.loft.loft12}°</option> : ''} 
                       </select>
                       </>   
                       ) : ''}
                       {product.stickhardtype.type1 !='' ? (
                       <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width:80, marginLeft:20}}>Loại Cán: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.stickhardtype}</li> */}
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 100, marginLeft: product.loft.loft1 != '' ? 20 : 0,marginRight: 10}}>Loại Cán: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect2 || setProductSelect2(product.stickhardtype.type1)}
                       onChange={(e) => setProductSelect2(e.target.value)}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
-                          <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
-                          <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
-                          {product.stickhardtype.type4 ? (<option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option>) : ''}
-                          {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
+                          {product.stickhardtype.type2  ? <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>:''} 
+                          {product.stickhardtype.type3  ? <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option> :''}
+                          {product.stickhardtype.type4 ? <option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option> : ''}
+                          {product.stickhardtype.type6 ? <option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option> : ''}
+                          {product.stickhardtype.type7 ? <option value={product.stickhardtype.type6}>{product.stickhardtype.type6}</option> : ''}
+                          {product.stickhardtype.type8 ? <option value={product.stickhardtype.type7}>{product.stickhardtype.type7}</option> : ''}
+                          {product.stickhardtype.type9 ? <option value={product.stickhardtype.type8}>{product.stickhardtype.type8}</option> : ''}
+                          {product.stickhardtype.type10 ? <option value={product.stickhardtype.typ9}>{product.stickhardtype.type9}</option> : ''}
+                          {product.stickhardtype.type11 ? <option value={product.stickhardtype.type11}>{product.stickhardtype.type11}</option> : ''}
+                          {product.stickhardtype.type12 ? <option value={product.stickhardtype.type12}>{product.stickhardtype.type12}</option> : ''}
                           
                       </select>
                       </>  
                       ) : ''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
-                    {/* <ul className="d-flex pl-0 mt-3">
-                    </ul> */}
                     <div className="hotline">
                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
@@ -220,56 +231,56 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Loại gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.productType}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ loft</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Độ loft</th>
                 {loftString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{loftString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{loftString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Độ cứng</th>
                 {typeString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{typeString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.long}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chiều dài</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.long}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.weight}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Trọng lượng</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.weight}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.stickcover}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.stickcover}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Phụ kiện</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.accessory}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Phụ kiện</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.accessory}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Grip</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.grip}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Grip</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.grip}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Tay thuận</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.hand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Tay thuận</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.hand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Rank</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.rank}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Rank</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.rank}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Năm sản xuất</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.produceyear}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Năm sản xuất</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.produceyear}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -327,7 +338,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -408,43 +419,54 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại hàng: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100, marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.productType}</li>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
                       {product.loft.loft1 != '' ? (
                         <>
                       <li 
-                      style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80,  marginLeft:20}}
-                      value={productSelect1}
-                      onChange={(e) => setProductSelect1(e.target.value || setProductSelect1(product.loft.loft1))}>Độ Loft: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Độ Loft: </li>
+                      <select style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}} 
+                       value={productSelect1}
+                       onChange={(e) => setProductSelect1(e.target.value || setProductSelect1(product.loft.loft1))}>
                           <option value={product.loft.loft1}>{product.loft.loft1}°</option>
-                          <option value={product.loft.loft2}>{product.loft.loft2}°</option>
-                          <option value={product.loft.loft3}>{product.loft.loft3}°</option>
+                          {product.loft.loft2 ? <option value={product.loft.loft2}>{product.loft.loft2}°</option> : '' }
+                         {product.loft.loft3 ? <option value={product.loft.loft3}>{product.loft.loft3}°</option> : ''} 
+                         {product.loft.loft4 ? <option value={product.loft.loft4}>{product.loft.loft4}°</option> : '' }
+                         {product.loft.loft5? <option value={product.loft.loft5}>{product.loft.loft5}°</option> : ''} 
+                         {product.loft.loft6? <option value={product.loft.loft6}>{product.loft.loft6}°</option> : ''} 
+                         {product.loft.loft7? <option value={product.loft.loft7}>{product.loft.loft7}°</option> : ''} 
+                         {product.loft.loft8? <option value={product.loft.loft8}>{product.loft.loft8}°</option> : ''} 
+                         {product.loft.loft9? <option value={product.loft.loft9}>{product.loft.loft9}°</option> : ''} 
+                         {product.loft.loft10? <option value={product.loft.loft10}>{product.loft.loft10}°</option> : ''} 
+                         {product.loft.loft11? <option value={product.loft.loft11}>{product.loft.loft11}°</option> : ''} 
+                         {product.loft.loft12? <option value={product.loft.loft12}>{product.loft.loft12}°</option> : ''} 
                       </select>
                         </>
                       ) : ''}
                       {product.stickhardtype.type1 != '' ? (
                         <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại Cán: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,  marginLeft: product.loft.loft1 != '' ? 20 : 0, marginRight: 10}}>Loại Cán: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect2}
                       onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.stickhardtype.type1))}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
-                          <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
-                          <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
-                          {product.stickhardtype.type4 ? (<option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option>) : ''}
-                          {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
+                          {product.stickhardtype.type2  ? <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>:''} 
+                          {product.stickhardtype.type3  ? <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option> :''}
+                          {product.stickhardtype.type4 ? <option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option> : ''}
+                          {product.stickhardtype.type6 ? <option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option> : ''}
+                          {product.stickhardtype.type7 ? <option value={product.stickhardtype.type6}>{product.stickhardtype.type6}</option> : ''}
+                          {product.stickhardtype.type8 ? <option value={product.stickhardtype.type7}>{product.stickhardtype.type7}</option> : ''}
+                          {product.stickhardtype.type9 ? <option value={product.stickhardtype.type8}>{product.stickhardtype.type8}</option> : ''}
+                          {product.stickhardtype.type10 ? <option value={product.stickhardtype.typ9}>{product.stickhardtype.type9}</option> : ''}
+                          {product.stickhardtype.type11 ? <option value={product.stickhardtype.type11}>{product.stickhardtype.type11}</option> : ''}
+                          {product.stickhardtype.type12 ? <option value={product.stickhardtype.type12}>{product.stickhardtype.type12}</option> : ''}
                       </select>
                         </>
                       ) : ''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
-                    {/* <ul className="d-flex pl-0 mt-3">
-                     
-                    </ul> */}
                     <div className="hotline">
                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
@@ -466,55 +488,55 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Loại gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.productType}</td>
                 </tr>
                  <tr>
                 {loftString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{loftString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{loftString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Độ cứng</th>
                 {typeString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{typeString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.long}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chiều dài</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.long}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.weight}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Trọng lượng</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.weight}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.stickcover}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.stickcover}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Phụ kiện</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.accessory}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Phụ kiện</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.accessory}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Grip</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.grip}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Grip</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.grip}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Tay thuận</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.hand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Tay thuận</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.hand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Rank</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.rank}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Rank</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.rank}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Năm sản xuất</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.produceyear}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Năm sản xuất</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.produceyear}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -572,7 +594,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -654,43 +676,54 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại hàng: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100, marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.productType}</li>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
                       {product.loft.loft1 != '' ? (
                         <>
                       <li 
-                      style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80,  marginLeft:20}}
+                      style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Độ Loft: </li>
+                      <select style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1}
-                      onChange={(e) => setProductSelect1(e.target.value || setProductSelect1(product.loft.loft1))}>Độ Loft: </li>
-                      <select style={{width: 100, height:30, fontSize: '1.4rem'}}>
+                      onChange={(e) => setProductSelect1(e.target.value || setProductSelect1(product.loft.loft1))}>
                           <option value={product.loft.loft1}>{product.loft.loft1}°</option>
-                          <option value={product.loft.loft2}>{product.loft.loft2}°</option>
-                          <option value={product.loft.loft3}>{product.loft.loft3}°</option>
+                          {product.loft.loft2 ? <option value={product.loft.loft2}>{product.loft.loft2}°</option> : '' }
+                         {product.loft.loft3 ? <option value={product.loft.loft3}>{product.loft.loft3}°</option> : ''} 
+                         {product.loft.loft4 ? <option value={product.loft.loft4}>{product.loft.loft4}°</option> : '' }
+                         {product.loft.loft5? <option value={product.loft.loft5}>{product.loft.loft5}°</option> : ''} 
+                         {product.loft.loft6? <option value={product.loft.loft6}>{product.loft.loft6}°</option> : ''} 
+                         {product.loft.loft7? <option value={product.loft.loft7}>{product.loft.loft7}°</option> : ''} 
+                         {product.loft.loft8? <option value={product.loft.loft8}>{product.loft.loft8}°</option> : ''} 
+                         {product.loft.loft9? <option value={product.loft.loft9}>{product.loft.loft9}°</option> : ''} 
+                         {product.loft.loft10? <option value={product.loft.loft10}>{product.loft.loft10}°</option> : ''} 
+                         {product.loft.loft11? <option value={product.loft.loft11}>{product.loft.loft11}°</option> : ''} 
+                         {product.loft.loft12? <option value={product.loft.loft12}>{product.loft.loft12}°</option> : ''} 
                       </select>
                         </>
                       ) : ''}
                       {product.stickhardtype.type1 != '' ? (
                         <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại Cán: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100, marginLeft: product.loft.loft1 != '' ? 20 : 0, marginRight: 10}}>Loại Cán: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect2}
                       onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.stickhardtype.type1))}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
-                          <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
-                          <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
-                          {product.stickhardtype.type4 ? (<option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option>) : ''}
-                          {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
+                          {product.stickhardtype.type2  ? <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>:''} 
+                          {product.stickhardtype.type3  ? <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option> :''}
+                          {product.stickhardtype.type4 ? <option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option> : ''}
+                          {product.stickhardtype.type6 ? <option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option> : ''}
+                          {product.stickhardtype.type7 ? <option value={product.stickhardtype.type6}>{product.stickhardtype.type6}</option> : ''}
+                          {product.stickhardtype.type8 ? <option value={product.stickhardtype.type7}>{product.stickhardtype.type7}</option> : ''}
+                          {product.stickhardtype.type9 ? <option value={product.stickhardtype.type8}>{product.stickhardtype.type8}</option> : ''}
+                          {product.stickhardtype.type10 ? <option value={product.stickhardtype.typ9}>{product.stickhardtype.type9}</option> : ''}
+                          {product.stickhardtype.type11 ? <option value={product.stickhardtype.type11}>{product.stickhardtype.type11}</option> : ''}
+                          {product.stickhardtype.type12 ? <option value={product.stickhardtype.type12}>{product.stickhardtype.type12}</option> : ''}
                       </select>
                         </>
                       ) : ''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff' }}>{product.loft}</li> */}
                     </ul>
-                    {/* <ul className="d-flex pl-0 mt-3">
-                     
-                    </ul> */}
                     <div className="hotline">
                       <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
@@ -712,55 +745,55 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại gậy</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Loại gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.productType}</td>
                 </tr>
                  <tr>
                 {loftString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{loftString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{loftString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Độ cứng</th>
                 {typeString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{typeString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.long}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chiều dài</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.long}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.weight}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Trọng lượng</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.weight}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.stickcover}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Bọc đầu gậy</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.stickcover}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Phụ kiện</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.accessory}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Phụ kiện</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.accessory}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Grip</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.grip}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Grip</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.grip}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Tay thuận</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.hand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Tay thuận</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.hand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Rank</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.rank}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Rank</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.rank}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Năm sản xuất</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.produceyear}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Năm sản xuất</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.produceyear}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -818,7 +851,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -900,22 +933,27 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                       <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại hàng: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.productType}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.productType}</li>
                     </ul>
                     {product.stickhardtype.type1 != '' ? (
                     <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Loại Cán: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100, marginRight: 10}}>Loại Cán: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.stickhardtype.type1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.stickhardtype.type1}>{product.stickhardtype.type1}</option>
-                          <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>
-                          <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option>
-                          {product.stickhardtype.type4 ? (<option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option>) : ''}
-                          {product.stickhardtype.type5 ? (<option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option>) : ''}
-                          
+                          {product.stickhardtype.type2  ? <option value={product.stickhardtype.type2}>{product.stickhardtype.type2}</option>:''} 
+                          {product.stickhardtype.type3  ? <option value={product.stickhardtype.type3}>{product.stickhardtype.type3}</option> :''}
+                          {product.stickhardtype.type4 ? <option value={product.stickhardtype.type4}>{product.stickhardtype.type4}</option> : ''}
+                          {product.stickhardtype.type6 ? <option value={product.stickhardtype.type5}>{product.stickhardtype.type5}</option> : ''}
+                          {product.stickhardtype.type7 ? <option value={product.stickhardtype.type6}>{product.stickhardtype.type6}</option> : ''}
+                          {product.stickhardtype.type8 ? <option value={product.stickhardtype.type7}>{product.stickhardtype.type7}</option> : ''}
+                          {product.stickhardtype.type9 ? <option value={product.stickhardtype.type8}>{product.stickhardtype.type8}</option> : ''}
+                          {product.stickhardtype.type10 ? <option value={product.stickhardtype.typ9}>{product.stickhardtype.type9}</option> : ''}
+                          {product.stickhardtype.type11 ? <option value={product.stickhardtype.type11}>{product.stickhardtype.type11}</option> : ''}
+                          {product.stickhardtype.type12 ? <option value={product.stickhardtype.type12}>{product.stickhardtype.type12}</option> : ''}
                       </select>
                     </ul>
                     ) : ''}
@@ -940,38 +978,38 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại cán</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Loại cán</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.productType}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Độ cứng</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Độ cứng</th>
                 {typeString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{typeString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{typeString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chiều dài</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.long}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chiều dài</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.long}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.weight}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Trọng lượng</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.weight}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Hãng sản xuất:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Hãng sản xuất:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.brand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.producelocation}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.producelocation}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Năm sản xuất</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.produceyear}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Năm sản xuất</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.produceyear}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -1029,7 +1067,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1112,45 +1150,58 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 'fit-content',marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 'fit-content' }}>{product.productType}</li>
+                    </ul>
+                    <ul className="d-flex pl-0 mt-3">
                       {product.size.size1 != '' ? (
                           <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Kích thước: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.size.size1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
-                          <option value={product.size.size2}>{product.size.size2}</option>
-                          <option value={product.size.size3}>{product.size.size3}</option>
-                          {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
-                          {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
+                          {product.size.size2 ? <option value={product.size.size2}>{product.size.size2}</option> : '' }
+                          {product.size.size3 ? <option value={product.size.size3}>{product.size.size3}</option> : ''} 
+                          {product.size.size4 ? <option value={product.size.size4}>{product.size.size4}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size5}>{product.size.size5}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
                       </select>
                           </>
                       ) : ''}
                       {product.color.color1 != '' ? (
                         <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,  marginLeft:product.size.size1 != '' ? 20 : 0,marginRight: 10}}>Màu sắc: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect2 || setProductSelect2(product.color.color1)}
                       onChange={(e) => setProductSelect2(e.target.value )}>
                           <option value={product.color.color1}>{product.color.color1}</option>
-                          <option value={product.color.color2}>{product.color.color2}</option>
-                          <option value={product.color.color3}>{product.color.color3}</option>
-                          {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
-                          {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
+                          {product.color.color2 ? <option value={product.color.color2}>{product.color.color2}</option> : '' }
+                          {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
+                          {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                         </>
                       ):''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
-                    {/* <ul className="d-flex pl-0 mt-3">
-                      
-                    </ul> */}
                     <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Giới tính: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.sex}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Giới tính: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.sex}</li>
                     </ul>
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
@@ -1169,39 +1220,52 @@ export default function Feature({fetchData}) {
           </div>
           <div className="row">
             <div className="col-md-10">
-            <div className="product-info">
-              <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
-              <table style={{border: '1px solid #8f8b8b'}}>
-              <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Kích thước</th>
-                {sizeString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{sizeString}</td>
-                )}
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Giới tính</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.sex}</td>
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chất liệu</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.material}</td>
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
-                {colorString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
-                )}
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
-                </tr>
-              </table>
-            </div>
+                <div className="product-info">
+                  <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
+                  <table style={{border: '1px solid #8f8b8b'}}>
+                    <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>Giới tính</th>
+                    <td style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>{product.sex}</td>
+                    </tr>
+                    <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>Chất liệu</th>
+                    <td style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>{product.material}</td>
+                    </tr>
+                    <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>Màu sắc:</th>
+                    {colorString && (
+                      <td style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>{colorString}</td>
+                    )}
+                    </tr>
+                    <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>Thương hiệu:</th>
+                    <td style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>{product.brand}</td>
+                    </tr>
+                    <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                    <td style={{border: '1px solid #8f8b8b', width: 400   , fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div className="product-info mt-4">
+                  <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Bảng size chi tiết</div>
+                  <table style={{border: '1px solid #8f8b8b'}}>
+                  <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Kích thước</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều cao</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Cân nặng</th>
+                    </tr>
+                    <tr>
+                    {sizeString && (
+                      <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{sizeString}</td>
+                    )}
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>160-165</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>55-60</td>
+                    </tr>
+                    
+                    
+                  </table>
+                </div>
             <div className="description">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginTop: 20, marginBottom: 10}}>Thông tin sản phẩm</div>
               <p>
@@ -1256,7 +1320,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1338,38 +1402,51 @@ export default function Feature({fetchData}) {
                 <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
+                    <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 'fit-content',marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 'fit-content' }}>{product.productType}</li>
+                    </ul>
                       <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Kích thước: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.size.size1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
-                          <option value={product.size.size2}>{product.size.size2}</option>
-                          <option value={product.size.size3}>{product.size.size3}</option>
-                          {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
-                          {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
+                          {product.size.size2 ? <option value={product.size.size2}>{product.size.size2}</option> : '' }
+                          {product.size.size3 ? <option value={product.size.size3}>{product.size.size3}</option> : ''} 
+                          {product.size.size4 ? <option value={product.size.size4}>{product.size.size4}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size5}>{product.size.size5}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
                       </select>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,  marginLeft: product.size.size1 != '' ? 20 : 0, marginRight: 10}}>Màu sắc: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect2 || setProductSelect2(product.color.color1)}
                       onChange={(e) => setProductSelect2(e.target.value) }>
                           <option value={product.color.color1}>{product.color.color1}</option>
-                          <option value={product.color.color2}>{product.color.color2}</option>
-                          <option value={product.color.color3}>{product.color.color3}</option>
-                          {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
-                          {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
+                          {product.color.color2 ? <option value={product.color.color2}>{product.color.color2}</option> : '' }
+                          {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
+                          {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
-                    {/* <ul className="d-flex pl-0 mt-3">
-                      
-                    </ul> */}
                     <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Giới tính: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.sex}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Giới tính: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.sex}</li>
                     </ul>
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
@@ -1391,36 +1468,49 @@ export default function Feature({fetchData}) {
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
-              <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Kích thước</th>
-                {sizeString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{sizeString}</td>
-                )}
+                <tr>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Giới tính</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.sex}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Giới tính</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.sex}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chất liệu</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.material}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chất liệu</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.material}</td>
-                </tr>
-                <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Màu sắc:</th>
                 {colorString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{colorString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Thương hiệu:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.brand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
+            <div className="product-info mt-4">
+                  <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Bảng size chi tiết</div>
+                  <table style={{border: '1px solid #8f8b8b'}}>
+                  <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Kích thước</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều cao</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Cân nặng</th>
+                    </tr>
+                    <tr>
+                    {sizeString && (
+                      <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{sizeString}</td>
+                    )}
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>160-165</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>55-60</td>
+                    </tr>
+                    
+                    
+                  </table>
+                </div>
             <div className="description">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginTop: 20, marginBottom: 10}}>Thông tin sản phẩm</div>
               <p>
@@ -1475,7 +1565,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1557,38 +1647,32 @@ export default function Feature({fetchData}) {
                 <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
-                    {/* <ul className="d-flex pl-0 mt-3">
-                      {product.size.size1 != '' ? (
-                          <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
+                    <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 'fit-content',marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 'fit-content' }}>{product.productType}</li>
+                    </ul>
+              {product.color.color1 && (
+               <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100, marginRight: 10}}>Màu sắc: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
-                      value={productSelect1  || setProductSelect1(product.size.size1)}
-                      onChange={(e) => setProductSelect1(e.target.value)}>
-                          <option value={product.size.size1}>{product.size.size1}</option>
-                          <option value={product.size.size2}>{product.size.size2}</option>
-                          <option value={product.size.size3}>{product.size.size3}</option>
-                          {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
-                          {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
-                      </select>
-                          </>
-                      ) : ''}
-                      {product.color.color1 != '' ? (
-                        <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
-                      <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
-                      value={productSelect2  || setProductSelect2(product.color.color1)}
-                      onChange={(e) => setProductSelect2(e.target.value)}>
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
+                      value={productSelect1 || setProductSelect1(product.color.color1)}
+                      onChange={(e) => setProductSelect1(e.target.value) }>
                           <option value={product.color.color1}>{product.color.color1}</option>
-                          <option value={product.color.color2}>{product.color.color2}</option>
-                          <option value={product.color.color3}>{product.color.color3}</option>
-                          {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
-                          {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
+                          {product.color.color2 ? <option value={product.color.color2}>{product.color.color2}</option> : '' }
+                          {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
+                          {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
-                        </>
-                      ):''}
-                    </ul> */}
+                    </ul>
+              )}
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
@@ -1610,26 +1694,28 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chất liệu</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.material}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chất liệu</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.material}</td>
                 </tr>
+                {product.color.color1 && (
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Màu sắc:</th>
                 {colorString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{colorString}</td>
                 )}
                 </tr>
+                )}
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Thương hiệu:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.brand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.producelocation}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.producelocation}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -1687,7 +1773,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1768,23 +1854,32 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 'fit-content',marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 'fit-content' }}>{product.productType}</li>
+                    </ul>
+                    <ul className="d-flex pl-0 mt-3">
                       {product.color.color1 != '' ? (
                         <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Màu sắc: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.color.color1)}
                       onChange={(e) => setProductSelect2(e.target.value)}>
                           <option value={product.color.color1}>{product.color.color1}</option>
-                          <option value={product.color.color2}>{product.color.color2}</option>
-                          <option value={product.color.color3}>{product.color.color3}</option>
-                          {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
-                          {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
+                          {product.color.color2 ? <option value={product.color.color2}>{product.color.color2}</option> : '' }
+                          {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
+                          {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                         </>
                       ):''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
                     </ul>
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
@@ -1807,30 +1902,30 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Trọng lượng</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.weight}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Trọng lượng</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.weight}</td>
                 </tr>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chất liệu</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.material}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chất liệu</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.material}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Màu sắc:</th>
                 {colorString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{colorString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Thương hiệu:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.brand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.producelocation}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.producelocation}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -1888,7 +1983,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1971,42 +2066,60 @@ export default function Feature({fetchData}) {
               )}
                     </div>
                     <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.productType}</li>
+                    </ul>
+                    <ul className="d-flex pl-0 mt-3">
                       {product.size.size1 != '' ? (
                           <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Kích thước: </li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Kích thước: </li>
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.size.size1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.size.size1}>{product.size.size1}</option>
-                          <option value={product.size.size2}>{product.size.size2}</option>
-                          <option value={product.size.size3}>{product.size.size3}</option>
-                          {product.size.size4 ? (<option value={product.size.size4}>{product.size.size4}</option>) : ''}
-                          {product.size.size5 ? (<option value={product.size.size5}>{product.size.size5}</option>) : ''}
-                      </select>
+                          {product.size.size2 ? <option value={product.size.size2}>{product.size.size2}</option> : '' }
+                          {product.size.size3 ? <option value={product.size.size3}>{product.size.size3}</option> : ''} 
+                          {product.size.size4 ? <option value={product.size.size4}>{product.size.size4}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size5}>{product.size.size5}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
+                       </select>
                           </>
                       ) : ''}
                       {product.color.color1 != '' ? (
                         <>
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80, marginLeft: 20}}>Màu sắc: </li>
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100, marginLeft: 20,marginRight: 10}}>Màu sắc: </li>
+                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.size}</li> */}
                       <select 
-                      style={{width: 100, height:30, fontSize: '1.4rem'}}
+                      style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect2}
                       onChange={(e) => setProductSelect2(e.target.value || setProductSelect2(product.color.color1))}>
                           <option value={product.color.color1}>{product.color.color1}</option>
-                          <option value={product.color.color2}>{product.color.color2}</option>
-                          <option value={product.color.color3}>{product.color.color3}</option>
-                          {product.color.color4 ? (<option value={product.color.color4}>{product.color.color4}</option>) : ''}
-                          {product.color.color5 ? (<option value={product.color.color5}>{product.color.color5}</option>) : ''}
+                          {product.color.color2 ? <option value={product.color.color2}>{product.color.color2}</option> : '' }
+                          {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
+                          {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                         </>
                       ):''}
-                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.size}</li> */}
+                      {/* <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.size}</li> */}
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
-                      <li style={{fontSize: '1.4rem', fontWeight: 'bold', width: 80}}>Giới tính: </li>
-                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff', width:100 }}>{product.sex}</li>
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,marginRight: 10}}>Giới tính: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 100 }}>{product.sex}</li>
                     </ul>
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
@@ -2029,42 +2142,42 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Kích cỡ:</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Kích cỡ:</th>
                 {sizeString && (
-                <td style={{ border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5 }}>
+                <td style={{ border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5 }}>
                   {sizeString}
                 </td>
               )}
                 </tr>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Giới tính:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.sex}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Giới tính:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.sex}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Loại giày:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.productType}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Loại giày:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.productType}</td>
                 </tr>
               <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Chất liệu</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.material}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Chất liệu</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.material}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Màu sắc:</th>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Màu sắc:</th>
                 {colorString && (
-                  <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{colorString}</td>
+                  <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{colorString}</td>
                 )}
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Thương hiệu:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.brand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.producelocation}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.producelocation}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -2122,7 +2235,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2204,6 +2317,10 @@ export default function Feature({fetchData}) {
                 <div className="price" style={{fontSize: '3rem', color:'#000'}}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               )}
                     </div>
+                    <ul className="d-flex pl-0 mt-3">
+                      <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 'fit-content',marginRight: 10}}>Loại hàng: </li>
+                      <li className="product-type" style={{ backgroundColor: '#ff3131' , cursor: 'pointer', color:  '#fff',  width: 'fit-content' }}>{product.productType}</li>
+                    </ul>
                     <div className="hotline">
                        <a href="tel:0564545545">HotLine: 0564545545</a>
                     </div>
@@ -2225,16 +2342,16 @@ export default function Feature({fetchData}) {
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Thương hiệu:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.brand}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Thương hiệu:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.brand}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.producelocation}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Nơi sản xuất:</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.producelocation}</td>
                 </tr>
                 <tr>
-                <th style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>Mã số quản lý</th>
-                <td style={{border: '1px solid #8f8b8b', width: 500, fontSize: 15, padding: 5}}>{product.managenumber}</td>
+                <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Mã số quản lý</th>
+                <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.managenumber}</td>
                 </tr>
               </table>
             </div>
@@ -2292,7 +2409,7 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                         <div className="brand-name">{product.brand}</div>
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2375,7 +2492,7 @@ export default function Feature({fetchData}) {
                     <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                     <div className="d-flex justify-content-between align-items-center">
                    <StarRating rate={product.rate} />
-                   <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                   <div className="brand-name">{product.brand}</div>
                     </div>
                     <div className="content__feature-name mt-2">
                       <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2443,7 +2560,7 @@ export default function Feature({fetchData}) {
                    <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                    <div className="d-flex justify-content-between align-items-center">
                   <StarRating rate={product.rate} />
-                  <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                  <div className="brand-name">{product.brand}</div>
                    </div>
                    <div className="content__feature-name mt-2">
                      <div onClick={() => handleProduct(product)}>{product.productName}</div>

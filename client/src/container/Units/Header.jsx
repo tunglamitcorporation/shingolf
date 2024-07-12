@@ -3,7 +3,6 @@ import { useSSR, useTranslation } from "react-i18next";
 import { useState, useEffect, useContext } from "react";
 import { Tab, Tabs, TabList } from "react-tabs";
 import Cookies from "js-cookie";
-import logo from '../../image/logo.jpg'
 import axios from "axios";
 import ProductHistoryContext from "../../ProductHistoryContext";
 import { useCart } from "../../CartProvider";
@@ -205,6 +204,25 @@ function Header() {
   const handleActive = () => {
     setActive(!active)
   }
+  const [backgroundColor, setBackgroundColor] = useState('transparent');
+  const [boxShadow, setBoxShadow] = useState('none');
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      if (position > 100) {
+        setBackgroundColor('#fff'); 
+        setBoxShadow('rgba(0, 0, 0, 0.35) 0px 5px 15px')
+      } else {
+        setBackgroundColor('transparent'); 
+        setBoxShadow('none')
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <div className='top-header'>
@@ -290,7 +308,7 @@ function Header() {
               <div className="header__mobile-logo">
                 <Link to="/">
                   <img
-                    src={logo}
+                    src='/webp/logo.png'
                     alt="logo"
                   />
                 </Link>
@@ -361,8 +379,9 @@ function Header() {
       </div>
       </div>
         <HeaderMobile />
+        <div className="is-sticky">
      <div className="container-fluid header-container-all">
-      <div className="header">
+      <div className="header" style={{backgroundColor: backgroundColor, color: '#fff', boxShadow:boxShadow}}>
         <Tabs
         className="header__PC">
              <TabList className="header__navbar-list mb-0 justify-content-start">
@@ -373,7 +392,7 @@ function Header() {
                 <div className="col-md-6">
                   <Link to="/">
                     <img
-                      src={logo}
+                      src='/webp/logo.png'
                       alt="logo"
                     />
                   </Link>
@@ -423,6 +442,7 @@ function Header() {
                   </TabList>
                   </Tabs>
             </div>
+          </div>
           </div>
     </>
   );

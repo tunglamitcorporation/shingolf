@@ -3,67 +3,11 @@ import { Link, useParams } from "react-router-dom"
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
 
 export default function ThankYouService() {
-    const { selectedCity } = useParams()
-    const {t} = useTranslation()
-    const a = t("thankyou_service.name")
-    const b = t("header.title")
-    const c = a + " | "+ b
-    
-    if (selectedCity === 'hotel-hn'){
-        return(
-            <div>
-              <HelmetLayout title= {c}
-    />
-      <div className="reservation__content">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1>{t('thankyou_service.thank_content')}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <div className="re__breadcrumb">
-            <ul className="breadcrumb__list">
-              <li className="breadcrumb__item">
-                <Link to="/">
-                  <i className="fa-solid fa-house"></i>
-                </Link>
-              </li>
-              <li className="breadcrumb__item">/</li>
-              <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">{t('thankyou_service.name')}</Link>
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12 pre-line">
-                <h1>{t("thankyou_service.title")}</h1>
-                <br />
-                <h4>{t("thankyou_service.content")}</h4>
-                </div>
-            </div>
-        </div>
-      </div>
-        )
-    }else if(selectedCity === "hotel-hcm")
+    const {t} = useTranslation()    
     return(
         <div>
-      <div className="reservation__content">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <h1>{t('thankyou_service.thank_content')}</h1>
-            </div>
-          </div>
-        </div>
+      <div className="reservation__content" style={{ backgroundImage: 'url(/webp/golf-bg.jpg)'}}>
+            <h1>Cảm ơn quý khách đã đặt hàng !</h1>
       </div>
       <div className="container">
           <div className="row">
@@ -77,7 +21,7 @@ export default function ThankYouService() {
               </li>
               <li className="breadcrumb__item">/</li>
               <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">{t('reservation.title')}</Link>
+                <Link className="breadcrumb__title">Cảm ơn</Link>
               </li>
             </ul>
             </div>
@@ -87,134 +31,17 @@ export default function ThankYouService() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12 pre-line">
-                <h1>{t("thankyou_service.title")}</h1>
+                <h1>Đơn hàng của Quý khách đã được chúng tôi tiếp nhận và đang trong quá trình xử lý.</h1>
                 <br />
-                <h4>{t("thankyou_service.content")}</h4>
-                </div>
-            </div>
-        </div>
-      </div>
-    )
-    else if(selectedCity === "hotel-hp")
-    return(
-        <div>
-      <div className="reservation__content">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <h1>{t('thankyou_service.thank_content')}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <div className="re__breadcrumb">
-            <ul className="breadcrumb__list">
-              <li className="breadcrumb__item">
-                <Link to="/">
-                  <i className="fa-solid fa-house"></i>
-                </Link>
-              </li>
-              <li className="breadcrumb__item">/</li>
-              <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">{t('reservation.title')}</Link>
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12 pre-line">
-                <h1>{t("thankyou_service.title")}</h1>
+                <h4>Để đảm bảo Quý khách có thể nhận được thông tin cập nhật về đơn hàng một cách nhanh chóng và chính xác, vui lòng kiểm tra tin nhắn trên điện thoại (Zalo)
                 <br />
-                <h4>{t("thankyou_service.content")}</h4>
-                </div>
-            </div>
-        </div>
-      </div>
-    )
-    else if(selectedCity === "hotel-dn")
-    return(
-        <div>
-      <div className="reservation__content">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1>{t('thankyou_service.thank_content')}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <div className="re__breadcrumb">
-            <ul className="breadcrumb__list">
-              <li className="breadcrumb__item">
-                <Link to="/">
-                  <i className="fa-solid fa-house"></i>
-                </Link>
-              </li>
-              <li className="breadcrumb__item">/</li>
-              <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">{t('reservation.title')}</Link>
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12 pre-line">
-                <h1>{t("thankyou_service.title")}</h1>
                 <br />
-                <h4>{t("thankyou_service.content")}</h4>
-                </div>
-            </div>
-        </div>
-      </div>
-    )
-    return(
-        <div>
-      <div className="reservation__content">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <h1>{t('thankyou_service.thank_content')}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-            <div className="re__breadcrumb">
-            <ul className="breadcrumb__list">
-              <li className="breadcrumb__item">
-                <Link to="/">
-                  <i className="fa-solid fa-house"></i>
-                </Link>
-              </li>
-              <li className="breadcrumb__item">/</li>
-              <li className="breadcrumb__item">
-                <Link className="breadcrumb__title">{t('reservation.title')}</Link>
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12 pre-line">
-                <h1>{t("thankyou_service.title")}</h1>
+                Nếu Quý khách có bất kỳ thắc mắc hay cần hỗ trợ thêm, vui lòng liên hệ với chúng tôi qua số điện thoại 0564.545.545 hoặc email shingolf@gmail.com 
                 <br />
-                <h4>{t("thankyou_service.content")}</h4>
+                Chúng tôi luôn sẵn lòng hỗ trợ Quý khách
+                <br />
+                <br />
+                Một lần nữa, xin chân thành cảm ơn Quý khách</h4>
                 </div>
             </div>
         </div>

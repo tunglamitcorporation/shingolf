@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next"; 
 import { useEffect, useState} from 'react';
 import HelmetLayout from "../../components/HelmetLayout/HelmetLayout";
@@ -12,7 +12,6 @@ import { makeOrder } from "../../api/product";
 export default function Cart() {
     const Cart = () => {
       const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart, getItemQuantity } = useCart();
-      console.log("🚀 ~ Cart ~ cartItems:", cartItems)
       const [totalPrice, setTotalPrice] = useState(0);
       const [exchangeRate, setExchangeRate] = useState(null);
       const [loading, setLoading] = useState(true);
@@ -22,6 +21,7 @@ export default function Cart() {
       
 function MassageThaiVanLung1Modal(props) {
   const {t} = useTranslation()
+  const navigate = useNavigate()
   const [guestName, setGuestName] = useState('');
   const [specialRequest, setSpecialRequest] = useState('');
   const [phone, setPhone] = useState('');
@@ -89,7 +89,7 @@ function MassageThaiVanLung1Modal(props) {
       console.log(dataObject);
       const token = ""
       const source = await makeOrder(dataObject, token)
-      // navigate (`/${language}/massage/thank-you/${city}/`)
+      navigate ('/thank-you/')
     }else{
       alert(`Please ensure that all required fields are completed`)
     }
@@ -297,7 +297,7 @@ function MassageThaiVanLung1Modal(props) {
       return (
         <div className="cart-container">
           {cartItems.length > 0 ? (
-        <ul>
+        <div>
             <div className="align-items-center cart-header" style={{textAlign:'center'}}>
        <div className="col-md-2">
           <div style={{ textDecoration: 'none' }}>
@@ -310,31 +310,6 @@ function MassageThaiVanLung1Modal(props) {
             </div>
           </div>
         </div>
-        <div className="row col-md-10">
-              <div className="content__feature-name col-md-3">
-                <div>Tên sản phẩm </div>
-              </div>
-              <div className="content__feature-name col-md-1">
-                <div>Phân loại</div>
-              </div>
-              <div className="content__feature-name col-md-1">
-                <div>Lựa chọn 1</div>
-              </div>
-              <div className="content__feature-name col-md-1">
-                <div>Lựa chọn 2</div>
-              </div>
-              <div className="content__feature-text d-md-flex col-md-2" style={{fontSize: '1.4rem'}}>
-                <div className="content__feature-name" style={{fontSize: '1.4rem'}} >
-                    <div>Giá</div>
-                    </div>
-              </div>
-              <div className="content__feature-name col-md-1"  style={{fontSize: '1.4rem'}}>
-                <div>Số lượng</div>
-            </div>
-            <div className="content__feature-name col-md-1 ml-3" style={{fontSize: '1.4rem'}}>
-            <div>Thành tiền</div>
-            </div>
-        </div>
             </div>
           {cartItems.map((item, index) => {
           return(
@@ -342,12 +317,12 @@ function MassageThaiVanLung1Modal(props) {
            <div className="col-md-2" key={index}>
           <div style={{ textDecoration: 'none' }}>
             <div className="content__feature-item">
-              <div className="content__feature-container" style={{height: '100px', marginTop:0}}>
+              <div className="content__feature-container" style={{height: '200px', marginTop:0}}>
                 <div
                   className="content__feature-img"
                   style={{
                     width:'100px',
-                    height:'100px',
+                    height:'200px',
                     backgroundSize:'contain',
                     backgroundImage:
                     `url(https://shingolf.vn/image/product/image/${item.productCode}_image1.png)`,
@@ -357,18 +332,15 @@ function MassageThaiVanLung1Modal(props) {
             </div>
           </div>
         </div>
-                  <div className="row align-items-center col-md-10">      
-              <div className="content__feature-name col-md-3">
-                <div>{item.productName}</div>
+             <div className="col-md-9">      
+              <div className="content__feature-name">
+                <div className="d-flex"><div style={{fontSize:'1.2rem', fontWeight:100, color:'#000', width: 100}}>Tên sản phẩm: </div> {item.productName}</div>
               </div>
-              <div className="content__feature-name col-md-1 center">
-                <div>{item.productType}</div>
+              <div className="content__feature-name">
+                <div className="d-flex"><div style={{fontSize:'1.2rem', fontWeight:100, color:'#000', width: 100}}>Lựa chọn 1: </div> {item.productSelect1}</div>
               </div>
-              <div className="content__feature-name col-md-1 center">
-                <div>{item.productSelect1}</div>
-              </div>
-              <div className="content__feature-name col-md-1 center">
-                <div>{item.productSelect2}</div>
+              <div className="content__feature-name">
+                <div className="d-flex"><div style={{fontSize:'1.2rem', fontWeight:100, color:'#000', width: 100}}>Lựa chọn 2: </div> {item.productSelect2}</div>
               </div>
               {/* <div className="content__feature-name col-md-1">
                           <>
@@ -400,11 +372,12 @@ function MassageThaiVanLung1Modal(props) {
                       </select>
                         </>
                     </div> */}
-              <div className="content__feature-text d-flex col-md-2" style={{fontSize: '1.2rem'}}>
-                <div className="price">{Intl.NumberFormat('de-DE').format(item.price)}¥</div>
+              <div className="content__feature-text d-flex" style={{fontSize: '1.2rem'}}>
+                <div className="price d-flex"><div style={{fontSize:'1.2rem', fontWeight:100, color:'#000', width:100}}>Giá gốc: </div>{Intl.NumberFormat('de-DE').format(item.price)}¥</div>
                 <div className="price ml-3 mr-2" style={{ color: '#ccc', textDecoration: 'line-through', textDecorationColor:'#000' }}>{Intl.NumberFormat('de-DE').format(item.saleprice)}¥</div>
               </div>
-              <div className="quantity-controls col-md-1 mr-2">
+              <div className="quantity-controls d-flex">
+              <div style={{fontSize:'1.2rem', fontWeight:100, color:'#000', width: 100}}>Số lượng: </div>
                 <button onClick={() => {
                 handleDecreaseQuantity(item.productCode)
                 }}>-</button>
@@ -413,19 +386,19 @@ function MassageThaiVanLung1Modal(props) {
                   handleIncreaseQuantity(item.productCode)
                   }}>+</button>
             </div>
-            <div className="content__feature-text d-flex col-md-1 total-product-price ml-4" style={{fontSize: '1.2rem'}}>
-            <div className="price">{Intl.NumberFormat('de-DE').format((item.price * item.quantity).toFixed(2))}¥</div>
-            <button className="delete-button d-flex align-items-center ml-5" onClick={() => removeFromCart(item.productCode)}><i class="fa-solid fa-xmark"></i></button>
+            <div className="content__feature-text d-flex total-product-price" style={{fontSize: '1.2rem'}}>
+            <div className="price d-flex"><div style={{fontSize:'1.2rem', fontWeight:100, color:'#000', width: 100}}>Tổng: </div> {Intl.NumberFormat('de-DE').format((item.price * item.quantity).toFixed(2))}¥</div>
             </div>
             </div>
+            <button className="delete-button d-flex" onClick={() => removeFromCart(item.productCode)}><i class="fa-solid fa-xmark"></i></button>
               </div>
             // </div>
           )
     })}
-        </ul>
+        </div>
       ) : (
         <>
-        <div className="d-flex justify-content-center align-items-center flex-column">
+        <div className="d-flex justify-content-center flex-column">
           <i className="fa-solid fa-cart-shopping" style={{color: "#FF3131", fontSize: '10rem'}} />
           <p  style={{color: "#FF3131", fontSize: '3rem'}}>Giỏ hàng trống</p>
         </div>

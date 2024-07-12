@@ -12,15 +12,18 @@ export default function VietnamService({ fetchData, listMenu }) {
   const { productName } = useParams();
   const location = useLocation();
   const { price, id, selectedCategories = [] } = location.state || {};
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(id);
   const [selectedProductId, setSelectedProductId] = useState('')
-  console.log("🚀 ~ VietnamService ~ selectedProductId:", selectedProductId)
-  console.log("🚀 ~ VietnamService ~ selectedCategory:", selectedCategory)
   const [visible, setVisible] = useState(true);
   const { addProductToHistory } = useContext(ProductHistoryContext);
   const { addToCart } = useCart();
   const [show, setShow] = useState(false);
-
+  useEffect(() => {
+    if(!id){
+      setSelectedCategory('Set gậy sắt')
+      setSelectedProductId('Gậy golf mới')
+    }
+  }, [])
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
@@ -46,7 +49,7 @@ export default function VietnamService({ fetchData, listMenu }) {
 
   const filteredProducts = selectedCategories.length > 0
     ? fetchData.filter(product => selectedCategories.includes(product.productType))
-    : fetchData.filter(product => product.category === "Gậy golf mới");
+    : fetchData.filter(product => product.productId === id || product.category === id || product.productId === "Gậy golf mới");
 
     const handleCategoryClick = (item) => {
       const selectedProduct = item.item;
@@ -193,15 +196,9 @@ export default function VietnamService({ fetchData, listMenu }) {
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng' />
       )}
-      <div className="service__header">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
+      <div className="reservation__content" style ={{backgroundImage: 'url(/webp/golf-bg.jpg)'}}>
               <h1>SẢN PHẨM</h1>
             </div>
-          </div>
-        </div>
-      </div>
       <div className="content__feature">
         <div className="d-flex justify-content-between">
           <div className="list-container" style={{ backgroundColor: '#f6f6f6', width: '20%', marginLeft: '100px' }}>

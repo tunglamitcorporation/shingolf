@@ -47,6 +47,7 @@ const convertListMenu = Object.keys(groupedData).map(title => ({
   title,
   items: groupedData[title]
 }));
+console.log("🚀 ~ convertListMenu ~ convertListMenu:", convertListMenu)
 
 const { addToCart } = useCart();
 
@@ -98,35 +99,45 @@ const handleAddToCart = (product) => {
       }});
     };
     const handleProductType = (product) => {
+      const formattedProductId = formatProductName(product.id);
+      navigate(`/product-list/${formattedProductId}`, { state: { price: product.price, id: product.id } });
+    };
+    const handleProductCategory = (product) => {
       const formattedProductId = formatProductName(product.title);
-      navigate(`/product-list/${formattedProductId}`, { state: { price: product.price, id: product.title } });
+      navigate(`/product-list/${formattedProductId}`, { state: { productType: product.items, id: product.title } });
     };
     const c = t("header.title")         
     const selectedList = 
       [
         {
-            "title": "Gậy\n Golf\n Mới",
+          id:"newgolfclub",  
+          "title": "Gậy\n Golf\n Mới",
             "image": newGolf
             
         },
         {
-            "title": "Gậy\n golf\n cũ",
+          id:"oldgolfclub",  
+          "title": "Gậy\n golf\n cũ",
            "image": oldGolf
         },
         {
-            "title": "Bộ\n gậy\n giá\n rẻ",
+          id:"golfset",  
+          "title": "Bộ\n gậy\n giá\n rẻ",
             "image":setGolf
         },
         {
-            "title": "Phụ\n kiện\n golf",
+          id:"accessories",  
+          "title": "Phụ\n kiện\n golf",
             "image": pkGolf
         },
         {
-            "title": "Quần\n áo\n golf\n nam",
+          id:"mengolfclothes",  
+          "title": "Quần\n áo\n golf\n nam",
             "image":manGolf
         },
         {
-            "title": "Quần\n áo\n golf\n nữ",
+          id:"womengolfclothes",  
+          "title": "Quần\n áo\n golf\n nữ",
            "image":womanGof
         }
     ]
@@ -253,7 +264,7 @@ const handleAddToCart = (product) => {
         <div className="row">
           {convertListMenu.map(product => (
       <div className="col-4 col-md-2 mt-3">
-      <div onClick={() => handleProductType(product)} style={{cursor:'pointer'}}>
+      <div onClick={() => handleProductCategory(product)} style={{cursor:'pointer'}}>
         <div className="banner-container">
           <div className="col-md-12 d-flex align-items-center justify-content-center banner-width">
             <div className="banner-title">{product.title}</div>
