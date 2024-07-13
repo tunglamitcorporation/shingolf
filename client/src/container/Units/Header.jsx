@@ -1,6 +1,6 @@
 import { Link, useNavigate} from "react-router-dom";
 import { useSSR, useTranslation } from "react-i18next";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { Tab, Tabs, TabList } from "react-tabs";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -27,6 +27,8 @@ function Header() {
   const navigate = useNavigate()
   // const { addProductToHistory } = useContext(ProductHistoryContext);
   const [fetchData, setFetchData] = useState([])
+  const [show, setShow] = useState(false)
+  const searchRef = useRef(null)
   useEffect(() => {
     const token = ''; 
     takeAll(token)
@@ -89,22 +91,20 @@ function Header() {
       images: product.images,
       productCode: product.productCode,
     }});
-    setSearchTerm('')
+   
   }
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+    setShow(true)
   };
-  // const filterProducts = (data, term) => {
-  //   const lowercasedTerm = term.toLowerCase();
-  //   return data.filter((product) =>
-  //     product.productName.toLowerCase().includes(lowercasedTerm)
-  //   );
-  // };
+  const handleProductCtrl = (product) => {
+    handleProduct(product)
+    setSearchTerm('')
+    setShow(false)
+  }
   const filteredProducts = fetchData.filter(product =>
     product.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  // const filteredProducts = filterProducts(fetchData, searchTerm);
   const HeaderMobile = () => {
     return(
     <ul className={`header__mobile-navbar-list ${isOpen ? 'open' :''}`}>
@@ -223,6 +223,22 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  useEffect(() => {
+    // Function to handle click events
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShow(false); // Hide results if click is outside the search area
+      }
+    };
+
+    // Add event listener when the component mounts
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Remove event listener when the component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   return (
     <>
       <div className='top-header'>
@@ -234,7 +250,7 @@ function Header() {
                     </div>
                     <div className="col-md-6 d-flex justify-content-end">
                       <div className="d-flex align-items-center">
-                        <div className="search-bar d-flex align-items-center">
+                        <div className="search-bar d-flex align-items-center" ref={searchRef}>
                               <input  
                               type="text"
                               placeholder="Tìm kiếm"
@@ -245,14 +261,14 @@ function Header() {
                              <div className="search-bar-icon d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            {searchTerm && (
+                            {show && searchTerm && (
                                 <div className="results">
                                   {filteredProducts.length > 0 ? (
                                     filteredProducts.map((product) => (
                                       <div
                                         key={product.productId}
                                         className="productItem"
-                                        onClick={() => handleProduct(product)}
+                                        onClick={() => handleProductCtrl(product)}
                                       >
                                         <div className="d-flex">
                                         <img src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} style={{width: 50, height: 50}} />

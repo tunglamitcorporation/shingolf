@@ -41,7 +41,7 @@ export default function Feature({fetchData}) {
         const fullStars = Math.floor(rate);
         const halfStar = rate % 1 >= 0.5;
         const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-      
+
         return (
           <div>
             {[...Array(fullStars)].map((_, index) => (
@@ -81,9 +81,25 @@ export default function Feature({fetchData}) {
     const formattedProductName = formatProductName(product.productName);
     navigate(`/product/${formattedProductName}`, { state: { price: product.price, productId: product.productId, sale: product.saleprice, rate: product.rate, image: product.image, productType: product.productType }});
   };
+  const [parsedSizes, setParsedSizes] = useState({});
+
+  useEffect(() => {
+    // Initialize the state with parsed values
+    const initialParsedSizes = fetchData.reduce((acc, product) => {
+      if (product.size) {
+        acc[product.productName] = Object.keys(product.size).reduce((sizes, key) => {
+          const [size, heightRange, weightRange] = product.size[key].split(' ');
+          sizes[key] = { size, heightRange, weightRange };
+          return sizes;
+        }, {});
+      }
+      return acc;
+    }, {});
+    setParsedSizes(initialParsedSizes);
+  }, [fetchData]);
 
   return(
-    <div>
+    <div className="home-container">
       <HelmetLayout />
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
@@ -94,18 +110,19 @@ export default function Feature({fetchData}) {
             <div className="re__breadcrumb">
               <ul className="breadcrumb__list">
                 <li className="breadcrumb__item">
+                  <a href="/">
                   <i className="fa-solid fa-house"></i>
-                  <a to="/"></a>
+                  </a>
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <a className="breadcrumb__title" to="/product/">
+                  <a className="breadcrumb__title" href="/product-list/">
                     Sản phẩm
                   </a>
                 </li>
                 <li className="breadcrumb__item">/</li>
                 <li className="breadcrumb__item">
-                  <a className="breadcrumb__title" to="/product/">
+                  <a className="breadcrumb__title" href={`/product/${productName}`}>
                     {productName.replace(/-/g, ' ')}
                   </a>
                 </li>
@@ -1161,18 +1178,18 @@ export default function Feature({fetchData}) {
                       style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.size.size1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
-                          <option value={product.size.size1}>{product.size.size1}</option>
-                          {product.size.size2 ? <option value={product.size.size2}>{product.size.size2}</option> : '' }
-                          {product.size.size3 ? <option value={product.size.size3}>{product.size.size3}</option> : ''} 
-                          {product.size.size4 ? <option value={product.size.size4}>{product.size.size4}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size5}>{product.size.size5}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
+                          <option value={product.size.size1.split(' ')[0]}>{product.size.size1.split(' ')[0]}</option>
+                          {product.size.size2 ? <option value={product.size.size2.split(' ')[0]}>{product.size.size2.split(' ')[0]}</option> : '' }
+                          {product.size.size3 ? <option value={product.size.size3.split(' ')[0]}>{product.size.size3.split(' ')[0]}</option> : ''} 
+                          {product.size.size4 ? <option value={product.size.size4.split(' ')[0]}>{product.size.size4.split(' ')[0]}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size5.split(' ')[0]}>{product.size.size5.split(' ')[0]}</option> : ''}
+                          {product.size.size6 ? <option value={product.size.size6.split(' ')[0]}>{product.size.size6.split(' ')[0]}</option> : ''}
+                          {product.size.size7 ? <option value={product.size.size7.split(' ')[0]}>{product.size.size7.split(' ')[0]}</option> : ''}
+                          {product.size.size8 ? <option value={product.size.size8.split(' ')[0]}>{product.size.size8.split(' ')[0]}</option> : ''}
+                          {product.size.size9 ? <option value={product.size.size9.split(' ')[0]}>{product.size.size9.split(' ')[0]}</option> : ''}
+                          {product.size.size10 ? <option value={product.size.size10.split(' ')[0]}>{product.size.size10.split(' ')[0]}</option> : ''}
+                          {product.size.size11 ? <option value={product.size.size11.split(' ')[0]}>{product.size.size11.split(' ')[0]}</option> : ''}
+                          {product.size.size12 ? <option value={product.size.size12.split(' ')[0]}>{product.size.size12.split(' ')[0]}</option> : ''}
                       </select>
                           </>
                       ) : ''}
@@ -1188,13 +1205,13 @@ export default function Feature({fetchData}) {
                           {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
                           {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
                           {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
+                          {product.color.color6 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color7 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color8 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color9 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color10 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color11 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color12 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                         </>
                       ):''}
@@ -1247,6 +1264,7 @@ export default function Feature({fetchData}) {
                     </tr>
                   </table>
                 </div>
+                {parsedSizes[product.productName] && (
                 <div className="product-info mt-4">
                   <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Bảng size chi tiết</div>
                   <table style={{border: '1px solid #8f8b8b'}}>
@@ -1255,17 +1273,17 @@ export default function Feature({fetchData}) {
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều cao</th>
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Cân nặng</th>
                     </tr>
-                    <tr>
-                    {sizeString && (
-                      <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{sizeString}</td>
-                    )}
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>160-165</td>
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>55-60</td>
-                    </tr>
-                    
-                    
+                    {Object.keys(parsedSizes[product.productName]).map((key) => (
+                     <tr>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].size}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange}</td>
+                   </tr>
+                ))}
+
                   </table>
                 </div>
+                )}
             <div className="description">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginTop: 20, marginBottom: 10}}>Thông tin sản phẩm</div>
               <p>
@@ -1412,18 +1430,18 @@ export default function Feature({fetchData}) {
                       style={{width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.size.size1)}
                       onChange={(e) => setProductSelect1(e.target.value)}>
-                          <option value={product.size.size1}>{product.size.size1}</option>
-                          {product.size.size2 ? <option value={product.size.size2}>{product.size.size2}</option> : '' }
-                          {product.size.size3 ? <option value={product.size.size3}>{product.size.size3}</option> : ''} 
-                          {product.size.size4 ? <option value={product.size.size4}>{product.size.size4}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size5}>{product.size.size5}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
+                          <option value={product.size.size1.split(' ')[0]}>{product.size.size1.split(' ')[0]}</option>
+                          {product.size.size2 ? <option value={product.size.size2.split(' ')[0]}>{product.size.size2.split(' ')[0]}</option> : '' }
+                          {product.size.size3 ? <option value={product.size.size3.split(' ')[0]}>{product.size.size3.split(' ')[0]}</option> : ''} 
+                          {product.size.size4 ? <option value={product.size.size4.split(' ')[0]}>{product.size.size4.split(' ')[0]}</option> : ''}
+                          {product.size.size5 ? <option value={product.size.size5.split(' ')[0]}>{product.size.size5.split(' ')[0]}</option> : ''}
+                          {product.size.size6 ? <option value={product.size.size6.split(' ')[0]}>{product.size.size6.split(' ')[0]}</option> : ''}
+                          {product.size.size7 ? <option value={product.size.size7.split(' ')[0]}>{product.size.size7.split(' ')[0]}</option> : ''}
+                          {product.size.size8 ? <option value={product.size.size8.split(' ')[0]}>{product.size.size8.split(' ')[0]}</option> : ''}
+                          {product.size.size9 ? <option value={product.size.size9.split(' ')[0]}>{product.size.size9.split(' ')[0]}</option> : ''}
+                          {product.size.size10 ? <option value={product.size.size10.split(' ')[0]}>{product.size.size10.split(' ')[0]}</option> : ''}
+                          {product.size.size11 ? <option value={product.size.size11.split(' ')[0]}>{product.size.size11.split(' ')[0]}</option> : ''}
+                          {product.size.size12 ? <option value={product.size.size12.split(' ')[0]}>{product.size.size12.split(' ')[0]}</option> : ''}
                       </select>
                       <li style={{fontSize: '1.4rem', fontWeight: 'bold',  width: 100,  marginLeft: product.size.size1 != '' ? 20 : 0, marginRight: 10}}>Màu sắc: </li>
                       <select 
@@ -1435,13 +1453,13 @@ export default function Feature({fetchData}) {
                           {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
                           {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
                           {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
+                          {product.color.color6 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color7 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color8 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color9 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color10 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color11 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color12 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                     </ul>
                     <ul className="d-flex pl-0 mt-3">
@@ -1492,7 +1510,8 @@ export default function Feature({fetchData}) {
                 </tr>
               </table>
             </div>
-            <div className="product-info mt-4">
+            {parsedSizes[product.productName] && (
+                <div className="product-info mt-4">
                   <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Bảng size chi tiết</div>
                   <table style={{border: '1px solid #8f8b8b'}}>
                   <tr>
@@ -1500,17 +1519,17 @@ export default function Feature({fetchData}) {
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều cao</th>
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Cân nặng</th>
                     </tr>
-                    <tr>
-                    {sizeString && (
-                      <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{sizeString}</td>
-                    )}
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>160-165</td>
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>55-60</td>
-                    </tr>
-                    
-                    
+                    {Object.keys(parsedSizes[product.productName]).map((key) => (
+                     <tr>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].size}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange}</td>
+                   </tr>
+                ))}
+
                   </table>
                 </div>
+                )}
             <div className="description">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginTop: 20, marginBottom: 10}}>Thông tin sản phẩm</div>
               <p>
@@ -1663,13 +1682,13 @@ export default function Feature({fetchData}) {
                           {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
                           {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
                           {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
+                          {product.color.color6 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color7 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color8 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color9 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color10 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color11 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color12 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                     </ul>
               )}
@@ -1870,13 +1889,13 @@ export default function Feature({fetchData}) {
                           {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
                           {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
                           {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
+                          {product.color.color6 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color7 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color8 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color9 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color10 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color11 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color12 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                         </>
                       ):''}
@@ -2082,13 +2101,13 @@ export default function Feature({fetchData}) {
                           {product.size.size3 ? <option value={product.size.size3}>{product.size.size3}</option> : ''} 
                           {product.size.size4 ? <option value={product.size.size4}>{product.size.size4}</option> : ''}
                           {product.size.size5 ? <option value={product.size.size5}>{product.size.size5}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
-                          {product.size.size5 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
+                          {product.size.size6 ? <option value={product.size.size6}>{product.size.size6}</option> : ''}
+                          {product.size.size7 ? <option value={product.size.size7}>{product.size.size7}</option> : ''}
+                          {product.size.size8 ? <option value={product.size.size8}>{product.size.size8}</option> : ''}
+                          {product.size.size9 ? <option value={product.size.size9}>{product.size.size9}</option> : ''}
+                          {product.size.size10 ? <option value={product.size.size10}>{product.size.size10}</option> : ''}
+                          {product.size.size11 ? <option value={product.size.size11}>{product.size.size11}</option> : ''}
+                          {product.size.size12 ? <option value={product.size.size12}>{product.size.size12}</option> : ''}
                        </select>
                           </>
                       ) : ''}
@@ -2105,13 +2124,13 @@ export default function Feature({fetchData}) {
                           {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
                           {product.color.color4 ? <option value={product.color.color4}>{product.color.color4}</option> : ''}
                           {product.color.color5 ? <option value={product.color.color5}>{product.color.color5}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
-                          {product.color.color5 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
+                          {product.color.color6 ? <option value={product.color.color6}>{product.color.color6}</option> : ''}
+                          {product.color.color7 ? <option value={product.color.color7}>{product.color.color7}</option> : ''}
+                          {product.color.color8 ? <option value={product.color.color8}>{product.color.color8}</option> : ''}
+                          {product.color.color9 ? <option value={product.color.color9}>{product.color.color9}</option> : ''}
+                          {product.color.color10 ? <option value={product.color.color10}>{product.color.color10}</option> : ''}
+                          {product.color.color11 ? <option value={product.color.color11}>{product.color.color11}</option> : ''}
+                          {product.color.color12 ? <option value={product.color.color12}>{product.color.color12}</option> : ''}
                       </select>
                         </>
                       ):''}
@@ -2141,14 +2160,14 @@ export default function Feature({fetchData}) {
             <div className="product-info">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Thông số kỹ thuật</div>
               <table style={{border: '1px solid #8f8b8b'}}>
-              <tr>
+              {/* <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Kích cỡ:</th>
                 {sizeString && (
                 <td style={{ border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5 }}>
                   {sizeString}
                 </td>
               )}
-                </tr>
+                </tr> */}
               <tr>
                 <th style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>Giới tính:</th>
                 <td style={{border: '1px solid #8f8b8b', width: 400, fontSize: 15, padding: 5}}>{product.sex}</td>
@@ -2181,6 +2200,26 @@ export default function Feature({fetchData}) {
                 </tr>
               </table>
             </div>
+            {parsedSizes[product.productName] && (
+                <div className="product-info mt-4">
+                  <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginBottom: 10}}>Bảng size chi tiết</div>
+                  <table style={{border: '1px solid #8f8b8b'}}>
+                  <tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Kích thước</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều dài chân</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều rộng chân</th>
+                    </tr>
+                    {Object.keys(parsedSizes[product.productName]).map((key) => (
+                     <tr>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].size}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange}</td>
+                   </tr>
+                ))}
+
+                  </table>
+                </div>
+                )}
             <div className="description">
               <div style={{textAlign:'left', fontSize: '1.8rem', fontWeight:'bold', marginTop: 20, marginBottom: 10}}>Thông tin sản phẩm</div>
               <p>

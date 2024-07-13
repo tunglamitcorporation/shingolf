@@ -8,7 +8,7 @@ html {
   width: 100%;
   /* overflow-x: hidden;s */
   overflow-x: hidden; /* Hide horizontal scrollbar */
-  padding-right: calc(90vw - 100%);
+  /* padding-right: calc(90vw - 100%); */
 }
 
 body {
@@ -167,7 +167,7 @@ code {
   border-bottom-right-radius: 10px;
 }
 .price{
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #FF3131;
   font-weight: bold;
 }
@@ -310,7 +310,9 @@ code {
 .cart-header{
   display: flex;
 }
-
+.home-container{
+  margin: 0 250px;
+}
 .login__form{
     width: 100%;
     height: 80%;
@@ -336,10 +338,10 @@ code {
   height: 400px;
   top: 30px;
   background: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   border: 1px solid #ddd;
   overflow-y: auto;
-  z-index: 10;
+  z-index: 1001;
   border-radius: 10px;
 }
 .categoryTitle {
@@ -453,7 +455,7 @@ code {
   text-align: center;
 }
 .select-category{
-  display: none;
+  display: block;
 }
 .delete-button {
   background-color: #ff3131;
@@ -1036,7 +1038,7 @@ text-transform:capitalize;
   width: 100%;
   /* background-color:rgba(0,0,0,1); */
   z-index: 1;
-  margin-top: 50px;
+  margin-top: 30px;
 
 }
 .content__background{
@@ -1340,7 +1342,7 @@ text-transform:capitalize;
 .content__feature-container{
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   display: flex;
   
@@ -1348,10 +1350,10 @@ text-transform:capitalize;
 .content__feature-img, .brand-img {
   flex: 1;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   vertical-align: middle;
-  height: 250px;
+  height: 200px;
   margin: 5px;
 }
 .brand-img{
@@ -1364,7 +1366,7 @@ text-transform:capitalize;
   transform: scale(1.2);
 } */
 .content__feature-name{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--black--color);
 }
@@ -2791,7 +2793,7 @@ height: 250px;
   font-weight: bold
 }
 .awssld__wrapper{
-  height: 500px !important;
+  height: 450px !important;
 }
 .logo_az {
   position: absolute;
@@ -2887,7 +2889,7 @@ body {
    border-left-color: crimson; 
 }
 .hot-product-container:nth-child(1){
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .hot-product-container:nth-child(2),
 .hot-product-container:nth-child(3){
@@ -2896,7 +2898,7 @@ body {
 .hot-item {
   position: relative;
   overflow: hidden;
-  height: 146.6px;
+  height: 130px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3055,6 +3057,9 @@ body {
     width: 260px ;
     margin-bottom: 5% !important;
 
+}
+.home-container{
+  margin: 0;
 }
 .content__news{
     margin: 20px 0;
@@ -3274,7 +3279,7 @@ font-size: 1.2rem !important;
 
 }
 .awssld__wrapper{
-  height: 200px !important;
+  height: 220px !important;
 }
 .carousel_name{
   position: absolute;

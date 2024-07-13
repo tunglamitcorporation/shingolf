@@ -13,17 +13,30 @@ export default function VietnamService({ fetchData, listMenu }) {
   const location = useLocation();
   const { price, id, selectedCategories = [] } = location.state || {};
   const [selectedCategory, setSelectedCategory] = useState(id);
+  console.log("🚀 ~ VietnamService ~ selectedCategory:", selectedCategory)
   const [selectedProductId, setSelectedProductId] = useState('')
+  console.log("🚀 ~ VietnamService ~ selectedProductId:", selectedProductId)
   const [visible, setVisible] = useState(true);
   const { addProductToHistory } = useContext(ProductHistoryContext);
   const { addToCart } = useCart();
   const [show, setShow] = useState(false);
-  useEffect(() => {
-    if(!id){
-      setSelectedCategory('Set gậy sắt')
-      setSelectedProductId('Gậy golf mới')
-    }
-  }, [])
+ 
+  const sortByPriceLowToHigh = (fetchData) => {
+  return fetchData.sort((a, b) => {
+    const aPrice = a.saleprice || a.price;
+    const bPrice = b.saleprice || b.price;
+    return aPrice - bPrice;
+  });
+};
+
+const sortByPriceHighToLow = (fetchData) => {
+  return fetchData.sort((a, b) => {
+    const aPrice = a.saleprice || a.price;
+    const bPrice = b.saleprice || b.price;
+    return bPrice - aPrice;
+  });
+};
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
@@ -51,7 +64,7 @@ export default function VietnamService({ fetchData, listMenu }) {
     ? fetchData.filter(product => selectedCategories.includes(product.productType))
     : fetchData.filter(product => product.productId === id || product.category === id || product.productId === "Gậy golf mới");
 
-    const handleCategoryClick = (item) => {
+  const handleCategoryClick = (item) => {
       const selectedProduct = item.item;
       const selectedProductTitle = item.title
       setSelectedCategory(''); 
@@ -189,7 +202,16 @@ export default function VietnamService({ fetchData, listMenu }) {
       </div>
     </div>
   );
+   const sortProductData = fetchData.filter(product => product.productType == selectedCategory && product.category == selectedProductId)
+  const [sortOrder, setSortOrder] = useState(''); // Default to low to high;
+  const [products, setProducts] = useState(sortProductData);
+  const handleSortChange = (event) => {
+    setSortOrder(event.target.value);
+  };
 
+  const sortedProducts = sortOrder === 'lowToHigh'
+    ? sortByPriceLowToHigh([...products])
+    : sortByPriceHighToLow([...products]);
   return (
     <>
       <HelmetLayout />
@@ -199,9 +221,9 @@ export default function VietnamService({ fetchData, listMenu }) {
       <div className="reservation__content" style ={{backgroundImage: 'url(/webp/golf-bg.jpg)'}}>
               <h1>SẢN PHẨM</h1>
             </div>
-      <div className="content__feature">
+      <div className="content__feature home-container mt-5">
         <div className="d-flex justify-content-between">
-          <div className="list-container" style={{ backgroundColor: '#f6f6f6', width: '20%', marginLeft: '100px' }}>
+          <div className="list-container" style={{ backgroundColor: '#f6f6f6', width: '30%' }}>
             <div className="container">
               <div className="row">
                 <div className="all-list"><i className="fa-solid fa-bars"></i> DANH MỤC</div>
@@ -218,9 +240,9 @@ export default function VietnamService({ fetchData, listMenu }) {
           </div>
           <div style={{ width: '100%' }}>
             <div className="container">
-              <div className="row">
+              <div className="row pt-0">
                 <div className="col-md-12">
-                  <div className="re__breadcrumb">
+                  <div className="re__breadcrumb mt-0">
                     <ul className="breadcrumb__list">
                       <li className="breadcrumb__item">
                         <Link to="/">
@@ -229,7 +251,7 @@ export default function VietnamService({ fetchData, listMenu }) {
                       </li>
                       <li className="breadcrumb__item">/</li>
                       <li className="breadcrumb__item">
-                        <Link className="breadcrumb__title" to="/product/">
+                        <Link className="breadcrumb__title" to="/product-list/">
                           Sản phẩm
                         </Link>
                       </li>
@@ -238,27 +260,36 @@ export default function VietnamService({ fetchData, listMenu }) {
                 </div>
               </div>
               <div className="row">
-                <select className="col-md-2 col-4 ml-3 form__content select-category" onChange={handleCategoryClick}>
-                  <option value="">Danh mục</option>
-                  {Object.keys(listMenu).map((category) => (
-                    <option key={category} value={category}>
-                      {category}
-                    </option>
-                  ))}
-                </select>
+              <select 
+                className="col-md-2 col-4 ml-3 form__content select-category"
+                onChange={(e) => handleCategoryClick(convertListMenu.find(item => item.item === e.target.value))}
+              >
+                <option disabled selected value="">Danh mục</option>
+                {convertListMenu.map((item) => (
+                  <option key={item.title} value={item.item}>
+                    {item.item}
+                  </option>
+                ))}
+              </select>
+              {/* <select className="col-md-2 col-4 ml-3 form__content select-category" onChange={handleSortChange} value={sortOrder}>
+                <option value="lowToHigh">Low to High</option>
+                <option value="highToLow">High to Low</option>
+            </select> */}
               </div>
               <div className="row">
-                <div>
-                  <div className="row">
+              <div>
+              <div className="row">
                     {fetchData
                       .filter(product => 
                         product.productType === selectedCategory &&
                         product.category === selectedProductId)
                       .map(product => renderProduct(product))}
-                  </div>
-                  <div className="row" style={{ display: visible ? 'flex' : 'none' }}>
+              </div>
+              <div className="row" style={{ display: visible ? 'flex' : 'none' }}>
                     {filteredProducts.map(product => renderProduct(product))}
-                  </div>
+              </div>
+                  
+                    
                 </div>
               </div>
             </div>

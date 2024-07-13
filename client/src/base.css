@@ -137,12 +137,11 @@ textarea{
     margin: 30px 0 30px 0;
 }
 .form__content {
-    margin-bottom: 20px;
     height: 42px;
     border: solid 1px #c5c5c5;
     box-shadow: 0 0 0;
     padding: 3px 26px 0 8px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-right: 10px;
 }
 .form__content select{
@@ -262,7 +261,7 @@ textarea{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 99999;
+    z-index: 1000;
 }
 .carousel-item img {
     width: 100%;

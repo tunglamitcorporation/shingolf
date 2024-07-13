@@ -174,7 +174,7 @@ const handleAddToCart = (product) => {
 
   const AutoPlaySlider = withAutoplay(AwesomeSlider)
     return (
-      <>
+      <div className="home-container">
       <HelmetLayout title = {c} />
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
@@ -877,6 +877,6 @@ const handleAddToCart = (product) => {
           </div>
         </AnimatedOnScroll>
         </div>
-      </>
+      </div>
     );
   }

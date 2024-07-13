@@ -30,12 +30,30 @@ function ProductShowDetail(props) {
           "loft1": "",
           "loft2": "",
           "loft3": "",
+          "loft4": "",
+          "loft5": "",
+          "loft6": "",
+          "loft7": "",
+          "loft8": "",
+          "loft9": "",
+          "loft10": "",
+          "loft11": "",
+          "loft12": "",
         },
         "sticktype": "",
         "stickhardtype": {
           "type1":"",
           "type2":"",
-          "type3":""
+          "type3":"",
+          "type4":"",
+          "type5":"",
+          "type6":"",
+          "type7":"",
+          "type8":"",
+          "type9":"",
+          "type10":"",
+          "type11":"",
+          "type12":"",
         },
         "feature": "",
         "long": "",
@@ -51,12 +69,30 @@ function ProductShowDetail(props) {
           "size1": "",
           "size2": "",
           "size3": "",
+          "size4": "",
+          "size5": "",
+          "size5": "",
+          "size7": "",
+          "size8": "",
+          "size9": "",
+          "size10": "",
+          "size11": "",
+          "size12": "",
         },
-        "shoestype": {
-          "type1": "",
-          "type2": "",
-          "type3": "",
-        },
+        // "shoestype": {
+        //   "type1": "",
+        //   "type2": "",
+        //   "type3": "",
+        //   "type4": "",
+        //   "type5": "",
+        //   "type6": "",
+        //   "type7": "",
+        //   "type8": "",
+        //   "type8": "",
+        //   "type10": "",
+        //   "type11": "",
+        //   "type12": "",
+        // },
         "sex": "",
         "brand": "",
         "producelocation": "",
@@ -65,7 +101,15 @@ function ProductShowDetail(props) {
           "color1": "",
           "color2": "",
           "color3": "",
-          "color4": ""
+          "color4": "",
+          "color5": "",
+          "color6": "",
+          "color7": "",
+          "color8": "",
+          "color9": "",
+          "color10": "",
+          "color11": "",
+          "color12": "",
         },
         "material": "",
         "content": {
@@ -135,7 +179,7 @@ function ProductShowDetail(props) {
                 "produceyear": props.productDetail.produceyear,
                 "managenumber": props.productDetail.managenumber,
                 "size": props.productDetail.size,
-                "shoestype": props.productDetail.shoestype,
+                // "shoestype": props.productDetail.shoestype,
                 "sex": props.productDetail.sex,
                 "brand": props.productDetail.brand,
                 "producelocation": props.productDetail.producelocation,
@@ -387,7 +431,7 @@ function ProductShowDetail(props) {
 
     function renderInputWithKeyArray(key, Row,) {
        switch(key) {
-        case "content": case "loft": case "color": case "shoestype": case "stickhardtype": return <Form.Group as={Row} key={key} className="d-flex">
+        case "content": case "loft": case "color": case "size": case "stickhardtype": return <Form.Group as={Row} key={key} className="d-flex">
                                   <Form.Label column sm={2} style={{fontSize:'1.6rem', backgroundColor:"aqua", fontWeight:'600'}}>
                                     {checkName(key)}
                                   </Form.Label>
@@ -400,8 +444,8 @@ function ProductShowDetail(props) {
                                         {renderContent(data.productDetail.productCode)}
                                       </div>
                                     </Form.Group>
-        case "size": case "color": return <Form.Group as={Row} key={key} className="d-flex">
-                                           </Form.Group>
+        // case "size": case "color": return <Form.Group as={Row} key={key} className="d-flex">
+        //                                    </Form.Group>
         
         default: return <Form.Group as={Row} key={key} className="d-flex">
                             <Form.Label column sm={2} style={{fontSize:'1.6rem', backgroundColor:"aqua", fontWeight:'600'}}>
