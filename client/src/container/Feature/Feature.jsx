@@ -1270,14 +1270,28 @@ export default function Feature({fetchData}) {
                   <table style={{border: '1px solid #8f8b8b'}}>
                   <tr>
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Kích thước</th>
+                    {product.productName.includes("Quần" || "quần") && (
+                      <>
+                      <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Vòng eo</th>
+                      <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Size VN</th>
+                      </>
+                  )}
+                    {product.productName.includes("Áo" || "áo") && (
+                      <>
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều cao</th>
-                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Cân nặng</th>
-                    </tr>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Vòng ngực</th>
+                      </>
+                  )}
+                 
+                    </tr> 
                     {Object.keys(parsedSizes[product.productName]).map((key) => (
                      <tr>
+                      {parsedSizes[product.productName][key].size != '' ? (
+                      <>
                     <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].size}</td>
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange}</td>
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange !='' ? parsedSizes[product.productName][key].heightRange : '' }</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange != '' ? parsedSizes[product.productName][key].weightRange : ''}</td>
+                    </>) : ''}
                    </tr>
                 ))}
 
@@ -1883,7 +1897,7 @@ export default function Feature({fetchData}) {
                       <select 
                       style={{ width: 'fit-content', height:30, fontSize: '1.4rem'}}
                       value={productSelect1 || setProductSelect1(product.color.color1)}
-                      onChange={(e) => setProductSelect2(e.target.value)}>
+                      onChange={(e) => setProductSelect1(e.target.value)}>
                           <option value={product.color.color1}>{product.color.color1}</option>
                           {product.color.color2 ? <option value={product.color.color2}>{product.color.color2}</option> : '' }
                           {product.color.color3 ? <option value={product.color.color3}>{product.color.color3}</option> : ''} 
@@ -2206,8 +2220,8 @@ export default function Feature({fetchData}) {
                   <table style={{border: '1px solid #8f8b8b'}}>
                   <tr>
                     <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Kích thước</th>
-                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều dài chân</th>
-                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Chiều rộng chân</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Size EU</th>
+                    <th style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>Size VN</th>
                     </tr>
                     {Object.keys(parsedSizes[product.productName]).map((key) => (
                      <tr>

@@ -59,14 +59,13 @@ const sortByPriceHighToLow = (fetchData) => {
       }
     });
   }
-
   const filteredProducts = selectedCategories.length > 0
     ? fetchData.filter(product => selectedCategories.includes(product.productType))
-    : fetchData.filter(product => product.productId === id || product.category === id || product.productId === "Gậy golf mới");
+    : fetchData.filter(product => product.productId === id || product.category === id || product.productId === "newgolfclub");
 
-  const handleCategoryClick = (item) => {
-      const selectedProduct = item.item;
-      const selectedProductTitle = item.title
+  const handleCategoryClick = ([category, item]) => {
+      const selectedProduct = item;
+      const selectedProductTitle = category
       setSelectedCategory(''); 
       setVisible(false); 
       setTimeout(() => {
@@ -227,11 +226,13 @@ const sortByPriceHighToLow = (fetchData) => {
             <div className="container">
               <div className="row">
                 <div className="all-list"><i className="fa-solid fa-bars"></i> DANH MỤC</div>
-                {convertListMenu.map(item => (
-                  <div className="row ml-5 p-0" key={item.item}>
-                    <h3 className="bold mt-3" style={{ display: item.title !== '' ? 'block' : 'none' }}>{item.title}</h3>
+                {Object.entries(listMenu).map(([category, items]) => (
+                  <div className="row ml-5 p-0" key={category}>
+                    <h3 className="bold mt-3">{category}</h3>
                     <div className="row justify-content-evenly">
-                      <Link className="list-item" to="#" onClick={() => handleCategoryClick(item)}>{item.item}</Link>
+                      {items.map(item => (
+                        <Link className="list-item" to="#" onClick={() => handleCategoryClick([category, item])}>{item}</Link>
+                      ))}
                     </div>
                   </div>
                 ))}
