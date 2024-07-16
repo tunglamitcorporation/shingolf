@@ -314,6 +314,7 @@ function MassageThaiVanLung1Modal(props) {
           {cartItems.map((item, index) => {
           return(
             <div className="cart-items d-flex">
+              <HelmetLayout title={"Shin Golf  | Giỏ Hàng"} />
            <div className="col-md-2" key={index}>
           <div style={{ textDecoration: 'none' }}>
             <div className="content__feature-item">

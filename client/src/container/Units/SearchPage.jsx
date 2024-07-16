@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Collapsible from 'react-collapsible';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HelmetLayout from '../../components/HelmetLayout/HelmetLayout';
 
 const SearchPage = ({listMenu}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -46,6 +47,7 @@ const SearchPage = ({listMenu}) => {
 
   return (
     <>
+    <HelmetLayout title={"Shin Golf  | Tìm kiếm"} />
     <div className="container pt-2" style={{height: '400px', overflow:'scroll'}}>
       {convertListMenu.map(category => (
         <div className="d-flex align-items-center">

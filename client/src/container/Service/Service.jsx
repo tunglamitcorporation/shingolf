@@ -186,7 +186,9 @@ const sortByPriceHighToLow = (fetchData) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
             )}
-            <div className="d-flex justify-content-center align-items-center" style={{ width: 'fit-content', height: '20px', padding: '5px', border: '1px solid green', fontSize: '1rem', color: 'green', marginTop: '5px', borderRadius: '5px', textTransform: 'capitalize' }}>{product.brand}</div>
+           {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
           </div>
           <div className="btn-container">
             <div className="row pb-0">
@@ -201,6 +203,16 @@ const sortByPriceHighToLow = (fetchData) => {
       </div>
     </div>
   );
+  const checkId = (id) => {
+    switch (id) {
+      case 'newgolfclub': return "Gậy Golf Mới"
+      case 'oldgolfclub': return "Gậy Golf Cũ"
+      case 'golfset': return "Bộ Gậy Giá Rẻ"
+      case 'accessories': return "Phụ Kiện Golf"
+      case 'mengolfclothes': return "Quần Áo Golf Nam"
+      case 'womengolfclothes': return "Quần Áo Golf Nữ"
+    }
+  }
    const sortProductData = fetchData.filter(product => product.productType == selectedCategory && product.category == selectedProductId)
   const [sortOrder, setSortOrder] = useState(''); // Default to low to high;
   const [products, setProducts] = useState(sortProductData);
@@ -213,7 +225,7 @@ const sortByPriceHighToLow = (fetchData) => {
     : sortByPriceHighToLow([...products]);
   return (
     <>
-      <HelmetLayout />
+      <HelmetLayout title={`Shin Golf  | ${checkId(id) || "Sản phẩm"}`} />
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng' />
       )}

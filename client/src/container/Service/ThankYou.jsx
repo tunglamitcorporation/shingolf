@@ -6,6 +6,7 @@ export default function ThankYouService() {
     const {t} = useTranslation()    
     return(
         <div>
+        <HelmetLayout title={"Shin Golf  | Cảm ơn"} />
       <div className="reservation__content" style={{ backgroundImage: 'url(/webp/golf-bg.jpg)'}}>
             <h1>Cảm ơn quý khách đã đặt hàng !</h1>
       </div>

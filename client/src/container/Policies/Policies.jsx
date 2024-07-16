@@ -24,7 +24,7 @@ export default function Policies({fetchData}){
 
     return(
         <div> 
-            <HelmetLayout  />
+            <HelmetLayout title={"Shin Golf  | Kiểm tra đơn hàng"}  />
             <div className="policies__header">
                     <div classNameName="container">
                         <div className="row">

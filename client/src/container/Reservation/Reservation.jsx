@@ -21,7 +21,7 @@ export default function PoliciesContent() {
     // const c = a + " | "+ b
   return (
     <div>
-      <HelmetLayout />
+      <HelmetLayout title={"Shingolf | Chính sách và quy trình"} />
       <div className="policies__header">
         <div className="container">
           <div className="row">

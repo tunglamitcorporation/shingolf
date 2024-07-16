@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect, useContext } from "react"
 import ProductHistoryContext from "../../ProductHistoryContext";
 import { useNavigate } from 'react-router-dom';
+import HelmetLayout from '../../components/HelmetLayout/HelmetLayout';
 
 const RankTable = ({fetchData}) => {
   // Sort products by rate in descending order
@@ -54,6 +55,7 @@ const RankTable = ({fetchData}) => {
   };
   return (
     <div className="container" style={{width: "80%"}}>
+      <HelmetLayout title={"Shin Golf | Xếp Hạng "} />
       <div className="service__header">
         <div className="container">
           <div className="row">

@@ -100,7 +100,7 @@ export default function Feature({fetchData}) {
 
   return(
     <div className="home-container">
-      <HelmetLayout />
+      <HelmetLayout title={`Shin Golf  | ${productName.replace(/-/g, ' ')}`} />
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
       )}
@@ -165,7 +165,9 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
+              {product.brand !='' ? 
               <div className="product-status">{product.brand}</div>
+              :''}
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -355,7 +357,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -611,7 +615,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -868,7 +874,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1084,7 +1092,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1352,7 +1362,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1535,9 +1547,12 @@ export default function Feature({fetchData}) {
                     </tr>
                     {Object.keys(parsedSizes[product.productName]).map((key) => (
                      <tr>
+                      {parsedSizes[product.productName][key].size != '' ? (
+                      <>
                     <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].size}</td>
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange}</td>
-                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange}</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}> {parsedSizes[product.productName][key].heightRange !='' ? parsedSizes[product.productName][key].heightRange : '' }</td>
+                    <td style={{border: '1px solid #8f8b8b', width: 100, textAlign:'center', fontSize: 15, padding: 5}}>{parsedSizes[product.productName][key].weightRange != '' ? parsedSizes[product.productName][key].weightRange : ''}</td>
+                    </>) : ''}
                    </tr>
                 ))}
 
@@ -1598,7 +1613,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1668,7 +1685,9 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
+              {product.brand !='' ? 
               <div className="product-status">{product.brand}</div>
+              :''}
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -1806,7 +1825,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -1874,7 +1895,9 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
+              {product.brand !='' ? 
               <div className="product-status">{product.brand}</div>
+              :''}
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -2016,7 +2039,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2086,7 +2111,9 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
+              {product.brand !='' ? 
               <div className="product-status">{product.brand}</div>
+              :''}
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -2288,7 +2315,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2358,7 +2387,9 @@ export default function Feature({fetchData}) {
             <div className="col-md-6">
              <StarRating rate={product.rate} />
               <div className="product-title-client">{product.productName.replace(/-/g, ' ')}</div>
+              {product.brand !='' ? 
               <div className="product-status">{product.brand}</div>
+              :''}
               <div className="content__feature-text d-flex">
               {product.saleprice > 0 ? (
                 <>
@@ -2462,7 +2493,9 @@ export default function Feature({fetchData}) {
                           <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                           <div className="d-flex justify-content-between align-items-center">
                          <StarRating rate={product.rate} />
-                         <div className="brand-name">{product.brand}</div>
+                         {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                           </div>
                           <div className="content__feature-name mt-2">
                             <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2545,7 +2578,9 @@ export default function Feature({fetchData}) {
                     <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                     <div className="d-flex justify-content-between align-items-center">
                    <StarRating rate={product.rate} />
-                   <div className="brand-name">{product.brand}</div>
+                   {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                     </div>
                     <div className="content__feature-name mt-2">
                       <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -2613,7 +2648,9 @@ export default function Feature({fetchData}) {
                    <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                    <div className="d-flex justify-content-between align-items-center">
                   <StarRating rate={product.rate} />
-                  <div className="brand-name">{product.brand}</div>
+                  {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                    </div>
                    <div className="content__feature-name mt-2">
                      <div onClick={() => handleProduct(product)}>{product.productName}</div>

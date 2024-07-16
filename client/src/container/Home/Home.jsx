@@ -175,7 +175,7 @@ const handleAddToCart = (product) => {
   const AutoPlaySlider = withAutoplay(AwesomeSlider)
     return (
       <div className="home-container">
-      <HelmetLayout title = {c} />
+      <HelmetLayout title = {"Shin Golf | Trang chủ"} />
       {show && (
         <AlertComponent message='Đã thêm sản phẩm vào giỏ hàng'/>
       )}
@@ -324,7 +324,9 @@ const handleAddToCart = (product) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               )}
-              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
@@ -399,7 +401,9 @@ const handleAddToCart = (product) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               )}
-              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
@@ -474,7 +478,9 @@ const handleAddToCart = (product) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               )}
-              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
@@ -549,7 +555,9 @@ const handleAddToCart = (product) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               )}
-              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
@@ -610,7 +618,9 @@ const handleAddToCart = (product) => {
                 <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
                 <div className="d-flex justify-content-between align-items-center">
                <StarRating rate={product.rate} />
-               <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+               {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                 </div>
                 <div className="content__feature-name mt-2">
                   <div onClick={() => handleProduct(product)}>{product.productName}</div>
@@ -699,7 +709,9 @@ const handleAddToCart = (product) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               )}
-              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
@@ -774,7 +786,9 @@ const handleAddToCart = (product) => {
                 <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
               </div>
               )}
-              <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+              {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
               </div>
               <div className="btn-container">
                 <div className="row pb-0">
@@ -849,7 +863,9 @@ const handleAddToCart = (product) => {
                   <div className="price" style={{ color: '#000' }}>{Intl.NumberFormat('de-DE').format(product.price)}¥</div>
                 </div>
                 )}
-                <div className="d-flex justify-content-center align-items-center" style={{width:'fit-content', height: '20px',padding: '5px', border: '1px solid green', fontSize:'1rem', color:'green', marginTop: '5px', borderRadius: '5px', textTransform:'capitalize'}}>{product.brand}</div>
+                {product.brand !='' ? 
+              <div className="product-status">{product.brand}</div>
+              :''}
                 </div>
                 <div className="btn-container">
                   <div className="row pb-0">
