@@ -13,10 +13,10 @@
   import AlertComponent from "../../Alert";
   import newGolf from "../../image/new.jpg";
   import oldGolf from "../../image/old.jpg";
-  import setGolf from "../../image/set.jpeg";
+  import setGolf from "../../image/set.jpg";
   import pkGolf from "../../image/pk1.jpg";
-  import manGolf from "../../image/man.jpeg";
-  import womanGof from "../../image/woman.jpeg";
+  import manGolf from "../../image/man.jpg";
+  import womanGof from "../../image/woman.jpg";
 
   export default function Home({fetchData, listMenu}) {
     const { t } = useTranslation();
@@ -191,11 +191,7 @@ const handleAddToCart = (product) => {
         play
         interval = {5000}>
               {caption.map((item) => (
-                <div data-src={item.image} title={item.image}>
-                                  {/* <Link to = {item.link}>
-                                    <p className="carousel_name">{item.name}<br />{item.caption}</p>
-                                    </Link> */}
-                                    </div>
+                <div data-src={item.image} title={item.image}> </div>
                             ))}
           </AutoPlaySlider>
         </div>
@@ -234,11 +230,7 @@ const handleAddToCart = (product) => {
         play
         interval = {5000}>
               {caption2.map((item) => (
-                <div data-src={item.image} title={item.image}>
-                                  <Link to = {item.link}>
-                                    <p className="carousel_name">{item.name}<br />{item.caption}</p>
-                                    </Link>
-                                    </div>
+                <div data-src={item.image} title={item.image}></div>
                             ))}
           </AutoPlaySlider>
         </div>

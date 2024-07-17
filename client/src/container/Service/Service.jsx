@@ -273,16 +273,29 @@ const sortByPriceHighToLow = (fetchData) => {
                 </div>
               </div>
               <div className="row">
-              <select 
+              <select
                 className="col-md-2 col-4 ml-3 form__content select-category"
-                onChange={(e) => handleCategoryClick(convertListMenu.find(item => item.item === e.target.value))}
+                value={selectedCategory}
+                onChange={(e) => {
+                  const selectedValue = e.target.value;
+                  const foundCategory = Object.entries(listMenu).find(([category, items]) =>
+                    items.includes(selectedValue)
+                  );
+                  if (foundCategory) {
+                    handleCategoryClick([foundCategory[0], selectedValue]);
+                  }
+                }}
               >
-                <option disabled selected value="">Danh mục</option>
-                {convertListMenu.map((item) => (
-                  <option key={item.title} value={item.item}>
-                    {item.item}
-                  </option>
-                ))}
+                <option disabled value="">
+                  Danh mục
+                </option>
+                {Object.entries(listMenu).map(([category, items]) =>
+                  items.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))
+                )}
               </select>
               {/* <select className="col-md-2 col-4 ml-3 form__content select-category" onChange={handleSortChange} value={sortOrder}>
                 <option value="lowToHigh">Low to High</option>

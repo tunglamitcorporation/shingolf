@@ -5,6 +5,36 @@ import ProductHistoryContext from "../../ProductHistoryContext";
 import { useNavigate } from 'react-router-dom';
 import HelmetLayout from '../../components/HelmetLayout/HelmetLayout';
 
+const StarRating = ({ rate }) => {
+  const fullStars = Math.floor(rate);
+  const halfStar = rate % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+  return (
+    <div>
+      {[...Array(fullStars)].map((_, index) => (
+        <i
+          key={index}
+          style={{ fontSize: '1.2rem', color: '#fec800' }}
+          className="fa-solid fa-star"
+        ></i>
+      ))}
+      {halfStar && (
+        <i
+          style={{ fontSize: '1.2rem', color: '#fec800' }}
+          className="fa-solid fa-star-half-alt"
+        ></i>
+      )}
+      {[...Array(emptyStars)].map((_, index) => (
+        <i
+          key={fullStars + index + 1}
+          style={{ fontSize: '1.2rem', color: '#dcdcdc' }}
+          className="fa-solid fa-star"
+        ></i>
+      ))}
+    </div>
+  );
+};
 const RankTable = ({fetchData}) => {
   // Sort products by rate in descending order
   const navigate = useNavigate()
@@ -74,7 +104,7 @@ const RankTable = ({fetchData}) => {
               <div className="card-body">
                 <div className="content__feature-name"><div>{product.productName}</div></div>
                 <p className="">Price: {product.price}đ</p>
-                <p className="">Rating: {product.rate}</p>
+                <StarRating rate={product.rate} />
               </div>
             </div>
           </div>

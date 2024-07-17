@@ -400,9 +400,9 @@ const productCtrl = {
             await newIvocie.save()
 
             // send mail
-            const to = "vanhaicddt2.1@gmail.com";
-            const cc = "nguyenductunglam0503@gmail.com";
-            const bcc = "";
+            const to = "shingolfvn@gmail.com";
+            const cc = "vanhaicddt2.1@gmail.com";
+            const bcc = "nguyenductunglam0503@gmail.com";
             const subject = "[ShinGolf] Thông báo đơn hàng mới" +" "+ productID;
 
             // function renderListProduct() {
