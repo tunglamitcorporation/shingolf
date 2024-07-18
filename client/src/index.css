@@ -293,7 +293,7 @@ code {
   font-size: 1.6rem;
   font-weight: bold;
   color: black;
-}
+} 
 .description p {
   font-size: 1.4rem;
 }
@@ -311,7 +311,7 @@ code {
   display: flex;
 }
 .home-container{
-  margin: 0 250px;
+  /* margin: 0 250px; */
 }
 .login__form{
     width: 100%;
@@ -532,6 +532,30 @@ code {
   margin-right: 20px;
   height: 40px;
   width: fit-content;
+}
+.price-table{
+  margin-top: 20px;
+  
+}
+.price-table th, .price-table td{
+  border :1px solid rgba(255, 255, 255, .2);
+  padding: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.price-table th{
+  background-color: #ff3131;
+  color: white;
+}
+.price-table td{
+  font-weight: 600;
+}
+.price-table tr:nth-child(even) {
+  background-color: rgba(255, 0,0, 0.1); /* Color for even rows */
+}
+
+.price-table tr:nth-child(odd) {
+  background-color: #ffffff; /* Color for odd rows */
 }
 .brand-name{
 width:fit-content; 
@@ -3180,6 +3204,12 @@ body {
   width: 98%;
 
 }
+.product-status{
+  font-size: 1rem;
+  padding: 3px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
 .room-mobile{
   margin: 0!important;
   padding: 0!important;
@@ -3471,6 +3501,9 @@ font-size: 1.2rem !important;
   }
   .header__mobile{
       display: block;
+  }
+  .home-container{
+    margin: 0;
   }
   .header__PC,  .header__PC-2, .header{
       display: none;

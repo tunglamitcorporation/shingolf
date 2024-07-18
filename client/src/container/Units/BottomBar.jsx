@@ -21,13 +21,13 @@ export default function BottomBar() {
                     Bảng xếp hạng
                     </div>
                     </Link>
-                    <Link to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
+                    <Link to ='/seen' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                     <div className="d-flex justify-content-center align-items-center flex-column">
                     <i class="fa-solid fa-clock-rotate-left bottom-bar-icon"></i>
                    Lịch sử
                     </div>
                     </Link>
-                    <Link to ='' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
+                    <Link to ='/price' className="bottom-bar-title mt-2" style={{textDecoration:'none'}}>
                     <div className="d-flex justify-content-center align-items-center flex-column">
                     <i class="fa-regular fa-money-bill-trend-up bottom-bar-icon"></i>
                     Bảng giá

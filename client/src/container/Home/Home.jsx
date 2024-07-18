@@ -13,10 +13,10 @@
   import AlertComponent from "../../Alert";
   import newGolf from "../../image/new.jpg";
   import oldGolf from "../../image/old.jpg";
-  import setGolf from "../../image/set.jpg";
+  import setGolf from "../../image/set.jpeg";
   import pkGolf from "../../image/pk1.jpg";
-  import manGolf from "../../image/man.jpg";
-  import womanGof from "../../image/woman.jpg";
+  import manGolf from "../../image/man.jpeg";
+  import womanGof from "../../image/woman.jpeg";
 
   export default function Home({fetchData, listMenu}) {
     const { t } = useTranslation();

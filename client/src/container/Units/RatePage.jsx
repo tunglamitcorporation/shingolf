@@ -84,26 +84,21 @@ const RankTable = ({fetchData}) => {
     }});
   };
   return (
-    <div className="container" style={{width: "80%"}}>
-      <HelmetLayout title={"Shin Golf | Xếp Hạng "} />
-      <div className="service__header">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
+    <>
+    <HelmetLayout title={"Shin Golf | Xếp Hạng "} />
+      <div className="reservation__content" style ={{backgroundImage: 'url(/webp/golf-bg.jpg)'}}>
               <h1>XẾP HẠNG</h1>
             </div>
-          </div>
-        </div>
-      </div>
+    <div className="container" style={{width: "90%"}}>
       <div className="row">
         {sortedData.map((product, index) => (
-          <div className="col-md-4 mb-4" key={product.productCode} onClick={() => handleProduct(product)}>
+          <div className="col-6 mb-4" key={product.productCode} onClick={() => handleProduct(product)}>
             <div className="card position-relative">
             <img src={`https://shingolf.vn/image/product/image/${product.productCode}_image1.png`} className="card-img-top" alt={product.productName} />
-              <span className="badge badge-primary position-absolute d-flex align-items-center justify-content-center" style={{width:'40px', height: '40px', fontSize: '1.6rem', backgroundColor: '#ff3131'}}>{index + 1}</span>
+              <span className="badge badge-primary position-absolute d-flex align-items-center justify-content-center" style={{width:'40px', height: '40px', fontSize: '1.6rem', backgroundColor: index < 3 ? "#ff3131" : "#ccc"}}>{index + 1}</span>
               <div className="card-body">
-                <div className="content__feature-name"><div>{product.productName}</div></div>
-                <p className="">Price: {product.price}đ</p>
+                <div className="content__feature-name" style={{fontSize: '1.4rem'}}>{product.productName}</div>
+                <p className="price mt-3" style={{fontSize: '1.4rem'}}>Price: {product.price}¥</p>
                 <StarRating rate={product.rate} />
               </div>
             </div>
@@ -111,6 +106,7 @@ const RankTable = ({fetchData}) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

@@ -17,7 +17,6 @@ export default function Feature({fetchData}) {
   const location = useLocation();
   const { addToCart } = useCart();
   const [show, setShow] = useState(false);
-  const [imageExists, setImageExists] = useState(null);
     useEffect(() => {
       const timer = setTimeout(() => {
         setShow(false);
