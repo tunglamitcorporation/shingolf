@@ -21,8 +21,8 @@ export default function PricePage() {
         {
             id:3,
             name:"Driver",
-            ship: "75,000",
-            service:"400,000",
+            ship: "100,000",
+            service:"500,000",
             tax:"10%",
             promotion:"Trên 20.000.000",
             discount:"20%"

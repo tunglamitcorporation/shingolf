@@ -253,22 +253,7 @@ const handleAddToCart = (product) => {
                   </div>
 
                 </div>
-        <div className="row">
-          {convertListMenu.map(product => (
-      <div className="col-4 col-md-2 mt-3">
-      <div onClick={() => handleProductCategory(product)} style={{cursor:'pointer'}}>
-        <div className="banner-container">
-          <div className="col-md-12 d-flex align-items-center justify-content-center banner-width">
-            <div className="banner-title">{product.title}</div>
-          </div>
-          </div>
-        </div>
-      </div>
 
-          ))}
-          </div>
-       
-        
         <AnimatedOnScroll>
           <div className="content__feature mt-5">
             <div className="content__feature-title">GIÀY GOLF</div>
@@ -884,6 +869,20 @@ const handleAddToCart = (product) => {
             </div>
           </div>
         </AnimatedOnScroll>
+        <div className="row">
+          {convertListMenu.map(product => (
+      <div className="col-4 col-md-2 mt-3">
+      <div onClick={() => handleProductCategory(product)} style={{cursor:'pointer'}}>
+        <div className="banner-container">
+          <div className="col-md-12 d-flex align-items-center justify-content-center banner-width">
+            <div className="banner-title">{product.title}</div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+          ))}
+          </div>
         </div>
       </div>
     );

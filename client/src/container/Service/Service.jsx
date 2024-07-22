@@ -12,10 +12,8 @@ export default function VietnamService({ fetchData, listMenu }) {
   const { productName } = useParams();
   const location = useLocation();
   const { price, id, selectedCategories = [] } = location.state || {};
-  const [selectedCategory, setSelectedCategory] = useState(id);
-  console.log("🚀 ~ VietnamService ~ selectedCategory:", selectedCategory)
+  const [selectedCategory, setSelectedCategory] = useState(id || 'newgolfclub');
   const [selectedProductId, setSelectedProductId] = useState('')
-  console.log("🚀 ~ VietnamService ~ selectedProductId:", selectedProductId)
   const [visible, setVisible] = useState(true);
   const { addProductToHistory } = useContext(ProductHistoryContext);
   const { addToCart } = useCart();
@@ -61,7 +59,7 @@ const sortByPriceHighToLow = (fetchData) => {
   }
   const filteredProducts = selectedCategories.length > 0
     ? fetchData.filter(product => selectedCategories.includes(product.productType))
-    : fetchData.filter(product => product.productId === id || product.category === id || product.productId === "newgolfclub");
+    : fetchData.filter(product => product.productId === selectedCategory || product.category === selectedCategory );
 
   const handleCategoryClick = ([category, item]) => {
       const selectedProduct = item;
