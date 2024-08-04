@@ -334,7 +334,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height: '400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -374,23 +374,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -592,7 +580,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge ml-5">
                               <div>Sale</div>
@@ -632,23 +620,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -851,7 +827,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -891,23 +867,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -1069,7 +1033,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1109,23 +1073,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -1339,7 +1291,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1379,23 +1331,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -1590,7 +1530,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1630,23 +1570,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -1802,7 +1730,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1842,23 +1770,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -2016,7 +1932,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -2056,23 +1972,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -2292,7 +2196,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -2332,23 +2236,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -2470,7 +2362,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -2510,23 +2402,11 @@ export default function Feature({fetchData}) {
                           </div>
                           )}
                           </div>
-                          <div className="btn-container">
-                            <div className="row pb-0">
-                              <div className="col-md-12 p-0">
-                                <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                                  THÊM VÀO GIỎ
-                                </div>
-                              </div>
-                             {/* <div className="col-md-6 p-0">
-                              <a 
-                                target="_blank"
-                                href="https://zalo.me/0564545545"
-                                className="buy-btn">
-                                LIÊN HỆ
-                              </a>
-                              </div> */}
-                            </div>
-                          </div>
+                                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                         </div>
                       </div>
                     </div>
@@ -2551,11 +2431,12 @@ export default function Feature({fetchData}) {
           <div className="container">
             <div className="row">
               {fetchData
+               .slice(1,5)
               .filter(product => product.productId === productId)
               .map(product => (
                 <div key={product.productId} className="col-6 col-md-2 p-3">
                 <div style={{ textDecoration: 'none' }}>
-                  <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                  <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                   {product.saleprice > 0 ? (
                         <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                         <div>Sale</div>
@@ -2595,23 +2476,11 @@ export default function Feature({fetchData}) {
                     </div>
                     )}
                     </div>
-                    <div className="btn-container">
-                      <div className="row pb-0">
-                        <div className="col-md-12 p-0">
-                          <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                            THÊM VÀO GIỎ
-                          </div>
-                        </div>
-                       {/* <div className="col-md-6 p-0">
-                        <a 
-                          target="_blank"
-                          href="https://zalo.me/0564545545"
-                          className="buy-btn">
-                          LIÊN HỆ
-                        </a>
-                        </div> */}
-                      </div>
-                    </div>
+                    <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                   </div>
                 </div>
               </div>
@@ -2622,10 +2491,12 @@ export default function Feature({fetchData}) {
           <div className="content__feature-title">SẢN PHẨM ĐÃ XEM</div>
           <div className="container">
             <div className="row">
-            {productHistory.map((product, index) => (
+            {productHistory
+             .slice(1,5)
+            .map((product, index) => (
                <div key={product.productId} className="col-6 col-md-2 p-3">
                <div style={{ textDecoration: 'none' }}>
-                 <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
+                 <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
                  {product.saleprice > 0 ? (
                        <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                        <div>Sale</div>
@@ -2665,23 +2536,11 @@ export default function Feature({fetchData}) {
                    </div>
                    )}
                    </div>
-                   <div className="btn-container">
-                     <div className="row pb-0">
-                       <div className="col-md-12 p-0">
-                         <div onClick={()=> handleAddToCart(product)} className="buy-btn" style={{ backgroundColor: '#ccc' }}>
-                           THÊM VÀO GIỎ
-                         </div>
-                       </div>
-                      {/* <div className="col-md-6 p-0">
-                       <a 
-                         target="_blank"
-                         href="https://zalo.me/0564545545"
-                         className="buy-btn">
-                         LIÊN HỆ
-                       </a>
-                       </div> */}
-                     </div>
-                   </div>
+                   <div className="btn-container mt-3" style={{position:'absolute', bottom:0, width: '100%'}}>
+                                    <div onClick={() => handleAddToCart(product)} className="buy-btn">
+                                      THÊM VÀO GIỎ
+                                    </div>
+                                  </div>
                  </div>
                </div>
              </div>
