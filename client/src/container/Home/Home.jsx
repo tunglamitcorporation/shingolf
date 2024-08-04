@@ -265,7 +265,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-            <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
             {product.saleprice > 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                   <div>Sale</div>
@@ -330,7 +330,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-            <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
             {product.saleprice > 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                   <div>Sale</div>
@@ -395,7 +395,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-            <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
             {product.saleprice > 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                   <div>Sale</div>
@@ -460,7 +460,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-            <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
             {product.saleprice > 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                   <div>Sale</div>
@@ -525,7 +525,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
             <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
               {product.saleprice > 0 ? (
                     <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                     <div>Sale</div>
@@ -602,7 +602,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-            <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
             {product.saleprice > 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                   <div>Sale</div>
@@ -667,7 +667,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
           <div style={{ textDecoration: 'none' }}>
-            <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+            <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
             {product.saleprice > 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                   <div>Sale</div>
@@ -732,7 +732,7 @@ const handleAddToCart = (product) => {
         .map((product) => (
           <div key={product.productId} className="col-6 col-md-2 p-3">
             <div style={{ textDecoration: 'none' }}>
-              <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+              <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
               {product.saleprice > 0 ? (
                     <div className="d-flex flex-column justify-content-center align-items-center" style={{width: '50px', height: '50px', position: 'absolute', backgroundColor: '#ff3131', color: '#fff', fontSize:'1.4rem', fontWeight:'bold',zIndex:999}}>
                     <div>Sale</div>

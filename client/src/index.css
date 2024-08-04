@@ -608,6 +608,7 @@ text-transform:capitalize;
   transition: transform 0.2s ease-in-out;
   border: 1px solid #ccc;
   position: relative;
+  height: 400px;
 }
 .product-container:hover{
   border: 1px solid #ff3131;
@@ -3066,6 +3067,9 @@ body {
   }
   .content{
     margin-top: 0;
+  }
+  .product-container{
+    height: 300px;
   }
   .header{
       height: 50px;

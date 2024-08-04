@@ -580,7 +580,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge ml-5">
                               <div>Sale</div>
@@ -827,7 +827,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1033,7 +1033,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1291,7 +1291,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1530,7 +1530,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1730,7 +1730,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -1932,7 +1932,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -2196,7 +2196,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -2362,7 +2362,7 @@ export default function Feature({fetchData}) {
                 {product.productType === productType && (
                       <div key={product.productId} className="col-md-12 p-3">
                       <div style={{ textDecoration: 'none' }}>
-                        <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                        <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                         {product.saleprice > 0 ? (
                               <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                               <div>Sale</div>
@@ -2436,7 +2436,7 @@ export default function Feature({fetchData}) {
               .map(product => (
                 <div key={product.productId} className="col-6 col-md-2 p-3">
                 <div style={{ textDecoration: 'none' }}>
-                  <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                  <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                   {product.saleprice > 0 ? (
                         <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                         <div>Sale</div>
@@ -2496,7 +2496,7 @@ export default function Feature({fetchData}) {
             .map((product, index) => (
                <div key={product.productId} className="col-6 col-md-2 p-3">
                <div style={{ textDecoration: 'none' }}>
-                 <div className="content__feature-item product-container" style={{overflow: 'hidden', height:'400px'}}>
+                 <div className="content__feature-item product-container" style={{overflow: 'hidden'}}>
                  {product.saleprice > 0 ? (
                        <div className="d-flex flex-column justify-content-center align-items-center sale-badge">
                        <div>Sale</div>
