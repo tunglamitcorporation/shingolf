@@ -587,13 +587,20 @@ const loftData = mergeLoft(loft)
       applySort(matchingData);
     }, [searchQuery, fetchData, sortOrder, sortCriteria]);
     
-    useEffect(() => {
-      if(!id){
-        handleSearchProduct([['productId']], [['oldgolfclub']])
-      }else{
-        handleSearchProduct([['productId']], [[id]])
+    const initialSearch = () => {
+      if (selectedCategory == " ") {
+        console.log("Calling handleSearchProduct with oldgolfclub");
+        handleSearchProduct([['productId']], [['oldgolfclub']]);
+      } else {
+        console.log("Calling handleSearchProduct with id:", selectedCategory);
+        handleSearchProduct([['productId']], [[selectedCategory]]);
       }
-    },[])
+    }
+    useEffect(() => {
+      console.log("useEffect called");
+      console.log("id:", selectedCategory);
+    initialSearch()
+    }, [selectedCategory]);
   return  (
     <>
       <HelmetLayout title={`Shin Golf  | ${checkId(id) || "Sản phẩm"}`} />
